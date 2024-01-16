@@ -1,0 +1,110 @@
+{
+    "name": "Baryonyx",
+    "dossier": {
+        "species": "Baryonyx aquafulgur",
+        "time": "Early Cretaceous",
+        "diet": "Piscivore",
+        "temperament": "Passive to land creatures, but aggressive to water-dwellers",
+        "wild": "Like the Carnotaurus, Baryonyx aquafulguar is a large carnivore, but not large enough to rival the Island's apex predators. While not as powerful as some deep-sea predators or Spinosaurus, Baryonyx is an extremely fast swimmer who is still sufficiently nimble enough to threaten most creatures on the Island. And yet despite being a fast, dangerous dinosaur, Baryonyx almost exclusively consumes fish and other water-dwellers. The highly specific metabolism of Baryonyx seems to allow it to heal wounds almost preternaturally fast after feeding on nutritious fish meat. Perhaps this is why Baryonyx rarely attacks land animals?",
+        "domesticated": "Baryonyx's natural affinity for aquatic predation means that once tamed; it learns to kill ocean-dwellers even more efficiently. Between its speed and its power, Baryonyx makes an ideal choice for anyone interested in frequently moving between water and land travel, and who values speed and agility over raw strength."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 440,
+            "level_increase": {
+                "wild": 88,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 325,
+            "level_increase": {
+                "wild": 32.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 225,
+            "level_increase": {
+                "wild": 22.5,
+                "tamed": null
+            }
+        },
+        "food": {
+            "base": 2250,
+            "level_increase": {
+                "wild": 225,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 325,
+            "level_increase": {
+                "wild": 6.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 400,
+            "level_increase": {
+                "wild": 24,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": {
+        "name": "Baryonyx Saddle",
+        "engram_level": 49
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Baryonyx Egg",
+        "incubation": {
+            "range": "29 - 35 °C / 84 - 95 °F",
+            "incubation_range": "32 °C / 90 °F",
+            "incubation_time": "1h 59m 59.424s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 210,
+    "cloneable": true,
+    "entity_id": "Baryonyx_Character_BP_C"
+}

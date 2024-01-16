@@ -1,0 +1,16 @@
+{
+    "$id": "http://localhost:3000/DossierSchema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Dossier Schema",
+    "description": "Dossiers contain basic information about a creature in Ark",
+    "type": "object",
+    "properties": {
+        "species": { "type": "string" },
+        "time": { "type": "string" },
+        "diet": { "type": "string" },
+        "temperament": { "type": "string" },
+        "wild": { "type": "string" },
+        "domesticated": { "type": "string" }
+    },
+    "required": ["species", "time", "diet", "temperament", "wild", "domesticated"]
+}

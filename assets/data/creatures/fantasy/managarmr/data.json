@@ -1,0 +1,107 @@
+{
+    "name": "Managarmr",
+    "dossier": {
+        "species": "Draconis auragelus",
+        "time": "Post-Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Draconis auragelus appears to be directly related to the stealthy Draconis obscurum. Their stature, gait and ability to dive through the air are all similar. However, where Draconis obscurum scaled cavern walls to gain the high ground, Draconis auragelus takes a more bombastic approach. In the middle of its hind feet, Draconis auragelus' bones form a hollowed out cylindrical shape that acts as a combustion chamber, which it fills with an explosive gas. When ignited, this gas propels it upwards, letting it \"jump\" in the air multiple times. From there, it can create a smaller burn in said chambers to hover in place, or dive at its prey. Like the icy variant of Draconis vipera, Draconis auragelus can slow down its foes with its frigid breath - though it's able to take this one step further and freeze its prey solid. Perhaps that's because it's used to living in the tundra environment on the surface, as opposed to a desert.",
+        "domesticated": "As a mount, Draconis auragelus can carry multiple adult humans without losing any of its impressive mobility, and its freezing breath makes it a good choice in combat. Whether you're looking to hunt, do battle or just travel with ease, it makes for an excellent companion."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 825,
+            "level_increase": {
+                "wild": 165,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.06
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200	,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 150,
+            "level_increase": {
+                "tamed": 0.0035
+            },
+            "taming_bonus": {
+                "additive": 0.085
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": {
+        "name": "Managarmr Saddle",
+        "engram_level": 66
+    },
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": {
+        "gestation": "3h 58m 5.714s",
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": true,
+    "entity_id": "IceJumper_Character_BP_C"
+}

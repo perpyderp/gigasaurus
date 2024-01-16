@@ -1,0 +1,93 @@
+{
+    "name": "Magmasaur",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.027
+            },
+            "taming_bonus": {
+                "additive": 420
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 550,
+            "level_increase": {
+                "wild": 11,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 120,
+            "level_increase": {
+                "wild": 3.6,
+                "tamed": 0.0051
+            },
+            "taming_bonus": {
+                "additive": -0.25,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.005
+            }
+        },
+        "torpidity": {
+            "base": 725,
+            "level_increase": {
+                "wild": 43.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": true,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Magmasaur Egg",
+        "incubation": {
+            "range": "90 - 110 °C / 194 - 230 °F",
+            "incubation_range": "100 °C / 212 °F",
+            "incubation_time": "4h 59m 58.56s"
+        },
+        "baby_time": "18h 31m 6.667s",
+        "juvenile_time": "3d 2h 4m 26.667s",
+        "adolescent_time": "3d 20h 35m 33.334s",
+        "total_maturation": "7d 17h 11m 6.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 550,
+    "cloneable": true,
+    "entity_id": "Cherufe_Character_BP_C"
+}

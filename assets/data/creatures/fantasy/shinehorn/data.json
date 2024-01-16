@@ -1,0 +1,110 @@
+{
+    "name": "Shinehorn",
+    "dossier": {
+        "species": "Microluminis cerynitis",
+        "time": "Unknown",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "Most commonly found in the upper chambers of the caverns, Microluminis cerynitis is at once elegant and adorable. As with its relatives, it is entirely peaceful, and no threat to survivors. After closer study, by which I mean very scientific bouts of cuddling, I've found that it shares traits with both bovids and cervids. However in the soft glow of its charge light, Microluminis cerynitis always gave me the impression that were it larger, it would be right at home pulling Artemis' chariot.",
+        "domesticated": "An exceptionally well-mannered and huggable companion, Microluminis cerynitis is an excellent choice of pet for any survivor. Whether it is providing a source of charged light from your shoulder or playfully bounding up beside you, its presence is sure to brighten up your day."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 115,
+            "level_increase": {
+                "wild": 23,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 180,
+            "level_increase": {
+                "wild": 19.8,
+                "tamed": 0.11
+            },
+            "taming_bonus": {
+                "additive": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 180,
+            "level_increase": {
+                "wild": 19.8,
+                "tamed": 0.11
+            },
+            "taming_bonus": {
+                "additive": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45	,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 100,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 12,
+            "level_increase": {
+                "wild": 0.66,
+                "tamed": 0.01955
+            },
+            "taming_bonus": {
+                "additive": 0.154,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "additive": 1.3
+            }
+        },
+        "torpidity": {
+            "base": 60,
+            "level_increase": {
+                "wild": 3.6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": {
+        "gestation": "4h 10m 37.593s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 25,
+    "cloneable": true,
+    "entity_id": "LanternGoat_Character_BP_C"
+}

@@ -1,0 +1,104 @@
+{
+    "name": "Archaeopteryx",
+    "dossier": {
+        "species": "Archaeopteryx magnamilvum",
+        "time": "Late Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Fearful",
+        "wild": "Approximately one meter long, the Archaeopteryx magnamilvum is a primarily tree-dwelling proto-bird. It avoids the ground as much as possible, preferring to stay in the safety of the tree-line, where few predators can reach it. I've not seen an Archaeopteryx outright fly yet, so it's possible that they cannot generate enough lift to do more than glide long distances between perches. I'm not sure how a creature so fearful of the ground can be such a picky eater, but Archaeopteryx only seems to consume certain rare insect matter. The most likely explanation is that it tends to nest in infested trees, stripping them bare of such food sources.",
+        "domesticated": "While not large enough to bear the full weight of an adult human, Archaeopteryx still has great utility. Despite the creature's inability to fly, its wings have sufficient strength to dramatically slow the rate of a person's descent, if that person holds onto Archaeopteryx while airborne. Taming Archaeopteryx can be somewhat troublesome, though, as it refuses to eat most common food sources, and glides to prospective safety at the first sign of any interloper."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 125,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 30,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Archaeopteryx Egg",
+        "incubation": {
+            "range": "16 - 20 °C / 61 - 68 °F",
+            "incubation_range": "18 °C / 64 °F",
+            "incubation_time": "2h 37m 52.927s"
+        },
+        "baby_time": "1h 32m 35.555s",
+        "juvenile_time": "6h 10m 22.222s",
+        "adolescent_time": "7h 42m 57.777s",
+        "total_maturation": "15h 25m 55.555s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 50,
+    "cloneable": true,
+    "entity_id": "Archa_Character_BP_C"
+}

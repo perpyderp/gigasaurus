@@ -1,0 +1,107 @@
+{
+    "name": "Spino",
+    "dossier": {
+        "species": "Spinosaurus aquareliga",
+        "time": "Early-Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Territorial",
+        "wild": "Among the few carnivores on the Island that can match Tyrannosaurs in size, Spinosaurus aquareliga does not match its ferocity. Spinosaurus' four legs and large sail make it fairly swift on land and incredibly fast in the water. Its marvel is, arguably, the ability to change stances by going from quadruped to biped. The creature is visually distinguished by its spectacular sail. In my travels I have seen many different and brightly coloured sails, as every Spinosaurus appears to have a slightly different palette. The one comforting fact about Spinosaurus is that it seems more at home near water than away from it. Although the creature is more powerful, faster, agile, and insatiable while in water, it tends to become less hostile as it gets farther from it. On one occasion, I only escaped a Spinosaurus by getting far enough from its lake home to make it simply lose interest.",
+        "domesticated": "Spinosaurus is an incredibly well-rounded apex carnivore. Faster than a Tyrannosaurus in water and able to travel on land unlike a Megalodon, its all-terrain versatility may be unrivaled. Although its movement speed is slower in a biped stance, it gains considerable attacking strength and mobility in this form. For hunters who wish to have a well-rounded mount, Spinosaurus may be the ideal choice -- if they can acquire one."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 700,
+            "level_increase": {
+                "wild": 140,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 650,
+            "level_increase": {
+                "wild": 65,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2600,
+            "level_increase": {
+                "wild": 260,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 60,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 850,
+            "level_increase": {
+                "wild": 51,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": {
+            "name": "Spino Saddle",
+            "engram_level": 71
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Spino Egg",
+        "incubation": {
+            "range": "30 - 32 °C / 86 - 90 °F",
+            "incubation_range": "31 °C / 88 °F",
+            "incubation_time": "3h 50m 45.047s"
+        },
+        "baby_time": "7h 7m 21.025s",
+        "juvenile_time": "1d 4h 29m 24.1s",
+        "adolescent_time": "1d 11h 36m 45.125s",
+        "total_maturation": "2d 23h 13m 30.25s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 550,
+    "cloneable": true,
+    "entity_id": "Spino_Character_BP_C"
+}

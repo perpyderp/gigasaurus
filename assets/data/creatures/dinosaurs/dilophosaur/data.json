@@ -1,0 +1,107 @@
+{
+    "name": "Dilophosaur",
+    "dossier": {
+        "species": "Dilophosaurus sputatrix",
+        "time": "Early Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Skittish",
+        "wild": "Dilophosaurus sputatrix is a strange creature. It stands at just over half the size of known Dilophosaurs and runs from aggressors as often as it fights them. Dilophosaurus sputatrix has a few traits not common in the Dilophosaurus genus. It has a very shrill call, and a decorative ridge of skin on its neck. I believe these are used to attract mates, as well as intimidate prey and would-be predators. Instead of attacking its prey outright, Dilophosaurus sputatrix spits venom to weaken and paralyze it before moving in for the kill.",
+        "domesticated": "Because of their shrill cry and their ability to attack intruders from range, Dilophosaurus seem most suited as \"guard dogs.\" Due to their small size, they are not suitable as mounts."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 130,
+            "level_increase": {
+                "wild": 26,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 45,
+            "level_increase": {
+                "wild": 0.9,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 30,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 2
+            }
+        },
+        "torpidity": {
+            "base": 75,
+            "level_increase": {
+                "wild": 4.5,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Basic"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Dilo Egg",
+        "incubation": {
+            "range": "28 - 32 °C / 82 - 90 °F",
+            "incubation_range": "30 °C / 86 °F",
+            "incubation_time": "1h 8m 10.582s"
+        },
+        "baby_time": "2h 6m 15.757s",
+        "juvenile_time": "8h 25m 3.028s",
+        "adolescent_time": "10h 31m 18.785s",
+        "total_maturation": "21h 2m 37.57s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 35,
+    "cloneable": true,
+    "entity_id": "Dilo_Character_BP_C"
+}

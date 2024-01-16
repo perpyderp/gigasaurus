@@ -1,0 +1,107 @@
+{
+    "name": "Diplodocus",
+    "dossier": {
+        "species": "Diplodocus insulaprincep",
+        "time": "Late Jurassic",
+        "diet": "Herbivore",
+        "temperament": "Naive",
+        "wild": "Despite being one of the Island's largest creatures, Diplodocus insulaprincep is among the Island's smaller sauropods. Instead of size and intelligence, Diplodocus developed faster maximum speed and greater endurance. When fully matured, it generally only reaches about half the size of the rather enormous Brontosaurus. Diplodocus is another creature whose continued survival on the Island confuses me. It's a very thick-headed and trusting animal, often to its fatal detriment. It never flees from predators until after they've attacked it repeatedly, preferring instead to make numerous fruitless attempts at friendship. For some strange reason, Diplodocus trusts humans so much that it doesn't seem to fight back against them…ever!",
+        "domesticated": "Due to Diplodocus' smaller frame, it cannot support the type of \"platform\" saddle that other large creatures can. To make up for this, many tribes instead use an eleven-seater passenger saddle which enables Diplodocus to safely transport ten additional riders. These passengers often use ranged weapons to protect the creature, or to attack nearby enemies while on the move!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1700,
+            "level_increase": {
+                "wild": 340,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 550,
+            "level_increase": {
+                "wild": 55,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 10000,
+            "level_increase": {
+                "wild": 1000,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 800,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 0,
+            "level_increase": {
+                "wild": 0,
+                "tamed": 0
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 180,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": {
+            "name": "Diplodocus Saddle",
+            "engram_level": 32
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Diplo Egg",
+        "incubation": {
+            "range": "26 - 29 °C / 79 - 84 °F",
+            "incubation_range": "28 °C / 82 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 575,
+    "cloneable": true,
+    "entity_id": "Diplodocus_Character_BP_C"
+}

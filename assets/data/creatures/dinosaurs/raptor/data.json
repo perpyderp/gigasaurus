@@ -1,0 +1,110 @@
+{
+    "name": "Raptor",
+    "dossier": {
+        "species": "Utahraptor prime",
+        "time": "Early Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Utahraptor prime is an incredibly aggressive subspecies of Utahraptor found on the Island. It tends to travel in small hunting packs, attacking smaller prey with its sharp teeth and enlarged foreclaws. When hunting in packs, the pack leader can vocalize a signal that acts as a battle cry. Be prepared to run or fight if you hear the call of the Utahraptor! The pack will repeat the calls and attack with much greater intensity. One of the faster creatures on the island, Utahraptor often uses their pack numbers to their advantage by swarming around their prey before it can react. The large curved talon on the second toe of this sub-species seems particularly suited for dealing significant damage. Utahraptor prime usually kill its prey with numerous slashing and biting attacks in rapid sequence.",
+        "domesticated": "What the Utahraptor lacks in size, it makes up for in ingenuity. Rather than chase down smaller creatures, Utahraptor will pounce and pin its prey to the ground rather than chasing it around. Despite its normally aggressive nature, Utahraptors have become one of the primary combat mounts for roaming bands of raiders, as well as scouts for larger collectives. Those who ride Utahraptor claim they are difficult to tame, but then fiercely loyal. As a carnivore, once tamed they require a steady stream of meat to sustain."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 140,
+            "level_increase": {
+                "wild": 2.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.015
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 180,
+            "level_increase": {
+                "wild": 10.8,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": {
+            "name": "Raptor Saddle",
+            "engram_level": 18
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Raptor Egg",
+        "incubation": {
+            "range": "20 - 28 °C / 68 - 82 °F",
+            "incubation_range": "24 °C / 75 °F",
+            "incubation_time": "1h 59m 59.424s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 85,
+    "cloneable": true,
+    "entity_id": "Raptor_Character_BP_C"
+}

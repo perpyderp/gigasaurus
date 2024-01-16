@@ -1,0 +1,24 @@
+{
+    "set_name": "Cloth Armor",
+    "unlock_level": 3,
+    "armor_rating": 40,
+    "cold_protection": 40,
+    "heat_protection": 60,
+    "weight": 3,
+    "durability": 25,
+    "found_in": [
+        "White"
+    ],
+    "set_ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 145,
+            "url": "https://gigasaurus.vercel.app/api/resources/fiber"
+        },
+        {
+            "name": "Hide",
+            "quantity": 10,
+            "url": "https://gigasaurus.vercel.app/api/resources/hide"
+        }
+    ]
+}

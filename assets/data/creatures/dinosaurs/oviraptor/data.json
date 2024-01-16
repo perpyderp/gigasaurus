@@ -1,0 +1,111 @@
+{
+    "name": "Oviraptor",
+    "dossier": {
+        "species": "Oviraptor philodator",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Skittish",
+        "wild": "Oviraptor philodator is a small-to-medium sized carnivore, common in the jungles and beaches of the Island. Despite being a carnivore, Oviraptor's main source of food is eggs, which it steals from nests. Unlike any other creature, Oviraptor seems to be able to surreptitiously steal these eggs, usually without attracting the attention of an irate mother. In an incredible feat of natural selection, Oviraptor seems to emit a chemical pheromone that affects many creatures as an aphrodisiac. Mated creatures are much more likely to…“create” new eggs while Oviraptor is around, which allows the Oviraptor to go about its business unperturbed.",
+        "domesticated": "Too small to fight or ride, Oviraptor is still one of the more commonly tamed creatures on the Island. Its pheromone ensures an increased stream of eggs from nearby mated wild creatures, for breeding, eating, or cooking kibble. Oviraptor will autonomously do the dirty work of stealing eggs from other tribes or wild dinos on your behalf, without attracting unwanted attention. They also make quite adorable sounds, so many children simply like to keep them around as rather strange companions."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 140,
+            "level_increase": {
+                "wild": 28,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 120,
+            "level_increase": {
+                "wild": 12,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 100,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 12,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 1,
+                "multiplicative": 0.15
+            }
+        },
+        "torpidity": {
+            "base": 125,
+            "level_increase": {
+                "wild": 7.5,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Oviraptor Egg",
+        "incubation": {
+            "range": "26 - 30 °C / 79 - 86 °F",
+            "incubation_range": "28 °C / 82 °F",
+            "incubation_time": "1h 8m 10.582s"
+        },
+        "baby_time": "2h 6m 15.757s",
+        "juvenile_time": "8h 25m 3.028s",
+        "adolescent_time": "10h 31m 18.785s",
+        "total_maturation": "21h 2m 37.57s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 40,
+    "cloneable": true,
+    "entity_id": "Oviraptor_Character_BP_C"
+}

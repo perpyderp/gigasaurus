@@ -1,0 +1,112 @@
+{
+    "name": "Bloodstalker",
+    "dossier": {
+        "species": "Serpens regulus",
+        "time": "Unknown",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Microluminis globulus is best described as a slobbering, roly-poly ball of affection. Just like its kin, it is completely harmless, despite its pronounced fangs. So if a survivor sees one running towards them, they should prepare to be licked, not bitten. Unfortunately, being so ugly that you're cute is not an effective means of self-defense, which lands it near the bottom of the food chain. Its Charge Light may intimidate some predators, but it attracts just as many.",
+        "domesticated": "While Microluminis globulus has skin reminiscent of lizards or amphibians, its behavior is incredibly similar to a common canine. This has made it a particularly popular choice as a companion and source of Charge Light, but remember - whatever shoulder you rest it on will be covered in drool within minutes."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 145,
+            "level_increase": {
+                "wild": 29,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 24,
+                "tamed": 0.12
+            },
+            "taming_bonus": {
+                "additive": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 165,
+            "level_increase": {
+                "wild": 18.15,
+                "tamed": 0.11
+            },
+            "taming_bonus": {
+                "additive": 0.025
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 120,
+            "level_increase": {
+                "wild": 2.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 12,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 1.3
+            }
+        },
+        "torpidity": {
+            "base": 60,
+            "level_increase": {
+                "wild": 3.6,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": {
+        "gestation_time": "4h 10m 37.593s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 30,
+    "cloneable": true,
+    "entity_id": "LanternPug_Character_BP_C"
+}

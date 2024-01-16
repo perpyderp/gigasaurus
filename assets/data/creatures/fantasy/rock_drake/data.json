@@ -1,0 +1,109 @@
+{
+    "name": "Rock Drake",
+    "dossier": {
+        "species": "Draconis obscurum",
+        "time": "Unknown",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Draconis obscurum is a magnificent example of a predator that has flawlessly adapted to its environment. It is surrounded by cavern walls, so it developed powerful claws with which to scale them and colorful plumage on its anterior limbs that let it glide from perch to perch. But most dangerous of all? Its active camouflage, which lets it fade into the shadows and stalk its prey undetected. It has even adapted to the Nameless and The Reapers. Draconis' feathers will raise in warning when they are near, and this massive elegant lizard seems to be the Reaper's only natural enemy.",
+        "domesticated": "With its unparalleled mobility and undeniable power, Draconis obscurum is a highly sought after mount. Survivors who successfully bring one back from its nesting grounds will suddenly find these caverns much easier to traverse, and that their enemies have become their unsuspecting prey. Even its saddle and rider are affected by its active camouflage, so a Survivor's enemies will never see them coming."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1950,
+            "level_increase": {
+                "wild": 165.75,
+                "tamed": 0.0405
+            },
+            "taming_bonus": {
+                "additive": -1050
+            }
+        },
+        "stamina": {
+            "base": 450,
+            "level_increase": {
+                "wild": 22.5,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 60,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": -0.25,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 725,
+            "level_increase": {
+                "wild": 43.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": true,
+    "taming": null,
+    "saddle": [
+        {
+            "name": "Rock Drake Saddle",
+            "engram_level": 75
+        },
+        {
+            "name": "Rock Drake Tek Saddle",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Rock Drake Egg",
+        "incubation": {
+            "range": "-90 - -80 °C / -130 - -112 °F",
+            "incubation_range": "-85 °C / -121 °F",
+            "incubation_time": "6h 14m 58.201s"
+        },
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 425,
+    "cloneable": true,
+    "entity_id": "RockDrake_Character_BP_C"
+}

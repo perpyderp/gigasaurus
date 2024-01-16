@@ -1,0 +1,72 @@
+{
+    "name": "Deathworm",
+    "dossier": {
+        "species": "Khorkoi arrakis",
+        "time": "Unknown",
+        "diet": "Carnivore",
+        "temperament": "Extremely Territorial",
+        "wild": "The titanic Khorkoi arrakis is commonly called a \"Death Worm\" by the locals, though I'm not certain that it is actually a worm. It shares some similarities to some segmented worms, namely the aquatic Eunice aphroditois, but it's biology doesn't seem consistent with other members of the annelid phylum. However, the \"death\" part of its name could not be more spot on. Khorkoi is without question the apex predator of this desert. It will devour anything that dares to set foot in the Endless Dunes, regardless of size or ferocity. Khorkoi spends most of its time burrowed beneath the desert sands, exploding to the surface only to devour its prey in a single bite. The only chance of surviving a Khorkoi attack is if its initial lunge misses, as it's momentarily immobile afterwards. Theoretically, that could provide a brief opportunity to escape its territory. I wouldn't count on such luck, though.",
+        "domesticated": "Attempting to tame Khorkoi will almost certainly result in failure and a very painful death. Any survivors in this desert should avoid Khorkoi territory at all costs."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 20000,
+            "level_increase": {
+                "wild": 40
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": null,
+            "level_increase": {
+                "wild": null
+            }
+        },
+        "food": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "weight": {
+            "base": 100,
+            "level_increase": {
+                "wild": 2
+            }
+        },
+        "melee": {
+            "base": 225,
+            "level_increase": {
+                "wild": 11.25
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 1000,
+    "cloneable": false,
+    "entity_id": "Deathworm_Character_BP_C"
+}

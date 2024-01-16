@@ -1,0 +1,101 @@
+{
+    "name": "Unicorn",
+    "dossier": {
+        "species": "N/A",
+        "time": "N/A",
+        "diet": "Herbivore",
+        "temperament": "Loyal",
+        "wild": "N/A",
+        "domesticated": "N/A"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 240,
+            "level_increase": {
+                "wild": 48,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 560,
+            "level_increase": {
+                "wild": 56,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 11,
+            "level_increase": {
+                "wild": 0.55,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.175
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 420,
+            "level_increase": {
+                "wild": 25.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Simple"
+    },
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": {
+        "gestation": "7h 56m 11.429s",
+        "baby_time": "4h 37m 46.667s",
+        "juvenile_time": "18h 31m 6.667s",
+        "adolescent_time": "23h 8m 53.333s",
+        "total_maturation": "1d 22h 17m 46.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 125,
+    "cloneable": true,
+    "entity_id": "Equus_Character_BP_Unicorn_C"
+}

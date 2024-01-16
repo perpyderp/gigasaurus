@@ -1,0 +1,113 @@
+{
+    "name": "Allosaurus",
+    "dossier": {
+        "species": "Allosaurus therotribus",
+        "time": "Late Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Smaller but faster than Tyrannosaurus, larger but slower than Carnotaurus, Allosaurus therotribus is the island's resident pack-hunting theropod. While most aggressive theropods are relatively solitary creatures, Allosaurus lives in groups of 3. One Allosaurus is the alpha, while the others are its mates or a beta male. Like humans find value in forming a tribe, the Allosaurus has evolved to hunt in packs. Its saw-shaped teeth leave its prey bleeding and maimed, making escape difficult. Once an Allosaurus slows a creature with its cutting bite, the rest of its pack quickly closes in for the kill.",
+        "domesticated": "Not everyone thinks a tamed Allosaurus is ideal. Those who appreciate speed generally tame Carnotaurus, while those who value raw stopping power tame Tyrannosaurus. However, riders of Allosaurus tend to respect the utility of its Alpha pack status, which along with its bleed-inducing attacks and relative mobility, can effectively turn the tide of a combined arms battle."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 630,
+            "level_increase": {
+                "wild": 126,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 250,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 380,
+            "level_increase": {
+                "wild": 7.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": -0.1
+            }
+        },
+        "torpidity": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 60,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": {
+        "name": "Allosaurus Saddle",
+        "engram_level": 67
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Allosaurus Egg",
+        "incubation": {
+            "range": "26 - 32 °C / 79 - 90 °F",
+            "incubation_range": "29 °C / 84 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 285,
+    "cloneable": true,
+    "entity_id": "Allo_Character_BP_C"
+}
