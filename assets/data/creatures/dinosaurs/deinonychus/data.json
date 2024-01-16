@@ -1,0 +1,113 @@
+{
+    "name": "Deinonychus",
+    "dossier": {
+        "species": "Deinonychus magna pede",
+        "time": "Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "By the time you hear the scurrying claws of the Deinonychus, it's often too late. Superior hunters, they leap from a hiding place and pounce on their prey. The Deinonychus is an agile climber as well, jumping from wall ledge to wall ledge as it seeks high vantage points to lie in wait. A hungry Deinonychus tends to be fearless and will hunt prey much larger than itself, latching onto a dinosaur's back with its sickle-shaped claws, then starting to feed before its victim is even dead. While it likes its meat fresh, a Deinonychus isn't above scavenging a carcass if no other food is available.",
+        "domesticated": "Raising a Deinonychus in captivity requires an ample food supply, as they have a fast metabolism to match their high activity level. The Deinonychus is also fiercely territorial near nests with eggs, even if the eggs aren't its own. This makes breeding successive generations a hazardous process. Unless raised from eggs, they cannot be tamed; the hunter instinct of a wild Deinonychus is so strong that it reflexively pounces on a would-be master."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 140,
+            "level_increase": {
+                "wild": 2.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.015
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 180,
+            "level_increase": {
+                "wild": 10.8,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": null,
+        "kibble": "Kibble"
+    },
+    "saddle": {
+            "name": "Deinonychus Saddle",
+            "engram_level": 32
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": [
+            "Deinonychus Egg",
+            "Raptor Egg"
+        ],
+        "incubation": {
+            "range": "80 - 90 °C / 176 - 194 °F",
+            "incubation_range": "85 °C / 185 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 85,
+    "cloneable": true,
+    "entity_id": "Deinonychus_Character_BP_C"
+}

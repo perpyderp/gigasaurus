@@ -1,0 +1,105 @@
+{
+    "name": "Wyvern",
+    "dossier": {
+        "species": "Draconis vipera",
+        "time": "Unknown",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Like its relative from the Island, the Draconis vipera that inhabit the aptly named Dragon Trenches are creatures straight out of European legend. Aside from size, the main difference between Draconis vipera and its larger cousin is that the former possesses only two legs, like an avian. Otherwise, it is quite similar, with armored scales, leathery wings and the ability to spew projectiles from a pair of glands inside its mouth. The nature of these projectiles is tied directly to the color of Draconis' scales. Some spit fire while others unleash poisonous acid or even bursts of bioelectricity.",
+        "domesticated": "I can imagine no flying mount more deadly than Draconis vipera. Its strength, toughness and ability rain death upon one's enemies makes it unmatched in combat. The few creatures that it cannot immediately overpower, it can outmaneuver. The ridges on its back form a natural saddle, to the point where many riders prefer to ride Draconis bareback. Curious indeed. However, Draconis vipera is too resilient to domesticate once it has become an adult. It must be raised from an egg if you wish to garner its loyalty. Good luck finding and stealing one of those though. Mother Wyverns are extremely hostile and will pursue egg thieves with a vengeance. If you somehow manage to acquire a wyvern egg, you'll then need to take down a female wyvern and extract her milk to keep the baby alive."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1295,
+            "level_increase": {
+                "wild": 194.25,
+                "tamed": 0.0324
+            },
+            "taming_bonus": {
+                "additive": -785
+            }
+        },
+        "stamina": {
+            "base": 315,
+            "level_increase": {
+                "wild": 15.75,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1800,
+            "level_increase": {
+                "wild": 180,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 80,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": -0.25,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 725,
+            "level_increase": {
+                "wild": 43.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": true,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": [
+            "Fire Wyvern Egg",
+            "Ice Wyvern Egg",
+            "Lightning Wyvern Egg",
+            "Poison Wyvern Egg"
+        ],
+        "incubation": {
+            "range": "80 - 90 °C / 176 - 194 °F",
+            "incubation_range": "85 °C / 185 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 416,
+    "cloneable": true,
+    "entity_id": "Wyvern_Character_BP_Fire_C"
+}

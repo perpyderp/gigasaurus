@@ -1,0 +1,94 @@
+{
+    "name": "Noglin",
+    "dossier": {
+        "species": "N/A",
+        "time": "N/A",
+        "diet": "N/A",
+        "temperament": "N/A",
+        "wild": "That critter might seem kinda cute at arm's length, but you shouldn't let it near your head. I think it might be an ideovore -- like a vampire, but for free will. Creepy little noggin-goblin...Wait, you could call it a 'noglin'!",
+        "domesticated": "N/A"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 50,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.064
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 80,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 4,
+            "level_increase": {
+                "wild": 0.2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 20,
+    "cloneable": true,
+    "entity_id": "BrainSlug_Character_BP_C"
+}

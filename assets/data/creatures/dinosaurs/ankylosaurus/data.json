@@ -1,0 +1,113 @@
+{
+    "name": "Ankylosaurus",
+    "dossier": {
+        "species": "Ankylosaurus crassacutis",
+        "time": "Late Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Docile",
+        "wild": "Unlike many of the herd animals on the Island, Ankylosaurus crassacutis tends to live in small family units. I believe they can afford to stick with smaller groups because of their incredibly thick skin, for which they're named. Despite not being among the largest of the Island's herbivores, Ankylosaurus is one of the more difficult creatures to take down. Its thick, armored skin seems to make it more than a match for several of the mid-sized predators that would otherwise hunt it. Reckless carnivores are just as likely to hurt themselves on Ankylosaurus' spikes, as they are to get hit by its tail.", 
+        "domesticated": "Without a doubt, the best trait of a trained Ankylosaurus is its enormously dense tail. This tail is powerful enough to quickly shatter the resource-laden rocks of the Island. One of the wealthier human tribes on the island utilizes a squad of Ankylosaurs in its mines and quarries. The creature's affinity for metal enables it to carry raw ore at an effectively reduced weight."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 700,
+            "level_increase": {
+                "wild": 140,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 175,
+            "level_increase": {
+                "wild": 17.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 50,
+            "level_increase": {
+                "wild": 2.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.02
+            },
+            "taming_bonus": {
+                "additive": 0.35
+            }
+        },
+        "torpidity": {
+            "base": 420,
+            "level_increase": {
+                "wild": 25.2,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": {
+        "name": "Ankylo Saddle",
+        "engram_level": 55
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Ankylo Egg",
+        "incubation": {
+            "range": "16 - 20 °C / 61 - 68 °F",
+            "incubation_range": "18 °C / 64 °F",
+            "incubation_time": "2h 37m 52.927s"
+        },
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 160,
+    "cloneable": true,
+    "entity_id": "Ankylo_Character_BP_C"
+}

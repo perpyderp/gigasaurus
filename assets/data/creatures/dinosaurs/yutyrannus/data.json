@@ -1,0 +1,107 @@
+{
+    "name": "Yutyrannus",
+    "dossier": {
+        "species": "Yutyrannus saevus",
+        "time": "Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "The Yutyrannus saevus is believed to be related to the Tyrannosaurus rex, but it is noticeably different upon first glance. Feathered creatures are not necessarily viewed as dangerous predators in the same light as other theropods. However, the Yutyrannus strikes fear into even the Island's most skilled hunters. There are few wild predators that are able to pack-hunt alongside the generally hostile Carnotaurus, like the Yutyrannus does, with such ease. It is also the only creature I've seen to consistently induce a state of panic in opponents with its roar. Upon hearing it, most creatures in the area will flee for safety.",
+        "domesticated": "A domesticated Yutyrannus can be a powerful offensive or defensive addition to war parties. With its mighty roar, it can induce fear in opposing creatures. Meanwhile, Yutyrannus can be trained to develop a confidence-boosting Battle-Cry which counteracts enemy attempts to induce fear, while also bolstering the resolve of allies, and may even draw wild Carnotaurus to its aid. These unique \"leadership\" qualities make the Yutyrannus a versatile, and at times, a necessary creature to have on your side during large-scale confrontations!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1100,
+            "level_increase": {
+                "wild": 220,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 420,
+            "level_increase": {
+                "wild": 42,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 55,
+            "level_increase": {
+                "wild": 2.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1550,
+            "level_increase": {
+                "wild": 93,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Extraordinary"
+    },
+    "saddle": {
+            "name": "Yutyrannus Saddle",
+            "engram_level": 80
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Yutyrannus Egg",
+        "incubation": {
+            "range": "32 - 34 °C / 90 - 93 °F",
+            "incubation_range": "33 °C / 91 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "18h 31m 6.662s",
+        "juvenile_time": "3d 2h 4m 26.65s",
+        "adolescent_time": "3d 20h 35m 33.313s",
+        "total_maturation": "7d 17h 11m 6.625s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 500,
+    "cloneable": true,
+    "entity_id": "Yutyrannus_Character_BP_C"
+}

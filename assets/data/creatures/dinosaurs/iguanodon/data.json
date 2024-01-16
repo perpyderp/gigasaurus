@@ -1,0 +1,107 @@
+{
+    "name": "Iguanodon",
+    "dossier": {
+        "species": "Iguanodon vicissitudinis",
+        "time": "Late Jurassic",
+        "diet": "Herbivore",
+        "temperament": "Reactive",
+        "wild": "Of the many creatures I've yet encountered on the Island, the Iguanodon vicissitudinis has the distinctly versatile capability of switching its primary method of locomotion according to its momentary needs. Primarily a rather lethargic bipedal herbivore native to the Island's many grasslands and forests, in situations where increased speed or maneuverability is called for, it will quickly shift its posture into quadrupedal stance and behave like a very different creature! While bipedal, it can employ rapid, stabbing attacks with its distinctive thumb spikes. In quadrupedal stance, conversely, it seems to have an endless supply of stamina, even while sprinting!",
+        "domesticated": "Interestingly, the Iguanodon's thumb spikes also provide it with the capability to pick seeds out of fruits, allowing a farmer to easily convert stacks of fruits into stacks of seed for planting. Combined with its highly effective fruit harvesting and substantial carry weight, the Iguanodon's excellent mobility in bipedal stance makes it an ideal field-hand that can also pull off a quick get-away or an agile defense when needed."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 250,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1800,
+            "level_increase": {
+                "wild": 180,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 375,
+            "level_increase": {
+                "wild": 7.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.02
+            }
+        },
+        "torpidity": {
+            "base": 210,
+            "level_increase": {
+                "wild": 12.6,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": {
+            "name": "Iguanodon Saddle",
+            "engram_level": 30
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Iguanodon Egg",
+        "incubation": {
+            "range": "24 - 28 °C / 75 - 82 °F",
+            "incubation_range": "26 °C / 79 °F",
+            "incubation_time": "1h 25m 42.446s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 125,
+    "cloneable": true,
+    "entity_id": "Iguanodon_Character_BP_C"
+}

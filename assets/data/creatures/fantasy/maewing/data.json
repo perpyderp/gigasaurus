@@ -1,0 +1,110 @@
+{
+    "name": "Maewing",
+    "dossier": {
+        "species": "Microluminis psykhe",
+        "time": "Unknown",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "Our missing crew called this duck-billed glider a 'maewing'. They genetically engineered it to be a wet nurse and surrogate parent for all kinds of baby animals. Babies supposedly find their milk irresistible.",
+        "domesticated": ""
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 700,
+            "level_increase": {
+                "wild": 59.5,
+                "tamed": 0.0405
+            }
+        },
+        "stamina": {
+            "base": 450,
+            "level_increase": {
+                "wild": 22.5,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 200,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 20,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.25,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": {
+        "name": "Maewing Saddle",
+        "engram_level": 19
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": [
+            "Basic Maewing Egg",
+            "Simple Maewing Egg",
+            "Regular Maewing Egg",
+            "Superior Maewing Egg",
+            "Exceptional Maewing Egg",
+            "Extraordinary Maewing Egg"
+        ],
+        "incubation": {
+            "range": "22 - 26 °C / 72 - 79 °F",
+            "incubation_range": "24 °C / 75 °F",
+            "incubation_time": "1h 25m 42.446s"
+        },
+        "baby_time": "4h 37m 46.667s",
+        "juvenile_time": "18h 31m 6.667s",
+        "adolescent_time": "23h 8m 53.333s",
+        "total_maturation": "1d 22h 17m 46.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "MilkGlider_Character_BP_C"
+}

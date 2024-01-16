@@ -1,0 +1,107 @@
+{
+    "name": "Gallimimus",
+    "dossier": {
+        "species": "Gallimimus evolovelox",
+        "time": "Late Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Skittish",
+        "wild": "When someone asks me what the fastest creatures on the island are, Gallimimus is always a contender. Unlike the Island's many armored animals, Gallimimus eschews strong defenses for the ability to outrun pretty much anything. A skittish herbivore, Gallimimus even looks nervous when eating in a peaceful, clear meadow. Having no real way to harm predators, it simply runs away and uses its agility to stay safe. I've even seen wild Gallimimus outrun speed-trained Utahraptors!",
+        "domesticated": "There are two general camps on the use of tamed Gallimimus. One camp thinks that their inability to effectively harm hostile creatures, and their inability to harvest most resources, makes them primarily a burden to the tribe. The other camp thinks that their extreme speed and ability to jump long distances, is among the best for scouting and exploring. However, both camps agree that its ability to quickly transport multiple tribe members is uniquely beneficial."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 150,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 270,
+            "level_increase": {
+                "wild": 5.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 8,
+            "level_increase": {
+                "wild": 0.4,
+                "tamed": 0.034
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 420,
+            "level_increase": {
+                "wild": 25.2,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": {
+            "name": "Gallimimus Saddle",
+            "engram_level": 29
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Gallimimus Egg",
+        "incubation": {
+            "range": "24 - 28 °C / 75 - 82 °F",
+            "incubation_range": "26 °C / 79 °F",
+            "incubation_time": "1h 25m 42.446s"
+        },
+        "baby_time": "2h 38m 43.809s",
+        "juvenile_time": "10h 34m 55.238s",
+        "adolescent_time": "13h 13m 39.047s",
+        "total_maturation": "1d 2h 27m 18.094s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 410,
+    "cloneable": true,
+    "entity_id": "Galli_Character_BP_C"
+}

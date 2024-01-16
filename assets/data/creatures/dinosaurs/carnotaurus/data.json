@@ -1,0 +1,110 @@
+{
+    "name": "Carnotaurus",
+    "dossier": {
+        "species": "Carnotaurus pressor",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Carnotaurus pressor is a distinctive creature that falls between a medium and large predator. It lives primarily on flat, clear ground, where it can capitalize on its speed. Additionally, it seems to have no qualms about running away from larger predators instead of fighting. The horns of the Carnotaurus seem to be used more for fighting rivals than actual hunting. This doesn't mean the horns aren't dangerous, though. They can still eviscerate larger prey. Carnotaurus is one of the smaller and more compact of the large predators. If Tyrannosaurus is the “lion” of the Island, Carnotaurus would certainly be the “cheetah.” The real threat of a Carnotaurus is not being able to escape it once it has spotted you.",
+        "domesticated": "Carnotaurus fills a very specific role. Larger and almost as fast as a Raptor, smaller but much faster than a Rex. Were it not for the creature's extremely long down-time after sprinting, it might be among the most capably balanced mounts."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 420,
+            "level_increase": {
+                "wild": 84,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.7
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.0125
+            },
+            "taming_bonus": {
+                "additive": 0.085
+            }
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": {
+            "name": "Carno Saddle",
+            "engram_level": 46
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Carno Egg",
+        "incubation": {
+            "range": "26 - 32 °C / 79 - 90 °F",
+            "incubation_range": "29 °C / 84 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": true,
+    "entity_id": "Carno_Character_BP_C"
+}

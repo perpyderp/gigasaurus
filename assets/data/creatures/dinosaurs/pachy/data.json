@@ -1,0 +1,110 @@
+{
+    "name": "Pachy",
+    "dossier": {
+        "species": "Pachycephalosaurus leniproelia",
+        "time": "Late Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "Pachycephalosaurus is a bit of a conundrum. It is a very passive (even friendly) herbivore, common to much of the Island. At the same time, it is one of the most dangerous herbivores that I have yet encountered on the Island. Its charging headbutt is a display of sheer physical power, and can kill much more quickly than you might think. While Pachycephalosaurus is generally friendly, it has a short temper. Its fight-or-flight response always seems to choose \"fight!\" The Pachy becomes extremely aggressive once attacked. Additionally, it is an incredibly fast sprinter, so escaping from an enraged Pachy is very difficult.",
+        "domesticated": "Pachycephalosaurus is an excellent battle-mount for those who want to ride a smaller, nimble combatant into the fray. Because of its particular musculature, it cannot effectively carry large quantities of resources. It can, however, move with brief magnificent bursts of speed, and its headbutt is simply devastating."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 175,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 160,
+            "level_increase": {
+                "wild": 9.6,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": {
+            "name": "Pachy Saddle",
+            "engram_level": 14
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Pachy Egg",
+        "incubation": {
+            "range": "24 - 28 °C / 75 - 82 °F",
+            "incubation_range": "26 °C / 79 °F",
+            "incubation_time": "1h 25m 42.446s"
+        },
+        "baby_time": "2h 38m 43.809s",
+        "juvenile_time": "10h 34m 55.238s",
+        "adolescent_time": "13h 13m 39.047s",
+        "total_maturation": "1d 2h 27m 18.094s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 85,
+    "cloneable": true,
+    "entity_id": "Pachy_Character_BP_C"
+}

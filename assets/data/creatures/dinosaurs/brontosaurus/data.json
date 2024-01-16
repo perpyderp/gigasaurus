@@ -1,0 +1,114 @@
+{
+    "name": "Brontosaurus",
+    "dossier": {
+        "species": "Brontosaurus lazarus",
+        "time": "Late Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Docile",
+        "wild": "Among giant creatures I've seen on the Island, Brontosaurus lazarus is larger than any sauropod I've read about. In fact, the dinosaur is so massive that it serenely ignores most other creatures. I've seen a pack of raptors tear apart small dinosaurs while Brontosaurus continues eating, seemingly oblivious to the hunting pack.",
+        "domesticated": "Because of how docile it is, the Brontosaurus makes for an ideal pack animal. Peaceful tribes use it to carry incredible quantities of resources, while warring tribes use it to mobilize their army. Its size and strength make it one of the unique creatures on the Island that can support a \"platform\" saddle. Unfortunately, its enormity means that the process of taming a Brontosaurus can take a very long time. Some may think this is an Apatosaurus, Dreadnoughtus, Argentinosaurus, or some other sauropod, but this is a strange Island, and I'm the one doing the research. I'm convinced that this genus is Brontosaurus, and no one can tell me otherwise. My study, my rules."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 2070,
+            "level_increase": {
+                "wild": 414,
+                "tamed": 0.02508
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.9
+            }
+        },
+        "stamina": {
+            "base": 240,
+            "level_increase": {
+                "wild": 24,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 10000,
+            "level_increase": {
+                "wild": 1000,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 32,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 60,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.02
+            }
+        },
+        "torpidity": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 120,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": [
+        {
+            "name": "Bronto Saddle",
+            "engram_level": 63
+        },
+        {
+            "name": "Bronto Platform Saddle",
+            "engram_level": 82
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Bronto Egg",
+        "incubation": {
+            "range": "28 - 31 °C / 82 - 88 °F",
+            "incubation_range": "30 °C / 86 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 1000,
+    "cloneable": true,
+    "entity_id": "Sauropod_Character_BP_C"
+}

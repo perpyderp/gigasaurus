@@ -1,0 +1,109 @@
+{
+    "name": "Velonasaurus spinavultus",
+    "dossier": {
+        "species": "Bubo chinookus",
+        "time": "Post-Holocene",
+        "diet": "Carnivore",
+        "temperament": "Omnivore",
+        "wild": "Velonasaurus spinavultus dwells in the small desert found outside the abandoned city, which is particularly fitting, because it looks like it's growing several cacti right on its face. As unfashionable as its facial fins might be, I recommend keeping a close eye on them. While said fins are folded inwards, Velonasaurus behaves like your average therapod, attacking with claws and teeth. However, when those fins are spread wide, Velonasaurus can rapidly fire a storm of spines at its prey. However, while in this state, its mobility is greatly hampered and it will eventually wear itself out. Therefore it sometimes prefers to unleash its spines in a single, deadly burst. By spinning around and firing a salvo of spines at the same time, Velonasaurus can defend itself from every angle at once.",
+        "domesticated": "Given its versatility, Velonasaurus spinavultus makes an excellent single rider mount in most combat situations, but it's particularly effective when defending an entrenched position. It's like a living, breathing gatling gun. Just be careful when giving it a congratulatory hug or pat on the head. Getting spined by your own war steed would be a rather embarrassing way to go."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 440,
+            "level_increase": {
+                "wild": 88,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 325,
+            "level_increase": {
+                "wild": 32.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 225,
+            "level_increase": {
+                "wild": 22.5,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2250,
+            "level_increase": {
+                "wild": 225,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 325,
+            "level_increase": {
+                "wild": 6.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 32,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 400,
+            "level_increase": {
+                "wild": 24
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": {
+        "name": "Velonasaur Saddle",
+        "engram_level": 27
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Velonasaur Egg",
+        "incubation": {
+            "range": "28 - 32 °C / 82 - 90 °F",
+            "incubation_range": "30 °C / 86 °F",
+            "incubation_time": "1h 8m 10.582s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 200,
+    "cloneable": true,
+    "entity_id": "Spindles_Character_BP_C"
+}

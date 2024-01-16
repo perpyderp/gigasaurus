@@ -1,0 +1,97 @@
+{
+    "name": "Shadowmane",
+    "dossier": {
+        "species": "N/A",
+        "time": "N/A",
+        "diet": "N/A",
+        "temperament": "N/A",
+        "wild": "Now that is one formidable looking predator. I think it's some kind of chimera -- part cat, part spiny tropical fish, all trouble. It seems to have unusually good camouflaging abilities, too. What would you name something like that?How about...'shadowmane'?",
+        "domesticated": "N/A"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 825,
+            "level_increase": {
+                "wild": 165,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 425,
+            "level_increase": {
+                "wild": 8.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.1
+            }
+        },
+        "torpidity": {
+            "base": 700,
+            "level_increase": {
+                "wild": 42
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": {
+        "gestation": "2h 23m 48.128s",
+        "baby_time": "4h 52m 23.86s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.298s",
+        "total_maturation": "2d 43m 58.596s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 350,
+    "cloneable": true,
+    "entity_id": "LionfishLion_Character_BP_C"
+}

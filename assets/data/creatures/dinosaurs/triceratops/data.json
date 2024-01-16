@@ -1,0 +1,110 @@
+{
+    "name": "Triceratops",
+    "dossier": {
+        "species": "Triceratops styrax",
+        "time": "Late Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Short-Tempered",
+        "wild": "Apparently a crossbreed of a Triceratops and Styracosaurus, Triceratops styrax has both the characteristic three-horned face of Triceratops and the prominent horned-ridge of Styracosaurus. Normally a very docile grazing animal, Triceratops becomes aggressive once angered. Triceratops will chase down would-be predators (and egg-stealers) with incredible prejudice. Running away from triceratops is harder than it seems due to its ability to charge and ram its target. I've seen Triceratops have an especially hostile reaction to the Tyrannosaurus, with herds attacking en masse. While not very fast, they are deadly in a group.",
+        "domesticated": "A common mount for those that ride dinosaurs, Triceratops doubles as pack animal and combat dinosaur. Triceratops' bony ridge works excellently as cover from frontal attack, and the dinosaur's charge is incredibly dangerous. It is largely protective of its kinds if its sense danger. In the presence of larger carnivores that appears as a threat, Triceratops becomes stronger and rallies the effort of its nearby species. It is also capable of harvesting a sizable amount of resources with its horns by shredding fruit from the leaves, making it a very useful work companion for smaller tribes."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 375,
+            "level_increase": {
+                "wild": 75,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 365,
+            "level_increase": {
+                "wild": 7.3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 32,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.015
+            },
+            "taming_bonus": {
+                "additive": 1.2
+            }
+        },
+        "torpidity": {
+            "base": 250,
+            "level_increase": {
+                "wild": 15,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": {
+            "name": "Trike Saddle",
+            "engram_level": 16
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Trike Egg",
+        "incubation": {
+            "range": "22 - 28 °C / 72 - 82 °F",
+            "incubation_range": "25 °C / 77 °F",
+            "incubation_time": "2h 29m 59.28s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "Trike_Character_BP_C"
+}

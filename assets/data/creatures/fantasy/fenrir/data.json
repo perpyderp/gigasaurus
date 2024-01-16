@@ -1,0 +1,87 @@
+{
+    "name": "Fenrir",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 750,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.084
+            }
+        },
+        "stamina": {
+            "base": 330,
+            "level_increase": {
+                "wild": 33,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.1
+            }
+        },
+        "weight": {
+            "base": 600,
+            "level_increase": {
+                "wild": 12,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 50,
+            "level_increase": {
+                "wild": 2.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.063,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.1
+            }
+        },
+        "torpidity": {
+            "base": 1225,
+            "level_increase": {
+                "wild": 73.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": null,
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": null,
+    "cloneable": true,
+    "entity_id": "Fenrir_Character_BP_C"
+}

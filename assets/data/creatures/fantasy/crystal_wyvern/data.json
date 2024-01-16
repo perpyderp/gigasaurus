@@ -1,0 +1,102 @@
+{
+    "name": "Crystal Wyvern",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1295,
+            "level_increase": {
+                "wild": 194.25,
+                "tamed": 0.0324
+            },
+            "taming_bonus": {
+                "additive": -785
+            }
+        },
+        "stamina": {
+            "base": 325,
+            "level_increase": {
+                "wild": 16.25,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 45,
+            "level_increase": {
+                "wild": 2.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": -0.25,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 60,
+            "level_increase": {
+                "wild": 32.7,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": [
+            "Blood Crystal Wyvern Egg",
+            "Ember Crystal Wyvern Egg",
+            "Tropical Crystal Wyvern Egg"
+        ],
+        "incubation": {
+            "range": "75 - 85 °C / 167 - 185 °F",
+            "incubation_range": "80 °C / 176 °F",
+            "incubation_time": "4h 59m 58.56s"
+        },
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 416,
+    "cloneable": true,
+    "entity_id": "CrystalWyvern_Character_BP_WS_C"
+}

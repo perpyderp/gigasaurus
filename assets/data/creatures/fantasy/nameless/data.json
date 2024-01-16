@@ -1,0 +1,70 @@
+{
+    "name": "Nameless",
+    "dossier": {
+        "species": "N/A",
+        "time": "N/A",
+        "diet": "N/A",
+        "temperament": "N/A",
+        "wild": "The origins of the Nameless remain a mystery, but wherever they came from, these vicious creatures are nothing to scoff at, as they are rarely found alone. Common Nameless act in a subservient role to their pack's alpha, and will quickly heed its call to battle. Though savage in nature, the Nameless are deceptively intelligent. When hurt, they burrow underground to recover and protect themselves from further damage. Fortunately, they are highly susceptible to damage and burns from charge based light sources, and exploiting this weakness can save a survivor's life.",
+        "domesticated": "All attempts to pacify a Nameless have failed. Each one has an extremely powerful bond with its pack leader, and for survivors, it might as well be unbreakable."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 220,
+            "level_increase": {
+                "wild": 44
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150
+            }
+        },
+        "weight": {
+            "base": 180,
+            "level_increase": {
+                "wild": 3.6
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {}
+        },
+        "torpidity": {
+            "base": 220,
+            "level_increase": {
+                "wild": 13.2
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": null,
+    "cloneable": true,
+    "entity_id": "ChupaCabra_Character_BP_C"
+}
