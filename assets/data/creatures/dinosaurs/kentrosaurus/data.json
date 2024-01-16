@@ -1,0 +1,104 @@
+{
+    "name": "Kentrosaurus",
+    "dossier": {
+        "species": "Kentrosaurus Aethiopicus",
+        "time": "Late Jurassic",
+        "diet": "Herbivore",
+        "temperament": "Short-Tempered",
+        "wild": "While Kentrosaurus aethiopicus is considerably smaller than its close relative, Stegosaurus regium, it is much more formidable in matters of self-defense. In fact, it is arguably the pound for pound champion of not only the Stegosaurus, but when encountered in close-knit fighting packs, ranks atop the Island's herbivorous dinosaurs in general. Thanks to its wickedly sharp defensive spikes, any creature that attacks Kentrosaurus is likely to be reversely wounded in turn, and it is capable of piercing even the thickest of hides and armors when it goes on the offensive. I have personally witnessed the Kentrosaurus fell much larger predators in a single such \"impaling\" maneuver! Underestimating Kentrosaurus can be a fatal mistake, particularly when it is in a herd. When travelling in numbers, Kentrosaurus seems to grow much more aggressive, increasing the range at which it will defend its territory.",
+        "domesticated": "Survivors have seen little success in their attempts to ride Kentrosaurus, owing to its spikes and hot-headed temperament. However, a tamed herd of Kentrosaurus can effectively defend a compound and take on larger carnivores. Once impaled by its attack, the Kentrosaurus slams the attacker on the ground continuously, helping to turn the tide of a pitched battle!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 650,
+            "level_increase": {
+                "wild": 130,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 6000,
+            "level_increase": {
+                "wild": 600,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 42,
+            "level_increase": {
+                "wild": 2.1,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Kentro Egg",
+        "incubation": {
+            "range": "24 - 30 °C / 75 - 86 °F",
+            "incubation_range": "27 °C / 81 °F",
+            "incubation_time": "2h 46m 39.2s"
+        },
+        "baby_time": "5h 8m 38.517s",
+        "juvenile_time": "20h 34m 34.069s",
+        "adolescent_time": "1d 1h 43m 12.586s",
+        "total_maturation": "2d 3h 26m 25.172s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": true,
+    "entity_id": "Kentro_Character_BP_C"
+}

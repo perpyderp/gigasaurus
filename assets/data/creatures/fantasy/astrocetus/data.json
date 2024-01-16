@@ -1,0 +1,91 @@
+{
+    "name": "Astrocetus",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 2800,
+            "level_increase": {
+                "wild": 392,
+                "tamed": 0.026
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": null,
+            "level_increase": {
+                "wild": null,
+                "tamed": null
+            }
+        },
+        "food": {
+            "base": 6000,
+            "level_increase": {
+                "wild": 600,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.25
+            }
+        },
+        "weight": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.05
+            }
+        },
+        "melee": {
+            "base": 75,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.056,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 4200,
+            "level_increase": {
+                "wild": 84,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Extraordinary"
+    },
+    "saddle": {
+        "name": "Astrocetus Tek Saddle",
+        "engram_level": null
+    },
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 4000,
+    "cloneable": false,
+    "entity_id": "SpaceWhale_Character_BP_C"
+}

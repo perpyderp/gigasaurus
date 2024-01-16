@@ -1,0 +1,110 @@
+{
+    "name": "Megalosaurus",
+    "dossier": {
+        "species": "Megalosaurus noctedominus",
+        "time": "Mid Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Nocturnally Aggressive",
+        "wild": "Much like the Island's other large theropods, Megalosaurus noctedominus is an aggressive cave carnivore that should not be taken lightly. Unlike most of the other theropods, it is a primarily nocturnal creature. As dawn approaches, Megalosaurus begins looking for a secluded place to spend the day sleeping in relative safety. Conversely, if disturbed during the day, Megalosaurus is significantly more sluggish. Either way, however, its primary combat tactic is to bite onto its target, then lock its jaw shut in an iron grip. Only larger creatures can hope to break free once Megalosaurus locks its jaw. The creature then proceeds to gnaw on its prey until death. It's a terrifying, grisly spectacle to watch, and a formidable tactic for a tribe to employ against more nimble opponents.",
+        "domesticated": "While Megalosaurus is not the most powerful theropod, it is still highly sought after by night-raiders. Due to its nocturnal nature, Megalosaurus becomes much more formidable at night, dodging attacks, conserving stamina, and attacking more accurately, to name a few of its enhanced talents."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1025,
+            "level_increase": {
+                "wild": 205,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 75,
+            "level_increase": {
+                "wild": 3.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 775,
+            "level_increase": {
+                "wild": 46.5,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": {
+            "name": "Megalosaurus Saddle",
+            "engram_level": 57
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Megalosaurus Egg",
+        "incubation": {
+            "range": "26 - 32 °C / 79 - 90 °F",
+            "incubation_range": "29 °C / 84 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 410,
+    "cloneable": true,
+    "entity_id": "Megalosaurus_Character_BP_C"
+}

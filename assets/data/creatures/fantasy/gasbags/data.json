@@ -1,0 +1,101 @@
+{
+    "name": "Gasbags",
+    "dossier": {
+        "species": "Mopsechiniscus fluitobesus",
+        "time": "Post-Holocene",
+        "diet": "Omnivore",
+        "temperament": "Passive",
+        "wild": "It was always hypothesized that a member of the Tardigrada phylum would be the last species on Earth in the event of a global apocalypse, so in some ways, the existence of Mopsechiniscus fluitobesus is completely expected. Its size and method of travel, however? Less so. Mopsechiniscus is slow and ineffective in a fight, so to survive, it tends to choose flight - literally. First, it inflates itself like a balloon, briefly slowing down and gaining durability. Then it launches itself into the air by expelling gas through a series of sphincters in its underbelly, which it also uses to slow its descent. Yes, it's as...unusual as it sounds, but Mopsechiniscus makes the most of its inflatable nature. In addition to jumping, it can use its stored up gases to push back aggressors, or even float on water.",
+        "domesticated": "While a poor steed in battle, Mopsechiniscus is a fantastic beast of burden. The hairs on its back let a single rider steer it without a saddle, and it carries an incredible amount of cargo for its size. A small caravan of these could see us swimming in resources in no time."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 650,
+            "level_increase": {
+                "wild": 130,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.09
+            }
+        },
+        "food": {
+            "base": 3500,
+            "level_increase": {
+                "wild": 350	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.0125
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.015
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": {
+        "name": "Gasbags Saddle",
+        "engram_level": 43
+    },
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": {
+        "gestation": "7h 56m 11.428s",
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "GasBags_Character_BP_C"
+}

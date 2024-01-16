@@ -1,0 +1,49 @@
+{
+    "name": "Macrophage",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": null,
+            "level_increase": {}
+        },
+        "stamina": {
+            "base": null,
+            "level_increase": {}
+        },
+        "oxygen": {
+            "base": null,
+            "level_increase": {}
+        },
+        "food": {
+            "base": null,
+            "level_increase": {}
+        },
+        "weight": {
+            "base": null,
+            "level_increase": {}
+        },
+        "melee": {
+            "base": null,
+            "level_increase": {}
+        },
+        "movement": {
+            "base": null,
+            "level_increase": {}
+        },
+        "torpidity": {
+            "base": null,
+            "level_increase": {}
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 70,
+    "cloneable": false,
+    "entity_id": "LanternLizard_Character_BP_C"
+}

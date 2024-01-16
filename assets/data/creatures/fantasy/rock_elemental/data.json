@@ -1,0 +1,93 @@
+{
+    "name": "Rock Elemental",
+    "dossier": {
+        "species": "Colossus petram",
+        "time": "Unknown",
+        "diet": "Minerals",
+        "temperament": "Extremely Territorial",
+        "wild": "Colossus petram is like no creature I have ever encountered. There is no biological or historical precedent for it. Its nearest relatives exist only in legend – mythical statues that could come to life like the Golem of Prague. That makes it all the more dangerous. What survivor could possibly expect a seemingly benign rock formation to suddenly spring to life and attack them? Fortunately, Colossus petram's massive size makes it quite slow, so I would advise most survivors to flee immediately if encountering it in the wild. Colossus petram survives by slowly absorbing nearby minerals while in its dormant state, which consequently means that its body contains a wealth of metal ingots. If undisturbed, it can maintain this hibernation ad infinitum, but it will viciously attack anyone who encroaches upon its territory. A solitary creature, Colossus petram lives alone, and will not even protect its own kind.",
+        "domesticated": "If somehow tamed, Colossus petram could prove to be an invaluable asset, particularly in a siege. Only armor piercing rounds or explosives can harm it at all, and it will handily smash through stone structures."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 25000,
+            "level_increase": {
+                "wild": 312.5,
+                "tamed": 0.027
+            },
+            "taming_bonus": {
+                "additive": -22000
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 6000,
+            "level_increase": {
+                "wild": 600,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 660,
+            "level_increase": {
+                "wild": 13.2,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 300,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.0175,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 5000,
+            "level_increase": {
+                "wild": 100
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Extraordinary"
+    },
+    "saddle": {
+        "name": "Rock Golem Saddle",
+        "engram_level": 70
+    },
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 1000,
+    "cloneable": true,
+    "entity_id": "RockGolem_Character_BP_C"
+}

@@ -1,0 +1,110 @@
+{
+    "name": "Pegomastax",
+    "dossier": {
+        "species": "Pegomastax fructarator",
+        "time": "Early Jurassic",
+        "diet": "Herbivore",
+        "temperament": "Defensive",
+        "wild": "Among the bottom of the island's dinosaur food chain is a small herbivore called Pegomastax fructarator. It is content to spend all day alone, gorging itself on far more food than you might reasonably expect for a creature of its tiny stature. Its beak appears perfectly evolved for collecting food from plants while avoiding the indigestible fibrous strands. Pegomastax is likely to ignore any nearby creature and continue foraging, unless it is attacked. At which point, it turns into a very aggressive (though rather unthreatening) opponent, shrieking and wooping far above its actual threat level. You would expect a creature this small and weak to live in flocks, but Pegomastax seems to be fairly solitary in nature.",
+        "domesticated": "While not pretty, and far too small to ride, tribes often keep Pegomastax around as a kind of farming aid. Its skill at scavenging means that it collects an extraordinary quantity of seeds and berries, while also handily gathering the rare Flowers, Mushrooms, and other ingredients necessary to cook up unusual concoctions."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 120,
+            "level_increase": {
+                "wild": 24,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 55,
+            "level_increase": {
+                "wild": 1.1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 12 ,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        },
+        "torpidity": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.8,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Pegomastax Egg",
+        "incubation": {
+            "range": "28 - 32 °C / 82 - 90 °F",
+            "incubation_range": "30 °C / 86 °F",
+            "incubation_time": "1h 8m 10.582s"
+        },
+        "baby_time": "3h 5m 11.111s",
+        "juvenile_time": "12h 20m 44.444s",
+        "adolescent_time": "15h 25m 55.555s",
+        "total_maturation": "1d 6h 51m 51.109s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 20,
+    "cloneable": true,
+    "entity_id": "Pegomastax_Character_BP_C"
+}

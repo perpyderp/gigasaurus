@@ -1,0 +1,114 @@
+{
+    "name": "Rex",
+    "dossier": {
+        "species": "Tyrannosaurus dominum",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Arguably the deadliest creature on the Island, Tyrannosaurus dominum is a killing machine. Active mostly when hunting for food or defending its nest, a good plan is to avoid every Tyrannosaurus. It is pure power -- from its stomp to its tail. It is not able to intimidate every foe with its roar, but upon hearing it, it might scare the poop out of you - quite literally. Despite being a different sub-species of Tyrannosaurus, everyone I've met still refers to them as a \"Rex\" or a \"T-Rex\". I've long since stopped trying to convince anyone, especially the few who I've encountered wearing Tyrannosaurus teeth as necklaces.",
+        "domesticated": "Taming a Tyrannosaurus is without a doubt the goal for any warlord or warring tribe. Tyrannosaurus is a fierce battle companion. There is a reason Tyrannosaurus is considered the king of dinosaurs (or in this genus, the \"lord\"). Any tribe that manages to tame one has almost nothing to fear."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1100,
+            "level_increase": {
+                "wild": 220,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 420,
+            "level_increase": {
+                "wild": 42,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 62,
+            "level_increase": {
+                "wild": 3.1,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1550,
+            "level_increase": {
+                "wild": 93
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": [
+        {
+            "name": "Rex Saddle",
+            "engram_level": 74
+        },
+        {
+            "name": "Rex Tek Saddle",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": [
+            "Rex Egg",
+            "Tek Rex Egg"
+        ],
+        "incubation": {
+            "range": "32 - 34 °C / 90 - 93 °F",
+            "incubation_range": "33 °C / 91 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 550,
+    "cloneable": true,
+    "entity_id": "Rex_Character_BP_C"
+}

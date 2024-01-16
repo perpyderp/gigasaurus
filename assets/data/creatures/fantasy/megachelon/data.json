@@ -1,0 +1,99 @@
+{
+    "name": "Managarmr",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1920,
+            "level_increase": {
+                "wild": 384,
+                "tamed": 0.0459
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 8800,
+            "level_increase": {
+                "wild": 880	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 2500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 125,
+            "level_increase": {
+                "wild": 6.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 10000,
+            "level_increase": {
+                "wild": 600
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": {
+        "name": "Megachelon Platform Saddle",
+        "engram_level": 45
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Megachelon Egg",
+        "incubation": {
+            "range": "-75 - 75 °C / -103 - 167 °F",
+            "incubation_range": "0 °C / 32 °F",
+            "incubation_time": "4h 59m 58.56s"
+        },
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 3000,
+    "cloneable": true,
+    "entity_id": "GiantTurtle_Character_BP_C"
+}

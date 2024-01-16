@@ -1,0 +1,110 @@
+{
+    "name": "Parasaur",
+    "dossier": {
+        "species": "Parasaurolophus amphibio",
+        "time": "Late Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Skittish",
+        "wild": "Parasaurolophus amphibio has one of the more interesting adaptations of any creature I've seen on the Island. Like all Parasaur, it has a signature crest on its head. Very docile at first, I've been able to approach the creature without disturbing it. If startled, however, the creature can vocalize a distress call to the surrounding area that warns of danger. Parasaurolophus appears to be low on the food chain and is hunted by everything, creatures and humans alike, which explains its skittish nature. It is a good source of meat and hide, if you can manage to keep up with it long enough to kill it.",
+        "domesticated": "Despite being what most tribes consider a relatively useless creature to tame, I once met an interesting woman who had tamed an entire herd of them. She informed me that many overlooked the creature's potential. She even graciously gifted me a fancy saddle to put on my own Parasaurolophus one day. As a relatively simple creature to domesticate, Parasaurolophus is commonly one of the first mounts a tribe will be able to acquire. Its ability to run relatively fast for lengthy intervals makes it a solid mode of medium-range transportation, though it has almost no ability to defend itself or its rider in a traditional sense. Smaller creatures, however, appear to be frightened by the horn of Parasaurolophus although it doesn't do much damage. It also has decent weight-bearing capabilities, which could prove useful for nomadic tribes as they work to establish a presence on the Island."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 480,
+            "level_increase": {
+                "wild": 9.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 12 ,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.67
+            }
+        },
+        "torpidity": {
+            "base": 150,
+            "level_increase": {
+                "wild": 9,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Basic"
+    },
+    "saddle": {
+            "name": "Parasaur Saddle",
+            "engram_level": 9
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Parasaur Egg",
+        "incubation": {
+            "range": "24 - 28 °C / 75 - 82 °F",
+            "incubation_range": "26 °C / 79 °F",
+            "incubation_time": "1h 25m 42.446s"
+        },
+        "baby_time": "2h 38m 43.809s",
+        "juvenile_time": "10h 34m 55.238s",
+        "adolescent_time": "13h 13m 39.047s",
+        "total_maturation": "1d 2h 27m 18.094s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 125,
+    "cloneable": true,
+    "entity_id": "Para_Character_BP_C"
+}

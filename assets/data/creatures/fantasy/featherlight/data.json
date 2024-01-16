@@ -1,0 +1,114 @@
+{
+    "name": "Featherlight",
+    "dossier": {
+        "species": "Microluminis alectryon",
+        "time": "Unknown",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "A floating beacon of light often found in the deepest pits of these caverns, Microluminis alectryon's appearance can seem almost heavenly. Its colorful plumage doesn't hurt either. Even without the charged light it emits, it would give any modern bird on Earth a run for its money in terms of pure spectacle. Although its feathery eyebrows might give one of the impression that it is related to owls, it is not a bird of prey. It is entirely docile, and shows no aggression towards survivors or other creatures.",
+        "domesticated": "Microluminis alectryon's ability to fly and the ease with which it perches upon a survivor's shoulder has made it a favored pet among many. Some consider it the most refined of its glowing brethren, but I think they just want to look like a pirate. Not that I blame them..."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 115,
+            "level_increase": {
+                "wild": 23,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 180,
+            "level_increase": {
+                "wild": 19.8,
+                "tamed": 0.11
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 70,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3,
+            "level_increase": {
+                "wild": 0.195,
+                "tamed": 0.0204
+            },
+            "taming_bonus": {
+                "additive": 0.154,
+                "multiplicative": 0.22
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "additive": 1.3
+            }
+        },
+        "torpidity": {
+            "base": 60,
+            "level_increase": {
+                "wild": 3.6,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Featherlight Egg",
+        "incubation": {
+            "range": "29 - 32 °C / 84 - 90 °F",
+            "incubation_range": "31 °C / 88 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 25,
+    "cloneable": true,
+    "entity_id": "LanternBird_Character_BP_C"
+}

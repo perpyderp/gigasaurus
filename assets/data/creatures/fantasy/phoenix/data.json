@@ -1,0 +1,91 @@
+{
+    "name": "Phoenix",
+    "dossier": {
+        "species": "Unknown",
+        "time": "Unknown",
+        "diet": "Flame Eater",
+        "temperament": "Elusive",
+        "wild": "Among the most mysterious of all flying creatures, much of what is known about the Phoenix exists in legends which have been told through generations. These myths have often changed through the passing of time but one constant is the belief that fire represents cleansing and renewal. The Phoenix embodies this process through its everlasting cycle of death and renewal! Extreme heat-waves in the desert seem to initiate the rise of the Phoenix, while the end of this so-called \"Super Heat\" precipitated the creature's reversion into ashes. While the Phoenix seems ambivalent to most wildlife, if provoked its ferocity is evident in its ability to set targets aflame with a single bite.",
+        "domesticated": "Attempting to pacify a Phoenix is, quite literally, playing with fire. The Phoenix must be continually set ablaze in order to be tamed. I've seen many turned into dust and ash in the attempt. After it has been pacified, the Phoenix will regain its vitality when it is aflame! Although its compact size prevents the Phoenix from being ridden, its aggressive enflaming has proved to be invaluable in battle. Plus, it can quickly roast up tasty cooked meat and refine raw ores at any time, as a living furnace!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 640,
+            "level_increase": {
+                "wild": 128,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 352,
+            "level_increase": {
+                "wild": 35.2,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 324,
+            "level_increase": {
+                "wild": 6.48,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 23,
+            "level_increase": {
+                "wild": 1.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 35,
+    "cloneable": true,
+    "entity_id": "Phoenix_Character_BP_C"
+}

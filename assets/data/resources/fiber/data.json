@@ -1,0 +1,18 @@
+{
+    "name": "Fiber",
+    "rarity": "common",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.01,
+    "stack_size": 300,
+    "found_in": [
+        "White",
+        "Green",
+        "Blue"
+    ],
+    "hexagon_exchange": {
+        "exchange_yields": 50,
+        "hexagons": 12
+    }
+}

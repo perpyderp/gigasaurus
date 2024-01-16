@@ -1,0 +1,95 @@
+{
+    "name": "Reaper",
+    "dossier": {
+        "species": "Unknown",
+        "time": "Unknown",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "At home in the cavern's deepest chambers, Reapers are towering, terrifying apex predators. Beyond overwhelming their prey with fangs and claws, Reapers can burrow underground to set an ambush and fire acidic projectiles from their tails. Yet it is their macabre method of reproduction that is their most frightening feature. Bizarrely, a female Reaper's tail doubles as a reproductive organ, but only when piercing human survivors. Once impregnated, the survivor carries the young Reaper until it bursts from their chest in a grotesque, disturbing spectacle.",
+        "domesticated": "If impregnated by a female Reaper, I strongly urge that the survivor kill the embryo via exposure to radiation. However, there are rumors that Reapers might imprint themselves on a survivor who possesses a Reaper pheromone gland. This has led some mad survivors with dreams of riding on the back of a Reaper to try seeing the gestation period through to the end, but that is extremely dangerous, not to mention disgusting."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 45000,
+            "level_increase": {
+                "wild": 234,
+                "tamed": 0.027
+            },
+            "taming_bonus": {
+                "additive": -38500
+            }
+        },
+        "stamina": {
+            "base": 480,
+            "level_increase": {
+                "wild": 48,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 415,
+            "level_increase": {
+                "wild": 8.3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 75,
+            "level_increase": {
+                "wild": 3.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 925,
+            "level_increase": {
+                "wild": 55.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": true,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": {
+        "gestation": "12h",
+        "baby_time": "7h 42m 57.775s",
+        "juvenile_time": "1d 6h 51m 51.1s",
+        "adolescent_time": "1d 14h 34m 48.875s",
+        "total_maturation": "3d 5h 9m 37.75s",
+        "breeding_interval": "-"
+    },
+    "drag_weight": 525,
+    "cloneable": true,
+    "entity_id": "Xenomorph_Character_BP_Male_Tamed_C"
+}

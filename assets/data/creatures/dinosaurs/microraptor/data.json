@@ -1,0 +1,110 @@
+{
+    "name": "Microraptor",
+    "dossier": {
+        "species": "Microraptor gnarilongus",
+        "time": "Early Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Microraptor Gnarilongus is one of the smallest non-avian dinosaurs on the Island. Incredibly fast for its size, Microraptor is a voracious carnivore. Aggressive towards anything regardless of size, Microraptor fancies itself an apex predator. It will attack humans on sight, especially if it's not alone. When hunting, Microraptor's speed is only one of its assets. While not quite capable of sustained flight, its wings allow it to stay aloft for several seconds while jumping. This allows Microraptor to attack its prey's vulnerable areas, as well as search for small river fish. Notable, the creature also tends to use this ability to knock oblivious humans off of their mounts.",
+        "domesticated": "While not a powerhouse against armed enemies, Microraptor is particularly suited to dismounting enemy riders. Microraptors natural tendency to attack weaker creatures means they can ignore the mount while attacking the rider with leaps of fury."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 130,
+            "level_increase": {
+                "wild": 26,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 45,
+            "level_increase": {
+                "wild": 0.9,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 8,
+            "level_increase": {
+                "wild": 0.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 2
+            }
+        },
+        "torpidity": {
+            "base": 75,
+            "level_increase": {
+                "wild": 4.5,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Microraptor Egg",
+        "incubation": {
+            "range": "24 - 28 °C / 75 - 82 °F",
+            "incubation_range": "26 °C / 79 °F",
+            "incubation_time": "1h 25m 42.446s"
+        },
+        "baby_time": "5h 26m 47.842s",
+        "juvenile_time": "21h 47m 11.369s",
+        "adolescent_time": "1d 3h 13m 59.211s",
+        "total_maturation": "2d 6h 27m 58.422s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 35,
+    "cloneable": true,
+    "entity_id": "Microraptor_Character_BP_C"
+}

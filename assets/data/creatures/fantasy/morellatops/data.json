@@ -1,0 +1,109 @@
+{
+    "name": "Managarmr",
+    "dossier": {
+        "species": "Morellatops dromedarius",
+        "time": "Early Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "Morellatops dromedarius seems to be to a relative of both the Morelladon and Ceratops genuses, which in itself is rather strange. On top of that, it has developed to ability to store water in its humps like a camel. This makes it a critical part of the desert's food chain, as it provides predators with both food and hydration.",
+        "domesticated": "When survivors discovered how to tap into the water in Morellatops' humps without harming it, the docile creature became the desert's essential pack animal. Not only can it carry a good amount of weight, but it can provide survivors with a large, mobile water source that can mean the difference between life and death on any given journey. Morellatops has limited options when it comes to self defense, so I would not recommend taking one into combat. However, so long as survivors don't forget to let Morellatops stop by a well every now and then, they will find the creature an invaluable companion."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 400,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 220,
+            "level_increase": {
+                "wild": 22,
+                "tamed": 0.06
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 6000,
+            "level_increase": {
+                "wild": 600	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 440,
+            "level_increase": {
+                "wild": 8.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 32,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 150,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.964
+            }
+        },
+        "torpidity": {
+            "base": 315,
+            "level_increase": {
+                "wild": 18.9
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": {
+        "name": "Morellatops Saddle",
+        "engram_level": 11
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Morellatops Egg",
+        "incubation": {
+            "range": "22 - 28 °C / 72 - 82 °F",
+            "incubation_range": "25 °C / 77 °F",
+            "incubation_time": "2h 29m 59.28s"
+        },
+        "baby_time": "3h 5m 11.111s",
+        "juvenile_time": "12h 20m 44.444s",
+        "adolescent_time": "15h 25m 55.555s",
+        "total_maturation": "1d 6h 51m 51.109s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "camelsaurus_Character_BP_C"
+}

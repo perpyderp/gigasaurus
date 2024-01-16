@@ -1,0 +1,106 @@
+{
+    "name": "Snow Owl",
+    "dossier": {
+        "species": "Bubo chinookus",
+        "time": "Post-Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Discovering Bubo chinookus was a pleasant surprise. Owls are remarkable creatures, but they're not the type that could survive an extinction level event on their own. Since it never strays from the patch of frozen tundra we encountered, I believe the Obelisk was the key to its survival. Clearly a descendant of modern Strigdae, Bubo shares many traits with its smaller ancestors. For example, it excretes waste in the form of pellets, which make excellent fertilizer, and their large wings let them save energy during long, silent flights. They even hunt in the same way: by diving towards the ground to attack their prey with powerful talons. However, these talons also secrete a chemical with a high freezing point to slow down their prey, and they can even unleash this chemical in a wide cloud, temporarily freezing their foes.",
+        "domesticated": "With its swift flying and frigid attacks, Bubo makes an excellent single-rider support mount or scout. The latter is helped by its tremendous vision, which it can share with its rider via its antenna. Not only does this make enemies easier to see, but Bubo can also spot Element veins with ease, even when they're underground."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 325,
+            "level_increase": {
+                "wild": 65,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 375,
+            "level_increase": {
+                "wild": 7.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 600,
+            "level_increase": {
+                "wild": 36
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": {
+        "name": "Snow Owl Saddle",
+        "engram_level": 61
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Snow Owl Egg",
+        "incubation": {
+            "range": "12 - 13.5 °C / 54 - 56 °F",
+            "incubation_range": "13 °C / 55 °F",
+            "incubation_time": "2h 56m 27.389s"
+        },
+        "baby_time": "5h 26m 47.842s",
+        "juvenile_time": "21h 47m 11.369s",
+        "adolescent_time": "1d 3h 13m 59.211s",
+        "total_maturation": "2d 6h 27m 58.422s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 35,
+    "cloneable": true,
+    "entity_id": "Owl_Character_BP_C"
+}

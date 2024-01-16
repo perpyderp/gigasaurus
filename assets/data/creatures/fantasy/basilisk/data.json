@@ -1,0 +1,100 @@
+{
+    "name": "Basilisk",
+    "dossier": {
+        "species": "Serpens regulus",
+        "time": "Unknown",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "More than twice the size of wild Titanoboa exonantur, Serpens regulus is the largest and most lethal snake I've encountered. With a skull that's more draconic than serpentine, it possesses a powerful bite, made even deadlier by the potent venom dripping from its fangs. The unique shape of its skull allows Serpens to hunt in a way that other snakes cannot: by burrowing. Once underground, it simply waits for its victims to approach. Fortunately its forked tail is usually still visible, poking just aboveground.",
+        "domesticated": "Miraculously, survivors have not only managed to tame Serpens regulus, but ride it. Some can even stay seated while it lies in wait belowground, though I doubt it's a pleasant experience. While a wild Serpens can only be forced out of hiding by fire or explosives, once domesticated, it is easily trained to burrow or surface on command."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 2750,
+            "level_increase": {
+                "wild": 550,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.5
+            }
+        },
+        "stamina": {
+            "base": 650,
+            "level_increase": {
+                "wild": 65,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null,
+            "level_increase": {
+                "wild": null,
+                "tamed": null
+            }
+        },
+        "food": {
+            "base": 2500,
+            "level_increase": {
+                "wild": 250,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 2200,
+            "level_increase": {
+                "wild": 44,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 120,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 175,
+            "level_increase": {
+                "wild": 10.5,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": {
+        "name": "Basilisk Saddle",
+        "engram_level": 85
+    },
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 425,
+    "cloneable": false,
+    "entity_id": "Basilisk_Character_BP_C"
+}
