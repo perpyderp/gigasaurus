@@ -1,0 +1,107 @@
+{
+    "name": "Ravager",
+    "dossier": {
+        "species": "Canis barghest",
+        "time": "Unknown",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Anywhere else, Canis barghest's powerful muscles, wicked claws, and fearsome countenance would put it near the top of the food chain. Yet in these caves, this common, lupine predator resides somewhere in the middle. That said, it is an intelligent hunter with an exceptional ability to adapt. For example, it has learned to utilize the zip lines that survivors have built as a means of travel, all on its own. Remarkable!",
+        "domesticated": "The strong legs of the Canis barghest make it an effective mount for many survivors, particularly for long distance travel. While other creatures outshine it when it comes to bursts of speed, its stamina and ability to climb across both natural vines and artificial zip lines makes it a highly versatile travelling companion."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 400,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120	,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.0136
+            },
+            "taming_bonus": {
+                "additive": 0.042,
+                "multiplicative": 0.132
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.35
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": {
+        "name": "Ravager Saddle",
+        "engram_level": 47
+    },
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": {
+        "gestation": "4h 10m 37.593s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "CaveWolf_Character_BP_C"
+}

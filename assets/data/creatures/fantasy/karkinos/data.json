@@ -1,0 +1,91 @@
+{
+    "name": "Karkinos",
+    "dossier": {
+        "species": "Karkinos versatus",
+        "time": "Unknown",
+        "diet": "Omnivore",
+        "temperament": "Aggressive",
+        "wild": "Karkinos Versatus is the giant cousin of modern crab species, with long, spindly limbs that remind me of the Japanese Spider Crab and a hard, stony shell. It is much more agile than its smaller brethren, but even more noticeable are its pincer claws. In an extraordinary display of dexterity, Karkinos is able to wield each claw independently and precisely. This allows it to trap multiple targets in its vice like grip, or hold an enemy in one claw while it smashes a second foe with the other.",
+        "domesticated": "Many survivors have found Karkinos to be an excellent war steed, as it can snatch enemy riders from their mounts, or grab and throw smaller creatures. However, its ability to leap to great heights and its swiftness relative to its size also make it useful in caravans."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 240,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 200,
+            "level_increase": {}
+        },
+        "food": {
+            "base": 5000,
+            "level_increase": {
+                "wild": 500	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 800,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 50,
+            "level_increase": {
+                "wild": 2.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 40
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": {
+        "name": "Karkinos Saddle",
+        "engram_level": 65
+    },
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 450,
+    "cloneable": true,
+    "entity_id": "Crab_Character_BP_C"
+}

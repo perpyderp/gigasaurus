@@ -1,0 +1,102 @@
+{
+    "name": "Bloodstalker",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 450,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.5
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 26,
+            "level_increase": {
+                "wild": 1.3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.088
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.015
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 180,
+            "level_increase": {
+                "wild": 10.8	,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Bloodstalker Egg",
+        "incubation": {
+            "range": "27 - 30 °C / 81 - 86 °F",
+            "incubation_range": "29 °C / 84 °F",
+            "incubation_time": "2h 56m 27.388s"
+        },
+        "baby_time": "5h 26m 47.843s",
+        "juvenile_time": "21h 47m 11.372s",
+        "adolescent_time": "1d 3h 13m 59.216s",
+        "total_maturation": "2d 6h 27m 58.431s",
+        "breeding_interval": "18h - 2d"
+    },
+    "reproduction": null,
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "BogSpider_Character_BP_C"
+}

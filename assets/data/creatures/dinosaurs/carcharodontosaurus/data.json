@@ -1,0 +1,103 @@
+{
+    "name": "Carcharodontosaurus",
+    "dossier": {
+        "species": "Carcharodontosaurus medicupestis",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "I feel lucky to have crossed paths with Carcharodontosaurus medicupestis and lived to tell the tale. Though I'm not sure if this predator grows bigger than a Giganotosaurus, I hope never to find out. Just one of these bruisers held its own against an army of us, and that encounter cost us dearly.\nCarcharodontosaurus can sweep aside attackers with its tail, but it's the other end you'll really want to avoid. It has teeth like steak knives, set in jaws strong enough to shred most prey. Even a near-miss will carve you up, but good.\nLike its namesake the great white shark, Carcharodontosaurus gets more dangerous once it tastes blood. Each kill seems to give these monsters a rush and drive it into a berserker frenzy.",
+        "domesticated": "Anyone that manages to tame a Carcharodontosaurus will gain a new way to rally their tribe for battle. There's something about this monster's roar that drives others to fight — a war cry for Hell's own army. The more tactical tribes will let their Carcharodontosaurus tear through the mid-sized creatures in their enemy's ranks, thereby building up its bloodrage to take on the largest threats. Talk about shock and awe!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 70000,
+            "level_increase": {
+                "wild": 56,
+                "tamed": 0.0008
+            },
+            "taming_bonus": {
+                "additive": -54000
+            }
+        },
+        "stamina": {
+            "base": 480,
+            "level_increase": {
+                "wild": 2.88,
+                "tamed": 0.025
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 0.375,
+                "tamed": 0.025
+            }
+        },
+        "food": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.025
+            }
+        },
+        "weight": {
+            "base": 650,
+            "level_increase": {
+                "wild": 13,
+                "tamed": 0.01
+            }
+        },
+        "melee": {
+            "base": 211,
+            "level_increase": {
+                "wild": 10.55,
+                "tamed": 0.0085
+            },
+            "taming_bonus": {
+                "additive": -0.8
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.31
+            }
+        },
+        "torpidity": {
+            "base": 6000,
+            "level_increase": {
+                "wild": 360,
+                "tamed": null
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": {
+            "name": "Carcharo Saddle",
+            "engram_level": 96
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Carcharodontosaurus Egg",
+        "incubation": {
+            "range": "37 - 39 °C / 99 - 102 °F",
+            "incubation_range": "38 °C / 100 °F",
+            "incubation_time": "2d 1h 59m 45.601s"
+        },
+        "baby_time": "1d 23m 54.87s",
+        "juvenile_time": "4d 1h 35m 39.482s",
+        "adolescent_time": "5d 1h 59m 34.352s",
+        "total_maturation": "10d 3h 59m 8.704s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 950,
+    "cloneable": true,
+    "entity_id": "Carcha_Character_BP_C"
+}

@@ -1,0 +1,97 @@
+{
+    "name": "Griffin",
+    "dossier": {
+        "species": "Gryphon magnificum",
+        "time": "Late Triassic",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Gryphon Magnificum is undoubtedly a sight to behold. Many ancient myths tell of various depictions of the Griffin over the ages, but what is never disputed is its majestic and mysterious nature. With the front half of an eagle and the back half of a lion, it is as if these two creatures somehow fused together to form a superior land and air predator. While one's first instinct might be to approach the creature and marvel at its beauty, that would be a very poor decision. Its range of attacks makes it one of the more versatile predators I've witnessed. If its presence alone isn't enough to intimidate potential hunters, it has the ability to dive from the sky to the ground with such force that it inflicts damage to anyone unfortunate enough to be below it, or carry its momentum back into a rapid uplift.",
+        "domesticated": "The idea of pacifying such a beast is nothing to scoff at. Its highly independent nature and disinterest with interacting with humans combined with its power and strength make the Griffin a challenge to domesticate. However, there have been those who are fearless enough to attempt and succeed at this miraculous feat. Once tamed, riding atop a Griffin along with a tribemate passenger, dashing through the air at high speed, is a prize in and of itself."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 950,
+            "level_increase": {
+                "wild": 142.5,
+                "tamed": 0.0432
+            },
+            "taming_bonus": {
+                "additive": -900
+            }
+        },
+        "stamina": {
+            "base": 225,
+            "level_increase": {
+                "wild": 11.25,
+                "tamed": 0.06
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 160	,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 280,
+            "level_increase": {
+                "wild": 5.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 27,
+            "level_increase": {
+                "wild": 1.35,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": -0.5,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.365
+            }
+        },
+        "torpidity": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 90
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Extraordinary"
+    },
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 200,
+    "cloneable": true,
+    "entity_id": "Griffin_Character_BP_C"
+}

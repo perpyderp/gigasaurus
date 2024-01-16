@@ -1,0 +1,102 @@
+{
+    "name": "Astrodelphis",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 325,
+            "level_increase": {
+                "wild": 65,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 250,
+            "level_increase": {
+                "wild": 12.5,
+                "tamed": 0.06
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 280,
+            "level_increase": {
+                "wild": 5.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 24,
+            "level_increase": {
+                "wild": 1.2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.365
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": {
+        "name": "Astrodelphis Starwing Saddle",
+        "engram_level": 120
+    },
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": {
+        "gestation_time": "7h 56m 11.429s",
+        "baby_time": "5h 26m 47.843s",
+        "juvenile_time": "21h 47m 11.372s",
+        "adolescent_time": "1d 3h 13m 59.216s",
+        "total_maturation": "2d 6h 27m 58.431s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 220,
+    "cloneable": false,
+    "entity_id": "SpaceDolphin_Character_BP_C"
+}

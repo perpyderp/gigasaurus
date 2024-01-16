@@ -1,0 +1,70 @@
+{
+    "name": "Seeker",
+    "dossier": {
+        "species": "Chimaeram odiosus",
+        "time": "Unknown",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "A highly hostile predator with a pack mentality, Chimaeram Odiosus has a voracious appetite, and will quickly swarm anything that possesses its favorite delicacy: Charge. Fact, Charge light seems to be crucial to its survival. When in its presence, they are strong and aggressive, but without it, they are weaker and quicker to flee. Though distinct from any known species, Chimaeram's appearance is a hideous pastiche of bats and cephalopods, and as an unbiased professional, I have to say: I really hate these bloody things. Honestly.",
+        "domesticated": "For better or worse, there is no known method of taming Chimaeram Odiosus. If one must confront these creatures, remember to do so away from any charged light sources, as an empowered Chimaeram swarm can punch well above its weight class."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 250,
+            "level_increase": {
+                "wild": 50
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {}
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": null,
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "Pteroteuthis_Char_BP_C"
+}

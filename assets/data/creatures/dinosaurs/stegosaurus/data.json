@@ -1,0 +1,113 @@
+{
+    "name": "Stegosaurus",
+    "dossier": {
+        "species": "Stegosaurus regium",
+        "time": "Late Jurassic",
+        "diet": "Herbivore",
+        "temperament": "Docile",
+        "wild": "Stegosaurus regium has approximately 16 paired rows of plates along its back, flanked by another, smaller pair of 6 plates. This is contrary to the alternating rows on Stegosaurus fossils I've seen in museums. Not surprisingly, Stegosaurus uses the spines on its tail to defend itself. While not aggressive, Stegosaurus will come to the aid of another nearby Stegosaurus. This implies it to be a herd animal.",
+        "domesticated": "Stegosaurus is commonly used as a safe way to transport large quantities of goods. And once you saddle one up, not even an Argentavis could knock you off that perch. A stegosaurus can be trained to flex its back plates for different purposes: hardened to shield it from attack, in a heavier alignment that deals crippling blows, or oriented more sharply to pierce armor. These various plate configurations also come in handy for stripping wood from trees, gathering thatch, or foraging for wild berries, respectively. Stegosaurus can knock back or impale with a whip of its spiky tail, keeping predators at bay or pinning them in place. Its spiked appendage also helps for gathering berries—go figure."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 650,
+            "level_increase": {
+                "wild": 130,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 6000,
+            "level_increase": {
+                "wild": 600,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 42,
+            "level_increase": {
+                "wild": 2.1,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.02
+            },
+            "taming_bonus": {
+                "additive": 0.964
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": {
+            "name": "Stego Saddle",
+            "engram_level": 26
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": [
+            "Stego Egg",
+            "Tek Stego Egg"
+        ],
+        "incubation": {
+            "range": "22 - 28 °C / 72 - 82 °F",
+            "incubation_range": "25 °C / 77 °F",
+            "incubation_time": "2h 46m 39.2s"
+        },
+        "baby_time": "5h 8m 38.517s",
+        "juvenile_time": "20h 34m 34.069s",
+        "adolescent_time": "1d 1h 43m 12.586s",
+        "total_maturation": "2d 3h 26m 25.172s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": true,
+    "entity_id": "Stego_Character_BP_C"
+}

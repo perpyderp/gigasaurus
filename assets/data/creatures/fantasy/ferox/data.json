@@ -1,0 +1,99 @@
+{
+    "name": "Ferox",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 55,
+            "level_increase": {
+                "wild": 11,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 120,
+            "level_increase": {
+                "wild": 2.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        },
+        "torpidity": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.8,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": true,
+    "egg": null,
+    "reproduction": {
+        "gestation": "9h 55m 14.286s",
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 25,
+    "cloneable": true,
+    "entity_id": "Shapeshifter_Small_Character_BP_C"
+}

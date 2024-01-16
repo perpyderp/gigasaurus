@@ -1,0 +1,110 @@
+{
+    "name": "Amargasaurus",
+    "dossier": {
+        "species": "Amargasaurus Titanicus",
+        "time": "Early Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Aggressive",
+        "wild": "Of all the creatures in the sauropod family, Amargasaurus titanicus is likely the most unique in appearance. It sports two parallel rows of dorsal spines down the length of its neck, back, and tail--though the neck spines are significantly longer than the back or tail spines. These spines are a remarkable adaptation, giving Amargasaurus unmatched control of its body temperature. Made even more marvelous by their time on this ARK, their spines store both extreme heat AND extreme cold, effectively allowing Amargasaurus to live comfortably in any environment. Its sails also make it an abnormally capable swimmer, for a sauropod. Unlike most sauropods, Amargasaurus is very prone to violent aggression, attacking most predators (and humans!) on sight. I suspect this behavior developed alongside the dangerous spines it uses as weapons.",
+        "domesticated": "Once finally tamed, it's no surprise that Amargasaurus' regenerating spines can be put to potent use. If removed early, their thermal storage becomes erratic, which is perfect for catalyzing sap extraction in large trees. Some tribes, inevitably, have adapted this thermal quirk for combat. By coaxing the Amargasaurus to eject a spine before it sheds naturally, the disruptive thermal waves which emanate from the spike can wreak havoc on nearby armor materials. Interestingly, simple armor is barely affected, while armors constructed of more complex attributes are rendered largely useless. Such a strange reaction, but then, little about this particular ARK seems sensible to me."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1250,
+            "level_increase": {
+                "wild": 250,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 425,
+            "level_increase": {
+                "wild": 42.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 6300,
+            "level_increase": {
+                "wild": 630,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 475,
+            "level_increase": {
+                "wild": 9.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        },
+        "torpidity": {
+            "base": 2250,
+            "level_increase": {
+                "wild": 135,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Exceptional"
+    },
+    "saddle": {
+        "name": "Amargasaurus Saddle",
+        "engram_level": 55
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Amargasaurus Egg",
+        "incubation": {
+            "range": "26 - 29 °C / 79 - 84 °F",
+            "incubation_range": "28 °C / 82 °F",
+            "incubation_time": "4h 59m 58.56s"
+        },
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "1d 22h 17m 46.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 375,
+    "cloneable": true,
+    "entity_id": "Amargasaurus_Character_BP_C"
+}

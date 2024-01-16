@@ -1,0 +1,107 @@
+{
+    "name": "Troodon",
+    "dossier": {
+        "species": "Troodon magnanimus",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Nocturnally Aggressive",
+        "wild": "Quite possibly the most intelligent non-human creature on the Island, Troodon magnanimus is an incredibly fast learner. It understands meaningful experiences much faster than other creatures (including humans), and its social nature means it also teaches its packmates, making them smarter too! If Troodon's cleverness didn't make it formidable, then its tactics and biology would. It specifically pack-hunts at night when we are most vulnerable, and sees humans as its primary prey. This audacity is made especially dangerous due to its serrated fangs' poison, which drains stamina from any creature, but outright paralyses humans. Thankfully, Troodon is fairly small. Were it larger, it might well have become the dominant creature of its ecosystem.",
+        "domesticated": "I thought Troodon simply could not be tamed, until I finally saw a lone survivor with one. She told me that she let \"Troody\" hunt a few of her tribe's smaller creatures for sport, and it eventually started following her everywhere. It seems that while Troodon is too intelligent to fall for the rote conditioning of \"tranq-and-feed,\" it can instead gradually gain loyalty from a social approach that provides it with the opportunity to hunt. Ever since, I have wondered at the benefits which a pack of ultra-smart, bred-for-battle Troodon may bring to a tribe brave enough to earn the favor of these clever carnivores."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 140,
+            "level_increase": {
+                "wild": 2.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 7,
+            "level_increase": {
+                "wild": 0.35,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 180,
+            "level_increase": {
+                "wild": 10.8,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Troodon Egg",
+        "incubation": {
+            "range": "28 - 32 °C / 82 - 90 °F",
+            "incubation_range": "30 °C / 86 °F",
+            "incubation_time": "1h 8m 10.582s"
+        },
+        "baby_time": "2h 6m 15.757s",
+        "juvenile_time": "8h 25m 3.028s",
+        "adolescent_time": "10h 31m 18.785s",
+        "total_maturation": "21h 2m 37.57s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 35,
+    "cloneable": true,
+    "entity_id": "Troodon_Character_BP_C"
+}

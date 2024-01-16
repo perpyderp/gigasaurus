@@ -1,0 +1,109 @@
+{
+    "name": "Gacha",
+    "dossier": {
+        "species": "Macrodryadis crystallinus",
+        "time": "Post-Holocene",
+        "diet": "Omnivore",
+        "temperament": "Docile",
+        "wild": "A gentle giant, Macrodryadis crystallinus spends its days foraging for food in the dense forest it calls home, though it rarely has to look very far. Thanks to its extraordinary digestive system, not only can Macrodryadis eat just about anything, but it can also turn a diet of scraps into a mountain of precious resources. Instead of producing excrement, Macrodryadis grows glittering crystals upon its back, which fall off when they reach their full size. Shattering these crystals can yield precious resources, as Macrodryadis is somehow able to transmute the materials it eats into something entirely different. One of our pilots likened the process to the gachapon machines from his memories of growing up in Japan, and I guess the name stuck.",
+        "domesticated": "Though its crystals prevent Macrodryadis from wearing a traditional saddle, if its rider is willing to sit in a basket that hangs from Macrodryadis' neck, then they'll find its long claws are well suited for mining resources. Personally though, I'd keep one around just for the crystals. The free presents, the way they glow at night...totally worth the potential nausea from the basket saddle."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 750,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 325,
+            "level_increase": {
+                "wild": 32.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300	,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 550,
+            "level_increase": {
+                "wild": 22,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 32,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.1
+            }
+        },
+        "crafting_skill": {
+            "base": 100,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 600,
+            "level_increase": {
+                "wild": 36
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": {
+        "name": "Gacha Saddle",
+        "engram_level": 38
+    },
+    "rider_weaponry": false,
+    "egg": null,
+    "reproduction": {
+        "gestation": "7h 56m 11.428s",
+        "baby_time": "11h 34m 26.666s",
+        "juvenile_time": "1d 22h 17m 46.662s",
+        "adolescent_time": "2d 9h 52m 13.328s",
+        "total_maturation": "4d 19h 44m 26.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 350,
+    "cloneable": true,
+    "entity_id": "Gacha_Character_BP_C"
+}

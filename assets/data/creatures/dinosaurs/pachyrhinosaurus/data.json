@@ -1,0 +1,107 @@
+{
+    "name": "Pachyrhinosaurus",
+    "dossier": {
+        "species": "Pachyrhinosaurus mitisaura",
+        "time": "Late Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Evasive",
+        "wild": "Pachyrhinosaurus Mitisaura is a medium-sized herbivore, found almost everywhere but the Island's mountains. It is generally calm and ignores all other nearby creatures unless it is attacked. Pachyrhinosaurus possesses a particularly unique survival skill. When threatened, its massive nasal-boss releases a chemical into the air that calms other nearby creatures, making them less likely to attack it. Affected creatures are sometimes hungry enough to ignore the effect, and humans seem immune to it. Conversely, it can seemingly invert this phenomenon at will and coerce creatures into attacking it!",
+        "domesticated": "Pachyrhinosaurus is an excellent starting mount for anyone new to taming. It is fairly easy to train, can carry enough to be a simple pack-animal, and is not as deadly as some of the larger herbivores. Additionally, Pachyrhinosaurus can release its unique chemical on command to protect itself and its rider from nearby predators, or draw attention if desired, making it a potential life saver in a pinch."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 375,
+            "level_increase": {
+                "wild": 75,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 365,
+            "level_increase": {
+                "wild": 7.3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 28 ,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 250,
+            "level_increase": {
+                "wild": 15,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": {
+            "name": "Pachyrhinosaurus Saddle",
+            "engram_level": 27
+    },
+    "rider_weaponry": true,
+    "egg": {
+        "name": "Pachyrhino Egg",
+        "incubation": {
+            "range": "22 - 28 °C / 72 - 82 °F",
+            "incubation_range": "25 °C / 77 °F",
+            "incubation_time": "2h 29m 59.28s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 200,
+    "cloneable": true,
+    "entity_id": "Pachyrhino_Character_BP_C"
+}

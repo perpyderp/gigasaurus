@@ -1,0 +1,107 @@
+{
+    "name": "Therizinosaur",
+    "dossier": {
+        "species": "Therizinosaurus multiensis",
+        "time": "Late Cretaceous",
+        "diet": "Herbivore",
+        "temperament": "Aggressive",
+        "wild": "I'm not entirely sure how Therizinosaurus multiensis stays populated on the Island. It is surprisingly slow for its size, and is a solitary predator (so no pack to back it up). I suppose the fact that its sheer power rivals Tyrannosaurus is the only thing that allows this very aggressive medium-sized predator to thrive. The claws of Therizinosaurus are some of the most versatile biological tools I've encountered, as adept at removing trees and foliage from Therizinosaurus' path as they are at piercing the thick shells and hide of the Island's most defensive creatures if backed into a fight.",
+        "domesticated": "A tamed Therizinosaurus is one of the most versatile mounts a survivor can have. It can be trained to use its claws brutally or delicately, allowing the rider to primarily harvest with enhanced efficiency the specific kinds of resources that he or she needs. And in combat, these same claws can pierce straight through the toughest armor. This flexibility more than makes up for its inability to carry the large loads of the Island's many herbivorous beasts of burden."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 870,
+            "level_increase": {
+                "wild": 174,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 365,
+            "level_increase": {
+                "wild": 7.3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 52,
+            "level_increase": {
+                "wild": 2.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "wild": null,
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 925,
+            "level_increase": {
+                "wild": 55.5,
+                "tamed": null
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": {
+            "name": "Therizinosaurus Saddle",
+            "engram_level": 69
+    },
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Therizino Egg",
+        "incubation": {
+            "range": "26 - 32 °C / 79 - 90 °F",
+            "incubation_range": "29 °C / 84 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "11h 34m 26.666s",
+        "juvenile_time": "1d 22h 17m 46.662s",
+        "adolescent_time": "2d 9h 52m 13.328s",
+        "total_maturation": "4d 19h 44m 26.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": true,
+    "entity_id": "Therizino_Character_BP_C"
+}
