@@ -30,8 +30,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={cn("flex flex-col", inter.className, arkFont.variable)}>
-                <div className="flex flex-1 bg-theme-green-300">
-                    <SideNav />
+                <div className="flex flex-1 bg-theme-green-500">
                     {children}
                 </div>
                 <Analytics />
