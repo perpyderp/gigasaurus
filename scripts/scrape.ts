@@ -1,532 +1,574 @@
 #!/usr/bin/env bun
 /**
- * scripts/scrape.ts — Interactive ARK: Survival Evolved wiki scraper
+ * scripts/scrape.ts — Interactive ARK wiki scraper
  *
  * Usage:  bun scripts/scrape.ts
  *
- * Scraped data is saved to:
- *   data/{type}/{slug}.json                    — complete, schema-valid entries
- *   data/{type}/incomplete/{slug}.json          — entries with missing required fields
- *   data/{type}/incomplete/{slug}__missing.txt  — notes on what needs manual work
+ * Uses the MediaWiki API (/api.php?action=parse) to avoid Cloudflare blocks.
  *
- * Images are saved to:
- *   public/images/{type}/{slug}.png
+ * Outputs:
+ *   data/{type}/{slug}.json                   — schema-valid entries
+ *   data/{type}/incomplete/{slug}.json         — entries missing required fields
+ *   data/{type}/incomplete/{slug}__missing.txt — manual todo list
+ *   public/images/{type}/{slug}.png            — downloaded images
  */
 
-import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'fs'
+import { existsSync, mkdirSync, writeFileSync } from 'fs'
 import { join } from 'path'
 import { parse as parseHtml, type HTMLElement } from 'node-html-parser'
 import { createInterface } from 'readline'
-import { z } from 'zod'
 import { CreatureSchema } from '../src/schemas/creature'
 import { ArmorSchema } from '../src/schemas/armor'
 import { ResourceSchema } from '../src/schemas/resource'
 import { WeaponSchema } from '../src/schemas/weapon'
+import type { ZodSchema } from 'zod'
 
-// ─── Constants ─────────────────────────────────────────────────────────────────
+// ─── Config ────────────────────────────────────────────────────────────────────
 
-const WIKI = 'https://ark.wiki.gg'
-const ROOT = join(import.meta.dir, '..')
-const DELAY_MS = 900
+const WIKI      = 'https://ark.wiki.gg'
+const WIKI_API  = `${WIKI}/api.php`
+const ROOT      = join(import.meta.dir, '..')
+const DELAY_MS  = 800
+const UA        = 'Gigasaurus/1.0 (ARK wiki research; contact via GitHub)'
 
 // ─── CLI helpers ───────────────────────────────────────────────────────────────
 
 const rl = createInterface({ input: process.stdin, output: process.stdout })
+const ask  = (q: string)  => new Promise<string>(r => rl.question(q, r))
+const confirm = async (q: string) => (await ask(`${q} [y/N] `)).trim().toLowerCase() === 'y'
+const log  = (m: string)  => process.stdout.write(m + '\n')
+const info = (m: string)  => log(`  ${m}`)
+const ok   = (m: string)  => log(`  \x1b[32m✓\x1b[0m ${m}`)
+const warn = (m: string)  => log(`  \x1b[33m⚠\x1b[0m ${m}`)
+const fail = (m: string)  => log(`  \x1b[31m✗\x1b[0m ${m}`)
 
-function ask(question: string): Promise<string> {
-  return new Promise(resolve => rl.question(question, resolve))
-}
-
-async function confirm(question: string): Promise<boolean> {
-  const answer = await ask(`${question} [y/N] `)
-  return answer.trim().toLowerCase() === 'y'
-}
-
-function log(msg: string) { process.stdout.write(msg + '\n') }
-function info(msg: string) { log(`  ${msg}`) }
-function ok(msg: string) { log(`  \x1b[32m✓\x1b[0m ${msg}`) }
-function warn(msg: string) { log(`  \x1b[33m⚠\x1b[0m ${msg}`) }
-function err(msg: string) { log(`  \x1b[31m✗\x1b[0m ${msg}`) }
-
-// ─── Rate-limited fetch ────────────────────────────────────────────────────────
+// ─── Rate-limited MediaWiki API fetch ─────────────────────────────────────────
 
 let lastFetch = 0
 
-async function fetchHtml(url: string): Promise<HTMLElement | null> {
-  const now = Date.now()
-  const wait = Math.max(0, DELAY_MS - (now - lastFetch))
+async function fetchPage(wikiTitle: string): Promise<HTMLElement | null> {
+  const wait = Math.max(0, DELAY_MS - (Date.now() - lastFetch))
   if (wait > 0) await new Promise(r => setTimeout(r, wait))
   lastFetch = Date.now()
 
+  const url = `${WIKI_API}?action=parse&page=${encodeURIComponent(wikiTitle)}&format=json&prop=text`
   try {
-    const res = await fetch(url, {
-      headers: { 'User-Agent': 'Gigasaurus/1.0 (ARK wiki research tool; contact via GitHub)' },
-    })
-    if (!res.ok) {
-      warn(`HTTP ${res.status} for ${url}`)
-      return null
-    }
-    const html = await res.text()
-    return parseHtml(html)
+    const res = await fetch(url, { headers: { 'User-Agent': UA } })
+    if (!res.ok) { warn(`HTTP ${res.status} for "${wikiTitle}"`); return null }
+    const json = await res.json() as { parse?: { text?: { '*': string } }; error?: unknown }
+    if (json.error || !json.parse?.text?.['*']) { warn(`API error for "${wikiTitle}"`); return null }
+    return parseHtml(json.parse.text['*'])
   } catch (e) {
-    warn(`Fetch failed for ${url}: ${e}`)
+    warn(`Fetch failed for "${wikiTitle}": ${e}`)
     return null
   }
 }
 
 async function fetchBytes(url: string): Promise<ArrayBuffer | null> {
-  const now = Date.now()
-  const wait = Math.max(0, DELAY_MS - (now - lastFetch))
+  const wait = Math.max(0, DELAY_MS - (Date.now() - lastFetch))
   if (wait > 0) await new Promise(r => setTimeout(r, wait))
   lastFetch = Date.now()
-
   try {
-    const res = await fetch(url, {
-      headers: { 'User-Agent': 'Gigasaurus/1.0 (ARK wiki research tool)' },
-    })
-    if (!res.ok) return null
-    return res.arrayBuffer()
-  } catch {
-    return null
-  }
+    const res = await fetch(url, { headers: { 'User-Agent': UA } })
+    return res.ok ? res.arrayBuffer() : null
+  } catch { return null }
 }
 
-// ─── Filesystem helpers ────────────────────────────────────────────────────────
+// ─── Utilities ─────────────────────────────────────────────────────────────────
 
-function ensureDir(dir: string) {
-  if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
-}
-
-function dataDir(type: string) { return join(ROOT, 'data', type) }
-function incompleteDir(type: string) { return join(ROOT, 'data', type, 'incomplete') }
-function imageDir(type: string) { return join(ROOT, 'public', 'images', type) }
-
-function slugify(name: string): string {
+function slugify(name: string) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
 }
 
-// ─── Image download ────────────────────────────────────────────────────────────
+function clean(el: HTMLElement | null): string {
+  if (!el) return ''
+  return el.text.replace(/\[\d+\]/g, '').replace(/\s+/g, ' ').trim()
+}
 
-/** Extract highest-quality image URL from a wiki thumbnail src. */
-function resolveImageUrl(src: string): string {
-  // Convert relative to absolute
+function parseNum(s: string): number | null {
+  const n = parseFloat(s.replace(/,/g, '').replace(/[^0-9.\-]/g, ''))
+  return isNaN(n) ? null : n
+}
+
+function parseIntNum(s: string): number | null {
+  const n = parseInt(s.replace(/,/g, '').replace(/[^0-9\-]/g, ''), 10)
+  return isNaN(n) ? null : n
+}
+
+function hasCheckmark(el: HTMLElement): boolean {
+  return el.querySelector('img[alt="Check mark.svg"]') !== null
+}
+
+/** Resolve a thumbnail img src to the full-resolution image URL. */
+function resolveImgUrl(src: string): string {
+  if (!src) return src
   if (src.startsWith('//')) src = 'https:' + src
-  if (src.startsWith('/')) src = WIKI + src
-  // Strip thumbnail scaling: /thumb/a/b/Foo.png/200px-Foo.png → /a/b/Foo.png
-  const thumbMatch = src.match(/\/thumb(\/[a-f0-9]\/[a-f0-9a-f]+\/[^/]+\.[a-z]+)/)
-  if (thumbMatch) {
-    src = WIKI + '/images' + thumbMatch[1]
-  }
+  if (src.startsWith('/'))  src = WIKI + src
+  // /images/thumb/File.png/320px-File.png → /images/File.png
+  const m = src.match(/\/images\/thumb\/(.+?\.[a-z]+)\/[^/]+$/)
+  if (m) src = `${WIKI}/images/${m[1]}`
   return src
 }
 
-function extractFirstImageUrl(root: HTMLElement): string | null {
-  // Try infobox image first
-  for (const sel of ['.infobox img', '.portable-infobox img', 'table.wikitable img', '.thumb img', 'img']) {
+/** Get the primary content image from an info-arkitex infobox. */
+function extractItemImage(root: HTMLElement): string | null {
+  // Items (resources, armor, weapons): inside .info-nodescquotes or .info-column
+  for (const sel of ['.info-nodescquotes a.image img', '.info-column a.image img']) {
     const img = root.querySelector(sel)
     if (img) {
       const src = img.getAttribute('src') || img.getAttribute('data-src') || ''
-      if (src && !src.includes('wiki.png') && !src.includes('Question_mark')) {
-        return resolveImageUrl(src)
+      if (src && !src.includes('Question_mark') && !src.includes('noimage')) {
+        return resolveImgUrl(src)
       }
     }
   }
   return null
 }
 
-async function downloadImage(type: string, slug: string, imageUrl: string): Promise<boolean> {
-  const dir = imageDir(type)
+/** Get the dossier card image for a creature. */
+function extractCreatureImage(root: HTMLElement): string | null {
+  // Dossier image has alt="Dossier X.png" and is inside an a.image
+  const dossierLink = root.querySelector('a.image[href*="Dossier_"]')
+  if (dossierLink) {
+    const img = dossierLink.querySelector('img')
+    if (img) {
+      const src = img.getAttribute('src') || img.getAttribute('data-src') || ''
+      if (src) return resolveImgUrl(src)
+    }
+  }
+  // Fallback: first creature icon (dinolink class)
+  const icon = root.querySelector('img.dinolink')
+  if (icon) {
+    const src = icon.getAttribute('src') || ''
+    if (src) return resolveImgUrl(src)
+  }
+  return null
+}
+
+// ─── info-arkitex infobox parser ───────────────────────────────────────────────
+
+interface InfoRow { label: string; value: string; isCheck: boolean | null }
+
+function parseArkInfo(root: HTMLElement): InfoRow[] {
+  const rows: InfoRow[] = []
+  for (const row of root.querySelectorAll('.info-unit-row')) {
+    const left  = row.querySelector('.info-arkitex-left, .info-X2-25')
+    const right = row.querySelector('.info-arkitex-right, .info-X2-75')
+    if (!left || !right) continue
+
+    const label = clean(left).replace(/\s*\d+$/, '').trim()
+    const value = clean(right)
+    if (!label) continue
+
+    // Detect check/cross mark
+    const hasCheck = right.querySelector('img[alt="Check mark.svg"]') !== null
+    const hasCross = right.querySelector('img[alt="X mark.svg"]') !== null
+    const isCheck  = hasCheck ? true : hasCross ? false : null
+
+    rows.push({ label, value, isCheck })
+  }
+  return rows
+}
+
+function getInfoValue(rows: InfoRow[], ...patterns: string[]): string | null {
+  const targets = patterns.map(p => p.toLowerCase())
+  for (const row of rows) {
+    const lbl = row.label.toLowerCase()
+    if (targets.some(t => lbl.includes(t))) return row.value || null
+  }
+  return null
+}
+
+function getInfoBool(rows: InfoRow[], ...patterns: string[]): boolean {
+  const targets = patterns.map(p => p.toLowerCase())
+  for (const row of rows) {
+    const lbl = row.label.toLowerCase()
+    if (targets.some(t => lbl.includes(t))) {
+      if (row.isCheck !== null) return row.isCheck
+      const v = row.value.toLowerCase()
+      return v === 'yes' || v === 'true'
+    }
+  }
+  return false
+}
+
+// ─── Ingredient parser ─────────────────────────────────────────────────────────
+
+interface Ingredient { name: string; quantity: number; resource_id: string }
+
+function parseIngredients(root: HTMLElement): Ingredient[] {
+  const ingredients: Ingredient[] = []
+  // Find the "Ingredients" caption and get its parent's content
+  for (const caption of root.querySelectorAll('.info-unit-caption')) {
+    if (!clean(caption).toLowerCase().includes('ingredient')) continue
+    const container = caption.closest('.info-unit')
+    if (!container) continue
+    // Pattern: bold elements "N × ItemName"
+    for (const b of container.querySelectorAll('b')) {
+      const text = b.text.trim()
+      const m = text.match(/^(\d+)\s*[×x]\s*(.+)/)
+      if (m) {
+        const qty  = parseInt(m[1], 10)
+        const name = m[2].replace(/\s+/g, ' ').trim()
+        if (!isNaN(qty) && name) {
+          ingredients.push({ name, quantity: qty, resource_id: slugify(name) })
+        }
+      }
+    }
+    break
+  }
+  return ingredients
+}
+
+// ─── Save helpers ──────────────────────────────────────────────────────────────
+
+interface ScrapeStats { total: number; complete: number; incomplete: number; skipped: number; images: number }
+
+function ensureDir(d: string) { if (!existsSync(d)) mkdirSync(d, { recursive: true }) }
+
+function saveEntity(
+  type: string, slug: string,
+  data: Record<string, unknown>, missing: string[],
+  overwrite: boolean,
+): { saved: boolean; complete: boolean } {
+  const complete = missing.length === 0
+  const dir = complete ? join(ROOT, 'data', type) : join(ROOT, 'data', type, 'incomplete')
   ensureDir(dir)
-  const ext = imageUrl.split('?')[0].split('.').pop() ?? 'png'
+
+  const filePath = join(dir, `${slug}.json`)
+  if (existsSync(filePath) && !overwrite) return { saved: false, complete }
+
+  writeFileSync(filePath, JSON.stringify(data, null, 4) + '\n')
+
+  if (!complete) {
+    writeFileSync(join(dir, `${slug}__missing.txt`), [
+      `Incomplete data for: ${slug}`,
+      `Scraped: ${new Date().toISOString()}`,
+      `Source: ${WIKI}/wiki/${encodeURIComponent(slug.replace(/_/g, ' '))}`,
+      '',
+      'Fields requiring manual population:',
+      ...missing.map(f => `  - ${f}`),
+      '',
+      `When complete, move to: data/${type}/${slug}.json`,
+    ].join('\n') + '\n')
+  }
+  return { saved: true, complete }
+}
+
+async function saveImage(type: string, slug: string, url: string): Promise<boolean> {
+  const dir = join(ROOT, 'public', 'images', type)
+  ensureDir(dir)
+  const ext  = url.split('?')[0].split('.').pop() ?? 'png'
   const dest = join(dir, `${slug}.${ext}`)
-  if (existsSync(dest)) return true // already have it
-  const buf = await fetchBytes(imageUrl)
+  if (existsSync(dest)) return true
+  const buf = await fetchBytes(url)
   if (!buf) return false
   writeFileSync(dest, Buffer.from(buf))
   return true
 }
 
-// ─── Data persistence ──────────────────────────────────────────────────────────
-
-interface SaveReport {
-  slug: string
-  complete: boolean
-  missing: string[]
-  skipped: boolean
+function validateAndMerge(schema: ZodSchema, data: Record<string, unknown>, baseMissing: string[]): string[] {
+  const result = schema.safeParse(data)
+  if (result.success) return baseMissing
+  const zodErrors = result.error.issues.map((i: { path: (string | number)[]; message: string }) =>
+    `${i.path.join('.')}: ${i.message}`)
+  return [...baseMissing, ...zodErrors.filter(e => !baseMissing.some(m => e.startsWith(m.split(':')[0])))]
 }
 
-function saveEntity(
-  type: string,
-  entitySlug: string,
-  data: Record<string, unknown>,
-  missing: string[],
-  overwrite: boolean,
-): SaveReport {
-  const complete = missing.length === 0
-  const dir = complete ? dataDir(type) : incompleteDir(type)
-  ensureDir(dir)
+// ─── CREATURE SCRAPER ──────────────────────────────────────────────────────────
 
-  const filePath = join(dir, `${entitySlug}.json`)
-  if (existsSync(filePath) && !overwrite) {
-    return { slug: entitySlug, complete, missing, skipped: true }
-  }
-
-  writeFileSync(filePath, JSON.stringify(data, null, 4) + '\n')
-
-  if (!complete) {
-    const notesPath = join(dir, `${entitySlug}__missing.txt`)
-    const lines = [
-      `Incomplete data for: ${entitySlug}`,
-      `Scraped: ${new Date().toISOString()}`,
-      `Source: ${WIKI}/wiki/${encodeURIComponent(entitySlug.replace(/_/g, ' '))}`,
-      '',
-      'Fields requiring manual population:',
-      ...missing.map(f => `  - ${f}`),
-      '',
-      `When complete, move file to: data/${type}/${entitySlug}.json`,
-    ]
-    writeFileSync(notesPath, lines.join('\n') + '\n')
-  }
-
-  return { slug: entitySlug, complete, missing, skipped: false }
+interface CreatureListEntry {
+  name: string; slug: string
+  diet: string; temperament: string
+  tameable: boolean; rideable: boolean; breedable: boolean
+  saddle_level: number | null; entity_id: string | null
 }
 
-// ─── HTML parsing utilities ────────────────────────────────────────────────────
-
-function cleanText(el: HTMLElement | null): string {
-  if (!el) return ''
-  return el.text.replace(/\[\d+\]/g, '').replace(/\s+/g, ' ').trim()
+const GROUP_TO_CATEGORY: Record<string, string> = {
+  'dinosaurs': 'dinosaur', 'dinosaur': 'dinosaur',
+  'birds': 'bird', 'bird': 'bird',
+  'fish': 'fish',
+  'invertebrates': 'invertebrate', 'invertebrate': 'invertebrate',
+  'mammals': 'mammal', 'mammal': 'mammal',
+  'reptiles': 'reptile', 'reptile': 'reptile',
+  'fantasy creatures': 'fantasy', 'fantasy': 'fantasy',
+  'synapsids': 'other', 'bosses': 'other', 'titans': 'other',
+  'amphibians': 'other', 'mechanical creatures': 'other',
 }
 
-/** Get all label→value pairs from a MediaWiki infobox (th→td rows). */
-function parseInfobox(root: HTMLElement): Record<string, string> {
-  const result: Record<string, string> = {}
-  // ARK wiki uses aside.portable-infobox or table.infobox
-  const containers = root.querySelectorAll('aside, .infobox, table.wikitable')
-  for (const container of containers) {
-    for (const row of container.querySelectorAll('tr, .pi-item')) {
-      const th = row.querySelector('th, .pi-data-label')
-      const td = row.querySelector('td, .pi-data-value')
-      if (th && td) {
-        const key = cleanText(th).toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')
-        const val = cleanText(td)
-        if (key && val) result[key] = val
-      }
-    }
-  }
-  return result
-}
-
-function parseBool(v: string | undefined): boolean {
-  if (!v) return false
-  return /^(yes|true|✓|1)$/i.test(v.trim())
-}
-
-function parseNum(v: string | undefined): number | null {
-  if (!v) return null
-  const n = parseFloat(v.replace(/,/g, '').replace(/[^\d.-]/g, ''))
-  return isNaN(n) ? null : n
-}
-
-function parseIntNum(v: string | undefined): number | null {
-  if (!v) return null
-  const n = parseInt(v.replace(/,/g, '').replace(/[^\d-]/g, ''), 10)
-  return isNaN(n) ? null : n
-}
-
-// ─── Creature scraper ──────────────────────────────────────────────────────────
-
-interface CreatureEntry { name: string; slug: string; wikiPath: string }
-
-async function fetchCreatureList(): Promise<CreatureEntry[]> {
-  info('Fetching creature list from wiki…')
-  const root = await fetchHtml(`${WIKI}/wiki/Creatures`)
+async function fetchCreatureList(): Promise<CreatureListEntry[]> {
+  info('Fetching creature list…')
+  const root = await fetchPage('Creatures')
   if (!root) return []
 
-  const entries: CreatureEntry[] = []
-  const seen = new Set<string>()
+  const table = root.querySelector('table.cargo-creature-table')
+  if (!table) { fail('Could not find cargo-creature-table on Creatures page'); return [] }
 
-  // The creatures page has a wikitable with links to each creature
-  for (const link of root.querySelectorAll('.wikitable a, #content a')) {
+  // Parse header row to find column indices
+  const headers = table.querySelectorAll('tr:first-child th').map(th => clean(th).toLowerCase())
+  const colName   = headers.findIndex(h => h.includes('name'))
+  const colDiet   = headers.findIndex(h => h === 'diet')
+  const colTemp   = headers.findIndex(h => h.includes('temperament'))
+  const colTame   = headers.findIndex(h => h.includes('tame'))
+  const colRide   = headers.findIndex(h => h.includes('ride'))
+  const colBreed  = headers.findIndex(h => h.includes('breed'))
+  const colSaddle = headers.findIndex(h => h.includes('saddle'))
+  const colEntity = headers.findIndex(h => h.includes('entity'))
+
+  const entries: CreatureListEntry[] = []
+  for (const row of table.querySelectorAll('tr:not(:first-child)')) {
+    const cells = row.querySelectorAll('td')
+    if (cells.length < 4) continue
+
+    const nameCell = cells[colName >= 0 ? colName : 0]
+    const link = nameCell.querySelector('a[href^="/wiki/"]')
+    if (!link) continue
     const href = link.getAttribute('href') ?? ''
-    const title = link.getAttribute('title') ?? link.text.trim()
-    if (!href.startsWith('/wiki/') || href.includes(':') || href.includes('#')) continue
-    if (!title || seen.has(href)) continue
-    // Filter out navigation/category links
-    if (/^(Creatures|Category|Template|Help|ARK|DLC|Mod)/i.test(title)) continue
-    seen.add(href)
-    const slug = slugify(title)
-    if (slug) entries.push({ name: title, slug, wikiPath: href })
-  }
+    const name = link.getAttribute('title') || clean(link)
+    if (!name || href.includes(':')) continue
 
+    const slug = slugify(name)
+    if (!slug) continue
+
+    const dietText = colDiet >= 0 ? clean(cells[colDiet]) : ''
+    const tempText = colTemp >= 0 ? clean(cells[colTemp]) : ''
+    const tameCell  = colTame  >= 0 ? cells[colTame]  : null
+    const rideCell  = colRide  >= 0 ? cells[colRide]  : null
+    const breedCell = colBreed >= 0 ? cells[colBreed] : null
+    const saddleCell = colSaddle >= 0 ? cells[colSaddle] : null
+    const entityCell = colEntity >= 0 ? cells[colEntity] : null
+
+    entries.push({
+      name, slug,
+      diet:        dietText,
+      temperament: tempText,
+      tameable:  tameCell  ? (hasCheckmark(tameCell)  || /yes/i.test(clean(tameCell)))  : false,
+      rideable:  rideCell  ? (hasCheckmark(rideCell)  || /yes/i.test(clean(rideCell)))  : false,
+      breedable: breedCell ? (hasCheckmark(breedCell) || /yes/i.test(clean(breedCell))) : false,
+      saddle_level: saddleCell ? parseIntNum(clean(saddleCell)) : null,
+      entity_id:    entityCell ? (clean(entityCell) || null) : null,
+    })
+  }
   return entries
 }
 
-const CREATURE_CATEGORY_MAP: Record<string, string> = {
-  dinosaur: 'dinosaur', dinosaurs: 'dinosaur',
-  bird: 'bird', birds: 'bird',
-  fish: 'fish',
-  invertebrate: 'invertebrate', invertebrates: 'invertebrate', invertebrate_: 'invertebrate',
-  mammal: 'mammal', mammals: 'mammal',
-  reptile: 'reptile', reptiles: 'reptile',
-  fantasy: 'fantasy',
-  boss: 'other', bosses: 'other',
-}
-
-function inferCategory(root: HTMLElement, infobox: Record<string, string>): string {
-  // Try categories section at bottom of page
-  const catLinks = root.querySelectorAll('#mw-normal-catlinks a, .catlinks a')
-  for (const link of catLinks) {
-    const text = link.text.trim().toLowerCase().replace(/\s+/g, '_')
-    if (CREATURE_CATEGORY_MAP[text]) return CREATURE_CATEGORY_MAP[text]
-  }
-  // Try infobox
-  const group = (infobox['group'] || infobox['creature_type'] || '').toLowerCase()
-  if (CREATURE_CATEGORY_MAP[group]) return CREATURE_CATEGORY_MAP[group]
-  return 'other'
-}
-
-function parseCreatureStats(root: HTMLElement): Record<string, { base: number | null; level_increase?: { wild?: number; tamed?: number } }> {
-  const defaultStats = {
-    health:    { base: null as number | null },
-    stamina:   { base: null as number | null },
-    oxygen:    { base: null as number | null },
-    food:      { base: null as number | null },
-    weight:    { base: null as number | null },
-    melee:     { base: null as number | null },
-    movement:  { base: null as number | null },
-    torpidity: { base: null as number | null },
+/** Parse base stats from the wikitable[data-description="Base Stats and Growth"]. */
+function parseCreatureStats(root: HTMLElement) {
+  const defaultStats = () => ({ base: null as number | null })
+  const stats: Record<string, { base: number | null; level_increase?: { wild?: number; tamed?: number }; taming_bonus?: { additive?: number; multiplicative?: number } }> = {
+    health: defaultStats(), stamina: defaultStats(), oxygen: defaultStats(),
+    food: defaultStats(), weight: defaultStats(), melee: defaultStats(),
+    movement: defaultStats(), torpidity: defaultStats(),
   }
 
-  // ARK wiki stat tables have a specific structure
-  // Look for the stats table (usually has headers like Health, Stamina, etc.)
-  const statLabels: Record<string, keyof typeof defaultStats> = {
-    health: 'health', hp: 'health',
-    stamina: 'stamina',
-    oxygen: 'oxygen',
-    food: 'food',
-    weight: 'weight',
-    'melee damage': 'melee', melee: 'melee', damage: 'melee',
-    'movement speed': 'movement', movement: 'movement', speed: 'movement',
-    torpidity: 'torpidity', torpor: 'torpidity',
+  const STAT_MAP: Record<string, keyof typeof stats> = {
+    'health': 'health', 'stamina': 'stamina', 'oxygen': 'oxygen', 'food': 'food',
+    'weight': 'weight', 'melee damage': 'melee', 'movement speed': 'movement', 'torpidity': 'torpidity',
   }
 
-  for (const table of root.querySelectorAll('table.wikitable, table')) {
-    const headers: string[] = []
-    const headerRow = table.querySelector('tr')
-    if (!headerRow) continue
-    for (const th of headerRow.querySelectorAll('th, td')) {
-      headers.push(cleanText(th).toLowerCase())
+  const table = root.querySelector('table.wikitable[data-description="Base Stats and Growth"]')
+  if (!table) return stats
+
+  for (const row of table.querySelectorAll('tr:not(:first-child):not(:nth-child(2))')) {
+    const cells = row.querySelectorAll('td')
+    if (cells.length < 2) continue
+
+    // Attribute name is the link text or plain text in first cell
+    const attrText = clean(cells[0]).toLowerCase().replace(/\s+/g, ' ').trim()
+    const statKey = STAT_MAP[attrText]
+    if (!statKey) continue
+
+    const isNA = (cell: HTMLElement) => cell.classList.contains('gray') || clean(cell).trim() === 'N/A'
+
+    const baseVal = isNA(cells[1]) ? null : parseNum(clean(cells[1]))
+    const wildInc = cells[2] && !isNA(cells[2]) ? parseNum(clean(cells[2]).replace('+', '')) : null
+    const tamedInc = cells[3] && !isNA(cells[3]) ? (() => {
+      const v = clean(cells[3]).replace('+', '').replace('%', '')
+      const n = parseNum(v)
+      return n !== null ? n / 100 : null
+    })() : null
+    const addBonus = cells[4] && clean(cells[4]).trim() ? parseNum(clean(cells[4]).replace('%', '')) : null
+    const multBonus = cells[5] && clean(cells[5]).trim() ? parseNum(clean(cells[5]).replace('%', '')) : null
+
+    const entry: typeof stats[string] = { base: baseVal }
+    if (wildInc !== null || tamedInc !== null) {
+      entry.level_increase = {}
+      if (wildInc !== null) entry.level_increase.wild = wildInc
+      if (tamedInc !== null) entry.level_increase.tamed = tamedInc
     }
-    // Check if this looks like a stats table
-    const hasStatCols = headers.some(h => statLabels[h] !== undefined)
-    if (!hasStatCols) continue
-
-    // Parse each data row
-    for (const row of table.querySelectorAll('tr:not(:first-child)')) {
-      const cells = row.querySelectorAll('td, th')
-      if (cells.length < 2) continue
-      const rowLabel = cleanText(cells[0]).toLowerCase()
-      const statKey = statLabels[rowLabel]
-      if (!statKey) continue
-
-      const base = parseNum(cleanText(cells[1]))
-      const wildInc = cells[2] ? parseNum(cleanText(cells[2])) : null
-      const tamedInc = cells[3] ? parseNum(cleanText(cells[3])) : null
-
-      defaultStats[statKey] = {
-        base,
-        ...(wildInc !== null || tamedInc !== null ? {
-          level_increase: {
-            ...(wildInc !== null ? { wild: wildInc } : {}),
-            ...(tamedInc !== null ? { tamed: tamedInc } : {}),
-          }
-        } : {}),
+    if (addBonus !== null || multBonus !== null) {
+      entry.taming_bonus = {}
+      if (addBonus !== null) {
+        // The wiki shows "7%" — convert to 0.07
+        entry.taming_bonus.additive = addBonus > 1 ? addBonus / 100 : addBonus
+      }
+      if (multBonus !== null) {
+        entry.taming_bonus.multiplicative = multBonus > 1 ? multBonus / 100 : multBonus
       }
     }
-    break // use the first matching table
+    stats[statKey] = entry
   }
-
-  return defaultStats
+  return stats
 }
 
-async function parseCreaturePage(entry: CreatureEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
-  const root = await fetchHtml(WIKI + entry.wikiPath)
+/** Parse the dossier text section. */
+function parseDossier(root: HTMLElement) {
+  const dossierDiv = root.querySelector('.dossier-text-note')
+  if (!dossierDiv) return null
+
+  const note = dossierDiv as HTMLElement
+  let species: string | null = null
+  let time: string | null = null
+  let diet: string | null = null
+  let temperament: string | null = null
+
+  // Bold labels followed by paragraphs
+  const bolds = note.querySelectorAll('b')
+  for (const b of bolds) {
+    const label = b.text.trim().toLowerCase()
+    // The next element after <b> is a <p>
+    let sibling = b.nextElementSibling
+    if (sibling && sibling.tagName === 'P') {
+      const val = clean(sibling as HTMLElement)
+      if (label === 'species') species = val
+      else if (label === 'time') time = val
+      else if (label === 'diet') diet = val
+      else if (label === 'temperament') temperament = val
+    }
+  }
+
+  // Wild/Domesticated text come after <dl><dt> tags
+  let wildText: string | null = null
+  let domText: string | null = null
+
+  // Find <dt> elements
+  for (const dt of root.querySelectorAll('.dossier-text dl dt, .dossier-background dl dt')) {
+    const label = dt.text.trim().toLowerCase()
+    // Next sibling paragraph — look at the dl's next sibling
+    let sib = dt.closest('dl')?.nextElementSibling ?? null
+    if (sib && sib.tagName === 'P') {
+      const val = clean(sib as HTMLElement)
+      if (label === 'wild') wildText = val
+      else if (label === 'domesticated') domText = val
+    }
+  }
+
+  // Fallback: just get the two paragraphs in the dossier-background div
+  if (!wildText || !domText) {
+    const bgDiv = root.querySelector('.dossier-background')
+    if (bgDiv) {
+      const paras = bgDiv.querySelectorAll('p').map(p => clean(p)).filter(t => t.length > 40)
+      if (!wildText && paras[0]) wildText = paras[0]
+      if (!domText && paras[1]) domText = paras[1]
+    }
+  }
+
+  return { species, time, diet, temperament, wild: wildText, domesticated: domText }
+}
+
+/** Extract entity ID from the first spawn command. */
+function extractEntityId(root: HTMLElement): string | null {
+  for (const code of root.querySelectorAll('.info-arkitex-spawn-commands-entry .copy-content')) {
+    const text = code.text.trim()
+    const m = text.match(/^cheat summon (\S+)/)
+    if (m) return m[1]
+  }
+  return null
+}
+
+async function scrapeCreature(entry: CreatureListEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
+  const root = await fetchPage(entry.name)
   const missing: string[] = []
 
   if (!root) {
     return {
       data: {
-        name: entry.name,
-        category: 'other',
-        dossier: null,
+        name: entry.name, category: 'other', dossier: null,
         base_stats_growth: {
           health: { base: null }, stamina: { base: null }, oxygen: { base: null },
           food: { base: null }, weight: { base: null }, melee: { base: null },
           movement: { base: null }, torpidity: { base: null },
         },
-        tameable: false, rideable: false, breedable: false,
+        tameable: entry.tameable, rideable: entry.rideable, breedable: entry.breedable,
         taming: null, saddle: null, rider_weaponry: false,
-        egg: null, drag_weight: null, cloneable: null, entity_id: null,
+        egg: null, drag_weight: null, cloneable: null, entity_id: entry.entity_id,
       },
       missing: ['ALL (page fetch failed — manual population required)'],
     }
   }
 
-  const infobox = parseInfobox(root)
+  const arkInfo = parseArkInfo(root)
 
-  // ── Dossier ──────────────────────────────────────────────────────────────────
-  const species = infobox['species'] || infobox['binomial'] || null
-  const timePeriod = infobox['time_period'] || infobox['period'] || infobox['time'] || null
-  const diet = infobox['diet'] || null
-  const temperament = infobox['temperament'] || infobox['behavior'] || null
+  // ── Category ──────────────────────────────────────────────────────────────────
+  const groupRaw = (getInfoValue(arkInfo, 'group') ?? '').toLowerCase().trim()
+  const category = GROUP_TO_CATEGORY[groupRaw] ?? 'other'
 
-  // Wild/domesticated dossier text
-  let wildText: string | null = null
-  let domesticatedText: string | null = null
-  const dossierSection = root.querySelector('#Dossier, #dossier, [id*="dossier" i]')
-  if (dossierSection) {
-    const paras = dossierSection.querySelectorAll('p')
-    if (paras[0]) wildText = cleanText(paras[0])
-    if (paras[1]) domesticatedText = cleanText(paras[1])
-  }
-  // Fallback: first two substantial paragraphs in main content
-  if (!wildText) {
-    const paras = root.querySelectorAll('#mw-content-text > div > p, .mw-parser-output > p')
-    const substantial = Array.from(paras).filter(p => p.text.trim().length > 80)
-    if (substantial[0]) wildText = cleanText(substantial[0])
-    if (substantial[1]) domesticatedText = cleanText(substantial[1])
-  }
+  // ── Dossier ───────────────────────────────────────────────────────────────────
+  const dossierData = parseDossier(root)
+  const dossier = dossierData?.species && dossierData.wild && dossierData.domesticated
+    ? {
+        species: dossierData.species,
+        time: dossierData.time ?? 'Unknown',
+        diet: dossierData.diet ?? entry.diet,
+        temperament: dossierData.temperament ?? entry.temperament,
+        wild: dossierData.wild,
+        domesticated: dossierData.domesticated,
+      }
+    : null
 
-  const hasDossier = species && timePeriod && diet && temperament && wildText && domesticatedText
-  if (!hasDossier) {
-    if (!species) missing.push('dossier.species')
-    if (!timePeriod) missing.push('dossier.time')
-    if (!diet) missing.push('dossier.diet')
-    if (!temperament) missing.push('dossier.temperament')
-    if (!wildText) missing.push('dossier.wild')
-    if (!domesticatedText) missing.push('dossier.domesticated')
+  if (!dossier) {
+    if (!dossierData?.species) missing.push('dossier.species')
+    if (!dossierData?.wild) missing.push('dossier.wild')
+    if (!dossierData?.domesticated) missing.push('dossier.domesticated')
   }
 
-  const dossier = hasDossier ? {
-    species: species!,
-    time: timePeriod!,
-    diet: diet!,
-    temperament: temperament!,
-    wild: wildText!,
-    domesticated: domesticatedText!,
-  } : null
+  // ── Base stats ────────────────────────────────────────────────────────────────
+  const base_stats_growth = parseCreatureStats(root)
+  const hasStats = Object.values(base_stats_growth).some(s => s.base !== null)
+  if (!hasStats) missing.push('base_stats_growth (all stats)')
 
-  // ── Flags ─────────────────────────────────────────────────────────────────────
-  const tameable = parseBool(infobox['tameable'] || infobox['taming'])
-  const rideable = parseBool(infobox['rideable'] || infobox['ridable'])
-  const breedable = parseBool(infobox['breedable'] || infobox['breeding'])
+  // ── Technical ─────────────────────────────────────────────────────────────────
+  const entity_id    = entry.entity_id || extractEntityId(root)
+  const drag_weight  = parseNum(getInfoValue(arkInfo, 'drag weight') ?? '')
+  const cloneable    = getInfoBool(arkInfo, 'cloneable')
 
-  // ── Stats ─────────────────────────────────────────────────────────────────────
-  const stats = parseCreatureStats(root)
-  const hasAnyStats = Object.values(stats).some(s => s.base !== null)
-  if (!hasAnyStats) {
-    missing.push('base_stats_growth (all stats need manual population)')
-  }
+  if (!entity_id) missing.push('entity_id')
 
   // ── Taming ────────────────────────────────────────────────────────────────────
-  let tamingMethod: string | null = null
-  let tamingKibble: string | null = null
-  const tamingSection = root.querySelector('#Taming, #taming, [id*="taming" i]')
-  if (tamingSection) {
-    const text = tamingSection.text
-    if (/knockout/i.test(text)) tamingMethod = 'Knockout'
-    else if (/passive/i.test(text)) tamingMethod = 'Passive'
-    else if (/trap/i.test(text)) tamingMethod = 'Trap'
-
-    const kibbleMatch = text.match(/(\w+)\s+kibble/i)
-    if (kibbleMatch) tamingKibble = kibbleMatch[1]
+  const tamingMethod = getInfoValue(arkInfo, 'taming method', 'taming')
+  const preferredFood = getInfoValue(arkInfo, 'preferred food')
+  // Infer kibble from preferred food name
+  let kibble: string | null = null
+  if (preferredFood) {
+    const m = preferredFood.match(/^(\w+)\s+Kibble$/i)
+    if (m) kibble = m[1]
   }
-  const taming = tameable ? { method: tamingMethod, kibble: tamingKibble } : null
-  if (tameable && !tamingMethod) missing.push('taming.method')
+  const taming = entry.tameable ? { method: tamingMethod, kibble } : null
+  if (entry.tameable && !tamingMethod) missing.push('taming.method')
 
   // ── Saddle ────────────────────────────────────────────────────────────────────
   let saddle: Array<{ name: string | null; engram_level: number | null }> | null = null
-  if (rideable) {
-    const saddleName = infobox['saddle'] || null
-    const saddleLevel = parseIntNum(infobox['saddle_level'] || infobox['saddle_engram'])
-    if (saddleName) {
+  if (entry.rideable) {
+    const saddleName  = getInfoValue(arkInfo, 'equipment', 'saddle') ?? null
+    const saddleLevel = entry.saddle_level
+    if (saddleName || saddleLevel !== null) {
       saddle = [{ name: saddleName, engram_level: saddleLevel }]
     } else {
-      // Try to find saddle in text
-      const saddleMatch = root.text.match(/([A-Z][a-zA-Z\s]+Saddle)/g)
-      if (saddleMatch) {
-        saddle = saddleMatch.slice(0, 2).map(n => ({ name: n.trim(), engram_level: null }))
-        if (!saddleMatch.some(s => s.includes('Tek'))) missing.push('saddle[].engram_level')
-      } else {
-        missing.push('saddle (name and engram_level)')
-      }
+      missing.push('saddle')
     }
   }
-
-  // ── Technical ─────────────────────────────────────────────────────────────────
-  const entityId = infobox['entity_id'] || infobox['blueprint'] || null
-  const dragWeight = parseNum(infobox['drag_weight'] || infobox['weight_for_unconscious'])
-  const cloneable = parseBool(infobox['cloneable'])
-
-  if (!entityId) missing.push('entity_id')
-
-  // ── Category ──────────────────────────────────────────────────────────────────
-  const category = inferCategory(root, infobox)
 
   // ── Egg / Breeding ────────────────────────────────────────────────────────────
-  let egg: Record<string, unknown> | null = null
-  if (breedable) {
-    const breedSection = root.querySelector('#Breeding, #breeding, [id*="breed" i]')
-    if (breedSection) {
-      const text = breedSection.text
-      const eggName = text.match(/([A-Z][a-zA-Z\s]+Egg)/)?.[1]?.trim() ?? null
-      const tempRange = text.match(/(\d+\s*[–-]\s*\d+\s*°[CF][^,\n]*)/)?.[1]?.trim() ?? null
-      const incTime = text.match(/incubation[^\d]*(\d+[hm\s\d]+)/i)?.[1]?.trim() ?? null
-      const babyTime = text.match(/baby[^\d]*(\d+[hm\s\d]+)/i)?.[1]?.trim() ?? null
-      const maturation = text.match(/maturation[^\d]*(\d+[hm\s\d]+)/i)?.[1]?.trim() ?? null
-
-      if (eggName) {
-        egg = {
-          name: eggName,
-          incubation: {
-            range: tempRange ?? 'Unknown',
-            incubation_range: tempRange ?? 'Unknown',
-            incubation_time: incTime ?? 'Unknown',
-          },
-          baby_time: babyTime ?? 'Unknown',
-          juvenile_time: 'Unknown',
-          adolescent_time: 'Unknown',
-          total_maturation: maturation ?? 'Unknown',
-          breeding_interval: 'Unknown',
-        }
-        if (!tempRange) missing.push('egg.incubation.range')
-        if (!incTime) missing.push('egg.incubation.incubation_time')
-        if (!babyTime) missing.push('egg.baby_time')
-        missing.push('egg.juvenile_time', 'egg.adolescent_time', 'egg.breeding_interval')
-      } else {
-        missing.push('egg (full breeding data)')
-      }
-    } else {
-      missing.push('egg (breeding section not found)')
-    }
-  }
+  // Egg data is very complex — mark as needing manual population
+  const egg: null = null
+  if (entry.breedable) missing.push('egg (incubation temps, times, maturation)')
 
   const data: Record<string, unknown> = {
-    name: entry.name,
-    category,
-    dossier,
-    base_stats_growth: stats,
-    tameable,
-    rideable,
-    breedable,
-    taming,
-    saddle: saddle ?? null,
-    rider_weaponry: false,
-    egg: egg ?? null,
-    drag_weight: dragWeight,
-    cloneable: cloneable,
-    entity_id: entityId,
+    name: entry.name, category, dossier,
+    base_stats_growth,
+    tameable: entry.tameable, rideable: entry.rideable, breedable: entry.breedable,
+    taming, saddle: saddle ?? null, rider_weaponry: false,
+    egg, drag_weight, cloneable, entity_id,
   }
 
   return { data, missing }
@@ -535,136 +577,126 @@ async function parseCreaturePage(entry: CreatureEntry): Promise<{ data: Record<s
 async function scrapeCreatures(overwrite: boolean): Promise<ScrapeStats> {
   const stats: ScrapeStats = { total: 0, complete: 0, incomplete: 0, skipped: 0, images: 0 }
   const entries = await fetchCreatureList()
-  if (!entries.length) { err('No creatures found on list page'); return stats }
-  log(`\nFound ${entries.length} creature entries. Starting scrape…\n`)
+  if (!entries.length) { fail('No creatures found'); return stats }
+  log(`\nFound ${entries.length} creatures. Scraping…\n`)
 
   for (let i = 0; i < entries.length; i++) {
     const entry = entries[i]
-    process.stdout.write(`[${i + 1}/${entries.length}] ${entry.name}… `)
+    process.stdout.write(`  [${i + 1}/${entries.length}] ${entry.name}… `)
     stats.total++
 
-    const { data, missing } = await parseCreaturePage(entry)
+    const { data, missing } = await scrapeCreature(entry)
+    const finalMissing = validateAndMerge(CreatureSchema, data, missing)
 
-    // Validate with Zod
-    const parsed = CreatureSchema.safeParse(data)
-    const finalMissing = parsed.success ? missing : [
-      ...missing,
-      ...parsed.error.issues.map(i => i.path.join('.') + ': ' + i.message),
-    ]
+    const { saved, complete } = saveEntity('creatures', entry.slug, data, finalMissing, overwrite)
+    if (!saved) { process.stdout.write('skipped\n'); stats.skipped++; continue }
 
-    const report = saveEntity('creatures', entry.slug, data, finalMissing, overwrite)
-    if (report.skipped) { process.stdout.write('skipped (exists)\n'); stats.skipped++; continue }
-
-    // Image
-    const root = await fetchHtml(WIKI + entry.wikiPath).catch(() => null)
+    // Image — re-use the already fetched page by passing root
+    const root = await fetchPage(entry.name)
     if (root) {
-      const imgUrl = extractFirstImageUrl(root)
-      if (imgUrl) {
-        const saved = await downloadImage('creatures', entry.slug, imgUrl)
-        if (saved) stats.images++
-      }
+      const url = extractCreatureImage(root)
+      if (url) { const ok2 = await saveImage('creatures', entry.slug, url); if (ok2) stats.images++ }
     }
 
-    if (report.complete) {
-      process.stdout.write('complete\n')
-      stats.complete++
-    } else {
-      process.stdout.write(`incomplete (${report.missing.length} fields)\n`)
-      stats.incomplete++
-    }
+    if (complete) { process.stdout.write('complete\n'); stats.complete++ }
+    else { process.stdout.write(`incomplete (${finalMissing.length} fields)\n`); stats.incomplete++ }
   }
-
   return stats
 }
 
-// ─── Resource scraper ──────────────────────────────────────────────────────────
+// ─── RESOURCE SCRAPER ──────────────────────────────────────────────────────────
 
-interface WikiEntry { name: string; slug: string; wikiPath: string }
+interface ResourceListEntry {
+  name: string; slug: string
+  rarity: 'common' | 'uncommon' | 'rare'
+  renewable: boolean; refinable: boolean; combustible: boolean
+}
 
-async function fetchWikiList(wikiPage: string, excludePatterns: RegExp[] = []): Promise<WikiEntry[]> {
-  const root = await fetchHtml(`${WIKI}/wiki/${wikiPage}`)
+async function fetchResourceList(): Promise<ResourceListEntry[]> {
+  info('Fetching resource list…')
+  const root = await fetchPage('Resources')
   if (!root) return []
 
-  const entries: WikiEntry[] = []
-  const seen = new Set<string>()
+  const table = root.querySelector('table.cargo-item-table')
+  if (!table) { fail('Could not find cargo-item-table on Resources page'); return [] }
 
-  for (const link of root.querySelectorAll('.wikitable a, #mw-content-text a')) {
-    const href = link.getAttribute('href') ?? ''
-    const title = link.getAttribute('title') ?? link.text.trim()
-    if (!href.startsWith('/wiki/') || href.includes(':') || href.includes('#')) continue
-    if (!title || seen.has(href)) continue
-    if (excludePatterns.some(p => p.test(title))) continue
-    seen.add(href)
-    const slug = slugify(title)
-    if (slug) entries.push({ name: title, slug, wikiPath: href })
+  const entries: ResourceListEntry[] = []
+  for (const row of table.querySelectorAll('tr:not(:first-child)')) {
+    const cells = row.querySelectorAll('td')
+    if (cells.length < 5) continue
+
+    const link = cells[0].querySelector('a[href^="/wiki/"]')
+    if (!link) continue
+    const name = link.getAttribute('title') || clean(link)
+    if (!name) continue
+    const slug = slugify(name)
+
+    const rarityText = clean(cells[1]).toLowerCase().trim()
+    const rarity: 'common' | 'uncommon' | 'rare' =
+      rarityText === 'rare' ? 'rare' : rarityText === 'uncommon' ? 'uncommon' : 'common'
+
+    entries.push({
+      name, slug, rarity,
+      renewable: hasCheckmark(cells[2]),
+      refinable: hasCheckmark(cells[3]),
+      combustible: hasCheckmark(cells[4]),
+    })
   }
-
   return entries
 }
 
-async function parseResourcePage(entry: WikiEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
-  const root = await fetchHtml(WIKI + entry.wikiPath)
+async function scrapeResource(entry: ResourceListEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
+  const root = await fetchPage(entry.name)
   const missing: string[] = []
 
   if (!root) {
     return {
-      data: {
-        name: entry.name,
-        rarity: 'common',
-        renewable: false, refinable: false, combustible: false,
-        weight: 0, stack_size: 100, found_in: [],
-      },
-      missing: ['ALL (page fetch failed)'],
+      data: { name: entry.name, rarity: entry.rarity, renewable: entry.renewable,
+              refinable: entry.refinable, combustible: entry.combustible,
+              weight: 0, stack_size: 100, found_in: [] },
+      missing: ['weight', 'stack_size', 'found_in (page fetch failed)'],
     }
   }
 
-  const infobox = parseInfobox(root)
-  const text = root.text
+  const arkInfo = parseArkInfo(root)
 
-  // Weight and stack size
-  const weight = parseNum(infobox['weight'] || infobox['item_weight'])
-  const stackSize = parseIntNum(infobox['stack_size'] || infobox['stack'])
+  const weight    = parseNum(getInfoValue(arkInfo, 'weight') ?? '')
+  const stackSize = parseIntNum(getInfoValue(arkInfo, 'stack size', 'stack') ?? '')
 
-  if (weight === null) missing.push('weight')
+  if (weight === null)    missing.push('weight')
   if (stackSize === null) missing.push('stack_size')
 
-  // Rarity — infer from page categories or infobox
-  let rarity: 'common' | 'uncommon' | 'rare' = 'common'
-  const rarityText = (infobox['rarity'] || '').toLowerCase()
-  if (rarityText === 'rare') rarity = 'rare'
-  else if (rarityText === 'uncommon') rarity = 'uncommon'
-  else {
-    // Try category links
-    for (const cat of root.querySelectorAll('.catlinks a')) {
-      const catText = cat.text.toLowerCase()
-      if (catText.includes('rare')) { rarity = 'rare'; break }
-      if (catText.includes('uncommon')) { rarity = 'uncommon'; break }
+  // "Found in" — look for harvested from / drops from text
+  const found_in: string[] = []
+  const foundInVal = getInfoValue(arkInfo, 'found in', 'drops from', 'gathered from', 'obtained from')
+  if (foundInVal) {
+    found_in.push(...foundInVal.split(/[,;\/]/).map(s => s.trim()).filter(Boolean))
+  }
+  // Check categories for biome info
+  if (!found_in.length) {
+    for (const cat of root.querySelectorAll('#mw-normal-catlinks a')) {
+      const t = cat.text.trim()
+      if (t && !/^(Category|Resources|Items)/i.test(t) && !t.includes('ARK')) {
+        found_in.push(t)
+      }
     }
   }
+  if (!found_in.length) missing.push('found_in')
 
-  // Booleans
-  const renewable = parseBool(infobox['renewable']) || /renewable/i.test(text)
-  const refinable = parseBool(infobox['refinable']) || /refinable|refine/i.test(text)
-  const combustible = parseBool(infobox['combustible']) || /combustible|fuel/i.test(text)
-
-  // Found in (biomes / sources)
-  const foundIn: string[] = []
-  const foundInText = infobox['found_in'] || infobox['drops_from'] || infobox['gathered_from'] || ''
-  if (foundInText) {
-    foundIn.push(...foundInText.split(/[,;\/]/).map(s => s.trim()).filter(Boolean))
+  // Hexagon exchange
+  let hexagon_exchange: { exchange_yields: number; hexagons: number } | null = null
+  const hexVal = getInfoValue(arkInfo, 'hexagon', 'hexagons')
+  if (hexVal) {
+    const hexNum = parseIntNum(hexVal.replace(/,/g, ''))
+    if (hexNum !== null) hexagon_exchange = { exchange_yields: 1, hexagons: hexNum }
   }
-  if (!foundIn.length) missing.push('found_in')
 
   return {
     data: {
-      name: entry.name,
-      rarity,
-      renewable,
-      refinable,
-      combustible,
-      weight: weight ?? 0,
-      stack_size: stackSize ?? 100,
-      found_in: foundIn,
+      name: entry.name, rarity: entry.rarity,
+      renewable: entry.renewable, refinable: entry.refinable, combustible: entry.combustible,
+      weight: weight ?? 0, stack_size: stackSize ?? 100,
+      found_in, ...(hexagon_exchange ? { hexagon_exchange } : {}),
     },
     missing,
   }
@@ -672,440 +704,464 @@ async function parseResourcePage(entry: WikiEntry): Promise<{ data: Record<strin
 
 async function scrapeResources(overwrite: boolean): Promise<ScrapeStats> {
   const stats: ScrapeStats = { total: 0, complete: 0, incomplete: 0, skipped: 0, images: 0 }
-  info('Fetching resource list from wiki…')
-  const entries = await fetchWikiList('Resources', [/^(Resources|Category|Template|ARK)/i])
-  if (!entries.length) { err('No resources found'); return stats }
-  log(`\nFound ${entries.length} resource entries. Starting scrape…\n`)
+  const entries = await fetchResourceList()
+  if (!entries.length) { fail('No resources found'); return stats }
+  log(`\nFound ${entries.length} resources. Scraping…\n`)
 
   for (let i = 0; i < entries.length; i++) {
     const entry = entries[i]
-    process.stdout.write(`[${i + 1}/${entries.length}] ${entry.name}… `)
+    process.stdout.write(`  [${i + 1}/${entries.length}] ${entry.name}… `)
     stats.total++
 
-    const { data, missing } = await parseResourcePage(entry)
-    const parsed = ResourceSchema.safeParse(data)
-    const finalMissing = parsed.success ? missing : [
-      ...missing,
-      ...parsed.error.issues.map(i => i.path.join('.') + ': ' + i.message),
-    ]
+    const { data, missing } = await scrapeResource(entry)
+    const finalMissing = validateAndMerge(ResourceSchema, data, missing)
 
-    const report = saveEntity('resources', entry.slug, data, finalMissing, overwrite)
-    if (report.skipped) { process.stdout.write('skipped\n'); stats.skipped++; continue }
+    const { saved, complete } = saveEntity('resources', entry.slug, data, finalMissing, overwrite)
+    if (!saved) { process.stdout.write('skipped\n'); stats.skipped++; continue }
 
-    // Image
-    const root = await fetchHtml(WIKI + entry.wikiPath).catch(() => null)
+    const root = await fetchPage(entry.name)
     if (root) {
-      const imgUrl = extractFirstImageUrl(root)
-      if (imgUrl) {
-        const saved = await downloadImage('resources', entry.slug, imgUrl)
-        if (saved) stats.images++
-      }
+      const url = extractItemImage(root)
+      if (url) { const ok2 = await saveImage('resources', entry.slug, url); if (ok2) stats.images++ }
     }
 
-    if (report.complete) { process.stdout.write('complete\n'); stats.complete++ }
-    else { process.stdout.write(`incomplete (${report.missing.length} fields)\n`); stats.incomplete++ }
+    if (complete) { process.stdout.write('complete\n'); stats.complete++ }
+    else { process.stdout.write(`incomplete (${finalMissing.length})\n`); stats.incomplete++ }
   }
-
   return stats
 }
 
-// ─── Armor scraper ─────────────────────────────────────────────────────────────
+// ─── ARMOR SCRAPER ─────────────────────────────────────────────────────────────
 
-async function parseArmorPage(entry: WikiEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
-  const root = await fetchHtml(WIKI + entry.wikiPath)
-  const missing: string[] = []
+interface ArmorListEntry {
+  name: string; slug: string
+  unlock_level: number | null; armor_rating: number
+  cold_protection: number; heat_protection: number
+  weight: number; durability: number | null
+  found_in: string[]
+  ingredients: Ingredient[]
+}
 
-  if (!root) {
-    return {
-      data: {
-        set_name: entry.name,
-        unlock_level: null, engram_points: null,
-        armor_rating: 0, cold_protection: 0, heat_protection: 0,
-        weight: 0, durability: null,
-        found_in: [], set_ingredients: [],
-      },
-      missing: ['ALL (page fetch failed)'],
-    }
-  }
+async function fetchArmorList(): Promise<ArmorListEntry[]> {
+  info('Fetching armor list…')
+  const root = await fetchPage('Armor')
+  if (!root) return []
 
-  const infobox = parseInfobox(root)
+  // The armor list has a nice sortable wikitable with all data
+  // Columns: Armor Type | Unlock Level | Armor rating | Cold | Heat | Weight | Durability | Found in | Ingredients
+  const table = root.querySelector('table.wikitable.sortable')
+  if (!table) { fail('Could not find armor table on Armor page'); return [] }
 
-  const unlockLevel = parseIntNum(infobox['required_level'] || infobox['engram_level'] || infobox['unlock_level'])
-  const engramPoints = parseIntNum(infobox['engram_points'] || infobox['ep'])
-  const armorRating = parseNum(infobox['armor'] || infobox['armor_rating'])
-  const coldProt = parseNum(infobox['cold_protection'] || infobox['cold'] || infobox['hypothermal_insulation'])
-  const heatProt = parseNum(infobox['heat_protection'] || infobox['heat'] || infobox['hyperthermal_insulation'])
-  const weight = parseNum(infobox['weight'])
-  const durability = parseNum(infobox['durability'])
+  const entries: ArmorListEntry[] = []
+  for (const row of table.querySelectorAll('tr:not(:first-child)')) {
+    const cells = row.querySelectorAll('td')
+    if (cells.length < 8) continue
 
-  if (armorRating === null) missing.push('armor_rating')
-  if (coldProt === null) missing.push('cold_protection')
-  if (heatProt === null) missing.push('heat_protection')
-  if (weight === null) missing.push('weight')
+    const link = cells[0].querySelector('a[href^="/wiki/"]')
+    if (!link) continue
+    const name = link.getAttribute('title') || clean(link)
+    if (!name) continue
+    const slug = slugify(name)
 
-  // Found in
-  const foundIn: string[] = []
-  const foundInText = infobox['found_in'] || infobox['dlc'] || ''
-  if (foundInText) foundIn.push(...foundInText.split(/[,;]/).map(s => s.trim()).filter(Boolean))
-  if (!foundIn.length) {
-    // infer from categories
-    for (const cat of root.querySelectorAll('.catlinks a')) {
-      const t = cat.text.trim()
-      if (t && !/(armor|category|items)/i.test(t)) foundIn.push(t)
-    }
-  }
+    const unlock_level     = parseIntNum(clean(cells[1]))
+    const armor_rating     = parseNum(clean(cells[2])) ?? 0
+    const cold_protection  = parseNum(clean(cells[3])) ?? 0
+    const heat_protection  = parseNum(clean(cells[4])) ?? 0
+    const weight           = parseNum(clean(cells[5])) ?? 0
+    const durability       = parseNum(clean(cells[6]))
+    const found_in_text    = clean(cells[7])
+    const found_in         = found_in_text ? [found_in_text] : []
 
-  // Ingredients — look for crafting table
-  const ingredients: Array<{ name: string; quantity: number; resource_id: string }> = []
-  for (const table of root.querySelectorAll('table.wikitable')) {
-    const headers = table.querySelectorAll('tr:first-child th, tr:first-child td')
-    const headerTexts = Array.from(headers).map(h => cleanText(h).toLowerCase())
-    if (!headerTexts.some(h => /ingredient|material|resource|craft/i.test(h))) continue
-
-    for (const row of table.querySelectorAll('tr:not(:first-child)')) {
-      const cells = row.querySelectorAll('td')
-      if (cells.length < 2) continue
-      const name = cleanText(cells[0])
-      const qty = parseIntNum(cleanText(cells[1]))
-      if (name && qty !== null) {
-        ingredients.push({ name, quantity: qty, resource_id: slugify(name) })
+    // Ingredients cell: "N × ItemName, M × ItemName2"
+    const ingredients: Ingredient[] = []
+    for (const link of cells[8]?.querySelectorAll('a') ?? []) {
+      const itemName = link.getAttribute('title') || clean(link)
+      if (!itemName || itemName.includes('Supply')) continue
+      // Find preceding text for quantity
+      const parentText = clean(link.closest('td, div, li') ?? link)
+      const m = parentText.match(/(\d+)\s*[×x]\s*/)
+      if (m) {
+        ingredients.push({ name: itemName, quantity: parseInt(m[1], 10), resource_id: slugify(itemName) })
       }
     }
-    if (ingredients.length) break
-  }
+    // Fallback: parse full cell text "145 × Fiber, 10 × Hide"
+    if (!ingredients.length && cells[8]) {
+      const cellText = clean(cells[8])
+      for (const part of cellText.split(',')) {
+        const m = part.trim().match(/^(\d+)\s*[×x]\s*(.+)/)
+        if (m) {
+          ingredients.push({ name: m[2].trim(), quantity: parseInt(m[1], 10), resource_id: slugify(m[2].trim()) })
+        }
+      }
+    }
 
-  if (!ingredients.length) missing.push('set_ingredients')
-
-  return {
-    data: {
-      set_name: entry.name,
-      unlock_level: unlockLevel,
-      engram_points: engramPoints,
-      armor_rating: armorRating ?? 0,
-      cold_protection: coldProt ?? 0,
-      heat_protection: heatProt ?? 0,
-      weight: weight ?? 0,
-      durability,
-      found_in: foundIn,
-      set_ingredients: ingredients,
-    },
-    missing,
+    entries.push({ name, slug, unlock_level, armor_rating, cold_protection, heat_protection, weight, durability, found_in, ingredients })
   }
+  return entries
 }
 
 async function scrapeArmor(overwrite: boolean): Promise<ScrapeStats> {
   const stats: ScrapeStats = { total: 0, complete: 0, incomplete: 0, skipped: 0, images: 0 }
-  info('Fetching armor list from wiki…')
-  const entries = await fetchWikiList('Armor', [/^(Armor|Category|Template|ARK|DLC)/i])
-  if (!entries.length) { err('No armor entries found'); return stats }
-  log(`\nFound ${entries.length} armor entries. Starting scrape…\n`)
+  const entries = await fetchArmorList()
+  if (!entries.length) { fail('No armor entries found'); return stats }
+  log(`\nFound ${entries.length} armor sets. Scraping images…\n`)
 
   for (let i = 0; i < entries.length; i++) {
     const entry = entries[i]
-    process.stdout.write(`[${i + 1}/${entries.length}] ${entry.name}… `)
+    process.stdout.write(`  [${i + 1}/${entries.length}] ${entry.name}… `)
     stats.total++
 
-    const { data, missing } = await parseArmorPage(entry)
-    const parsed = ArmorSchema.safeParse(data)
-    const finalMissing = parsed.success ? missing : [
-      ...missing,
-      ...parsed.error.issues.map(i => i.path.join('.') + ': ' + i.message),
-    ]
+    const missing: string[] = []
+    if (entry.armor_rating === 0) missing.push('armor_rating')
+    if (!entry.ingredients.length) missing.push('set_ingredients')
 
-    const report = saveEntity('armor', entry.slug, data, finalMissing, overwrite)
-    if (report.skipped) { process.stdout.write('skipped\n'); stats.skipped++; continue }
+    const data: Record<string, unknown> = {
+      set_name: entry.name,
+      unlock_level: entry.unlock_level,
+      engram_points: null,           // not on list page, mark incomplete
+      armor_rating: entry.armor_rating,
+      cold_protection: entry.cold_protection,
+      heat_protection: entry.heat_protection,
+      weight: entry.weight,
+      durability: entry.durability,
+      found_in: entry.found_in,
+      set_ingredients: entry.ingredients,
+    }
+    if (data.engram_points === null) missing.push('engram_points')
 
-    const root = await fetchHtml(WIKI + entry.wikiPath).catch(() => null)
+    // Fetch individual page for engram_points + image
+    const root = await fetchPage(entry.name)
     if (root) {
-      const imgUrl = extractFirstImageUrl(root)
-      if (imgUrl) {
-        const saved = await downloadImage('armor', entry.slug, imgUrl)
-        if (saved) stats.images++
-      }
+      const arkInfo = parseArkInfo(root)
+      const ep = parseIntNum(getInfoValue(arkInfo, 'engram points', 'ep') ?? '')
+      if (ep !== null) { data.engram_points = ep; missing.splice(missing.indexOf('engram_points'), 1) }
+
+      const url = extractItemImage(root)
+      if (url) { const ok2 = await saveImage('armor', entry.slug, url); if (ok2) stats.images++ }
     }
 
-    if (report.complete) { process.stdout.write('complete\n'); stats.complete++ }
-    else { process.stdout.write(`incomplete (${report.missing.length} fields)\n`); stats.incomplete++ }
-  }
+    const finalMissing = validateAndMerge(ArmorSchema, data, missing)
+    const { saved, complete } = saveEntity('armor', entry.slug, data, finalMissing, overwrite)
+    if (!saved) { process.stdout.write('skipped\n'); stats.skipped++; continue }
 
+    if (complete) { process.stdout.write('complete\n'); stats.complete++ }
+    else { process.stdout.write(`incomplete (${finalMissing.length})\n`); stats.incomplete++ }
+  }
   return stats
 }
 
-// ─── Weapon scraper ────────────────────────────────────────────────────────────
+// ─── WEAPON SCRAPER ────────────────────────────────────────────────────────────
 
-const WEAPON_CATEGORIES = ['tool', 'melee', 'ranged', 'firearm', 'explosive', 'tek', 'shield', 'turret', 'attachment'] as const
-type WeaponCategory = typeof WEAPON_CATEGORIES[number]
+interface WeaponListEntry { name: string; slug: string; category: string }
 
-function inferWeaponCategory(root: HTMLElement, infobox: Record<string, string>): WeaponCategory {
-  const text = (infobox['type'] || infobox['category'] || '').toLowerCase()
-  if (/tek/i.test(text)) return 'tek'
-  if (/explosive|grenade|rocket/i.test(text)) return 'explosive'
-  if (/firearm|gun|pistol|rifle|shotgun/i.test(text)) return 'firearm'
-  if (/ranged|bow|crossbow|slingshot/i.test(text)) return 'ranged'
-  if (/melee|sword|club|pike/i.test(text)) return 'melee'
-  if (/shield/i.test(text)) return 'shield'
-  if (/turret/i.test(text)) return 'turret'
-  if (/attachment|scope|silencer/i.test(text)) return 'attachment'
-  // Try page categories
-  for (const cat of root.querySelectorAll('.catlinks a')) {
-    const c = cat.text.toLowerCase()
-    if (/tek/i.test(c)) return 'tek'
-    if (/explosive/i.test(c)) return 'explosive'
-    if (/firearm/i.test(c)) return 'firearm'
-    if (/ranged/i.test(c)) return 'ranged'
-    if (/melee/i.test(c)) return 'melee'
-  }
-  return 'tool'
+const NAVBOX_CATEGORY_MAP: Record<string, string> = {
+  'melee': 'melee', 'tools': 'tool', 'tool': 'tool',
+  'ranged': 'ranged', 'primitive': 'ranged', 'firearms': 'firearm',
+  'explosives': 'explosive', 'explosive': 'explosive',
+  'attachments': 'attachment', 'attachment': 'attachment',
+  'tek': 'tek', 'shields': 'shield', 'turrets': 'turret',
 }
 
-async function parseWeaponPage(entry: WikiEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
-  const root = await fetchHtml(WIKI + entry.wikiPath)
+async function fetchWeaponList(): Promise<WeaponListEntry[]> {
+  info('Fetching weapon list…')
+  const root = await fetchPage('Weapons')
+  if (!root) return []
+
+  const entries: WeaponListEntry[] = []
+  const seen = new Set<string>()
+
+  // Extract from the navbox which has weapons grouped by category
+  for (const navGroup of root.querySelectorAll('th.navbox-group')) {
+    const groupText = clean(navGroup).toLowerCase().replace(/[^a-z]/g, '')
+    const category = NAVBOX_CATEGORY_MAP[groupText] ?? 'tool'
+
+    // Get the sibling td.navbox-list
+    const listCell = navGroup.nextElementSibling
+    if (!listCell) continue
+
+    // Also handle sub-groups (Primitive/Firearms/Attachments under Ranged)
+    for (const link of listCell.querySelectorAll('a[href^="/wiki/"]')) {
+      const href  = link.getAttribute('href') ?? ''
+      const title = link.getAttribute('title') || clean(link)
+      if (!title || href.includes(':') || seen.has(href)) continue
+      // Skip non-weapon links
+      if (/^(Category|Template|ARK|Ammunition|Ammo)/i.test(title)) continue
+      seen.add(href)
+      const slug = slugify(title)
+      if (slug) entries.push({ name: title, slug, category })
+    }
+  }
+
+  // If navbox didn't work, fallback to page section links
+  if (!entries.length) {
+    for (const link of root.querySelectorAll('#mw-content-text a[href^="/wiki/"]')) {
+      const href  = link.getAttribute('href') ?? ''
+      const title = link.getAttribute('title') || clean(link)
+      if (!title || href.includes(':') || seen.has(href)) continue
+      if (/^(Weapons|Category|Ammo|Patch|ARK|Template)/i.test(title)) continue
+      seen.add(href)
+      const slug = slugify(title)
+      if (slug) entries.push({ name: title, slug, category: 'tool' })
+    }
+  }
+
+  return entries
+}
+
+async function scrapeWeapon(entry: WeaponListEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
+  const root = await fetchPage(entry.name)
   const missing: string[] = []
 
   if (!root) {
     return {
-      data: {
-        name: entry.name, category: 'tool',
-        damage: null, unlock_level: null, engram_points: null,
-        ammo_type: null, ingredients: [],
-      },
+      data: { name: entry.name, category: entry.category, damage: null, unlock_level: null,
+              engram_points: null, ammo_type: null, ingredients: [] },
       missing: ['ALL (page fetch failed)'],
     }
   }
 
-  const infobox = parseInfobox(root)
-  const category = inferWeaponCategory(root, infobox)
+  const arkInfo = parseArkInfo(root)
 
-  const damage = parseNum(infobox['damage'] || infobox['base_damage'])
-  const unlockLevel = parseIntNum(infobox['required_level'] || infobox['unlock_level'] || infobox['engram_level'])
-  const engramPoints = parseIntNum(infobox['engram_points'] || infobox['ep'])
-  const ammoType = infobox['ammo'] || infobox['ammo_type'] || null
+  // Damage
+  const damageRaw = getInfoValue(arkInfo, 'melee damage', 'damage', 'base damage')
+  const damage = damageRaw ? parseNum(damageRaw) : null
 
-  // Ingredients
-  const ingredients: Array<{ name: string; quantity: number; resource_id: string }> = []
-  for (const table of root.querySelectorAll('table.wikitable')) {
-    const headers = table.querySelectorAll('tr:first-child th, tr:first-child td')
-    const headerTexts = Array.from(headers).map(h => cleanText(h).toLowerCase())
-    if (!headerTexts.some(h => /ingredient|material|resource|craft/i.test(h))) continue
+  // Level and engram points
+  const levelRaw = getInfoValue(arkInfo, 'required level', 'unlock level', 'engram level')
+  const unlock_level = levelRaw ? parseIntNum(levelRaw.replace(/level/i, '').trim()) : null
+  const epRaw = getInfoValue(arkInfo, 'engram points', 'ep')
+  const engram_points = epRaw ? parseIntNum(epRaw) : null
 
-    for (const row of table.querySelectorAll('tr:not(:first-child)')) {
-      const cells = row.querySelectorAll('td')
-      if (cells.length < 2) continue
-      const name = cleanText(cells[0])
-      const qty = parseIntNum(cleanText(cells[1]))
-      if (name && qty !== null) {
-        ingredients.push({ name, quantity: qty, resource_id: slugify(name) })
-      }
-    }
-    if (ingredients.length) break
-  }
+  // Ammo
+  const ammo_type = getInfoValue(arkInfo, 'ammo type', 'ammo', 'uses ammo') ?? null
 
+  // Infer category from page if possible
+  const typeRaw = getInfoValue(arkInfo, 'type') ?? ''
+  let category = entry.category
+  if (/tool/i.test(typeRaw)) category = 'tool'
+  else if (/melee/i.test(typeRaw)) category = 'melee'
+  else if (/ranged/i.test(typeRaw)) category = 'ranged'
+  else if (/firearm|gun|rifle|pistol|shotgun/i.test(typeRaw)) category = 'firearm'
+  else if (/explosive|grenade|rocket/i.test(typeRaw)) category = 'explosive'
+  else if (/tek/i.test(typeRaw)) category = 'tek'
+  else if (/shield/i.test(typeRaw)) category = 'shield'
+  else if (/turret/i.test(typeRaw)) category = 'turret'
+  else if (/attachment/i.test(typeRaw)) category = 'attachment'
+
+  const ingredients = parseIngredients(root)
   if (!ingredients.length) missing.push('ingredients')
 
   return {
-    data: {
-      name: entry.name,
-      category,
-      damage,
-      unlock_level: unlockLevel,
-      engram_points: engramPoints,
-      ammo_type: ammoType,
-      ingredients,
-    },
+    data: { name: entry.name, category, damage, unlock_level, engram_points, ammo_type, ingredients },
     missing,
   }
 }
 
 async function scrapeWeapons(overwrite: boolean): Promise<ScrapeStats> {
   const stats: ScrapeStats = { total: 0, complete: 0, incomplete: 0, skipped: 0, images: 0 }
-  info('Fetching weapon list from wiki…')
-  const entries = await fetchWikiList('Weapons', [/^(Weapons|Category|Template|ARK|DLC|Ammo)/i])
-  if (!entries.length) { err('No weapons found'); return stats }
-  log(`\nFound ${entries.length} weapon entries. Starting scrape…\n`)
+  const entries = await fetchWeaponList()
+  if (!entries.length) { fail('No weapons found'); return stats }
+  log(`\nFound ${entries.length} weapons. Scraping…\n`)
 
   for (let i = 0; i < entries.length; i++) {
     const entry = entries[i]
-    process.stdout.write(`[${i + 1}/${entries.length}] ${entry.name}… `)
+    process.stdout.write(`  [${i + 1}/${entries.length}] ${entry.name}… `)
     stats.total++
 
-    const { data, missing } = await parseWeaponPage(entry)
-    const parsed = WeaponSchema.safeParse(data)
-    const finalMissing = parsed.success ? missing : [
-      ...missing,
-      ...parsed.error.issues.map(i => i.path.join('.') + ': ' + i.message),
-    ]
+    const { data, missing } = await scrapeWeapon(entry)
+    const finalMissing = validateAndMerge(WeaponSchema, data, missing)
 
-    const report = saveEntity('weapons', entry.slug, data, finalMissing, overwrite)
-    if (report.skipped) { process.stdout.write('skipped\n'); stats.skipped++; continue }
+    const { saved, complete } = saveEntity('weapons', entry.slug, data, finalMissing, overwrite)
+    if (!saved) { process.stdout.write('skipped\n'); stats.skipped++; continue }
 
-    const root = await fetchHtml(WIKI + entry.wikiPath).catch(() => null)
+    const root = await fetchPage(entry.name)
     if (root) {
-      const imgUrl = extractFirstImageUrl(root)
-      if (imgUrl) {
-        const saved = await downloadImage('weapons', entry.slug, imgUrl)
-        if (saved) stats.images++
-      }
+      const url = extractItemImage(root)
+      if (url) { const ok2 = await saveImage('weapons', entry.slug, url); if (ok2) stats.images++ }
     }
 
-    if (report.complete) { process.stdout.write('complete\n'); stats.complete++ }
-    else { process.stdout.write(`incomplete (${report.missing.length} fields)\n`); stats.incomplete++ }
+    if (complete) { process.stdout.write('complete\n'); stats.complete++ }
+    else { process.stdout.write(`incomplete (${finalMissing.length})\n`); stats.incomplete++ }
   }
-
   return stats
 }
 
-// ─── Single-entity scrape ──────────────────────────────────────────────────────
+// ─── Single entity scrape ──────────────────────────────────────────────────────
 
-async function scrapeSingle(type: string, nameOrSlug: string, overwrite: boolean): Promise<void> {
-  const slug = slugify(nameOrSlug)
-  const wikiName = nameOrSlug.replace(/_/g, ' ')
-  const entry: WikiEntry = { name: wikiName, slug, wikiPath: `/wiki/${encodeURIComponent(wikiName)}` }
-
-  log(`\nScraping ${type}: "${wikiName}" (slug: ${slug})\n`)
+async function scrapeSingle(type: string, nameInput: string, overwrite: boolean) {
+  const name = nameInput.replace(/_/g, ' ').trim()
+  const slug = slugify(name)
+  log(`\nScraping ${type}: "${name}" (slug: ${slug})\n`)
 
   let data: Record<string, unknown>
   let missing: string[]
-  let schema: z.ZodSchema
+  let schema: ZodSchema
+  let imageUrl: string | null = null
 
-  switch (type) {
-    case 'creatures':
-      ;({ data, missing } = await parseCreaturePage(entry as CreatureEntry)); schema = CreatureSchema; break
-    case 'resources':
-      ;({ data, missing } = await parseResourcePage(entry)); schema = ResourceSchema; break
-    case 'armor':
-      ;({ data, missing } = await parseArmorPage(entry)); schema = ArmorSchema; break
-    case 'weapons':
-      ;({ data, missing } = await parseWeaponPage(entry)); schema = WeaponSchema; break
-    default:
-      err(`Unknown type: ${type}`); return
+  const root = await fetchPage(name)
+
+  if (type === 'creatures') {
+    const fakeEntry: CreatureListEntry = {
+      name, slug, diet: '', temperament: '',
+      tameable: false, rideable: false, breedable: false,
+      saddle_level: null, entity_id: null,
+    }
+    if (root) {
+      const info = parseArkInfo(root)
+      fakeEntry.tameable  = getInfoBool(info, 'tameable')
+      fakeEntry.rideable  = getInfoBool(info, 'rideable')
+      fakeEntry.breedable = getInfoBool(info, 'breedable')
+    }
+    ;({ data, missing } = await scrapeCreature(fakeEntry))
+    schema = CreatureSchema
+    if (root) imageUrl = extractCreatureImage(root)
+  } else if (type === 'resources') {
+    const fakeEntry: ResourceListEntry = { name, slug, rarity: 'common', renewable: false, refinable: false, combustible: false }
+    if (root) {
+      const info = parseArkInfo(root)
+      const rarityRaw = (getInfoValue(info, 'rarity') ?? '').toLowerCase()
+      fakeEntry.rarity = rarityRaw === 'rare' ? 'rare' : rarityRaw === 'uncommon' ? 'uncommon' : 'common'
+      fakeEntry.renewable  = getInfoBool(info, 'renewable')
+      fakeEntry.refinable  = getInfoBool(info, 'refinable', 'refineable')
+      fakeEntry.combustible = getInfoBool(info, 'combustible')
+    }
+    ;({ data, missing } = await scrapeResource(fakeEntry))
+    schema = ResourceSchema
+    if (root) imageUrl = extractItemImage(root)
+  } else if (type === 'armor') {
+    const fakeEntry: ArmorListEntry = {
+      name, slug, unlock_level: null, armor_rating: 0,
+      cold_protection: 0, heat_protection: 0, weight: 0, durability: null,
+      found_in: [], ingredients: [],
+    }
+    if (root) {
+      const info = parseArkInfo(root)
+      fakeEntry.unlock_level    = parseIntNum(getInfoValue(info, 'required level', 'unlock level') ?? '')
+      fakeEntry.armor_rating    = parseNum(getInfoValue(info, 'armor rating', 'armor') ?? '') ?? 0
+      fakeEntry.cold_protection = parseNum(getInfoValue(info, 'cold protection') ?? '') ?? 0
+      fakeEntry.heat_protection = parseNum(getInfoValue(info, 'heat protection') ?? '') ?? 0
+      fakeEntry.weight          = parseNum(getInfoValue(info, 'weight') ?? '') ?? 0
+      fakeEntry.durability      = parseNum(getInfoValue(info, 'durability') ?? '')
+      fakeEntry.ingredients     = parseIngredients(root)
+    }
+    data = {
+      set_name: name,
+      unlock_level: fakeEntry.unlock_level,
+      engram_points: root ? parseIntNum(getInfoValue(parseArkInfo(root), 'engram points') ?? '') : null,
+      armor_rating: fakeEntry.armor_rating,
+      cold_protection: fakeEntry.cold_protection,
+      heat_protection: fakeEntry.heat_protection,
+      weight: fakeEntry.weight,
+      durability: fakeEntry.durability,
+      found_in: fakeEntry.found_in,
+      set_ingredients: fakeEntry.ingredients,
+    }
+    missing = []
+    if (!fakeEntry.ingredients.length) missing.push('set_ingredients')
+    schema = ArmorSchema
+    if (root) imageUrl = extractItemImage(root)
+  } else if (type === 'weapons') {
+    const fakeEntry: WeaponListEntry = { name, slug, category: 'tool' }
+    ;({ data, missing } = await scrapeWeapon(fakeEntry))
+    schema = WeaponSchema
+    if (root) imageUrl = extractItemImage(root)
+  } else {
+    fail(`Unknown type: ${type}`); return
   }
 
-  const parsed = schema.safeParse(data)
-  const finalMissing = parsed.success ? missing : [
-    ...missing,
-    ...parsed.error.issues.map((i: z.ZodIssue) => i.path.join('.') + ': ' + i.message),
-  ]
+  const finalMissing = validateAndMerge(schema, data, missing)
+  const { saved, complete } = saveEntity(type, slug, data, finalMissing, overwrite)
 
-  const report = saveEntity(type, slug, data, finalMissing, overwrite)
+  if (imageUrl) await saveImage(type, slug, imageUrl)
 
-  // Image
-  const root = await fetchHtml(WIKI + entry.wikiPath).catch(() => null)
-  if (root) {
-    const imgUrl = extractFirstImageUrl(root)
-    if (imgUrl) await downloadImage(type, slug, imgUrl)
-  }
-
-  if (report.skipped) { warn(`Skipped — file already exists (use overwrite to force)`); return }
-  if (report.complete) ok(`Saved complete data to data/${type}/${slug}.json`)
+  if (!saved) { warn('Skipped — file exists (run with overwrite=yes to force)'); return }
+  if (complete) ok(`Saved to data/${type}/${slug}.json`)
   else {
-    warn(`Saved incomplete data to data/${type}/incomplete/${slug}.json`)
-    warn(`Missing fields:`)
-    for (const f of report.missing) warn(`  - ${f}`)
+    warn(`Saved incomplete to data/${type}/incomplete/${slug}.json`)
+    for (const f of finalMissing) warn(`  - ${f}`)
   }
 }
 
-// ─── Stats summary ─────────────────────────────────────────────────────────────
-
-interface ScrapeStats {
-  total: number
-  complete: number
-  incomplete: number
-  skipped: number
-  images: number
-}
+// ─── Summary ───────────────────────────────────────────────────────────────────
 
 function printStats(label: string, s: ScrapeStats) {
-  log(`\n── ${label} results ─────────────────────────────────`)
-  log(`   Total processed : ${s.total}`)
-  log(`   Complete        : ${s.complete}`)
-  log(`   Incomplete      : ${s.incomplete}`)
-  log(`   Skipped (exist) : ${s.skipped}`)
-  log(`   Images saved    : ${s.images}`)
-  if (s.incomplete > 0) {
-    warn(`${s.incomplete} entries need manual review — check data/{type}/incomplete/`)
-  }
+  log(`\n── ${label} ────────────────────────────────────────`)
+  log(`   Processed : ${s.total}`)
+  log(`   Complete  : ${s.complete}`)
+  log(`   Incomplete: ${s.incomplete}`)
+  log(`   Skipped   : ${s.skipped}`)
+  log(`   Images    : ${s.images}`)
+  if (s.incomplete > 0) warn(`${s.incomplete} items need manual review in data/{type}/incomplete/`)
 }
 
 // ─── Main menu ─────────────────────────────────────────────────────────────────
 
 async function main() {
   log('\n\x1b[1mGigasaurus — ARK Wiki Scraper\x1b[0m')
-  log('─────────────────────────────────────\n')
+  log('────────────────────────────────────\n')
 
   const overwrite = await confirm('Overwrite existing files?')
   log('')
-
-  log('What would you like to scrape?')
+  log('What to scrape?')
   log('  1) Creatures')
   log('  2) Resources')
   log('  3) Armor')
   log('  4) Weapons')
-  log('  5) All of the above')
-  log('  6) Single entity (by name/slug)')
+  log('  5) All')
+  log('  6) Single entity')
   log('  q) Quit')
   log('')
 
   const choice = (await ask('Choice: ')).trim().toLowerCase()
   log('')
 
-  const allStats: ScrapeStats[] = []
-
-  if (choice === 'q') {
-    log('Bye!'); rl.close(); return
-  }
+  if (choice === 'q') { rl.close(); return }
 
   if (choice === '6') {
     log('Types: creatures, resources, armor, weapons')
     const type = (await ask('Type: ')).trim()
-    const name = (await ask('Name or slug: ')).trim()
+    const name = (await ask('Name: ')).trim()
     log('')
     await scrapeSingle(type, name, overwrite)
     rl.close()
     return
   }
 
-  const runCreatures  = choice === '1' || choice === '5'
-  const runResources  = choice === '2' || choice === '5'
-  const runArmor      = choice === '3' || choice === '5'
-  const runWeapons    = choice === '4' || choice === '5'
+  const runs = choice === '5'
+    ? ['creatures', 'resources', 'armor', 'weapons'] as const
+    : choice === '1' ? ['creatures'] as const
+    : choice === '2' ? ['resources'] as const
+    : choice === '3' ? ['armor'] as const
+    : choice === '4' ? ['weapons'] as const
+    : null
 
-  if (!runCreatures && !runResources && !runArmor && !runWeapons) {
-    err('Invalid choice'); rl.close(); return
-  }
+  if (!runs) { fail('Invalid choice'); rl.close(); return }
 
-  if (runCreatures) {
-    log('── Creatures ─────────────────────────────────────\n')
-    allStats.push(await scrapeCreatures(overwrite))
-  }
-  if (runResources) {
-    log('\n── Resources ─────────────────────────────────────\n')
-    allStats.push(await scrapeResources(overwrite))
-  }
-  if (runArmor) {
-    log('\n── Armor ─────────────────────────────────────────\n')
-    allStats.push(await scrapeArmor(overwrite))
-  }
-  if (runWeapons) {
-    log('\n── Weapons ───────────────────────────────────────\n')
-    allStats.push(await scrapeWeapons(overwrite))
+  const allStats: ScrapeStats[] = []
+  for (const run of runs) {
+    log(`── ${run.charAt(0).toUpperCase() + run.slice(1)} ──────────────────────────────────────────\n`)
+    const s =
+      run === 'creatures' ? await scrapeCreatures(overwrite) :
+      run === 'resources' ? await scrapeResources(overwrite) :
+      run === 'armor'     ? await scrapeArmor(overwrite)     :
+                            await scrapeWeapons(overwrite)
+    allStats.push(s)
+    log('')
   }
 
-  // Aggregate
   if (allStats.length > 1) {
-    const total = allStats.reduce((a, s) => ({
-      total: a.total + s.total,
-      complete: a.complete + s.complete,
-      incomplete: a.incomplete + s.incomplete,
-      skipped: a.skipped + s.skipped,
-      images: a.images + s.images,
+    const total = allStats.reduce((a, b) => ({
+      total: a.total + b.total, complete: a.complete + b.complete,
+      incomplete: a.incomplete + b.incomplete, skipped: a.skipped + b.skipped,
+      images: a.images + b.images,
     }))
     printStats('Overall', total)
   } else if (allStats.length === 1) {
-    printStats('Run', allStats[0])
+    printStats('Results', allStats[0])
   }
 
   log('')
   rl.close()
 }
 
-main().catch(e => { err(String(e)); rl.close(); process.exit(1) })
+main().catch(e => { fail(String(e)); rl.close(); process.exit(1) })
