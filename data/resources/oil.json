@@ -1,0 +1,14 @@
+{
+    "name": "Oil",
+    "rarity": "uncommon",
+    "renewable": true,
+    "refinable": true,
+    "combustible": true,
+    "weight": 0.05,
+    "stack_size": 100,
+    "found_in": ["Blue", "Yellow", "Deep Sea"],
+    "hexagon_exchange": {
+        "exchange_yields": 50,
+        "hexagons": 25
+    }
+}

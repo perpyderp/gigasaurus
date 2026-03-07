@@ -1,0 +1,14 @@
+{
+    "name": "Flint",
+    "rarity": "common",
+    "renewable": false,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.1,
+    "stack_size": 100,
+    "found_in": ["White"],
+    "hexagon_exchange": {
+        "exchange_yields": 50,
+        "hexagons": 5
+    }
+}

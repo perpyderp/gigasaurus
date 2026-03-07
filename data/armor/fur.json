@@ -1,0 +1,16 @@
+{
+    "set_name": "Fur Armor",
+    "unlock_level": 23,
+    "engram_points": 23,
+    "armor_rating": 200,
+    "cold_protection": 249,
+    "heat_protection": -105,
+    "weight": 34,
+    "durability": 125,
+    "found_in": ["Deep Sea"],
+    "set_ingredients": [
+        { "name": "Pelt",  "quantity": 175, "resource_id": "pelt" },
+        { "name": "Hide",  "quantity": 55,  "resource_id": "hide" },
+        { "name": "Fiber", "quantity": 55,  "resource_id": "fiber" }
+    ]
+}

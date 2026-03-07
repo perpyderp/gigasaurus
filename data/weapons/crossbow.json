@@ -1,0 +1,14 @@
+{
+    "name": "Crossbow",
+    "category": "ranged",
+    "damage": 95,
+    "unlock_level": 25,
+    "engram_points": 12,
+    "ammo_type": "Arrow",
+    "ingredients": [
+        { "name": "Metal Ingot", "quantity": 7,  "resource_id": "metal_ingot" },
+        { "name": "Wood",        "quantity": 10, "resource_id": "wood" },
+        { "name": "Fiber",       "quantity": 35, "resource_id": "fiber" },
+        { "name": "Hide",        "quantity": 10, "resource_id": "hide" }
+    ]
+}

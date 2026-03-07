@@ -1,0 +1,13 @@
+{
+    "name": "Sword",
+    "category": "melee",
+    "damage": 90,
+    "unlock_level": 30,
+    "engram_points": 11,
+    "ammo_type": null,
+    "ingredients": [
+        { "name": "Metal Ingot", "quantity": 20, "resource_id": "metal_ingot" },
+        { "name": "Wood",        "quantity": 5,  "resource_id": "wood" },
+        { "name": "Hide",        "quantity": 10, "resource_id": "hide" }
+    ]
+}

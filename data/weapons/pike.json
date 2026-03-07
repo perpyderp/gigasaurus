@@ -1,0 +1,13 @@
+{
+    "name": "Pike",
+    "category": "melee",
+    "damage": 50,
+    "unlock_level": 25,
+    "engram_points": 10,
+    "ammo_type": null,
+    "ingredients": [
+        { "name": "Metal Ingot", "quantity": 20, "resource_id": "metal_ingot" },
+        { "name": "Wood",        "quantity": 10, "resource_id": "wood" },
+        { "name": "Hide",        "quantity": 5,  "resource_id": "hide" }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Stone Hatchet",
+    "category": "tool",
+    "damage": 20,
+    "unlock_level": 2,
+    "engram_points": 3,
+    "ammo_type": null,
+    "ingredients": [
+        { "name": "Wood",  "quantity": 10, "resource_id": "wood" },
+        { "name": "Flint", "quantity": 1,  "resource_id": "flint" },
+        { "name": "Hide",  "quantity": 5,  "resource_id": "hide" }
+    ]
+}
