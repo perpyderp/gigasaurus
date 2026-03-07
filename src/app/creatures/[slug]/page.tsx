@@ -274,20 +274,32 @@ export default async function CreatureSpeciesPage({
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Egg</span>
-                <span className="font-medium">
-                  {Array.isArray(creature.egg.name) ? creature.egg.name.join(' / ') : creature.egg.name}
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Incubation Temp</span>
-                <span className="font-medium">{creature.egg.incubation.range}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Incubation Time</span>
-                <span className="font-medium">{creature.egg.incubation.incubation_time}</span>
-              </div>
+              {creature.egg.name && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Egg</span>
+                  <span className="font-medium">
+                    {Array.isArray(creature.egg.name) ? creature.egg.name.join(' / ') : creature.egg.name}
+                  </span>
+                </div>
+              )}
+              {creature.egg.incubation && (
+                <>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Incubation Temp</span>
+                    <span className="font-medium">{creature.egg.incubation.range}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Incubation Time</span>
+                    <span className="font-medium">{creature.egg.incubation.incubation_time}</span>
+                  </div>
+                </>
+              )}
+              {creature.egg.gestation_time && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Gestation Time</span>
+                  <span className="font-medium">{creature.egg.gestation_time}</span>
+                </div>
+              )}
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Baby → Juvenile</span>
                 <span className="font-medium">{creature.egg.baby_time}</span>

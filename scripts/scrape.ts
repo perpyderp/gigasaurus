@@ -559,9 +559,54 @@ async function scrapeCreature(entry: CreatureListEntry): Promise<{ data: Record<
   }
 
   // ── Egg / Breeding ────────────────────────────────────────────────────────────
-  // Egg data is very complex — mark as needing manual population
-  const egg: null = null
-  if (entry.breedable) missing.push('egg (incubation temps, times, maturation)')
+  // All breeding fields are in the standard info-arkitex infobox format.
+  // Egg-layers (dinosaurs, birds…): have "Egg", "Incubation Range", "Incubation Time".
+  // Live-bearers (mammals, invertebrates…): have "Gestation Time" instead.
+  let egg: Record<string, unknown> | null = null
+  if (entry.breedable) {
+    const gestationTime  = getInfoValue(arkInfo, 'gestation time', 'gestation')
+    const incubRange     = getInfoValue(arkInfo, 'incubation range')
+    const incubTime      = getInfoValue(arkInfo, 'incubation time')
+    const eggName        = getInfoValue(arkInfo, 'egg')
+    const babyTime       = getInfoValue(arkInfo, 'baby time')
+    const juvenileTime   = getInfoValue(arkInfo, 'juvenile time')
+    const adolescentTime = getInfoValue(arkInfo, 'adolescent time')
+    const totalMat       = getInfoValue(arkInfo, 'total maturation time', 'total maturation')
+    const breedInterval  = getInfoValue(arkInfo, 'breeding interval')
+
+    const isLiveBearer = !!gestationTime
+    const hasAnyData   = isLiveBearer || !!eggName || !!incubRange || !!babyTime
+
+    if (hasAnyData) {
+      egg = {
+        ...(eggName ? { name: eggName } : {}),
+        ...(incubRange || incubTime ? {
+          incubation: {
+            range: incubRange ?? 'Unknown',
+            // The range string may have a newline with the Egg Incubator ideal temp — use as-is
+            incubation_range: incubRange ? incubRange.split('\n')[0].trim() : 'Unknown',
+            incubation_time: incubTime ?? 'Unknown',
+          },
+        } : {}),
+        ...(gestationTime ? { gestation_time: gestationTime } : {}),
+        baby_time:        babyTime ?? 'Unknown',
+        juvenile_time:    juvenileTime ?? 'Unknown',
+        adolescent_time:  adolescentTime ?? 'Unknown',
+        total_maturation: totalMat ?? 'Unknown',
+        breeding_interval: breedInterval ?? 'Unknown',
+      }
+      if (!isLiveBearer && !eggName) missing.push('egg.name')
+      if (!isLiveBearer && !incubRange) missing.push('egg.incubation.range')
+      if (!isLiveBearer && !incubTime) missing.push('egg.incubation.incubation_time')
+      if (!babyTime) missing.push('egg.baby_time')
+      if (!juvenileTime) missing.push('egg.juvenile_time')
+      if (!adolescentTime) missing.push('egg.adolescent_time')
+      if (!totalMat) missing.push('egg.total_maturation')
+      if (!breedInterval) missing.push('egg.breeding_interval')
+    } else {
+      missing.push('egg (no breeding data found on page)')
+    }
+  }
 
   const data: Record<string, unknown> = {
     name: entry.name, category, dossier,
