@@ -1,39 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-<h1 style="text-align:center">
-<img src="docs/images/giga banner.jpg" width="800" height="350" alt="dinos" />
+## Getting Started
 
-Gigasaurus
+First, run the development server:
 
-![NPM Version](https://img.shields.io/npm/v/npm?registry_uri=https%3A%2F%2Fregistry.npmjs.com&style=flat-square&logo=npm&color=%23CB3837)
-![Next](https://img.shields.io/badge/next-14.0.4-%23000000?style=flat-square&logo=nextdotjs)
-![Tailwind](https://img.shields.io/badge/tailwind-3.3.0-%2306B6D4?style=flat-square&logo=tailwindcss)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-</h1>
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Background
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Gigasaurus is your Ark assistant, ranging from tracking tames to serving data of all things Ark related. I love Ark Survival Evolved, and I've come across the PokeAPI and thought it'd be a good idea to create something similar with Ark. This allows people to get Ark data at any time for whatever use it may be.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-From this, it has given me practice on structuring data in a json format and experience with utilizing some of NextJs 14's features, such as catch all dynamic routing with catch all segments, which is what makes serving the data easy!
+## Learn More
 
-## Features
+To learn more about Next.js, take a look at the following resources:
 
-* [ ] Taming tracker
-* [ ] __WIP__ RESTful API
-* [ ] Event Calendar
-* [ ] Creature Tier List
-* More to come!
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Installing
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-1. Clone the repository `git clone https://github.com/perpyderp/gigasaurus.git`
+## Deploy on Vercel
 
-2. Install dependencies
-`npm i` or `pnpm i`
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-3. Run the application
-`npm run dev` or `pnpm run dev`
-
-## Contribute
-
-## Testing
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

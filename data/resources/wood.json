@@ -1,0 +1,14 @@
+{
+    "name": "Wood",
+    "rarity": "common",
+    "renewable": true,
+    "refinable": false,
+    "combustible": true,
+    "weight": 0.05,
+    "stack_size": 100,
+    "found_in": ["White", "Green"],
+    "hexagon_exchange": {
+        "exchange_yields": 50,
+        "hexagons": 5
+    }
+}

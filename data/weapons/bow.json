@@ -1,0 +1,13 @@
+{
+    "name": "Bow",
+    "category": "ranged",
+    "damage": 55,
+    "unlock_level": 10,
+    "engram_points": 11,
+    "ammo_type": "Arrow",
+    "ingredients": [
+        { "name": "Wood",  "quantity": 15, "resource_id": "wood" },
+        { "name": "Fiber", "quantity": 35, "resource_id": "fiber" },
+        { "name": "Hide",  "quantity": 20, "resource_id": "hide" }
+    ]
+}

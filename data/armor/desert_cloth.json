@@ -1,0 +1,16 @@
+{
+    "set_name": "Desert Cloth Armor",
+    "unlock_level": 28,
+    "engram_points": 25,
+    "armor_rating": 200,
+    "cold_protection": 31,
+    "heat_protection": 130,
+    "weight": 16,
+    "durability": 45,
+    "found_in": ["Green"],
+    "set_ingredients": [
+        { "name": "Fiber", "quantity": 120, "resource_id": "fiber" },
+        { "name": "Hide",  "quantity": 75,  "resource_id": "hide" },
+        { "name": "Oil",   "quantity": 25,  "resource_id": "oil" }
+    ]
+}

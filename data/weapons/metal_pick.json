@@ -1,0 +1,13 @@
+{
+    "name": "Metal Pick",
+    "category": "tool",
+    "damage": 32,
+    "unlock_level": 20,
+    "engram_points": 6,
+    "ammo_type": null,
+    "ingredients": [
+        { "name": "Metal Ingot", "quantity": 10, "resource_id": "metal_ingot" },
+        { "name": "Wood",        "quantity": 10, "resource_id": "wood" },
+        { "name": "Hide",        "quantity": 5,  "resource_id": "hide" }
+    ]
+}

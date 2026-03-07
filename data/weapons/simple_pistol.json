@@ -1,0 +1,13 @@
+{
+    "name": "Simple Pistol",
+    "category": "firearm",
+    "damage": 100,
+    "unlock_level": 34,
+    "engram_points": 15,
+    "ammo_type": "Simple Bullet",
+    "ingredients": [
+        { "name": "Metal Ingot", "quantity": 30, "resource_id": "metal_ingot" },
+        { "name": "Hide",        "quantity": 10, "resource_id": "hide" },
+        { "name": "Wood",        "quantity": 5,  "resource_id": "wood" }
+    ]
+}

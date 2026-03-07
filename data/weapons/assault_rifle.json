@@ -1,0 +1,14 @@
+{
+    "name": "Assault Rifle",
+    "category": "firearm",
+    "damage": 47,
+    "unlock_level": 58,
+    "engram_points": 24,
+    "ammo_type": "Advanced Rifle Bullet",
+    "ingredients": [
+        { "name": "Metal Ingot", "quantity": 120, "resource_id": "metal_ingot" },
+        { "name": "Polymer",     "quantity": 25,  "resource_id": "polymer" },
+        { "name": "Crystal",     "quantity": 15,  "resource_id": "crystal" },
+        { "name": "Wood",        "quantity": 30,  "resource_id": "wood" }
+    ]
+}
