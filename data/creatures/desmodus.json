@@ -1,0 +1,96 @@
+{
+    "name": "Desmodus",
+    "dossier": {
+        "species": "Desmodus Draculae",
+        "time": "Pleistocene",
+        "diet": "Sanguivore",
+        "temperament": "Aggressive",
+        "wild": "Desmodus Draculae is a large vampire bat that feeds exclusively on blood. It roosts in dark caves and emerges at night to hunt, using its keen senses to locate prey. Its bite drains blood from victims to replenish its own health, and it can render itself invisible to stalk its targets. It is a stealthy and dangerous nocturnal predator.",
+        "domesticated": "The Desmodus is one of ARK's most unique mounts. It can fly silently, turn invisible while mounted, and produce Sanguine Elixir by draining blood from creatures — this elixir boosts taming efficiency of other creatures. It is passively tamed using Blood Packs and is found on Fjordur. Its stealth capabilities make it invaluable for scouting and covert operations."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 325,
+            "level_increase": {
+                "wild": 55.25,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Desmodus Saddle",
+            "engram_level": 68
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 150,
+    "cloneable": true,
+    "entity_id": "Desmodus_Character_BP_C",
+    "category": "fantasy",
+    "egg": null
+}

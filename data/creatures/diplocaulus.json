@@ -1,0 +1,91 @@
+{
+    "name": "Diplocaulus",
+    "dossier": {
+        "species": "Diplocaulus natatorinutrix",
+        "time": "Permian",
+        "diet": "Piscivore",
+        "temperament": "Skittish",
+        "wild": "Diplocaulus natatorinutrix is a small, skittish amphibian that flees at the first sign of trouble. Its most striking feature is its boomerang-shaped head, which houses large chambers that store a remarkable volume of oxygen. It lives along riverbanks and in swamps, diving beneath the water when threatened.",
+        "domesticated": "The Diplocaulus's head chambers allow it to store and provide oxygen to nearby creatures and riders. When a survivor holds onto a tamed Diplocaulus while swimming, they can breathe from its oxygen reserve, enabling extended underwater exploration without needing a SCUBA tank or high oxygen stats. It functions as a living rebreather for its owner."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 250,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 165,
+            "level_increase": {
+                "wild": 16.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 1050,
+            "level_increase": {
+                "wild": 105,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 220,
+            "level_increase": {
+                "wild": 13.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 35,
+    "cloneable": true,
+    "entity_id": "Diplocaulus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

@@ -1,0 +1,96 @@
+{
+    "name": "Pteranodon",
+    "dossier": {
+        "species": "Pteranodon wyvernus",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Skittish",
+        "wild": "Pteranodon wyvernus is a medium-sized, carnivorous reptile found soaring over beaches and oceans. It is generally skittish and will flee from danger rather than fight, snatching fish and small prey with its toothless beak. Despite its fearsome appearance, it poses little threat to a well-armed survivor.",
+        "domesticated": "The Pteranodon is often the first flying mount a survivor will tame. While its carrying capacity is limited and it cannot sustain prolonged flight, its agility and speed make it a nimble scouting mount. It cannot grab other creatures or carry heavy loads, but it is perfect for quick travel across the island."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 210,
+            "level_increase": {
+                "wild": 42,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 7.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 120,
+            "level_increase": {
+                "wild": 2.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 12,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 120,
+            "level_increase": {
+                "wild": 7.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Pteranodon Saddle",
+            "engram_level": 38
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 149,
+    "cloneable": true,
+    "entity_id": "Ptero_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

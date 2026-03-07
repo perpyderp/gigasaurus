@@ -1,0 +1,91 @@
+{
+    "name": "Kairuku",
+    "dossier": {
+        "species": "Kairuku waitaki",
+        "time": "Late Paleogene",
+        "diet": "Piscivore",
+        "temperament": "Friendly",
+        "wild": "Kairuku waitaki is an amazingly docile and friendly creature, to everything but fish. It is a tall prehistoric penguin that wanders cold beaches and icy shores in flocks, seemingly curious about everything around it. It has no fear of survivors and will approach them out of curiosity rather than fleeing.",
+        "domesticated": "Kairuku are kept primarily for the organic polymer they passively produce — their unique body oil solidifies into a natural polymer when harvested. They also provide an insulation bonus to nearby survivors, making them useful in cold biomes. They are compact enough to keep large numbers in a small area, making them efficient polymer farms."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 95,
+            "level_increase": {
+                "wild": 19,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 70,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 8,
+            "level_increase": {
+                "wild": 0.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 300,
+            "level_increase": {
+                "wild": 18
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Basic"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 35,
+    "cloneable": true,
+    "entity_id": "Kairuku_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

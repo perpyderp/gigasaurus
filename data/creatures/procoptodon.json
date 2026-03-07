@@ -1,0 +1,96 @@
+{
+    "name": "Procoptodon",
+    "dossier": {
+        "species": "Procoptodon vivencurrus",
+        "time": "Pleistocene",
+        "diet": "Herbivore",
+        "temperament": "Reactive",
+        "wild": "Procoptodon vivencurrus is a large prehistoric kangaroo that is generally non-aggressive unless provoked. When threatened, it defends itself with powerful kick attacks that send opponents flying backward. It moves in bounds across the landscape, covering ground rapidly with each leap.",
+        "domesticated": "The Procoptodon is uniquely capable of carrying a baby creature or survivor in its pouch, providing protection and allowing the pouch passenger to feed themselves. Its powerful jumps allow it to reach elevated terrain and leap over obstacles. It also receives significantly reduced fall damage. It is tamed with Rare Mushrooms, making the taming process somewhat unusual."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 400,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 550,
+            "level_increase": {
+                "wild": 11,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 20,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Procoptodon Saddle",
+            "engram_level": 23
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 410,
+    "cloneable": true,
+    "entity_id": "Procoptodon_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

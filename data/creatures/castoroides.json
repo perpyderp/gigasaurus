@@ -1,0 +1,96 @@
+{
+    "name": "Castoroides",
+    "dossier": {
+        "species": "Castoroides feliconcisor",
+        "time": "Late Pliocene",
+        "diet": "Herbivore",
+        "temperament": "Friendly",
+        "wild": "Castoroides feliconcisor is a massive beaver found near rivers and lakes. It is friendly and non-aggressive, going about its business of building dams and harvesting wood. Despite its docile nature, it will defend itself vigorously if attacked, using its massive incisors to deliver punishing bites.",
+        "domesticated": "The Castoroides is a natural lumberjack. Its saddle incorporates a built-in Smithy, allowing survivors to craft advanced items in the field. Its ability to harvest enormous quantities of wood and its saddle-Smithy make it invaluable for construction projects. It is also an excellent swimmer and can traverse aquatic environments efficiently."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 450,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 180,
+            "level_increase": {
+                "wild": 18,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 750,
+            "level_increase": {
+                "wild": 75,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 28,
+            "level_increase": {
+                "wild": 1.12,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": [
+        {
+            "name": "Castoroides Saddle",
+            "engram_level": 61
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "Beaver_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

@@ -1,0 +1,96 @@
+{
+    "name": "Terror Bird",
+    "dossier": {
+        "species": "Phorusrhacidae rapidesultor",
+        "time": "Late Paleocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Phorusrhacidae rapidesultor is a flightless bird ranging from eight to twelve feet tall that compensates for its inability to fly with extraordinary speed and vicious beak slashes. It hunts in short, explosive sprints, closing the gap to prey with lightning-fast dashes before delivering rapid, powerful strikes.",
+        "domesticated": "The Terror Bird is a swift land mount capable of gliding short distances using its vestigial wings. Its high movement speed makes it excellent for raiding and quick repositioning in combat. It can also grab smaller creatures and survivors. Survivors prize it for hit-and-run tactics where its speed advantage is most apparent."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 270,
+            "level_increase": {
+                "wild": 54,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 160,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 120,
+            "level_increase": {
+                "wild": 2.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 18,
+            "level_increase": {
+                "wild": 0.9,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 300,
+            "level_increase": {
+                "wild": 18
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Terror Bird Saddle",
+            "engram_level": 33
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 85,
+    "cloneable": true,
+    "entity_id": "TerrorBird_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

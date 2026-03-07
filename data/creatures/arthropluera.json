@@ -1,0 +1,96 @@
+{
+    "name": "Arthropluera",
+    "dossier": {
+        "species": "Arthropluera felsanguis",
+        "time": "Early Permian",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Like the Island's other arthropods, Arthropluera felsanguis has grown to an extraordinary size far beyond what I would have believed possible. This giant centipede is aggressively territorial, and its acidic blood makes attacking it extremely dangerous — any creature that strikes it risks having their armor and weapons corroded by the caustic spray.",
+        "domesticated": "The Arthropluera is an effective cave-exploring mount that can traverse tight passages. Its acidic spit can corrode armor and structures, making it useful in both PvE and PvP contexts. It must be passively tamed using Bug Repellant and fed Broth of Enlightenment, making the taming process somewhat involved but worth the effort for a versatile cave mount."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 500,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 100,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 18,
+            "level_increase": {
+                "wild": 0.9,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 175,
+            "level_increase": {
+                "wild": 10.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Arthropluera Saddle",
+            "engram_level": 54
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 110,
+    "cloneable": false,
+    "entity_id": "Arthropluera_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

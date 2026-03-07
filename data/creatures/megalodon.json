@@ -1,0 +1,100 @@
+{
+    "name": "Megalodon",
+    "dossier": {
+        "species": "Carcharodon ultramegalodon",
+        "time": "Miocene-Pliocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Carcharodon ultramegalodon is one of the most dangerous predators in the ocean. It aggressively attacks almost anything that enters its territory, including large marine creatures and swimmers. Its enormous jaws can crush through most materials, and its speed in water makes it nearly impossible to outswim.",
+        "domesticated": "A tamed Megalodon is a powerful ocean mount. It can maintain high speeds in water and dispatch most aquatic threats efficiently. Tribes use them to patrol coastlines and escort underwater operations. While not the most maneuverable aquatic mount, its raw power and taming accessibility make it a common choice for ocean exploration."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 600,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 320,
+            "level_increase": {
+                "wild": 32,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": [
+        {
+            "name": "Megalodon Saddle",
+            "engram_level": 47
+        },
+        {
+            "name": "Megalodon Tek Saddle",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 250,
+    "cloneable": true,
+    "entity_id": "Megalodon_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

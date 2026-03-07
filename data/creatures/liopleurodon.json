@@ -1,0 +1,91 @@
+{
+    "name": "Liopleurodon",
+    "dossier": {
+        "species": "Liopleurodon magicus",
+        "time": "Mid-Late Jurassic",
+        "diet": "Sweet Tooth",
+        "temperament": "Elusive",
+        "wild": "Liopleurodon magicus is one of the rarest and most elusive creatures in the known world. It appears only fleetingly in the deepest ocean waters and seems to have an almost supernatural connection to fortune and treasure. Finding one is an event of considerable note — and even greater rarity.",
+        "domesticated": "Taming a Liopleurodon is possible only by feeding it Giant Bee Honey while it is passive. However, this results in only a temporary tame — the creature will vanish after approximately 30 minutes, as if it was never truly yours. During this time, it provides a significant loot quality boost to nearby creature kills and resource nodes. Some say it brings extraordinary luck."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 3200,
+            "level_increase": {
+                "wild": 640,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 800,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 12000,
+    "cloneable": false,
+    "entity_id": "Liopleurodon_Character_BP_C",
+    "category": "fantasy",
+    "egg": null
+}

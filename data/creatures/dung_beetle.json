@@ -1,0 +1,91 @@
+{
+    "name": "Dung Beetle",
+    "dossier": {
+        "species": "Scarabidae gigas",
+        "time": "Holocene",
+        "diet": "Coprophagic",
+        "temperament": "Passive",
+        "wild": "Scarabidae gigas is an enormous dung beetle that wanders the Island in search of feces to collect. It is completely passive and poses no threat to survivors whatsoever. Its primary activity is collecting and processing organic waste, which it then converts into a compact ball for transport and consumption.",
+        "domesticated": "The Dung Beetle is one of the most valuable utility creatures in ARK. When set to wander with feces in its inventory, it converts them into Fertilizer and Petroleum Oil — both critical resources. Tribes house large numbers of them in enclosed spaces to create a continuous supply of fertilizer for crop farming and oil for fuel and crafting."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.1,
+                "tamed": 0.08
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 90,
+    "cloneable": false,
+    "entity_id": "DungBeetle_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

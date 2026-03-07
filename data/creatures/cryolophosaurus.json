@@ -1,0 +1,96 @@
+{
+    "name": "Cryolophosaurus",
+    "dossier": {
+        "species": "Cryolophosaurus glacialis",
+        "time": "Early Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Extremely Aggressive",
+        "wild": "Cryolophosaurus glacialis is an extremely aggressive theropod adapted to cold environments. It can spit a torpor-inducing liquid at range or exhale a freezing blast of cold air. When it enters an excited state — triggered by its freeze breath — its speed, damage, and resistance all increase dramatically, making it especially terrifying in sustained combat.",
+        "domesticated": "The Cryolophosaurus is a powerful combat mount for cold biomes. Its freeze breath can slow and immobilize enemies, and its excited state provides significant combat bonuses. It is tamed through knockout and is found on Fjordur's cold regions. Tribes prize it for both its crowd-control capabilities and its combat effectiveness in frigid environments."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 175,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 250,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 27,
+            "level_increase": {
+                "wild": 1.35,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 240
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": [
+        {
+            "name": "Cryolophosaurus Saddle",
+            "engram_level": 60
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 150,
+    "cloneable": true,
+    "entity_id": "Cryolophosaurus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

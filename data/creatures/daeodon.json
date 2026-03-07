@@ -1,0 +1,96 @@
+{
+    "name": "Daeodon",
+    "dossier": {
+        "species": "Daeodon comedentis",
+        "time": "Late Oligocene",
+        "diet": "Carnivore",
+        "temperament": "Territorial",
+        "wild": "Daeodon comedentis is a massive prehistoric pig-like creature with an outsized appetite and a foul temper. It is aggressively territorial and will charge anything that wanders too close. Its jaws are powerful enough to crush bone, and its sheer size makes it a formidable threat even to large carnivores.",
+        "domesticated": "The Daeodon's most remarkable ability is its passive healing — it can rapidly regenerate its own health and project a healing aura that restores the health of nearby allied creatures at the cost of its own food supply. This makes it an invaluable support mount in difficult boss fights and raids. Tribes frequently bring Daeodon to boss arenas as dedicated healers."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 900,
+            "level_increase": {
+                "wild": 180,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 250,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2500,
+            "level_increase": {
+                "wild": 250,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 29,
+            "level_increase": {
+                "wild": 1.45,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": [
+        {
+            "name": "Daeodon Saddle",
+            "engram_level": 59
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "Daeodon_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

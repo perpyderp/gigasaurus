@@ -1,0 +1,96 @@
+{
+    "name": "Equus",
+    "dossier": {
+        "species": "Equus magnus",
+        "time": "Pleistocene",
+        "diet": "Herbivore",
+        "temperament": "Loyal",
+        "wild": "Equus magnus is a large prehistoric horse that roams the Island's open plains. It is skittish and will bolt from threats, but once a survivor manages to mount one and calm it through feeding, it becomes an incredibly loyal companion. They live in small herds and are constantly vigilant for predators.",
+        "domesticated": "The Equus is a versatile and beloved mount. Its saddle functions as a mobile Mortar and Pestle, and it can be equipped with a lasso for capturing smaller creatures. It is one of the fastest land mounts and has excellent stamina for long journeys. The Equus can be ridden without a saddle at first, making it one of the more accessible early mounts."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 240,
+            "level_increase": {
+                "wild": 48,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 560,
+            "level_increase": {
+                "wild": 56,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 9,
+            "level_increase": {
+                "wild": 0.45,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 420,
+            "level_increase": {
+                "wild": 25.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Simple"
+    },
+    "saddle": [
+        {
+            "name": "Equus Saddle",
+            "engram_level": 20
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 125,
+    "cloneable": true,
+    "entity_id": "Horse_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

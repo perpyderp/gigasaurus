@@ -1,0 +1,91 @@
+{
+    "name": "Mesopithecus",
+    "dossier": {
+        "species": "Mesopithecus amicufur",
+        "time": "Late Miocene",
+        "diet": "Omnivore",
+        "temperament": "Curious",
+        "wild": "Mesopithecus amicufur is a small, curious monkey found in forests across the Island. It is generally shy toward humans and will flee if approached directly. It lives in troops, foraging for berries and small creatures. They are surprisingly clever and will use objects they find as improvised weapons when threatened.",
+        "domesticated": "The Mesopithecus is a shoulder-mountable companion that can throw feces at enemies, applying a slowing and blinding effect. Uniquely, it can wear hats. It is passively tamed and is one of the more straightforward companions to obtain. Tribes sometimes use them to distract enemies or slow pursuing predators while making an escape."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 115,
+            "level_increase": {
+                "wild": 23,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 70,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 12,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 60,
+            "level_increase": {
+                "wild": 3.6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Basic"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 25,
+    "cloneable": true,
+    "entity_id": "Monkey_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

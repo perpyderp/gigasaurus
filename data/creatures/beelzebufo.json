@@ -1,0 +1,96 @@
+{
+    "name": "Beelzebufo",
+    "dossier": {
+        "species": "Beelzebufo palucocus",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Languorous",
+        "wild": "Beelzebufo palucocus is a giant frog found near swamps and waterways. Despite its seemingly slow and lethargic nature, it can unleash explosive jumps and snatch prey with its long sticky tongue. It subsists on insects, fish, and small creatures, using its sticky tongue to pull in food from a surprising distance.",
+        "domesticated": "The Beelzebufo excels at gathering cementing paste from insect corpses — a critical material for advanced construction. Its powerful legs allow it to leap great heights and across obstacles that would stop other mounts. It can also hold its breath underwater for extended periods and produces Cementing Paste passively when consuming chitin-bearing creatures."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 220,
+            "level_increase": {
+                "wild": 44,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 190,
+            "level_increase": {
+                "wild": 19,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 160,
+            "level_increase": {
+                "wild": 3.2,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 12,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Beelzebufo Saddle",
+            "engram_level": 40
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 110,
+    "cloneable": true,
+    "entity_id": "Frog_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

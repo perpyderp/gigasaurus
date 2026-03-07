@@ -1,0 +1,91 @@
+{
+    "name": "Jerboa",
+    "dossier": {
+        "species": "Renopila amplexus",
+        "time": "Unknown",
+        "diet": "Herbivore",
+        "temperament": "Cowardly",
+        "wild": "Renopila amplexus is a small, cowardly desert creature that flees from virtually everything. It has no meaningful defenses and survives purely by staying out of reach of predators. It is most commonly found on Scorched Earth, scurrying between rocks and cacti to avoid the many dangers of the desert.",
+        "domesticated": "The Jerboa functions as a living weather sensor. When approaching storms, sandstorms, or extreme weather events, its behavior changes to warn its owner — cowering during heat waves, shaking during cold snaps, and dancing during incoming lightning storms. It is a shoulder pet that provides invaluable early warning of dangerous weather conditions, allowing survivors to seek shelter in time."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 55,
+            "level_increase": {
+                "wild": 11,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 120,
+            "level_increase": {
+                "wild": 2.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3,
+            "level_increase": {
+                "wild": 0.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.8
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 25,
+    "cloneable": false,
+    "entity_id": "Jerboa_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

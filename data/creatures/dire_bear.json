@@ -1,0 +1,96 @@
+{
+    "name": "Dire Bear",
+    "dossier": {
+        "species": "Arctodus dirus",
+        "time": "Mid Pleistocene",
+        "diet": "Omnivore",
+        "temperament": "Territorial",
+        "wild": "Arctodus dirus is a massive, powerful bear that is aggressively territorial. It will attack anything that invades its territory without warning. Despite its imposing size, it is primarily a scavenger and forager, but it will readily hunt live prey when hungry or threatened. Few creatures can match its ferocity when it enters a rage state.",
+        "domesticated": "The Dire Bear is a formidable mounted combatant that excels at gathering honey from bee hives without agitating the occupants. Its thick hide and powerful blows make it a durable frontline fighter. When threatened, it can enter a temporary rage that dramatically increases its damage output. It carries a rider without a saddle but benefits significantly from equipped gear."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 400,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 270,
+            "level_increase": {
+                "wild": 27,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 650,
+            "level_increase": {
+                "wild": 13,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 50,
+            "level_increase": {
+                "wild": 2.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 60
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": [
+        {
+            "name": "Dire Bear Saddle",
+            "engram_level": 45
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 295,
+    "cloneable": true,
+    "entity_id": "Direbear_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

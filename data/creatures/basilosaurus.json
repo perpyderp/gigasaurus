@@ -1,0 +1,96 @@
+{
+    "name": "Basilosaurus",
+    "dossier": {
+        "species": "Basilosaurus solatiumfecit",
+        "time": "Late Eocene",
+        "diet": "Piscivore",
+        "temperament": "Passive",
+        "wild": "Basilosaurus solatiumfecit is a gentle giant of the deep ocean. Despite its enormous size, it is passive toward survivors and will not attack unless provoked. It can be observed peacefully swimming through deep waters, occasionally surfacing. Jellyfish and eels seem to leave it alone, as if by some mutual understanding.",
+        "domesticated": "The Basilosaurus is a prized aquatic mount valued for its immunity to the stunning attacks of Cnidaria (jellyfish) and Electrophorus (electric eels). This makes it invaluable for navigating deep ocean caves. It is tamed passively and, once tamed, produces a special oil from its blubber. It can also carry a platform saddle for underwater construction."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 2400,
+            "level_increase": {
+                "wild": 480,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 8000,
+            "level_increase": {
+                "wild": 800,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 700,
+            "level_increase": {
+                "wild": 14,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 47,
+            "level_increase": {
+                "wild": 2.35,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 120
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Exceptional"
+    },
+    "saddle": [
+        {
+            "name": "Basilosaurus Saddle",
+            "engram_level": 60
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 12000,
+    "cloneable": true,
+    "entity_id": "Basilosaurus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

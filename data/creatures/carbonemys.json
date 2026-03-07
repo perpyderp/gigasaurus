@@ -1,0 +1,96 @@
+{
+    "name": "Carbonemys",
+    "dossier": {
+        "species": "Carbonemys obibimus",
+        "time": "Danian",
+        "diet": "Herbivore",
+        "temperament": "Defensive",
+        "wild": "Carbonemys obibimus is one of the least aggressive creatures on the Island, preferring to graze near beaches and rivers. It only retaliates when directly attacked, and its massive shell provides extraordinary protection from most threats. Despite its bulk, it is a surprisingly capable swimmer.",
+        "domesticated": "The Carbonemys makes an excellent early-game mount for survivors needing a tough, durable companion. Its shell provides riders with significant protection, and it can harvest berries effectively while moving. It is particularly useful as a water mount for early ocean exploration due to its natural armor and swimming speed."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 700,
+            "level_increase": {
+                "wild": 140,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 270,
+            "level_increase": {
+                "wild": 5.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 13,
+            "level_increase": {
+                "wild": 0.65,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 275,
+            "level_increase": {
+                "wild": 16.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Carbonemys Saddle",
+            "engram_level": 10
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 250,
+    "cloneable": true,
+    "entity_id": "Turtle_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

@@ -1,0 +1,91 @@
+{
+    "name": "Dinopithecus",
+    "dossier": {
+        "species": "Dinopithecus Anedmundius",
+        "time": "Pliocene-Pleistocene",
+        "diet": "Omnivore",
+        "temperament": "Aggressive",
+        "wild": "Dinopithecus Anedmundius travels in large, hierarchical packs led by a dominant king. Individual members are skittish when alone, but a pack with their king present becomes ferociously aggressive. They are capable of flinging parasitic feces that disables Tek equipment — a unique and infuriating ability that has surprised many overconfident survivors.",
+        "domesticated": "The Dinopithecus is tamed by defeating its pack and passively feeding the alpha. It requires no saddle and can carry small creatures and survivors on its back. It is an agile climber capable of scaling vertical surfaces. Its pack mechanics carry over to tamed groups, providing combat bonuses when multiple Dinopithecus are nearby."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 775,
+            "level_increase": {
+                "wild": 155,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 800,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 46,
+            "level_increase": {
+                "wild": 2.3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 600,
+            "level_increase": {
+                "wild": 36
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Exceptional"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "Dinopithecus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

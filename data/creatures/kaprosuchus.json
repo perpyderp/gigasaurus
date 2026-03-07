@@ -1,0 +1,96 @@
+{
+    "name": "Kaprosuchus",
+    "dossier": {
+        "species": "Kaprosuchus paludentium",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Kaprosuchus paludentium is a fast, aggressive crocodilian that hunts on land as effectively as in water. It is notorious for its ability to leap at prey and grab riders directly from their mounts — a terrifying capability that makes it one of the most feared ambush predators in swamp regions. It strikes fast and hard before its target can react.",
+        "domesticated": "A tamed Kaprosuchus is a rapid strike mount capable of running at high speed and leaping to close with enemies. It can grab smaller creatures and survivors, making it useful in PvP. Its amphibious nature allows it to transition seamlessly between land and water. It does not require a saddle to ride but can be equipped with one for extra protection."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 140,
+            "level_increase": {
+                "wild": 2.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Kaprosuchus Saddle",
+            "engram_level": 39
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 410,
+    "cloneable": true,
+    "entity_id": "Kaprosuchus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

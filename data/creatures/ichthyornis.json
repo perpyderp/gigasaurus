@@ -1,0 +1,91 @@
+{
+    "name": "Ichthyornis",
+    "dossier": {
+        "species": "Ichthyornis piscoquus",
+        "time": "Late Cretaceous",
+        "diet": "Piscivore",
+        "temperament": "Aggressive",
+        "wild": "Ichthyornis piscoquus is a small seabird that is deceptively dangerous. Despite its modest size, it dive-bombs survivors and snatches items directly from their hands, dropping them some distance away. It is aggressively territorial near water sources and has been known to steal food and tools from unprepared survivors.",
+        "domesticated": "The Ichthyornis is a specialized fishing companion. When commanded to kill a fish, it applies a special scent that dramatically increases the taming effectiveness of that fish — making Ichthyornis-killed fish five to ten times more effective for taming fish-eating creatures like Hesperornis or Otter. It is tamed through knockout and is a small shoulder-mount pet."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 50,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 55,
+            "level_increase": {
+                "wild": 1.1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 120,
+            "level_increase": {
+                "wild": 7.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "Ichthyornis_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

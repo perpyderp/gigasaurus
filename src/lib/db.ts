@@ -6,6 +6,7 @@
  * Object store: "creatures" — keyed by the creature's unique ARK id (DinoID1_DinoID2)
  */
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb'
+<<<<<<< Updated upstream
 import type { ArkColor, AncestorEntry, ArkCreatureStats } from './ark-parser'
 
 export interface StoredCreature {
@@ -37,6 +38,11 @@ export interface StoredCreature {
   importedAt: number
   updatedAt: number
 }
+=======
+import type { StoredCreature } from '@/schemas/stored-creature'
+
+export type { StoredCreature }
+>>>>>>> Stashed changes
 
 interface GigasaurusDB extends DBSchema {
   creatures: {

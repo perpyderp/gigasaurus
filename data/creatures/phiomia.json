@@ -1,0 +1,96 @@
+{
+    "name": "Phiomia",
+    "dossier": {
+        "species": "Phiomia ignavus",
+        "time": "Late Eocene",
+        "diet": "Herbivore",
+        "temperament": "Skittish",
+        "wild": "Phiomia ignavus is a skittish herbivore resembling a primitive elephant or tapir that flees from most threats. It wanders forests and plains in small groups, using its short trunk to root up vegetation. Despite its size, it relies entirely on flight for survival rather than any defensive capability.",
+        "domesticated": "The Phiomia is one of the earliest mounts available to new survivors. While not powerful in combat, it can carry a rider and gather berries. Its primary use is as a feces producer — when fed Stimberries, it generates prodigious amounts of dung that can be converted to fertilizer. It also serves as an early introduction to mounted combat."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 300,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 200,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 240,
+            "level_increase": {
+                "wild": 14.4
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Basic"
+    },
+    "saddle": [
+        {
+            "name": "Phiomia Saddle",
+            "engram_level": 5
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "Phiomia_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

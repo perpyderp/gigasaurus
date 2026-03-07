@@ -1,0 +1,91 @@
+{
+    "name": "Achatina",
+    "dossier": {
+        "species": "Achatina limusegnis",
+        "time": "Holocene",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "Achatina limusegnis is a very slow, very non-threatening land mollusk found crawling through the Island's forests and swamps. It poses absolutely no danger to any creature. It moves at a glacial pace, leaving a trail of slime as it goes, and seems utterly indifferent to everything around it.",
+        "domesticated": "Despite its lack of combat utility, the Achatina is invaluable for producing Organic Polymer — a natural substitute for Polymer used in many advanced crafting recipes. A tamed Achatina passively generates Achatina Paste (which substitutes for both Cementing Paste and Organic Polymer) over time, stored in its inventory. Tribes keep large numbers of them in enclosed pens as passive production stations."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 75,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 600,
+            "level_increase": {
+                "wild": 12,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 0,
+            "level_increase": {
+                "wild": 0,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0,
+                "multiplicative": 0
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 50,
+            "level_increase": {
+                "wild": 3
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 50,
+    "cloneable": false,
+    "entity_id": "Achatina_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

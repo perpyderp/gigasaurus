@@ -1,0 +1,96 @@
+{
+    "name": "Woolly Rhino",
+    "dossier": {
+        "species": "Coelodonta utiliserro",
+        "time": "Late Pliocene",
+        "diet": "Herbivore",
+        "temperament": "Friendly",
+        "wild": "Coelodonta utiliserro is a large, woolly herbivore that is surprisingly friendly unless provoked. It grazes peacefully across snow-covered plains and mountain slopes. However, when threatened or injured, it can charge at tremendous speed — building momentum that multiplies its damage up to eightfold. A charging Woolly Rhino is one of the most dangerous things on the Island.",
+        "domesticated": "The Woolly Rhino's charge attack is its defining feature as a mount. When sprinting, it builds speed and momentum that dramatically increases the damage of its horn attack. This makes it exceptional for smashing through enemies, structures, and resource nodes. Its heavy horn is particularly effective at harvesting Keratin, and its large carry weight makes it a solid transport animal in cold biomes."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 500,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 120,
+            "level_increase": {
+                "wild": 12,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 750,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.015
+            }
+        },
+        "torpidity": {
+            "base": 600,
+            "level_increase": {
+                "wild": 36
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": [
+        {
+            "name": "Woolly Rhino Saddle",
+            "engram_level": 53
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 375,
+    "cloneable": true,
+    "entity_id": "Rhino_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

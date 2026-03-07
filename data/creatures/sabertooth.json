@@ -1,0 +1,96 @@
+{
+    "name": "Sabertooth",
+    "dossier": {
+        "species": "Smilodon brutalis",
+        "time": "Early Pleistocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Smilodon brutalis is a solitary predator found in cold, forested regions. Armed with enormous saber-shaped canine teeth and powerful forelimbs, it ambushes prey with devastating force. Despite its preference for hunting alone, packs of Smilodon have been observed coordinating attacks on larger prey.",
+        "domesticated": "The Sabertooth is a capable mid-tier combat mount that excels at harvesting hide and chitin from corpses. Its saber teeth are uniquely efficient at stripping resources from kills, making it one of the best choices for gathering these materials. It is also a reliable cave-exploring companion due to its nimble size and pack bonuses."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 250,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 200,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 29,
+            "level_increase": {
+                "wild": 1.45,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Sabertooth Saddle",
+            "engram_level": 37
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "Saber_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

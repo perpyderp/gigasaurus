@@ -1,0 +1,91 @@
+{
+    "name": "Direwolf",
+    "dossier": {
+        "species": "Canis maxdirus",
+        "time": "Pleistocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Canis maxdirus is a highly social and aggressive predator that hunts in packs. Individually dangerous, a pack of Direwolves is a terrifying force that can bring down prey many times their size. They demonstrate incredible affinity for teamwork, surrounding and overwhelming their targets with coordinated attacks.",
+        "domesticated": "A tamed Direwolf is a fierce and loyal companion. They require no saddle and their pack mentality carries over to a tribe — nearby pack members provide a damage and resistance bonus to all pack members. They excel in cold environments and can track prey through their keen sense of smell."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 330,
+            "level_increase": {
+                "wild": 66,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 260,
+            "level_increase": {
+                "wild": 26,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 170,
+            "level_increase": {
+                "wild": 3.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 33,
+            "level_increase": {
+                "wild": 1.65,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "Direwolf_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

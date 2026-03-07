@@ -1,0 +1,96 @@
+{
+    "name": "Doedicurus",
+    "dossier": {
+        "species": "Doedicurus custosaxum",
+        "time": "Pleistocene",
+        "diet": "Herbivore",
+        "temperament": "Docile",
+        "wild": "Doedicurus custosaxum is one of the Island's most docile herbivores. It wanders peacefully, and when threatened simply curls into its armored shell, becoming nearly impervious to attack. Only the most persistent or powerful predators can crack through that natural fortress.",
+        "domesticated": "The Doedicurus is the premier stone-harvesting mount in ARK. Its spiked tail club is extraordinarily effective at breaking apart rocks and harvesting stone, and harvested stone weighs significantly less in its inventory. It can also curl into its shell to protect its rider from damage, making it both a resource gatherer and a defensive mount in dangerous situations."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 850,
+            "level_increase": {
+                "wild": 170,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 32,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Doedicurus Saddle",
+            "engram_level": 34
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 160,
+    "cloneable": true,
+    "entity_id": "Doed_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

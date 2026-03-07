@@ -1,0 +1,96 @@
+{
+    "name": "Archelon",
+    "dossier": {
+        "species": "Archelon Physicorum",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Docile",
+        "wild": "Archelon Physicorum is a docile giant sea turtle that feeds exclusively on Cnidaria (jellyfish). It is immune to tranquilization, making it impossible to knock out — it can only be tamed passively. It cruises through ocean waters peacefully, seemingly unbothered by the presence of survivors or other creatures.",
+        "domesticated": "The Archelon is an impressive oceanic mount valued for its immense health pool and platform saddle. Its immunity to jellyfish stings makes it one of the safest mounts for navigating dangerous ocean areas. Its platform saddle can support multiple structures, functioning as a mobile underwater base. Passively tamed using Superior Kibble or Bio Toxin."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1400,
+            "level_increase": {
+                "wild": 280,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 775,
+            "level_increase": {
+                "wild": 77.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3500,
+            "level_increase": {
+                "wild": 350,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 28,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 120
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Superior"
+    },
+    "saddle": [
+        {
+            "name": "Archelon Saddle",
+            "engram_level": 45
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 550,
+    "cloneable": true,
+    "entity_id": "Archelon_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

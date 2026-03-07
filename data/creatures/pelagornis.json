@@ -1,0 +1,96 @@
+{
+    "name": "Pelagornis",
+    "dossier": {
+        "species": "Pelagornis miocaenus",
+        "time": "Early Miocene",
+        "diet": "Piscivore",
+        "temperament": "Skittish",
+        "wild": "Pelagornis miocaenus is a large prehistoric seabird with an enormous wingspan. It is skittish and will flee from threats rather than engage. It spends its time soaring over ocean and coastal areas, diving to catch fish near the surface. Despite its large size, it presents no real threat to survivors.",
+        "domesticated": "The Pelagornis is a unique flying mount capable of landing and walking on water. It can scoop fish from the surface while flying, and it significantly reduces the weight of Organic Polymer in its inventory. Its ability to operate seamlessly between air and water surface makes it invaluable for coastal and oceanic operations where other mounts would be less versatile."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 240,
+            "level_increase": {
+                "wild": 48,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 180,
+            "level_increase": {
+                "wild": 9,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 16,
+            "level_increase": {
+                "wild": 0.8,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 120,
+            "level_increase": {
+                "wild": 7.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Pelagornis Saddle",
+            "engram_level": 43
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "Pela_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

@@ -1,0 +1,96 @@
+{
+    "name": "Manta",
+    "dossier": {
+        "species": "Manta mobula",
+        "time": "Early Oligocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Manta mobula is an aggressively territorial creature found in coastal and deep ocean waters. Despite its elegant appearance, its tail ends in an incredibly sharp barb capable of piercing thick hide and armor. It will attack survivors and tamed creatures that enter its territory without provocation.",
+        "domesticated": "A tamed Manta is a fast and capable ocean mount that can survive in both saltwater and shallower areas. It is notably immune to the electrical stunning attacks of Electrophorus, making it useful in dangerous ocean areas. While it cannot be outfitted with a saddle by default, survivors can ride it bareback at their own risk."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 320,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 270,
+            "level_increase": {
+                "wild": 54,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 200,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 28,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 700,
+            "level_increase": {
+                "wild": 42
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Manta Saddle",
+            "engram_level": 28
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 75,
+    "cloneable": true,
+    "entity_id": "Manta_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

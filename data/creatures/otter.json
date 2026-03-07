@@ -1,0 +1,91 @@
+{
+    "name": "Otter",
+    "dossier": {
+        "species": "Lutra peloso",
+        "time": "Early Miocene",
+        "diet": "Piscivore",
+        "temperament": "Friendly",
+        "wild": "Lutra peloso is a small, friendly creature that is found near rivers and lakes. It is completely non-aggressive and will not attack survivors under any circumstances. It spends its time swimming and playing in waterways, occasionally dragging fish from the water. Despite its harmless nature, it is an accomplished swimmer.",
+        "domesticated": "The Otter is one of the most beloved companions in ARK. When shoulder-mounted, it provides significant insulation against both heat and cold, making cold biome exploration far more survivable. It can retrieve fish from the water on command, and when it catches a fish, it harvests Silica Pearls and Black Pearls from them. It is passively tamed by approaching with dead fish."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 40,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 180,
+            "level_increase": {
+                "wild": 18,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 30,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 35,
+    "cloneable": true,
+    "entity_id": "Otter_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

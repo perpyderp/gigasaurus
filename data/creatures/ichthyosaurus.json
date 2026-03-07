@@ -1,0 +1,96 @@
+{
+    "name": "Ichthyosaurus",
+    "dossier": {
+        "species": "Ichthyosaurus curiosa",
+        "time": "Late Triassic",
+        "diet": "Carnivore",
+        "temperament": "Curious",
+        "wild": "Ichthyosaurus curiosa is a small, dolphin-like marine reptile that displays remarkable curiosity toward other creatures. Rather than fleeing from threats, it will approach and follow them with apparent interest. This behavior makes it one of the more approachable aquatic creatures on the Island.",
+        "domesticated": "The Ichthyosaurus is the first aquatic mount most survivors will tame. While small and unable to carry heavy loads, it is incredibly fast in the water and easy to obtain early in the game. Tamed Ichthyosaurus are passive mounts that can be approached and ridden without a saddle in some situations. Their speed and ease of taming make them excellent scouts."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 275,
+            "level_increase": {
+                "wild": 13.75,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 300,
+            "level_increase": {
+                "wild": 18
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Simple"
+    },
+    "saddle": [
+        {
+            "name": "Ichthyosaurus Saddle",
+            "engram_level": 13
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 75,
+    "cloneable": true,
+    "entity_id": "Dolphin_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

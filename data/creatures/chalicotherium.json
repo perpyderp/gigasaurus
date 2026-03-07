@@ -1,0 +1,96 @@
+{
+    "name": "Chalicotherium",
+    "dossier": {
+        "species": "Chalicotherium obsidioequus",
+        "time": "Late Oligocene",
+        "diet": "Herbivore",
+        "temperament": "Territorial",
+        "wild": "Chalicotherium obsidioequus is a large, knuckle-walking herbivore that is surprisingly territorial for a plant-eater. It will aggressively defend its grazing grounds from anything it perceives as a threat, hurling boulders and delivering powerful strikes with its massive forelimbs. Getting too close to one without proper preparation is a fatal mistake.",
+        "domesticated": "The Chalicotherium is unique in that it must be passively tamed by throwing Beer Jars near it — it becomes hostile if approached directly. Once tamed, it is a powerful siege mount capable of hurling boulders great distances, making it effective for assaulting enemy fortifications. Its powerful arms also make it useful for gathering stone."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 600,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 400,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 36,
+            "level_increase": {
+                "wild": 1.8,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Chalicotherium Saddle",
+            "engram_level": 42
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "Chalico_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

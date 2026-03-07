@@ -1,0 +1,91 @@
+{
+    "name": "Dodo",
+    "dossier": {
+        "species": "Raphus replicare",
+        "time": "Late Holocene",
+        "diet": "Herbivore",
+        "temperament": "Oblivious",
+        "wild": "Raphus replicare is perhaps the most docile creature on the Island. It wanders the beaches in small groups, completely oblivious to danger. It makes no attempt to flee from predators and will only attack if directly struck. I genuinely cannot fathom how this species has survived.",
+        "domesticated": "There is almost no reason to domesticate a Dodo beyond novelty. They have very little carrying capacity, produce a small number of eggs, and are not useful in combat. Some survivors keep them as pets, and their eggs can be used in kibble recipes, but that is the extent of their utility."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 40,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.03
+            }
+        },
+        "torpidity": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.8
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Basic"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 25,
+    "cloneable": true,
+    "entity_id": "Dodo_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

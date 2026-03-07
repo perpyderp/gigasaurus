@@ -1,0 +1,91 @@
+{
+    "name": "Dimorphodon",
+    "dossier": {
+        "species": "Dimorphodon equesica",
+        "time": "Early Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Reactive",
+        "wild": "Dimorphodon equesica is a tiny flying reptile that is generally harmless on its own. However, it nests in large groups and will swarm anything that threatens its territory. A single Dimorphodon is little more than a nuisance, but a flock of them can overwhelm a survivor in seconds with their razor-sharp beaks.",
+        "domesticated": "The Dimorphodon is prized for its shoulder-mount capability and its combat behavior: it specifically targets riders rather than mounts, making it extremely dangerous in PvP situations. A coordinated attack from several Dimorphodons can unseat a mounted survivor, leaving them vulnerable. They are also used as scouts and sentries due to their small size."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 125,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 23,
+            "level_increase": {
+                "wild": 1.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Simple"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 25,
+    "cloneable": true,
+    "entity_id": "Dimorph_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

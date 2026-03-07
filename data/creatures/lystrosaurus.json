@@ -1,0 +1,91 @@
+{
+    "name": "Lystrosaurus",
+    "dossier": {
+        "species": "Lystrosaurus amicifidelis",
+        "time": "Late Permian",
+        "diet": "Herbivore",
+        "temperament": "Loyal",
+        "wild": "Lystrosaurus amicifidelis is an incredibly resilient small herbivore that seems almost impervious to unconsciousness. Its robust constitution allows it to recover from torpor far faster than most other creatures. It wanders peacefully, showing no aggression toward any creature, and seems to have an unusually trusting disposition.",
+        "domesticated": "The Lystrosaurus's primary utility is as an XP booster. When a survivor pets their tamed Lystrosaurus, nearby tribe members and tamed creatures receive a 1.35x experience multiplier for several minutes. For tribes leveling up multiple creatures or survivors, a Lystrosaurus is invaluable for accelerating progression. They are passively tamed and easy to keep."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 90,
+            "level_increase": {
+                "wild": 18,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 215,
+            "level_increase": {
+                "wild": 21.5,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 90,
+            "level_increase": {
+                "wild": 1.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 6,
+            "level_increase": {
+                "wild": 0.3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Basic"
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 25,
+    "cloneable": true,
+    "entity_id": "Lystro_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

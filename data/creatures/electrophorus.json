@@ -1,0 +1,91 @@
+{
+    "name": "Electrophorus",
+    "dossier": {
+        "species": "Electrophorus beluadomito",
+        "time": "Holocene",
+        "diet": "Carnivore",
+        "temperament": "Reactive",
+        "wild": "Electrophorus beluadomito is a large electric eel that is best described as a living taser. When threatened or hunting, it releases powerful electrical discharges that stun both creatures and riders, causing mounted survivors to be thrown from their mounts. This makes it one of the most dangerous hazards in any ocean or deep lake environment.",
+        "domesticated": "Tamed Electrophorus can be commanded to unleash their electrical attacks on command, making them useful for stunning large aquatic targets to enable knockout-taming. Their electrical discharge is one of the few things that can stun creatures like the Mosasaurus. They are passively tamed using Bio Toxin and deployed into water where they act as living stun weapons."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 180,
+            "level_increase": {
+                "wild": 36,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 165,
+            "level_increase": {
+                "wild": 16.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 1050,
+            "level_increase": {
+                "wild": 105,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 175,
+            "level_increase": {
+                "wild": 10.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 250,
+    "cloneable": true,
+    "entity_id": "Eel_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

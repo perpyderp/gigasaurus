@@ -1,0 +1,91 @@
+{
+    "name": "Hesperornis",
+    "dossier": {
+        "species": "Hesperornis avenatantes",
+        "time": "Late Cretaceous",
+        "diet": "Piscivore",
+        "temperament": "Passive",
+        "wild": "Hesperornis avenatantes is a primitive diving bird that is passive toward survivors and other creatures. It dives beneath the water's surface to catch fish and is an excellent swimmer despite being flightless. While its beak is used to catch fish, it poses no threat to survivors unless directly cornered.",
+        "domesticated": "The Hesperornis is kept for its unique ability to produce Golden Eggs when it consumes fish — the higher quality the fish, the better the egg quality. These golden eggs are used for crafting special recipes and kibble. It is a shoulder-mountable pet that can also dive and retrieve fish from the water, making it a useful passive companion near ocean areas."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 95,
+            "level_increase": {
+                "wild": 19,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 70,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 300,
+            "level_increase": {
+                "wild": 18
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "drag_weight": 120,
+    "cloneable": true,
+    "entity_id": "Hesperornis_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

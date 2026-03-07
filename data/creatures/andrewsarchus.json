@@ -1,0 +1,96 @@
+{
+    "name": "Andrewsarchus",
+    "dossier": {
+        "species": "Andrewsarchus mongoliensis",
+        "time": "Middle Eocene",
+        "diet": "Omnivore",
+        "temperament": "Opportunistic",
+        "wild": "Andrewsarchus mongoliensis is full of surprises. Despite its ungainly appearance, it can achieve unexpected bursts of speed when provoked. It wades through shallow water comfortably and is an opportunistic feeder that will eat almost anything. It is generally not the first to pick a fight, but when it does engage, its massive jaws and surprising agility make it a dangerous adversary.",
+        "domesticated": "The Andrewsarchus is a versatile mounted gun platform. Its saddle serves as a mobile machine gun turret, allowing a passenger to operate weaponry while the rider controls movement. It is passively tamed by enticing it with Giant Bee Honey and requires a rhythm-based interaction during the feeding process. It is found exclusively on Lost Island."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 800,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 650,
+            "level_increase": {
+                "wild": 65,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2174,
+            "level_increase": {
+                "wild": 217.4,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 41,
+            "level_increase": {
+                "wild": 2.05,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Andrewsarchus Saddle",
+            "engram_level": 74
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 400,
+    "cloneable": true,
+    "entity_id": "Andrewsarchus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

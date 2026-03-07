@@ -1,0 +1,96 @@
+{
+    "name": "Thylacoleo",
+    "dossier": {
+        "species": "Thylacoleo furtimorsus",
+        "time": "Late Pliocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Thylacoleo furtimorsus is a large marsupial predator that lurks in redwood forests and on cliff faces. It is an ambush hunter, clinging to trees and dropping onto prey from above. Its powerful bite induces a severe bleeding effect that rapidly drains its victim's health. Its retractable claws allow it to cling to vertical surfaces — even zip lines.",
+        "domesticated": "The Thylacoleo is a prized combat mount for its wall-clinging ability and vicious bite. It can leap off walls onto targets and its bleed effect makes it especially dangerous in sustained combat. It can also latch onto zip lines, making it excellent for attacking from elevated positions or navigating redwood biomes that larger mounts cannot traverse."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 700,
+            "level_increase": {
+                "wild": 140,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 700,
+            "level_increase": {
+                "wild": 42
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Extraordinary"
+    },
+    "saddle": [
+        {
+            "name": "Thylacoleo Saddle",
+            "engram_level": 51
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 180,
+    "cloneable": true,
+    "entity_id": "Thylacoleo_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

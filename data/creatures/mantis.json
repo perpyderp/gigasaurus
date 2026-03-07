@@ -1,0 +1,96 @@
+{
+    "name": "Mantis",
+    "dossier": {
+        "species": "Empusa discipulus",
+        "time": "Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Empusa discipulus is a massive praying mantis found in desert and scorched environments. It is highly aggressive and will attack any creature that enters its territory. Its bladed forelegs can slash through armor and deliver devastating blows, and it can leap great distances to close with prey.",
+        "domesticated": "The Mantis is unique in its ability to wield tools and weapons held in its forelegs, effectively using picks, hatchets, and sickles to harvest resources at high efficiency. This makes it one of the most versatile gatherers in the game. It is tamed passively using Deathworm Horns and is found primarily on Scorched Earth."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 275,
+            "level_increase": {
+                "wild": 55,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 220,
+            "level_increase": {
+                "wild": 4.4,
+                "tamed": 0.08
+            }
+        },
+        "melee": {
+            "base": 34,
+            "level_increase": {
+                "wild": 0.85,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Mantis Saddle",
+            "engram_level": 45
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 200,
+    "cloneable": true,
+    "entity_id": "Mantis_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

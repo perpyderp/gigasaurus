@@ -1,0 +1,100 @@
+{
+    "name": "Mosasaurus",
+    "dossier": {
+        "species": "Mosasaurus suspirita",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Mosasaurus suspirita rules the deep ocean as one of the largest and most fearsome aquatic predators. It will attack anything that enters its territory without hesitation. Its massive size and ferocious bite make it one of the deadliest creatures in the game's waters.",
+        "domesticated": "Taming a Mosasaurus is an extreme undertaking requiring significant resources and preparation. Once tamed, it is an unstoppable aquatic behemoth capable of carrying a platform saddle for a floating underwater base. Few creatures can challenge a tamed Mosasaurus in open water."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 3600,
+            "level_increase": {
+                "wild": 432,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 8000,
+            "level_increase": {
+                "wild": 800,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 1300,
+            "level_increase": {
+                "wild": 26,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 100,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 180
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": [
+        {
+            "name": "Mosasaurus Saddle",
+            "engram_level": 78
+        },
+        {
+            "name": "Mosasaurus Platform Saddle",
+            "engram_level": 93
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 899,
+    "cloneable": true,
+    "entity_id": "Mosa_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

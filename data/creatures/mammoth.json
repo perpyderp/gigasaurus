@@ -1,0 +1,96 @@
+{
+    "name": "Mammoth",
+    "dossier": {
+        "species": "Mammuthus steincaput",
+        "time": "Early Pliocene",
+        "diet": "Herbivore",
+        "temperament": "Docile",
+        "wild": "Mammuthus steincaput is generally docile unless provoked, wandering the tundra and mountain regions in small herds. When threatened, they can become a terrifying force — their powerful trunk and tusks can send even large predators flying. They are well-adapted to cold climates and are a common sight in the snow biome.",
+        "domesticated": "The Mammoth is a versatile work animal prized for its ability to harvest large quantities of wood and thatch with its tusks. It also functions as a mobile drumming platform — the Mammoth's trumpet call can provide a war drum buff to nearby allied creatures, boosting their combat effectiveness. It is one of the better mounts for cold-weather expeditions."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 850,
+            "level_increase": {
+                "wild": 170,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 330,
+            "level_increase": {
+                "wild": 33,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 5000,
+            "level_increase": {
+                "wild": 500,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 48,
+            "level_increase": {
+                "wild": 2.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.015
+            }
+        },
+        "torpidity": {
+            "base": 550,
+            "level_increase": {
+                "wild": 33
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Superior"
+    },
+    "saddle": [
+        {
+            "name": "Mammoth Saddle",
+            "engram_level": 31
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 400,
+    "cloneable": true,
+    "entity_id": "Mammoth_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}
