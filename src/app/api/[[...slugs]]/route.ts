@@ -1,11 +1,25 @@
-import { Elysia } from 'elysia'
+import { Elysia, t } from 'elysia'
 import { openapi } from '@elysiajs/openapi'
+import { cors } from '@elysiajs/cors'
 import { creaturesRoutes } from '@/routes/creatures'
 import { resourceRoutes } from '@/routes/resources'
 import { armorRoutes } from '@/routes/armor'
 import { weaponRoutes } from '@/routes/weapons'
 
 export const app = new Elysia({ prefix: '/api' })
+  .use(cors())
+  .onError(({ code, error, set }) => {
+    if (code === 'NOT_FOUND') {
+      set.status = 404
+      return { message: 'Route not found' }
+    }
+    if (code === 'VALIDATION') {
+      set.status = 422
+      return { message: 'Validation error', details: error.message }
+    }
+    set.status = 500
+    return { message: 'Internal server error' }
+  })
   .use(
     openapi({
       documentation: {
@@ -31,17 +45,34 @@ export const app = new Elysia({ prefix: '/api' })
       },
     })
   )
-  .get('/', () => ({
-    message: 'Welcome to the Gigasaurus API',
-    version: '1.0.0',
-    documentation: '/api/openapi',
-    endpoints: {
-      creatures: '/api/creatures',
-      armor: '/api/armor',
-      weapons: '/api/weapons',
-      resources: '/api/resources',
-    },
-  }))
+  .get(
+    '/',
+    () => ({
+      message: 'Welcome to the Gigasaurus API',
+      version: '1.0.0',
+      documentation: '/api/openapi',
+      endpoints: {
+        creatures: '/api/creatures',
+        armor: '/api/armor',
+        weapons: '/api/weapons',
+        resources: '/api/resources',
+      },
+    }),
+    {
+      response: t.Object({
+        message: t.String(),
+        version: t.String(),
+        documentation: t.String(),
+        endpoints: t.Object({
+          creatures: t.String(),
+          armor: t.String(),
+          weapons: t.String(),
+          resources: t.String(),
+        }),
+      }),
+      detail: { summary: 'API index', description: 'Returns all available endpoints.' },
+    }
+  )
   .use(creaturesRoutes)
   .use(armorRoutes)
   .use(weaponRoutes)

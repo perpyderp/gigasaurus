@@ -1,10 +1,22 @@
 'use client'
 
 import { useCallback, useState } from 'react'
+import { IconUpload, IconX, IconCheck, IconAlertCircle } from '@tabler/icons-react'
 import { parseArkExport } from '@/lib/ark-parser'
 import { resolveSlug, deriveDisplayName } from '@/lib/dino-map'
 import { upsertCreature } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
+import {
+  FileUpload,
+  FileUploadDropzone,
+  FileUploadTrigger,
+  FileUploadList,
+  FileUploadItem,
+  FileUploadItemMetadata,
+  FileUploadItemDelete,
+  FileUploadClear,
+} from '@/components/ui/file-upload'
+import { Button } from '@/components/ui/button'
 
 interface ImportResult {
   name: string
@@ -17,21 +29,21 @@ interface ImportDropzoneProps {
 }
 
 export function ImportDropzone({ onImported }: ImportDropzoneProps) {
-  const [isDragging, setIsDragging] = useState(false)
-  const [results, setResults] = useState<ImportResult[]>([])
   const [importing, setImporting] = useState(false)
+  const [results, setResults] = useState<ImportResult[]>([])
+  const [files, setFiles] = useState<File[]>([])
 
   const processFiles = useCallback(
-    async (files: FileList | File[]) => {
-      const fileArray = Array.from(files).filter((f) => f.name.endsWith('.ini'))
-      if (!fileArray.length) return
+    async (accepted: File[]) => {
+      const iniFiles = accepted.filter((f) => f.name.endsWith('.ini'))
+      if (!iniFiles.length) return
 
       setImporting(true)
       setResults([])
       const imported: StoredCreature[] = []
       const newResults: ImportResult[] = []
 
-      for (const file of fileArray) {
+      for (const file of iniFiles) {
         try {
           const text = await file.text()
           const parsed = parseArkExport(text)
@@ -65,12 +77,9 @@ export function ImportDropzone({ onImported }: ImportDropzoneProps) {
             updatedAt: now,
           }
 
-          // Check if existing — if so, preserve importedAt and mark as updated
           const { getCreature } = await import('@/lib/db')
           const existing = await getCreature(creature.id)
-          if (existing) {
-            creature.importedAt = existing.importedAt
-          }
+          if (existing) creature.importedAt = existing.importedAt
 
           await upsertCreature(creature)
           imported.push(creature)
@@ -91,73 +100,67 @@ export function ImportDropzone({ onImported }: ImportDropzoneProps) {
       setImporting(false)
       if (imported.length) onImported(imported)
     },
-    [onImported]
-  )
-
-  const onDrop = useCallback(
-    (e: React.DragEvent) => {
-      e.preventDefault()
-      setIsDragging(false)
-      processFiles(e.dataTransfer.files)
-    },
-    [processFiles]
-  )
-
-  const onFileChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      if (e.target.files) processFiles(e.target.files)
-    },
-    [processFiles]
+    [onImported],
   )
 
   return (
     <div className="space-y-3">
-      <label
-        onDragOver={(e) => { e.preventDefault(); setIsDragging(true) }}
-        onDragLeave={() => setIsDragging(false)}
-        onDrop={onDrop}
-        className={`flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed p-10 cursor-pointer transition-colors ${
-          isDragging
-            ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/20'
-            : 'border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500'
-        }`}
+      <FileUpload
+        accept=".ini"
+        multiple
+        disabled={importing}
+        value={files}
+        onValueChange={setFiles}
+        onAccept={processFiles}
       >
-        <input
-          type="file"
-          accept=".ini"
-          multiple
-          className="sr-only"
-          onChange={onFileChange}
-          disabled={importing}
-        />
-        <span className="text-3xl">📂</span>
-        <div className="text-center">
-          <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            {importing ? 'Importing…' : 'Drop .ini export files here'}
-          </p>
-          <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
-            or click to browse · multiple files supported
-          </p>
-          <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
-            Found in: ShooterGame/Saved/DinoExports/
-          </p>
-        </div>
-      </label>
+        <FileUploadDropzone className="gap-3 p-8">
+          <div className="flex flex-col items-center gap-2 text-center">
+            <IconUpload size={32} className="text-muted-foreground" />
+            <div>
+              <p className="text-foreground text-sm font-medium">
+                {importing ? 'Importing…' : 'Drop .ini export files here'}
+              </p>
+              <p className="text-muted-foreground mt-1 text-xs">or click to browse · multiple files supported</p>
+              <p className="text-muted-foreground/60 mt-1 font-mono text-xs">ShooterGame/Saved/DinoExports/</p>
+            </div>
+          </div>
+          <FileUploadTrigger asChild>
+            <Button variant="outline" size="sm" disabled={importing}>
+              Browse files
+            </Button>
+          </FileUploadTrigger>
+        </FileUploadDropzone>
+
+        <FileUploadList>
+          {files.map((file) => (
+            <FileUploadItem key={file.name} value={file} className="text-sm">
+              <FileUploadItemMetadata />
+              <FileUploadItemDelete asChild>
+                <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
+                  <IconX size={14} />
+                </Button>
+              </FileUploadItemDelete>
+            </FileUploadItem>
+          ))}
+        </FileUploadList>
+
+        <FileUploadClear asChild>
+          <Button variant="ghost" size="sm" className="self-start text-xs">
+            Clear all
+          </Button>
+        </FileUploadClear>
+      </FileUpload>
 
       {results.length > 0 && (
         <ul className="space-y-1 text-sm">
           {results.map((r, i) => (
             <li key={i} className="flex items-center gap-2">
-              <span>
-                {r.status === 'new' ? '✅' : r.status === 'updated' ? '🔄' : '❌'}
-              </span>
-              <span className="text-zinc-700 dark:text-zinc-300">{r.name}</span>
-              {r.status === 'updated' && (
-                <span className="text-xs text-zinc-400">updated</span>
-              )}
-              {r.message && (
-                <span className="text-xs text-red-500">{r.message}</span>
-              )}
+              {r.status === 'new' && <IconCheck size={14} className="text-emerald-500 shrink-0" />}
+              {r.status === 'updated' && <IconCheck size={14} className="text-sky-500 shrink-0" />}
+              {r.status === 'error' && <IconAlertCircle size={14} className="text-destructive shrink-0" />}
+              <span className="text-foreground">{r.name}</span>
+              {r.status === 'updated' && <span className="text-muted-foreground text-xs">updated</span>}
+              {r.message && <span className="text-xs text-destructive">{r.message}</span>}
             </li>
           ))}
         </ul>

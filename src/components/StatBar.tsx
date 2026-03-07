@@ -1,29 +1,47 @@
 'use client'
 
+import {
+  CircularProgress,
+  CircularProgressIndicator,
+  CircularProgressTrack,
+  CircularProgressRange,
+  CircularProgressValueText,
+} from '@/components/ui/circular-progress'
+
 interface StatBarProps {
   label: string
   value: number
-  /** Displayed value (formatted). Defaults to Math.round(value) */
   display?: string
-  /** Max reference value for bar width calculation */
   max: number
   color?: string
+  points?: number
+  topPercent?: string
 }
 
-export function StatBar({ label, value, display, max, color = 'bg-emerald-500' }: StatBarProps) {
-  const pct = Math.min(100, (value / max) * 100)
+export function StatBar({ label, value, display, max, color = 'text-emerald-500', points, topPercent }: StatBarProps) {
+  const pct = Math.min(100, Math.round((value / max) * 100))
   const displayValue = display ?? (Number.isInteger(value) ? String(value) : value.toFixed(1))
 
   return (
-    <div className="grid grid-cols-[6rem_1fr_4rem] items-center gap-2">
-      <span className="text-xs text-zinc-500 dark:text-zinc-400 truncate">{label}</span>
-      <div className="h-2 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
-        <div
-          className={`h-full ${color} rounded-full transition-all`}
-          style={{ width: `${pct}%` }}
-        />
+    <div className="flex items-center gap-4">
+      <CircularProgress value={pct} max={100} size={56} thickness={5}>
+        <CircularProgressIndicator>
+          <CircularProgressTrack />
+          <CircularProgressRange className={color} />
+        </CircularProgressIndicator>
+        <CircularProgressValueText className="text-[10px]" />
+      </CircularProgress>
+
+      <div className="min-w-0 flex-1">
+        <div className="flex items-baseline justify-between gap-2">
+          <span className="text-foreground text-sm font-medium">{label}</span>
+          <span className="text-foreground font-mono text-sm">{displayValue}</span>
+        </div>
+        <div className="text-muted-foreground flex items-center gap-2 text-xs">
+          {points !== undefined && <span>~{points} pts</span>}
+          {topPercent && <span className="text-emerald-600 dark:text-emerald-400">{topPercent}</span>}
+        </div>
       </div>
-      <span className="text-xs font-mono text-right text-zinc-700 dark:text-zinc-300">{displayValue}</span>
     </div>
   )
 }

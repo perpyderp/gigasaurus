@@ -30,6 +30,18 @@ export const creaturesRoutes = new Elysia({ prefix: '/creatures', tags: ['Creatu
         limit: t.Optional(t.Numeric({ minimum: 1, maximum: 100, default: 20 })),
         offset: t.Optional(t.Numeric({ minimum: 0, default: 0 })),
       }),
+      response: {
+        200: t.Object({
+          count: t.Number(),
+          results: t.Array(t.Object({
+            name: t.String(),
+            slug: t.String(),
+            category: t.String(),
+            image: t.Nullable(t.String()),
+            url: t.String(),
+          })),
+        }),
+      },
       detail: {
         summary: 'List all creatures',
         description:
@@ -50,6 +62,9 @@ export const creaturesRoutes = new Elysia({ prefix: '/creatures', tags: ['Creatu
     },
     {
       params: t.Object({ slug: t.String() }),
+      response: {
+        404: t.Object({ message: t.String() }),
+      },
       detail: {
         summary: 'Get creature by slug',
         description: 'Returns full details for a single creature by its slug.',

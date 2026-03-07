@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { IconCloudUpload, IconCloudDown, IconLoader2 } from '@tabler/icons-react'
 import { uploadToDrive, downloadFromDrive } from '@/lib/drive'
 import { exportAll, importFromBackup } from '@/lib/db'
+import { Button } from '@/components/ui/button'
 
 interface DriveSyncProps {
   onRestored: () => void
@@ -18,9 +20,9 @@ export function DriveSync({ onRestored }: DriveSyncProps) {
 
   if (!clientId) {
     return (
-      <p className="text-xs text-zinc-400 dark:text-zinc-500">
+      <p className="text-muted-foreground text-xs">
         Google Drive sync is not configured.{' '}
-        <span className="font-mono">NEXT_PUBLIC_GOOGLE_CLIENT_ID</span> missing.
+        <code className="text-foreground">NEXT_PUBLIC_GOOGLE_CLIENT_ID</code> missing.
       </p>
     )
   }
@@ -64,45 +66,29 @@ export function DriveSync({ onRestored }: DriveSyncProps) {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center gap-2">
-        <button
-          onClick={handleBackup}
-          disabled={busy}
-          className="flex items-center gap-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 disabled:opacity-50 transition-colors"
-        >
-          {status === 'uploading' ? (
-            <span className="animate-spin">⏳</span>
-          ) : (
-            <span>☁️</span>
-          )}
+        <Button variant="outline" size="sm" onClick={handleBackup} disabled={busy} className="gap-2">
+          {status === 'uploading'
+            ? <IconLoader2 size={14} className="animate-spin" />
+            : <IconCloudUpload size={14} />
+          }
           Backup to Drive
-        </button>
-        <button
-          onClick={handleRestore}
-          disabled={busy}
-          className="flex items-center gap-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 disabled:opacity-50 transition-colors"
-        >
-          {status === 'downloading' ? (
-            <span className="animate-spin">⏳</span>
-          ) : (
-            <span>⬇️</span>
-          )}
+        </Button>
+        <Button variant="outline" size="sm" onClick={handleRestore} disabled={busy} className="gap-2">
+          {status === 'downloading'
+            ? <IconLoader2 size={14} className="animate-spin" />
+            : <IconCloudDown size={14} />
+          }
           Restore from Drive
-        </button>
+        </Button>
       </div>
 
       {message && (
-        <p
-          className={`text-xs ${
-            status === 'error'
-              ? 'text-red-500'
-              : 'text-zinc-500 dark:text-zinc-400'
-          }`}
-        >
+        <p className={`text-xs ${status === 'error' ? 'text-destructive' : 'text-muted-foreground'}`}>
           {message}
         </p>
       )}
 
-      <p className="text-xs text-zinc-400 dark:text-zinc-500">
+      <p className="text-muted-foreground/60 text-xs">
         Stored privately in your Google Drive AppData — not visible in your Drive.
       </p>
     </div>

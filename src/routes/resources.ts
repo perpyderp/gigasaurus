@@ -24,6 +24,17 @@ export const resourceRoutes = new Elysia({ prefix: '/resources', tags: ['Resourc
         limit: t.Optional(t.Numeric({ minimum: 1, maximum: 100, default: 20 })),
         offset: t.Optional(t.Numeric({ minimum: 0, default: 0 })),
       }),
+      response: {
+        200: t.Object({
+          count: t.Number(),
+          results: t.Array(t.Object({
+            name: t.String(),
+            slug: t.String(),
+            image: t.Nullable(t.String()),
+            url: t.String(),
+          })),
+        }),
+      },
       detail: {
         summary: 'List all resources',
         description: 'Returns a paginated list of all in-game resources.',
@@ -43,6 +54,9 @@ export const resourceRoutes = new Elysia({ prefix: '/resources', tags: ['Resourc
     },
     {
       params: t.Object({ slug: t.String() }),
+      response: {
+        404: t.Object({ message: t.String() }),
+      },
       detail: {
         summary: 'Get resource by slug',
         description: 'Returns full details for a single resource by its slug.',

@@ -24,6 +24,17 @@ export const armorRoutes = new Elysia({ prefix: '/armor', tags: ['Armor'] })
         limit: t.Optional(t.Numeric({ minimum: 1, maximum: 100, default: 20 })),
         offset: t.Optional(t.Numeric({ minimum: 0, default: 0 })),
       }),
+      response: {
+        200: t.Object({
+          count: t.Number(),
+          results: t.Array(t.Object({
+            set_name: t.String(),
+            slug: t.String(),
+            image: t.Nullable(t.String()),
+            url: t.String(),
+          })),
+        }),
+      },
       detail: {
         summary: 'List all armor sets',
         description: 'Returns a paginated list of all armor sets.',
@@ -43,6 +54,9 @@ export const armorRoutes = new Elysia({ prefix: '/armor', tags: ['Armor'] })
     },
     {
       params: t.Object({ slug: t.String() }),
+      response: {
+        404: t.Object({ message: t.String() }),
+      },
       detail: {
         summary: 'Get armor set by slug',
         description: 'Returns full details for a single armor set by its slug, including per-set ingredient costs.',
