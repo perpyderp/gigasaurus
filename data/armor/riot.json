@@ -1,0 +1,17 @@
+{
+    "set_name": "Riot Armor",
+    "unlock_level": 98,
+    "engram_points": 110,
+    "armor_rating": 575,
+    "cold_protection": 60,
+    "heat_protection": -16.8,
+    "weight": 42,
+    "durability": 120,
+    "found_in": ["Deep Sea"],
+    "set_ingredients": [
+        { "name": "Polymer",     "quantity": 125, "resource_id": "polymer" },
+        { "name": "Metal Ingot", "quantity": 225, "resource_id": "metal_ingot" },
+        { "name": "Crystal",     "quantity": 75,  "resource_id": "crystal" },
+        { "name": "Fiber",       "quantity": 100, "resource_id": "fiber" }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "set_name": "Flak Armor",
+    "unlock_level": 56,
+    "engram_points": 65,
+    "armor_rating": 500,
+    "cold_protection": 60,
+    "heat_protection": -25,
+    "weight": 30,
+    "durability": 120,
+    "found_in": ["Yellow"],
+    "set_ingredients": [
+        { "name": "Metal Ingot", "quantity": 265, "resource_id": "metal_ingot" },
+        { "name": "Hide",        "quantity": 200, "resource_id": "hide" },
+        { "name": "Fiber",       "quantity": 90,  "resource_id": "fiber" }
+    ]
+}

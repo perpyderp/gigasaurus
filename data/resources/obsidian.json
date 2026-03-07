@@ -1,0 +1,14 @@
+{
+    "name": "Obsidian",
+    "rarity": "uncommon",
+    "renewable": false,
+    "refinable": false,
+    "combustible": false,
+    "weight": 2.0,
+    "stack_size": 100,
+    "found_in": ["Blue", "Yellow"],
+    "hexagon_exchange": {
+        "exchange_yields": 50,
+        "hexagons": 40
+    }
+}

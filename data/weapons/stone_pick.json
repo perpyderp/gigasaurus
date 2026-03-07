@@ -1,0 +1,13 @@
+{
+    "name": "Stone Pick",
+    "category": "tool",
+    "damage": 16,
+    "unlock_level": 1,
+    "engram_points": null,
+    "ammo_type": null,
+    "ingredients": [
+        { "name": "Wood",  "quantity": 1, "resource_id": "wood" },
+        { "name": "Stone", "quantity": 1, "resource_id": "stone" },
+        { "name": "Thatch","quantity": 10,"resource_id": "thatch" }
+    ]
+}

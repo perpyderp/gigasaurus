@@ -1,0 +1,13 @@
+{
+    "name": "Spear",
+    "category": "melee",
+    "damage": 24,
+    "unlock_level": 2,
+    "engram_points": 3,
+    "ammo_type": null,
+    "ingredients": [
+        { "name": "Wood",  "quantity": 8, "resource_id": "wood" },
+        { "name": "Flint", "quantity": 2, "resource_id": "flint" },
+        { "name": "Thatch","quantity": 8, "resource_id": "thatch" }
+    ]
+}

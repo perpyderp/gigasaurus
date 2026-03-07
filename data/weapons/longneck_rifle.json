@@ -1,0 +1,14 @@
+{
+    "name": "Longneck Rifle",
+    "category": "firearm",
+    "damage": 280,
+    "unlock_level": 35,
+    "engram_points": 18,
+    "ammo_type": "Rifle Ammo",
+    "ingredients": [
+        { "name": "Metal Ingot", "quantity": 40, "resource_id": "metal_ingot" },
+        { "name": "Wood",        "quantity": 30, "resource_id": "wood" },
+        { "name": "Fiber",       "quantity": 50, "resource_id": "fiber" },
+        { "name": "Hide",        "quantity": 45, "resource_id": "hide" }
+    ]
+}

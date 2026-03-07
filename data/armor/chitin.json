@@ -1,0 +1,17 @@
+{
+    "set_name": "Chitin Armor",
+    "unlock_level": 37,
+    "engram_points": 36,
+    "armor_rating": 250,
+    "cold_protection": 43,
+    "heat_protection": -35,
+    "weight": 22,
+    "durability": 50,
+    "found_in": ["Blue"],
+    "set_ingredients": [
+        { "name": "Chitin",       "quantity": 175, "resource_id": "chitin" },
+        { "name": "Hide",         "quantity": 75,  "resource_id": "hide" },
+        { "name": "Fiber",        "quantity": 90,  "resource_id": "fiber" },
+        { "name": "Metal Ingot",  "quantity": 10,  "resource_id": "metal_ingot" }
+    ]
+}

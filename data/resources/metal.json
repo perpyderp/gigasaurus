@@ -1,0 +1,14 @@
+{
+    "name": "Metal",
+    "rarity": "common",
+    "renewable": false,
+    "refinable": true,
+    "combustible": false,
+    "weight": 1.0,
+    "stack_size": 200,
+    "found_in": ["Blue", "Yellow"],
+    "hexagon_exchange": {
+        "exchange_yields": 50,
+        "hexagons": 20
+    }
+}

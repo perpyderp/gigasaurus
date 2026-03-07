@@ -1,0 +1,15 @@
+{
+    "set_name": "Hide Armor",
+    "unlock_level": 15,
+    "engram_points": 21,
+    "armor_rating": 100,
+    "cold_protection": 85,
+    "heat_protection": -25,
+    "weight": 10.5,
+    "durability": 45,
+    "found_in": ["Green"],
+    "set_ingredients": [
+        { "name": "Hide",  "quantity": 90,  "resource_id": "hide" },
+        { "name": "Fiber", "quantity": 105, "resource_id": "fiber" }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "set_name": "Ghillie Armor",
+    "unlock_level": 33,
+    "engram_points": 35,
+    "armor_rating": 160,
+    "cold_protection": 24,
+    "heat_protection": 155,
+    "weight": 24,
+    "durability": 45,
+    "found_in": ["Deep Sea"],
+    "set_ingredients": [
+        { "name": "Fiber", "quantity": 200, "resource_id": "fiber" },
+        { "name": "Hide",  "quantity": 100, "resource_id": "hide" },
+        { "name": "Pelt",  "quantity": 25,  "resource_id": "pelt" }
+    ]
+}
