@@ -56,14 +56,25 @@ export const CreatureSchema = z.object({
   /** Normalized to array at read time; JSON may store a single object or array */
   saddle: z.union([z.array(SaddleEntry), SaddleEntry, z.null()]),
   rider_weaponry: z.boolean(),
+  /**
+   * Egg-layers (dinosaurs, birds, fish, reptiles) have `name` + `incubation`.
+   * Live-bearers (mammals, invertebrates) have `gestation_time` instead.
+   * Both share baby/juvenile/adolescent maturation times and breeding_interval.
+   */
   egg: z
     .object({
-      name: z.union([z.string(), z.array(z.string())]),
-      incubation: z.object({
-        range: z.string(),
-        incubation_range: z.string(),
-        incubation_time: z.string(),
-      }),
+      /** Only present for egg-laying creatures. */
+      name: z.union([z.string(), z.array(z.string())]).optional(),
+      /** Only present for egg-laying creatures. */
+      incubation: z
+        .object({
+          range: z.string(),
+          incubation_range: z.string(),
+          incubation_time: z.string(),
+        })
+        .optional(),
+      /** Only present for live-bearing creatures (mammals, invertebrates). */
+      gestation_time: z.string().optional(),
       baby_time: z.string(),
       juvenile_time: z.string(),
       adolescent_time: z.string(),
