@@ -1,103 +1,46 @@
 {
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-    "name": "gigasaurus",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "test": "jest",
-        "test:watch": "jest --watch"
-    },
-    "dependencies": {
-        "@vercel/analytics": "^1.1.1",
-        "@vercel/speed-insights": "^1.0.2",
-        "class-variance-authority": "^0.7.0",
-        "clsx": "^2.1.0",
-        "lucide-react": "^0.309.0",
-        "next": "14.0.4",
-        "react": "^18",
-        "react-dom": "^18",
-        "tailwind-merge": "^2.2.0",
-        "tailwindcss-animate": "^1.0.7"
-    },
-    "devDependencies": {
-        "@jest/globals": "^29.7.0",
-        "@testing-library/jest-dom": "^6.2.0",
-        "@testing-library/react": "^14.1.2",
-        "@types/node": "^20",
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
-        "ajv": "^8.12.0",
-        "autoprefixer": "^10.0.1",
-        "eslint": "^8",
-        "eslint-config-next": "14.0.4",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
-        "postcss": "^8",
-        "tailwindcss": "^3.3.0",
-        "ts-node": "^10.9.2",
-        "typescript": "^5"
-    }
-=======
->>>>>>> Stashed changes
   "name": "gigasaurus",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-<<<<<<< Updated upstream
-    "lint": "eslint"
-=======
-    "lint": "eslint",
-    "scrape": "bun scripts/scrape.ts"
->>>>>>> Stashed changes
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "test": "jest",
+      "test:watch": "jest --watch",
+      "scrape": "bun scripts/scrape.ts"
   },
   "dependencies": {
-    "@base-ui/react": "^1.2.0",
-    "@elysiajs/cors": "^1.4.1",
-    "@elysiajs/eden": "^1.4.8",
-    "@elysiajs/openapi": "^1.4.14",
-    "@tabler/icons-react": "^3.40.0",
-    "better-sqlite3": "^12.6.2",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "elysia": "^1.4.27",
-    "idb": "^8.0.3",
-    "lucide-react": "^0.577.0",
-    "next": "16.1.6",
-    "next-themes": "^0.4.6",
-    "nuqs": "^2.8.9",
-    "radix-ui": "^1.4.3",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "shadcn": "^4.0.0",
-    "tailwind-merge": "^3.5.0",
-    "tw-animate-css": "^1.4.0",
-    "zod": "^3"
+      "@vercel/analytics": "^1.1.1",
+      "@vercel/speed-insights": "^1.0.2",
+      "class-variance-authority": "^0.7.0",
+      "clsx": "^2.1.0",
+      "lucide-react": "^0.309.0",
+      "next": "14.0.4",
+      "react": "^18",
+      "react-dom": "^18",
+      "tailwind-merge": "^2.2.0",
+      "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/better-sqlite3": "^7.6.13",
-    "@types/bun": "^1.3.10",
-    "@types/google.accounts": "^0.0.18",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.6",
-<<<<<<< Updated upstream
-=======
-    "node-html-parser": "^7.1.0",
->>>>>>> Stashed changes
-    "tailwindcss": "^4",
-    "typescript": "^5"
+      "@jest/globals": "^29.7.0",
+      "@testing-library/jest-dom": "^6.2.0",
+      "@testing-library/react": "^14.1.2",
+      "@types/node": "^20",
+      "@types/react": "^18",
+      "@types/react-dom": "^18",
+      "ajv": "^8.12.0",
+      "autoprefixer": "^10.0.1",
+      "eslint": "^8",
+      "eslint-config-next": "14.0.4",
+      "node-html-parser": "^7.1.0",
+      "jest": "^29.7.0",
+      "jest-environment-jsdom": "^29.7.0",
+      "postcss": "^8",
+      "tailwindcss": "^3.3.0",
+      "ts-node": "^10.9.2",
+      "typescript": "^5"
   },
   "ignoreScripts": [
     "sharp",
@@ -107,8 +50,4 @@
     "sharp",
     "unrs-resolver"
   ]
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 }

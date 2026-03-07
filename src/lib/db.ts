@@ -6,43 +6,9 @@
  * Object store: "creatures" — keyed by the creature's unique ARK id (DinoID1_DinoID2)
  */
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb'
-<<<<<<< Updated upstream
-import type { ArkColor, AncestorEntry, ArkCreatureStats } from './ark-parser'
-
-export interface StoredCreature {
-  /** Unique key: `${dinoId1}_${dinoId2}` */
-  id: string
-  dinoId1: number
-  dinoId2: number
-  dinoClass: string
-  dinoNameTag: string
-  /** Display name: TamedName if set, otherwise derived from dinoNameTag */
-  name: string
-  isFemale: boolean
-  isNeutered: boolean
-  tamer: string
-  imprinter: string
-  babyAge: number
-  level: number
-  imprintQuality: number
-  mutationsMale: number
-  mutationsFemale: number
-  colors: ArkColor[]
-  stats: ArkCreatureStats
-  ancestors: AncestorEntry[]
-  ancestorsMale: AncestorEntry[]
-  /** Matched Gigasaurus API slug, or null if creature isn't in the API */
-  apiSlug: string | null
-  /** Raw .ini text, kept for re-parsing after API updates */
-  rawIni: string
-  importedAt: number
-  updatedAt: number
-}
-=======
 import type { StoredCreature } from '@/schemas/stored-creature'
 
 export type { StoredCreature }
->>>>>>> Stashed changes
 
 interface GigasaurusDB extends DBSchema {
   creatures: {
