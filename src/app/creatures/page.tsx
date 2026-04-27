@@ -18,14 +18,12 @@ const CATEGORY_LABELS: Record<string, string> = {
   other: 'Other',
 }
 
-export default function CreaturesPage({
+export default async function CreaturesPage({
   searchParams,
 }: {
   searchParams: Promise<{ category?: string; q?: string }>
 }) {
-  // Server component — read query params synchronously via Next.js convention
-  // (searchParams is a plain object in page components)
-  const params = searchParams as unknown as { category?: string; q?: string }
+  const params = await searchParams
   const categoryFilter = params.category
   const search = params.q?.toLowerCase()
 

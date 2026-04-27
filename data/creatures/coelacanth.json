@@ -65,5 +65,6 @@
     "egg": null,
     "drag_weight": 25,
     "cloneable": false,
-    "entity_id": "Coel_Character_BP_C"
+    "entity_id": "Coel_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Coelacanth"
 }

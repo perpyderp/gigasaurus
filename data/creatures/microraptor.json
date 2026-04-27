@@ -105,5 +105,6 @@
     },
     "drag_weight": 35,
     "cloneable": false,
-    "entity_id": "Microraptor_Character_BP_C"
+    "entity_id": "Microraptor_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Microraptor"
 }

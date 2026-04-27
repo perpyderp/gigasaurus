@@ -102,5 +102,6 @@
     },
     "drag_weight": null,
     "cloneable": true,
-    "entity_id": "Desmodus_Character_BP_C"
+    "entity_id": "Desmodus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Desmodus"
 }

@@ -104,5 +104,6 @@
     },
     "drag_weight": 500,
     "cloneable": false,
-    "entity_id": "Yutyrannus_Character_BP_C"
+    "entity_id": "Yutyrannus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Yutyrannus"
 }

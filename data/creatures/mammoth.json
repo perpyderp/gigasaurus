@@ -102,5 +102,6 @@
     },
     "drag_weight": 400,
     "cloneable": false,
-    "entity_id": "Mammoth_Character_BP_C"
+    "entity_id": "Mammoth_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Mammoth"
 }

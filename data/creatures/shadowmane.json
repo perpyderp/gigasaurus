@@ -94,5 +94,6 @@
     "drag_weight": 350,
     "cloneable": true,
     "entity_id": "LionfishLion_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Shadowmane"
 }

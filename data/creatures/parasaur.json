@@ -107,5 +107,6 @@
     },
     "drag_weight": 125,
     "cloneable": false,
-    "entity_id": "Para_Character_BP_C"
+    "entity_id": "Para_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Parasaur"
 }

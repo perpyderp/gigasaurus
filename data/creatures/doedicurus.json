@@ -106,5 +106,6 @@
     },
     "drag_weight": 160,
     "cloneable": false,
-    "entity_id": "Doed_Character_BP_C"
+    "entity_id": "Doed_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Doedicurus"
 }

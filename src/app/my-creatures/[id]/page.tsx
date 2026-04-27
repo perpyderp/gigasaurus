@@ -20,7 +20,8 @@ import {
 import { getCreature, upsertCreature, deleteCreature, getAllCreatures } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
 import { ColorSwatches } from '@/components/ColorSwatch'
-import { StatBar } from '@/components/StatBar'
+import { CreatureColorRender } from '@/components/CreatureColorRender'
+import { StatBar, type StatDisplayStyle } from '@/components/StatBar'
 import { ImportDropzone } from '@/components/ImportDropzone'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -56,6 +57,9 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
   const [editingParents, setEditingParents] = useState(false)
   const [pendingFatherId, setPendingFatherId] = useState('')
   const [pendingMotherId, setPendingMotherId] = useState('')
+  const [speciesName, setSpeciesName] = useState<string | null>(null)
+  const [imageTab, setImageTab] = useState<'dossier' | 'colors'>('dossier')
+  const [statStyle, setStatStyle] = useState<StatDisplayStyle>('circle')
 
   const load = useCallback(async () => {
     const c = await getCreature(id)
@@ -78,6 +82,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
           setStatSolutions(solveAllStats(creature.stats as unknown as Record<string, number>, speciesParams, creature.imprintQuality, isBred))
         }
         setIsBreedable(!!data.breedable)
+        if (typeof data.name === 'string') setSpeciesName(data.name)
       })
       .catch(() => {/* silently ignore */})
   }, [creature])
@@ -153,7 +158,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
 
   return (
     <main className="bg-background min-h-screen">
-      <div className="mx-auto max-w-3xl space-y-6 px-4 py-8">
+      <div className="mx-auto max-w-5xl space-y-6 px-4 py-8">
 
         <Link href="/my-creatures" className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 text-sm transition-colors">
           <IconArrowLeft size={14} />
@@ -162,16 +167,42 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
 
         {/* Hero */}
         <Card>
-          <CardContent className="flex gap-4 p-5">
-            <div className="bg-muted relative h-32 w-32 shrink-0 overflow-hidden rounded-lg">
-              {imageUrl ? (
-                <Image src={imageUrl} alt={creature.name} fill className="object-contain p-2" sizes="128px" />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center text-4xl opacity-30">🦕</div>
-              )}
+          <CardContent className="flex flex-col gap-6 p-6 sm:flex-row">
+            <div className="flex flex-col gap-2 sm:w-1/2">
+              <div className="bg-muted relative aspect-square w-full overflow-hidden rounded-lg">
+                {imageTab === 'colors' && speciesName ? (
+                  <CreatureColorRender
+                    speciesName={speciesName}
+                    colors={creature.colors}
+                    size={448}
+                    className="h-full w-full"
+                  />
+                ) : imageUrl ? (
+                  <Image src={imageUrl} alt={creature.name} fill className="object-contain p-3" sizes="(max-width: 640px) 90vw, 448px" />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center text-6xl opacity-30">🦕</div>
+                )}
+              </div>
+              <div className="bg-muted/40 flex w-full rounded-md p-0.5 text-xs">
+                <button
+                  type="button"
+                  onClick={() => setImageTab('dossier')}
+                  className={`flex-1 rounded-sm py-1.5 transition-colors ${imageTab === 'dossier' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
+                >
+                  Dossier
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setImageTab('colors')}
+                  disabled={!speciesName}
+                  className={`flex-1 rounded-sm py-1.5 transition-colors ${imageTab === 'colors' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'} disabled:cursor-not-allowed disabled:opacity-50`}
+                >
+                  Colors
+                </button>
+              </div>
             </div>
 
-            <div className="min-w-0 flex-1 space-y-2">
+            <div className="min-w-0 flex-1 space-y-3">
               {editing ? (
                 <div className="flex gap-2">
                   <Input
@@ -240,23 +271,48 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
         {/* Stats */}
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-semibold">Max Stats</CardTitle>
+            <div className="flex items-center justify-between gap-3">
+              <CardTitle className="text-sm font-semibold">Max Stats</CardTitle>
+              <div className="bg-muted/40 flex rounded-md p-0.5 text-xs">
+                {(['circle', 'bar', 'value'] as const).map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => setStatStyle(s)}
+                    className={`px-2.5 py-1 rounded-sm capitalize transition-colors ${statStyle === s ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
           </CardHeader>
-          <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <CardContent className={
+            statStyle === 'value'
+              ? 'grid grid-cols-1 gap-x-8 sm:grid-cols-2'
+              : statStyle === 'bar'
+                ? 'grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2'
+                : 'grid grid-cols-1 gap-4 sm:grid-cols-2'
+          }>
             {RELEVANT_STATS.map((stat) => {
               const cfg = STAT_CONFIG[stat]
               const value = creature.stats[stat]
               const display = formatStatValue(stat, value)
               const topPct = getStatTopPercent(stat, value)
               const solution = statSolutions?.[stat]
+              const breedingDisplay = solution?.solved
+                ? formatStatValue(stat, solution.breedingValue)
+                : undefined
               return (
                 <StatBar
                   key={stat}
                   label={cfg.label}
                   value={value}
                   display={display}
+                  breedingDisplay={breedingDisplay}
                   max={STAT_MAXES[stat]}
                   color={cfg.ringColor}
+                  style={statStyle}
                   points={solution ? undefined : points[stat]}
                   wildLevels={solution?.wild}
                   domLevels={solution?.dom}

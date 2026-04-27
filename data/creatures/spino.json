@@ -104,5 +104,6 @@
     },
     "drag_weight": 550,
     "cloneable": false,
-    "entity_id": "Spino_Character_BP_C"
+    "entity_id": "Spino_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Spino"
 }

@@ -65,5 +65,6 @@
     "egg": null,
     "drag_weight": 32.5,
     "cloneable": false,
-    "entity_id": "Salmon_Character_BP_C"
+    "entity_id": "Salmon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Sabertooth_Salmon"
 }

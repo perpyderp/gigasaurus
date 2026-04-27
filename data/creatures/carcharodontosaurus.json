@@ -100,5 +100,6 @@
     },
     "drag_weight": 950,
     "cloneable": true,
-    "entity_id": "Carcha_Character_BP_C"
+    "entity_id": "Carcha_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Carcharodontosaurus"
 }

@@ -104,5 +104,6 @@
     },
     "drag_weight": 575,
     "cloneable": false,
-    "entity_id": "Diplodocus_Character_BP_C"
+    "entity_id": "Diplodocus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Diplodocus"
 }

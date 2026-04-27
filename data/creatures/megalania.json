@@ -110,5 +110,6 @@
     },
     "drag_weight": 35,
     "cloneable": false,
-    "entity_id": "Megalania_Character_BP_C"
+    "entity_id": "Megalania_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megalania"
 }

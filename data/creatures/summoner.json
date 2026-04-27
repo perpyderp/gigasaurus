@@ -67,5 +67,6 @@
     "drag_weight": null,
     "cloneable": false,
     "entity_id": "Summoner_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Summoner"
 }

@@ -88,5 +88,6 @@
     "drag_weight": 35,
     "cloneable": true,
     "entity_id": "Phoenix_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Phoenix"
 }

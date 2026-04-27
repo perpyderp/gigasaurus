@@ -65,5 +65,6 @@
     "egg": null,
     "drag_weight": 370,
     "cloneable": false,
-    "entity_id": "Lamprey_Character_C"
+    "entity_id": "Lamprey_Character_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Lamprey"
 }

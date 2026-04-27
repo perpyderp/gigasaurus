@@ -90,5 +90,6 @@
     "drag_weight": 450,
     "cloneable": true,
     "entity_id": "Crab_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Karkinos"
 }

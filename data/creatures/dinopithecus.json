@@ -99,5 +99,6 @@
     },
     "drag_weight": 300,
     "cloneable": true,
-    "entity_id": "Dinopithecus_Character_BP_C"
+    "entity_id": "Dinopithecus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dinopithecus"
 }

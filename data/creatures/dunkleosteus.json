@@ -102,5 +102,6 @@
     },
     "drag_weight": 250,
     "cloneable": false,
-    "entity_id": "Dunkle_Character_BP_C"
+    "entity_id": "Dunkle_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dunkleosteus"
 }

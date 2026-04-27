@@ -91,5 +91,6 @@
     "egg": null,
     "drag_weight": 1000,
     "cloneable": false,
-    "entity_id": "RockGolem_Character_BP_C"
+    "entity_id": "RockGolem_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Rock_Elemental"
 }

@@ -13,12 +13,12 @@ const RARITY_VARIANT: Record<string, 'secondary' | 'outline' | 'default'> = {
   rare: 'default',
 }
 
-export default function ResourcesPage({
+export default async function ResourcesPage({
   searchParams,
 }: {
   searchParams: Promise<{ rarity?: string; q?: string }>
 }) {
-  const params = searchParams as unknown as { rarity?: string; q?: string }
+  const params = await searchParams
   const rarityFilter = params.rarity
   const search = params.q?.toLowerCase()
 

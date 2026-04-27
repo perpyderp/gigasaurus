@@ -107,5 +107,6 @@
     },
     "drag_weight": 410,
     "cloneable": false,
-    "entity_id": "Megalosaurus_Character_BP_C"
+    "entity_id": "Megalosaurus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megalosaurus"
 }

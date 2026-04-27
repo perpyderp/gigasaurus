@@ -101,5 +101,6 @@
     },
     "drag_weight": 35,
     "cloneable": false,
-    "entity_id": "Kairuku_Character_BP_C"
+    "entity_id": "Kairuku_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Kairuku"
 }

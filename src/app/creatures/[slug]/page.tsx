@@ -15,6 +15,7 @@ import {
   IconWalk,
   IconDna,
   IconAlertTriangle,
+  IconExternalLink,
 } from '@tabler/icons-react'
 
 export async function generateStaticParams() {
@@ -157,6 +158,17 @@ export default async function CreatureSpeciesPage({
                 <p className="text-muted-foreground text-xs">
                   {creature.dossier.time}
                 </p>
+              )}
+
+              {creature.wiki_url && (
+                <a
+                  href={creature.wiki_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 text-xs transition-colors"
+                >
+                  <IconExternalLink size={12} /> View on ARK Wiki
+                </a>
               )}
             </div>
           </CardContent>

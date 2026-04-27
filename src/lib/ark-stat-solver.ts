@@ -51,6 +51,12 @@ export interface StatSolution {
   solved: boolean
   /** The taming effectiveness used (1.0 for bred; best-fit for tamed). */
   te: number
+  /**
+   * Stat value with only wild levels applied — no taming bonus, no imprint,
+   * no dom levels. This is what would transfer to offspring genetically.
+   * Same units as the observed value (absolute for HP/etc., multiplier for melee/speed).
+   */
+  breedingValue: number
 }
 
 export type StatSolutionMap = Record<string, StatSolution>
@@ -141,13 +147,15 @@ export function solveStat(
   isBred: boolean,
 ): StatSolution {
   const { base, iw, tm } = params
-  if (base === 0 || iw === 0) return { wild: 0, dom: 0, solved: false, te: 1.0 }
+  const breedingValueAt = (lw: number) => base * (1 + lw * iw)
+
+  if (base === 0 || iw === 0) return { wild: 0, dom: 0, solved: false, te: 1.0, breedingValue: base }
 
   // When Tm=0 or creature is bred, TE doesn't affect the result — use 1.0 directly
   if (isBred || tm === 0) {
     const sol = trysolveAt(observed, params, ib, 1.0)
-    if (sol) return { ...sol, solved: true, te: 1.0 }
-    return { wild: 0, dom: 0, solved: false, te: 1.0 }
+    if (sol) return { ...sol, solved: true, te: 1.0, breedingValue: breedingValueAt(sol.wild) }
+    return { wild: 0, dom: 0, solved: false, te: 1.0, breedingValue: base }
   }
 
   // Tamed creature with Tm > 0: scan TE from 1.0 → 0.0 to find an integer solution
@@ -155,10 +163,10 @@ export function solveStat(
   for (let tei = steps; tei >= 0; tei--) {
     const te = tei * TE_SCAN_STEP
     const sol = trysolveAt(observed, params, ib, te)
-    if (sol) return { ...sol, solved: true, te }
+    if (sol) return { ...sol, solved: true, te, breedingValue: breedingValueAt(sol.wild) }
   }
 
-  return { wild: 0, dom: 0, solved: false, te: 1.0 }
+  return { wild: 0, dom: 0, solved: false, te: 1.0, breedingValue: base }
 }
 
 /**

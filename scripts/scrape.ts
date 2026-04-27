@@ -472,6 +472,7 @@ function extractEntityId(root: HTMLElement): string | null {
 async function scrapeCreature(entry: CreatureListEntry): Promise<{ data: Record<string, unknown>; missing: string[]; root: HTMLElement | null }> {
   const root = await fetchPage(entry.name)
   const missing: string[] = []
+  const wiki_url = `${WIKI}/wiki/${encodeURIComponent(entry.name.replace(/ /g, '_'))}`
 
   if (!root) {
     return {
@@ -486,6 +487,7 @@ async function scrapeCreature(entry: CreatureListEntry): Promise<{ data: Record<
         tameable: entry.tameable, rideable: entry.rideable, breedable: entry.breedable,
         taming: null, saddle: null, rider_weaponry: false,
         egg: null, drag_weight: null, cloneable: null, entity_id: entry.entity_id,
+        wiki_url,
       },
       missing: ['ALL (page fetch failed — manual population required)'],
     }
@@ -608,6 +610,7 @@ async function scrapeCreature(entry: CreatureListEntry): Promise<{ data: Record<
     tameable: entry.tameable, rideable: entry.rideable, breedable: entry.breedable,
     taming, saddle: saddle ?? null, rider_weaponry: false,
     egg, drag_weight, cloneable, entity_id,
+    wiki_url,
   }
 
   return { data, missing, root }

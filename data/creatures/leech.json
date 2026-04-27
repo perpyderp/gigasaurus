@@ -65,5 +65,6 @@
     "egg": null,
     "drag_weight": 30,
     "cloneable": false,
-    "entity_id": "Leech_Character_C"
+    "entity_id": "Leech_Character_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Leech"
 }

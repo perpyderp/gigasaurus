@@ -20,12 +20,12 @@ const CATEGORY_LABELS: Record<WeaponCategory, string> = {
   attachment: 'Attachment',
 }
 
-export default function WeaponsPage({
+export default async function WeaponsPage({
   searchParams,
 }: {
   searchParams: Promise<{ category?: string; q?: string }>
 }) {
-  const params = searchParams as unknown as { category?: WeaponCategory; q?: string }
+  const params = (await searchParams) as { category?: WeaponCategory; q?: string }
   const categoryFilter = params.category
   const search = params.q?.toLowerCase()
 

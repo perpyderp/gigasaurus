@@ -84,5 +84,6 @@
     },
     "drag_weight": 30,
     "cloneable": false,
-    "entity_id": "LanternPug_Character_BP_C"
+    "entity_id": "LanternPug_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Bulbdog"
 }

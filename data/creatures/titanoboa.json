@@ -86,5 +86,6 @@
     "egg": null,
     "drag_weight": 110,
     "cloneable": false,
-    "entity_id": "BoaFrill_Character_BP_C"
+    "entity_id": "BoaFrill_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Titanoboa"
 }

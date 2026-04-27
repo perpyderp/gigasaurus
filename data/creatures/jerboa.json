@@ -100,5 +100,6 @@
     },
     "drag_weight": 25,
     "cloneable": false,
-    "entity_id": "Jerboa_Character_BP_C"
+    "entity_id": "Jerboa_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Jerboa"
 }

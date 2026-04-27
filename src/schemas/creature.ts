@@ -101,6 +101,8 @@ export const CreatureSchema = z.object({
   drag_weight: z.number().nullable(),
   cloneable: z.boolean().nullable(),
   entity_id: z.string().nullable(),
+  /** Direct link to the ARK wiki page this entry was scraped from. */
+  wiki_url: z.string().url().nullable().optional(),
 })
 
 export type Creature = z.infer<typeof CreatureSchema>

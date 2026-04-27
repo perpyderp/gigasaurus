@@ -90,5 +90,6 @@
     },
     "drag_weight": 50,
     "cloneable": false,
-    "entity_id": "Achatina_Character_BP_C"
+    "entity_id": "Achatina_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Achatina"
 }
