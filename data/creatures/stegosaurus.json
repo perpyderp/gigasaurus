@@ -1,5 +1,6 @@
 {
     "name": "Stegosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Stegosaurus regium",
         "time": "Late Jurassic",
@@ -13,7 +14,7 @@
             "base": 650,
             "level_increase": {
                 "wild": 130,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,24 +56,22 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.02
             },
             "taming_bonus": {
-                "additive": 0.964
+                "additive": 0.9640000000000001
             }
         },
         "torpidity": {
             "base": 500,
             "level_increase": {
-                "wild": 30,
-                "tamed": null
+                "wild": 30
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -84,23 +83,20 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Regular"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Stego Saddle",
+            "name": "Stego Saddle (Level 26)",
             "engram_level": 26
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
-        "name": [
-            "Stego Egg",
-            "Tek Stego Egg"
-        ],
+        "name": "Stego Egg Tek Stego Egg",
         "incubation": {
-            "range": "22 - 28 °C / 72 - 82 °F",
-            "incubation_range": "25 °C / 77 °F",
+            "range": "22 - 28 °C / 72 - 82 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "22 - 28 °C / 72 - 82 °F Egg Incubator: 25 °C / 77 °F",
             "incubation_time": "2h 46m 39.2s"
         },
         "baby_time": "5h 8m 38.517s",
@@ -110,7 +106,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 250,
-    "cloneable": true,
-    "entity_id": "Stego_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Stego_Character_BP_C"
 }

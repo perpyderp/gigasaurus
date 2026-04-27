@@ -1,0 +1,66 @@
+{
+    "name": "Leedsichthys",
+    "category": "fish",
+    "dossier": {
+        "species": "Leedsichthys conviviumbrosia",
+        "time": "Mid-Jurassic",
+        "diet": "Piscivore",
+        "temperament": "Defensive",
+        "wild": "Leedsichthys conviviumbrosia is probably the largest fish in the waters around the island. Its meat is also extremely succulent, a surprise given its size. It is often traded with the same value as Prime Meat, and colloquially called 'Prime Fish'. Of course, not all of Leedsichthys' meat is this high quality, but most of it is! While the demand for Leedsichthys meat is high, the fish is notoriously difficult to track and hunt. Between its large size, powerful attacks, incredible speed (when it turns to flee), and humankind's general ineptitude on open water, actually killing a Leedsichthys is one of the Island's more difficult tasks. The hunt for an extremely elusive breed of the fish, the fabled 'Great Albino' Leedsichthys has been known to drive otherwise-sensible men and women mad with obsession, as if all evil were visibly personified and made practically assailable in this one creature.",
+        "domesticated": "Despite its large size, and the fact that it may well be strong enough to carry heavy loads, Leedsichthys does not appear to be intelligent enough to tame. Nevertheless, some large tribes keep an enormous pen with a few Leedsichthys trapped inside for cultivating purposes, as bits of Prime Fish can be repeatedly scraped off the gargantuan beast without killing it!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 4400,
+            "level_increase": {
+                "wild": 528
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 8000,
+            "level_increase": {
+                "wild": 800
+            }
+        },
+        "weight": {
+            "base": 1800,
+            "level_increase": {
+                "wild": 36
+            }
+        },
+        "melee": {
+            "base": 115,
+            "level_increase": {
+                "wild": 0
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 4500,
+            "level_increase": {
+                "wild": 270
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 1300,
+    "cloneable": false,
+    "entity_id": "Leedsichthys_Character_BP_C"
+}

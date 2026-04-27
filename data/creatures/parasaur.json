@@ -1,5 +1,6 @@
 {
     "name": "Parasaur",
+    "category": "dinosaur",
     "dossier": {
         "species": "Parasaurolophus amphibio",
         "time": "Late Cretaceous",
@@ -13,7 +14,7 @@
             "base": 200,
             "level_increase": {
                 "wild": 40,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,13 +56,12 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             },
             "taming_bonus": {
@@ -71,8 +71,7 @@
         "torpidity": {
             "base": 150,
             "level_increase": {
-                "wild": 9,
-                "tamed": null
+                "wild": 9
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -84,20 +83,20 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Basic"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Parasaur Saddle",
+            "name": "Parasaur Saddle (Level 9)",
             "engram_level": 9
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
-        "name": "Parasaur Egg",
+        "name": "Parasaur Egg Tek Parasaur Egg",
         "incubation": {
-            "range": "24 - 28 °C / 75 - 82 °F",
-            "incubation_range": "26 °C / 79 °F",
+            "range": "24 - 28 °C / 75 - 82 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_range": "24 - 28 °C / 75 - 82 °F Egg Incubator: 26 °C / 79 °F",
             "incubation_time": "1h 25m 42.446s"
         },
         "baby_time": "2h 38m 43.809s",
@@ -107,7 +106,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 125,
-    "cloneable": true,
-    "entity_id": "Para_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Para_Character_BP_C"
 }

@@ -1,0 +1,108 @@
+{
+    "name": "Diplocaulus",
+    "category": "other",
+    "dossier": {
+        "species": "Diplocaulus natatorinutrix",
+        "time": "Permian",
+        "diet": "Piscivore",
+        "temperament": "Skittish",
+        "wild": "Presiding almost solely within the Island's swamps, Diplocaulus natatorinutrix is a small amphibian that primarily eats minor fish. It rounds out what I consider to be the middle-bottom of the ecosystem, feeding on the tinier non-insect creatures of the Island while itself being a common snack for the larger carnivores. Because so many creatures prey on it, Diplocaulus has become very skittish and often flees at the first sign of trouble. It uses its amphibious nature to escape into whichever environment its predator isn't native to. Diplocaulus' unique capability to retain vast quantities of oxygen allows it to effectively remain submerged for hours at a time, usually outlasting even other amphibious creatures that might otherwise prey upon it.",
+        "domesticated": "There are only a few uses for tamed Diplocaulus. It is primarily kept for the (rather disgusting) practice of employing a Diplocaulus as an oxygen bag. Diplocaulus stores air in the bladders of its head, and divers can suck from these bladders to take deep breaths while submerged, supporting long-term underwater exploration without the use of external gear. Surprisingly, Diplocaulus is also extremely efficient when it comes to hunting Trilobites."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 250,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 165,
+            "level_increase": {
+                "wild": 16.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 1050,
+            "level_increase": {
+                "wild": 105,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.11
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 220,
+            "level_increase": {
+                "wild": 13.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Diplocaulus Egg",
+        "incubation": {
+            "range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "Diplocaulus_Character_BP_C"
+}

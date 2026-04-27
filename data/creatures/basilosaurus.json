@@ -1,0 +1,105 @@
+{
+    "name": "Basilosaurus",
+    "category": "mammal",
+    "dossier": {
+        "species": "Basilosaurus solatiumfecit",
+        "time": "Late Eocene",
+        "diet": "Piscivore",
+        "temperament": "Passive",
+        "wild": "One of the stranger creatures in the waters surrounding the Island is Basilosaurus solatiumfecit. It's a powerful swimmer which has adapted to the shallows so remarkably well that it rapidly recovers from injuries when near the water's surface. Conversely, it's vulnerable to deep water pressure, which slowly causes it harm. Basilosaurus is usually closely followed by other predatory creatures, as its eating habits leave plenty of scraps for scavengers to consume. It is a gentle creature towards humans and happily laps up food directly from them. However, the creatures that trail the \"Basi\" tend to become dangerously enraged whenever this occurs, as it leaves no leftovers for them.",
+        "domesticated": "Despite the hassle of engaging with its ornery followers, many tribes still attempt to tame the Basilosaurus, as its mammalian, warm-blooded circulation provides a rider with perfect comfort from both heat and cold. Being apprehensive in nature, Basilosaurus is equipped with a defense mechanism that prevents it from being stunned or shocked. Alternatively, Basilosaurus is hunted (perhaps too vigorously) for its special blubber, which can be efficiently refined into gasoline!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 2400,
+            "level_increase": {
+                "wild": 480,
+                "tamed": 0.048600000000000004
+            },
+            "taming_bonus": {
+                "additive": 0.042
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 8000,
+            "level_increase": {
+                "wild": 800,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 700,
+            "level_increase": {
+                "wild": 14,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 47,
+            "level_increase": {
+                "wild": 2.35,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.126,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 120
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Basilosaurus Saddle (Level 60)",
+            "engram_level": 60
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "11h 34m 26.667s",
+        "juvenile_time": "1d 22h 17m 46.667s",
+        "adolescent_time": "2d 9h 52m 13.334s",
+        "total_maturation": "4d 19h 44m 26.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 12000,
+    "cloneable": false,
+    "entity_id": "Basilosaurus_Character_BP_C"
+}

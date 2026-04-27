@@ -1,0 +1,114 @@
+{
+    "name": "Thorny Dragon",
+    "category": "reptile",
+    "dossier": {
+        "species": "Moloch sagittarius",
+        "time": "Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Though survivors have come to call these gargantuan reptiles Spiny Lizards, I believe that Moloch sagittarius' closest known relative is the Australian Thorny Devil (Moloch horridus). Besides the obvious gap in size, most of the differences between Moloch sagittarius and its smaller relative lie in its thorns. Instead of being permanent parts of its skin, Moloch sagittarius' thorns are more like spines or quills that can be removed and regrown. In fact, it is even capable of shooting these spines from its tail as a method of self defense, and examination of these projectiles has revealed that they are coated in a lethal poison.",
+        "domesticated": "Despite its dangerous spines, Moloch sagittarius has proven to be an excellent mount for indirect combat. Its ranged attacks can wreak havoc in a pitched battle, particularly if other creatures are taking the enemy's attention. Additionally, Moloch sagittarius is able to gather wood rather effectively, making it more than just an option for combat. Once saddled it can be used as a workbench, allowing for a mobile crafting station."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 260,
+            "level_increase": {
+                "wild": 52,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.0924
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 4010,
+            "level_increase": {
+                "wild": 20.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.3
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Thorny Dragon Saddle (Level 40)",
+            "engram_level": 40
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Thorny Dragon Egg",
+        "incubation": {
+            "range": "22 - 28 °C / 72 - 82 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "22 - 28 °C / 72 - 82 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_time": "2h 29m 59.28s"
+        },
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 150,
+    "cloneable": false,
+    "entity_id": "SpineyLizard_Character_BP_C"
+}

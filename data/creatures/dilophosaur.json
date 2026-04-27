@@ -1,5 +1,6 @@
 {
     "name": "Dilophosaur",
+    "category": "dinosaur",
     "dossier": {
         "species": "Dilophosaurus sputatrix",
         "time": "Early Jurassic",
@@ -13,7 +14,7 @@
             "base": 130,
             "level_increase": {
                 "wild": 26,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -38,6 +39,9 @@
             "level_increase": {
                 "wild": 45,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -48,20 +52,19 @@
             }
         },
         "melee": {
-            "base": 30,
+            "base": 103,
             "level_increase": {
                 "wild": 0.5,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.14,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             },
             "taming_bonus": {
@@ -71,8 +74,7 @@
         "torpidity": {
             "base": 75,
             "level_increase": {
-                "wild": 4.5,
-                "tamed": null
+                "wild": 4.5
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -84,15 +86,15 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Basic"
+        "kibble": null
     },
     "saddle": null,
     "rider_weaponry": false,
     "egg": {
         "name": "Dilo Egg",
         "incubation": {
-            "range": "28 - 32 °C / 82 - 90 °F",
-            "incubation_range": "30 °C / 86 °F",
+            "range": "28 - 32 °C / 82 - 90 °F Egg Incubator: 30 °C / 86 °F",
+            "incubation_range": "28 - 32 °C / 82 - 90 °F Egg Incubator: 30 °C / 86 °F",
             "incubation_time": "1h 8m 10.582s"
         },
         "baby_time": "2h 6m 15.757s",
@@ -102,7 +104,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 35,
-    "cloneable": true,
-    "entity_id": "Dilo_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Dilo_Character_BP_C"
 }

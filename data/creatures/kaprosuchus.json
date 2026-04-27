@@ -1,0 +1,107 @@
+{
+    "name": "Kaprosuchus",
+    "category": "reptile",
+    "dossier": {
+        "species": "Kaprosuchus paludentium",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "A smaller relative of the Sarcosuchus, Kaprosuchus paludentium is water-based carnivore primarily found lurking among the island's swamps. A naturally fast runner that is even faster in the water, it is a solitary hunter that picks off small-to-medium creatures, especially those isolated from their pack. When attacking, Kaprosuchus uses two main tactics. First, it patiently waits below the water surface and when the target is sufficiently close by, will perform a lateral jump that it uses to quickly close distance with its prey and drag it underwater. Secondly, its attacks the prey's vital areas specifically to drain its stamina. These two techniques effectively prevent most creatures from escaping Kaprosuchus once an assault has begun.",
+        "domesticated": "Survivors are generally split about the usefulness of Kaprosuchus. Some love its speed both in and out of the water, essentially making it among the fastest small-sized, all-terrain mounts when travelling through the wetlands. Others do not like how relatively frail Kaprosuchus is, and do not think its high speed and ensnaring attacks make up for this shortcoming."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 140,
+            "level_increase": {
+                "wild": 2.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 2545,
+            "level_increase": {
+                "wild": 1.252,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Kaprosuchus Saddle (Level 39)",
+            "engram_level": 39
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Kaprosuchus Egg",
+        "incubation": {
+            "range": "29 - 35 °C / 84 - 95 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "29 - 35 °C / 84 - 95 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_time": "1h 59m 59.424s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 410.23,
+    "cloneable": false,
+    "entity_id": "Kaprosuchus_Character_BP_C"
+}

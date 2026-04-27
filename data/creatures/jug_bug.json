@@ -1,0 +1,69 @@
+{
+    "name": "Jug Bug",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Scutinphora puteus",
+        "time": "Holocene",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "Scutinphora puteus is a fast, flying insect that comes in two varieties, visually distinct only in the red or green markings on its exoskeleton. Biologically and behaviorally, they are practically the same. The only real difference between the two is the resource they gather in the expandable sacks on their backs. Scutinphora with green markings gather water, and Scutinphora with red markings gather oil. This unique ability makes Scutinphora a target for both the desert's natural predators and human survivors. Finding a green Scutinphora at the right time could prove to be life-saving, and survivors can use the oil produced by red Scutinphora for a wide variety of purposes.",
+        "domesticated": "Like many of the insects on the island, Scutinphora cannot be tamed. Beyond the resources obtained while hunting it, survivors will find no use for it."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 75,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1
+            }
+        },
+        "melee": {
+            "base": 18,
+            "level_increase": {
+                "wild": 0.9
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 30,
+    "cloneable": false,
+    "entity_id": "Jugbug_Character_BaseBP_C"
+}

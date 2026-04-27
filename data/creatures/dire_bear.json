@@ -1,0 +1,106 @@
+{
+    "name": "Dire Bear",
+    "category": "mammal",
+    "dossier": {
+        "species": "Arctodus dirus",
+        "time": "Mid Pleistocene - Early Holocene",
+        "diet": "Omnivore",
+        "temperament": "Territorial",
+        "wild": "Found primarily among the Island's redwood regions, Arctodus dirus is an imposing creature. Many on the island have started calling it a Direbear, a name which is appropriate, both due to its enormity and its territorial nature. The Direbear ignores most non-hostile creatures while going about its daily routine of scavenging for meat and edible plant life... ...that is, until intruders enter the territory it considers its own, at which point the creature ferociously attacks. Most often, it is smartest to just run from an angry Direbear.",
+        "domesticated": "Once tamed, the Direbear is a strong and reliable mount. It can carry vast quantities of goods, and can sprint for extremely long, nearly infinite periods. It is not the fastest creature from a hard stop, but after building up momentum, its sustained overland speed builds to among the best of the island. Of course, being able to feed a direbear both meat and plant life makes keeping one fairly convenient regardless of the environment. Arctodus has a fondness for honey and can harvest it without getting stung or destroying the hive. Perhaps more rewarding while you are riding it, those pesky bees will completely ignore you."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 400,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 270,
+            "level_increase": {
+                "wild": 27,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 650,
+            "level_increase": {
+                "wild": 13,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5065,
+            "level_increase": {
+                "wild": 2.53,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 1.226
+            }
+        },
+        "torpidity": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 60
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Dire Bear Saddle (Level 45)",
+            "engram_level": 45
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "3h 58m 5.714s",
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 295,
+    "cloneable": false,
+    "entity_id": "Direbear_Character_BP_C"
+}

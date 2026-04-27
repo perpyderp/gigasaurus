@@ -1,0 +1,114 @@
+{
+    "name": "Pelagornis",
+    "category": "bird",
+    "dossier": {
+        "species": "Pelagornis miocaenus",
+        "time": "Early Miocene",
+        "diet": "Piscivore",
+        "temperament": "Skittish",
+        "wild": "The much-larger ancestor of water birds like the stork or pelican, Pelagornis miocaenus shares many traits with its modern-day brethren. However, it seems to spend far more time hunting for fish over the open deep-sea. In fact, I have rarely spotted a wild Pelagornis anywhere near the coasts of the main Island, as it prefers to rest its wings by paddling on the ocean's surface rather than waddling along the Island's beaches. Perhaps this behavior is a result of its survival instincts. The Early Miocene was a post-dinosaur epoch, after all, and Pelagornis would not be accustomed to such predators. Considering how quickly it flees from humans, one can hardly blame its caution.",
+        "domesticated": "Because of its ability to fly, walk and surface-swim, a tamed Pelagornis is one of the Island's most versatile mounts, but this comes at a cost. The same webbed feet that allow Pelagornis to serenely maneuver along the ocean's surface prevent it from carrying prey off the ground, which may limit its appeal to some survivors."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 240,
+            "level_increase": {
+                "wild": 48,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 180,
+            "level_increase": {
+                "wild": 9,
+                "tamed": 0.04
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.03
+            }
+        },
+        "melee": {
+            "base": 16,
+            "level_increase": {
+                "wild": 0.8,
+                "tamed": 0.01275
+            },
+            "taming_bonus": {
+                "additive": 0.091,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            },
+            "taming_bonus": {
+                "additive": 0.365
+            }
+        },
+        "torpidity": {
+            "base": 120,
+            "level_increase": {
+                "wild": 7.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Pelagornis Saddle (Level 43)",
+            "engram_level": 43
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Pelagornis Egg",
+        "incubation": {
+            "range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 120,
+    "cloneable": false,
+    "entity_id": "Pela_Character_BP_C"
+}

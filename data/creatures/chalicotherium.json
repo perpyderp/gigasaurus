@@ -1,0 +1,103 @@
+{
+    "name": "Chalicotherium",
+    "category": "mammal",
+    "dossier": {
+        "species": "Chalicotherium obsidioequus",
+        "time": "Late Oligocene - Early Pliocene",
+        "diet": "Herbivore",
+        "temperament": "Territorial",
+        "wild": "Found in small numbers within the Island's colder regions, Chalicotherium obsidioequus is normally a peaceful herbivore that prefers to spend its days lazing about or playing with its family. It is very territorial, however, and the entire family, young and old, will turn against an encroaching creature at just the slightest provocation. A memorable scene to stumble upon is a group of Chalicotherium playing. One odd playtime activity for Chalicotherium is hurling large balls of snow or.. mud-rocks(?).. at each other. Smaller creatures in the area shy away from Chalicotherium during this exertion, for fear of being buried in snow or \"gravel.\"",
+        "domesticated": "While many creatures are useful while attacking a fortress, Chalicotherium can be trained as mobile artillery. Its unique playtime habit becomes a rather devastating long-range assault tactic when it is given boulders to throw, rather than snowballs!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 600,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 400,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3632,
+            "level_increase": {
+                "wild": 1.81,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Chalicotherium Saddle (Level 42) Hats (Mobile only)",
+            "engram_level": 42
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "8h 13m 49.628s",
+        "juvenile_time": "1d 8h 55m 18.512s",
+        "adolescent_time": "1d 17h 9m 8.141s",
+        "total_maturation": "3d 10h 18m 16.281s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 300,
+    "cloneable": false,
+    "entity_id": "Chalico_Character_BP_C"
+}

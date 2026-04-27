@@ -123,17 +123,20 @@ function MyCreaturesContent() {
           </div>
           <Button onClick={() => setShowImport((v) => !v)} className="gap-2">
             <IconUpload size={14} />
-            Import
+            Import / Resync
           </Button>
         </div>
 
-        {/* Import panel */}
+        {/* Import / Resync All panel */}
         {showImport && (
           <Card>
             <CardHeader>
-              <CardTitle className="text-base">Import Creature Exports</CardTitle>
+              <CardTitle className="text-base">Import &amp; Resync Creatures</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
+              <p className="text-muted-foreground text-xs">
+                Drop new <span className="font-mono">.ini</span> exports to add or resync creatures. To resync all, re-export from ARK (<span className="font-mono">ShooterGame/Saved/DinoExports/</span>) and drop all files at once.
+              </p>
               <ImportDropzone onImported={handleImported} />
               <Separator />
               <div>

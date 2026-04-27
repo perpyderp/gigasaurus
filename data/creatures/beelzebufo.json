@@ -1,0 +1,110 @@
+{
+    "name": "Beelzebufo",
+    "category": "other",
+    "dossier": {
+        "species": "Beelzebufo palucocus",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Languorous",
+        "wild": "Beelzebufo palucocus is the largest frog I've ever seen. Almost impossibly large, it can actually fit a fully-grown human adult on its back, though just barely. This is a dangerous prospect, though, as secretions from Beelzebufo's skin and saliva have a narcotic effect on most creatures. Not surprisingly, Beelzebufo is adept at killing insects. Its lengthy tongue allows it to quickly grab prey from afar, killing most insects near instantly and quickly digesting them. It even combines the narcotic chemicals in its mouth with the insects' chitin to create a specialized sticky substance.",
+        "domesticated": "Tamed Beelzebufo make for strange mounts. Strange mounts for strange people. Many tribes don't believe there's any reason to ride them, but some enjoy the ability to take large vertical hops up huge walls and cliffs. Regardless of how it is ridden, Beelzebufo is also employed for its ability to quickly cull insects, and convert them into always-useful cementing paste."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 220,
+            "level_increase": {
+                "wild": 44,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 190,
+            "level_increase": {
+                "wild": 19,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 160,
+            "level_increase": {
+                "wild": 3.2,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 1220,
+            "level_increase": {
+                "wild": 0.61,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.027999999999999997,
+                "multiplicative": 0.11
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.02
+            },
+            "taming_bonus": {
+                "additive": 1
+            }
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Beelzebufo Saddle (Level 40)",
+            "engram_level": 40
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Beelzebufo Egg",
+        "incubation": {
+            "range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 110,
+    "cloneable": false,
+    "entity_id": "Toad_Character_BP_C"
+}

@@ -1,0 +1,111 @@
+{
+    "name": "Terror Bird",
+    "category": "bird",
+    "dossier": {
+        "species": "Phorusrhacidae rapidesultor",
+        "time": "Late Paleocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Ranging from eight to twelve feet tall, Phorusrhacidae rapidesultor is a highly aggressive avian that is just barely capable of very brief \"flight.\" Instead, it uses its wings primarily for balance during its high-speed sprints. Phorusrhacidae flight is actually closer to an impressive sustained leap or glide that is assisted and lengthened by flapping its wings. Phorusrhacidae shows interesting traits related to theropods such as Utahraptor, Carnotaurus, and Tyrannosaurus. It has many similar traits, such as general shape and predator patterns, but its attacks tend towards lightning fast dashes and beak slashes.",
+        "domesticated": "Phorusrhacidae is an effective combat mount, particularly for harassing and scouting. Riders of Phorusrhacidae gain most of the benefits of a fast, mobile ground-based theropod, while also gaining some of the freedom of movement from a flyer...assuming the rider can coax Phorusrhacidae into staying in the air over a long leap."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 270,
+            "level_increase": {
+                "wild": 54,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 160,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 120,
+            "level_increase": {
+                "wild": 2.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 18,
+            "level_increase": {
+                "wild": 0.9,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 300,
+            "level_increase": {
+                "wild": 18
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Terror Bird Saddle (Level 33)",
+            "engram_level": 33
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Terror Bird Egg",
+        "incubation": {
+            "range": "20 - 28 °C / 68 - 82 °F Egg Incubator: 24 °C / 75 °F",
+            "incubation_range": "20 - 28 °C / 68 - 82 °F Egg Incubator: 24 °C / 75 °F",
+            "incubation_time": "1h 59m 59.424s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 85,
+    "cloneable": false,
+    "entity_id": "TerrorBird_Character_BP_C"
+}

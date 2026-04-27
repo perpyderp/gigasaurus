@@ -1,0 +1,103 @@
+{
+    "name": "Dimorphodon",
+    "category": "reptile",
+    "dossier": {
+        "species": "Dimorphodon equesica",
+        "time": "Early Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Reactive",
+        "wild": "Dimorphodon equesica is another of the Island's Jekyll-and-Hyde creatures. It is normally passive, sometimes even friendly. When provoked, it becomes very aggressive, even against larger creatures it has no business fighting...often to its own fatal end. Dimorphodon can make short work of smaller opponents, however, due to its large (but lightweight) skull and teeth. Barely over a meter tall, Dimorphodon should be low on the food chain, but its incredible speed and surprisingly strong bite make it fairly dangerous, especially en masse as they tend to attack in groups. A flock of angry or hungry Dimorphodon can take down prey several times their size, so survivors should take care not to hunt near where a flock is gathered.",
+        "domesticated": "Dimorphodon is one of the creatures on the Island that is easily domesticated for companionship, but its use in combat is also quite clear: It will hunt in large groups to seek out enemy dino riders directly, harassing them to no end, regardless of the might of their mount!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 125,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 23,
+            "level_increase": {
+                "wild": 1.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Dimorph Egg",
+        "incubation": {
+            "range": "35 - 38 °C / 95 - 100 °F Egg Incubator: 37 °C / 99 °F",
+            "incubation_range": "35 - 38 °C / 95 - 100 °F Egg Incubator: 37 °C / 99 °F",
+            "incubation_time": "1h 21m 4.476s"
+        },
+        "baby_time": "2h 30m 9.009s",
+        "juvenile_time": "10h 36.034s",
+        "adolescent_time": "12h 30m 45.043s",
+        "total_maturation": "1d 1h 1m 30.086s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 70,
+    "cloneable": false,
+    "entity_id": "Dimorph_Character_BP_C"
+}

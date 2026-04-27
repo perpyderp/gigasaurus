@@ -1,0 +1,103 @@
+{
+    "name": "Electrophorus",
+    "category": "fish",
+    "dossier": {
+        "species": "Electrophorus beluadomito",
+        "time": "Holocene",
+        "diet": "Carnivore",
+        "temperament": "Reactive",
+        "wild": "Occupying a space in the low-to-middle end of the food chain, Electrophorus beluadomito is a carnivorous swimmer that feeds mostly off of shellfish and small fish. Despite its common name, it is actually a very long Knifefish, and not an Eel. It does not provide much meat, so many predators simply leave it be. Unlike most predators, it does not use brute strength to bring down its prey, but instead releases an electrical charge around itself to knock its prey unconscious. Alone, this can take out a small creature. When attacking together, Electrophorus can even bring down the larger ocean lifeforms, and then feed as a group.",
+        "domesticated": "By far, the most common use of Electrophorus is to subdue large ocean creatures. Knocking out a Plesiosaur or other giant deep-sea leviathan can be incredibly difficult... ...thus many tribes employ small schools of Electrophorus to shock them into submission!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 180,
+            "level_increase": {
+                "wild": 36,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": -0.2
+            }
+        },
+        "stamina": {
+            "base": 165,
+            "level_increase": {
+                "wild": 16.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 1050,
+            "level_increase": {
+                "wild": 105,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 0.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": -25,
+                "multiplicative": 0.11
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 175,
+            "level_increase": {
+                "wild": 10.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Eel Egg",
+        "incubation": {
+            "range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": false,
+    "entity_id": "Eel_Character_BP_C"
+}

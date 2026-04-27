@@ -1,0 +1,105 @@
+{
+    "name": "Kairuku",
+    "category": "bird",
+    "dossier": {
+        "species": "Kairuku waitaki",
+        "time": "Late Paleogene",
+        "diet": "Piscivore",
+        "temperament": "Friendly",
+        "wild": "Kairuku waitaki is an amazingly docile and friendly creature, to everything but fish. Honestly, I'm not quite sure how Kairuku manages to stay populated across the Island's colder climes, with the many predators stalking these frozen lands. It is weak, and has only one small defensive trait: suspended in Kairuku blubber are small, dense particles that act as a light form of armor. Adding to Kairuku's problems, a clever survivor discovered that refining Kairuku blubber (concentrating the particles in it) can yield a natural form of the same Polymer utilized in advanced tribes' manufacturing processes. This has caused many tribes to hunt Kairuku extensively, a practice colloquially known as \"Kairu Clubbing.\"",
+        "domesticated": "There is no reason to tame Kairuku for combat, since they are useless at it. Still, Kairuku are regularly tamed for their cuteness and friendly nature, and the fact that their bodies run extremely hot. Just standing near Kairuku can help keep a survivor stay warm through long, harsh nights on the icebergs."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 95,
+            "level_increase": {
+                "wild": 19,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 70,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 8,
+            "level_increase": {
+                "wild": 0.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 2
+            }
+        },
+        "torpidity": {
+            "base": 300,
+            "level_increase": {
+                "wild": 18
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Kairuku Egg",
+        "incubation": {
+            "range": "22 - 30 °C / 72 - 86 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_range": "22 - 30 °C / 72 - 86 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_time": "1h 30m 54.109s"
+        },
+        "baby_time": "2h 48m 21.01s",
+        "juvenile_time": "11h 13m 24.041s",
+        "adolescent_time": "14h 1m 45.051s",
+        "total_maturation": "1d 4h 3m 30.102s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "Kairuku_Character_BP_C"
+}

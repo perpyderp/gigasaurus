@@ -1,0 +1,109 @@
+{
+    "name": "Dodo",
+    "category": "bird",
+    "dossier": {
+        "species": "Raphus replicare",
+        "time": "Late Holocene",
+        "diet": "Herbivore",
+        "temperament": "Oblivious",
+        "wild": "Raphus replicare (more commonly known as the Dodo Bird) is quite possibly the dumbest creature I've ever seen in my life. It wanders around the beaches of the Island, pecking berries off bushes, and being eaten by all manner of carnivore. Without the Dodo, the whole Island's food chain would disintegrate. This subspecies of the Dodo has developed an unbelievably clever way to sustain itself: they mate constantly. I'm fairly convinced that they reach full maturity within a week of being born. This is the only trait keeping them populous on the island.",
+        "domesticated": "While it can be done, there is almost no reason to domesticate a Raphus replicare. It cannot carry enough to be a beast of burden, it does not provide much food, and it's too stupid to show companionship. It could work as a last-ditch food source, though, so I suppose keeping some around for \"lean times\" has a certain logic."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 40,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.03
+            },
+            "taming_bonus": {
+                "additive": 2
+            }
+        },
+        "torpidity": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.8
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Dodo Egg",
+        "incubation": {
+            "range": "22 - 30 °C / 72 - 86 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_range": "22 - 30 °C / 72 - 86 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_time": "49m 59.76s"
+        },
+        "baby_time": "1h 32m 35.555s",
+        "juvenile_time": "6h 10m 22.222s",
+        "adolescent_time": "7h 42m 57.777s",
+        "total_maturation": "15h 25m 55.555s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 25,
+    "cloneable": false,
+    "entity_id": "Dodo_Character_BP_C"
+}

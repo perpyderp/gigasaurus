@@ -1,5 +1,6 @@
 {
     "name": "Compy",
+    "category": "dinosaur",
     "dossier": {
         "species": "Compsognathus curiosicarius",
         "time": "Late Jurassic",
@@ -58,13 +59,12 @@
             },
             "taming_bonus": {
                 "additive": 0.14,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             },
             "taming_bonus": {
@@ -72,10 +72,9 @@
             }
         },
         "torpidity": {
-            "base": 350,
+            "base": 25,
             "level_increase": {
-                "wild": 21,
-                "tamed": null
+                "wild": 1.5
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -94,8 +93,8 @@
     "egg": {
         "name": "Compy Egg",
         "incubation": {
-            "range": "24 - 32 °C / 75 - 90 °F",
-            "incubation_range": "28 °C / 82 °F",
+            "range": "24 - 32 °C / 75 - 90 °F Egg Incubator: 28 °C / 82 °F",
+            "incubation_range": "24 - 32 °C / 75 - 90 °F Egg Incubator: 28 °C / 82 °F",
             "incubation_time": "49m 59.76s"
         },
         "baby_time": "2h 6m 15.758s",
@@ -105,7 +104,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 20,
-    "cloneable": true,
-    "entity_id": "Compy_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Compy_Character_BP_C"
 }

@@ -1,0 +1,106 @@
+{
+    "name": "Desmodus",
+    "category": "mammal",
+    "dossier": {
+        "species": "Desmodus Draculae",
+        "time": "Pleistocene",
+        "diet": "Sanguivore",
+        "temperament": "Aggressive",
+        "wild": "Even with all the other monstrosities around here, this fugitive from a Creature Double Feature deserves top billing. I mean, Dracula's right there in its species name! And Desmodus has a shriek that'll scare just about anything out of its way. It's also shrewd enough to limit itself to victims that it can carry off into the night. Although I'm not superstitious enough to advise stocking up on garlic and stakes before you decide to track down Desmodus for yourself, I'd still advise you to hunt these horrors out in the light and away from their caves – they seem uniquely adept at flying and hiding in those dark, narrow spaces.",
+        "domesticated": "Taming one of these beasties lets you add its eerie abilities to your arsenal. Use their unsettling scream to scatter your enemies. Command Desmodus to snatch up small prey for you. Let its uncanny power to vanish into darkness become your personal stealth mode. Desmodus has blood thinner in its saliva, which drains prey of more blood than this vampire could ever digest. If you can stomach the excess blood and drained meat your vampire pet leaves behind, you might be open-minded enough to appreciate another of its unholy gifts: a 'sanguine elixir' that helps enthrall the most stubborn beasts."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 325,
+            "level_increase": {
+                "wild": 55.25,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.06
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "taming_bonus": {
+                "additive": 0.365
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Desmodus Saddle (Level ?)",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.429s",
+        "baby_time": "7h 7m 21.026s",
+        "juvenile_time": "1d 4h 29m 24.102s",
+        "adolescent_time": "1d 11h 36m 45.128s",
+        "total_maturation": "2d 23h 13m 30.256s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": null,
+    "cloneable": true,
+    "entity_id": "Desmodus_Character_BP_C"
+}

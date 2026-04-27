@@ -1,0 +1,114 @@
+{
+    "name": "Megalania",
+    "category": "reptile",
+    "dossier": {
+        "species": "Megalania muruspede",
+        "time": "Late Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Megalania muruspede is among the largest creatures found throughout the Island's complicated cave networks. Reaching up to three meters long, it can traverse vertically up cave walls with little difficulty thanks to its powerful claws. Fortunately, Megalania's size means it is unlikely to sneak up on anyone. Unfortunately for spelunkers, it is an aggressive and dangerous creature nonetheless. Like other Varanidae, Megalania is a venomous creature. Its poison is slow-acting, but will drain the victim's effective strength and health until death unless cured by a rare antidote. That said, the Megalania's prey are usually ripped apart well before they succumb to the poison's long-term effects.",
+        "domesticated": "The rare ability of Megalania to effortlessly climb sheer environmental walls makes it a highly sought-after mount. While it is by no means the fastest, strongest, or toughest mount, the manner in which it can effortlessly scale mountains, clamber up barricades, hide in trees or upside-down, ensures it will always have place in any tribe's stables!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 480,
+            "level_increase": {
+                "wild": 96,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 1016,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.3
+            }
+        },
+        "torpidity": {
+            "base": 700,
+            "level_increase": {
+                "wild": 42
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Megalania Saddle (Level 73)",
+            "engram_level": 73
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Megalania Egg",
+        "incubation": {
+            "range": "29 - 35 °C / 84 - 95 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "29 - 35 °C / 84 - 95 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_time": "1h 59m 59.424s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "Megalania_Character_BP_C"
+}

@@ -1,0 +1,111 @@
+{
+    "name": "Carbonemys",
+    "category": "reptile",
+    "dossier": {
+        "species": "Carbonemys obibimus",
+        "time": "Danian",
+        "diet": "Herbivore",
+        "temperament": "Defensive",
+        "wild": "Carbonemys obibimus is one of the least aggressive creatures on the Island. Were it not for the plethora of predators on the Island, I'm quite certain that it would spend its days basking in the sun, eating, or sleeping. Carbonemys leads a simple, solitary life. Nevertheless, it seems to be one of the most peaceful animals I have yet encountered. With its slow walking speed, the only things that keep it safe are its surprisingly fast swim speed, and its incredibly thick shell, which can absorb tremendous damage.",
+        "domesticated": "Carbonemys' swift swim rate, fairly high strength, superior shell defenses, and lack of real threat makes it an ideal armored mount for many survivors who shy away from violence. It can carry its rider to the ocean's resources at fairly high speed, and is not particularly dangerous to tame."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 700,
+            "level_increase": {
+                "wild": 140,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.9
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 270,
+            "level_increase": {
+                "wild": 5.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 13,
+            "level_increase": {
+                "wild": 0.65,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.7
+            }
+        },
+        "torpidity": {
+            "base": 275,
+            "level_increase": {
+                "wild": 16.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Carbonemys Saddle (Level 10)",
+            "engram_level": 10
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Turtle Egg",
+        "incubation": {
+            "range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_time": "1h 14m 59.64s"
+        },
+        "baby_time": "2h 18m 53.333s",
+        "juvenile_time": "9h 15m 33.331s",
+        "adolescent_time": "11h 34m 26.664s",
+        "total_maturation": "23h 8m 53.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": false,
+    "entity_id": "Turtle_Character_BP_C"
+}

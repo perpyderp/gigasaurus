@@ -1,0 +1,110 @@
+{
+    "name": "Doedicurus",
+    "category": "mammal",
+    "dossier": {
+        "species": "Doedicurus custosaxum",
+        "time": "Plestiocene – Holocene",
+        "diet": "Herbivore",
+        "temperament": "Docile",
+        "wild": "Doedicurus custosaxum is one of the Island's non-aggressive herbivores, generally found in the mountains and grasslands. Large and well-armored, it has a supply of fat under its plates to keep it warm and fed in the cold. Doedicurus has adapted well to the dangers of the Island, perhaps even better than the Ankylosaurus. Doedicurus has two very different reactions to predators. Against smaller foes, it generally uses its spiked tail to inflict as much damage as possible. Against larger predators, however, it pulls its tail underneath itself to form a solid armored ball that is nearly impossible for creatures to pierce, from which it can actually \"roll\" away to relative safety!",
+        "domesticated": "Doedicurus is a highly prized work animal on the island. Its spiked tail is ideal for quickly shattering the large rocks, so Doedicurus is a very efficient quarry worker. In addition, its affinity for rocks has allowed it to carry stone at a reduced weight. In case their quarry gets raided, Doedicurus-riders have a very difficult-to-kill mount!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 850,
+            "level_increase": {
+                "wild": 170,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.9
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3216,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.02
+            },
+            "taming_bonus": {
+                "additive": 0.6
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Doedicurus Saddle (Level 34)",
+            "engram_level": 34
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 57m 37.143s",
+        "baby_time": "5h 47m 13.333s",
+        "juvenile_time": "23h 8m 53.331s",
+        "adolescent_time": "1d 4h 56m 6.664s",
+        "total_maturation": "2d 9h 52m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 160,
+    "cloneable": false,
+    "entity_id": "Doed_Character_BP_C"
+}

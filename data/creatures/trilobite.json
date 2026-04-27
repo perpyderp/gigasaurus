@@ -1,0 +1,69 @@
+{
+    "name": "Trilobite",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Trilobite conchadurus",
+        "time": "Early Cambrian-Late Permian",
+        "diet": "Carnivore",
+        "temperament": "Defensive",
+        "wild": "Like most Trilobites, Trilobite conchadurus is an opportunistic carnivore that feeds on anything smaller than itself which it can get a hold of. A sluggish creature, the Trilobite's best defense is its incredibly hard shell. This seems to be a common adaptation for the slower creatures of the Island. Trilobite is not a very good source of food. The creature seems to be made mostly out of internal organs and its protective carapace. This is good for the trilobite, as both river and ocean predators are less likely to prey on it if there are better options around.",
+        "domesticated": "The Trilobite does not seem to have enough intelligence to be tamed. This doesn't mean it has no use among resourceful survivors, however. Found along beaches and in the ocean's shallows, Trilobites are easily one of the best sources of oil, pearl and chitin on the Island, presuming one doesn't wish to venture into the dangerous caves."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 160,
+            "level_increase": {
+                "wild": 32
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3
+            }
+        },
+        "melee": {
+            "base": 0,
+            "level_increase": {
+                "wild": 0
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 50,
+            "level_increase": {
+                "wild": 3
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 30,
+    "cloneable": false,
+    "entity_id": "Trilobite_Character_C"
+}

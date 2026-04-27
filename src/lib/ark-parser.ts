@@ -54,6 +54,7 @@ export interface ParsedExport {
   isNeutered: boolean
   /** Player-given nickname, may be empty */
   tamedName: string
+  tribe: string
   tamer: string
   imprinter: string
   /** 0–1 where 1 = fully grown */
@@ -176,6 +177,7 @@ export function parseArkExport(iniText: string): ParsedExport {
     isFemale: data['bIsFemale'] === 'True',
     isNeutered: data['bNeutered'] === 'True',
     tamedName: data['TamedName'] ?? '',
+    tribe: data['TribeName'] ?? '',
     tamer: data['TamerString'] ?? '',
     imprinter: data['ImprinterName'] ?? '',
     babyAge: parseFloat(data['BabyAge'] ?? '0'),

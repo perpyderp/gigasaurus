@@ -1,0 +1,113 @@
+{
+    "name": "Tusoteuthis",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Tusoteuthis vampyrus",
+        "time": "Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Tusoteuthis vampyrus is a very aggressive water predator. Approximately 30 feet long, Tusoteuthis is a terror of the deep. Once it grabs its prey, it slowly crushes it into submission while using the talons on its tentacles to siphon and drink the victim's blood! Tusoteuthis is a terrifying opponent for several reasons. Firstly, its grab slowly renders its victim unconscious, so death isn't the only concern. Secondly, its vampiric blood drain instantly revitalizes it, even during combat. Finally, if Tusoteuthis is losing the fight, it sprays a cloud of ink into the surrounding water, blinding its attackers to cover a sneaky escape.",
+        "domesticated": "One of the major benefits of taming Tusoteuthis is harvesting its ink. Unlike normal ink, Tusoteuthis' ink is very oily, and can even be refined into fuels such as gasoline. Between that and Tusoteuthis' distinctive capability to grab & carry large creatures underwater, it makes for an excellent aquatic tame, despite its slower speed."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 2700,
+            "level_increase": {
+                "wild": 540,
+                "tamed": 0.0405
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 215,
+            "level_increase": {
+                "wild": 21.5
+            }
+        },
+        "food": {
+            "base": 3200,
+            "level_increase": {
+                "wild": 320,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 800,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 652,
+            "level_increase": {
+                "wild": 3.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 1
+            }
+        },
+        "torpidity": {
+            "base": 1800,
+            "level_increase": {
+                "wild": 108
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Tusoteuthis Saddle (Level 91)",
+            "engram_level": 91
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Tusoteuthis Egg",
+        "incubation": {
+            "range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "18h 31m 6.667s",
+        "juvenile_time": "3d 2h 4m 26.667s",
+        "adolescent_time": "3d 20h 35m 33.334s",
+        "total_maturation": "7d 17h 11m 6.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 1500,
+    "cloneable": false,
+    "entity_id": "Tusoteuthis_Character_BP_C"
+}

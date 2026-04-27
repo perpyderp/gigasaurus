@@ -1,0 +1,69 @@
+{
+    "name": "Sabertooth Salmon",
+    "category": "fish",
+    "dossier": {
+        "species": "Oncorhynchus grexlamia",
+        "time": "Late Miocene - Mid Pleistocene",
+        "diet": "Carnivore",
+        "temperament": "Evasive, Aggressive when attacked",
+        "wild": "Fairly unremarkable by the Island's standards, Oncorhynchus grexlamia is a generally passive fish. Its main form of protection is swimming in a large school. Oncorhynchus does not like conflict, and generally swims away from anything larger than itself at very high speeds. Once provoked, however, Oncorhynchus becomes quite aggressive, along with its nearby brethren. It locks onto its prey with its long \"saberteeth\" and begins draining that creature's blood. This loss of blood is not too dangerous alone, but when a school of Oncorhynchus attack at once, their target quickly loses speed and stamina from blood loss, drowning if it cannot breath underwater.",
+        "domesticated": "Like many of the smaller fish found on or around the Island, Oncorhynchus cannot be tamed, but it is often herded and harvested for its resources. In particular, certain cuts of Oncorhynchus meat are considered to have superb quality, and are often referred to as \"Prime Fish\" used for specific high-end concoctions and taming the Island's many piscivorous creatures."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 65,
+            "level_increase": {
+                "wild": 13
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "weight": {
+            "base": 18,
+            "level_increase": {
+                "wild": 0.36
+            }
+        },
+        "melee": {
+            "base": 4,
+            "level_increase": {
+                "wild": 0.2
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.9
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 32.5,
+    "cloneable": false,
+    "entity_id": "Salmon_Character_BP_C"
+}

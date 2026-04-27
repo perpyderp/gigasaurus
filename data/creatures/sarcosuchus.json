@@ -1,0 +1,96 @@
+{
+    "name": "Sarcosuchus",
+    "dossier": {
+        "species": "Sarcosuchus excubitor",
+        "time": "Early Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Patient",
+        "wild": "Sarcosuchus excubitor is a patient and deadly ambush predator. It lurks motionlessly in rivers and swamps, virtually indistinguishable from a log until prey ventures within range. Then it erupts with explosive speed, clamping down with bone-crushing jaws and dragging its prey beneath the surface. Once it has a grip, escape is nearly impossible.",
+        "domesticated": "The Sarco is a capable amphibious mount that transitions seamlessly between land and water. In water, it regenerates stamina far faster than on land, making it excellent for extended aquatic operations. Its armored hide provides significant damage reduction, and its death roll attack is devastating against single targets. It is one of the better mid-tier combat mounts for swamp and river environments."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 400,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 400,
+            "level_increase": {
+                "wild": 24
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Regular"
+    },
+    "saddle": [
+        {
+            "name": "Sarco Saddle",
+            "engram_level": 35
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 200,
+    "cloneable": true,
+    "entity_id": "Sarco_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

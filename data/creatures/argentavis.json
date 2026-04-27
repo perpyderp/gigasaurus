@@ -1,0 +1,108 @@
+{
+    "name": "Argentavis",
+    "category": "bird",
+    "dossier": {
+        "species": "Argentavis atrocollum",
+        "time": "Late Miocene",
+        "diet": "Carrion-Feeder",
+        "temperament": "Short-Tempered",
+        "wild": "Lording over the skies across the Island, Argentavis atrocollum has few aerial rivals. It is a small consolation for the Island's other avian creatures, then, that Argentavis seems to have little interest in anything alive. Quite apart from what I would have guessed, Argentavis does not have the stooped neck typical of modern buzzards and vultures. I don't know if it adapted this stronger neck to deal with the predators on the Island, or if its lineage derives from before the stooped neck became common in carrion-eating birds. Whichever it might be, it has enabled Argentavis to carry smaller creatures with its beak.",
+        "domesticated": "Argentavis is actually slower than the Island's far more common Pteranodon, but it possesses significantly more stamina and can sustain flight for approximately three times as long. Its weighty stature, in comparison to the Pteranodon, allows it to utilize its talons to support the weight of an additional passenger. Considering its saddle doubles as a mobile crafting station, it makes Argentavis an excellent creature for traveling and hauling cargo over long distances."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 365,
+            "level_increase": {
+                "wild": 73,
+                "tamed": 0.06075
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.075
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.055
+            }
+        },
+        "melee": {
+            "base": 2512,
+            "level_increase": {
+                "wild": 1.25,
+                "tamed": 0.0255
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 600,
+            "level_increase": {
+                "wild": 36
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Argentavis Saddle (Level 62)",
+            "engram_level": 62
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Argentavis Egg",
+        "incubation": {
+            "range": "12 - 13.5 °C / 54 - 56 °F Egg Incubator: 13 °C / 55 °F",
+            "incubation_range": "12 - 13.5 °C / 54 - 56 °F Egg Incubator: 13 °C / 55 °F",
+            "incubation_time": "2h 56m 27.389s"
+        },
+        "baby_time": "5h 26m 47.842s",
+        "juvenile_time": "21h 47m 11.369s",
+        "adolescent_time": "1d 3h 13m 59.211s",
+        "total_maturation": "2d 6h 27m 58.422s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 150,
+    "cloneable": false,
+    "entity_id": "Argent_Character_BP_C"
+}

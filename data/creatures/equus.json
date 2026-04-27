@@ -1,0 +1,106 @@
+{
+    "name": "Equus",
+    "category": "mammal",
+    "dossier": {
+        "species": "Equus magnus",
+        "time": "Pleistocene",
+        "diet": "Herbivore",
+        "temperament": "Loyal",
+        "wild": "Equus magnus appears to be an ancestor of the modern horse. Based on its stripes, it may be the African variant of Equus giganteus, which appeared in North America during the Ice Age, but that is pure conjecture. Its behavior in the wild is similar to that of other wild members of the Equus genus - it sustains itself by grazing, while keeping safe from predators by living in herds and outrunning its attackers via superior speed and stamina.",
+        "domesticated": "Horse and man have long been partners in survival, and this remains true on the Island. In Equus, survivors will find a trusty steed or pack animal that can carry them swiftly across land. Taming an Equus has proven interesting, requiring carefully approaching the creature in the wild, mounting it, and then carefully soothing over time by feeding it vegetables. In fact, Equus' reliability has lead some survivors to construct special saddles for them. I even encountered a man who added extra saddle-pouches that doubled as mobile crafting stations for chemical supplies, foodstuffs, and other items. Although not as robust as what you might find within a village, this utility helped him live a nomadic, solitary lifestyle. Some survivors employ Equus to herd and wrangle other creatures with a specialized lasso. This tool is sometimes effective for self-defense as well, as Equus is limited in battle on its own...at least compared to aggressive prehistoric carnivores."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 240,
+            "level_increase": {
+                "wild": 48,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 560,
+            "level_increase": {
+                "wild": 56,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 911,
+            "level_increase": {
+                "wild": 0.45,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.0175
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 420,
+            "level_increase": {
+                "wild": 25.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed Equus Saddle (Level 20)",
+            "engram_level": 20
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.429s",
+        "baby_time": "4h 37m 46.667s",
+        "juvenile_time": "18h 31m 6.667s",
+        "adolescent_time": "23h 8m 53.333s",
+        "total_maturation": "1d 22h 17m 46.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 125,
+    "cloneable": false,
+    "entity_id": "Equus_Character_BP_C"
+}

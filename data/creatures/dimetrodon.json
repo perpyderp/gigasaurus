@@ -1,0 +1,102 @@
+{
+    "name": "Dimetrodon",
+    "category": "other",
+    "dossier": {
+        "species": "Dimetrodon calorector",
+        "time": "Early Permian",
+        "diet": "Carnivore",
+        "temperament": "Reactive",
+        "wild": "Dimetrodon calorector is a much calmer predator than most on the Island. Because it lives off smaller prey than humans, it generally ignores anything much larger than a Coelacanth. Dimetrodon is one of the few carnivores on the Island that could be classified as reasonably friendly in the wild. The sail on Dimetrodon's back is an especially fascinating thing. It can be angled to provide shade from the sun and allows Dimetrodon to disperse heat more quickly. The inner workings of the sail can also restrict blood flow in the creature to hold in excessive heat. Together, these two traits allow Dimetrodon to comfortably survive in any climate, though they are most commonly found in the swamplands which are rich in prey.",
+        "domesticated": "If Dimetrodon was a bit larger, or didn't have that massive sail, it would make a decent mount. However, its main use to survivors is to utilize the sail's insulating capabilities. Just being near Dimetrodon gives excellent protection from both heat and cold, which has saved my life through more than one ice blizzard in the frozen northlands."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 350,
+            "level_increase": {
+                "wild": 70,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.091
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 20,
+            "level_increase": {
+                "wild": 0.4,
+                "tamed": 0.0068000000000000005
+            },
+            "taming_bonus": {
+                "additive": 0.11199999999999999,
+                "multiplicative": 0.22
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 750,
+            "level_increase": {
+                "wild": 45
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Dimetrodon Egg",
+        "incubation": {
+            "range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_time": "2h 29m 59.28s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 170,
+    "cloneable": false,
+    "entity_id": "Dimetro_Character_BP_C"
+}

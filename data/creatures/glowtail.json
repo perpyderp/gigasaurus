@@ -1,5 +1,6 @@
 {
     "name": "Glowtail",
+    "category": "other",
     "dossier": {
         "species": "Microluminis psykhe",
         "time": "Unknown",
@@ -13,28 +14,17 @@
             "base": 115,
             "level_increase": {
                 "wild": 23,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
             }
         },
         "stamina": {
-            "base": 100,
-            "level_increase": {
-                "wild": 10,
-                "tamed": 0.125
-            }
+            "base": null
         },
         "oxygen": {
-            "base": 200,
-            "level_increase": {
-                "wild": 24,
-                "tamed": 0.115
-            },
-            "taming_bonus": {
-                "additive": 0.12
-            }
+            "base": null
         },
         "food": {
             "base": 450,
@@ -54,15 +44,7 @@
             }
         },
         "melee": {
-            "base": 12,
-            "level_increase": {
-                "wild": 0.66,
-                "tamed": 0.0187
-            },
-            "taming_bonus": {
-                "additive": 0.1554,
-                "multiplicative": 0.187
-            }
+            "base": null
         },
         "movement": {
             "base": 100,
@@ -87,7 +69,7 @@
     "rideable": false,
     "breedable": true,
     "taming": {
-        "method": "Knockout",
+        "method": "Passive",
         "kibble": null
     },
     "saddle": null,
@@ -95,8 +77,8 @@
     "egg": {
         "name": "Glowtail Egg",
         "incubation": {
-            "range": "30 - 34 °C / 86 - 93 °F",
-            "incubation_range": "32 °C / 90 °F",
+            "range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
             "incubation_time": "2h 29m 59.28s"
         },
         "baby_time": "4h 52m 23.859s",
@@ -105,9 +87,7 @@
         "total_maturation": "2d 43m 58.594s",
         "breeding_interval": "18h - 2d"
     },
-    "reproduction": null,
     "drag_weight": 25,
-    "cloneable": true,
-    "entity_id": "LanternLizard_Character_BP_C",
-    "category": "fantasy"
+    "cloneable": false,
+    "entity_id": "LanternLizard_Character_BP_C"
 }

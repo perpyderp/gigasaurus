@@ -1,5 +1,6 @@
 {
     "name": "Iguanodon",
+    "category": "dinosaur",
     "dossier": {
         "species": "Iguanodon vicissitudinis",
         "time": "Late Jurassic",
@@ -13,7 +14,7 @@
             "base": 250,
             "level_increase": {
                 "wild": 50,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,21 +56,19 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.02
             }
         },
         "torpidity": {
             "base": 210,
             "level_increase": {
-                "wild": 12.6,
-                "tamed": null
+                "wild": 12.6
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -81,20 +80,20 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Simple"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Iguanodon Saddle",
+            "name": "Iguanodon Saddle (Level 30)",
             "engram_level": 30
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
         "name": "Iguanodon Egg",
         "incubation": {
-            "range": "24 - 28 °C / 75 - 82 °F",
-            "incubation_range": "26 °C / 79 °F",
+            "range": "24 - 28 °C / 75 - 82 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_range": "24 - 28 °C / 75 - 82 °F Egg Incubator: 26 °C / 79 °F",
             "incubation_time": "1h 25m 42.446s"
         },
         "baby_time": "4h 37m 46.666s",
@@ -104,7 +103,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 125,
-    "cloneable": true,
-    "entity_id": "Iguanodon_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Iguanodon_Character_BP_C"
 }

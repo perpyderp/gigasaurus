@@ -1,0 +1,102 @@
+{
+    "name": "Manta",
+    "category": "fish",
+    "dossier": {
+        "species": "Manta mobula",
+        "time": "Early Oligocene - Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Here is another example of a creature that seems to have evolved beyond its historical traits. Everything points to this being a saltwater ray, but Manta mobula has developed the ability to swim into the island's rivers and shallows, as well as through the open ocean. Perhaps there were originally two types of ray on the island before, but years of interbreeding combined their lineage. Normally docile, Manta mobula is a carnivore only in that it naturally consumes plankton. Fortunately, Manta mobula is usually not aggressive, unless encroached. Its tail is incredibly sharp, and can pierce through thick hide and armor with ease.",
+        "domesticated": "While not the fastest swimmer around the island, Manta mobula is among the deadliest of small ocean mounts. Tribes who value striking power over speed often keep large schools of Manta to ride. Its capability to briefly leap out of water provides it a showy tactic for avoiding combat as well. A quick jab through the heart of an unsuspecting survivor can easily take them by surprise! Thusly, many tribes use it as an escort for their slower cargo-carrying swimmers."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 320,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.013500000000000002
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 270,
+            "level_increase": {
+                "wild": 54,
+                "tamed": 0.2
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 200,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 28,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.0085
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.0125
+            }
+        },
+        "torpidity": {
+            "base": 700,
+            "level_increase": {
+                "wild": 42
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Manta Saddle (Level 28)",
+            "engram_level": 28
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 75,
+    "cloneable": false,
+    "entity_id": "Manta_Character_BP_C"
+}

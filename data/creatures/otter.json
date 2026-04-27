@@ -1,0 +1,101 @@
+{
+    "name": "Otter",
+    "category": "mammal",
+    "dossier": {
+        "species": "Lutra peloso",
+        "time": "Early Miocene",
+        "diet": "Omnivore",
+        "temperament": "Friendly",
+        "wild": "Found along the Island’s many inland waterways, Lutra Peloso have become exceptionally adept at hunting and foraging. This species of Otter has to be particularly cunning because of its diminutive size, and fierce competition for its preferred food source: fish. It is not a creature that excels at combat, and would not naturally pose an intimidating threat to any predators. Finding packs of river Otters is simple enough: They are distinguished by their elongated bodies, bushy tails, and webbed feet. Their trusting and inquisitive nature ensures they are often hunted for their lustrous fur, but many prefer to tame them to become trusted companions.",
+        "domesticated": "There are few creatures which provide the companionship that Lutra Peloso does. Rather than traveling beside you, it would prefer to comfortably rest on your back, providing insulation. Once domesticated, it can be told to harvest fish on demand, with a specific goal in mind from the fish that it consumes, the otter has a knack for foraging silica pearls, and can even yield a slight chance at finding black pearls within!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 40,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 180,
+            "level_increase": {
+                "wild": 18,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 30,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.7
+            }
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "2h 6m 15.757s",
+        "juvenile_time": "8h 25m 3.028s",
+        "adolescent_time": "10h 31m 18.785s",
+        "total_maturation": "21h 2m 37.57s",
+        "breeding_interval": "18h - 1d 15h 40m"
+    },
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "Otter_Character_BP_C"
+}

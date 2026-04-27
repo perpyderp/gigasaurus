@@ -1,5 +1,6 @@
 {
     "name": "Gasbags",
+    "category": "other",
     "dossier": {
         "species": "Mopsechiniscus fluitobesus",
         "time": "Post-Holocene",
@@ -13,7 +14,7 @@
             "base": 650,
             "level_increase": {
                 "wild": 130,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,7 +56,7 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -79,18 +80,17 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Gasbags Saddle",
+            "name": "No Saddle Needed Gasbags Saddle (Level 43)",
             "engram_level": 43
         }
     ],
     "rider_weaponry": false,
-    "egg": null,
-    "reproduction": {
-        "gestation": "7h 56m 11.428s",
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
         "baby_time": "4h 37m 46.666s",
         "juvenile_time": "18h 31m 6.662s",
         "adolescent_time": "23h 8m 53.328s",
@@ -98,7 +98,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 300,
-    "cloneable": true,
-    "entity_id": "GasBags_Character_BP_C",
-    "category": "fantasy"
+    "cloneable": false,
+    "entity_id": "GasBags_Character_BP_C"
 }

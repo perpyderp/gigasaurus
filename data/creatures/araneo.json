@@ -1,0 +1,96 @@
+{
+    "name": "Araneo",
+    "dossier": {
+        "species": "Araneomorphus amalgotantibus",
+        "time": "Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Araneomorphus amalgotantibus is a giant spider larger than an adult human. It is aggressively territorial and will pursue threats with remarkable speed, shooting sticky webbing to slow prey before closing in. Its venom slows and weakens victims, making it a dangerous ambush predator in caves and dark forests.",
+        "domesticated": "The Araneo is primarily a cave-exploring companion. Once tamed with bug repellent, it can traverse cave ceilings and walls, and its webbing can immobilize enemies. While not the most powerful combat mount, it can be invaluable for slowing opponents and navigating vertical cave terrain that larger mounts cannot access."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 150,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 100,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.08
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 80,
+            "level_increase": {
+                "wild": 4.8
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Simple"
+    },
+    "saddle": [
+        {
+            "name": "Araneo Saddle",
+            "engram_level": 40
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 90,
+    "cloneable": false,
+    "entity_id": "SpiderS_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null
+}

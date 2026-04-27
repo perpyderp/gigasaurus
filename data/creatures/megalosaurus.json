@@ -1,5 +1,6 @@
 {
     "name": "Megalosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Megalosaurus noctedominus",
         "time": "Mid Jurassic",
@@ -13,7 +14,7 @@
             "base": 1025,
             "level_increase": {
                 "wild": 205,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -51,28 +52,26 @@
             }
         },
         "melee": {
-            "base": 75,
+            "base": 751,
             "level_increase": {
                 "wild": 3.75,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             }
         },
         "torpidity": {
             "base": 775,
             "level_increase": {
-                "wild": 46.5,
-                "tamed": null
+                "wild": 46.5
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -84,11 +83,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Megalosaurus Saddle",
+            "name": "Megalosaurus Saddle (Level 57)",
             "engram_level": 57
         }
     ],
@@ -96,8 +95,8 @@
     "egg": {
         "name": "Megalosaurus Egg",
         "incubation": {
-            "range": "26 - 32 °C / 79 - 90 °F",
-            "incubation_range": "29 °C / 84 °F",
+            "range": "26 - 32 °C / 79 - 90 °F Egg Incubator: 29 °C / 84 °F",
+            "incubation_range": "26 - 32 °C / 79 - 90 °F Egg Incubator: 29 °C / 84 °F",
             "incubation_time": "1h 39m 59.521s"
         },
         "baby_time": "9h 15m 33.331s",
@@ -107,7 +106,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 410,
-    "cloneable": true,
-    "entity_id": "Megalosaurus_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Megalosaurus_Character_BP_C"
 }
