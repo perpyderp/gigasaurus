@@ -1,19 +1,20 @@
 {
     "name": "Arthropluera",
+    "category": "invertebrate",
     "dossier": {
         "species": "Arthropluera felsanguis",
         "time": "Early Permian",
-        "diet": "Carnivore",
+        "diet": "Carrion-Feeder",
         "temperament": "Aggressive",
-        "wild": "Like the Island's other arthropods, Arthropluera felsanguis has grown to an extraordinary size far beyond what I would have believed possible. This giant centipede is aggressively territorial, and its acidic blood makes attacking it extremely dangerous — any creature that strikes it risks having their armor and weapons corroded by the caustic spray.",
-        "domesticated": "The Arthropluera is an effective cave-exploring mount that can traverse tight passages. Its acidic spit can corrode armor and structures, making it useful in both PvE and PvP contexts. It must be passively tamed using Bug Repellant and fed Broth of Enlightenment, making the taming process somewhat involved but worth the effort for a versatile cave mount."
+        "wild": "The fact that this creature exists is enough to give me nightmares. Like the island's other Arthropods, Arthropluera Felsanguis has become much larger than I might have believed possible. It's a very aggressive hunter, but prefers to eat meat after it has rotted for some time, and will voraciously seek out such delicacies.",
+        "domesticated": "Like most of the arthropods on the island, Arthropluera is simple minded and relatively easy to tame. It is an almost entirely military mount, useful mostly for attacking at a distance. Thanks to its unique defenses, whether hunting or warring, Arthropluera is generally safe from all but the largest of creatures."
     },
     "base_stats_growth": {
         "health": {
             "base": 500,
             "level_increase": {
                 "wild": 100,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -27,11 +28,7 @@
             }
         },
         "oxygen": {
-            "base": 150,
-            "level_increase": {
-                "wild": 15,
-                "tamed": 0.1
-            }
+            "base": null
         },
         "food": {
             "base": 1200,
@@ -48,20 +45,23 @@
             }
         },
         "melee": {
-            "base": 18,
+            "base": 1830,
             "level_increase": {
-                "wild": 0.9,
+                "wild": 0.91,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
             }
         },
         "torpidity": {
@@ -76,21 +76,32 @@
     },
     "tameable": true,
     "rideable": true,
-    "breedable": false,
+    "breedable": true,
     "taming": {
         "method": "Passive",
         "kibble": null
     },
     "saddle": [
         {
-            "name": "Arthropluera Saddle",
+            "name": "Arthropluera Saddle (Level 54)",
             "engram_level": 54
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Arthropluera Egg",
+        "incubation": {
+            "range": "18 - 22 °C / 64 - 72 °F Egg Incubator: 20 °C / 68 °F",
+            "incubation_range": "18 - 22 °C / 64 - 72 °F Egg Incubator: 20 °C / 68 °F",
+            "incubation_time": "2h 29m 59.28s"
+        },
+        "baby_time": "5h 8m 38.519s",
+        "juvenile_time": "20h 34m 34.074s",
+        "adolescent_time": "1d 1h 43m 12.593s",
+        "total_maturation": "2d 3h 26m 25.185s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 110,
     "cloneable": false,
-    "entity_id": "Arthropluera_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "entity_id": "Arthro_Character_BP_C"
 }

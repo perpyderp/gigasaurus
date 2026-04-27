@@ -1,19 +1,20 @@
 {
     "name": "Gigantopithecus",
+    "category": "mammal",
     "dossier": {
         "species": "Gigantopithecus fibrarator",
         "time": "Pleistocene",
         "diet": "Herbivore",
         "temperament": "Territorial",
-        "wild": "Gigantopithecus fibrarator is a large, powerful ape that is usually quite passive unless approached too closely. It is territorial rather than outright aggressive, but its immense strength means any creature that triggers its defensive response is in serious danger. Its thick fur coat provides excellent insulation in cold environments.",
-        "domesticated": "The Gigantopithecus must be passively tamed through careful hand-feeding without triggering its aggression. Once tamed, it is an imposing companion that can be equipped with hats and armor. A rider can engage in melee combat from its back. It can also carry passengers and toss them, and it excels at gathering fiber — its name literally means 'giant fiber-puller.'"
+        "wild": "Gigantopithecus fibrarator is a strange creature. It is usually quite passive, but it has a very short temper when it comes to its own personal space. Once another creature gets close, this gentle giant quickly becomes a rampaging beast. Best to give them a wide berth. I have occasionally seen Gigantopithecus jumping to grab vines that it can traverse and swing on, but otherwise, it seems most happy to lay about, picking berries from plants lazily.",
+        "domesticated": "In addition to being at home picking berries, a tamed Gigantopithecus can be taught to harvest the fibers found on many Island plants as well. It appears to be entirely content to pick at plants all day, eat the berries, and carrying fiber resources for its tribe. Playful once tamed, Gigantopithecus seems to enjoy throwing the creatures or riders it's carrying into the air. It probably feels that this activity is a game, but clever brigands can use this ‘game' to vault over walls and small cliffs."
     },
     "base_stats_growth": {
         "health": {
             "base": 640,
             "level_increase": {
                 "wild": 64,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -48,20 +49,23 @@
             }
         },
         "melee": {
-            "base": 40,
+            "base": 4060,
             "level_increase": {
-                "wild": 1.6,
+                "wild": 1.62,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.06
             }
         },
         "torpidity": {
@@ -79,13 +83,24 @@
     "breedable": true,
     "taming": {
         "method": "Passive",
-        "kibble": "Regular"
+        "kibble": null
     },
-    "saddle": null,
-    "rider_weaponry": true,
+    "saddle": [
+        {
+            "name": "No Saddle Needed Hats",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "6h 36m 49.521s",
+        "baby_time": "7h 42m 57.775s",
+        "juvenile_time": "1d 6h 51m 51.1s",
+        "adolescent_time": "1d 14h 34m 48.875s",
+        "total_maturation": "3d 5h 9m 37.75s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 150,
-    "cloneable": true,
-    "entity_id": "Bigfoot_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Bigfoot_Character_BP_C"
 }

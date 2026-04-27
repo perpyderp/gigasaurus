@@ -1,19 +1,20 @@
 {
     "name": "Mammoth",
+    "category": "mammal",
     "dossier": {
         "species": "Mammuthus steincaput",
         "time": "Early Pliocene",
         "diet": "Herbivore",
         "temperament": "Docile",
-        "wild": "Mammuthus steincaput is generally docile unless provoked, wandering the tundra and mountain regions in small herds. When threatened, they can become a terrifying force — their powerful trunk and tusks can send even large predators flying. They are well-adapted to cold climates and are a common sight in the snow biome.",
-        "domesticated": "The Mammoth is a versatile work animal prized for its ability to harvest large quantities of wood and thatch with its tusks. It also functions as a mobile drumming platform — the Mammoth's trumpet call can provide a war drum buff to nearby allied creatures, boosting their combat effectiveness. It is one of the better mounts for cold-weather expeditions."
+        "wild": "Seeing the likes of Mammuthus steincaput alongside dinosaurs is still strange. This behemoth towers over many creatures on the Island, and doesnt seem to fear anything but the Tyrannosaurus. I've seen them stomp would-be predators out of their way. Mammoths can grab and throw things with their powerful trunks, and manage a fearsome trumpeting roar with them as well. At first, I wondered how herds of Mammoths were able to find enough plant life to graze on. But then I saw them sweeping up thatch and foliage with their tusks, and stomping branches out of trees. Mammoths generally thrive in colder areas and have a herd mentality. They must spend much of their time travelling between the mountains' cold summit and more lush base. And maybe their herds are why the summits are so barren.",
+        "domesticated": "Mammuthus steincaput is a difficult beast to domesticate. Not because they are inherently stubborn, but because knocking one out to begin the taming process takes great effort. Once tamed, however, Mammoths are one of the only creatures on the island that can uproot trees without shattering them, and their trunks are strong enough to lift and carry survivors and other smaller creatures. Lately, survivors have been saddling up their mammoths to ride in tandem. The more clever riders have even been outfitting their mammoth saddles with war drums. It turns out that drum solos from mammothback can really boost your tribemates spirits."
     },
     "base_stats_growth": {
         "health": {
-            "base": 850,
+            "base": 1020,
             "level_increase": {
-                "wild": 170,
-                "tamed": 0.054
+                "wild": 204,
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -48,20 +49,23 @@
             }
         },
         "melee": {
-            "base": 48,
+            "base": 4869,
             "level_increase": {
-                "wild": 2.4,
+                "wild": 2.43,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.015
+            },
+            "taming_bonus": {
+                "additive": 1
             }
         },
         "torpidity": {
@@ -79,18 +83,24 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Mammoth Saddle",
+            "name": "Mammoth Saddle (Level 31) Hats (Level ?) Mammoth Side Saddle",
             "engram_level": 31
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "8h 13m 49.628s",
+        "juvenile_time": "1d 8h 55m 18.512s",
+        "adolescent_time": "1d 17h 9m 8.141s",
+        "total_maturation": "3d 10h 18m 16.281s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 400,
-    "cloneable": true,
-    "entity_id": "Mammoth_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Mammoth_Character_BP_C"
 }

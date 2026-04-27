@@ -1,22 +1,23 @@
 {
     "name": "Procoptodon",
+    "category": "mammal",
     "dossier": {
         "species": "Procoptodon vivencurrus",
         "time": "Pleistocene",
         "diet": "Herbivore",
         "temperament": "Reactive",
-        "wild": "Procoptodon vivencurrus is a large prehistoric kangaroo that is generally non-aggressive unless provoked. When threatened, it defends itself with powerful kick attacks that send opponents flying backward. It moves in bounds across the landscape, covering ground rapidly with each leap.",
-        "domesticated": "The Procoptodon is uniquely capable of carrying a baby creature or survivor in its pouch, providing protection and allowing the pouch passenger to feed themselves. Its powerful jumps allow it to reach elevated terrain and leap over obstacles. It also receives significantly reduced fall damage. It is tamed with Rare Mushrooms, making the taming process somewhat unusual."
+        "wild": "The first marsupial I've encountered on the Island is the Procoptodon vivencurrus. Standing nearly three meters tall, it is among the largest jumping creatures I've heard of. It is a fairly peaceful herbivore that will immediately flee when aggressed upon. One of Procoptodon's most unique features is its pouch. Unlike many pouched marsupials, Procoptodon's pouch is relatively dry and has little in the way of sticky or oily fluids. I assume this is good for the Joey, but I have not figured out exactly why yet. Its other unique feature, powerful hind legs, can knock back aggression much larger in stature. Procoptodons show great precision when leaping as if they can accurately target the landing without fail. I've seen them effortlessly hop and land from heights that would flatten other creatures.",
+        "domesticated": "It seems Procotopdon's knack for carrying things has increased its load-bearing capacity. Procoptodon's dry pouch makes it an excellent beast of burden that can carry far more than other creatures of its size. Additionally, it appears to provide an optimal environment for nourishing babies. So much that upon maturing, they have even more vigor."
     },
     "base_stats_growth": {
         "health": {
             "base": 400,
             "level_increase": {
                 "wild": 80,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": 0.105
             }
         },
         "stamina": {
@@ -24,6 +25,9 @@
             "level_increase": {
                 "wild": 35,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "additive": 0.1
             }
         },
         "oxygen": {
@@ -54,8 +58,8 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.027999999999999997,
+                "multiplicative": 0.11
             }
         },
         "movement": {
@@ -83,14 +87,20 @@
     },
     "saddle": [
         {
-            "name": "Procoptodon Saddle",
+            "name": "Procoptodon Saddle (Level 23) Hats (Mobile only)",
             "engram_level": 23
         }
     ],
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "3h 58m 5.714s",
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 410,
-    "cloneable": true,
-    "entity_id": "Procoptodon_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Procoptodon_Character_BP_C"
 }

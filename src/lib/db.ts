@@ -2,11 +2,16 @@
  * IndexedDB store for imported ARK creatures.
  * Uses the `idb` library for a Promise-based API.
  *
- * Database: "gigasaurus" v1
- * Object store: "creatures" — keyed by the creature's unique ARK id (DinoID1_DinoID2)
+ * Database: "gigasaurus" v2
+ * Object store: "creatures" — keyed by the creature's 64-bit ARK ID (decimal string)
+ *
+ * Migration v1→v2:
+ *   - id format changed from `${dinoId1}_${dinoId2}` to combined BigInt decimal string
+ *   - Added fields: tribe, importFilename, manualParentMaleId, manualParentFemaleId
  */
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb'
 import type { StoredCreature } from '@/schemas/stored-creature'
+import { combineArkId } from '@/lib/ark-id'
 
 export type { StoredCreature }
 
@@ -22,12 +27,37 @@ let dbPromise: Promise<IDBPDatabase<GigasaurusDB>> | null = null
 
 function getDB() {
   if (!dbPromise) {
-    dbPromise = openDB<GigasaurusDB>('gigasaurus', 1, {
-      upgrade(db) {
-        const store = db.createObjectStore('creatures', { keyPath: 'id' })
-        store.createIndex('by_slug', 'apiSlug')
-        store.createIndex('by_level', 'level')
-        store.createIndex('by_updated', 'updatedAt')
+    dbPromise = openDB<GigasaurusDB>('gigasaurus', 2, {
+      async upgrade(db, oldVersion, _newVersion, tx) {
+        if (oldVersion === 0) {
+          // Fresh install — create store directly at v2 schema
+          const store = db.createObjectStore('creatures', { keyPath: 'id' })
+          store.createIndex('by_slug', 'apiSlug')
+          store.createIndex('by_level', 'level')
+          store.createIndex('by_updated', 'updatedAt')
+          return
+        }
+
+        if (oldVersion === 1) {
+          // Migrate v1 → v2:
+          //   • Re-key id from "dinoId1_dinoId2" to combined 64-bit ARK ID string
+          //   • Populate new nullable fields with defaults
+          const store = tx.objectStore('creatures')
+          const all = await store.getAll()
+          for (const c of all as unknown as (StoredCreature & { tribe?: string; importFilename?: string | null; manualParentMaleId?: string | null; manualParentFemaleId?: string | null })[]) {
+            const oldKey = c.id
+            const newId = combineArkId(c.dinoId1, c.dinoId2)
+            await store.delete(oldKey)
+            await store.put({
+              ...c,
+              id: newId,
+              tribe: c.tribe ?? '',
+              importFilename: c.importFilename ?? null,
+              manualParentMaleId: c.manualParentMaleId ?? null,
+              manualParentFemaleId: c.manualParentFemaleId ?? null,
+            } as StoredCreature)
+          }
+        }
       },
     })
   }

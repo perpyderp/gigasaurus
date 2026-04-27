@@ -1,22 +1,23 @@
 {
     "name": "Hyaenodon",
+    "category": "mammal",
     "dossier": {
         "species": "Hyaenodon dirus",
-        "time": "Late Eocene",
+        "time": "Late Eocene - Early Miocene",
         "diet": "Carnivore",
         "temperament": "Opportunistic",
-        "wild": "Hyaenodon dirus is an opportunistic pack predator that targets weakened or isolated creatures. It is cowardly when alone but emboldened in numbers, and a pack of Hyaenodons can overwhelm prey far larger than themselves. They are cunning hunters that will wait for the right moment before striking.",
-        "domesticated": "The Hyaenodon must be tamed passively by crouching nearby and petting it repeatedly. Its unique saddle, the Meatpack, doubles the spoilage time of meat and reduces its carry weight by 60%, making it an invaluable companion for long expeditions. It provides pack bonuses to nearby tribemates and other tamed Hyaenodons."
+        "wild": "Among the Island's most tenacious pack is Hyaenodon dirus, a carnivore most often found across the mountains and tundras in packs of 3 to 6. The Hyaenodon is a very intelligent predator. Before engaging, it determines if the payoff for a fight is worth the risk of injury. Hyaenodon often prefers not to fight unless there is already weakened prey or a fresh carcass nearby. This temperament changes quickly, though, near the presence of injured creatures. Hyaenodon quickly becomes very aggressive... ...and the pack attacks with ruthless abandon. With each vicious chomp of scavenged meat, the Hyaenodon rapidly recovers health and stamina.",
+        "domesticated": "Despite being too small to ride, Hyaenodon are still popular pets. Their intelligence means they train well, and their natural pack mentality makes them excellent hunting dogs. Their ability to quickly recover health by consuming raw flesh off the bone ensures they can take punishment yet continue to fight, and they can efficiently preserve meat in specially-crafted saddle-bags. A common (and terrifying) sight on the tundra is a rider on a Canis with a pack of Hyaenodon at its side, howls and jeers echoing through the night."
     },
     "base_stats_growth": {
         "health": {
             "base": 175,
             "level_increase": {
                 "wild": 35,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": 0.0924
             }
         },
         "stamina": {
@@ -38,6 +39,9 @@
             "level_increase": {
                 "wild": 120,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,14 +58,17 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "tamed": 0.01
+                "tamed": 0.025
+            },
+            "taming_bonus": {
+                "additive": 0.3
             }
         },
         "torpidity": {
@@ -75,22 +82,23 @@
         }
     },
     "tameable": true,
-    "rideable": true,
+    "rideable": false,
     "breedable": true,
     "taming": {
         "method": "Passive",
         "kibble": null
     },
-    "saddle": [
-        {
-            "name": "Hyaenodon Meatpack",
-            "engram_level": 19
-        }
-    ],
+    "saddle": null,
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "3h 58m 5.714s",
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 40,
-    "cloneable": true,
-    "entity_id": "Hyaenodon_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Hyaenodon_Character_BP_C"
 }

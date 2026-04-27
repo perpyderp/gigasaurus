@@ -40,6 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Scraper
+
+*scrape_incomplete*.txt
+incomplete
 
 # LLM/AI
 

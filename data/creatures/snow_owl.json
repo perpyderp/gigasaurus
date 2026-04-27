@@ -1,5 +1,6 @@
 {
     "name": "Snow Owl",
+    "category": "bird",
     "dossier": {
         "species": "Bubo chinookus",
         "time": "Post-Holocene",
@@ -13,7 +14,7 @@
             "base": 325,
             "level_increase": {
                 "wild": 65,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,7 +56,7 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -79,11 +80,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Snow Owl Saddle",
+            "name": "Snow Owl Saddle (Level 61)",
             "engram_level": 61
         }
     ],
@@ -91,8 +92,8 @@
     "egg": {
         "name": "Snow Owl Egg",
         "incubation": {
-            "range": "12 - 13.5 °C / 54 - 56 °F",
-            "incubation_range": "13 °C / 55 °F",
+            "range": "12 - 13.5 °C / 54 - 56 °F Egg Incubator: 13 °C / 55 °F",
+            "incubation_range": "12 - 13.5 °C / 54 - 56 °F Egg Incubator: 13 °C / 55 °F",
             "incubation_time": "2h 56m 27.389s"
         },
         "baby_time": "5h 26m 47.842s",
@@ -101,9 +102,7 @@
         "total_maturation": "2d 6h 27m 58.422s",
         "breeding_interval": "18h - 2d"
     },
-    "reproduction": null,
     "drag_weight": 35,
-    "cloneable": true,
-    "entity_id": "Owl_Character_BP_C",
-    "category": "fantasy"
+    "cloneable": false,
+    "entity_id": "Owl_Character_BP_C"
 }

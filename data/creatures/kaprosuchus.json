@@ -1,19 +1,20 @@
 {
     "name": "Kaprosuchus",
+    "category": "reptile",
     "dossier": {
         "species": "Kaprosuchus paludentium",
         "time": "Late Cretaceous",
         "diet": "Carnivore",
         "temperament": "Aggressive",
-        "wild": "Kaprosuchus paludentium is a fast, aggressive crocodilian that hunts on land as effectively as in water. It is notorious for its ability to leap at prey and grab riders directly from their mounts — a terrifying capability that makes it one of the most feared ambush predators in swamp regions. It strikes fast and hard before its target can react.",
-        "domesticated": "A tamed Kaprosuchus is a rapid strike mount capable of running at high speed and leaping to close with enemies. It can grab smaller creatures and survivors, making it useful in PvP. Its amphibious nature allows it to transition seamlessly between land and water. It does not require a saddle to ride but can be equipped with one for extra protection."
+        "wild": "A smaller relative of the Sarcosuchus, Kaprosuchus paludentium is water-based carnivore primarily found lurking among the island's swamps. A naturally fast runner that is even faster in the water, it is a solitary hunter that picks off small-to-medium creatures, especially those isolated from their pack. When attacking, Kaprosuchus uses two main tactics. First, it patiently waits below the water surface and when the target is sufficiently close by, will perform a lateral jump that it uses to quickly close distance with its prey and drag it underwater. Secondly, its attacks the prey's vital areas specifically to drain its stamina. These two techniques effectively prevent most creatures from escaping Kaprosuchus once an assault has begun.",
+        "domesticated": "Survivors are generally split about the usefulness of Kaprosuchus. Some love its speed both in and out of the water, essentially making it among the fastest small-sized, all-terrain mounts when travelling through the wetlands. Others do not like how relatively frail Kaprosuchus is, and do not think its high speed and ensnaring attacks make up for this shortcoming."
     },
     "base_stats_growth": {
         "health": {
             "base": 200,
             "level_increase": {
                 "wild": 40,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -27,11 +28,7 @@
             }
         },
         "oxygen": {
-            "base": 150,
-            "level_increase": {
-                "wild": 15,
-                "tamed": 0.1
-            }
+            "base": null
         },
         "food": {
             "base": 1200,
@@ -48,20 +45,23 @@
             }
         },
         "melee": {
-            "base": 25,
+            "base": 2545,
             "level_increase": {
-                "wild": 1.25,
+                "wild": 1.252,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
             }
         },
         "torpidity": {
@@ -79,18 +79,29 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Regular"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Kaprosuchus Saddle",
+            "name": "Kaprosuchus Saddle (Level 39)",
             "engram_level": 39
         }
     ],
     "rider_weaponry": false,
-    "drag_weight": 410,
-    "cloneable": true,
-    "entity_id": "Kaprosuchus_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "egg": {
+        "name": "Kaprosuchus Egg",
+        "incubation": {
+            "range": "29 - 35 °C / 84 - 95 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "29 - 35 °C / 84 - 95 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_time": "1h 59m 59.424s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 410.23,
+    "cloneable": false,
+    "entity_id": "Kaprosuchus_Character_BP_C"
 }

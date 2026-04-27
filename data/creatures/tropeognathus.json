@@ -1,0 +1,114 @@
+{
+    "name": "Tropeognathus",
+    "category": "reptile",
+    "dossier": {
+        "species": "Tropeognathus mesembrinus",
+        "time": "Cretaceous",
+        "diet": "Piscivore",
+        "temperament": "Neutral",
+        "wild": "Up close, Tropeognathus mesembrinus is easily recognized by the keeled crests on its snout, but with wingspans of up to twenty-seven feet, you’re sure to spot it before then. These large wings are not only ideal for catching air currents over its ocean hunting grounds, but they also let Tropeognathus draft off of other flying creatures by flying behind them. While not the fastest flyer on the Isles, when combined with its remarkable stamina, this makes Tropeognathus well suited for long distance flight. Because it’s on the wing so much, Tropeognathus is best snared by those riding another flier. I've noticed the more clever tribespeople using chain bolas to capture them while airborne.",
+        "domesticated": "Once tamed, Tropeognathus has proven quite useful to the people of the Isles beyond mere transportation. For example, its toothed beak can grind down many common goods to their base components, which is a great way to recycle items and gear! Well, so long as you have a rag handy to wipe off the spit... That bite is punishing enough to crack armor and grind through it over time, and Tropeognathus can blow away flora and fauna alike with a gust from its wings. Air-to-air combat is where this creature really shines, though. And with the right tools, some survivors have managed to fit them with a saddle-mounted flak cannon and jet engine for maximum lethality. Trust me, you haven't lived until you've ridden a jet-powered pterosaur into a dogfight. Saddle one up and see for yourself - you can be my wingman anytime!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 360,
+            "level_increase": {
+                "wild": 72,
+                "tamed": 0.048600000000000004
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 250,
+            "level_increase": {
+                "wild": 12.5,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 340,
+            "level_increase": {
+                "wild": 6.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 18,
+            "level_increase": {
+                "wild": 0.9,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            },
+            "taming_bonus": {
+                "additive": 0.365
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed Tropeognathus Saddle (Level 65)",
+            "engram_level": 65
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Tropeognathus Egg",
+        "incubation": {
+            "range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_time": "1h 39m 59.52s"
+        },
+        "baby_time": "5h 26m 47.843s",
+        "juvenile_time": "21h 47m 11.372s",
+        "adolescent_time": "1d 3h 13m 59.216s",
+        "total_maturation": "2d 6h 27m 58.431s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 149,
+    "cloneable": false,
+    "entity_id": "Tropeognathus_Character_BP_C"
+}

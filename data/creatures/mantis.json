@@ -1,19 +1,20 @@
 {
     "name": "Mantis",
+    "category": "invertebrate",
     "dossier": {
         "species": "Empusa discipulus",
         "time": "Holocene",
         "diet": "Carnivore",
         "temperament": "Aggressive",
-        "wild": "Empusa discipulus is a massive praying mantis found in desert and scorched environments. It is highly aggressive and will attack any creature that enters its territory. Its bladed forelegs can slash through armor and deliver devastating blows, and it can leap great distances to close with prey.",
-        "domesticated": "The Mantis is unique in its ability to wield tools and weapons held in its forelegs, effectively using picks, hatchets, and sickles to harvest resources at high efficiency. This makes it one of the most versatile gatherers in the game. It is tamed passively using Deathworm Horns and is found primarily on Scorched Earth."
+        "wild": "The existence of a creature such as Empusa discipulus is both fascinating and frightening. Not only is Empusa the only recorded insect to have developed an opposable digit, allowing it to grip objects and use tools, but it possesses a level of intelligence that is unrivalled among non-human species. I have even found clear patterns in the sounds Empusa makes when communicating with its own kind, as though it is actually using some kind of dialect. I would love to study these interactions in depth, but observing Empusa up close is extremely dangerous. Its size, intelligence and ability to pounce on its prey from a great distance mean that one could be quickly swarmed and killed upon detection. Caution is recommended.",
+        "domesticated": "Though a dangerous task, successfully taming Empusa can prove highly beneficial. Its unique claws allow it to wield melee weapons like spears or pikes in battle, and use tools while harvesting resources. This makes it deadly as a mount or footsoldier and highly efficient as a gatherer."
     },
     "base_stats_growth": {
         "health": {
             "base": 275,
             "level_increase": {
                 "wild": 55,
-                "tamed": 0.054
+                "tamed": 0.027000000000000003
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -48,20 +49,23 @@
             }
         },
         "melee": {
-            "base": 34,
+            "base": 34120,
             "level_increase": {
-                "wild": 0.85,
+                "wild": 0.853,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.67
             }
         },
         "torpidity": {
@@ -83,14 +87,25 @@
     },
     "saddle": [
         {
-            "name": "Mantis Saddle",
+            "name": "Mantis Saddle (Level 45) Torch (Level 1) Stone Pick (Level 1) Stone Hatchet (Level 2) Wooden Club (Level 8) Whip (Level 20) Scissors (Level 21) Pike (Level 25) Metal Pick (Level 20) Metal Hatchet (Level 20) Metal Sickle (Level 30) Sword (Level 30) Taxidermy Tool (Level 10)",
             "engram_level": 45
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Mantis Egg",
+        "incubation": {
+            "range": "35 - 38 °C / 95 - 100 °F Egg Incubator: 37 °C / 99 °F",
+            "incubation_range": "35 - 38 °C / 95 - 100 °F Egg Incubator: 37 °C / 99 °F",
+            "incubation_time": "2h 46m 39.2s"
+        },
+        "baby_time": "5h 26m 47.843s",
+        "juvenile_time": "21h 47m 11.372s",
+        "adolescent_time": "1d 3h 13m 59.216s",
+        "total_maturation": "2d 6h 27m 58.431s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 200,
-    "cloneable": true,
-    "entity_id": "Mantis_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Mantis_Character_BP_C"
 }

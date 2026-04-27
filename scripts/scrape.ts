@@ -7,10 +7,10 @@
  * Uses the MediaWiki API (/api.php?action=parse) to avoid Cloudflare blocks.
  *
  * Outputs:
- *   data/{type}/{slug}.json                   — schema-valid entries
- *   data/{type}/incomplete/{slug}.json         — entries missing required fields
- *   data/{type}/incomplete/{slug}__missing.txt — manual todo list
- *   public/images/{type}/{slug}.png            — downloaded images
+ *   data/{type}/{slug}.json              — schema-valid entries
+ *   data/{type}/incomplete/{slug}.json   — entries missing required fields
+ *   data/scrape_incomplete_<ts>.txt      — timestamped summary of all incomplete entries
+ *   public/images/{type}/{slug}.png      — downloaded images
  */
 
 import { existsSync, mkdirSync, writeFileSync } from 'fs'
@@ -224,6 +224,8 @@ function parseIngredients(root: HTMLElement): Ingredient[] {
 
 interface ScrapeStats { total: number; complete: number; incomplete: number; skipped: number; images: number }
 
+const incompleteLog: Array<{ type: string; slug: string; missing: string[] }> = []
+
 function ensureDir(d: string) { if (!existsSync(d)) mkdirSync(d, { recursive: true }) }
 
 function saveEntity(
@@ -241,16 +243,7 @@ function saveEntity(
   writeFileSync(filePath, JSON.stringify(data, null, 4) + '\n')
 
   if (!complete) {
-    writeFileSync(join(dir, `${slug}__missing.txt`), [
-      `Incomplete data for: ${slug}`,
-      `Scraped: ${new Date().toISOString()}`,
-      `Source: ${WIKI}/wiki/${encodeURIComponent(slug.replace(/_/g, ' '))}`,
-      '',
-      'Fields requiring manual population:',
-      ...missing.map(f => `  - ${f}`),
-      '',
-      `When complete, move to: data/${type}/${slug}.json`,
-    ].join('\n') + '\n')
+    incompleteLog.push({ type, slug, missing })
   }
   return { saved: true, complete }
 }
@@ -476,12 +469,13 @@ function extractEntityId(root: HTMLElement): string | null {
   return null
 }
 
-async function scrapeCreature(entry: CreatureListEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
+async function scrapeCreature(entry: CreatureListEntry): Promise<{ data: Record<string, unknown>; missing: string[]; root: HTMLElement | null }> {
   const root = await fetchPage(entry.name)
   const missing: string[] = []
 
   if (!root) {
     return {
+      root: null,
       data: {
         name: entry.name, category: 'other', dossier: null,
         base_stats_growth: {
@@ -616,7 +610,7 @@ async function scrapeCreature(entry: CreatureListEntry): Promise<{ data: Record<
     egg, drag_weight, cloneable, entity_id,
   }
 
-  return { data, missing }
+  return { data, missing, root }
 }
 
 async function scrapeCreatures(overwrite: boolean): Promise<ScrapeStats> {
@@ -630,14 +624,12 @@ async function scrapeCreatures(overwrite: boolean): Promise<ScrapeStats> {
     process.stdout.write(`  [${i + 1}/${entries.length}] ${entry.name}… `)
     stats.total++
 
-    const { data, missing } = await scrapeCreature(entry)
+    const { data, missing, root } = await scrapeCreature(entry)
     const finalMissing = validateAndMerge(CreatureSchema, data, missing)
 
     const { saved, complete } = saveEntity('creatures', entry.slug, data, finalMissing, overwrite)
     if (!saved) { process.stdout.write('skipped\n'); stats.skipped++; continue }
 
-    // Image — re-use the already fetched page by passing root
-    const root = await fetchPage(entry.name)
     if (root) {
       const url = extractCreatureImage(root)
       if (url) { const ok2 = await saveImage('creatures', entry.slug, url); if (ok2) stats.images++ }
@@ -690,12 +682,13 @@ async function fetchResourceList(): Promise<ResourceListEntry[]> {
   return entries
 }
 
-async function scrapeResource(entry: ResourceListEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
+async function scrapeResource(entry: ResourceListEntry): Promise<{ data: Record<string, unknown>; missing: string[]; root: HTMLElement | null }> {
   const root = await fetchPage(entry.name)
   const missing: string[] = []
 
   if (!root) {
     return {
+      root: null,
       data: { name: entry.name, rarity: entry.rarity, renewable: entry.renewable,
               refinable: entry.refinable, combustible: entry.combustible,
               weight: 0, stack_size: 100, found_in: [] },
@@ -737,6 +730,7 @@ async function scrapeResource(entry: ResourceListEntry): Promise<{ data: Record<
   }
 
   return {
+    root,
     data: {
       name: entry.name, rarity: entry.rarity,
       renewable: entry.renewable, refinable: entry.refinable, combustible: entry.combustible,
@@ -758,13 +752,12 @@ async function scrapeResources(overwrite: boolean): Promise<ScrapeStats> {
     process.stdout.write(`  [${i + 1}/${entries.length}] ${entry.name}… `)
     stats.total++
 
-    const { data, missing } = await scrapeResource(entry)
+    const { data, missing, root } = await scrapeResource(entry)
     const finalMissing = validateAndMerge(ResourceSchema, data, missing)
 
     const { saved, complete } = saveEntity('resources', entry.slug, data, finalMissing, overwrite)
     if (!saved) { process.stdout.write('skipped\n'); stats.skipped++; continue }
 
-    const root = await fetchPage(entry.name)
     if (root) {
       const url = extractItemImage(root)
       if (url) { const ok2 = await saveImage('resources', entry.slug, url); if (ok2) stats.images++ }
@@ -953,12 +946,13 @@ async function fetchWeaponList(): Promise<WeaponListEntry[]> {
   return entries
 }
 
-async function scrapeWeapon(entry: WeaponListEntry): Promise<{ data: Record<string, unknown>; missing: string[] }> {
+async function scrapeWeapon(entry: WeaponListEntry): Promise<{ data: Record<string, unknown>; missing: string[]; root: HTMLElement | null }> {
   const root = await fetchPage(entry.name)
   const missing: string[] = []
 
   if (!root) {
     return {
+      root: null,
       data: { name: entry.name, category: entry.category, damage: null, unlock_level: null,
               engram_points: null, ammo_type: null, ingredients: [] },
       missing: ['ALL (page fetch failed)'],
@@ -997,6 +991,7 @@ async function scrapeWeapon(entry: WeaponListEntry): Promise<{ data: Record<stri
   if (!ingredients.length) missing.push('ingredients')
 
   return {
+    root,
     data: { name: entry.name, category, damage, unlock_level, engram_points, ammo_type, ingredients },
     missing,
   }
@@ -1013,13 +1008,12 @@ async function scrapeWeapons(overwrite: boolean): Promise<ScrapeStats> {
     process.stdout.write(`  [${i + 1}/${entries.length}] ${entry.name}… `)
     stats.total++
 
-    const { data, missing } = await scrapeWeapon(entry)
+    const { data, missing, root } = await scrapeWeapon(entry)
     const finalMissing = validateAndMerge(WeaponSchema, data, missing)
 
     const { saved, complete } = saveEntity('weapons', entry.slug, data, finalMissing, overwrite)
     if (!saved) { process.stdout.write('skipped\n'); stats.skipped++; continue }
 
-    const root = await fetchPage(entry.name)
     if (root) {
       const url = extractItemImage(root)
       if (url) { const ok2 = await saveImage('weapons', entry.slug, url); if (ok2) stats.images++ }
@@ -1041,39 +1035,41 @@ async function scrapeSingle(type: string, nameInput: string, overwrite: boolean)
   let data: Record<string, unknown>
   let missing: string[]
   let schema: ZodSchema
-  let imageUrl: string | null = null
-
-  const root = await fetchPage(name)
+  let pageRoot: HTMLElement | null = null
 
   if (type === 'creatures') {
+    // Pre-fetch to populate boolean fields on fakeEntry, then scrapeCreature re-uses same fetch
+    const prefetch = await fetchPage(name)
     const fakeEntry: CreatureListEntry = {
       name, slug, diet: '', temperament: '',
       tameable: false, rideable: false, breedable: false,
       saddle_level: null, entity_id: null,
     }
-    if (root) {
-      const info = parseArkInfo(root)
+    if (prefetch) {
+      const info = parseArkInfo(prefetch)
       fakeEntry.tameable  = getInfoBool(info, 'tameable')
       fakeEntry.rideable  = getInfoBool(info, 'rideable')
       fakeEntry.breedable = getInfoBool(info, 'breedable')
     }
-    ;({ data, missing } = await scrapeCreature(fakeEntry))
+    ;({ data, missing, root: pageRoot } = await scrapeCreature(fakeEntry))
     schema = CreatureSchema
-    if (root) imageUrl = extractCreatureImage(root)
   } else if (type === 'resources') {
+    const prefetch = await fetchPage(name)
     const fakeEntry: ResourceListEntry = { name, slug, rarity: 'common', renewable: false, refinable: false, combustible: false }
-    if (root) {
-      const info = parseArkInfo(root)
+    if (prefetch) {
+      const info = parseArkInfo(prefetch)
       const rarityRaw = (getInfoValue(info, 'rarity') ?? '').toLowerCase()
       fakeEntry.rarity = rarityRaw === 'rare' ? 'rare' : rarityRaw === 'uncommon' ? 'uncommon' : 'common'
-      fakeEntry.renewable  = getInfoBool(info, 'renewable')
-      fakeEntry.refinable  = getInfoBool(info, 'refinable', 'refineable')
+      fakeEntry.renewable   = getInfoBool(info, 'renewable')
+      fakeEntry.refinable   = getInfoBool(info, 'refinable', 'refineable')
       fakeEntry.combustible = getInfoBool(info, 'combustible')
     }
-    ;({ data, missing } = await scrapeResource(fakeEntry))
+    ;({ data, missing, root: pageRoot } = await scrapeResource(fakeEntry))
     schema = ResourceSchema
-    if (root) imageUrl = extractItemImage(root)
   } else if (type === 'armor') {
+    // Armor scraping is entirely self-contained — fetch once here
+    const root = await fetchPage(name)
+    pageRoot = root
     const fakeEntry: ArmorListEntry = {
       name, slug, unlock_level: null, armor_rating: 0,
       cold_protection: 0, heat_protection: 0, weight: 0, durability: null,
@@ -1104,12 +1100,10 @@ async function scrapeSingle(type: string, nameInput: string, overwrite: boolean)
     missing = []
     if (!fakeEntry.ingredients.length) missing.push('set_ingredients')
     schema = ArmorSchema
-    if (root) imageUrl = extractItemImage(root)
   } else if (type === 'weapons') {
     const fakeEntry: WeaponListEntry = { name, slug, category: 'tool' }
-    ;({ data, missing } = await scrapeWeapon(fakeEntry))
+    ;({ data, missing, root: pageRoot } = await scrapeWeapon(fakeEntry))
     schema = WeaponSchema
-    if (root) imageUrl = extractItemImage(root)
   } else {
     fail(`Unknown type: ${type}`); return
   }
@@ -1117,7 +1111,10 @@ async function scrapeSingle(type: string, nameInput: string, overwrite: boolean)
   const finalMissing = validateAndMerge(schema, data, missing)
   const { saved, complete } = saveEntity(type, slug, data, finalMissing, overwrite)
 
-  if (imageUrl) await saveImage(type, slug, imageUrl)
+  if (pageRoot) {
+    const imageUrl = type === 'creatures' ? extractCreatureImage(pageRoot) : extractItemImage(pageRoot)
+    if (imageUrl) await saveImage(type, slug, imageUrl)
+  }
 
   if (!saved) { warn('Skipped — file exists (run with overwrite=yes to force)'); return }
   if (complete) ok(`Saved to data/${type}/${slug}.json`)
@@ -1125,9 +1122,37 @@ async function scrapeSingle(type: string, nameInput: string, overwrite: boolean)
     warn(`Saved incomplete to data/${type}/incomplete/${slug}.json`)
     for (const f of finalMissing) warn(`  - ${f}`)
   }
+  writeIncompleteSummary()
 }
 
 // ─── Summary ───────────────────────────────────────────────────────────────────
+
+function writeIncompleteSummary() {
+  if (incompleteLog.length === 0) return
+  const ts = new Date().toISOString().replace(/:/g, '-').replace(/\.\d+Z$/, 'Z')
+  const summaryPath = join(ROOT, 'data', `scrape_incomplete_${ts}.txt`)
+  const byType: Record<string, typeof incompleteLog> = {}
+  for (const entry of incompleteLog) {
+    ;(byType[entry.type] ??= []).push(entry)
+  }
+  const lines: string[] = [
+    `Gigasaurus scrape incomplete summary`,
+    `Generated: ${new Date().toISOString()}`,
+    `Total incomplete: ${incompleteLog.length}`,
+    '',
+  ]
+  for (const [type, entries] of Object.entries(byType)) {
+    lines.push(`── ${type} (${entries.length}) ──────────────────────`)
+    for (const e of entries) {
+      lines.push(`  ${e.slug}`)
+      for (const f of e.missing) lines.push(`    - ${f}`)
+    }
+    lines.push('')
+  }
+  ensureDir(join(ROOT, 'data'))
+  writeFileSync(summaryPath, lines.join('\n'))
+  ok(`Incomplete summary written to data/scrape_incomplete_${ts}.txt`)
+}
 
 function printStats(label: string, s: ScrapeStats) {
   log(`\n── ${label} ────────────────────────────────────────`)
@@ -1205,6 +1230,7 @@ async function main() {
     printStats('Results', allStats[0])
   }
 
+  writeIncompleteSummary()
   log('')
   rl.close()
 }

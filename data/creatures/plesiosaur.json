@@ -1,0 +1,105 @@
+{
+    "name": "Plesiosaur",
+    "category": "reptile",
+    "dossier": {
+        "species": "Elasmosaurus remuspissa",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Elasmosaurus remuspissa is typically found in the deep oceans, and has a strange role in the oceanic food chain. It almost exclusively hunts the smaller creatures in the waters, leaving most even moderately large creatures alone. The sheer size of the Elasmosaurus means that the quantity of food it must eat to sustain itself is nothing short of enormous. Elasmosaurus is a formidable fighter. Aside from the Megalodon, I have only ever seen two creatures bring down an Elasmosaurus: a Mosasaurus, and human beings. Though I will admit, I have yet to thoroughly explore the staggeringly deep underwater caverns surrounding the Island.",
+        "domesticated": "Much like the Brontosaurus on land, Elasmosaurus is an excellent way to transport large quantities of goods over water. These powerful creatures are in fact so large that they can be used as mobile water bases. Ambitious tribes sometimes build bunkers right onto the backs of Elasmosaurus instead of building cargo ships."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 2400,
+            "level_increase": {
+                "wild": 288,
+                "tamed": 0.032400000000000005
+            },
+            "taming_bonus": {
+                "additive": 0.0224
+            }
+        },
+        "stamina": {
+            "base": 800,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 5000,
+            "level_increase": {
+                "wild": 500,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 800,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 75,
+            "level_increase": {
+                "wild": 3.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.005
+            }
+        },
+        "torpidity": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 96
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Plesiosaur Saddle (Level 64) Plesiosaur Platform Saddle (Level 84)",
+            "engram_level": 64
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "11h 34m 26.667s",
+        "juvenile_time": "1d 22h 17m 46.667s",
+        "adolescent_time": "2d 9h 52m 13.334s",
+        "total_maturation": "4d 19h 44m 26.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 500,
+    "cloneable": false,
+    "entity_id": "Plesiosaur_Character_BP_C"
+}

@@ -1,22 +1,24 @@
 {
     "name": "Fjordhawk",
+    "category": "bird",
     "dossier": {
         "species": "Parabuteo veðrfölnir",
-        "time": "Anthropocene",
+        "time": "Mid-late Anthropocene",
         "diet": "Omnivore",
         "temperament": "Calculating",
-        "wild": "Parabuteo veðrfölnir is an unusually intelligent bird of prey found on Fjordur. It is calculating in its behavior, observing its surroundings carefully before acting. It feeds on the carcasses of fallen creatures and has developed a curious relationship with survivors — it will approach those who have recently made kills, apparently hoping to share the spoils.",
-        "domesticated": "The Fjordhawk is a shoulder pet with an extraordinary ability: when its bonded owner is killed, it will collect their inventory and return it to them upon respawn. This item retrieval capability makes it one of the most valuable companions in dangerous environments. It is passively tamed by allowing it to feed on freshly killed creature corpses."
+        "wild": "Most of the creatures I’ve encountered here have endured thanks to their great size, strength, or ferocity. But the fjordhawk gets by on its wits and by scavenging. The bird also seems to have an almost preternatural ability to predict and avoid danger. Fjordhawks follow predators (and survivors) from on high, watching for their moment to swoop in and snatch up an easy meal.",
+        "domesticated": "Tamed fjordhawks are surprisingly playful, and their favorite game is fetch. Indulge your bird with this play and a bit of patience, and you’ll reap the rewards. Just point out a target, and your fjordhawk will fly off to retrieve it for you. A well-trained fjordhawk can locate injured prey and communicate its find to you. These clever birds will bond with humans as wholeheartedly as any canine or primate, in a way uniquely suited to this time and place. If you should meet with some grave misfortune, your fjordhawk will immediately fly off with as many of your belongings as it can carry. As soon as you’re respawned by the ARK, your friend will track you down and return your equipment to you!"
     },
     "base_stats_growth": {
         "health": {
             "base": 125,
             "level_increase": {
                 "wild": 20.875,
-                "tamed": 0.054
+                "tamed": 0.045090000000000005
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": 0.07,
+                "multiplicative": 2
             }
         },
         "stamina": {
@@ -38,6 +40,9 @@
             "level_increase": {
                 "wild": 100,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,14 +59,17 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.091,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.365
             }
         },
         "torpidity": {
@@ -83,9 +91,20 @@
     },
     "saddle": null,
     "rider_weaponry": false,
-    "drag_weight": 10,
-    "cloneable": false,
-    "entity_id": "Fjordhawk_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "egg": {
+        "name": "Fjordhawk Egg",
+        "incubation": {
+            "range": "29 - 32 °C / 84 - 90 °F Incubator: 31 °C / 88 °F",
+            "incubation_range": "29 - 32 °C / 84 - 90 °F Incubator: 31 °C / 88 °F",
+            "incubation_time": "1h 39m 59.52s"
+        },
+        "baby_time": "4h 37m 46.667s",
+        "juvenile_time": "18h 31m 6.667s",
+        "adolescent_time": "23h 8m 53.333s",
+        "total_maturation": "1d 22h 17m 46.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": null,
+    "cloneable": true,
+    "entity_id": "Fjordhawk_Character_BP_C"
 }

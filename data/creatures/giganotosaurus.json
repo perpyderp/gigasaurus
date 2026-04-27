@@ -1,19 +1,20 @@
 {
     "name": "Giganotosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Giganotosaurus furiosa",
         "time": "Late Cretaceous",
         "diet": "Carnivore",
         "temperament": "Angry",
         "wild": "Giganotosaurus furiosa is an enormous predator, larger even than the Tyrannosaurus or Spinosaurus. Getting cornered or run down by a Giganotosaurus can mean certain death for nearly any creature! Fighting a Giganotosaurus directly is never a good idea, as its rage rapidly grows with every hit it takes. With this rage, it builds increasing reserves of energy to use, making its iron-jawed bites progressively more deadly and enhancing its stamina. Add to this the fact that its huge body also enables it to take a tremendous amount of punishment, and you have a creature that is generally better avoided or outsmarted than attacked head-on.",
-        "domesticated": "Taming Giganotosaurus is a dangerous prospect. Its rage reaction, even when tamed, can sometimes cause it to briefly turn on members of its own tribe. Indeed it may even throw off its rider if it has been sufficiently angered! And yet, the sheer size and immense power that the Giganotosaurus possesses means that some factions endeavor to tame it as a fear-inducing \"Capital\" beast of war, even at great risk!"
+        "domesticated": "Taming Giganotosaurus is a dangerous prospect. Its rage reaction, even when tamed, can sometimes cause it to briefly turn on members of its own tribe. Indeed it may even throw off its rider if it has been sufficiently angered! And yet, the sheer size and immense power that the Giganotosaurus possesses means that some factions endeavor to tame it as a fear-inducing “Capital” beast of war, even at great risk!"
     },
     "base_stats_growth": {
         "health": {
             "base": 80000,
             "level_increase": {
                 "wild": 40,
-                "tamed": 0.04
+                "tamed": 0.0004
             },
             "taming_bonus": {
                 "additive": -63000
@@ -54,22 +55,20 @@
                 "tamed": 0.0085
             },
             "taming_bonus": {
-                "additive": -0.8,
+                "additive": -80,
                 "multiplicative": 0.8
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.0031
             }
         },
         "torpidity": {
             "base": 10000,
             "level_increase": {
-                "wild": 600,
-                "tamed": null
+                "wild": 600
             }
         }
     },
@@ -78,11 +77,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Exceptional"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Giganotosaurus Saddle",
+            "name": "Giganotosaurus Saddle (Level 96)",
             "engram_level": 96
         }
     ],
@@ -90,8 +89,8 @@
     "egg": {
         "name": "Giganotosaurus Egg",
         "incubation": {
-            "range": "43 - 44 °C / 109 - 111 °F",
-            "incubation_range": "44 °C / 111 °F",
+            "range": "43 - 44 °C / 109 - 111 °F Egg Incubator: 44 °C / 111 °F",
+            "incubation_range": "43 - 44 °C / 109 - 111 °F Egg Incubator: 44 °C / 111 °F",
             "incubation_time": "2d 1h 59m 45.609s"
         },
         "baby_time": "1d 23m 54.87s",
@@ -101,7 +100,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 950,
-    "cloneable": true,
-    "entity_id": "Gigant_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Gigant_Character_BP_C"
 }

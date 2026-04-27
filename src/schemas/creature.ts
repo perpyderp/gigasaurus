@@ -24,6 +24,21 @@ const SaddleEntry = z.object({
 export const CreatureSchema = z.object({
   name: z.string(),
   category: z.enum(['dinosaur', 'fantasy', 'bird', 'fish', 'invertebrate', 'mammal', 'reptile', 'other']),
+  class: z.string().optional(),
+  diet: z.enum([
+    "Herbivore",
+    "Carnivore",
+    "Bottom Feeder",
+    "Omnivore",
+    "Cnidaria",
+    "Carrion-Feeder",
+    "Unknown",
+    "Piscivore",
+    "Sanguinivore",
+    "Soft-Bodied Prey",
+    "Flame Eater",
+    "Insectivore"
+  ]).optional(),
   dossier: z
     .object({
       species: z.string(),

@@ -37,7 +37,7 @@ export const ArkCreatureStatsSchema = z.object({
 // ─── StoredCreature — shape persisted in IndexedDB ───────────────────────────
 
 export const StoredCreatureSchema = z.object({
-  /** Unique key: `${dinoId1}_${dinoId2}` */
+  /** ARK 64-bit combined ID: (DinoID1 × 2^32 + DinoID2) as decimal string */
   id: z.string(),
   dinoId1: z.number(),
   dinoId2: z.number(),
@@ -47,6 +47,7 @@ export const StoredCreatureSchema = z.object({
   name: z.string(),
   isFemale: z.boolean(),
   isNeutered: z.boolean(),
+  tribe: z.string(),
   tamer: z.string(),
   imprinter: z.string(),
   babyAge: z.number(),
@@ -62,6 +63,12 @@ export const StoredCreatureSchema = z.object({
   apiSlug: z.string().nullable(),
   /** Raw .ini text, kept for re-parsing after API updates */
   rawIni: z.string(),
+  /** Filename of the .ini file this creature was imported from (browser File.name) */
+  importFilename: z.string().nullable(),
+  /** ARK ID of manually-assigned father (combined 64-bit decimal string) */
+  manualParentMaleId: z.string().nullable(),
+  /** ARK ID of manually-assigned mother (combined 64-bit decimal string) */
+  manualParentFemaleId: z.string().nullable(),
   importedAt: z.number(),
   updatedAt: z.number(),
 })

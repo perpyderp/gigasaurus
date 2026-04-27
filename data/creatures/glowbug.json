@@ -1,0 +1,60 @@
+{
+    "name": "Glowbug",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Lampyridae sublimis",
+        "time": "Miocene",
+        "diet": "Unknown",
+        "temperament": "Passive",
+        "wild": "The Light Bug is believed to be a descendant of the Lampyridae insect family. Typically, an insect with its characteristics will flourish in areas with no known natural predators. However, I believe the Light Bug population is moderated by the amount of creatures that vie for its charged light source. Despite being the source of a prized resource, many tribes believe the Light Bug to be sacred and admire it for its illuminance and elegant patterns.",
+        "domesticated": "Domesticating a Light bug would be a complete waste of time. It is not known to have any useful utility or function. I imagine you could save on fuel by using them to light a settlement."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 75,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "stamina": {
+            "base": null
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1
+            }
+        },
+        "melee": {
+            "base": null
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 30,
+    "cloneable": false,
+    "entity_id": "Lightbug_Character_BaseBP_C"
+}

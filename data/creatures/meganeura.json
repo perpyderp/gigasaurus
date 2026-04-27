@@ -1,0 +1,69 @@
+{
+    "name": "Meganeura",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Meganeura quatpenna",
+        "time": "Late Carboniferous",
+        "diet": "Carnivore",
+        "temperament": "Reactive",
+        "wild": "Meganeura quatpenna is an especially large species of dragonfly. Actually, it is a type of griffinfly, an extinct species of invertebrate that looked similar to dragonflies. Like most griffinflies, Meganeura is carnivorous, but it is typically not aggressive towards humans unless provoked or challenged for food. It lives primarily in the wetter, heavily wooded areas, such as the jungles. Meganeura is a natural predator of most of the smaller insects on the island. Though not often aggressive, Meganeura will not turn down a free meal. They quickly appear in large numbers to scavenge off the victims of Pulmonoscorpius, rendered unconscious and unable to defend themselves. Of course the insects do have to avoid the Pulmonoscorpius itself. I have noticed it is unwise to disturb a flock of feeding Meganeura.",
+        "domesticated": "The size of the insects on the island confounds me. The way these creatures diffuse oxygen should limit their size but Meganeura (and other bugs) seem to be able to advance beyond this restraint. If there is more oxygen in the air this could explain Meganeura's growth."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 45,
+            "level_increase": {
+                "wild": 9
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 30,
+    "cloneable": false,
+    "entity_id": "Dragonfly_Character_BP_C"
+}

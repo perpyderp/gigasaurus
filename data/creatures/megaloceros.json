@@ -1,0 +1,106 @@
+{
+    "name": "Megaloceros",
+    "category": "mammal",
+    "dossier": {
+        "species": "Megaloceros latuscoronam",
+        "time": "Pliocene",
+        "diet": "Herbivore",
+        "temperament": "Skittish",
+        "wild": "Megaloceros latuscoronam is a very skittish herbivore, found mostly in the forests and mountains of the Island. Because of its large size, its fraught demeanor would be strange in any other place. But Megaloceros knows how fierce the predators of the island are, and that it is safer to flee from them than to risk its life in a fight. The antlers of Megaloceros are very large, and make for an excellent source of keratin. This, of course, makes it a valuable resource. Unfortunately, hunting Megaloceros is not easy because of their quick speed and ability to bound over most obstacles.",
+        "domesticated": "Megaloceros is jack-of-all-trades creature, and many who ride it value its versatility. It is decently powerful, and its resilience, speed, and ability to jump often come in handy. Finally, the male Megaloceros' charging horn attack tends to cause targets to “bleed,” decreasing their Health, Stamina, and Speed until healed!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 300,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 280,
+            "level_increase": {
+                "wild": 28,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 220,
+            "level_increase": {
+                "wild": 4.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 175,
+            "level_increase": {
+                "wild": 10.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Megaloceros Saddle (Level 30)",
+            "engram_level": 30
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "6h 6m 18.021s",
+        "baby_time": "7h 7m 21.025s",
+        "juvenile_time": "1d 4h 29m 24.1s",
+        "adolescent_time": "1d 11h 36m 45.125s",
+        "total_maturation": "2d 23h 13m 30.25s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 120,
+    "cloneable": false,
+    "entity_id": "Stag_Character_BP_C"
+}

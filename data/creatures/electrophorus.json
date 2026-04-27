@@ -1,22 +1,23 @@
 {
     "name": "Electrophorus",
+    "category": "fish",
     "dossier": {
         "species": "Electrophorus beluadomito",
         "time": "Holocene",
         "diet": "Carnivore",
         "temperament": "Reactive",
-        "wild": "Electrophorus beluadomito is a large electric eel that is best described as a living taser. When threatened or hunting, it releases powerful electrical discharges that stun both creatures and riders, causing mounted survivors to be thrown from their mounts. This makes it one of the most dangerous hazards in any ocean or deep lake environment.",
-        "domesticated": "Tamed Electrophorus can be commanded to unleash their electrical attacks on command, making them useful for stunning large aquatic targets to enable knockout-taming. Their electrical discharge is one of the few things that can stun creatures like the Mosasaurus. They are passively tamed using Bio Toxin and deployed into water where they act as living stun weapons."
+        "wild": "Occupying a space in the low-to-middle end of the food chain, Electrophorus beluadomito is a carnivorous swimmer that feeds mostly off of shellfish and small fish. Despite its common name, it is actually a very long Knifefish, and not an Eel. It does not provide much meat, so many predators simply leave it be. Unlike most predators, it does not use brute strength to bring down its prey, but instead releases an electrical charge around itself to knock its prey unconscious. Alone, this can take out a small creature. When attacking together, Electrophorus can even bring down the larger ocean lifeforms, and then feed as a group.",
+        "domesticated": "By far, the most common use of Electrophorus is to subdue large ocean creatures. Knocking out a Plesiosaur or other giant deep-sea leviathan can be incredibly difficult... ...thus many tribes employ small schools of Electrophorus to shock them into submission!"
     },
     "base_stats_growth": {
         "health": {
             "base": 180,
             "level_increase": {
                 "wild": 36,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": -0.2
             }
         },
         "stamina": {
@@ -48,14 +49,14 @@
             }
         },
         "melee": {
-            "base": 5,
+            "base": 35,
             "level_increase": {
-                "wild": 0.25,
+                "wild": 0.15,
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": -25,
+                "multiplicative": 0.11
             }
         },
         "movement": {
@@ -83,9 +84,20 @@
     },
     "saddle": null,
     "rider_weaponry": false,
+    "egg": {
+        "name": "Eel Egg",
+        "incubation": {
+            "range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "0 - 50 °C / 32 - 122 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 250,
-    "cloneable": true,
-    "entity_id": "Eel_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Eel_Character_BP_C"
 }

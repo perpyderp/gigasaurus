@@ -1,0 +1,90 @@
+{
+    "name": "Rhyniognatha",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Rhyniognatha antiquagenitor",
+        "time": "Early Devonian",
+        "diet": "Omnivore",
+        "temperament": "Aggressive",
+        "wild": "I swear, every new creature I come across here makes me more sure they've all had their genes tampered with. I know I'm right about this. Take this monster bug I'm calling 'Rhyniognatha antiquagenitor' -- big enough to headline a horror flick, but still light enough to fly and skate across water. Would you believe it also makes a weirdly useful, quick-hardening resin with a variety of uses? It can thicken up its shell for a defensive boost, spray hard bullet-like globs, or squirt soft globs that harden on impact to gum up incoming predators!",
+        "domesticated": "These overgrown earwigs are just what you need to level up your tribe's aerial defenses! And here's a tip: if you crush up the right Arthropleura, you'll get an enzyme that makes Rhyniognatha glue as TEK-disruptive as Dinopithecus dung. Plus this bug can glue itself to creatures or cargo and carry things around your base! That said, Rhyniognatha-raising isn't for the squeamish... Their males have a pheromone that invites egg-laying females to use them as hosts. Harvest that pheromone, and you can mark any creature for the female to lay her eggs on. The host then incubates a new generation of larvae that can reap its best traits in the process. If some poor beast gets eggs laid on it by accident, you might still be able to save it by popping it in a cryopod and freezing out the larvae."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 900,
+            "level_increase": {
+                "wild": 153,
+                "tamed": 0.0351
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 17.5,
+                "tamed": 0.06
+            }
+        },
+        "oxygen": {
+            "base": 800,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1840,
+            "level_increase": {
+                "wild": 184,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 1100,
+            "level_increase": {
+                "wild": 22,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 55,
+            "level_increase": {
+                "wild": 2.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": false,
+    "taming": null,
+    "saddle": [
+        {
+            "name": "Rhyniognatha Saddle (Level 90)",
+            "engram_level": 90
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 500,
+    "cloneable": false,
+    "entity_id": "Rhynio_Character_BP_C"
+}

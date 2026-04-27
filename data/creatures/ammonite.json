@@ -1,0 +1,66 @@
+{
+    "name": "Ammonite",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Ammonitina multiamicus",
+        "time": "Late Jurassic - Mid Cretaceous",
+        "diet": "Bottom Feeder",
+        "temperament": "Passive",
+        "wild": "Usually found in the deepest parts of the water around the island, Amonitina multiamicus has a strange relationship with the other creatures of the deep. It must do something beneficial for them since every nearby sea creature defends Ammonitina when it is attacked. What this distinct symbiosis is based on, alas, I have not yet discovered. Ammonitina has also made its way into the deeper parts of many underwater caves. Even within these caves, the creature will draw attention if assaulted, making harvesting its resource-rich shell a tricky proposition, depending on what other dangers may be lurking nearby.",
+        "domesticated": "Like many of the untameable ocean dwellers, Ammonitina still has enough utility to be a valuable hunting target. If a tribe is willing to risk the wrath of nearby would-be protectors, Ammonitina bile can be harvested from the innards of its corpse. This bile can then be worked over with other chemicals to produce powerful concoctions, the most notable being a mixture that causes creatures to become enraged and attack the source of the scent."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 165,
+            "level_increase": {
+                "wild": 33
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3
+            }
+        },
+        "melee": {
+            "base": 0,
+            "level_increase": {
+                "wild": 0
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 50,
+            "level_increase": {
+                "wild": 3
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 30,
+    "cloneable": false,
+    "entity_id": "Ammonite_Character_C"
+}

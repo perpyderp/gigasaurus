@@ -1,22 +1,24 @@
 {
     "name": "Doedicurus",
+    "category": "mammal",
     "dossier": {
         "species": "Doedicurus custosaxum",
-        "time": "Pleistocene",
+        "time": "Plestiocene – Holocene",
         "diet": "Herbivore",
         "temperament": "Docile",
-        "wild": "Doedicurus custosaxum is one of the Island's most docile herbivores. It wanders peacefully, and when threatened simply curls into its armored shell, becoming nearly impervious to attack. Only the most persistent or powerful predators can crack through that natural fortress.",
-        "domesticated": "The Doedicurus is the premier stone-harvesting mount in ARK. Its spiked tail club is extraordinarily effective at breaking apart rocks and harvesting stone, and harvested stone weighs significantly less in its inventory. It can also curl into its shell to protect its rider from damage, making it both a resource gatherer and a defensive mount in dangerous situations."
+        "wild": "Doedicurus custosaxum is one of the Island's non-aggressive herbivores, generally found in the mountains and grasslands. Large and well-armored, it has a supply of fat under its plates to keep it warm and fed in the cold. Doedicurus has adapted well to the dangers of the Island, perhaps even better than the Ankylosaurus. Doedicurus has two very different reactions to predators. Against smaller foes, it generally uses its spiked tail to inflict as much damage as possible. Against larger predators, however, it pulls its tail underneath itself to form a solid armored ball that is nearly impossible for creatures to pierce, from which it can actually \"roll\" away to relative safety!",
+        "domesticated": "Doedicurus is a highly prized work animal on the island. Its spiked tail is ideal for quickly shattering the large rocks, so Doedicurus is a very efficient quarry worker. In addition, its affinity for rocks has allowed it to carry stone at a reduced weight. In case their quarry gets raided, Doedicurus-riders have a very difficult-to-kill mount!"
     },
     "base_stats_growth": {
         "health": {
             "base": 850,
             "level_increase": {
                 "wild": 170,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": 0.07,
+                "multiplicative": 0.9
             }
         },
         "stamina": {
@@ -38,6 +40,9 @@
             "level_increase": {
                 "wild": 300,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -48,20 +53,23 @@
             }
         },
         "melee": {
-            "base": 32,
+            "base": 3216,
             "level_increase": {
                 "wild": 1.6,
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "tamed": 0.01
+                "tamed": 0.02
+            },
+            "taming_bonus": {
+                "additive": 0.6
             }
         },
         "torpidity": {
@@ -79,18 +87,24 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Regular"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Doedicurus Saddle",
+            "name": "Doedicurus Saddle (Level 34)",
             "engram_level": 34
         }
     ],
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 57m 37.143s",
+        "baby_time": "5h 47m 13.333s",
+        "juvenile_time": "23h 8m 53.331s",
+        "adolescent_time": "1d 4h 56m 6.664s",
+        "total_maturation": "2d 9h 52m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 160,
-    "cloneable": true,
-    "entity_id": "Doed_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Doed_Character_BP_C"
 }

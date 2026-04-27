@@ -1,5 +1,6 @@
 {
     "name": "Wyvern",
+    "category": "other",
     "dossier": {
         "species": "Draconis vipera",
         "time": "Unknown",
@@ -13,7 +14,7 @@
             "base": 1295,
             "level_increase": {
                 "wild": 194.25,
-                "tamed": 0.0324
+                "tamed": 0.032400000000000005
             },
             "taming_bonus": {
                 "additive": -785
@@ -54,8 +55,8 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": -0.25,
-                "multiplicative": 0.176
+                "additive": -25,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -78,18 +79,18 @@
     "rideable": true,
     "breedable": true,
     "taming": null,
-    "saddle": null,
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
     "rider_weaponry": false,
     "egg": {
-        "name": [
-            "Fire Wyvern Egg",
-            "Ice Wyvern Egg",
-            "Lightning Wyvern Egg",
-            "Poison Wyvern Egg"
-        ],
+        "name": "Fire Wyvern Egg Ice Wyvern Egg Lightning Wyvern Egg Poison Wyvern Egg",
         "incubation": {
-            "range": "80 - 90 °C / 176 - 194 °F",
-            "incubation_range": "85 °C / 185 °F",
+            "range": "80 - 90 °C / 176 - 194 °F Egg Incubator: 85 °C / 185 °F",
+            "incubation_range": "80 - 90 °C / 176 - 194 °F Egg Incubator: 85 °C / 185 °F",
             "incubation_time": "4h 59m 58.561s"
         },
         "baby_time": "9h 15m 33.331s",
@@ -98,9 +99,7 @@
         "total_maturation": "3d 20h 35m 33.313s",
         "breeding_interval": "18h - 2d"
     },
-    "reproduction": null,
     "drag_weight": 416,
-    "cloneable": true,
-    "entity_id": "Wyvern_Character_BP_Fire_C",
-    "category": "fantasy"
+    "cloneable": false,
+    "entity_id": "Wyvern_Character_BP_Base_C"
 }

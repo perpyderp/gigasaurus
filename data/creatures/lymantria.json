@@ -1,0 +1,108 @@
+{
+    "name": "Lymantria",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Lymantria sporarmis",
+        "time": "Holocene",
+        "diet": "Herbivore",
+        "temperament": "Evasive",
+        "wild": "Like its smaller relatives, Lymantria sporarmis survives by draining plants and vegetables of their nutrients. Given the desolate nature of the region, that makes its options rather limited, but fortunately its relationship with the desert's plants is symbiotic. In addition to pollinating them, the spores it releases help nourish the harsh desert plants. When attacked, the slow-moving Lymantria immediately takes to the air and flies almost straight up while releasing spores. While the spores are nutritious to most plants, they are highly poisonous to most other organisms.",
+        "domesticated": "Lymantria is occasionally used as a one man flying mount, but its ability to produce silk and spores is often considered more valuable due to its slow flight speed. Its silk can be weaved into heat-dispersing cloth, and its spores gathered for fertilizer or poison. Its saving grace as a mount is its ability to release spores mid flight, allowing it to act as a primitive bomber during sieges."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 260,
+            "level_increase": {
+                "wild": 52,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 7.5,
+                "tamed": 0.06
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 175,
+            "level_increase": {
+                "wild": 3.5,
+                "tamed": 0.03
+            }
+        },
+        "melee": {
+            "base": 18,
+            "level_increase": {
+                "wild": 0.9,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 550,
+            "level_increase": {
+                "wild": 33
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Lymantria Saddle (Level 36)",
+            "engram_level": 36
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Moth Egg",
+        "incubation": {
+            "range": "35 - 38 °C / 95 - 100 °F Egg Incubator: 37 °C / 99 °F",
+            "incubation_range": "35 - 38 °C / 95 - 100 °F Egg Incubator: 37 °C / 99 °F",
+            "incubation_time": "1h 30m 54.109s"
+        },
+        "baby_time": "3h 5m 11.111s",
+        "juvenile_time": "12h 20m 44.444s",
+        "adolescent_time": "15h 25m 55.555s",
+        "total_maturation": "1d 6h 51m 51.111s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 149,
+    "cloneable": false,
+    "entity_id": "Moth_Character_BP_C"
+}

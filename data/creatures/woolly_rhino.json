@@ -1,19 +1,20 @@
 {
     "name": "Woolly Rhino",
+    "category": "mammal",
     "dossier": {
         "species": "Coelodonta utiliserro",
-        "time": "Late Pliocene",
+        "time": "Late Pliocene - Late Pleistocene",
         "diet": "Herbivore",
         "temperament": "Friendly",
-        "wild": "Coelodonta utiliserro is a large, woolly herbivore that is surprisingly friendly unless provoked. It grazes peacefully across snow-covered plains and mountain slopes. However, when threatened or injured, it can charge at tremendous speed — building momentum that multiplies its damage up to eightfold. A charging Woolly Rhino is one of the most dangerous things on the Island.",
-        "domesticated": "The Woolly Rhino's charge attack is its defining feature as a mount. When sprinting, it builds speed and momentum that dramatically increases the damage of its horn attack. This makes it exceptional for smashing through enemies, structures, and resource nodes. Its heavy horn is particularly effective at harvesting Keratin, and its large carry weight makes it a solid transport animal in cold biomes."
+        "wild": "Coelodonta utiliserro is a friendly herbivore, common to the tundra and grassland regions of the Island. It is a large and dangerous creature, though it seems fairly trusting of the fauna around it. Once attacked, Coelodonta begins charging towards its foe. It builds up momentum as it charges, and depending on its ultimate impact speed, the results can be terrifying. With enough room to charge, it can even skewer the largest creatures in just one gore! Despite how powerful Coelodonta are, many tribes still hunt them extensively due to their unique resources. Its horns can ground into a highly arousing powder, and its thick fur can support many insulating outfits, making the Coelodonta in high demand. Even less-advanced tribes use packs to hunt them down, though at significant peril.",
+        "domesticated": "When not being hunted for its horns, Coelodonta makes an impressive beast of burden. Its ability to take on far larger opponents provided sufficient charging room, as well as its sizeable load capacity, make it a solid addition to any trader party or gathering expedition."
     },
     "base_stats_growth": {
         "health": {
             "base": 500,
             "level_increase": {
                 "wild": 100,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,13 +56,16 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "tamed": 0.015
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 1.226
             }
         },
         "torpidity": {
@@ -79,18 +83,24 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Woolly Rhino Saddle",
+            "name": "Woolly Rhino Saddle (Level 53)",
             "engram_level": 53
         }
     ],
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "3h 58m 5.714s",
+        "baby_time": "5h 47m 13.333s",
+        "juvenile_time": "23h 8m 53.333s",
+        "adolescent_time": "1d 4h 56m 6.666s",
+        "total_maturation": "2d 9h 52m 13.333s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 375,
-    "cloneable": true,
-    "entity_id": "Rhino_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Rhino_Character_BP_C"
 }

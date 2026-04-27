@@ -1,19 +1,20 @@
 {
     "name": "Manta",
+    "category": "fish",
     "dossier": {
         "species": "Manta mobula",
-        "time": "Early Oligocene",
+        "time": "Early Oligocene - Holocene",
         "diet": "Carnivore",
         "temperament": "Aggressive",
-        "wild": "Manta mobula is an aggressively territorial creature found in coastal and deep ocean waters. Despite its elegant appearance, its tail ends in an incredibly sharp barb capable of piercing thick hide and armor. It will attack survivors and tamed creatures that enter its territory without provocation.",
-        "domesticated": "A tamed Manta is a fast and capable ocean mount that can survive in both saltwater and shallower areas. It is notably immune to the electrical stunning attacks of Electrophorus, making it useful in dangerous ocean areas. While it cannot be outfitted with a saddle by default, survivors can ride it bareback at their own risk."
+        "wild": "Here is another example of a creature that seems to have evolved beyond its historical traits. Everything points to this being a saltwater ray, but Manta mobula has developed the ability to swim into the island's rivers and shallows, as well as through the open ocean. Perhaps there were originally two types of ray on the island before, but years of interbreeding combined their lineage. Normally docile, Manta mobula is a carnivore only in that it naturally consumes plankton. Fortunately, Manta mobula is usually not aggressive, unless encroached. Its tail is incredibly sharp, and can pierce through thick hide and armor with ease.",
+        "domesticated": "While not the fastest swimmer around the island, Manta mobula is among the deadliest of small ocean mounts. Tribes who value striking power over speed often keep large schools of Manta to ride. Its capability to briefly leap out of water provides it a showy tactic for avoiding combat as well. A quick jab through the heart of an unsuspecting survivor can easily take them by surprise! Thusly, many tribes use it as an escort for their slower cargo-carrying swimmers."
     },
     "base_stats_growth": {
         "health": {
             "base": 320,
             "level_increase": {
                 "wild": 16,
-                "tamed": 0.054
+                "tamed": 0.013500000000000002
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -23,21 +24,20 @@
             "base": 270,
             "level_increase": {
                 "wild": 54,
-                "tamed": 0.1
+                "tamed": 0.2
             }
         },
         "oxygen": {
-            "base": 150,
-            "level_increase": {
-                "wild": 15,
-                "tamed": 0.1
-            }
+            "base": null
         },
         "food": {
             "base": 1000,
             "level_increase": {
                 "wild": 100,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -51,17 +51,17 @@
             "base": 28,
             "level_increase": {
                 "wild": 1.4,
-                "tamed": 0.017
+                "tamed": 0.0085
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "tamed": 0.01
+                "tamed": 0.0125
             }
         },
         "torpidity": {
@@ -83,14 +83,20 @@
     },
     "saddle": [
         {
-            "name": "Manta Saddle",
+            "name": "Manta Saddle (Level 28)",
             "engram_level": 28
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 75,
-    "cloneable": true,
-    "entity_id": "Manta_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Manta_Character_BP_C"
 }

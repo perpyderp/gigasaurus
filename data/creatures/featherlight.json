@@ -1,5 +1,6 @@
 {
     "name": "Featherlight",
+    "category": "other",
     "dossier": {
         "species": "Microluminis alectryon",
         "time": "Unknown",
@@ -13,28 +14,17 @@
             "base": 115,
             "level_increase": {
                 "wild": 23,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
             }
         },
         "stamina": {
-            "base": 100,
-            "level_increase": {
-                "wild": 10,
-                "tamed": 0.1
-            }
+            "base": null
         },
         "oxygen": {
-            "base": 180,
-            "level_increase": {
-                "wild": 19.8,
-                "tamed": 0.11
-            },
-            "taming_bonus": {
-                "additive": 0.2
-            }
+            "base": null
         },
         "food": {
             "base": 450,
@@ -54,21 +44,12 @@
             }
         },
         "melee": {
-            "base": 3,
-            "level_increase": {
-                "wild": 0.195,
-                "tamed": 0.0204
-            },
-            "taming_bonus": {
-                "additive": 0.154,
-                "multiplicative": 0.22
-            }
+            "base": null
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
-                "tamed": 0.1
+                "tamed": 0.01
             },
             "taming_bonus": {
                 "additive": 1.3
@@ -77,8 +58,7 @@
         "torpidity": {
             "base": 60,
             "level_increase": {
-                "wild": 3.6,
-                "tamed": null
+                "wild": 3.6
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -97,8 +77,8 @@
     "egg": {
         "name": "Featherlight Egg",
         "incubation": {
-            "range": "29 - 32 °C / 84 - 90 °F",
-            "incubation_range": "31 °C / 88 °F",
+            "range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
             "incubation_time": "1h 39m 59.521s"
         },
         "baby_time": "4h 52m 23.859s",
@@ -107,9 +87,7 @@
         "total_maturation": "2d 43m 58.594s",
         "breeding_interval": "18h - 2d"
     },
-    "reproduction": null,
     "drag_weight": 25,
-    "cloneable": true,
-    "entity_id": "LanternBird_Character_BP_C",
-    "category": "fantasy"
+    "cloneable": false,
+    "entity_id": "LanternBird_Character_BP_C"
 }

@@ -1,19 +1,20 @@
 {
     "name": "Dinopithecus",
+    "category": "mammal",
     "dossier": {
         "species": "Dinopithecus Anedmundius",
         "time": "Pliocene-Pleistocene",
         "diet": "Omnivore",
-        "temperament": "Aggressive",
-        "wild": "Dinopithecus Anedmundius travels in large, hierarchical packs led by a dominant king. Individual members are skittish when alone, but a pack with their king present becomes ferociously aggressive. They are capable of flinging parasitic feces that disables Tek equipment — a unique and infuriating ability that has surprised many overconfident survivors.",
-        "domesticated": "The Dinopithecus is tamed by defeating its pack and passively feeding the alpha. It requires no saddle and can carry small creatures and survivors on its back. It is an agile climber capable of scaling vertical surfaces. Its pack mechanics carry over to tamed groups, providing combat bonuses when multiple Dinopithecus are nearby."
+        "temperament": "Aggressive in large groups, Skittish in small groups",
+        "wild": "I believe Dinopithecus has been changed by ARK life. This species is definitely larger than any I remember from the fossil record. And these oversized baboons show a more pack-oriented behavior than I would've expected in their kind. Whole troops will organize around an alpha, and fall apart if that alpha is slain. Though they seem to prefer a diet of fruit supplemented with the occasional bit of meat, Dinopitheci are opportunistic and will eat just about anything. They’re also excellent climbers -- I’ve seen them scramble up sheer cliff faces and leap between trees to scavenge food for their troop. Dinopitheci will bare sharp teeth and toss well-aimed handfuls of their own excrement when provoked. Their feces is what really sets this species apart -- they’ve managed to weaponize a parasite in it that disables TEK! I feel like that parasite deserves its own dossier.",
+        "domesticated": "If you can manage to tame enough Dinopitheci , you’ll soon find yourself with a small troop at your disposal. Your mini-troop will organize around the strongest of your tames, their new alpha that can then direct them at a target with a shrieked battle-cry. No need to saddle your tamed Dinopithecus to ride it -- it will make one for you using its own tail. Just hold on tight, and it will take you straight up walls and across ziplines. In battle, your Dinopithecus will fling fecal projectiles, grenades, or a combination that I like to call EBM, for Explosive Bowel Movement."
     },
     "base_stats_growth": {
         "health": {
             "base": 775,
             "level_increase": {
                 "wild": 155,
-                "tamed": 0.054
+                "tamed": 0.048600000000000004
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,7 +56,7 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -79,13 +80,24 @@
     "breedable": true,
     "taming": {
         "method": "Passive",
-        "kibble": "Exceptional"
+        "kibble": null
     },
-    "saddle": null,
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "9h 55m 14.286s",
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 300,
     "cloneable": true,
-    "entity_id": "Dinopithecus_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "entity_id": "Dinopithecus_Character_BP_C"
 }

@@ -1,10 +1,11 @@
 {
     "name": "Titanosaur",
+    "category": "dinosaur",
     "dossier": {
         "species": "Titanosaurus vagacastrum",
         "time": "Late Cretaceous",
         "diet": "Herbivore",
-        "temperament": "Passive, Unless Attacked",
+        "temperament": "Passive, Unless Approached",
         "wild": "Today I witnessed an unforgettable sight: the extremely rare Titanosaurus vagacastrum. Essentially a walking mountain, it is an absolutely enormous Sauropod which has developed armored plates of bone protrusions all over its body. Between these plates and its unparalleled size, Titanosaurus is extremely difficult to put down. In addition, Titanosaurus seems outright immune to any sort of narcotic effects. They often inadvertently crush nearby creatures underfoot with every step they take. While most Sauropods ignore non-hostile creatures, Titanosaurs take issue with creatures invading its personal space. This is probably because they aggressively feed off any and all plants they can find. Titanosaurus eats constantly, which certainly helps recover health quickly, even after fighting off numerous carnivores such as Giganotosaurus.",
         "domesticated": "If ever a creature were too big, it would be Titanosaurus. You'll hardly see a Titanosaurus with just a saddle and a rider: its immense size can effectively carry a fortress, defensive emplacements, along with a small zoo. Although the Titanosaur can be domesticated, it's believed the process causes the creature to slowly starve to death from its subsequent refusal to eat."
     },
@@ -58,15 +59,13 @@
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0
             }
         },
         "torpidity": {
             "base": 25000,
             "level_increase": {
-                "wild": 1500,
-                "tamed": null
+                "wild": 1500
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -82,14 +81,13 @@
     },
     "saddle": [
         {
-            "name": "Titanosaur Platform Saddle",
+            "name": "Titanosaur Platform Saddle (Level 100)",
             "engram_level": 100
         }
     ],
     "rider_weaponry": false,
     "egg": null,
     "drag_weight": 3000,
-    "cloneable": true,
-    "entity_id": "Titanosaur_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Titanosaur_Character_BP_C"
 }

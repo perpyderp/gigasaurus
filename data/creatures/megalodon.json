@@ -1,22 +1,23 @@
 {
     "name": "Megalodon",
+    "category": "fish",
     "dossier": {
         "species": "Carcharodon ultramegalodon",
         "time": "Miocene-Pliocene",
         "diet": "Carnivore",
         "temperament": "Aggressive",
-        "wild": "Carcharodon ultramegalodon is one of the most dangerous predators in the ocean. It aggressively attacks almost anything that enters its territory, including large marine creatures and swimmers. Its enormous jaws can crush through most materials, and its speed in water makes it nearly impossible to outswim.",
-        "domesticated": "A tamed Megalodon is a powerful ocean mount. It can maintain high speeds in water and dispatch most aquatic threats efficiently. Tribes use them to patrol coastlines and escort underwater operations. While not the most maneuverable aquatic mount, its raw power and taming accessibility make it a common choice for ocean exploration."
+        "wild": "Were it not restricted to the waters, Carcharodon ultramegalodon would be one of the most dangerous creatures on the island. As powerful and dangerous as the Tyrannosaurus is on land, Megalodon is near its equal in the water. In addition, it has a speed advantage over any non-aquatic creature when submerged. Megalodons need large quantities of food to sustain themselves, so they attack most creatures immediately on sight. Smaller fish are the sole exception I've seen; I believe this is because they cost more energy for Megalodons to catch than the predator would gain.",
+        "domesticated": "Having access to the resources and treasures hidden deep within the ocean is near impossible without a domesticated sea creature. The Megalodon, though difficult to domesticate, proves to be very useful when exploring the deep sea. It's not the most efficient swimmer but it should be able to protect your cargo should you find yourself in a hostile encounter."
     },
     "base_stats_growth": {
         "health": {
             "base": 600,
             "level_increase": {
                 "wild": 120,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": 0.042
             }
         },
         "stamina": {
@@ -29,8 +30,7 @@
         "oxygen": {
             "base": 150,
             "level_increase": {
-                "wild": 15,
-                "tamed": 0.1
+                "wild": 15
             }
         },
         "food": {
@@ -38,6 +38,9 @@
             "level_increase": {
                 "wild": 200,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,8 +57,8 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -79,22 +82,24 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Megalodon Saddle",
+            "name": "Megalodon Saddle (Level 47) Megalodon Tek Saddle",
             "engram_level": 47
-        },
-        {
-            "name": "Megalodon Tek Saddle",
-            "engram_level": null
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "6h 6m 18.022s",
+        "baby_time": "7h 7m 21.026s",
+        "juvenile_time": "1d 4h 29m 24.102s",
+        "adolescent_time": "1d 11h 36m 45.128s",
+        "total_maturation": "2d 23h 13m 30.256s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 250,
-    "cloneable": true,
-    "entity_id": "Megalodon_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Megalodon_Character_BP_C"
 }

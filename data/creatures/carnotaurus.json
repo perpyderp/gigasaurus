@@ -1,5 +1,6 @@
 {
     "name": "Carnotaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Carnotaurus pressor",
         "time": "Late Cretaceous",
@@ -13,10 +14,10 @@
             "base": 420,
             "level_increase": {
                 "wild": 84,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
-                "additive": 0.7
+                "additive": 0.07
             }
         },
         "stamina": {
@@ -38,6 +39,9 @@
             "level_increase": {
                 "wild": 200,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -55,13 +59,12 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.0125
             },
             "taming_bonus": {
@@ -71,8 +74,7 @@
         "torpidity": {
             "base": 350,
             "level_increase": {
-                "wild": 21,
-                "tamed": null
+                "wild": 21
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -84,11 +86,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Regular"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Carno Saddle",
+            "name": "Carno Saddle (Level 46)",
             "engram_level": 46
         }
     ],
@@ -96,8 +98,8 @@
     "egg": {
         "name": "Carno Egg",
         "incubation": {
-            "range": "26 - 32 °C / 79 - 90 °F",
-            "incubation_range": "29 °C / 84 °F",
+            "range": "26 - 32 °C / 79 - 90 °F Egg Incubator: 29 °C / 84 °F",
+            "incubation_range": "26 - 32 °C / 79 - 90 °F Egg Incubator: 29 °C / 84 °F",
             "incubation_time": "1h 39m 59.521s"
         },
         "baby_time": "4h 37m 46.666s",
@@ -107,7 +109,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 250,
-    "cloneable": true,
-    "entity_id": "Carno_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Carno_Character_BP_C"
 }

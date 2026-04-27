@@ -1,5 +1,6 @@
 {
     "name": "Baryonyx",
+    "category": "dinosaur",
     "dossier": {
         "species": "Baryonyx aquafulgur",
         "time": "Early Cretaceous",
@@ -13,7 +14,7 @@
             "base": 440,
             "level_increase": {
                 "wild": 88,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -29,8 +30,7 @@
         "oxygen": {
             "base": 225,
             "level_increase": {
-                "wild": 22.5,
-                "tamed": null
+                "wild": 22.5
             }
         },
         "food": {
@@ -48,20 +48,19 @@
             }
         },
         "melee": {
-            "base": 35,
+            "base": 3525,
             "level_increase": {
-                "wild": 1.75,
+                "wild": 1.751,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             },
             "taming_bonus": {
@@ -71,8 +70,7 @@
         "torpidity": {
             "base": 400,
             "level_increase": {
-                "wild": 24,
-                "tamed": null
+                "wild": 24
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -84,20 +82,20 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Simple"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Baryonyx Saddle",
+            "name": "Baryonyx Saddle (Level 49)",
             "engram_level": 49
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
         "name": "Baryonyx Egg",
         "incubation": {
-            "range": "29 - 35 °C / 84 - 95 °F",
-            "incubation_range": "32 °C / 90 °F",
+            "range": "29 - 35 °C / 84 - 95 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "29 - 35 °C / 84 - 95 °F Egg Incubator: 32 °C / 90 °F",
             "incubation_time": "1h 59m 59.424s"
         },
         "baby_time": "4h 37m 46.666s",
@@ -107,7 +105,6 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 210,
-    "cloneable": true,
-    "entity_id": "Baryonyx_Character_BP_C",
-    "category": "dinosaur"
+    "cloneable": false,
+    "entity_id": "Baryonyx_Character_BP_C"
 }

@@ -1,0 +1,103 @@
+{
+    "name": "Vulture",
+    "category": "bird",
+    "dossier": {
+        "species": "Torgos arcam",
+        "time": "Early Pleistocene",
+        "diet": "Carrion-Feeder",
+        "temperament": "Docile",
+        "wild": "Torgos arcam appears to be a relative of Torgos tracheliotos and Torgos negevensis – commonly called lappet-faced vultures – which are native to the sands of the Sahara, Sahel, and Negev deserts. Like them, it is a carrion bird that feeds on the decaying corpses of other animals, and is only aggressive when defending its meal. As such, survivors should take note when they see groups of Torgos arcam circling above. It means that a wounded creature or a bloody battle may be somewhere below.",
+        "domesticated": "Despite its impressive wingspan, Torgos arcam is not suitable as a pack animal, and is surprisingly light. Some survivors have even been known to keep a tame Torgos arcam perched on their shoulder. Interestingly, Torgos arcam is capable of storing raw meat in a separate stomach where it will decay at a slower rate. Tribes could, in theory, utilize this feature to preserve meat for recipes."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 125,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 23,
+            "level_increase": {
+                "wild": 1.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Vulture Egg",
+        "incubation": {
+            "range": "35 - 38 °C / 95 - 100 °F Egg Incubator: 37 °C / 99 °F",
+            "incubation_range": "35 - 38 °C / 95 - 100 °F Egg Incubator: 37 °C / 99 °F",
+            "incubation_time": "1h 21m 4.476s"
+        },
+        "baby_time": "2h 30m 9.009s",
+        "juvenile_time": "10h 36.034s",
+        "adolescent_time": "12h 30m 45.043s",
+        "total_maturation": "1d 1h 1m 30.086s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 70,
+    "cloneable": false,
+    "entity_id": "Vulture_Character_BP_C"
+}

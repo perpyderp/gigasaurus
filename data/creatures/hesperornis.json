@@ -1,19 +1,20 @@
 {
     "name": "Hesperornis",
+    "category": "bird",
     "dossier": {
         "species": "Hesperornis avenatantes",
         "time": "Late Cretaceous",
         "diet": "Piscivore",
         "temperament": "Passive",
-        "wild": "Hesperornis avenatantes is a primitive diving bird that is passive toward survivors and other creatures. It dives beneath the water's surface to catch fish and is an excellent swimmer despite being flightless. While its beak is used to catch fish, it poses no threat to survivors unless directly cornered.",
-        "domesticated": "The Hesperornis is kept for its unique ability to produce Golden Eggs when it consumes fish — the higher quality the fish, the better the egg quality. These golden eggs are used for crafting special recipes and kibble. It is a shoulder-mountable pet that can also dive and retrieve fish from the water, making it a useful passive companion near ocean areas."
+        "wild": "Possessing the appearance of a half-duck/half-dinosaur, Hesperornis is a medium-sized, fish-eating bird, common in the rivers and lakes of the island. It would be about two-thirds the height of a human if it stood tall, but it rarely does. Hesperornis spends most of its time gliding along the surface of the water, where it is much more maneuverable. Hesperornis is barely a threat to any land-dwelling creature, as its legs are too short for it to move around effectively, but it is surprisingly fast in the water. It can easily hunt down fish and other small water-dwelling creatures.",
+        "domesticated": "Not particularly useful for hunting, and not being affectionate, Hesperornis is primarily kept for the eggs it produces after consuming much fish. When rendered correctly, the eggs separate into two useful substances. One is a protein substance that is high in calories, and the other is an oily liquid that is effectively the same as the Oil found in the ocean!"
     },
     "base_stats_growth": {
         "health": {
             "base": 95,
             "level_increase": {
                 "wild": 19,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -27,17 +28,16 @@
             }
         },
         "oxygen": {
-            "base": 150,
-            "level_increase": {
-                "wild": 15,
-                "tamed": 0.1
-            }
+            "base": null
         },
         "food": {
             "base": 900,
             "level_increase": {
                 "wild": 90,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -48,14 +48,14 @@
             }
         },
         "melee": {
-            "base": 25,
+            "base": 125,
             "level_increase": {
-                "wild": 1.25,
+                "wild": 0.051,
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -83,9 +83,20 @@
     },
     "saddle": null,
     "rider_weaponry": false,
+    "egg": {
+        "name": "Hesperornis Egg Golden Hesperornis Egg",
+        "incubation": {
+            "range": "22 - 30 °C / 72 - 86 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_range": "22 - 30 °C / 72 - 86 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_time": "1h 30m 54.109s"
+        },
+        "baby_time": "2h 48m 21.01s",
+        "juvenile_time": "11h 13m 24.041s",
+        "adolescent_time": "14h 1m 45.051s",
+        "total_maturation": "1d 4h 3m 30.102s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 120,
-    "cloneable": true,
-    "entity_id": "Hesperornis_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Hesperornis_Character_BP_C"
 }

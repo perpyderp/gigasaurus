@@ -1,19 +1,20 @@
 {
     "name": "Ovis",
+    "category": "mammal",
     "dossier": {
         "species": "Ovis arcam",
         "time": "Cenozoic",
         "diet": "Herbivore",
         "temperament": "Stupid",
-        "wild": "Ovis arcam is perhaps the most oblivious creature on the Island. It wanders without purpose or apparent awareness of its surroundings, seemingly incapable of recognizing danger until it is far too late. It is completely non-aggressive and will not even attempt to flee from predators.",
-        "domesticated": "The Ovis is kept primarily for its Wool, which can be harvested with scissors regularly, and for Raw Mutton obtained by slaughtering it. Raw Mutton is one of the best taming foods for carnivores, making Ovis farms a common sight. They are passive tamed with a single Sweet Vegetable Cake, making them quick and easy to acquire."
+        "wild": "Since arriving on the Island, I have encountered dozens of fascinating creatures whose behavior has never been studied or documented...and also sheep. Granted, Ovis arcam is quite different from the modern domesticated sheep - and even from wild sheep species such as Ovis orientalis. The unique markings on its face give it a striking appearance, and the males' horns possess a unique shape that is unlike any other species in the Ovis genus. As one might expect, Ovis stands little chance against this Island's many predators. Like the Dodo, its continued survival in the face of these challenges is a mystery.",
+        "domesticated": "Some survivors have found herds of Ovis to be useful in farm life. Their wool can be repeatedly safely shorn with the proper tools, and cooked lamb chops are a popular dish among some tribes, as is their hyper-nutritious mutton. Every now and then, a survivor with a sense of humor will attempt to utilize Ovis as a mount, although the joke becomes significantly less funny once their slow Ovis is run-down by a pack of Raptors. One tribe has grown particularly attached to Ovis, perhaps uncomfortably so. I don't know the tribe's actual name, but I refer to them as \"Sheep Lovers.\""
     },
     "base_stats_growth": {
         "health": {
             "base": 100,
             "level_increase": {
                 "wild": 20,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -38,6 +39,9 @@
             "level_increase": {
                 "wild": 120,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,8 +58,8 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -81,11 +85,22 @@
         "method": "Passive",
         "kibble": null
     },
-    "saddle": null,
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 10m 37.593s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 85,
-    "cloneable": true,
-    "entity_id": "Sheep_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Sheep_Character_BP_C"
 }

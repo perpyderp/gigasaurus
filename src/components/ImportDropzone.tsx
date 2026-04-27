@@ -6,6 +6,7 @@ import { parseArkExport } from '@/lib/ark-parser'
 import { resolveSlug, deriveDisplayName } from '@/lib/dino-map'
 import { upsertCreature } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
+import { combineArkId } from '@/lib/ark-id'
 import {
   FileUpload,
   FileUploadDropzone,
@@ -51,8 +52,10 @@ export function ImportDropzone({ onImported }: ImportDropzoneProps) {
           const name = deriveDisplayName(parsed.tamedName, parsed.dinoNameTag)
           const now = Date.now()
 
+          const arkId = combineArkId(parsed.dinoId1, parsed.dinoId2)
+
           const creature: StoredCreature = {
-            id: parsed.id,
+            id: arkId,
             dinoId1: parsed.dinoId1,
             dinoId2: parsed.dinoId2,
             dinoClass: parsed.dinoClass,
@@ -60,6 +63,7 @@ export function ImportDropzone({ onImported }: ImportDropzoneProps) {
             name,
             isFemale: parsed.isFemale,
             isNeutered: parsed.isNeutered,
+            tribe: parsed.tribe,
             tamer: parsed.tamer,
             imprinter: parsed.imprinter,
             babyAge: parsed.babyAge,
@@ -73,13 +77,21 @@ export function ImportDropzone({ onImported }: ImportDropzoneProps) {
             ancestorsMale: parsed.ancestorsMale,
             apiSlug,
             rawIni: text,
+            importFilename: file.name,
+            manualParentMaleId: null,
+            manualParentFemaleId: null,
             importedAt: now,
             updatedAt: now,
           }
 
           const { getCreature } = await import('@/lib/db')
           const existing = await getCreature(creature.id)
-          if (existing) creature.importedAt = existing.importedAt
+          if (existing) {
+            creature.importedAt = existing.importedAt
+            // Preserve manually-set parents on re-import
+            creature.manualParentMaleId = existing.manualParentMaleId
+            creature.manualParentFemaleId = existing.manualParentFemaleId
+          }
 
           await upsertCreature(creature)
           imported.push(creature)

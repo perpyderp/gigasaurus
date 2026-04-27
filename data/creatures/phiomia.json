@@ -1,19 +1,20 @@
 {
     "name": "Phiomia",
+    "category": "mammal",
     "dossier": {
         "species": "Phiomia ignavus",
-        "time": "Late Eocene",
+        "time": "Late Eocene - Early Oligocene",
         "diet": "Herbivore",
         "temperament": "Skittish",
-        "wild": "Phiomia ignavus is a skittish herbivore resembling a primitive elephant or tapir that flees from most threats. It wanders forests and plains in small groups, using its short trunk to root up vegetation. Despite its size, it relies entirely on flight for survival rather than any defensive capability.",
-        "domesticated": "The Phiomia is one of the earliest mounts available to new survivors. While not powerful in combat, it can carry a rider and gather berries. Its primary use is as a feces producer — when fed Stimberries, it generates prodigious amounts of dung that can be converted to fertilizer. It also serves as an early introduction to mounted combat."
+        "wild": "Phiomia ignavus is another of the Island's generally docile herd animals. They are small enough that almost any predator can bring them down but large enough to provide plenty of meat. Were it not for the protection of the herd and their instinct to run from any predator, these would almost certainly be hunted to extinction. Phiomia's tusks and trunk make it especially suited to scavenging plantlife from the ground. It uses its tusks to dig up loose plantlife, then uses its stubby trunk to scoop the foliage into its mouth. Adult Phiomia often dig up food for their young, and watching a baby Phiomia attempt to use its trunk can be quite amusing.",
+        "domesticated": "While it is completely possible to ride a Phiomia around, they are a meager choice. They work very well, however, as pack-mules. If you feed the Phiomia a stimberry, it serves as a laxative in the creature's digestive system. Knowing this, tribal communities often keep a herd of these as livestock to produce mass quantities of fertilizer."
     },
     "base_stats_growth": {
         "health": {
             "base": 300,
             "level_increase": {
                 "wild": 60,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -38,6 +39,9 @@
             "level_increase": {
                 "wild": 300,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,14 +58,17 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.35
             }
         },
         "torpidity": {
@@ -79,18 +86,24 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Basic"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Phiomia Saddle",
+            "name": "Phiomia Saddle (Level 5)",
             "engram_level": 5
         }
     ],
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "9h 55m 14.285s",
+        "baby_time": "4h 52m 23.86s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.298s",
+        "total_maturation": "2d 43m 58.596s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 120,
-    "cloneable": true,
-    "entity_id": "Phiomia_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Phiomia_Character_BP_C"
 }

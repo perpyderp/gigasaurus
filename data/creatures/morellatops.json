@@ -1,5 +1,6 @@
 {
-    "name": "Managarmr",
+    "name": "Morellatops",
+    "category": "other",
     "dossier": {
         "species": "Morellatops dromedarius",
         "time": "Early Cretaceous",
@@ -13,7 +14,7 @@
             "base": 400,
             "level_increase": {
                 "wild": 80,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -23,7 +24,7 @@
             "base": 220,
             "level_increase": {
                 "wild": 22,
-                "tamed": 0.06
+                "tamed": 0.1
             }
         },
         "oxygen": {
@@ -55,16 +56,16 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
-            "base": 150,
+            "base": 100,
             "level_increase": {
                 "tamed": 0.01
             },
             "taming_bonus": {
-                "additive": 0.964
+                "additive": 0.9640000000000001
             }
         },
         "torpidity": {
@@ -82,20 +83,20 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Simple"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Morellatops Saddle",
+            "name": "Morellatops Saddle (Level 11)",
             "engram_level": 11
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
         "name": "Morellatops Egg",
         "incubation": {
-            "range": "22 - 28 °C / 72 - 82 °F",
-            "incubation_range": "25 °C / 77 °F",
+            "range": "22 - 28 °C / 72 - 82 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "22 - 28 °C / 72 - 82 °F Egg Incubator: 25 °C / 77 °F",
             "incubation_time": "2h 29m 59.28s"
         },
         "baby_time": "3h 5m 11.111s",
@@ -104,9 +105,7 @@
         "total_maturation": "1d 6h 51m 51.109s",
         "breeding_interval": "18h - 2d"
     },
-    "reproduction": null,
     "drag_weight": 300,
-    "cloneable": true,
-    "entity_id": "camelsaurus_Character_BP_C",
-    "category": "fantasy"
+    "cloneable": false,
+    "entity_id": "camelsaurus_Character_BP_C"
 }

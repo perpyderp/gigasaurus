@@ -1,0 +1,96 @@
+{
+    "name": "Malwyn",
+    "category": "other",
+    "dossier": {
+        "species": "Vulpes daemonicus",
+        "time": "Necrocene",
+        "diet": "Omnivore",
+        "temperament": "Coldly Tenacious",
+        "wild": "It took several decades longer then expected, but at last we have achieved a breakthrough in the artificial hyper-evolution of our Veilwyn familiars into more imposing creatures. Red Element will fuse with Vulpite to create a new amalgam we call Sanguine Vulpite. And introducing Sanguine Vulpite into the system of a young Veilwyn will result in a most fearsome and regal mount. Let's call it a Malwyn.",
+        "domesticated": "Here is a creature with a single-minded focus on threat elimination. Unlike its more benevolent cousin, the Solwyn, a Malwyn has no interest in safe exploration or play. It will instead identify prey, focus all its terrible malice onto that unlucky target, and attack. With its enhanced teleabsorptive abilities, a Malwyn can slow regenerative processes, induce sluggishness, and create frailty where none existed before. While its climbing prowess is a disappointment compared to the Solwyn breed, a Malwyn will more readily use its teleportational ability to pounce on its prey across great distances. Some of my thralls have complained about the prolonged deactivation period of the Malwyn's portals. Those who do are unworthy of one of these austere mounts. The ruthless efficiency of this majestic creature makes it the ideal beast to lead a hunting party."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 850,
+            "level_increase": {
+                "wild": 85,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 425,
+            "level_increase": {
+                "wild": 8.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 60100,
+            "level_increase": {
+                "wild": 3050,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.15
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0
+            }
+        },
+        "torpidity": {
+            "base": 1100,
+            "level_increase": {
+                "wild": 66
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": false,
+    "taming": null,
+    "saddle": [
+        {
+            "name": "Malwyn Saddle (Level 65)",
+            "engram_level": 65
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": null,
+    "cloneable": false,
+    "entity_id": "DevilFox_Character_BP_C"
+}

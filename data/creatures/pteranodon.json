@@ -1,29 +1,31 @@
 {
     "name": "Pteranodon",
+    "category": "reptile",
     "dossier": {
         "species": "Pteranodon wyvernus",
         "time": "Late Cretaceous",
         "diet": "Carnivore",
         "temperament": "Skittish",
-        "wild": "Pteranodon wyvernus is a medium-sized, carnivorous reptile found soaring over beaches and oceans. It is generally skittish and will flee from danger rather than fight, snatching fish and small prey with its toothless beak. Despite its fearsome appearance, it poses little threat to a well-armed survivor.",
-        "domesticated": "The Pteranodon is often the first flying mount a survivor will tame. While its carrying capacity is limited and it cannot sustain prolonged flight, its agility and speed make it a nimble scouting mount. It cannot grab other creatures or carry heavy loads, but it is perfect for quick travel across the island."
+        "wild": "Pteranodon wyvernus is a large pterosaur, capable of flying more quickly than any creature I have witnessed on this Island thus far. It seems to have relatively poor stamina in comparison to its quick speed, however, making frequent pit stops on the beaches before taking off again. While other humans I've seen on the Island still insist on calling it a Pterodactyl, this is inaccurate. Pteranodon wyvernus's poor fighting and defensive skills mean they are likely to scavenge any number of dead animals rather than engage in dangerous combat with other creatures. They also flee at the slightest sign of trouble. Because of this, they are one of the most common creatures to be found darting across the Island's skies.",
+        "domesticated": "Pteranodons seem to be among most popular flying companions from what I have witnessed, possibly because they are relatively easy to tame with a slingshot or bow. Mounting a Pteranodon must be among the fastest and safest ways to get around the Island, but it doesn't provide any measure of secrecy in comparison to travel on land through the dense foliage."
     },
     "base_stats_growth": {
         "health": {
             "base": 210,
             "level_increase": {
                 "wild": 42,
-                "tamed": 0.054
+                "tamed": 0.03
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": 0.07,
+                "multiplicative": 0.9
             }
         },
         "stamina": {
             "base": 150,
             "level_increase": {
                 "wild": 7.5,
-                "tamed": 0.1
+                "tamed": 0.04
             }
         },
         "oxygen": {
@@ -38,30 +40,36 @@
             "level_increase": {
                 "wild": 120,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
             "base": 120,
             "level_increase": {
                 "wild": 2.4,
-                "tamed": 0.04
+                "tamed": 0.03
             }
         },
         "melee": {
-            "base": 12,
+            "base": 1850,
             "level_increase": {
-                "wild": 0.6,
-                "tamed": 0.017
+                "wild": 0.92,
+                "tamed": 0.01275
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.091,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "tamed": 0.01
+                "tamed": 0
+            },
+            "taming_bonus": {
+                "additive": 0.35
             }
         },
         "torpidity": {
@@ -79,18 +87,29 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Regular"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Pteranodon Saddle",
+            "name": "Pteranodon Saddle (Level 38)",
             "engram_level": 38
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Pteranodon Egg",
+        "incubation": {
+            "range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 149,
-    "cloneable": true,
-    "entity_id": "Ptero_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Ptero_Character_BP_C"
 }

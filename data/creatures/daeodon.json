@@ -1,19 +1,20 @@
 {
     "name": "Daeodon",
+    "category": "mammal",
     "dossier": {
         "species": "Daeodon comedentis",
         "time": "Late Oligocene",
         "diet": "Carnivore",
         "temperament": "Territorial",
-        "wild": "Daeodon comedentis is a massive prehistoric pig-like creature with an outsized appetite and a foul temper. It is aggressively territorial and will charge anything that wanders too close. Its jaws are powerful enough to crush bone, and its sheer size makes it a formidable threat even to large carnivores.",
-        "domesticated": "The Daeodon's most remarkable ability is its passive healing — it can rapidly regenerate its own health and project a healing aura that restores the health of nearby allied creatures at the cost of its own food supply. This makes it an invaluable support mount in difficult boss fights and raids. Tribes frequently bring Daeodon to boss arenas as dedicated healers."
+        "wild": "Daeodon comedentis is the largest known species of Entelodont, an omnivorous family of ancient mammals that are sometimes referred to as \"Hell Pigs.\" Even though Daeodon has as many similarities to modern Hippopotamidae as it does to Suina, I've found that to be a suitable nickname. Daeodon is as mean as it looks, and any survivor who wanders too close will find that out the hard way. As an omnivore with a voracious appetite, Daeodon scavenges, forages, and hunts to survive. It has little qualms when it comes to its diet, and that has helped it thrive on the Island's harsh tundra. Its temper hasn't hurt either, as many would be predators would rather seek out less vicious prey.",
+        "domesticated": "Many tribes have made excellent use of Daeodon packs within their war parties, not only because of its fierce nature, but due to its extraordinary ability to rapidly heal itself. I've theorized that this healing factor is why it seems to have such a high metabolism, though what is particularly extraordinary is its capability to share this benefit with nearby creatures. I have even heard some survivors mention that the Daeodon also has a unique ability to root out Rare Mushrooms as well!"
     },
     "base_stats_growth": {
         "health": {
             "base": 900,
             "level_increase": {
                 "wild": 180,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -38,6 +39,9 @@
             "level_increase": {
                 "wild": 250,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,14 +58,17 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.3
             }
         },
         "torpidity": {
@@ -79,18 +86,24 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Daeodon Saddle",
+            "name": "Daeodon Saddle (Level 59)",
             "engram_level": 59
         }
     ],
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 120,
-    "cloneable": true,
-    "entity_id": "Daeodon_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Daeodon_Character_BP_C"
 }

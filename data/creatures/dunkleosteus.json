@@ -1,22 +1,23 @@
 {
     "name": "Dunkleosteus",
+    "category": "fish",
     "dossier": {
         "species": "Dunkleosteus loricaruptor",
         "time": "Late Devonian",
         "diet": "Carnivore",
         "temperament": "Docile",
-        "wild": "Dunkleosteus loricaruptor is an ancient armored fish with an extraordinarily powerful bite. Its bony jaws can crush through stone and ore deposits with ease. Despite this fearsome ability, it is generally docile toward creatures that do not threaten it, preferring to scavenge rocky seafloor areas.",
-        "domesticated": "The Dunkleosteus is an essential aquatic mining mount. Its powerful jaws can harvest oil and stone from underwater formations far more efficiently than any other creature. It is heavily armored, granting it significant damage resistance, and it can protect itself from most aquatic threats. Tribes use them as underwater quarrying platforms."
+        "wild": "Dunkleosteus loricaruptor is a very strange creature. It is a fairly large fish, covered head to tail in armored plates, with incredibly powerful jaws. It tends to eat the Island's water-dwelling crustaceans trawling the seabed, as it is not fast enough to catch most of the smaller fish. Dunkleosteus is surprisingly combat-oriented for a fish. Its well-armored body protects it from many creatures, while its bite is strong enough to easily crush through chitinous shells.",
+        "domesticated": "Dunkleosteus is an incredibly useful fish for coastal communities. Its powerful jaws make short work of the stone and oil formations found throughout the oceanic depths. While harvesting, Dunkleosteus can defend its rider from all but the largest threats in the waters. And once it is past its prime, the Dunkleosteus itself can be harvested for a fair amount of chitin."
     },
     "base_stats_growth": {
         "health": {
             "base": 710,
             "level_increase": {
                 "wild": 142,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": 0.042
             }
         },
         "stamina": {
@@ -38,6 +39,9 @@
             "level_increase": {
                 "wild": 200,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,8 +58,8 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -79,18 +83,24 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Dunkleosteus Saddle",
+            "name": "Dunkleosteus Saddle (Level 44)",
             "engram_level": 44
         }
     ],
     "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "8h 13m 49.63s",
+        "juvenile_time": "1d 8h 55m 18.518s",
+        "adolescent_time": "1d 17h 9m 8.148s",
+        "total_maturation": "3d 10h 18m 16.296s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 250,
-    "cloneable": true,
-    "entity_id": "Dunkle_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Dunkle_Character_BP_C"
 }

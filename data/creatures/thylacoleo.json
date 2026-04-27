@@ -1,19 +1,20 @@
 {
     "name": "Thylacoleo",
+    "category": "mammal",
     "dossier": {
         "species": "Thylacoleo furtimorsus",
-        "time": "Late Pliocene",
+        "time": "Late Pliocene - Late Pleistocene",
         "diet": "Carnivore",
         "temperament": "Aggressive",
-        "wild": "Thylacoleo furtimorsus is a large marsupial predator that lurks in redwood forests and on cliff faces. It is an ambush hunter, clinging to trees and dropping onto prey from above. Its powerful bite induces a severe bleeding effect that rapidly drains its victim's health. Its retractable claws allow it to cling to vertical surfaces — even zip lines.",
-        "domesticated": "The Thylacoleo is a prized combat mount for its wall-clinging ability and vicious bite. It can leap off walls onto targets and its bleed effect makes it especially dangerous in sustained combat. It can also latch onto zip lines, making it excellent for attacking from elevated positions or navigating redwood biomes that larger mounts cannot traverse."
+        "wild": "Thylacoleo furtimorsus is a large, powerful marsupial that can often be found hunting around trees among the Island's redwoods. Its long claws and semi-opposable digits make it an apt climber, a quality that Thylacoleo uses to its advantage while hunting. It clambers up large trees and waits to ambush passing prey by pouncing upon them. When something that large jumps onto a target, the victim becomes stunned and doesn't stand much of a chance. Thylacoleo's most notable fighting quality is its powerful jaws. Once it bites its prey, it locks its jaw in an iron grip that can hold most smaller creatures in place. Thylacoleo then goes on to savage its prey with its sharp claws. If it needs to escape from a fight, Thylacoleo uses its muscular hind legs to jump back to safety among the trees.",
+        "domesticated": "Thylacoleo is a moderately strong mount, and its ability to climb trees and jump long distances makes it useful for traversal. As such, developing tribes often tame it. Small raiding parties particularly favor Thylacoleo, as it is well suited to ambushes and unfair fights!"
     },
     "base_stats_growth": {
         "health": {
             "base": 700,
             "level_increase": {
                 "wild": 140,
-                "tamed": 0.054
+                "tamed": 0.0378
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -38,6 +39,9 @@
             "level_increase": {
                 "wild": 150,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,14 +58,17 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
                 "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.3
             }
         },
         "torpidity": {
@@ -79,18 +86,24 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Extraordinary"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Thylacoleo Saddle",
+            "name": "Thylacoleo Saddle (Level 51)",
             "engram_level": 51
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 10m 37.593s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
     "drag_weight": 180,
-    "cloneable": true,
-    "entity_id": "Thylacoleo_Character_BP_C",
-    "category": "dinosaur",
-    "egg": null
+    "cloneable": false,
+    "entity_id": "Thylacoleo_Character_BP_C"
 }

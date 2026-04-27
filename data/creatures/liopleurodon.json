@@ -1,22 +1,23 @@
 {
     "name": "Liopleurodon",
+    "category": "reptile",
     "dossier": {
         "species": "Liopleurodon magicus",
-        "time": "Mid-Late Jurassic",
+        "time": "Mid - Late Jurassic",
         "diet": "Sweet Tooth",
         "temperament": "Elusive",
-        "wild": "Liopleurodon magicus is one of the rarest and most elusive creatures in the known world. It appears only fleetingly in the deepest ocean waters and seems to have an almost supernatural connection to fortune and treasure. Finding one is an event of considerable note — and even greater rarity.",
-        "domesticated": "Taming a Liopleurodon is possible only by feeding it Giant Bee Honey while it is passive. However, this results in only a temporary tame — the creature will vanish after approximately 30 minutes, as if it was never truly yours. During this time, it provides a significant loot quality boost to nearby creature kills and resource nodes. Some say it brings extraordinary luck."
+        "wild": "Liopleurodon magicus is a mid-sized ocean creature, typically between 20 and 25 feet long. I've yet to directly encounter one myself, but from the tales other tribes have shared, it compares to no other on the Island. The rumors indicate that this beautiful creature has magical properties; however, the sightings are so rare it's hard to decipher old tribe's tales from the underlying truth. They say that Liopleurodon is an elusive creature that can harness its magical powers to retreat from predators or aggressors of any kind, but the Beekeeping tribes claim that their honey is so sweet, not even the Liopleurodon could resist!",
+        "domesticated": "Liopleurodon is rumored to bring good fortune to those adventurous enough to tame it. With the Liopleurodon by their side, tribes have apparently managed to obtain treasure beyond their wildest dreams. Supposedly, even after you've gained its favor, it remains incredibly aloof and will eventually use its abilities to escape even the strictest of captivity."
     },
     "base_stats_growth": {
         "health": {
             "base": 3200,
             "level_increase": {
                 "wild": 640,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
-                "additive": 0.07
+                "additive": 0.042
             }
         },
         "stamina": {
@@ -27,17 +28,16 @@
             }
         },
         "oxygen": {
-            "base": 150,
-            "level_increase": {
-                "wild": 15,
-                "tamed": 0.1
-            }
+            "base": null
         },
         "food": {
             "base": 2000,
             "level_increase": {
                 "wild": 200,
                 "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
             }
         },
         "weight": {
@@ -54,8 +54,8 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -81,11 +81,15 @@
         "method": "Passive",
         "kibble": null
     },
-    "saddle": null,
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
     "rider_weaponry": false,
+    "egg": null,
     "drag_weight": 12000,
     "cloneable": false,
-    "entity_id": "Liopleurodon_Character_BP_C",
-    "category": "fantasy",
-    "egg": null
+    "entity_id": "Liopleurodon_Character_BP_C"
 }
