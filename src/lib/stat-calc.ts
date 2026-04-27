@@ -34,14 +34,14 @@ export type RelevantStat = typeof RELEVANT_STATS[number]
 
 /** Stat display configuration. */
 export const STAT_CONFIG: Record<RelevantStat, { label: string; color: string; ringColor: string }> = {
-  health:        { label: 'Health',      color: 'text-red-500',    ringColor: 'text-red-500' },
-  stamina:       { label: 'Stamina',     color: 'text-yellow-500', ringColor: 'text-yellow-500' },
-  oxygen:        { label: 'Oxygen',      color: 'text-sky-400',    ringColor: 'text-sky-400' },
-  food:          { label: 'Food',        color: 'text-orange-400', ringColor: 'text-orange-400' },
-  weight:        { label: 'Weight',      color: 'text-amber-600',  ringColor: 'text-amber-600' },
-  meleeDamage:   { label: 'Melee',       color: 'text-rose-600',   ringColor: 'text-rose-600' },
-  movementSpeed: { label: 'Move Speed',  color: 'text-teal-500',   ringColor: 'text-teal-500' },
-  torpidity:     { label: 'Torpidity',   color: 'text-purple-500', ringColor: 'text-purple-500' },
+  health:        { label: 'Health',     color: 'text-red-500',      ringColor: 'text-red-500' },
+  stamina:       { label: 'Stamina',    color: 'text-emerald-500',  ringColor: 'text-emerald-500' },
+  oxygen:        { label: 'Oxygen',     color: 'text-cyan-400',     ringColor: 'text-cyan-400' },
+  food:          { label: 'Food',       color: 'text-orange-500',   ringColor: 'text-orange-500' },
+  weight:        { label: 'Weight',     color: 'text-yellow-500',   ringColor: 'text-yellow-500' },
+  meleeDamage:   { label: 'Melee',      color: 'text-rose-500',     ringColor: 'text-rose-500' },
+  movementSpeed: { label: 'Move Speed', color: 'text-fuchsia-500',  ringColor: 'text-fuchsia-500' },
+  torpidity:     { label: 'Torpidity',  color: 'text-violet-500',   ringColor: 'text-violet-500' },
 }
 
 /** Format a raw stat value for display (percentages for melee/speed, integer otherwise). */

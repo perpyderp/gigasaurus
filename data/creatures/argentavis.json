@@ -104,5 +104,6 @@
     },
     "drag_weight": 150,
     "cloneable": false,
-    "entity_id": "Argent_Character_BP_C"
+    "entity_id": "Argent_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Argentavis"
 }

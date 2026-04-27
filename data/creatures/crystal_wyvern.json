@@ -99,5 +99,6 @@
     "drag_weight": 416,
     "cloneable": true,
     "entity_id": "CrystalWyvern_Character_BP_WS_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Crystal_Wyvern"
 }

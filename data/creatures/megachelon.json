@@ -98,5 +98,6 @@
     "drag_weight": 3000,
     "cloneable": true,
     "entity_id": "GiantTurtle_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Managarmr"
 }

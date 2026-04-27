@@ -101,5 +101,6 @@
     },
     "drag_weight": 425,
     "cloneable": false,
-    "entity_id": "RockDrake_Character_BP_C"
+    "entity_id": "RockDrake_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Rock_Drake"
 }

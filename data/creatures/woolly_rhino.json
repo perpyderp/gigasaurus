@@ -102,5 +102,6 @@
     },
     "drag_weight": 375,
     "cloneable": false,
-    "entity_id": "Rhino_Character_BP_C"
+    "entity_id": "Rhino_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Woolly_Rhino"
 }

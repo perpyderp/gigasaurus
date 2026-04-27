@@ -6,12 +6,12 @@ import { Input } from '@/components/ui/input'
 
 export const metadata = { title: 'Armor — Gigasaurus' }
 
-export default function ArmorPage({
+export default async function ArmorPage({
   searchParams,
 }: {
   searchParams: Promise<{ q?: string }>
 }) {
-  const params = searchParams as unknown as { q?: string }
+  const params = await searchParams
   const search = params.q?.toLowerCase()
 
   const { count, results } = ArmorService.getAll({ limit: 200 })

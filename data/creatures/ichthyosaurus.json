@@ -101,5 +101,6 @@
     },
     "drag_weight": 75,
     "cloneable": false,
-    "entity_id": "Dolphin_Character_BP_C"
+    "entity_id": "Dolphin_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ichthyosaurus"
 }

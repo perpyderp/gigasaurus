@@ -105,5 +105,6 @@
     },
     "drag_weight": 20,
     "cloneable": false,
-    "entity_id": "Compy_Character_BP_C"
+    "entity_id": "Compy_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Compy"
 }

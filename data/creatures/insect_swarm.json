@@ -60,5 +60,6 @@
     "drag_weight": 70,
     "cloneable": false,
     "entity_id": "InsectSwarmChar_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Glowtail"
 }

@@ -100,5 +100,6 @@
     },
     "drag_weight": 40,
     "cloneable": false,
-    "entity_id": "Hyaenodon_Character_BP_C"
+    "entity_id": "Hyaenodon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Hyaenodon"
 }

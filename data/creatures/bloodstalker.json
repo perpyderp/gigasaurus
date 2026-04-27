@@ -99,5 +99,6 @@
     "drag_weight": 300,
     "cloneable": true,
     "entity_id": "BogSpider_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Bloodstalker"
 }

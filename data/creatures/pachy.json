@@ -107,5 +107,6 @@
     },
     "drag_weight": 85,
     "cloneable": false,
-    "entity_id": "Pachy_Character_BP_C"
+    "entity_id": "Pachy_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Pachy"
 }

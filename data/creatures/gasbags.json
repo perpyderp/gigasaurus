@@ -99,5 +99,6 @@
     },
     "drag_weight": 300,
     "cloneable": false,
-    "entity_id": "GasBags_Character_BP_C"
+    "entity_id": "GasBags_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gasbags"
 }

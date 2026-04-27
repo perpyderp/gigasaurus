@@ -107,5 +107,6 @@
     },
     "drag_weight": 300,
     "cloneable": false,
-    "entity_id": "camelsaurus_Character_BP_C"
+    "entity_id": "camelsaurus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Morellatops"
 }

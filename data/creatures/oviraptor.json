@@ -106,5 +106,6 @@
     },
     "drag_weight": 40,
     "cloneable": false,
-    "entity_id": "Oviraptor_Character_BP_C"
+    "entity_id": "Oviraptor_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Oviraptor"
 }

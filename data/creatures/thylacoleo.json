@@ -105,5 +105,6 @@
     },
     "drag_weight": 180,
     "cloneable": false,
-    "entity_id": "Thylacoleo_Character_BP_C"
+    "entity_id": "Thylacoleo_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Thylacoleo"
 }

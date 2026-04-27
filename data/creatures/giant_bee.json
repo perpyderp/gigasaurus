@@ -87,5 +87,6 @@
     "egg": null,
     "drag_weight": 30,
     "cloneable": false,
-    "entity_id": "Bee_Character_BP_C"
+    "entity_id": "Bee_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Giant_Bee"
 }

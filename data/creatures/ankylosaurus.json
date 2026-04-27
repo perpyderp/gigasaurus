@@ -110,5 +110,6 @@
     },
     "drag_weight": 160,
     "cloneable": false,
-    "entity_id": "Ankylo_Character_BP_C"
+    "entity_id": "Ankylo_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ankylosaurus"
 }

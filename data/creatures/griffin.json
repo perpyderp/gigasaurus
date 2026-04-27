@@ -94,5 +94,6 @@
     "drag_weight": 200,
     "cloneable": true,
     "entity_id": "Griffin_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Griffin"
 }

@@ -106,5 +106,6 @@
     },
     "drag_weight": 250,
     "cloneable": false,
-    "entity_id": "Angler_Character_BP_C"
+    "entity_id": "Angler_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Anglerfish"
 }

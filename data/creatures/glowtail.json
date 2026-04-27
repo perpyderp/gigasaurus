@@ -89,5 +89,6 @@
     },
     "drag_weight": 25,
     "cloneable": false,
-    "entity_id": "LanternLizard_Character_BP_C"
+    "entity_id": "LanternLizard_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Glowtail"
 }

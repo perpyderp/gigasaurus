@@ -99,5 +99,6 @@
     },
     "drag_weight": 350,
     "cloneable": false,
-    "entity_id": "Gacha_Character_BP_C"
+    "entity_id": "Gacha_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gacha"
 }

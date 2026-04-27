@@ -99,5 +99,6 @@
     },
     "drag_weight": 70,
     "cloneable": false,
-    "entity_id": "Dimorph_Character_BP_C"
+    "entity_id": "Dimorph_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dimorphodon"
 }

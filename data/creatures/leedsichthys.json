@@ -62,5 +62,6 @@
     "egg": null,
     "drag_weight": 1300,
     "cloneable": false,
-    "entity_id": "Leedsichthys_Character_BP_C"
+    "entity_id": "Leedsichthys_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Leedsichthys"
 }

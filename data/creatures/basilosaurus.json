@@ -101,5 +101,6 @@
     },
     "drag_weight": 12000,
     "cloneable": false,
-    "entity_id": "Basilosaurus_Character_BP_C"
+    "entity_id": "Basilosaurus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Basilosaurus"
 }

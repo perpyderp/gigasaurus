@@ -104,5 +104,6 @@
     },
     "drag_weight": 125,
     "cloneable": false,
-    "entity_id": "Iguanodon_Character_BP_C"
+    "entity_id": "Iguanodon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Iguanodon"
 }

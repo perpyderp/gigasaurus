@@ -101,5 +101,6 @@
     "drag_weight": 220,
     "cloneable": false,
     "entity_id": "SpaceDolphin_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Astrodelphis"
 }

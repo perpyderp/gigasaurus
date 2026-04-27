@@ -101,5 +101,6 @@
     },
     "drag_weight": 950,
     "cloneable": false,
-    "entity_id": "Gigant_Character_BP_C"
+    "entity_id": "Gigant_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Giganotosaurus"
 }
