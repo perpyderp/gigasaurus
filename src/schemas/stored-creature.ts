@@ -65,6 +65,8 @@ export const StoredCreatureSchema = z.object({
   rawIni: z.string(),
   /** Filename of the .ini file this creature was imported from (browser File.name) */
   importFilename: z.string().nullable(),
+  /** ID of a saved import path the creature came from (see lib/import-paths). Null when imported via drag-and-drop. */
+  importPathId: z.string().nullable().optional(),
   /** ARK ID of manually-assigned father (combined 64-bit decimal string) */
   manualParentMaleId: z.string().nullable(),
   /** ARK ID of manually-assigned mother (combined 64-bit decimal string) */

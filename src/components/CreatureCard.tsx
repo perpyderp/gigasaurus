@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { IconMars, IconVenus, IconDna, IconStar, IconSeedling } from '@tabler/icons-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { ColorSwatches } from './ColorSwatch'
+import { CreatureColorRender } from './CreatureColorRender'
 import type { StoredCreature } from '@/lib/db'
 import {
   STAT_CONFIG,
@@ -15,19 +17,37 @@ import {
   getStatTopPercent,
 } from '@/lib/stat-calc'
 
+export type ImageMode = 'dossier' | 'colors'
+
 interface CreatureCardProps {
   creature: StoredCreature
+  imageMode?: ImageMode
+  /**
+   * Wiki species name (e.g. "Achatina"). Required when `imageMode='colors'` —
+   * passed to CreatureColorRender for the upstream-name fallback.
+   * Caller resolves this from the creatures API.
+   */
+  speciesName?: string | null
 }
 
 const TOP_STATS: Array<typeof RELEVANT_STATS[number]> = ['health', 'stamina', 'meleeDamage', 'weight']
 
-export function CreatureCard({ creature }: CreatureCardProps) {
+export function CreatureCard({ creature, imageMode = 'dossier', speciesName = null }: CreatureCardProps) {
+  const router = useRouter()
   const imageUrl = creature.apiSlug ? `/images/creatures/${creature.apiSlug}.png` : null
   const mutations = creature.mutationsMale + creature.mutationsFemale
   const isFullyGrown = creature.babyAge >= 1
   const meleePct = Math.round(creature.stats.meleeDamage * 100)
   const imprintPct = Math.round(creature.imprintQuality * 100)
   const points = estimateStatPoints(creature.stats, creature.level)
+  const speciesTag = creature.dinoNameTag.replace(/AA$/, '')
+
+  const goToSpecies = (e: React.MouseEvent) => {
+    if (!creature.apiSlug) return
+    e.preventDefault()
+    e.stopPropagation()
+    router.push(`/creatures/${creature.apiSlug}`)
+  }
 
   let bestStat: typeof RELEVANT_STATS[number] = RELEVANT_STATS[0]
   let bestRatio = 0
@@ -40,7 +60,17 @@ export function CreatureCard({ creature }: CreatureCardProps) {
     <Link href={`/my-creatures/${creature.id}`} className="block">
       <Card className="hover:border-primary/50 overflow-hidden gap-0 py-0 transition-colors h-full">
         <div className="bg-muted relative flex h-28 items-center justify-center">
-          {imageUrl ? (
+          {imageMode === 'colors' && speciesName ? (
+            // Render at native source resolution — card thumb is small, so this
+            // is effectively a downscale and stays crisp.
+            <CreatureColorRender
+              speciesName={speciesName}
+              slug={creature.apiSlug}
+              colors={creature.colors}
+              size={112}
+              className="h-28 w-28"
+            />
+          ) : imageUrl ? (
             <Image src={imageUrl} alt={creature.name} fill className="object-contain p-2" sizes="(max-width: 640px) 50vw, 200px" />
           ) : (
             <span className="text-4xl opacity-30">🦕</span>
@@ -59,7 +89,19 @@ export function CreatureCard({ creature }: CreatureCardProps) {
         <CardContent className="p-3 space-y-2">
           <div>
             <p className="text-foreground truncate text-sm font-semibold">{creature.name || creature.dinoNameTag}</p>
-            <p className="text-muted-foreground truncate text-xs">{creature.dinoNameTag.replace(/AA$/, '')} · Lv {creature.level}</p>
+            <p className="text-muted-foreground truncate text-xs">
+              {creature.apiSlug ? (
+                <button
+                  type="button"
+                  onClick={goToSpecies}
+                  className="hover:text-primary cursor-pointer underline-offset-2 hover:underline"
+                  title={`View ${speciesTag} species page`}
+                >
+                  {speciesTag}
+                </button>
+              ) : speciesTag}
+              {' · Lv '}{creature.level}
+            </p>
           </div>
 
           <ColorSwatches colors={creature.colors} />
