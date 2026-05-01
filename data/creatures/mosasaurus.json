@@ -1,0 +1,107 @@
+{
+    "name": "Mosasaurus",
+    "category": "reptile",
+    "dossier": {
+        "species": "Mosasaurus suspirita",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Until recently, I believed the Megalodon to be the greatest of the ocean predators. Then I discovered Mosasaurus suspirita in the deeps. Not quite as fast, but much larger and stronger, the Mosasaurus rules the darkest waters of the Island. Growing up to 50 feet long, Mosasaurus is larger than almost every other aquatic creature I've encountered thus far. Mosasaurus is a deep-sea marine lizard which spends all of its time far beneath the water's surface. It is without a doubt one of the most fearsome creatures of the Island, and can certainly be considered among the ocean's apex predators.",
+        "domesticated": "Mosasaur has proven to be an excellent tame for the most advanced tribes. Due to its sheer size and power, you will often find tribes with bases and defenses built upon a Mosasaur's large \"platform\" saddle. Having one with you as an escort is probably one of the best oceanic defenses available!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 3600,
+            "level_increase": {
+                "wild": 432,
+                "tamed": 0.042
+            },
+            "taming_bonus": {
+                "additive": 0.042
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 8000,
+            "level_increase": {
+                "wild": 800,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 1300,
+            "level_increase": {
+                "wild": 26,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 100,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.091,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.005
+            }
+        },
+        "torpidity": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 180
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Mosasaur Saddle (Level 78) Mosasaur Platform Saddle (Level 93) Mosasaur Tek Saddle",
+            "engram_level": 78
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "18h 31m 6.667s",
+        "juvenile_time": "3d 2h 4m 26.667s",
+        "adolescent_time": "3d 20h 35m 33.334s",
+        "total_maturation": "7d 17h 11m 6.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 899,
+    "cloneable": false,
+    "entity_id": "Mosa_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Mosasaurus"
+}

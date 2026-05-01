@@ -46,5 +46,6 @@
     "drag_weight": 70,
     "cloneable": false,
     "entity_id": "LanternLizard_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Macrophage"
 }

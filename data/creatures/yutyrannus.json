@@ -1,5 +1,6 @@
 {
     "name": "Yutyrannus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Yutyrannus saevus",
         "time": "Cretaceous",
@@ -13,7 +14,7 @@
             "base": 1100,
             "level_increase": {
                 "wild": 220,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,21 +56,19 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             }
         },
         "torpidity": {
             "base": 1550,
             "level_increase": {
-                "wild": 93,
-                "tamed": null
+                "wild": 93
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -81,11 +80,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Extraordinary"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Yutyrannus Saddle",
+            "name": "Yutyrannus Saddle (Level 80)",
             "engram_level": 80
         }
     ],
@@ -93,8 +92,8 @@
     "egg": {
         "name": "Yutyrannus Egg",
         "incubation": {
-            "range": "32 - 34 °C / 90 - 93 °F",
-            "incubation_range": "33 °C / 91 °F",
+            "range": "32 - 34 °C / 90 - 93 °F Egg Incubator: 33 °C / 91 °F",
+            "incubation_range": "32 - 34 °C / 90 - 93 °F Egg Incubator: 33 °C / 91 °F",
             "incubation_time": "4h 59m 58.561s"
         },
         "baby_time": "18h 31m 6.662s",
@@ -104,7 +103,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 500,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Yutyrannus_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Yutyrannus"
 }

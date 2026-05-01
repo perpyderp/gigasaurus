@@ -1,5 +1,6 @@
 {
     "name": "Seeker",
+    "category": "other",
     "dossier": {
         "species": "Chimaeram odiosus",
         "time": "Unknown",
@@ -46,8 +47,7 @@
             }
         },
         "movement": {
-            "base": 100,
-            "level_increase": {}
+            "base": 100
         },
         "torpidity": {
             "base": 200,
@@ -61,11 +61,10 @@
     "breedable": false,
     "taming": null,
     "saddle": null,
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": null,
-    "reproduction": null,
     "drag_weight": 35,
     "cloneable": false,
     "entity_id": "Pteroteuthis_Char_BP_C",
-    "category": "fantasy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Seeker"
 }

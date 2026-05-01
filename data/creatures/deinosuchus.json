@@ -1,0 +1,97 @@
+{
+    "name": "Deinosuchus",
+    "dossier": {
+        "species": "Deinosuchus sanguineus",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Deinosuchus sanguineus is a powerful prehistoric alligatoroid that lurks in swamps, rivers, and ocean shallows, waiting motionlessly for prey to venture within striking range. Its bone-crushing bite is among the most powerful of any creature on the Island. It is extremely aggressive and will attack virtually anything that enters its territory.",
+        "domesticated": "The Deinosuchus has a unique passive taming method — it can only be tamed while it is basking on land with its mouth open, at which point food can be placed directly into its gaping jaws. Once tamed, it is an exceptional aquatic ambush predator and a durable combat mount. Its saddle serves as a powerful turret platform."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 600,
+            "level_increase": {
+                "wild": 12,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 55,
+            "level_increase": {
+                "wild": 2.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1350,
+            "level_increase": {
+                "wild": 81
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Superior"
+    },
+    "saddle": [
+        {
+            "name": "Deinosuchus Saddle",
+            "engram_level": 74
+        }
+    ],
+    "rider_weaponry": true,
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "Deinosuchus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null,
+    "wiki_url": "https://ark.wiki.gg/wiki/Deinosuchus"
+}

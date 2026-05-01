@@ -1,0 +1,97 @@
+{
+    "name": "Deinotherium",
+    "dossier": {
+        "species": "Deinotherium colossus",
+        "time": "Late Miocene",
+        "diet": "Herbivore",
+        "temperament": "Territorial",
+        "wild": "Deinotherium colossus is a colossal prehistoric relative of the elephant distinguished by its downward-curving tusks. It is territorial rather than casually docile, and survivors who fail to read its body language — head shaking, ear flapping, trunk movement — risk triggering a devastating charge. Its sheer mass makes it one of the most physically imposing creatures on the Island.",
+        "domesticated": "The Deinotherium must be passively tamed by offering Beer Jars at the right moment — reading its facial expressions to determine when it is ready to accept food. Once tamed, it is one of the most powerful utility and combat mounts available. Its platform saddle can hold multiple structures, and its trunk can harvest resources. Found on Scorched Earth."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1750,
+            "level_increase": {
+                "wild": 350,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 8000,
+            "level_increase": {
+                "wild": 800,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 800,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 2500,
+            "level_increase": {
+                "wild": 150
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Deinotherium Saddle",
+            "engram_level": 85
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 550,
+    "cloneable": true,
+    "entity_id": "Deinotherium_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null,
+    "wiki_url": "https://ark.wiki.gg/wiki/Deinotherium"
+}

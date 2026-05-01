@@ -1,5 +1,6 @@
 {
     "name": "Rock Drake",
+    "category": "other",
     "dossier": {
         "species": "Draconis obscurum",
         "time": "Unknown",
@@ -54,8 +55,8 @@
                 "tamed": 0.017
             },
             "taming_bonus": {
-                "additive": -0.25,
-                "multiplicative": 0.176
+                "additive": -25,
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -80,20 +81,16 @@
     "taming": null,
     "saddle": [
         {
-            "name": "Rock Drake Saddle",
+            "name": "Rock Drake Saddle (Level 75) Rock Drake Tek Saddle",
             "engram_level": 75
-        },
-        {
-            "name": "Rock Drake Tek Saddle",
-            "engram_level": null
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
         "name": "Rock Drake Egg",
         "incubation": {
-            "range": "-90 - -80 °C / -130 - -112 °F",
-            "incubation_range": "-85 °C / -121 °F",
+            "range": "-90 - -80 °C / -130 - -112 °F Egg Incubator: -85 °C / -121 °F",
+            "incubation_range": "-90 - -80 °C / -130 - -112 °F Egg Incubator: -85 °C / -121 °F",
             "incubation_time": "6h 14m 58.201s"
         },
         "baby_time": "9h 15m 33.331s",
@@ -102,9 +99,8 @@
         "total_maturation": "3d 20h 35m 33.313s",
         "breeding_interval": "18h - 2d"
     },
-    "reproduction": null,
     "drag_weight": 425,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "RockDrake_Character_BP_C",
-    "category": "fantasy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Rock_Drake"
 }

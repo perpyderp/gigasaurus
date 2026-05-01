@@ -1,5 +1,6 @@
 {
     "name": "Amargasaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Amargasaurus Titanicus",
         "time": "Early Cretaceous",
@@ -13,7 +14,7 @@
             "base": 1250,
             "level_increase": {
                 "wild": 250,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,24 +56,19 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
-            },
-            "taming_bonus": {
-                "additive": 0.5
             }
         },
         "torpidity": {
             "base": 2250,
             "level_increase": {
-                "wild": 135,
-                "tamed": null
+                "wild": 135
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -84,11 +80,11 @@
     "breedable": true,
     "taming": {
         "method": "Passive",
-        "kibble": "Exceptional"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Amargasaurus Saddle",
+            "name": "Amargasaurus Saddle (Level 55)",
             "engram_level": 55
         }
     ],
@@ -96,18 +92,18 @@
     "egg": {
         "name": "Amargasaurus Egg",
         "incubation": {
-            "range": "26 - 29 °C / 79 - 84 °F",
-            "incubation_range": "28 °C / 82 °F",
+            "range": "26 - 29 °C / 79 - 84 °F Incubator: 28 °C / 82 °F",
+            "incubation_range": "26 - 29 °C / 79 - 84 °F Incubator: 28 °C / 82 °F",
             "incubation_time": "4h 59m 58.56s"
         },
         "baby_time": "9h 15m 33.333s",
         "juvenile_time": "1d 13h 2m 13.333s",
         "adolescent_time": "1d 22h 17m 46.667s",
-        "total_maturation": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 375,
     "cloneable": true,
     "entity_id": "Amargasaurus_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Amargasaurus"
 }

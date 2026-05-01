@@ -9,7 +9,10 @@ import { getAllCreatures } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
 import { CreatureCard } from '@/components/CreatureCard'
 import { ImportDropzone } from '@/components/ImportDropzone'
+import { SavedPaths } from '@/components/SavedPaths'
 import { DriveSync } from '@/components/DriveSync'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import type { ImageMode } from '@/components/CreatureCard'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -30,6 +33,8 @@ function MyCreaturesContent() {
   const [loading, setLoading] = useState(true)
   const [showImport, setShowImport] = useState(false)
   const [showFilters, setShowFilters] = useState(false)
+  const [imageMode, setImageMode] = useState<ImageMode>('dossier')
+  const [speciesNameBySlug, setSpeciesNameBySlug] = useState<Record<string, string>>({})
 
   // nuqs-synced state
   const [search, setSearch] = useQueryState('q', parseAsString.withDefault(''))
@@ -49,6 +54,22 @@ function MyCreaturesContent() {
   }, [])
 
   useEffect(() => { load() }, [load])
+
+  // Lazily load slug → wiki-name map only when the user flips to Colorized mode.
+  useEffect(() => {
+    if (imageMode !== 'colors' || Object.keys(speciesNameBySlug).length > 0) return
+    let cancelled = false
+    fetch('/api/creatures?limit=500')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (cancelled || !data?.results) return
+        const map: Record<string, string> = {}
+        for (const r of data.results as Array<{ slug: string; name: string }>) map[r.slug] = r.name
+        setSpeciesNameBySlug(map)
+      })
+      .catch(() => {/* ignore — cards just stay on dossier */})
+    return () => { cancelled = true }
+  }, [imageMode, speciesNameBySlug])
 
   const handleImported = useCallback(() => { load(); setShowImport(false) }, [load])
   const handleRestored = useCallback(() => { load() }, [load])
@@ -123,18 +144,23 @@ function MyCreaturesContent() {
           </div>
           <Button onClick={() => setShowImport((v) => !v)} className="gap-2">
             <IconUpload size={14} />
-            Import
+            Import / Resync
           </Button>
         </div>
 
-        {/* Import panel */}
+        {/* Import / Resync All panel */}
         {showImport && (
           <Card>
             <CardHeader>
-              <CardTitle className="text-base">Import Creature Exports</CardTitle>
+              <CardTitle className="text-base">Import &amp; Resync Creatures</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
+              <p className="text-muted-foreground text-xs">
+                Drop new <span className="font-mono">.ini</span> exports to add or resync creatures. To resync all, re-export from ARK (<span className="font-mono">ShooterGame/Saved/DinoExports/</span>) and drop all files at once.
+              </p>
               <ImportDropzone onImported={handleImported} />
+              <Separator />
+              <SavedPaths onImported={handleImported} />
               <Separator />
               <div>
                 <p className="text-sm font-medium mb-2 flex items-center gap-2">
@@ -269,9 +295,25 @@ function MyCreaturesContent() {
           </div>
         ) : (
           <>
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-muted-foreground text-xs">
+                Showing {filtered.length} creature{filtered.length !== 1 ? 's' : ''}
+              </p>
+              <Tabs value={imageMode} onValueChange={(v) => setImageMode(v as ImageMode)}>
+                <TabsList>
+                  <TabsTrigger value="dossier">Dossier</TabsTrigger>
+                  <TabsTrigger value="colors">Colorized</TabsTrigger>
+                </TabsList>
+              </Tabs>
+            </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
               {paginated.map((creature) => (
-                <CreatureCard key={creature.id} creature={creature} />
+                <CreatureCard
+                  key={creature.id}
+                  creature={creature}
+                  imageMode={imageMode}
+                  speciesName={creature.apiSlug ? speciesNameBySlug[creature.apiSlug] ?? null : null}
+                />
               ))}
             </div>
 

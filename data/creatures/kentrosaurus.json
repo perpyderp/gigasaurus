@@ -1,5 +1,6 @@
 {
     "name": "Kentrosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Kentrosaurus Aethiopicus",
         "time": "Late Jurassic",
@@ -13,7 +14,7 @@
             "base": 650,
             "level_increase": {
                 "wild": 130,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -48,28 +49,26 @@
             }
         },
         "melee": {
-            "base": 42,
+            "base": 1042,
             "level_increase": {
-                "wild": 2.1,
+                "wild": 0.52,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             }
         },
         "torpidity": {
             "base": 500,
             "level_increase": {
-                "wild": 30,
-                "tamed": null
+                "wild": 30
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -81,15 +80,15 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Regular"
+        "kibble": null
     },
     "saddle": null,
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
         "name": "Kentro Egg",
         "incubation": {
-            "range": "24 - 30 °C / 75 - 86 °F",
-            "incubation_range": "27 °C / 81 °F",
+            "range": "24 - 30 °C / 75 - 86 °F Egg Incubator: 27 °C / 81 °F",
+            "incubation_range": "24 - 30 °C / 75 - 86 °F Egg Incubator: 27 °C / 81 °F",
             "incubation_time": "2h 46m 39.2s"
         },
         "baby_time": "5h 8m 38.517s",
@@ -99,7 +98,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 250,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Kentro_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Kentrosaurus"
 }

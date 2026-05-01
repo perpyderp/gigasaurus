@@ -1,0 +1,97 @@
+{
+    "name": "Helicoprion",
+    "dossier": {
+        "species": "Helicoprion frendo",
+        "time": "Early Permian",
+        "diet": "Soft Bodied Prey",
+        "temperament": "Relaxed",
+        "wild": "Helicoprion frendo is an ancient shark-like fish with a distinctive spiral tooth whorl in its lower jaw. Despite its fearsome appearance, it is surprisingly relaxed in temperament and does not actively hunt survivors unless provoked. It seems content to cruise through ocean waters, feeding on soft-bodied creatures like jellyfish and squid.",
+        "domesticated": "The Helicoprion requires an unusual passive taming process involving looted equipment and a button-prompt riding minigame. Once tamed, its spiral tooth whorl is devastatingly effective in combat, shredding through enemy structures and creatures with a spinning attack. It is found on Fjordur and is one of the more unique aquatic mounts available."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1300,
+            "level_increase": {
+                "wild": 260,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 50,
+            "level_increase": {
+                "wild": 2.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Helicoprion Saddle",
+            "engram_level": 76
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "Helicoprion_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null,
+    "wiki_url": "https://ark.wiki.gg/wiki/Helicoprion"
+}

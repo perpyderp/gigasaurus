@@ -1,0 +1,105 @@
+{
+    "name": "Mesopithecus",
+    "category": "mammal",
+    "dossier": {
+        "species": "Mesopithecus amicufur",
+        "time": "Late Miocene - Late Pliocene",
+        "diet": "Omnivore",
+        "temperament": "Curious",
+        "wild": "Mesopithecus amicufur is an omnivorous monkey species, primarily inhabiting the Island's jungles. It is smaller than a human, but can scurry about the same speed. It does not appear to be aggressive unlike its relative the Gigantopithecus, but is rather very shy towards humans likely due to their much larger size and lack of hairy exterior. Due to their skittish nature they can be difficult to tame. They can be hand-fed if you are patient, but stick too close to them for too long and they'll get spooked and run away.",
+        "domesticated": "A common pet, Mesopithecus is very easy to keep fed. It will eat nearly any fruit harvested on the island. Mesopithecus is most often used as a social companion, as it cannot carry enough to be a beast of burden, is not large enough to be ridden and is not particularly good for combat. It is, however, quite effective at vocally warning of incoming intruders and pelting them with copious amounts of tossed fecal matter. Nomadic tribes have also managed to teach Mesopithecus to open locked doors when pillaging."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 115,
+            "level_increase": {
+                "wild": 23,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 70,
+            "level_increase": {
+                "wild": 1.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 121,
+            "level_increase": {
+                "wild": 0.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 1.3
+            }
+        },
+        "torpidity": {
+            "base": 60,
+            "level_increase": {
+                "wild": 3.6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "2h 38m 43.81s",
+        "baby_time": "3h 5m 11.111s",
+        "juvenile_time": "12h 20m 44.444s",
+        "adolescent_time": "15h 25m 55.555s",
+        "total_maturation": "1d 6h 51m 51.109s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 25,
+    "cloneable": false,
+    "entity_id": "Monkey_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Mesopithecus"
+}

@@ -1,5 +1,6 @@
 {
     "name": "Therizinosaur",
+    "category": "dinosaur",
     "dossier": {
         "species": "Therizinosaurus multiensis",
         "time": "Late Cretaceous",
@@ -13,7 +14,7 @@
             "base": 870,
             "level_increase": {
                 "wild": 174,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -48,28 +49,26 @@
             }
         },
         "melee": {
-            "base": 52,
+            "base": 525,
             "level_increase": {
                 "wild": 2.6,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             }
         },
         "torpidity": {
             "base": 925,
             "level_increase": {
-                "wild": 55.5,
-                "tamed": null
+                "wild": 55.5
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -81,11 +80,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Exceptional"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Therizinosaurus Saddle",
+            "name": "Therizinosaurus Saddle (Level 69)",
             "engram_level": 69
         }
     ],
@@ -93,8 +92,8 @@
     "egg": {
         "name": "Therizino Egg",
         "incubation": {
-            "range": "26 - 32 °C / 79 - 90 °F",
-            "incubation_range": "29 °C / 84 °F",
+            "range": "26 - 32 °C / 79 - 90 °F Egg Incubator: 29 °C / 84 °F",
+            "incubation_range": "26 - 32 °C / 79 - 90 °F Egg Incubator: 29 °C / 84 °F",
             "incubation_time": "1h 39m 59.521s"
         },
         "baby_time": "11h 34m 26.666s",
@@ -104,7 +103,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 250,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Therizino_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Therizinosaur"
 }

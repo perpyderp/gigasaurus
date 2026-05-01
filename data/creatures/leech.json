@@ -1,0 +1,70 @@
+{
+    "name": "Leech",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Haementeria laetus",
+        "time": "Holocene",
+        "diet": "Sanguinivore",
+        "temperament": "Aggressive",
+        "wild": "It is difficult to be angry with Haementeria laetus, despite its rather terrible nature. The creature has practically no intelligence, and just attaches to any nearby living flesh in an attempt to drain that creature's blood. Removing Haementeria requires precision bladework, or access to an open flame. Both of these can be nearly as dangerous to the host as to the leech itself. Once Haementeria attaches to a host, it drains blood at a rapid pace, and the host experiences hunger, loss of health, and lowered stamina. Some Haementeria are also carriers for a dangerous disease I've dubbed \"Swamp Fever,\" which persists beyond the leech's own lifespan. Few creatures on the Island are transmitters for this disease, and it can ultimately be cured with a rare medicine.",
+        "domesticated": "While Haementeria is not intelligent enough to be tamed, it is always useful to keep a few around for antidotes and fishing lures. When processed properly, Haementeria venom can be made into a powerful antivenom!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 40,
+            "level_increase": {
+                "wild": 8
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45
+            }
+        },
+        "weight": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.2
+            }
+        },
+        "melee": {
+            "base": 7,
+            "level_increase": {
+                "wild": 0.35
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 50,
+            "level_increase": {
+                "wild": 3
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 30,
+    "cloneable": false,
+    "entity_id": "Leech_Character_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Leech"
+}

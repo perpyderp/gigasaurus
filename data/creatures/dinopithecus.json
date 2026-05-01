@@ -1,0 +1,104 @@
+{
+    "name": "Dinopithecus",
+    "category": "mammal",
+    "dossier": {
+        "species": "Dinopithecus Anedmundius",
+        "time": "Pliocene-Pleistocene",
+        "diet": "Omnivore",
+        "temperament": "Aggressive in large groups, Skittish in small groups",
+        "wild": "I believe Dinopithecus has been changed by ARK life. This species is definitely larger than any I remember from the fossil record. And these oversized baboons show a more pack-oriented behavior than I would've expected in their kind. Whole troops will organize around an alpha, and fall apart if that alpha is slain. Though they seem to prefer a diet of fruit supplemented with the occasional bit of meat, Dinopitheci are opportunistic and will eat just about anything. They’re also excellent climbers -- I’ve seen them scramble up sheer cliff faces and leap between trees to scavenge food for their troop. Dinopitheci will bare sharp teeth and toss well-aimed handfuls of their own excrement when provoked. Their feces is what really sets this species apart -- they’ve managed to weaponize a parasite in it that disables TEK! I feel like that parasite deserves its own dossier.",
+        "domesticated": "If you can manage to tame enough Dinopitheci , you’ll soon find yourself with a small troop at your disposal. Your mini-troop will organize around the strongest of your tames, their new alpha that can then direct them at a target with a shrieked battle-cry. No need to saddle your tamed Dinopithecus to ride it -- it will make one for you using its own tail. Just hold on tight, and it will take you straight up walls and across ziplines. In battle, your Dinopithecus will fling fecal projectiles, grenades, or a combination that I like to call EBM, for Explosive Bowel Movement."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 775,
+            "level_increase": {
+                "wild": 155,
+                "tamed": 0.048600000000000004
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 800,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 46,
+            "level_increase": {
+                "wild": 2.3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 600,
+            "level_increase": {
+                "wild": 36
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "9h 55m 14.286s",
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 300,
+    "cloneable": true,
+    "entity_id": "Dinopithecus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dinopithecus"
+}

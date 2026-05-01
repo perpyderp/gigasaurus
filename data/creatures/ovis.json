@@ -1,0 +1,107 @@
+{
+    "name": "Ovis",
+    "category": "mammal",
+    "dossier": {
+        "species": "Ovis arcam",
+        "time": "Cenozoic",
+        "diet": "Herbivore",
+        "temperament": "Stupid",
+        "wild": "Since arriving on the Island, I have encountered dozens of fascinating creatures whose behavior has never been studied or documented...and also sheep. Granted, Ovis arcam is quite different from the modern domesticated sheep - and even from wild sheep species such as Ovis orientalis. The unique markings on its face give it a striking appearance, and the males' horns possess a unique shape that is unlike any other species in the Ovis genus. As one might expect, Ovis stands little chance against this Island's many predators. Like the Dodo, its continued survival in the face of these challenges is a mystery.",
+        "domesticated": "Some survivors have found herds of Ovis to be useful in farm life. Their wool can be repeatedly safely shorn with the proper tools, and cooked lamb chops are a popular dish among some tribes, as is their hyper-nutritious mutton. Every now and then, a survivor with a sense of humor will attempt to utilize Ovis as a mount, although the joke becomes significantly less funny once their slow Ovis is run-down by a pack of Raptors. One tribe has grown particularly attached to Ovis, perhaps uncomfortably so. I don't know the tribe's actual name, but I refer to them as \"Sheep Lovers.\""
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 100,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 90,
+            "level_increase": {
+                "wild": 1.8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 85,
+            "level_increase": {
+                "wild": 5.1
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 10m 37.593s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 85,
+    "cloneable": false,
+    "entity_id": "Sheep_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ovis"
+}

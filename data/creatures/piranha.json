@@ -1,0 +1,70 @@
+{
+    "name": "Piranha",
+    "category": "fish",
+    "dossier": {
+        "species": "Megapiranha magnadmorsus",
+        "time": "Late Miocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Megapiranha magnadmorsus is carnivorous fish found fairly commonly in the rivers and ponds of the island. Its bite is incredibly powerful; I've even seen them break through the armored turtles of the island. Megapiranha has one of the strongest bites, pound-for-pound, of any creature on the island. When encountering a Megapiranha, be on the lookout for the rest of the school. No one Megapiranha is an overwhelming threat, but their tendency to swarm prey can make short work of much larger and stronger creatures. Any given Megapiranha is easy to kill, but killing the entire school can be a daunting task.",
+        "domesticated": "The Megapiranha is highly territorial and does not respond favorably to visitors. Many have tried to pacify the hostile Megapiranha by herding them into a group with various lures. Unfortunately, none of this proved to be successful in attempting to domesticate the creature."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 150,
+            "level_increase": {
+                "wild": 30
+            }
+        },
+        "stamina": {
+            "base": 120,
+            "level_increase": {
+                "wild": 12
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120
+            }
+        },
+        "weight": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.3
+            }
+        },
+        "melee": {
+            "base": 22,
+            "level_increase": {
+                "wild": 1.1
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 250,
+            "level_increase": {
+                "wild": 15
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 21,
+    "cloneable": false,
+    "entity_id": "Piranha_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Piranha"
+}

@@ -1,0 +1,97 @@
+{
+    "name": "Fasolasuchus",
+    "dossier": {
+        "species": "Fasolasuchus sabulonatator",
+        "time": "Late Triassic",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Fasolasuchus sabulonatator is a massive crocodilian ambush predator that buries itself in sand to await prey. When a target approaches, it erupts from below in an explosive ambush, using its enormous jaws to crush victims. It is one of the largest terrestrial predators and should be treated with extreme caution.",
+        "domesticated": "Taming a Fasolasuchus requires a unique process: explosives must be used to flush it from its burrow, then the creature must be ridden and driven into obstacles to build torpor through a control minigame. Once tamed, it is a devastating frontline combat mount with exceptional health and damage output. Found on Scorched Earth."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 950,
+            "level_increase": {
+                "wild": 190,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2750,
+            "level_increase": {
+                "wild": 275,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 450,
+            "level_increase": {
+                "wild": 9,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 66,
+            "level_increase": {
+                "wild": 3.3,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1350,
+            "level_increase": {
+                "wild": 81
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": "Exceptional"
+    },
+    "saddle": [
+        {
+            "name": "Fasolasuchus Saddle",
+            "engram_level": 70
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 425,
+    "cloneable": true,
+    "entity_id": "Fasolasuchus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null,
+    "wiki_url": "https://ark.wiki.gg/wiki/Fasolasuchus"
+}

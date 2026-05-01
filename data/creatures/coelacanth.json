@@ -1,0 +1,70 @@
+{
+    "name": "Coelacanth",
+    "category": "fish",
+    "dossier": {
+        "species": "Coelacanth nutritia",
+        "time": "Cretaceous-Holocene",
+        "diet": "Omnivore?",
+        "temperament": "Reactive",
+        "wild": "Coelacanth nutritia is one of the few creatures on the Island with a relative which can be found back home. The Coelacanth thrive in the waters around the Island, as well as within rivers and lakes. Unlike most Coelacanths, Coelacanth nutritia meat contains less oil and urea. In fact, it is one of the healthier sources of meat I've yet found. Most Coelacanths are opportunistic feeders that eat anything smaller than itself, likely including baby water snakes, insect and plant life, and perhaps each other?",
+        "domesticated": "While their limited intelligence makes them unsuitable for taming, Coelacanths provide a viable source of meat for coastal or water-dwelling tribes. Many a day has been spent fishing by the water's edge, often with surprising results, as Coelacanths often have consumed discarded garbage that is sometimes of great value. Due to their small size, though, a larger tribe would require a significant number of Coelacanths to feed itself."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 30,
+            "level_increase": {
+                "wild": 6
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "weight": {
+            "base": 8,
+            "level_increase": {
+                "wild": 0.16
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.9
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 25,
+    "cloneable": false,
+    "entity_id": "Coel_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Coelacanth"
+}

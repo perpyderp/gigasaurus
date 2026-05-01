@@ -1,0 +1,104 @@
+{
+    "name": "Megatherium",
+    "category": "mammal",
+    "dossier": {
+        "species": "Megatherium formipavor",
+        "time": "Late Pliocene - Early Holocene",
+        "diet": "Omnivore (primarily Herbivore)",
+        "temperament": "Passive, but aggressive to insects",
+        "wild": "Megatherium formipavor is one of the larger mammals on the Island. This is most shocking because it is essentially a giant sloth...if you crossbred it with an elephant and a bear! Because of its size and girth, the Megatherium is uncommonly resistant to being knocked unconscious. Despite primarily being an herbivore, a typical Megatherium is very intent on consuming the Island's many insects. It is particularly adept at removing their insides without damaging much of the shell, maximizing extraction of chitin. The otherwise slow and peaceful Megatherium becomes faster and aggressive in the presence of these creatures.",
+        "domesticated": "Megatherium is an incredibly useful creature to tame, so long as you don't intend to fight other tribes. It's enormity, high resistance to torpor, and voracious attitude toward insects (and arachnids) makes it ideal for farming large quantities of chitin from the bugs of the Island, or simply defending against them."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 740,
+            "level_increase": {
+                "wild": 148,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 270,
+            "level_increase": {
+                "wild": 27,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 725,
+            "level_increase": {
+                "wild": 14.5,
+                "tamed": 0.045
+            }
+        },
+        "melee": {
+            "base": 32,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 60
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Megatherium Saddle (Level 52)",
+            "engram_level": 52
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 295,
+    "cloneable": false,
+    "entity_id": "Megatherium_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megatherium"
+}

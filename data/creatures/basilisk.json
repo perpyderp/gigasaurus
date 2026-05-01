@@ -99,5 +99,6 @@
     "drag_weight": 425,
     "cloneable": false,
     "entity_id": "Basilisk_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Basilisk"
 }

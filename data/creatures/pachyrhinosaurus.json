@@ -1,5 +1,6 @@
 {
     "name": "Pachyrhinosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Pachyrhinosaurus mitisaura",
         "time": "Late Cretaceous",
@@ -13,7 +14,7 @@
             "base": 375,
             "level_increase": {
                 "wild": 75,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -48,28 +49,26 @@
             }
         },
         "melee": {
-            "base": 28,
+            "base": 2810,
             "level_increase": {
                 "wild": 1.4,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             }
         },
         "torpidity": {
             "base": 250,
             "level_increase": {
-                "wild": 15,
-                "tamed": null
+                "wild": 15
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -85,16 +84,16 @@
     },
     "saddle": [
         {
-            "name": "Pachyrhinosaurus Saddle",
+            "name": "Pachyrhinosaurus Saddle (Level 27)",
             "engram_level": 27
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
         "name": "Pachyrhino Egg",
         "incubation": {
-            "range": "22 - 28 °C / 72 - 82 °F",
-            "incubation_range": "25 °C / 77 °F",
+            "range": "22 - 28 °C / 72 - 82 °F Egg Incubator: 25 °C / 77 °F",
+            "incubation_range": "22 - 28 °C / 72 - 82 °F Egg Incubator: 25 °C / 77 °F",
             "incubation_time": "2h 29m 59.28s"
         },
         "baby_time": "4h 37m 46.666s",
@@ -104,7 +103,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 200,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Pachyrhino_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Pachyrhinosaurus"
 }

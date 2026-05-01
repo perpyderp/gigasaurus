@@ -1,5 +1,6 @@
 {
     "name": "Allosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Allosaurus therotribus",
         "time": "Late Jurassic",
@@ -13,7 +14,7 @@
             "base": 630,
             "level_increase": {
                 "wild": 126,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -51,31 +52,29 @@
             }
         },
         "melee": {
-            "base": 35,
+            "base": 3525,
             "level_increase": {
-                "wild": 1.75,
+                "wild": 1.751,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             },
             "taming_bonus": {
-                "additive": -0.1
+                "additive": -10
             }
         },
         "torpidity": {
             "base": 1000,
             "level_increase": {
-                "wild": 60,
-                "tamed": null
+                "wild": 60
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -87,11 +86,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Superior"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Allosaurus Saddle",
+            "name": "Allosaurus Saddle (Level 67)",
             "engram_level": 67
         }
     ],
@@ -99,8 +98,8 @@
     "egg": {
         "name": "Allosaurus Egg",
         "incubation": {
-            "range": "26 - 32 °C / 79 - 90 °F",
-            "incubation_range": "29 °C / 84 °F",
+            "range": "26 - 32 °C / 79 - 90 °F Egg Incubator: 29 °C / 84 °F",
+            "incubation_range": "26 - 32 °C / 79 - 90 °F Egg Incubator: 29 °C / 84 °F",
             "incubation_time": "1h 39m 59.521s"
         },
         "baby_time": "4h 37m 46.666s",
@@ -110,7 +109,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 285,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Allo_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Allosaurus"
 }

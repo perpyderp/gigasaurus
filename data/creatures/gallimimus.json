@@ -1,5 +1,6 @@
 {
     "name": "Gallimimus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Gallimimus evolovelox",
         "time": "Late Cretaceous",
@@ -13,7 +14,7 @@
             "base": 150,
             "level_increase": {
                 "wild": 30,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,21 +56,19 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             }
         },
         "torpidity": {
             "base": 420,
             "level_increase": {
-                "wild": 25.2,
-                "tamed": null
+                "wild": 25.2
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -81,20 +80,20 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Simple"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Gallimimus Saddle",
+            "name": "Gallimimus Saddle (Level 29)",
             "engram_level": 29
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
         "name": "Gallimimus Egg",
         "incubation": {
-            "range": "24 - 28 °C / 75 - 82 °F",
-            "incubation_range": "26 °C / 79 °F",
+            "range": "24 - 28 °C / 75 - 82 °F Egg Incubator: 26 °C / 79 °F",
+            "incubation_range": "24 - 28 °C / 75 - 82 °F Egg Incubator: 26 °C / 79 °F",
             "incubation_time": "1h 25m 42.446s"
         },
         "baby_time": "2h 38m 43.809s",
@@ -104,7 +103,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 410,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Galli_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Gallimimus"
 }

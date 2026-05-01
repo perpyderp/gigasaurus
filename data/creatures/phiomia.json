@@ -1,0 +1,110 @@
+{
+    "name": "Phiomia",
+    "category": "mammal",
+    "dossier": {
+        "species": "Phiomia ignavus",
+        "time": "Late Eocene - Early Oligocene",
+        "diet": "Herbivore",
+        "temperament": "Skittish",
+        "wild": "Phiomia ignavus is another of the Island's generally docile herd animals. They are small enough that almost any predator can bring them down but large enough to provide plenty of meat. Were it not for the protection of the herd and their instinct to run from any predator, these would almost certainly be hunted to extinction. Phiomia's tusks and trunk make it especially suited to scavenging plantlife from the ground. It uses its tusks to dig up loose plantlife, then uses its stubby trunk to scoop the foliage into its mouth. Adult Phiomia often dig up food for their young, and watching a baby Phiomia attempt to use its trunk can be quite amusing.",
+        "domesticated": "While it is completely possible to ride a Phiomia around, they are a meager choice. They work very well, however, as pack-mules. If you feed the Phiomia a stimberry, it serves as a laxative in the creature's digestive system. Knowing this, tribal communities often keep a herd of these as livestock to produce mass quantities of fertilizer."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 300,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 200,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.35
+            }
+        },
+        "torpidity": {
+            "base": 240,
+            "level_increase": {
+                "wild": 14.4
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Phiomia Saddle (Level 5)",
+            "engram_level": 5
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "9h 55m 14.285s",
+        "baby_time": "4h 52m 23.86s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.298s",
+        "total_maturation": "2d 43m 58.596s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 120,
+    "cloneable": false,
+    "entity_id": "Phiomia_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Phiomia"
+}

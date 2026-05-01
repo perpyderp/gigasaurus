@@ -1,5 +1,6 @@
 {
     "name": "Reaper",
+    "category": "fantasy",
     "dossier": {
         "species": "Unknown",
         "time": "Unknown",
@@ -10,67 +11,48 @@
     },
     "base_stats_growth": {
         "health": {
-            "base": 45000,
+            "base": 2000,
             "level_increase": {
-                "wild": 234,
-                "tamed": 0.027
-            },
-            "taming_bonus": {
-                "additive": -38500
+                "wild": 400
             }
         },
         "stamina": {
             "base": 480,
             "level_increase": {
-                "wild": 48,
-                "tamed": 0.1
+                "wild": 48
             }
         },
         "oxygen": {
             "base": 150,
             "level_increase": {
-                "wild": 15,
-                "tamed": 0.1
+                "wild": 15
             }
         },
         "food": {
             "base": 3000,
             "level_increase": {
-                "wild": 300,
-                "tamed": 0.1
+                "wild": 300
             }
         },
         "weight": {
             "base": 415,
             "level_increase": {
-                "wild": 8.3,
-                "tamed": 0.04
+                "wild": 8.3
             }
         },
         "melee": {
-            "base": 75,
+            "base": 85,
             "level_increase": {
-                "wild": 3.75,
-                "tamed": 0.017
-            },
-            "taming_bonus": {
-                "additive": 0.07,
-                "multiplicative": 0.176
+                "wild": 4.25
             }
         },
         "movement": {
-            "base": 100,
-            "level_increase": {
-                "tamed": 0.01
-            }
+            "base": 100
         },
         "torpidity": {
             "base": 925,
             "level_increase": {
                 "wild": 55.5
-            },
-            "taming_bonus": {
-                "additive": 0.5
             }
         }
     },
@@ -78,11 +60,15 @@
     "rideable": true,
     "breedable": true,
     "taming": null,
-    "saddle": null,
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
     "rider_weaponry": false,
-    "egg": null,
-    "reproduction": {
-        "gestation": "12h",
+    "egg": {
+        "gestation_time": "12h",
         "baby_time": "7h 42m 57.775s",
         "juvenile_time": "1d 6h 51m 51.1s",
         "adolescent_time": "1d 14h 34m 48.875s",
@@ -90,7 +76,7 @@
         "breeding_interval": "-"
     },
     "drag_weight": 525,
-    "cloneable": true,
-    "entity_id": "Xenomorph_Character_BP_Male_Tamed_C",
-    "category": "fantasy"
+    "cloneable": false,
+    "entity_id": "Xenomorph_Character_BP_Male_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Reaper"
 }

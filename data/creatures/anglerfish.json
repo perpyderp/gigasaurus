@@ -1,0 +1,111 @@
+{
+    "name": "Anglerfish",
+    "category": "fish",
+    "dossier": {
+        "species": "Melanocetus anglerpescum",
+        "time": "Early Cretaceous - Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Whether its size is caused by adaptation to the Island's other inhabitants, or by cross-breeding with another larger species, Melanocetus angerlpescum is the largest form of Anglerfish I've ever heard of. Typically found among the deepest, darkest expanses of the ocean, this creature preys on smaller fish while being an excellent source of food for larger predators. Melanocetus has an array of bioluminescent light pods at the end of stalks on its head. Like typical Anglerfish, it primarily uses these to attract smaller creatures and trick them into coming close enough for Melanocetus to consume the prey. This often makes wild Melanocetus itself relatively easy to spot among the briny depths.",
+        "domesticated": "Exploring the depths of the ocean can be difficult. The cold, the lack of air, and the shocking absence of light combine to make travel very dangerous. A tamed Anglerfish can use the natural light at the end of its stalks to illuminate the depths, making exploration not only safer but more lucrative, as I've heard some survivors use this creature to harvest the silica pearls found throughout the ocean's depths!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 450,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.042
+            }
+        },
+        "stamina": {
+            "base": 240,
+            "level_increase": {
+                "wild": 24,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 900,
+            "level_increase": {
+                "wild": 54
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Angler Egg",
+        "incubation": {
+            "range": "-75 - 75 °C / -103 - 167 °F Egg Incubator: 0 °C / 32 °F",
+            "incubation_range": "-75 - 75 °C / -103 - 167 °F Egg Incubator: 0 °C / 32 °F",
+            "incubation_time": "4h 59m 58.561s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": false,
+    "entity_id": "Angler_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Anglerfish"
+}

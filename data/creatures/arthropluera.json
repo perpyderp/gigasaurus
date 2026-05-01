@@ -1,0 +1,108 @@
+{
+    "name": "Arthropluera",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Arthropluera felsanguis",
+        "time": "Early Permian",
+        "diet": "Carrion-Feeder",
+        "temperament": "Aggressive",
+        "wild": "The fact that this creature exists is enough to give me nightmares. Like the island's other Arthropods, Arthropluera Felsanguis has become much larger than I might have believed possible. It's a very aggressive hunter, but prefers to eat meat after it has rotted for some time, and will voraciously seek out such delicacies.",
+        "domesticated": "Like most of the arthropods on the island, Arthropluera is simple minded and relatively easy to tame. It is an almost entirely military mount, useful mostly for attacking at a distance. Thanks to its unique defenses, whether hunting or warring, Arthropluera is generally safe from all but the largest of creatures."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 500,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 100,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 1830,
+            "level_increase": {
+                "wild": 0.91,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 175,
+            "level_increase": {
+                "wild": 10.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Arthropluera Saddle (Level 54)",
+            "engram_level": 54
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Arthropluera Egg",
+        "incubation": {
+            "range": "18 - 22 °C / 64 - 72 °F Egg Incubator: 20 °C / 68 °F",
+            "incubation_range": "18 - 22 °C / 64 - 72 °F Egg Incubator: 20 °C / 68 °F",
+            "incubation_time": "2h 29m 59.28s"
+        },
+        "baby_time": "5h 8m 38.519s",
+        "juvenile_time": "20h 34m 34.074s",
+        "adolescent_time": "1d 1h 43m 12.593s",
+        "total_maturation": "2d 3h 26m 25.185s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 110,
+    "cloneable": false,
+    "entity_id": "Arthro_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Arthropluera"
+}

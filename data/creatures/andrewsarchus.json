@@ -1,0 +1,107 @@
+{
+    "name": "Andrewsarchus",
+    "category": "mammal",
+    "dossier": {
+        "species": "Andrewsarchus mongoliensis",
+        "time": "Middle Eocene",
+        "diet": "Omnivore",
+        "temperament": "Opportunistic",
+        "wild": "Andrewsarchus is a beast that's full of surprises. These ungainly creatures might seem sluggish while foraging for a meal, but they can move unexpectedly fast when provoked. Like certain other whippomorphs, Andrewsarchus will aggressively defend its territory against interlopers. With some distance between you, it may be possible to dodge a charging Andrewsarchus -- they don't exactly turn on a dime. Just don't expect a river or lake to protect you from one. As long as its feet can reach bottom, Andrewsarchus will plow its way right through deep water. These scavengers will tear into just about anything if hungry, but they've got a bit of a sweet tooth. I've seen many an agitated Andrewsarchus pacified by some honey.",
+        "domesticated": "Once tamed, Andrewsarchus is a reliably fast beast of burden, as long as you don't need it to take any corners at full speed. Its density in water also makes Andrewsarchus ideal for searching ocean floors for pearls, since it sinks so readily to the bottom. The preferred saddle design includes a mounted minigun to target foes, while the driver stays safe inside their airtight armored enclosure. Though a fully-armored Andrewsarchus can't absorb as much damage as some of the ARK's larger creatures, it still excels at harassing them."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 800,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 650,
+            "level_increase": {
+                "wild": 65,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2174,
+            "level_increase": {
+                "wild": 217.4,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 41,
+            "level_increase": {
+                "wild": 2.05,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.005
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Andrewsarchus Saddle (Level 74)",
+            "engram_level": 74
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 57m 37.143s",
+        "baby_time": "5h 47m 13.333s",
+        "juvenile_time": "23h 8m 53.333s",
+        "adolescent_time": "1d 4h 56m 6.666s",
+        "total_maturation": "2d 9h 52m 13.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": null,
+    "cloneable": true,
+    "entity_id": "Andrewsarchus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Andrewsarchus"
+}

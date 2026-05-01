@@ -1,0 +1,97 @@
+{
+    "name": "Ceratosaurus",
+    "dossier": {
+        "species": "Ceratosaurus punctura",
+        "time": "Late Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Extremely Aggressive",
+        "wild": "Ceratosaurus punctura is an extremely aggressive carnivore that attacks on sight. Its distinctive horn is used to deliver devastating piercing blows, and its venom spines can inject a potent neurotoxin. It is particularly relentless in pursuit and will chase prey over great distances without giving up.",
+        "domesticated": "Taming a Ceratosaurus requires crafting a special Hemogoblin Cocktail from its own venom spines, then inducing a 'blood drunk' state. Once tamed, it is a powerful mid-tier predator with potent venom attacks that can debilitate enemies and accelerate harvesting of certain organic resources. It is among the newer additions to ARK: Survival Ascended."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 550,
+            "level_increase": {
+                "wild": 110,
+                "tamed": 0.054
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.176
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": "Extraordinary"
+    },
+    "saddle": [
+        {
+            "name": "Ceratosaurus Saddle",
+            "engram_level": 60
+        }
+    ],
+    "rider_weaponry": false,
+    "drag_weight": 501,
+    "cloneable": true,
+    "entity_id": "Ceratosaurus_Character_BP_C",
+    "category": "dinosaur",
+    "egg": null,
+    "wiki_url": "https://ark.wiki.gg/wiki/Ceratosaurus"
+}

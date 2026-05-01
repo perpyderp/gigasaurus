@@ -1,0 +1,112 @@
+{
+    "name": "Pulmonoscorpius",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Pulmonoscorpius gigantus",
+        "time": "Late Silurian",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "I'm not sure why, but the giant scorpions I've seen on the Island are far more disturbing than most of the dinosaurs. Rather than simply kill its prey, Pulmonoscorpius gigantus injects its victims with a tranquilizing poison, then eats its unconscious prey alive. This subspecies has a large pair of pincers that seem connected to the same toxin sacs as the tail. I've never seen another scorpion that has this adaptation, but I've never seen another scorpion that's larger than I am, either.",
+        "domesticated": "Trying to tame a monster like Pulmonoscorpius gigantus sounds like a crazy idea, but I suppose the ability to knock out a foe could come in handy. It could certainly make incapacitating some of the Island's other creatures much easier."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 280,
+            "level_increase": {
+                "wild": 56,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 200,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 1
+            }
+        },
+        "torpidity": {
+            "base": 150,
+            "level_increase": {
+                "wild": 9
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Pulmonoscorpius Saddle (Level 22)",
+            "engram_level": 22
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Pulmonoscorpius Egg",
+        "incubation": {
+            "range": "12 - 16 °C / 54 - 61 °F Egg Incubator: 14 °C / 57 °F",
+            "incubation_range": "12 - 16 °C / 54 - 61 °F Egg Incubator: 14 °C / 57 °F",
+            "incubation_time": "1h 59m 59.424s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.333s",
+        "adolescent_time": "18h 31m 6.667s",
+        "total_maturation": "1d 13h 2m 13.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 110,
+    "cloneable": false,
+    "entity_id": "Scorpion_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Pulmonoscorpius"
+}

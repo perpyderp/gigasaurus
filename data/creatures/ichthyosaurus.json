@@ -1,0 +1,106 @@
+{
+    "name": "Ichthyosaurus",
+    "category": "reptile",
+    "dossier": {
+        "species": "Ichthyosaurus curiosa",
+        "time": "Late Triassic - Early Jurassic",
+        "diet": "Carnivore",
+        "temperament": "Curious",
+        "wild": "Ichthyosaurus curiosa is a comparatively small carnivore found in the waters around the island. It is slightly larger than a human, but that’s still small compared to the leviathans roaming these waters. It seems to be very interested in any creature around its size, often approaching and following humans swimming through its waters. Despite its appearance, the Ichthyosaurus is neither a fish nor an ocean mammal. Like many creatures in the waters around the island, it is actually an aquatic reptile.",
+        "domesticated": "I can’t think of a better mount for someone starting to explore the island’s seas and waterways. Ichthyosaurus is comparatively fast swimmer, and even in the wild will cozy right up to you and try to figure out what you’re doing. Taming these is actually pretty easy, as they seem to love humans and will be fed and tamed without the use of violence."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 275,
+            "level_increase": {
+                "wild": 13.75,
+                "tamed": 0.013500000000000002
+            },
+            "taming_bonus": {
+                "additive": 0.042
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.2
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.75,
+                "tamed": 0.0085
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.015
+            }
+        },
+        "torpidity": {
+            "base": 300,
+            "level_increase": {
+                "wild": 18
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Ichthyosaurus Saddle (Level 13)",
+            "engram_level": 13
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "5h 47m 13.333s",
+        "juvenile_time": "23h 8m 53.333s",
+        "adolescent_time": "1d 4h 56m 6.666s",
+        "total_maturation": "2d 9h 52m 13.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 75,
+    "cloneable": false,
+    "entity_id": "Dolphin_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ichthyosaurus"
+}

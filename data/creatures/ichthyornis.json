@@ -1,0 +1,111 @@
+{
+    "name": "Ichthyornis",
+    "category": "bird",
+    "dossier": {
+        "species": "Ichthyornis piscoquus",
+        "time": "Late Cretaceous",
+        "diet": "Piscivore",
+        "temperament": "Skittish",
+        "wild": "Among the most vocal creatures on the Island, Ichthyornis piscoquus actually appears to be a relatively normal seagull. It primarily eats fish, and its distinctive cries can be heard echoing over across the Island's many beaches. As you might expect from a seagull, Ichthyornis will flee at the slightest provocation. Ichthyornis is a versatile and opportunistic hunter. Its primary form of attack is to dive into the top layers of water and impale its prey. However, since its food source can be unpredictable, Ichthyornis has developed a keen ability to steal food from unsuspecting travelers. Their affinity for shiny objects leads them to sometimes knock tools and weapons out of the hands of unsuspecting Survivors, but Ichthyornis is too small to actually fly off with them.",
+        "domesticated": "Ichthyornis surprised me by being a very loyal and very social creature, once tamed. It likes to ride on its owner's shoulder, and bring that person treats (in the form of fish, of course) which its beak-grip enhances with extra healing vitamins. The personality of Ichthyornis reminds me of a housecat hauling a trophy prey back home, except it brings extra-healthy fish instead."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 50,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 2
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 55,
+            "level_increase": {
+                "wild": 1.1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.05,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.091,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.365
+            }
+        },
+        "torpidity": {
+            "base": 120,
+            "level_increase": {
+                "wild": 7.2
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Ichthyornis Egg",
+        "incubation": {
+            "range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.331s",
+        "adolescent_time": "18h 31m 6.664s",
+        "total_maturation": "1d 13h 2m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 120,
+    "cloneable": false,
+    "entity_id": "Ichthyornis_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ichthyornis"
+}

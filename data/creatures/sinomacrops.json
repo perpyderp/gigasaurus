@@ -1,0 +1,104 @@
+{
+    "name": "Sinomacrops",
+    "category": "reptile",
+    "dossier": {
+        "species": "Sinomacrops bondei",
+        "time": "Mid-Late Jurassic",
+        "diet": "Insectivore",
+        "temperament": "Docile... usually",
+        "wild": "Sinomacrops bondei is a friendly and curious little pterosaur. It may approach and investigate unfamiliar creatures, but Sinomacrops does spook easily. When threatened, it will unfurl its wings to reveal deimatic eyespots in an attempt to confuse or scare predators away. Still, Sinomacrops seems to be a highly intelligent creature that craves social interaction. While it's normally curious and friendly, Sinomacrops' adorably oversized mouth turns into a deadly weapon at the slightest sight and smell of insects. Even alone, this cute little critter can take down insects far larger than itself. Unfortunately, this means that armor made from chitinous plates is going to trigger an attack response from the otherwise sweet-hearted pterosaur.",
+        "domesticated": "Taming a Sinomacrops is fairly straightforward (in theory) -- just feed them without scaring them. Once tamed, they absolutely love travelling with their humans, and prefer to cling to them whenever possible. Not only are they sociable, but they're fiercely protective once bonded. Any small creature approaching someone with a tame Sinomacrops will be met with its flashing eyespots and piercing shriek. That’s usually enough to stun an undersized interloper. For such a small flier, Sinomacrops can carry surprisingly heavy loads. It can even support the weight of a fully-grown human adult, though it will struggle to gain altitude. Still, any creature companion that can double as a glider and parachute is invaluable for anyone traversing an ARK... as long as they bring plenty of snacks for their new friend."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 110,
+            "level_increase": {
+                "wild": 22,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 80,
+            "level_increase": {
+                "wild": 1.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Sinomacrops Egg",
+        "incubation": {
+            "range": "38 - 40 °C / 100 - 104 °F Incubator: 39 °C / 102 °F",
+            "incubation_range": "38 - 40 °C / 100 - 104 °F Incubator: 39 °C / 102 °F",
+            "incubation_time": "2h 37m 52.926s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.333s",
+        "adolescent_time": "18h 31m 6.667s",
+        "total_maturation": "1d 13h 2m 13.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": null,
+    "cloneable": true,
+    "entity_id": "Sinomacrops_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Sinomacrops"
+}

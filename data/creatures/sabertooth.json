@@ -1,0 +1,110 @@
+{
+    "name": "Sabertooth",
+    "category": "mammal",
+    "dossier": {
+        "species": "Smilodon brutalis",
+        "time": "Early Pleistocene/Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Smilodon brutalis is a solitary hunter, generally found in cold, lightly wooded areas. The Island's mountains are the perfect habitat, as the mammal's fur keeps it safe from the bitter temperature. While its huge fangs are excellent for delivering deathblows, the creature's claws can be just as deadly. Despite normally being a solitary creature, Smilodon brutalis are not opposed to hunting in small packs. In fact, they have to do this to take down larger prey such as Mammoths. Enough Sabertooths can take down a Carnotaurus, perhaps even a Tyrannosaurus. Either way, Smilodon brutalis should not be underestimated.",
+        "domesticated": "While not as fast as Raptors, there's no denying the Sabertooth's increased resilience and power. In addition, well-trained Sabertooth can be taught to use their claws to flay corpses. This may sound morbid, but it is among the best ways to quickly gather large quantities of hide from the giant beasts of the Island."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 250,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 200,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 29,
+            "level_increase": {
+                "wild": 1.45,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.32
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Sabertooth Saddle (Level 37)",
+            "engram_level": 37
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 10m 37.593s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 120,
+    "cloneable": false,
+    "entity_id": "Saber_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Sabertooth"
+}

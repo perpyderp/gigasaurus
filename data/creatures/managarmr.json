@@ -1,5 +1,6 @@
 {
     "name": "Managarmr",
+    "category": "other",
     "dossier": {
         "species": "Draconis auragelus",
         "time": "Post-Holocene",
@@ -13,7 +14,7 @@
             "base": 825,
             "level_increase": {
                 "wild": 165,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -58,13 +59,13 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 150,
             "level_increase": {
-                "tamed": 0.0035
+                "tamed": 0.0034999999999999996
             },
             "taming_bonus": {
                 "additive": 0.085
@@ -85,18 +86,17 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Exceptional"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Managarmr Saddle",
+            "name": "Managarmr Saddle (Level 66)",
             "engram_level": 66
         }
     ],
     "rider_weaponry": false,
-    "egg": null,
-    "reproduction": {
-        "gestation": "3h 58m 5.714s",
+    "egg": {
+        "gestation_time": "3h 58m 5.714s",
         "baby_time": "9h 15m 33.331s",
         "juvenile_time": "1d 13h 2m 13.325s",
         "adolescent_time": "1d 22h 17m 46.656s",
@@ -104,7 +104,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 250,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "IceJumper_Character_BP_C",
-    "category": "fantasy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Managarmr"
 }

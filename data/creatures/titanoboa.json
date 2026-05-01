@@ -1,0 +1,91 @@
+{
+    "name": "Titanoboa",
+    "category": "reptile",
+    "dossier": {
+        "species": "Titanoboa exornantur",
+        "time": "Paleocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Typically found within the Island's caves, Titanoboa exornantur is an aggressive creature that prefers dark, rocky areas. This extremely large snake, while being a member of the Titanoboa family, does not constrict its prey as most boas do. I believe this adaptation comes from coexisting with giant insects. However, the Titanoboa's venomous bite is so potent that it is known to paralyze far larger creatures. Titanoboa has developed a strange coexistence with other creatures of the Island's caves. Being immune to knockout poisons, and being unable to pierce the thick chitin of the insects, the species have learned to coexist. They often hunt large prey together.",
+        "domesticated": "As they appear immune to knockout poisons, Titanoboa exornantur is basically impossible to render unconscious. Because this crucial step can't be done, I'm convinced that Titanoboa are not tameable."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 170,
+            "level_increase": {
+                "wild": 34,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 175,
+            "level_increase": {
+                "wild": 10.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 110,
+    "cloneable": false,
+    "entity_id": "BoaFrill_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Titanoboa"
+}

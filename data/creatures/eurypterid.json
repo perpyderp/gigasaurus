@@ -1,0 +1,67 @@
+{
+    "name": "Eurypterid",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Jaekelopterus eurypterus",
+        "time": "Silurian",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Found only in the deepest depths of the waters around the Island, Eurypterids are dangerous and adaptable arthropods. As likely to hunt as they are to scavenge, a Eurypterid rarely has difficulty finding food to keep itself nourished, even at the bottom of the ocean. An Eurypterid's threat comes not directly from its raw strength. Instead, it combines a hard defensive exoskeleton with debilitating poison to powerful effect. The sting of a Eurypterid increases Torpor while reducing stamina, quickly rendering its opponent unable to defend itself.",
+        "domesticated": "While Eurypterids are not intelligent enough to be tamed, this doesn't mean they are without utility to tribes. They are a wonderful source of chitin, and their digestive tract often contains Silica pearls. They sometimes even have ingested incredibly rare Black Pearls, used by survivors for advanced manufacturing, making them among the most valuable creatures on the island."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 160,
+            "level_increase": {
+                "wild": 32
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3
+            }
+        },
+        "melee": {
+            "base": 7,
+            "level_increase": {
+                "wild": 0.35
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 50,
+            "level_increase": {
+                "wild": 3
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 30,
+    "cloneable": false,
+    "entity_id": "Euryp_Character_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Eurypterid"
+}

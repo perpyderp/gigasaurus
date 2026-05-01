@@ -1,0 +1,116 @@
+{
+    "name": "Quetzal",
+    "category": "reptile",
+    "dossier": {
+        "species": "Quetzalcoatlus conchapicem",
+        "time": "Late Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Skittish",
+        "wild": "From afar, it's hard to believe that Quetzalcoatlus is one of the largest avians on the island. It shares a similar silhouette with the Pteranodon, and nests near the absolute highest peaks. Upon closer inspection, though, Quetzalcoatlus is an enormous creature of tremendous power. I find it strange that such a large, imposing beast would be so skittish. Unlike other creatures of its size, it is more likely to flee than fight. I suppose the decision to flee from any trouble keeps the species alive on an island with so many dangerous predators. But then how does it eat enough to sustain its massive size?",
+        "domesticated": "Tamed Quetzalcoatlus have a very specific role on the island. Too slow to be an efficient local transport, and too weak to be an effective warbird, the tribes I have encountered tend to employ it as a mass carrier. Quetzalcoatlus is primarily used by these masters of the skies to safely carry vast quantities of supplies, creatures and human cargo from one base to another without tiring."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 240,
+                "tamed": 0.0216
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.85
+            }
+        },
+        "stamina": {
+            "base": 800,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 800,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.05
+            }
+        },
+        "melee": {
+            "base": 32,
+            "level_increase": {
+                "wild": 1.28,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            },
+            "taming_bonus": {
+                "additive": 0.365
+            }
+        },
+        "torpidity": {
+            "base": 1850,
+            "level_increase": {
+                "wild": 111
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Quetz Saddle (Level 76) Quetz Platform Saddle (Level 97)",
+            "engram_level": 76
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Quetzal Egg Tek Quetzal Egg",
+        "incubation": {
+            "range": "5 - 6 °C / 41 - 43 °F Egg Incubator: 6 °C / 43 °F",
+            "incubation_range": "5 - 6 °C / 41 - 43 °F Egg Incubator: 6 °C / 43 °F",
+            "incubation_time": "16h 39m 55.199s"
+        },
+        "baby_time": "13h 13m 39.048s",
+        "juvenile_time": "2d 4h 54m 36.19s",
+        "adolescent_time": "2d 18h 8m 15.238s",
+        "total_maturation": "5d 12h 16m 30.476s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 500,
+    "cloneable": false,
+    "entity_id": "Quetz_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Quetzal"
+}

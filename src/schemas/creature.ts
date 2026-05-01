@@ -24,6 +24,21 @@ const SaddleEntry = z.object({
 export const CreatureSchema = z.object({
   name: z.string(),
   category: z.enum(['dinosaur', 'fantasy', 'bird', 'fish', 'invertebrate', 'mammal', 'reptile', 'other']),
+  class: z.string().optional(),
+  diet: z.enum([
+    "Herbivore",
+    "Carnivore",
+    "Bottom Feeder",
+    "Omnivore",
+    "Cnidaria",
+    "Carrion-Feeder",
+    "Unknown",
+    "Piscivore",
+    "Sanguinivore",
+    "Soft-Bodied Prey",
+    "Flame Eater",
+    "Insectivore"
+  ]).optional(),
   dossier: z
     .object({
       species: z.string(),
@@ -56,14 +71,25 @@ export const CreatureSchema = z.object({
   /** Normalized to array at read time; JSON may store a single object or array */
   saddle: z.union([z.array(SaddleEntry), SaddleEntry, z.null()]),
   rider_weaponry: z.boolean(),
+  /**
+   * Egg-layers (dinosaurs, birds, fish, reptiles) have `name` + `incubation`.
+   * Live-bearers (mammals, invertebrates) have `gestation_time` instead.
+   * Both share baby/juvenile/adolescent maturation times and breeding_interval.
+   */
   egg: z
     .object({
-      name: z.union([z.string(), z.array(z.string())]),
-      incubation: z.object({
-        range: z.string(),
-        incubation_range: z.string(),
-        incubation_time: z.string(),
-      }),
+      /** Only present for egg-laying creatures. */
+      name: z.union([z.string(), z.array(z.string())]).optional(),
+      /** Only present for egg-laying creatures. */
+      incubation: z
+        .object({
+          range: z.string(),
+          incubation_range: z.string(),
+          incubation_time: z.string(),
+        })
+        .optional(),
+      /** Only present for live-bearing creatures (mammals, invertebrates). */
+      gestation_time: z.string().optional(),
       baby_time: z.string(),
       juvenile_time: z.string(),
       adolescent_time: z.string(),
@@ -75,6 +101,8 @@ export const CreatureSchema = z.object({
   drag_weight: z.number().nullable(),
   cloneable: z.boolean().nullable(),
   entity_id: z.string().nullable(),
+  /** Direct link to the ARK wiki page this entry was scraped from. */
+  wiki_url: z.string().url().nullable().optional(),
 })
 
 export type Creature = z.infer<typeof CreatureSchema>

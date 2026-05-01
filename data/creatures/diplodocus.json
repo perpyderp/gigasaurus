@@ -1,5 +1,6 @@
 {
     "name": "Diplodocus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Diplodocus insulaprincep",
         "time": "Late Jurassic",
@@ -13,7 +14,7 @@
             "base": 1700,
             "level_increase": {
                 "wild": 340,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,21 +56,19 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             }
         },
         "torpidity": {
             "base": 3000,
             "level_increase": {
-                "wild": 180,
-                "tamed": null
+                "wild": 180
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -80,12 +79,12 @@
     "rideable": true,
     "breedable": true,
     "taming": {
-        "method": "Knockout",
-        "kibble": "Regular"
+        "method": "Knockout or Passive",
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Diplodocus Saddle",
+            "name": "Diplodocus Saddle (Level 32)",
             "engram_level": 32
         }
     ],
@@ -93,8 +92,8 @@
     "egg": {
         "name": "Diplo Egg",
         "incubation": {
-            "range": "26 - 29 °C / 79 - 84 °F",
-            "incubation_range": "28 °C / 82 °F",
+            "range": "26 - 29 °C / 79 - 84 °F Egg Incubator: 28 °C / 82 °F",
+            "incubation_range": "26 - 29 °C / 79 - 84 °F Egg Incubator: 28 °C / 82 °F",
             "incubation_time": "4h 59m 58.561s"
         },
         "baby_time": "9h 15m 33.331s",
@@ -104,7 +103,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 575,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Diplodocus_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Diplodocus"
 }

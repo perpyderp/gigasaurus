@@ -96,5 +96,6 @@
     "drag_weight": 25,
     "cloneable": true,
     "entity_id": "Shapeshifter_Small_Character_BP_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ferox"
 }

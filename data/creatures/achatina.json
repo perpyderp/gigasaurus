@@ -1,0 +1,95 @@
+{
+    "name": "Achatina",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Achatina limusegnis",
+        "time": "Holocene",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "Found mostly in marshes and jungles, Achatina limusegnis is a very slow, very non-threatening land mollusk. It might be the simplest creature on the Island to hunt, and while it only provides a small amount of meat and chitin, an easy meal is always of value on the Island. Unlike nearly every other creature on the Island, Achatina does not defecate normally. Instead, it secretes a thick, sticky substance. Achatina leaves trails of this slime, but the trails are so thin that they crumble to dust quickly.",
+        "domesticated": "There is a very disgusting, but useful fact about Achatina that causes tribes to seek to tame them: its secretions are chemically similar to the \"Cementing Paste\" and \"Organic Polymer\" used by many tribes for building materials. Tamed Achatina naturally accumulates this slime over time, which can then be collected at the tribe's convenience. Legend has it that Achatina can be tamed with a special \"cake\" made from harvested crops & resources."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 75,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 0,
+            "level_increase": {
+                "wild": 0,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 50,
+            "level_increase": {
+                "wild": 3
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.429s",
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 50,
+    "cloneable": false,
+    "entity_id": "Achatina_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Achatina"
+}

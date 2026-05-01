@@ -7,6 +7,7 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { Separator } from '@/components/ui/separator'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { SiteFooter } from '@/components/SiteFooter'
 import './globals.css'
 
 const arkFont = localFont({
@@ -35,6 +36,30 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   </Link>
                   <Separator orientation="vertical" className="h-5" />
                   <Link
+                    href="/creatures"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                  >
+                    Creatures
+                  </Link>
+                  <Link
+                    href="/armor"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                  >
+                    Armor
+                  </Link>
+                  <Link
+                    href="/weapons"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                  >
+                    Weapons
+                  </Link>
+                  <Link
+                    href="/resources"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                  >
+                    Resources
+                  </Link>
+                  <Link
                     href="/my-creatures"
                     className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
@@ -52,7 +77,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 </div>
                 <Separator />
               </nav>
-              {children}
+              <div className="flex min-h-[calc(100vh-3.5rem)] flex-col">
+                <div className="flex-1">{children}</div>
+                <SiteFooter />
+              </div>
             </TooltipProvider>
           </NuqsAdapter>
         </ThemeProvider>

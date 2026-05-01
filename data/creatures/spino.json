@@ -1,5 +1,6 @@
 {
     "name": "Spino",
+    "category": "dinosaur",
     "dossier": {
         "species": "Spinosaurus aquareliga",
         "time": "Early-Late Cretaceous",
@@ -10,10 +11,10 @@
     },
     "base_stats_growth": {
         "health": {
-            "base": 700,
+            "base": 805,
             "level_increase": {
-                "wild": 140,
-                "tamed": 0.054
+                "wild": 161,
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -48,28 +49,26 @@
             }
         },
         "melee": {
-            "base": 60,
+            "base": 4060,
             "level_increase": {
-                "wild": 3,
+                "wild": 23,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             }
         },
         "torpidity": {
             "base": 850,
             "level_increase": {
-                "wild": 51,
-                "tamed": null
+                "wild": 51
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -81,11 +80,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Exceptional"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Spino Saddle",
+            "name": "Spino Saddle (Level 71)",
             "engram_level": 71
         }
     ],
@@ -93,8 +92,8 @@
     "egg": {
         "name": "Spino Egg",
         "incubation": {
-            "range": "30 - 32 °C / 86 - 90 °F",
-            "incubation_range": "31 °C / 88 °F",
+            "range": "30 - 32 °C / 86 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_range": "30 - 32 °C / 86 - 90 °F Egg Incubator: 31 °C / 88 °F",
             "incubation_time": "3h 50m 45.047s"
         },
         "baby_time": "7h 7m 21.025s",
@@ -104,7 +103,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 550,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Spino_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Spino"
 }

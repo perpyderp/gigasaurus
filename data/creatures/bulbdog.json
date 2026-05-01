@@ -1,10 +1,11 @@
 {
-    "name": "Bloodstalker",
+    "name": "Bulbdog",
+    "category": "other",
     "dossier": {
-        "species": "Serpens regulus",
+        "species": "Microluminis globulus",
         "time": "Unknown",
-        "diet": "Carnivore",
-        "temperament": "Aggressive",
+        "diet": "Herbivore",
+        "temperament": "Passive",
         "wild": "Microluminis globulus is best described as a slobbering, roly-poly ball of affection. Just like its kin, it is completely harmless, despite its pronounced fangs. So if a survivor sees one running towards them, they should prepare to be licked, not bitten. Unfortunately, being so ugly that you're cute is not an effective means of self-defense, which lands it near the bottom of the food chain. Its Charge Light may intimidate some predators, but it attracts just as many.",
         "domesticated": "While Microluminis globulus has skin reminiscent of lizards or amphibians, its behavior is incredibly similar to a common canine. This has made it a particularly popular choice as a companion and source of Charge Light, but remember - whatever shoulder you rest it on will be covered in drool within minutes."
     },
@@ -13,31 +14,17 @@
             "base": 145,
             "level_increase": {
                 "wild": 29,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
             }
         },
         "stamina": {
-            "base": 200,
-            "level_increase": {
-                "wild": 24,
-                "tamed": 0.12
-            },
-            "taming_bonus": {
-                "additive": 0.05
-            }
+            "base": null
         },
         "oxygen": {
-            "base": 165,
-            "level_increase": {
-                "wild": 18.15,
-                "tamed": 0.11
-            },
-            "taming_bonus": {
-                "additive": 0.025
-            }
+            "base": null
         },
         "food": {
             "base": 450,
@@ -57,20 +44,11 @@
             }
         },
         "melee": {
-            "base": 12,
-            "level_increase": {
-                "wild": 0.6,
-                "tamed": 0.017
-            },
-            "taming_bonus": {
-                "additive": 0.14,
-                "multiplicative": 0.176
-            }
+            "base": null
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             },
             "taming_bonus": {
@@ -80,8 +58,7 @@
         "torpidity": {
             "base": 60,
             "level_increase": {
-                "wild": 3.6,
-                "tamed": null
+                "wild": 3.6
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -97,8 +74,7 @@
     },
     "saddle": null,
     "rider_weaponry": false,
-    "egg": null,
-    "reproduction": {
+    "egg": {
         "gestation_time": "4h 10m 37.593s",
         "baby_time": "4h 52m 23.859s",
         "juvenile_time": "19h 29m 35.438s",
@@ -107,7 +83,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 30,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "LanternPug_Character_BP_C",
-    "category": "fantasy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Bulbdog"
 }

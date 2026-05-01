@@ -1,7 +1,8 @@
 {
-    "name": "Velonasaurus spinavultus",
+    "name": "Velonasaur",
+    "category": "other",
     "dossier": {
-        "species": "Bubo chinookus",
+        "species": "Velonasaurus spinavultus",
         "time": "Post-Holocene",
         "diet": "Carnivore",
         "temperament": "Omnivore",
@@ -13,7 +14,7 @@
             "base": 440,
             "level_increase": {
                 "wild": 88,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -55,13 +56,13 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "tamed": 0.1
+                "tamed": 0.01
             },
             "taming_bonus": {
                 "additive": 0.2
@@ -82,11 +83,11 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Regular"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Velonasaur Saddle",
+            "name": "Velonasaur Saddle (Level 27)",
             "engram_level": 27
         }
     ],
@@ -94,8 +95,8 @@
     "egg": {
         "name": "Velonasaur Egg",
         "incubation": {
-            "range": "28 - 32 °C / 82 - 90 °F",
-            "incubation_range": "30 °C / 86 °F",
+            "range": "28 - 32 °C / 82 - 90 °F Egg Incubator: 30 °C / 86 °F",
+            "incubation_range": "28 - 32 °C / 82 - 90 °F Egg Incubator: 30 °C / 86 °F",
             "incubation_time": "1h 8m 10.582s"
         },
         "baby_time": "4h 37m 46.666s",
@@ -104,9 +105,8 @@
         "total_maturation": "1d 22h 17m 46.656s",
         "breeding_interval": "18h - 2d"
     },
-    "reproduction": null,
     "drag_weight": 200,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Spindles_Character_BP_C",
-    "category": "fantasy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Velonasaur"
 }

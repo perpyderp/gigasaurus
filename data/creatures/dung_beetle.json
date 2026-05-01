@@ -1,0 +1,92 @@
+{
+    "name": "Dung Beetle",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Scarabidae gigas",
+        "time": "Holocene",
+        "diet": "Coprophagic",
+        "temperament": "Passive",
+        "wild": "What magic created the Scarabidae gigas, I cannot say. What I can say is that this creature is a perfect symbiont for advanced human tribes. Coprophagic, it eats mostly useless waste (feces). It metabolizes this waste into a more refined waste product, along with an oily byproduct. The oily byproduct is chemically the same as the oil found in the oceans around the island. Somehow, Scarabidae converts feces into oil. If that wasn't reason enough to worship the Scarabidae, the refined waste product is almost identical to fertilizer from a compost bin.",
+        "domesticated": "Scarabidae makes me think humans have been on the island for a long time. Why else would a creature evolve to be such a perfect pet? Most tribes jealously protect their Scarabidae, whom are handily tamed with the skilled use of some well-handled feces. These wondrous little organic biofactories are truly a sustainable, green, eco-friendly source of resources for living off the land. Oil becomes gas, which is generator fuel. Fertilizer means crops, which is human fuel. The Scarabidae can power all aspects of island life!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.027000000000000003
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 900,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.1,
+                "tamed": 0.08
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 90,
+    "cloneable": false,
+    "entity_id": "DungBeetle_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dung_Beetle"
+}

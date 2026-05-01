@@ -1,0 +1,108 @@
+{
+    "name": "Sarco",
+    "category": "reptile",
+    "dossier": {
+        "species": "Sarcosuchus excubitor",
+        "time": "Early Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Patient",
+        "wild": "Among the Island's swamp-based threats, Sarcosuchus excubitor is a lot like what you might expect from a giant crocodile: a patient killing machine. It spends much of its days lazily waiting in the water for prey to walk near. That said, it is not opposed to scurrying onto land and pressing the issue when hungry. A good tactic for escaping many predators is to jump into the water, as most are slow swimmers. This is a bad tactic for escaping a Sarcosuchus, obviously, as they are actually faster in the water than they are on land. Whether in land or water, it utilizes a well-rounded arsenal of attacks to display its prowess as a hunter. If it desires to grab a predator and spin into a death roll, quickly lunge forward for a surprise attack, target a foe directly behind it, its able to do so with extreme ease.",
+        "domesticated": "Sarcosuchus is a ferocious creature that even causes the fearless piranha to flee at the sight of it. Despite being river-dwelling creatures, Sarcosuchus seem quite at ease in the oceans. More than a few fishing communities use them as mounts simply to help fight off megaladons, or to gain better access to the resources found within the reefs."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 400,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.091
+            }
+        },
+        "stamina": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3545,
+            "level_increase": {
+                "wild": 1.752,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.11199999999999999,
+                "multiplicative": 0.22
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.6
+            }
+        },
+        "torpidity": {
+            "base": 400,
+            "level_increase": {
+                "wild": 24
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Sarco Saddle (Level 35)",
+            "engram_level": 35
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Sarco Egg",
+        "incubation": {
+            "range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_time": "2h 29m 59.28s"
+        },
+        "baby_time": "4h 37m 46.666s",
+        "juvenile_time": "18h 31m 6.662s",
+        "adolescent_time": "23h 8m 53.328s",
+        "total_maturation": "1d 22h 17m 46.656s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 200,
+    "cloneable": false,
+    "entity_id": "Sarco_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Sarco"
+}

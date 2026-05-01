@@ -1,0 +1,105 @@
+{
+    "name": "Jerboa",
+    "category": "mammal",
+    "dossier": {
+        "species": "Renopila amplexus",
+        "time": "Unknown",
+        "diet": "Herbivore",
+        "temperament": "Cowardly",
+        "wild": "Scientifically speaking, Renopila amplexus is an adorable little fuzzball and I just want to hug it forever. Unfortunately, being harmless and lovable is inadequate as a defense mechanism in this wasteland, and that means Renopila is at the bottom of the food chain. It's an easy meal for predators and survivors alike, the latter of whom also value its hide. The locals refer to Renopila as a Jerboa, but while it does look similar in some ways, it is clearly unrelated. The fact that it does not hop is a dead giveaway. In fact, while Renopila generally fits into the clade Glires, it seems to share traits with both rodents and lagomorphs.",
+        "domesticated": "In addition to being the cutest little companion in the desert, hours of close study and/or cuddling have taught me that Renopila has an instinctive understanding of this land's weather patterns. When the weather is about to change, Renopila will suddenly start behaving differently, so taming Renopila does have practical uses that can justify its perch upon one's shoulder. Not that I need justification, but I'll take whatever excuse I can get."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 55,
+            "level_increase": {
+                "wild": 11,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 120,
+            "level_increase": {
+                "wild": 2.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3,
+            "level_increase": {
+                "wild": 0.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        },
+        "torpidity": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.8
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "2h 38m 43.81s",
+        "baby_time": "2h 6m 15.758s",
+        "juvenile_time": "8h 25m 3.03s",
+        "adolescent_time": "10h 31m 18.788s",
+        "total_maturation": "21h 2m 37.576s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 25,
+    "cloneable": false,
+    "entity_id": "Jerboa_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Jerboa"
+}

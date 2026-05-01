@@ -1,5 +1,6 @@
 {
     "name": "Oviraptor",
+    "category": "dinosaur",
     "dossier": {
         "species": "Oviraptor philodator",
         "time": "Late Cretaceous",
@@ -13,7 +14,7 @@
             "base": 140,
             "level_increase": {
                 "wild": 28,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -58,13 +59,12 @@
             },
             "taming_bonus": {
                 "additive": 0.14,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.01
             },
             "taming_bonus": {
@@ -75,8 +75,7 @@
         "torpidity": {
             "base": 125,
             "level_increase": {
-                "wild": 7.5,
-                "tamed": null
+                "wild": 7.5
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -95,8 +94,8 @@
     "egg": {
         "name": "Oviraptor Egg",
         "incubation": {
-            "range": "26 - 30 °C / 79 - 86 °F",
-            "incubation_range": "28 °C / 82 °F",
+            "range": "26 - 30 °C / 79 - 86 °F Egg Incubator: 28 °C / 82 °F",
+            "incubation_range": "26 - 30 °C / 79 - 86 °F Egg Incubator: 28 °C / 82 °F",
             "incubation_time": "1h 8m 10.582s"
         },
         "baby_time": "2h 6m 15.757s",
@@ -106,7 +105,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 40,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Oviraptor_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Oviraptor"
 }

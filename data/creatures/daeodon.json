@@ -1,0 +1,110 @@
+{
+    "name": "Daeodon",
+    "category": "mammal",
+    "dossier": {
+        "species": "Daeodon comedentis",
+        "time": "Late Oligocene",
+        "diet": "Carnivore",
+        "temperament": "Territorial",
+        "wild": "Daeodon comedentis is the largest known species of Entelodont, an omnivorous family of ancient mammals that are sometimes referred to as \"Hell Pigs.\" Even though Daeodon has as many similarities to modern Hippopotamidae as it does to Suina, I've found that to be a suitable nickname. Daeodon is as mean as it looks, and any survivor who wanders too close will find that out the hard way. As an omnivore with a voracious appetite, Daeodon scavenges, forages, and hunts to survive. It has little qualms when it comes to its diet, and that has helped it thrive on the Island's harsh tundra. Its temper hasn't hurt either, as many would be predators would rather seek out less vicious prey.",
+        "domesticated": "Many tribes have made excellent use of Daeodon packs within their war parties, not only because of its fierce nature, but due to its extraordinary ability to rapidly heal itself. I've theorized that this healing factor is why it seems to have such a high metabolism, though what is particularly extraordinary is its capability to share this benefit with nearby creatures. I have even heard some survivors mention that the Daeodon also has a unique ability to root out Rare Mushrooms as well!"
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 900,
+            "level_increase": {
+                "wild": 180,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 250,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2500,
+            "level_increase": {
+                "wild": 250,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 29,
+            "level_increase": {
+                "wild": 1.45,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.3
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Daeodon Saddle (Level 59)",
+            "engram_level": 59
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 120,
+    "cloneable": false,
+    "entity_id": "Daeodon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Daeodon"
+}

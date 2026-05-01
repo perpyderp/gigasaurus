@@ -1,0 +1,96 @@
+{
+    "name": "Liopleurodon",
+    "category": "reptile",
+    "dossier": {
+        "species": "Liopleurodon magicus",
+        "time": "Mid - Late Jurassic",
+        "diet": "Sweet Tooth",
+        "temperament": "Elusive",
+        "wild": "Liopleurodon magicus is a mid-sized ocean creature, typically between 20 and 25 feet long. I've yet to directly encounter one myself, but from the tales other tribes have shared, it compares to no other on the Island. The rumors indicate that this beautiful creature has magical properties; however, the sightings are so rare it's hard to decipher old tribe's tales from the underlying truth. They say that Liopleurodon is an elusive creature that can harness its magical powers to retreat from predators or aggressors of any kind, but the Beekeeping tribes claim that their honey is so sweet, not even the Liopleurodon could resist!",
+        "domesticated": "Liopleurodon is rumored to bring good fortune to those adventurous enough to tame it. With the Liopleurodon by their side, tribes have apparently managed to obtain treasure beyond their wildest dreams. Supposedly, even after you've gained its favor, it remains incredibly aloof and will eventually use its abilities to escape even the strictest of captivity."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 3200,
+            "level_increase": {
+                "wild": 640,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.042
+            }
+        },
+        "stamina": {
+            "base": 800,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 12000,
+    "cloneable": false,
+    "entity_id": "Liopleurodon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Liopleurodon"
+}

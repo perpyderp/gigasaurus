@@ -1,12 +1,13 @@
 {
     "name": "Carcharodontosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Carcharodontosaurus medicupestis",
         "time": "Late Cretaceous",
         "diet": "Carnivore",
         "temperament": "Aggressive",
-        "wild": "I feel lucky to have crossed paths with Carcharodontosaurus medicupestis and lived to tell the tale. Though I'm not sure if this predator grows bigger than a Giganotosaurus, I hope never to find out. Just one of these bruisers held its own against an army of us, and that encounter cost us dearly.\nCarcharodontosaurus can sweep aside attackers with its tail, but it's the other end you'll really want to avoid. It has teeth like steak knives, set in jaws strong enough to shred most prey. Even a near-miss will carve you up, but good.\nLike its namesake the great white shark, Carcharodontosaurus gets more dangerous once it tastes blood. Each kill seems to give these monsters a rush and drive it into a berserker frenzy.",
-        "domesticated": "Anyone that manages to tame a Carcharodontosaurus will gain a new way to rally their tribe for battle. There's something about this monster's roar that drives others to fight — a war cry for Hell's own army. The more tactical tribes will let their Carcharodontosaurus tear through the mid-sized creatures in their enemy's ranks, thereby building up its bloodrage to take on the largest threats. Talk about shock and awe!"
+        "wild": "I feel lucky to have crossed paths with Carcharodontosaurus medicupestis and lived to tell the tale. Though I’m not sure if this predator grows bigger than a Giganotosaurus, I hope never to find out. Just one of these bruisers held its own against an army of us, and that encounter cost us dearly. Carcharodontosaurus can sweep aside attackers with its tail, but it’s the other end you’ll really want to avoid. It has teeth like steak knives, set in jaws strong enough to shred most prey. Even a near-miss will carve you up, but good. Like its namesake the great white shark, Carcharodontosaurus gets more dangerous once it tastes blood. Each kill seems to give these monsters a rush and drive it into a berserker frenzy.",
+        "domesticated": "Anyone that manages to tame a Carcharodontosaurus will gain a new way to rally their tribe for battle. There’s something about this monster’s roar that drives others to fight — a war cry for Hell’s own army. The more tactical tribes will let their Carcharodontosaurus tear through the mid-sized creatures in their enemy’s ranks, thereby building up its bloodrage to take on the largest threats. Talk about shock and awe!"
     },
     "base_stats_growth": {
         "health": {
@@ -54,21 +55,19 @@
                 "tamed": 0.0085
             },
             "taming_bonus": {
-                "additive": -0.8
+                "additive": -80
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
-                "tamed": 0.31
+                "tamed": 0.0031
             }
         },
         "torpidity": {
             "base": 6000,
             "level_increase": {
-                "wild": 360,
-                "tamed": null
+                "wild": 360
             }
         }
     },
@@ -81,7 +80,7 @@
     },
     "saddle": [
         {
-            "name": "Carcharo Saddle",
+            "name": "Carcharo Saddle (Level 96)",
             "engram_level": 96
         }
     ],
@@ -89,8 +88,8 @@
     "egg": {
         "name": "Carcharodontosaurus Egg",
         "incubation": {
-            "range": "37 - 39 °C / 99 - 102 °F",
-            "incubation_range": "38 °C / 100 °F",
+            "range": "37 - 39 °C / 99 - 102 °F Incubator: 38 °C / 100 °F",
+            "incubation_range": "37 - 39 °C / 99 - 102 °F Incubator: 38 °C / 100 °F",
             "incubation_time": "2d 1h 59m 45.601s"
         },
         "baby_time": "1d 23m 54.87s",
@@ -102,5 +101,5 @@
     "drag_weight": 950,
     "cloneable": true,
     "entity_id": "Carcha_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Carcharodontosaurus"
 }

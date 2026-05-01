@@ -1,0 +1,108 @@
+{
+    "name": "Roll Rat",
+    "category": "mammal",
+    "dossier": {
+        "species": "Heterocephalus magnus",
+        "time": "Holocene",
+        "diet": "Herbivore",
+        "temperament": "Passive",
+        "wild": "Bearing a strong resemblance to its relative, the Naked Mole Rat, Heterocephalus magnus is a gentle giant that digs for plants and fungi with its imposing front teeth. While foraging, it often uncovers precious resources inadvertently, but survivors should claim them with caution, as this triggers an aggressive response. When threatened, Heterocephalus rolls up into a ball to shield itself with the armored plates on its back, much like an armadillo. It then rolls around like an oversized bowling ball, smashing through rocks, walls, and hopefully its aggressor.",
+        "domesticated": "While hardly a ferocious war beast, Heterocephalus is an effective transport that can carry up to three passengers. In theory, it could also be siege weapon, as its rolling attack can dent even metal. Fortunately, most survivors use a special saddle that deploys a protective canopy when it starts spinning, which not only keeps them from getting squished, but provides extra protection to the rider and mount alike."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 850,
+            "level_increase": {
+                "wild": 170,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.9
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 42,
+            "level_increase": {
+                "wild": 2.1,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.02
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Roll Rat Saddle (Level 58)",
+            "engram_level": 58
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 57m 37.143s",
+        "baby_time": "5h 47m 13.333s",
+        "juvenile_time": "23h 8m 53.331s",
+        "adolescent_time": "1d 4h 56m 6.664s",
+        "total_maturation": "2d 9h 52m 13.328s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 245,
+    "cloneable": false,
+    "entity_id": "MoleRat_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Roll_Rat"
+}

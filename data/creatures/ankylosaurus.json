@@ -1,5 +1,6 @@
 {
     "name": "Ankylosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Ankylosaurus crassacutis",
         "time": "Late Cretaceous",
@@ -13,7 +14,7 @@
             "base": 700,
             "level_increase": {
                 "wild": 140,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -51,20 +52,19 @@
             }
         },
         "melee": {
-            "base": 50,
+            "base": 5030,
             "level_increase": {
-                "wild": 2.5,
+                "wild": 2.51,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.14,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.02
             },
             "taming_bonus": {
@@ -74,8 +74,7 @@
         "torpidity": {
             "base": 420,
             "level_increase": {
-                "wild": 25.2,
-                "tamed": null
+                "wild": 25.2
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -87,20 +86,20 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Regular"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Ankylo Saddle",
-            "engram_level": 55
+            "name": "Ankylo Saddle (Level 36)",
+            "engram_level": 36
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": {
         "name": "Ankylo Egg",
         "incubation": {
-            "range": "16 - 20 °C / 61 - 68 °F",
-            "incubation_range": "18 °C / 64 °F",
+            "range": "16 - 20 °C / 61 - 68 °F Egg Incubator: 18 °C / 64 °F",
+            "incubation_range": "16 - 20 °C / 61 - 68 °F Egg Incubator: 18 °C / 64 °F",
             "incubation_time": "2h 37m 52.927s"
         },
         "baby_time": "4h 52m 23.859s",
@@ -110,7 +109,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 160,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Ankylo_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Ankylosaurus"
 }

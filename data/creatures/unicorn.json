@@ -98,5 +98,6 @@
     "drag_weight": 125,
     "cloneable": true,
     "entity_id": "Equus_Character_BP_Unicorn_C",
-    "category": "fantasy"
+    "category": "fantasy",
+    "wiki_url": "https://ark.wiki.gg/wiki/Unicorn"
 }

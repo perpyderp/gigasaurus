@@ -1,0 +1,92 @@
+{
+    "name": "Giant Bee",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Apis lithohermaea",
+        "time": "Middle Miocene",
+        "diet": "Herbivore",
+        "temperament": "Territorial",
+        "wild": "In the wild, Apis lithohermaea Drones never stray far from their nests, which they build high in the Island’s Redwood trees or on rocky cliffsides. Apis Drones can be seen swarming around the nest in groups, but to get a look at the Queen Apis, one would need to crack open the nest itself. Speaking from experience, this is not a pleasant task, as the untameable Apis Drones are quite territorial. I probably should have seen that one coming, in hindsight. Take caution: Apis stings will significantly weaken any creature which suffers them, and because its stinger is not barbed, Apis can sting multiple times without its stinger being ripped away.",
+        "domesticated": "A tamed Apis Queen will lay new drone eggs, and construct a nest that survivors can farm for honey, so long as they remember to wear specialized bee-keeping gear. Said honey is not only sweet and delicious, but laced with scents that land mammals find irresistible. Many hunters use it to bait their traps. Apis Drones will also follow their Queen into battle, so they can be used for self-defense in a pinch."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 80,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 150,
+            "level_increase": {
+                "wild": 3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 8,
+            "level_increase": {
+                "wild": 0.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 400,
+            "level_increase": {
+                "wild": 24
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 30,
+    "cloneable": false,
+    "entity_id": "Bee_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Giant_Bee"
+}

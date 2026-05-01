@@ -1,0 +1,67 @@
+{
+    "name": "Cnidaria",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Cnidaria omnimorph",
+        "time": "Cambrian - Holocene",
+        "diet": "Herbivore",
+        "temperament": "Passive, but aggressive at close range",
+        "wild": "Cnidaria omnimorph is another example of a creature which should not exist. It has traits that seem derived from many types of jellyfish. It possesses the size and shape of large egg-yolk jellies, the powerful sting of certain box jellies, and the bioluminescence of deep-sea jellies. This all combines to make a dangerous creature that lights up the deepest reaches of the ocean. Cnidaria is not generally aggressive, because it lacks normal perceptive senses. It generally just floats along on the current until something gets close enough to sense, at which point it attacks. While its attacks are not directly powerful, its sting injects an incredibly strong and fast-acting sedative.",
+        "domesticated": "As Cnidaria is barely more intelligent than a plant, there's no effective method to tame one. Most tribes kill Cnidaria on sight, then collect its reserve of powerful sedative, to use in technically advanced long-distance tranquilizers."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 180,
+            "level_increase": {
+                "wild": 36
+            }
+        },
+        "stamina": {
+            "base": 120,
+            "level_increase": {
+                "wild": 12
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120
+            }
+        },
+        "weight": {
+            "base": 25,
+            "level_increase": {
+                "wild": 0.5
+            }
+        },
+        "melee": {
+            "base": 30,
+            "level_increase": {
+                "wild": 1.5
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 250,
+            "level_increase": {
+                "wild": 15
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 21,
+    "cloneable": false,
+    "entity_id": "Cnidaria_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Cnidaria"
+}

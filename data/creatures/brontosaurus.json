@@ -1,5 +1,6 @@
 {
     "name": "Brontosaurus",
+    "category": "dinosaur",
     "dossier": {
         "species": "Brontosaurus lazarus",
         "time": "Late Cretaceous",
@@ -10,9 +11,9 @@
     },
     "base_stats_growth": {
         "health": {
-            "base": 2070,
+            "base": 2277,
             "level_increase": {
-                "wild": 414,
+                "wild": 455.4,
                 "tamed": 0.02508
             },
             "taming_bonus": {
@@ -56,21 +57,19 @@
             },
             "taming_bonus": {
                 "additive": 0.07,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
             "base": 100,
             "level_increase": {
-                "wild": null,
                 "tamed": 0.02
             }
         },
         "torpidity": {
             "base": 2000,
             "level_increase": {
-                "wild": 120,
-                "tamed": null
+                "wild": 120
             },
             "taming_bonus": {
                 "additive": 0.5
@@ -82,24 +81,20 @@
     "breedable": true,
     "taming": {
         "method": "Knockout",
-        "kibble": "Exceptional"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Bronto Saddle",
+            "name": "Bronto Saddle (Level 63) Bronto Platform Saddle (Level 82)",
             "engram_level": 63
-        },
-        {
-            "name": "Bronto Platform Saddle",
-            "engram_level": 82
         }
     ],
     "rider_weaponry": false,
     "egg": {
         "name": "Bronto Egg",
         "incubation": {
-            "range": "28 - 31 °C / 82 - 88 °F",
-            "incubation_range": "30 °C / 86 °F",
+            "range": "28 - 31 °C / 82 - 88 °F Egg Incubator: 30 °C / 86 °F",
+            "incubation_range": "28 - 31 °C / 82 - 88 °F Egg Incubator: 30 °C / 86 °F",
             "incubation_time": "4h 59m 58.561s"
         },
         "baby_time": "9h 15m 33.331s",
@@ -109,7 +104,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 1000,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "Sauropod_Character_BP_C",
-    "category": "dinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Brontosaurus"
 }

@@ -1,0 +1,70 @@
+{
+    "name": "Lamprey",
+    "category": "fish",
+    "dossier": {
+        "species": "Xenomyzon luminosus",
+        "time": "Holocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "Xenomyzon luminosus is one of the most poisonous aquatic species I've ever encountered. While its trademark glowing tail makes it easy to spot and identify, those luminescent glands are also where it produces and stores a debilitating poison. Xenomyzon has developed a particular fondness for blood, and whenever possible, it will attempt to latch onto human subjects. Once it does, it injects a poison for which there are only two cures: A specialized antidote or time. I would not recommend the latter.",
+        "domesticated": "While Xenomyzon cannot be brought to heel, some survivors have stored them in fish baskets for other uses. This keeps the subject alive and contained, but not properly tamed."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 40,
+            "level_increase": {
+                "wild": 8
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 450,
+            "level_increase": {
+                "wild": 45
+            }
+        },
+        "weight": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.2
+            }
+        },
+        "melee": {
+            "base": 7,
+            "level_increase": {
+                "wild": 0.35
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 50,
+            "level_increase": {
+                "wild": 3
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 370,
+    "cloneable": false,
+    "entity_id": "Lamprey_Character_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Lamprey"
+}

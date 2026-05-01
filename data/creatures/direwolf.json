@@ -1,0 +1,110 @@
+{
+    "name": "Direwolf",
+    "category": "mammal",
+    "dossier": {
+        "species": "Canis maxdirus",
+        "time": "Pleistocene",
+        "diet": "Carnivore",
+        "temperament": "Aggressive",
+        "wild": "The best adjective to describe Canis maxdirus is \"scary.\" This pack-animal is a cunning and brutal predator, capable of taking down prey of nearly any size. In addition to being a vicious hunter, it is the size of a small horse, meaning even the largest predators aren't necessarily safe from the packs. Unlike most creatures on the Island, Canis is a dedicated pack hunter, and rarely hunts alone. When in a pack, Canis are naturally spurred to fight for their lives with increased effectiveness, while the most experienced Canis will be designated “Alpha” and gain an even stronger enhancement! The species has an incredible affinity for teamwork.",
+        "domesticated": "Obviously, Canis is a thrilling battle mount. It is fairly fast, very strong, and agile. It can leap almost as well as the Island's battle-cats. Riding a supercharged “Alpha” Canis into battle at the head of a bloodthirsty pack is a thrill for which most warriors would gladly proclaim: \"today is a good day to die!\" If utilized correctly, Canis can be a useful aid in your discovery efforts. It has developed a keen sense of smell that enables it to detect things that most creatures can't. I've even seen them used to find creatures that are hidden beneath the surface."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 330,
+            "level_increase": {
+                "wild": 66,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.0924
+            }
+        },
+        "stamina": {
+            "base": 260,
+            "level_increase": {
+                "wild": 26,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 170,
+            "level_increase": {
+                "wild": 3.4,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 33,
+            "level_increase": {
+                "wild": 1.65,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.3
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed Hats (Mobile only)",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 10m 37.593s",
+        "baby_time": "4h 52m 23.859s",
+        "juvenile_time": "19h 29m 35.438s",
+        "adolescent_time": "1d 21m 59.297s",
+        "total_maturation": "2d 43m 58.594s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 120,
+    "cloneable": false,
+    "entity_id": "Direwolf_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Direwolf"
+}

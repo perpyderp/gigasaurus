@@ -1,0 +1,115 @@
+{
+    "name": "Tapejara",
+    "category": "reptile",
+    "dossier": {
+        "species": "Tapejara imperator",
+        "time": "Cretaceous",
+        "diet": "Carnivore",
+        "temperament": "Skittish",
+        "wild": "Tapejara imperator is a marvel to watch in the wild. It has astonishing agility compared to the Island's other flyers thanks in large part to the rudder-like fin that extends from its snout to the back of its skull. Initially, I'd thought the fin was simply composed of keratin, but closer inspection has led me to believe that it is actually some kind of sensory organ. Not only does it decrease Tapejara's turning radius even at high speeds, but it apparently provides Tapejara with extra information to help it fly through the air with unparalleled grace. I've even seen Tapejara hover and strafe side-to-side in the air without moving forward at all. It's quite remarkable. The creature also makes effective use of razor-sharp claws to latch onto surfaces such as the trunks of tall trees, holding its position indefinitely.",
+        "domesticated": "Warlike tribes appear to consider Tapejara the equivalent of a versatile rotor aircraft, capable of rapid positional changes and aggressive agility. When domesticated the Tapejara is typically outfitted with a unique triple-rider saddle, enabling two passengers to wield handheld weaponry while the pilot takes the reins. When the Tapejara is latched onto a surface, both the passengers and pilot are able to make full use of their weapons together! Evidently what this skittering creature lacks in distance-stamina, constitution, and weight carrying capacity, it makes up for in maneuverability and combat versatility."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 325,
+            "level_increase": {
+                "wild": 55.25,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 250,
+            "level_increase": {
+                "wild": 12.5,
+                "tamed": 0.06
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 280,
+            "level_increase": {
+                "wild": 5.6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 18,
+            "level_increase": {
+                "wild": 0.9,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.365
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Tapejara Saddle (Level 55) Tapejara Tek Saddle",
+            "engram_level": 55
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Tapejara Egg",
+        "incubation": {
+            "range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_range": "29 - 32 °C / 84 - 90 °F Egg Incubator: 31 °C / 88 °F",
+            "incubation_time": "1h 39m 59.521s"
+        },
+        "baby_time": "5h 26m 47.842s",
+        "juvenile_time": "21h 47m 11.369s",
+        "adolescent_time": "1d 3h 13m 59.211s",
+        "total_maturation": "2d 6h 27m 58.422s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 149,
+    "cloneable": false,
+    "entity_id": "Tapejara_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Tapejara"
+}

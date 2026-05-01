@@ -1,5 +1,6 @@
 {
     "name": "Ravager",
+    "category": "other",
     "dossier": {
         "species": "Canis barghest",
         "time": "Unknown",
@@ -13,7 +14,7 @@
             "base": 400,
             "level_increase": {
                 "wild": 80,
-                "tamed": 0.054
+                "tamed": 0.054000000000000006
             },
             "taming_bonus": {
                 "additive": 0.07
@@ -54,7 +55,7 @@
             "base": 25,
             "level_increase": {
                 "wild": 1,
-                "tamed": 0.0136
+                "tamed": 0.013600000000000001
             },
             "taming_bonus": {
                 "additive": 0.042,
@@ -89,14 +90,13 @@
     },
     "saddle": [
         {
-            "name": "Ravager Saddle",
+            "name": "Ravager Saddle (Level 47)",
             "engram_level": 47
         }
     ],
-    "rider_weaponry": true,
-    "egg": null,
-    "reproduction": {
-        "gestation": "4h 10m 37.593s",
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 10m 37.593s",
         "baby_time": "4h 52m 23.859s",
         "juvenile_time": "19h 29m 35.438s",
         "adolescent_time": "1d 21m 59.297s",
@@ -104,7 +104,7 @@
         "breeding_interval": "18h - 2d"
     },
     "drag_weight": 120,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "CaveWolf_Character_BP_C",
-    "category": "fantasy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Ravager"
 }

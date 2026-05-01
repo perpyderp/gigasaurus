@@ -1,0 +1,75 @@
+{
+    "name": "Chrysaora",
+    "category": "invertebrate",
+    "dossier": {
+        "species": "Chrysaora fuscenscens",
+        "time": "Unknown",
+        "diet": "Piscivore",
+        "temperament": "Territorial",
+        "wild": "Roaming through the currents you can find several of these large jellyfish. It is best to keep your distance to avoid the nasty shock they can deal out. They aren't quick to aggression, but they certainly will defend themselves if it is required of them. Unbothered, they will flow peacefully by. From a safe distance, they are a nice sight.",
+        "domesticated": "They may not have the most utility, but it is possible to tame even fully grown wild Chrysaora. They can only breed in the wild so any domesticated jellyfish must be earned. I did manage to ride one, but only once. Floating through the water next to those tentacles does make it difficult to let your guard down."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 180,
+            "level_increase": {
+                "wild": 36
+            }
+        },
+        "stamina": {
+            "base": 120,
+            "level_increase": {
+                "wild": 12
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120
+            }
+        },
+        "weight": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 20
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 250,
+            "level_increase": {
+                "wild": 15
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": null,
+    "cloneable": false,
+    "entity_id": "Chrysaora_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Chrysaora"
+}

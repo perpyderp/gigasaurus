@@ -1,0 +1,104 @@
+{
+    "name": "Paraceratherium",
+    "category": "mammal",
+    "dossier": {
+        "species": "Paraceratherium gigamicus",
+        "time": "Oligocene",
+        "diet": "Herbivore",
+        "temperament": "Docile",
+        "wild": "Paraceratherium gigamicus is a massive, long-necked herbivore that inhabits some of the Island's grasslands. It resembles a gigantic horse/rhinoceros hybrid, but is over twice the size of either. Paraceratherium is a very peaceful and friendly creature. Barring some surprises yet in store for me, I can safely say that Paraceratherium is among the largest mammals on the Island. While its size means that Paraceratherium can provide an incredible amount of food, it also makes it dangerous when hunted.",
+        "domesticated": "A beast of burden second to the Brontosaurus, Paraceratherium is an excellent worker, and is sufficient in size to support a \"platform\" saddle upon which structures can be built. It is a naturally friendly animal, and is not afraid of humans. However, despite its normally calm demeanor, when it or its owner is provoked by aggression, the Paraceratherium can quickly become a real threat to the attacker and will use its girth to its advantage in combat."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 1026,
+            "level_increase": {
+                "wild": 205.2,
+                "tamed": 0.034425
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 300,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 6500,
+            "level_increase": {
+                "wild": 650,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 850,
+            "level_increase": {
+                "wild": 17,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 45,
+            "level_increase": {
+                "wild": 2.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1300,
+            "level_increase": {
+                "wild": 78
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Paracer Saddle (Level 41) Paracer Platform Saddle (Level 50)",
+            "engram_level": 41
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "7h 56m 11.428s",
+        "baby_time": "9h 15m 33.331s",
+        "juvenile_time": "1d 13h 2m 13.325s",
+        "adolescent_time": "1d 22h 17m 46.656s",
+        "total_maturation": "3d 20h 35m 33.313s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 600,
+    "cloneable": false,
+    "entity_id": "Paracer_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Paraceratherium"
+}

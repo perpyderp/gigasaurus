@@ -1,5 +1,6 @@
 {
     "name": "Deathworm",
+    "category": "other",
     "dossier": {
         "species": "Khorkoi arrakis",
         "time": "Unknown",
@@ -22,10 +23,7 @@
             }
         },
         "oxygen": {
-            "base": null,
-            "level_increase": {
-                "wild": null
-            }
+            "base": null
         },
         "food": {
             "base": 100,
@@ -46,10 +44,7 @@
             }
         },
         "movement": {
-            "base": 100,
-            "level_increase": {
-                "wild": null
-            }
+            "base": 100
         },
         "torpidity": {
             "base": 100,
@@ -65,9 +60,8 @@
     "saddle": null,
     "rider_weaponry": false,
     "egg": null,
-    "reproduction": null,
     "drag_weight": 1000,
     "cloneable": false,
     "entity_id": "Deathworm_Character_BP_C",
-    "category": "fantasy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Deathworm"
 }

@@ -1,5 +1,6 @@
 {
     "name": "Rock Elemental",
+    "category": "fantasy",
     "dossier": {
         "species": "Colossus petram",
         "time": "Unknown",
@@ -13,7 +14,7 @@
             "base": 25000,
             "level_increase": {
                 "wild": 312.5,
-                "tamed": 0.027
+                "tamed": 0.027000000000000003
             },
             "taming_bonus": {
                 "additive": -22000
@@ -47,14 +48,14 @@
             }
         },
         "melee": {
-            "base": 300,
+            "base": 120300,
             "level_increase": {
-                "wild": 15,
+                "wild": 615,
                 "tamed": 0.017
             },
             "taming_bonus": {
                 "additive": 0.0175,
-                "multiplicative": 0.176
+                "multiplicative": 0.17600000000000002
             }
         },
         "movement": {
@@ -78,19 +79,18 @@
     "breedable": false,
     "taming": {
         "method": "Knockout",
-        "kibble": "Extraordinary"
+        "kibble": null
     },
     "saddle": [
         {
-            "name": "Rock Golem Saddle",
+            "name": "Rock Golem Saddle (Level 70)",
             "engram_level": 70
         }
     ],
-    "rider_weaponry": true,
+    "rider_weaponry": false,
     "egg": null,
-    "reproduction": null,
     "drag_weight": 1000,
-    "cloneable": true,
+    "cloneable": false,
     "entity_id": "RockGolem_Character_BP_C",
-    "category": "fantasy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Rock_Elemental"
 }

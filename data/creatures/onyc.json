@@ -1,0 +1,99 @@
+{
+    "name": "Onyc",
+    "category": "mammal",
+    "dossier": {
+        "species": "Onychonycteris specuncola",
+        "time": "Eocene",
+        "diet": "Omnivore",
+        "temperament": "Aggressive",
+        "wild": "Onychonycteris specuncola is one of the few omnivores I've seen on the Island. They seem to live primarily off the mushrooms and moss within the caves, but they attack almost any non-insect on sight. They avoid Titanoboa whenever possible, which leads me to believe the snake to be a natural predator of Onychonycteris. While flying in the dark caves would be difficult for any creature, Onychonycteris' ability to use echolocation has allowed it to adapt perfectly. It can be found idly flying around the caves as often as it can be found hanging from bits of the cave ceilings.",
+        "domesticated": "Not large enough to be used as mounts, and not strong enough to carry much, Onychonycteris still function well as a guard animal. Whether protecting a vacant home or members of a tribe, their relatively vicious nature has its uses."
+    },
+    "base_stats_growth": {
+        "health": {
+            "base": 250,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 50,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "3h 58m 5.714s",
+        "baby_time": "2h 48m 21.01s",
+        "juvenile_time": "11h 13m 24.04s",
+        "adolescent_time": "14h 1m 45.051s",
+        "total_maturation": "1d 4h 3m 30.101s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "Bat_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Onyc"
+}
