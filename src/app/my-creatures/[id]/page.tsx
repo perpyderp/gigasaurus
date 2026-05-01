@@ -8,7 +8,6 @@ import {
   IconArrowLeft,
   IconPencil,
   IconX,
-  IconRefresh,
   IconTrash,
   IconMars,
   IconVenus,
@@ -21,12 +20,13 @@ import { getCreature, upsertCreature, deleteCreature, getAllCreatures } from '@/
 import type { StoredCreature } from '@/lib/db'
 import { ColorSwatches } from '@/components/ColorSwatch'
 import { CreatureColorRender } from '@/components/CreatureColorRender'
-import { StatBar, type StatDisplayStyle } from '@/components/StatBar'
-import { ImportDropzone } from '@/components/ImportDropzone'
+import { StatBar, StatTableHeader, type StatDisplayStyle } from '@/components/StatBar'
+import { CreatureReimportButton } from '@/components/CreatureReimportButton'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
   STAT_CONFIG,
   RELEVANT_STATS,
@@ -38,6 +38,7 @@ import {
 import {
   buildSpeciesParams,
   solveAllStats,
+  summarizeLevels,
   type StatSolutionMap,
 } from '@/lib/ark-stat-solver'
 import { combineArkId } from '@/lib/ark-id'
@@ -49,7 +50,6 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
   const [loading, setLoading] = useState(true)
   const [editing, setEditing] = useState(false)
   const [nameInput, setNameInput] = useState('')
-  const [showReimport, setShowReimport] = useState(false)
   const [confirmDelete, setConfirmDelete] = useState(false)
   const [statSolutions, setStatSolutions] = useState<StatSolutionMap | null>(null)
   const [isBreedable, setIsBreedable] = useState(false)
@@ -109,11 +109,6 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
     router.push('/my-creatures')
   }
 
-  const handleReimported = useCallback(async () => {
-    await load()
-    setShowReimport(false)
-  }, [load])
-
   const handleSaveParents = async () => {
     if (!creature) return
     const updated: StoredCreature = {
@@ -151,6 +146,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
   const imprintPct = Math.round(creature.imprintQuality * 100)
   const points = estimateStatPoints(creature.stats, creature.level)
   const arkId = combineArkId(creature.dinoId1, creature.dinoId2)
+  const levelSummary = statSolutions ? summarizeLevels(statSolutions, creature.level) : null
 
   // Look up parent display names from same-species list
   const fatherCreature = sameSpecies.find((c) => c.id === creature.manualParentMaleId)
@@ -168,38 +164,28 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
         {/* Hero */}
         <Card>
           <CardContent className="flex flex-col gap-6 p-6 sm:flex-row">
-            <div className="flex flex-col gap-2 sm:w-1/2">
+            <div className="flex w-full max-w-sm flex-col gap-2 sm:max-w-xs md:max-w-sm">
               <div className="bg-muted relative aspect-square w-full overflow-hidden rounded-lg">
                 {imageTab === 'colors' && speciesName ? (
                   <CreatureColorRender
                     speciesName={speciesName}
+                    slug={creature.apiSlug}
                     colors={creature.colors}
-                    size={448}
+                    size={384}
                     className="h-full w-full"
                   />
                 ) : imageUrl ? (
-                  <Image src={imageUrl} alt={creature.name} fill className="object-contain p-3" sizes="(max-width: 640px) 90vw, 448px" />
+                  <Image src={imageUrl} alt={creature.name} fill className="object-contain p-3" sizes="(max-width: 640px) 90vw, 384px" />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center text-6xl opacity-30">🦕</div>
                 )}
               </div>
-              <div className="bg-muted/40 flex w-full rounded-md p-0.5 text-xs">
-                <button
-                  type="button"
-                  onClick={() => setImageTab('dossier')}
-                  className={`flex-1 rounded-sm py-1.5 transition-colors ${imageTab === 'dossier' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
-                >
-                  Dossier
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setImageTab('colors')}
-                  disabled={!speciesName}
-                  className={`flex-1 rounded-sm py-1.5 transition-colors ${imageTab === 'colors' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'} disabled:cursor-not-allowed disabled:opacity-50`}
-                >
-                  Colors
-                </button>
-              </div>
+              <Tabs value={imageTab} onValueChange={(v) => setImageTab(v as 'dossier' | 'colors')}>
+                <TabsList className="w-full">
+                  <TabsTrigger value="dossier" className="flex-1">Dossier</TabsTrigger>
+                  <TabsTrigger value="colors" className="flex-1" disabled={!speciesName}>Colors</TabsTrigger>
+                </TabsList>
+              </Tabs>
             </div>
 
             <div className="min-w-0 flex-1 space-y-3">
@@ -264,6 +250,15 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                 <span>Owner: <span className="text-foreground">{creature.tamer || '—'}</span></span>
                 <span>Imprinted by: <span className="text-foreground">{creature.imprinter || '—'}</span></span>
               </div>
+
+              {creature.apiSlug && (
+                <Link
+                  href={`/creatures/${creature.apiSlug}`}
+                  className="text-primary hover:text-primary/80 inline-flex items-center gap-1 text-xs font-medium transition-colors"
+                >
+                  View species page →
+                </Link>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -272,7 +267,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
         <Card>
           <CardHeader className="pb-3">
             <div className="flex items-center justify-between gap-3">
-              <CardTitle className="text-sm font-semibold">Max Stats</CardTitle>
+              <CardTitle className="text-sm font-semibold">Stats</CardTitle>
               <div className="bg-muted/40 flex rounded-md p-0.5 text-xs">
                 {(['circle', 'bar', 'value'] as const).map((s) => (
                   <button
@@ -286,14 +281,44 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                 ))}
               </div>
             </div>
+
+            {levelSummary && (
+              <div className="text-muted-foreground border-border mt-3 grid grid-cols-2 gap-2 border-t pt-3 text-xs sm:grid-cols-4">
+                <div>
+                  <span className="block uppercase tracking-wide text-[10px]">Wild Levels</span>
+                  <span className="text-blue-500 dark:text-blue-400 font-semibold tabular-nums">{levelSummary.totalWild}</span>
+                </div>
+                <div>
+                  <span className="block uppercase tracking-wide text-[10px]">Tamed Levels</span>
+                  <span className="text-violet-500 dark:text-violet-400 font-semibold tabular-nums">{levelSummary.totalDom}</span>
+                </div>
+                <div>
+                  <span className="block uppercase tracking-wide text-[10px]">Computed Level</span>
+                  <span className="text-foreground font-semibold tabular-nums">{levelSummary.computedLevel}</span>
+                </div>
+                <div>
+                  <span className="block uppercase tracking-wide text-[10px]">Export Level</span>
+                  <span className="text-foreground font-semibold tabular-nums">{creature.level}</span>
+                  {levelSummary.levelDelta !== 0 && (
+                    <span
+                      className="ml-1 text-amber-600 dark:text-amber-500 font-medium"
+                      title="Solver mismatch — usually means non-vanilla server multipliers or scraped wiki data is off"
+                    >
+                      ⚠ {levelSummary.levelDelta > 0 ? '+' : ''}{levelSummary.levelDelta}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
           </CardHeader>
           <CardContent className={
             statStyle === 'value'
-              ? 'grid grid-cols-1 gap-x-8 sm:grid-cols-2'
+              ? 'space-y-0'
               : statStyle === 'bar'
                 ? 'grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2'
                 : 'grid grid-cols-1 gap-4 sm:grid-cols-2'
           }>
+            {statStyle === 'value' && <StatTableHeader />}
             {RELEVANT_STATS.map((stat) => {
               const cfg = STAT_CONFIG[stat]
               const value = creature.stats[stat]
@@ -303,6 +328,9 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
               const breedingDisplay = solution?.solved
                 ? formatStatValue(stat, solution.breedingValue)
                 : undefined
+              const maxPotentialDisplay = solution?.solved
+                ? formatStatValue(stat, solution.maxPotential)
+                : undefined
               return (
                 <StatBar
                   key={stat}
@@ -310,6 +338,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                   value={value}
                   display={display}
                   breedingDisplay={breedingDisplay}
+                  maxPotentialDisplay={maxPotentialDisplay}
                   max={STAT_MAXES[stat]}
                   color={cfg.ringColor}
                   style={statStyle}
@@ -482,25 +511,9 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
           </Card>
         )}
 
-        {/* Re-import panel */}
-        {showReimport && (
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-semibold">Re-import</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p className="text-muted-foreground text-xs">Drop an updated export for this creature to refresh its stats.</p>
-              <ImportDropzone onImported={handleReimported} />
-            </CardContent>
-          </Card>
-        )}
-
         {/* Actions */}
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <Button variant="outline" onClick={() => setShowReimport((v) => !v)} className="gap-2">
-            <IconRefresh size={14} />
-            Re-import
-          </Button>
+          <CreatureReimportButton creature={creature} onReimported={setCreature} />
           <Button
             variant={confirmDelete ? 'destructive' : 'outline'}
             className={confirmDelete ? 'gap-2' : 'gap-2 text-destructive border-destructive/30 hover:bg-destructive/10'}

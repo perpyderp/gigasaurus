@@ -5,8 +5,13 @@ import { colorizeCreature, arkColorToTint, type RGB } from '@/lib/creature-color
 import type { ArkColor } from '@/lib/ark-parser'
 
 const ARKUTILS_BASE = 'https://raw.githubusercontent.com/arkutils/species-images/main/images'
+const LOCAL_BASE = '/images/creature-renders'
 
-function imageUrls(speciesName: string): { base: string; mask: string } {
+function localUrls(slug: string): { base: string; mask: string } {
+  return { base: `${LOCAL_BASE}/${slug}.png`, mask: `${LOCAL_BASE}/${slug}_m.png` }
+}
+
+function arkutilsUrls(speciesName: string): { base: string; mask: string } {
   const enc = encodeURIComponent(speciesName)
   return {
     base: `${ARKUTILS_BASE}/${enc}_ASA.png`,
@@ -24,6 +29,10 @@ function loadImage(src: string): Promise<HTMLImageElement> {
   })
 }
 
+async function loadPair(urls: { base: string; mask: string }): Promise<[HTMLImageElement, HTMLImageElement]> {
+  return Promise.all([loadImage(urls.base), loadImage(urls.mask)])
+}
+
 function imageToData(img: HTMLImageElement): ImageData {
   const c = document.createElement('canvas')
   c.width = img.naturalWidth
@@ -35,19 +44,21 @@ function imageToData(img: HTMLImageElement): ImageData {
 }
 
 interface Props {
-  /** Wiki display name, e.g. "Achatina" — used to construct arkutils URLs. */
+  /** Wiki display name, e.g. "Achatina" — used as upstream fallback when no local mask exists. */
   speciesName: string
+  /** Slug for the local bundled image (matches data/creatures/{slug}.json). */
+  slug?: string | null
   colors: ArkColor[]
   className?: string
   /** Square render size in CSS pixels. */
   size?: number
 }
 
-export function CreatureColorRender({ speciesName, colors, className, size = 256 }: Props) {
+export function CreatureColorRender({ speciesName, slug, colors, className, size = 256 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const requestKey = useMemo(
-    () => `${speciesName}|${colors.map((c) => `${c.r},${c.g},${c.b},${c.empty ? 1 : 0}`).join(';')}`,
-    [speciesName, colors],
+    () => `${slug ?? ''}|${speciesName}|${size}|${colors.map((c) => `${c.r},${c.g},${c.b},${c.empty ? 1 : 0}`).join(';')}`,
+    [slug, speciesName, size, colors],
   )
   const [resolved, setResolved] = useState<{ key: string; status: 'ready' | 'missing' } | null>(null)
   const status: 'loading' | 'ready' | 'missing' =
@@ -55,9 +66,20 @@ export function CreatureColorRender({ speciesName, colors, className, size = 256
 
   useEffect(() => {
     let cancelled = false
-    const { base, mask } = imageUrls(speciesName)
 
-    Promise.all([loadImage(base), loadImage(mask)])
+    async function tryLoad() {
+      // Prefer locally-bundled images; fall back to arkutils upstream.
+      if (slug) {
+        try {
+          return await loadPair(localUrls(slug))
+        } catch {
+          // local miss — fall through to upstream
+        }
+      }
+      return await loadPair(arkutilsUrls(speciesName))
+    }
+
+    tryLoad()
       .then(([baseImg, maskImg]) => {
         if (cancelled) return
         const baseData = imageToData(baseImg)
@@ -68,11 +90,28 @@ export function CreatureColorRender({ speciesName, colors, className, size = 256
 
         const canvas = canvasRef.current
         if (!canvas) return
-        canvas.width = out.width
-        canvas.height = out.height
+
+        // Source masks are 256×256. We render the canvas at exactly the displayed
+        // CSS pixel size × DPR so the browser blits 1:1 — no further bilinear
+        // stretching. When `size` ≤ source we get a clean downscale (perfectly
+        // crisp). When `size` > source we accept the unavoidable bicubic upscale,
+        // but limit it: caller decides how big to ask for via `size`.
+        const stage = document.createElement('canvas')
+        stage.width = out.width
+        stage.height = out.height
+        const stageCtx = stage.getContext('2d')
+        if (!stageCtx) return
+        stageCtx.putImageData(out, 0, 0)
+
+        const dpr = typeof window === 'undefined' ? 1 : Math.min(window.devicePixelRatio || 1, 3)
+        const target = size * dpr
+        canvas.width = target
+        canvas.height = target
         const ctx = canvas.getContext('2d')
         if (!ctx) return
-        ctx.putImageData(out, 0, 0)
+        ctx.imageSmoothingEnabled = true
+        ctx.imageSmoothingQuality = 'high'
+        ctx.drawImage(stage, 0, 0, target, target)
         setResolved({ key: requestKey, status: 'ready' })
       })
       .catch(() => {
@@ -83,7 +122,7 @@ export function CreatureColorRender({ speciesName, colors, className, size = 256
     return () => {
       cancelled = true
     }
-  }, [requestKey, speciesName, colors])
+  }, [requestKey, slug, speciesName, colors])
 
   return (
     <div className={className} style={{ width: size, height: size }}>

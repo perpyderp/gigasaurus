@@ -16,6 +16,8 @@ interface StatBarProps {
   display?: string
   /** Pre-formatted breeding value, shown alongside the observed value when provided. */
   breedingDisplay?: string
+  /** Pre-formatted max-potential value (this creature with all 88 dom levels in this stat). */
+  maxPotentialDisplay?: string
   max: number
   color?: string
   style?: StatDisplayStyle
@@ -41,8 +43,26 @@ const ringToBg: Record<string, string> = {
   'text-violet-500':   'bg-violet-500',
 }
 
+/** Grid template used by the ASE-style table view. Header + rows must share this. */
+export const STAT_TABLE_GRID =
+  'grid grid-cols-[minmax(0,1fr)_3rem_3rem_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)] items-center gap-x-3 px-2'
+
+/** Header row for the ASE-style table view. Render once above the StatBar rows. */
+export function StatTableHeader() {
+  return (
+    <div className={`${STAT_TABLE_GRID} text-muted-foreground border-border/60 border-b py-1.5 text-[10px] uppercase tracking-wide`}>
+      <span>Stat</span>
+      <span className="text-blue-500 dark:text-blue-400 text-right" title="Wild levels">Wild</span>
+      <span className="text-violet-500 dark:text-violet-400 text-right" title="Tamed (dom) levels">Tamed</span>
+      <span className="text-foreground text-right" title="Current value from the export's Max Character Status Values">Value</span>
+      <span className="text-right" title="Breeding value (genetic transfer)">Breeding</span>
+      <span className="text-right" title="Max potential at 88 dom levels in this stat">Max</span>
+    </div>
+  )
+}
+
 export function StatBar({
-  label, value, display, breedingDisplay, max,
+  label, value, display, breedingDisplay, maxPotentialDisplay, max,
   color = 'text-emerald-500', style = 'circle',
   points, topPercent,
   wildLevels, domLevels, solved,
@@ -51,38 +71,61 @@ export function StatBar({
   const displayValue = display ?? (Number.isInteger(value) ? String(value) : value.toFixed(1))
   const barBg = ringToBg[color] ?? 'bg-emerald-500'
 
+  if (style === 'value') {
+    // ASE-style table row: matches STAT_TABLE_GRID header above.
+    return (
+      <div className={`${STAT_TABLE_GRID} border-border/40 border-b py-1.5 text-sm last:border-b-0 hover:bg-muted/30 rounded-sm transition-colors`}>
+        <span className={`font-medium ${color}`}>{label}</span>
+        <span className={`text-right font-mono tabular-nums ${wildLevels !== undefined ? 'text-blue-500 dark:text-blue-400 font-semibold' : 'text-muted-foreground/40'} ${solved === false ? 'opacity-60' : ''}`}>
+          {wildLevels !== undefined ? wildLevels : '—'}
+        </span>
+        <span className={`text-right font-mono tabular-nums ${domLevels !== undefined ? 'text-violet-500 dark:text-violet-400 font-semibold' : 'text-muted-foreground/40'} ${solved === false ? 'opacity-60' : ''}`}>
+          {domLevels !== undefined ? domLevels : '—'}
+        </span>
+        <span className="text-foreground text-right font-mono tabular-nums font-semibold">{displayValue}</span>
+        <span className="text-muted-foreground text-right font-mono text-xs tabular-nums">
+          {breedingDisplay ?? '—'}
+        </span>
+        <span className="text-muted-foreground text-right font-mono text-xs tabular-nums">
+          {maxPotentialDisplay ?? '—'}
+        </span>
+      </div>
+    )
+  }
+
+  // Compact meta row reused by circle and bar modes.
   const meta = (
     <div className="text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs">
       {wildLevels !== undefined ? (
         <span className={solved ? '' : 'opacity-60'}>
-          Lw <span className="text-blue-500 dark:text-blue-400 font-medium tabular-nums">{wildLevels}</span>
+          <span className="text-muted-foreground">Wild </span>
+          <span className="text-blue-500 dark:text-blue-400 font-semibold tabular-nums">{wildLevels}</span>
           {domLevels !== undefined && (
-            <> · Ld <span className="text-violet-500 dark:text-violet-400 font-medium tabular-nums">{domLevels}</span></>
+            <>
+              <span className="text-muted-foreground"> · Tamed </span>
+              <span className="text-violet-500 dark:text-violet-400 font-semibold tabular-nums">{domLevels}</span>
+            </>
           )}
+          {!solved && <span className="ml-1 text-amber-600 dark:text-amber-500" title="Solver could not find an exact integer fit">~</span>}
         </span>
       ) : (
         points !== undefined && <span>~{points} pts</span>
       )}
       {breedingDisplay && (
         <span>
-          Breed <span className="text-foreground font-mono tabular-nums">{breedingDisplay}</span>
+          <span className="text-muted-foreground">Breeding </span>
+          <span className="text-foreground font-mono tabular-nums">{breedingDisplay}</span>
+        </span>
+      )}
+      {maxPotentialDisplay && (
+        <span title="Max potential — this creature with all 88 dom levels assigned to this stat">
+          <span className="text-muted-foreground">Max </span>
+          <span className="text-foreground font-mono tabular-nums">{maxPotentialDisplay}</span>
         </span>
       )}
       {topPercent && <span className="text-emerald-600 dark:text-emerald-400">{topPercent}</span>}
     </div>
   )
-
-  if (style === 'value') {
-    return (
-      <div className="border-border/60 flex items-baseline justify-between gap-3 border-b py-2 last:border-b-0">
-        <span className={`text-sm font-medium ${color}`}>{label}</span>
-        <div className="flex flex-col items-end gap-0.5">
-          <span className="text-foreground font-mono text-sm tabular-nums">{displayValue}</span>
-          {meta}
-        </div>
-      </div>
-    )
-  }
 
   if (style === 'bar') {
     return (
