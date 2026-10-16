@@ -37,8 +37,12 @@ import {
 } from '@/lib/stat-calc'
 import {
   buildSpeciesParams,
+  extractLevels,
   solveAllStats,
   summarizeLevels,
+  type AseSpeciesEntry,
+  type AseStatKey,
+  type LevelSummary,
   type StatSolutionMap,
 } from '@/lib/ark-stat-solver'
 import { combineArkId } from '@/lib/ark-id'
@@ -52,6 +56,8 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
   const [nameInput, setNameInput] = useState('')
   const [confirmDelete, setConfirmDelete] = useState(false)
   const [statSolutions, setStatSolutions] = useState<StatSolutionMap | null>(null)
+  const [levelSummary, setLevelSummary] = useState<LevelSummary | null>(null)
+  const [tamingEff, setTamingEff] = useState<number | null>(null)
   const [isBreedable, setIsBreedable] = useState(false)
   const [sameSpecies, setSameSpecies] = useState<StoredCreature[]>([])
   const [editingParents, setEditingParents] = useState(false)
@@ -69,22 +75,55 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
 
   useEffect(() => { load() }, [load])
 
-  // Fetch species data: solve stats and check breedability
+  // Fetch species data: solve stats and check breedability.
+  // Preferred path: ARKStatsExtractor-derived params looked up by the export's
+  // blueprint path, run through the ASE-style extractor. The wiki-scraped
+  // params only serve as fallback for species missing from that data (mods).
   useEffect(() => {
-    if (!creature?.apiSlug) return
+    if (!creature) return
     const isBred = creature.ancestors.length > 0 || creature.imprintQuality > 0
-    fetch(`/api/creatures/${creature.apiSlug}`)
-      .then((r) => r.ok ? r.json() : null)
-      .then((data) => {
-        if (!data) return
-        if (data.base_stats_growth) {
+    let cancelled = false
+
+    ;(async () => {
+      let solvedFromAse = false
+      if (creature.dinoClass) {
+        try {
+          const r = await fetch(`/api/creatures/stat-params?bp=${encodeURIComponent(creature.dinoClass)}`)
+          if (r.ok) {
+            const species = (await r.json()) as AseSpeciesEntry
+            const result = extractLevels(species, {
+              statValues: creature.stats as Partial<Record<AseStatKey, number>>,
+              level: creature.level,
+              imprintingBonus: creature.imprintQuality,
+              isBred,
+            })
+            if (!cancelled) {
+              setStatSolutions(result.solutions)
+              setLevelSummary(result.summary)
+              setTamingEff(isBred ? null : result.te)
+            }
+            solvedFromAse = true
+          }
+        } catch {/* fall through to wiki params */}
+      }
+
+      if (!creature.apiSlug) return
+      try {
+        const r = await fetch(`/api/creatures/${creature.apiSlug}`)
+        const data = r.ok ? await r.json() : null
+        if (!data || cancelled) return
+        if (!solvedFromAse && data.base_stats_growth) {
           const speciesParams = buildSpeciesParams(data.base_stats_growth)
-          setStatSolutions(solveAllStats(creature.stats as unknown as Record<string, number>, speciesParams, creature.imprintQuality, isBred))
+          const solutions = solveAllStats(creature.stats as unknown as Record<string, number>, speciesParams, creature.imprintQuality, isBred)
+          setStatSolutions(solutions)
+          setLevelSummary(summarizeLevels(solutions, creature.level))
         }
         setIsBreedable(!!data.breedable)
         if (typeof data.name === 'string') setSpeciesName(data.name)
-      })
-      .catch(() => {/* silently ignore */})
+      } catch {/* silently ignore */}
+    })()
+
+    return () => { cancelled = true }
   }, [creature])
 
   // Load same-species creatures when breedable and editing parents
@@ -146,7 +185,6 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
   const imprintPct = Math.round(creature.imprintQuality * 100)
   const points = estimateStatPoints(creature.stats, creature.level)
   const arkId = combineArkId(creature.dinoId1, creature.dinoId2)
-  const levelSummary = statSolutions ? summarizeLevels(statSolutions, creature.level) : null
 
   // Look up parent display names from same-species list
   const fatherCreature = sameSpecies.find((c) => c.id === creature.manualParentMaleId)
@@ -302,12 +340,20 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                   {levelSummary.levelDelta !== 0 && (
                     <span
                       className="ml-1 text-amber-600 dark:text-amber-500 font-medium"
-                      title="Solver mismatch — usually means non-vanilla server multipliers or scraped wiki data is off"
+                      title="Solver mismatch — usually means non-vanilla server multipliers or species data we don't have"
                     >
                       ⚠ {levelSummary.levelDelta > 0 ? '+' : ''}{levelSummary.levelDelta}
                     </span>
                   )}
                 </div>
+                {tamingEff !== null && (
+                  <div>
+                    <span className="block uppercase tracking-wide text-[10px]">Taming Eff</span>
+                    <span className="text-emerald-600 dark:text-emerald-400 font-semibold tabular-nums">
+                      {(tamingEff * 100).toFixed(1)}%
+                    </span>
+                  </div>
+                )}
               </div>
             )}
           </CardHeader>

@@ -7,6 +7,11 @@
  *
  * Color values are stored in linear float space.
  * A=1.000000 on a color slot means the slot is empty/unused.
+ *
+ * Stat section caveats (see .claude/skills/ark-stat-calculation):
+ *  - keys are localized → stats are parsed by position, not name
+ *  - multiplier stats (melee/speed/fortitude/crafting) are stored as value − 1
+ *    and are normalized to full multipliers here (1.0 = 100%)
  */
 
 export interface ArkColor {
@@ -75,18 +80,22 @@ export interface ParsedExport {
 
 type Section = Record<string, string>
 
-function parseSections(text: string): Record<string, Section> {
+function parseSections(text: string): { sections: Record<string, Section>; orderedValues: Record<string, string[]> } {
   const sections: Record<string, Section> = {}
+  // Values in file order per section — needed for the stat section, whose key
+  // names are localized (a German client writes "Gesundheit=", not "Health=").
+  const orderedValues: Record<string, string[]> = {}
   let current = ''
 
   for (const rawLine of text.split(/\r?\n/)) {
     const line = rawLine.trim()
-    if (!line) continue
+    if (!line || line.startsWith(';')) continue
 
     const sectionMatch = line.match(/^\[(.+)\]$/)
     if (sectionMatch) {
       current = sectionMatch[1]
       sections[current] = {}
+      orderedValues[current] = []
       continue
     }
 
@@ -95,11 +104,30 @@ function parseSections(text: string): Record<string, Section> {
       const key = line.slice(0, eq).trim()
       const val = line.slice(eq + 1).trim()
       sections[current][key] = val
+      orderedValues[current].push(val)
     }
   }
 
-  return sections
+  return { sections, orderedValues }
 }
+
+/**
+ * Stats appear in this fixed order inside [Max Character Status Values].
+ * ASE parses them by position for the same reason we do (localized key names).
+ */
+const STAT_FILE_ORDER = [
+  'health', 'stamina', 'torpidity', 'oxygen', 'food', 'water',
+  'temperature', 'weight', 'meleeDamage', 'movementSpeed', 'fortitude', 'craftingSkill',
+] as const satisfies ReadonlyArray<keyof ArkCreatureStats>
+
+/**
+ * Multiplier stats are exported as `multiplier − 1` (the bonus fraction):
+ * "Melee Damage=0.85" means 185%. Normalize to the full multiplier so stored
+ * values match in-game display and the stat solver's base of 1.0.
+ */
+const MULTIPLIER_FILE_STATS: ReadonlySet<keyof ArkCreatureStats> = new Set([
+  'meleeDamage', 'movementSpeed', 'fortitude', 'craftingSkill',
+])
 
 // ─── Color parser ──────────────────────────────────────────────────────────────
 
@@ -149,11 +177,11 @@ function parseAncestorSection(section: Section, prefix: string): AncestorEntry[]
 // ─── Public API ────────────────────────────────────────────────────────────────
 
 export function parseArkExport(iniText: string): ParsedExport {
-  const sections = parseSections(iniText)
+  const { sections, orderedValues } = parseSections(iniText)
 
   const data = sections['Dino Data'] ?? {}
   const colorSection = sections['Colorization'] ?? {}
-  const statsSection = sections['Max Character Status Values'] ?? {}
+  const statValues = orderedValues['Max Character Status Values'] ?? []
   const ancestorsSection = sections['DinoAncestors'] ?? {}
   const ancestorsMaleSection = sections['DinoAncestorsMale'] ?? {}
 
@@ -166,7 +194,11 @@ export function parseArkExport(iniText: string): ParsedExport {
     colors.push(raw ? parseColor(raw) : { r: 0, g: 0, b: 0, empty: true })
   }
 
-  const stat = (key: string) => parseFloat(statsSection[key] ?? '0')
+  const stats = {} as ArkCreatureStats
+  STAT_FILE_ORDER.forEach((key, i) => {
+    const raw = parseFloat(statValues[i] ?? '0')
+    stats[key] = MULTIPLIER_FILE_STATS.has(key) ? 1 + raw : raw
+  })
 
   return {
     id: `${dinoId1}_${dinoId2}`,
@@ -186,20 +218,7 @@ export function parseArkExport(iniText: string): ParsedExport {
     mutationsMale: parseInt(data['RandomMutationsMale'] ?? '0', 10),
     mutationsFemale: parseInt(data['RandomMutationsFemale'] ?? '0', 10),
     colors,
-    stats: {
-      health: stat('Health'),
-      stamina: stat('Stamina'),
-      torpidity: stat('Torpidity'),
-      oxygen: stat('Oxygen'),
-      food: stat('food'),
-      water: stat('Water'),
-      temperature: stat('Temperature'),
-      weight: stat('Weight'),
-      meleeDamage: stat('Melee Damage'),
-      movementSpeed: stat('Movement Speed'),
-      fortitude: stat('Fortitude'),
-      craftingSkill: stat('Crafting Skill'),
-    },
+    stats,
     ancestors: parseAncestorSection(ancestorsSection, 'DinoAncestors'),
     ancestorsMale: parseAncestorSection(ancestorsMaleSection, 'DinoAncestorsMale'),
   }
