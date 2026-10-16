@@ -66,5 +66,18 @@
     "drag_weight": 30,
     "cloneable": false,
     "entity_id": "Ant_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Titanomyrma"
+    "wiki_url": "https://ark.wiki.gg/wiki/Titanomyrma",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

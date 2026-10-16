@@ -50,7 +50,7 @@ export const STAT_TABLE_GRID =
 /** Header row for the ASE-style table view. Render once above the StatBar rows. */
 export function StatTableHeader() {
   return (
-    <div className={`${STAT_TABLE_GRID} text-muted-foreground border-border/60 border-b py-1.5 text-[10px] uppercase tracking-wide`}>
+    <div className={`${STAT_TABLE_GRID} text-muted-foreground border-border border-b py-2 text-xs font-medium`}>
       <span>Stat</span>
       <span className="text-blue-500 dark:text-blue-400 text-right" title="Wild levels">Wild</span>
       <span className="text-violet-500 dark:text-violet-400 text-right" title="Tamed (dom) levels">Tamed</span>

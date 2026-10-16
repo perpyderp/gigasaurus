@@ -105,5 +105,10 @@
     "drag_weight": 35,
     "cloneable": false,
     "entity_id": "Owl_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Snow_Owl"
+    "wiki_url": "https://ark.wiki.gg/wiki/Snow_Owl",
+    "maps": [
+        "Extinction",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

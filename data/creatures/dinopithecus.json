@@ -100,5 +100,8 @@
     "drag_weight": 300,
     "cloneable": true,
     "entity_id": "Dinopithecus_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Dinopithecus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Dinopithecus",
+    "maps": [
+        "Lost Island"
+    ]
 }

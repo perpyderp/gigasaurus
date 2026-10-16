@@ -110,5 +110,16 @@
     "drag_weight": 1500,
     "cloneable": false,
     "entity_id": "Tusoteuthis_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Tusoteuthis"
+    "wiki_url": "https://ark.wiki.gg/wiki/Tusoteuthis",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

@@ -97,5 +97,11 @@
     "cloneable": true,
     "entity_id": "Shapeshifter_Small_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Ferox"
+    "wiki_url": "https://ark.wiki.gg/wiki/Ferox",
+    "maps": [
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

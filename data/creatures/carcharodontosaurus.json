@@ -101,5 +101,16 @@
     "drag_weight": 950,
     "cloneable": true,
     "entity_id": "Carcha_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Carcharodontosaurus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Carcharodontosaurus",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

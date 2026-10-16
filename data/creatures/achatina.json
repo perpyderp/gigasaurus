@@ -91,5 +91,17 @@
     "drag_weight": 50,
     "cloneable": false,
     "entity_id": "Achatina_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Achatina"
+    "wiki_url": "https://ark.wiki.gg/wiki/Achatina",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

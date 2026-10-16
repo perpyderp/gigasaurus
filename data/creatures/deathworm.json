@@ -63,5 +63,10 @@
     "drag_weight": 1000,
     "cloneable": false,
     "entity_id": "Deathworm_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Deathworm"
+    "wiki_url": "https://ark.wiki.gg/wiki/Deathworm",
+    "maps": [
+        "Scorched Earth",
+        "Ragnarok",
+        "Lost Island"
+    ]
 }

@@ -103,6 +103,12 @@ export const CreatureSchema = z.object({
   entity_id: z.string().nullable(),
   /** Direct link to the ARK wiki page this entry was scraped from. */
   wiki_url: z.string().url().nullable().optional(),
+  /**
+   * Maps this creature naturally spawns on (base variant only), derived from the
+   * wiki's `Spawning_<Creature>_<Map>.svg` spawn-region images.
+   * See scripts/scrape-creature-maps.ts.
+   */
+  maps: z.array(z.string()).optional().default([]),
 })
 
 export type Creature = z.infer<typeof CreatureSchema>

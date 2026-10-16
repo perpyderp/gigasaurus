@@ -1,0 +1,10 @@
+{
+    "name": "Element Dust",
+    "rarity": "common",
+    "renewable": true,
+    "refinable": true,
+    "combustible": false,
+    "weight": 0.05,
+    "stack_size": 1000,
+    "found_in": []
+}

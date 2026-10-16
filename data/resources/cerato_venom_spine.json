@@ -1,0 +1,10 @@
+{
+    "name": "Cerato Venom Spine",
+    "rarity": "common",
+    "renewable": false,
+    "refinable": false,
+    "combustible": false,
+    "weight": 2,
+    "stack_size": 100,
+    "found_in": []
+}

@@ -106,5 +106,14 @@
     "drag_weight": 120,
     "cloneable": false,
     "entity_id": "CaveWolf_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Ravager"
+    "wiki_url": "https://ark.wiki.gg/wiki/Ravager",
+    "maps": [
+        "Aberration",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

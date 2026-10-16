@@ -107,5 +107,17 @@
     "drag_weight": 120,
     "cloneable": false,
     "entity_id": "Ichthyornis_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Ichthyornis"
+    "wiki_url": "https://ark.wiki.gg/wiki/Ichthyornis",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

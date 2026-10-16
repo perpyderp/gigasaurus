@@ -98,5 +98,16 @@
     "drag_weight": 35,
     "cloneable": false,
     "entity_id": "Otter_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Otter"
+    "wiki_url": "https://ark.wiki.gg/wiki/Otter",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

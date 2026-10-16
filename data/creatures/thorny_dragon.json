@@ -111,5 +111,15 @@
     "drag_weight": 150,
     "cloneable": false,
     "entity_id": "SpineyLizard_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Thorny_Dragon"
+    "wiki_url": "https://ark.wiki.gg/wiki/Thorny_Dragon",
+    "maps": [
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

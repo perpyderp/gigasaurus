@@ -66,5 +66,17 @@
     "drag_weight": 30,
     "cloneable": false,
     "entity_id": "Dragonfly_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Meganeura"
+    "wiki_url": "https://ark.wiki.gg/wiki/Meganeura",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

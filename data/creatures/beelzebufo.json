@@ -107,5 +107,17 @@
     "drag_weight": 110,
     "cloneable": false,
     "entity_id": "Toad_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Beelzebufo"
+    "wiki_url": "https://ark.wiki.gg/wiki/Beelzebufo",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

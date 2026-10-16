@@ -63,5 +63,15 @@
     "drag_weight": 1300,
     "cloneable": false,
     "entity_id": "Leedsichthys_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Leedsichthys"
+    "wiki_url": "https://ark.wiki.gg/wiki/Leedsichthys",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

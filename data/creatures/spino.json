@@ -105,5 +105,16 @@
     "drag_weight": 550,
     "cloneable": false,
     "entity_id": "Spino_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Spino"
+    "wiki_url": "https://ark.wiki.gg/wiki/Spino",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

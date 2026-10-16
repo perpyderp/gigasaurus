@@ -92,5 +92,15 @@
     "drag_weight": 12000,
     "cloneable": false,
     "entity_id": "Liopleurodon_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Liopleurodon"
+    "wiki_url": "https://ark.wiki.gg/wiki/Liopleurodon",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

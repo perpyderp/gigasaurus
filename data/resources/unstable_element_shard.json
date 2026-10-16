@@ -1,0 +1,10 @@
+{
+    "name": "Unstable Element Shard",
+    "rarity": "common",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.05,
+    "stack_size": 1,
+    "found_in": []
+}

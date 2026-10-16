@@ -1,0 +1,10 @@
+{
+    "name": "Blue Gem",
+    "rarity": "uncommon",
+    "renewable": false,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.5,
+    "stack_size": 100,
+    "found_in": []
+}

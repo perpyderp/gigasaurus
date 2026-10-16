@@ -88,5 +88,18 @@
     "drag_weight": 90,
     "cloneable": false,
     "entity_id": "DungBeetle_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Dung_Beetle"
+    "wiki_url": "https://ark.wiki.gg/wiki/Dung_Beetle",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

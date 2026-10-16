@@ -100,5 +100,9 @@
     "cloneable": true,
     "entity_id": "BogSpider_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Bloodstalker"
+    "wiki_url": "https://ark.wiki.gg/wiki/Bloodstalker",
+    "maps": [
+        "Genesis: Part 1",
+        "Genesis: Part 2"
+    ]
 }

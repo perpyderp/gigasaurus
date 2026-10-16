@@ -66,5 +66,18 @@
     "drag_weight": 25,
     "cloneable": false,
     "entity_id": "Coel_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Coelacanth"
+    "wiki_url": "https://ark.wiki.gg/wiki/Coelacanth",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

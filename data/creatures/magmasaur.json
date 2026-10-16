@@ -91,5 +91,10 @@
     "cloneable": true,
     "entity_id": "Cherufe_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Magmasaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Magmasaur",
+    "maps": [
+        "Genesis: Part 1",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

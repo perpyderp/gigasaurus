@@ -1,0 +1,23 @@
+{
+    "set_name": "Hazard Suit Armor",
+    "unlock_level": 68,
+    "engram_points": 104,
+    "armor_rating": 325,
+    "cold_protection": 60,
+    "heat_protection": 300,
+    "weight": 23,
+    "durability": 85,
+    "found_in": ["Crafted"],
+    "set_ingredients": [
+        { "name": "Stone",             "quantity": 1152, "resource_id": "stone" },
+        { "name": "Chitin or Keratin", "quantity": 576,  "resource_id": "chitin" },
+        { "name": "Fiber",             "quantity": 235,  "resource_id": "fiber" },
+        { "name": "Crystal",           "quantity": 166,  "resource_id": "crystal" },
+        { "name": "Hide",              "quantity": 155,  "resource_id": "hide" },
+        { "name": "Cementing Paste",   "quantity": 144,  "resource_id": "cementing_paste" },
+        { "name": "Obsidian",          "quantity": 144,  "resource_id": "obsidian" },
+        { "name": "Congealed Gas Ball","quantity": 125,  "resource_id": "congealed_gas_ball" },
+        { "name": "Blue Gem",          "quantity": 83,   "resource_id": "blue_gem" },
+        { "name": "Polymer",           "quantity": 72,   "resource_id": "polymer" }
+    ]
+}

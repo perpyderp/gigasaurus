@@ -89,5 +89,8 @@
     "cloneable": true,
     "entity_id": "Phoenix_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Phoenix"
+    "wiki_url": "https://ark.wiki.gg/wiki/Phoenix",
+    "maps": [
+        "Scorched Earth"
+    ]
 }

@@ -110,5 +110,10 @@
     "cloneable": true,
     "entity_id": "MilkGlider_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Maewing"
+    "wiki_url": "https://ark.wiki.gg/wiki/Maewing",
+    "maps": [
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

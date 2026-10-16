@@ -108,5 +108,15 @@
     "drag_weight": 410,
     "cloneable": false,
     "entity_id": "Megalosaurus_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Megalosaurus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Megalosaurus",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Crystal Isles",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

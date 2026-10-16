@@ -108,5 +108,18 @@
     "drag_weight": 85,
     "cloneable": false,
     "entity_id": "TerrorBird_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Terror_Bird"
+    "wiki_url": "https://ark.wiki.gg/wiki/Terror_Bird",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

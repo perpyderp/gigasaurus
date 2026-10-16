@@ -1,0 +1,17 @@
+{
+    "set_name": "Pearl Armor",
+    "unlock_level": 43,
+    "engram_points": 81,
+    "armor_rating": 350,
+    "cold_protection": 101,
+    "heat_protection": 101,
+    "weight": 40,
+    "durability": 90,
+    "found_in": ["Crafted"],
+    "set_ingredients": [
+        { "name": "Hardened Steel Ingot", "quantity": 53, "resource_id": "hardened_steel_ingot" },
+        { "name": "Fish Scales",          "quantity": 40, "resource_id": "fish_scales" },
+        { "name": "Silica Pearls",        "quantity": 40, "resource_id": "silica_pearls" },
+        { "name": "Fiber",                "quantity": 18, "resource_id": "fiber" }
+    ]
+}

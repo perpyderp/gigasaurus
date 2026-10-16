@@ -100,5 +100,13 @@
     "cloneable": false,
     "entity_id": "Basilisk_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Basilisk"
+    "wiki_url": "https://ark.wiki.gg/wiki/Basilisk",
+    "maps": [
+        "Aberration",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

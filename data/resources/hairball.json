@@ -1,0 +1,10 @@
+{
+    "name": "Hairball",
+    "rarity": "uncommon",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 5,
+    "stack_size": 200,
+    "found_in": []
+}

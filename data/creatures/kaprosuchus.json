@@ -104,5 +104,18 @@
     "drag_weight": 410.23,
     "cloneable": false,
     "entity_id": "Kaprosuchus_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Kaprosuchus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Kaprosuchus",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

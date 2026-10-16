@@ -2,20 +2,18 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { IconMars, IconVenus, IconDna, IconStar, IconSeedling } from '@tabler/icons-react'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
+import { PawPrint, Crown } from 'lucide-react'
 import { ColorSwatches } from './ColorSwatch'
 import { CreatureColorRender } from './CreatureColorRender'
+import { LevelCell } from './breeding/LevelCell'
 import type { StoredCreature } from '@/lib/db'
-import {
-  STAT_CONFIG,
-  RELEVANT_STATS,
-  STAT_MAXES,
-  estimateStatPoints,
-  getStatTopPercent,
-} from '@/lib/stat-calc'
+import type { AseStatKey } from '@/lib/ark-stat-solver/ase-data'
+import { topFlags, type CollectionBests, type CreatureProfile } from '@/lib/breeding'
+import { STAT_META } from '@/lib/stat-meta'
 
 export type ImageMode = 'dossier' | 'colors'
 
@@ -28,18 +26,23 @@ interface CreatureCardProps {
    * Caller resolves this from the creatures API.
    */
   speciesName?: string | null
+  /** Solved points; while loading the card shows no stat rows. */
+  profile?: CreatureProfile | null
+  /** Best points per stat across this species in the collection. */
+  bests?: CollectionBests | null
 }
 
-const TOP_STATS: Array<typeof RELEVANT_STATS[number]> = ['health', 'stamina', 'meleeDamage', 'weight']
+/** Stats players usually compare first; others the species can inherit follow. */
+const PREFERRED_STATS: AseStatKey[] = ['health', 'stamina', 'weight', 'meleeDamage', 'food', 'oxygen', 'craftingSkill']
 
-export function CreatureCard({ creature, imageMode = 'dossier', speciesName = null }: CreatureCardProps) {
+export function CreatureCard({ creature, imageMode = 'dossier', speciesName = null, profile = null, bests = null }: CreatureCardProps) {
   const router = useRouter()
+  // Some species map to a slug without dossier art; show the placeholder instead of a broken image.
+  const [imageFailed, setImageFailed] = useState(false)
   const imageUrl = creature.apiSlug ? `/images/creatures/${creature.apiSlug}.png` : null
   const mutations = creature.mutationsMale + creature.mutationsFemale
   const isFullyGrown = creature.babyAge >= 1
-  const meleePct = Math.round(creature.stats.meleeDamage * 100)
   const imprintPct = Math.round(creature.imprintQuality * 100)
-  const points = estimateStatPoints(creature.stats, creature.level)
   const speciesTag = creature.dinoNameTag.replace(/AA$/, '')
 
   const goToSpecies = (e: React.MouseEvent) => {
@@ -49,109 +52,127 @@ export function CreatureCard({ creature, imageMode = 'dossier', speciesName = nu
     router.push(`/creatures/${creature.apiSlug}`)
   }
 
-  let bestStat: typeof RELEVANT_STATS[number] = RELEVANT_STATS[0]
-  let bestRatio = 0
-  for (const s of RELEVANT_STATS) {
-    const r = creature.stats[s] / STAT_MAXES[s]
-    if (r > bestRatio) { bestRatio = r; bestStat = s }
-  }
+  const shownStats = profile ? PREFERRED_STATS.filter((s) => profile.eligible.includes(s)).slice(0, 4) : []
+  const records = profile ? profile.eligible.filter((s) => topFlags(profile.levels[s], bests?.[s]).total).length : 0
 
   return (
-    <Link href={`/my-creatures/${creature.id}`} className="block">
-      <Card className="hover:border-primary/50 overflow-hidden gap-0 py-0 transition-colors h-full">
-        <div className="bg-muted relative flex h-28 items-center justify-center">
-          {imageMode === 'colors' && speciesName ? (
-            // Render at native source resolution — card thumb is small, so this
-            // is effectively a downscale and stays crisp.
-            <CreatureColorRender
-              speciesName={speciesName}
-              slug={creature.apiSlug}
-              colors={creature.colors}
-              size={112}
-              className="h-28 w-28"
-            />
-          ) : imageUrl ? (
-            <Image src={imageUrl} alt={creature.name} fill className="object-contain p-2" sizes="(max-width: 640px) 50vw, 200px" />
-          ) : (
-            <span className="text-4xl opacity-30">🦕</span>
-          )}
-          <div className={`absolute top-2 right-2 rounded-full p-1 ${creature.isFemale ? 'bg-pink-500/80' : 'bg-blue-500/80'}`}>
-            {creature.isFemale ? <IconVenus size={12} className="text-white" /> : <IconMars size={12} className="text-white" />}
-          </div>
-          {!isFullyGrown && (
-            <div className="absolute top-2 left-2 flex items-center gap-1 rounded-full bg-amber-500/80 px-1.5 py-0.5">
-              <IconSeedling size={10} className="text-white" />
-              <span className="text-white text-xs">Baby</span>
-            </div>
-          )}
-        </div>
+    <Link
+      href={`/my-creatures/${creature.id}`}
+      className="group bg-card ring-border hover:ring-primary/70 flex h-full flex-col overflow-hidden rounded-xl ring-1 transition-shadow"
+    >
+      <div className="bg-plate relative aspect-[3/2] overflow-hidden">
+        {imageMode === 'colors' ? (
+          // Render at native source resolution — card thumb is small, so this
+          // is effectively a downscale and stays crisp. Falls back to the
+          // dossier image when no color render exists for this species.
+          <CreatureColorRender
+            speciesName={speciesName}
+            slug={creature.apiSlug}
+            colors={creature.colors}
+            size={160}
+            className="absolute inset-0 m-auto h-full w-auto"
+            fallbackSrc={imageUrl}
+          />
+        ) : imageUrl && !imageFailed ? (
+          <Image
+            src={imageUrl}
+            alt=""
+            fill
+            onError={() => setImageFailed(true)}
+            className="object-cover transition-transform duration-300 motion-safe:group-hover:scale-[1.04]"
+            sizes="(max-width: 640px) 50vw, 240px"
+          />
+        ) : (
+          <PawPrint aria-hidden className="absolute inset-0 m-auto size-10 text-white/15" strokeWidth={1.5} />
+        )}
+        <span
+          className={`absolute top-2 right-2 rounded-full p-1 ${creature.isFemale ? 'bg-pink-500' : 'bg-blue-500'}`}
+          title={creature.isFemale ? 'Female' : 'Male'}
+        >
+          {creature.isFemale ? <IconVenus size={13} className="text-white" aria-label="Female" /> : <IconMars size={13} className="text-white" aria-label="Male" />}
+        </span>
+        {!isFullyGrown && (
+          <span className="absolute top-2 left-2 flex items-center gap-1 rounded-full bg-amber-500 px-2 py-0.5 text-xs font-semibold text-black">
+            <IconSeedling size={12} aria-hidden /> Baby
+          </span>
+        )}
+      </div>
 
-        <CardContent className="p-3 space-y-2">
-          <div>
-            <p className="text-foreground truncate text-sm font-semibold">{creature.name || creature.dinoNameTag}</p>
-            <p className="text-muted-foreground truncate text-xs">
+      <div className="flex flex-1 flex-col gap-3 p-3.5">
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <p className="font-display group-hover:text-primary truncate text-lg leading-tight transition-colors">
+              {creature.name || creature.dinoNameTag}
+            </p>
+            <p className="text-muted-foreground truncate text-sm">
               {creature.apiSlug ? (
                 <button
                   type="button"
                   onClick={goToSpecies}
-                  className="hover:text-primary cursor-pointer underline-offset-2 hover:underline"
+                  className="hover:text-foreground cursor-pointer underline-offset-2 hover:underline"
                   title={`View ${speciesTag} species page`}
                 >
                   {speciesTag}
                 </button>
               ) : speciesTag}
-              {' · Lv '}{creature.level}
             </p>
           </div>
+          <span className="bg-secondary shrink-0 rounded-md px-2 py-0.5 text-sm font-semibold tabular-nums" title="Level">
+            Lv {creature.level}
+          </span>
+        </div>
 
-          <ColorSwatches colors={creature.colors} />
+        <ColorSwatches colors={creature.colors} />
 
-          <div className="flex flex-wrap gap-1">
+        {(mutations > 0 || imprintPct > 0 || creature.isNeutered) && (
+          <div className="flex flex-wrap gap-1.5">
             {mutations > 0 && (
-              <Badge variant="outline" className="gap-1 px-1.5 py-0 text-xs text-violet-600 border-violet-300 bg-violet-50 dark:bg-violet-950/30">
-                <IconDna size={10} />{mutations}
+              <Badge variant="outline" className="gap-1 border-violet-400/50 text-violet-700 dark:text-violet-300">
+                <IconDna size={11} aria-hidden />{mutations} {mutations === 1 ? 'mutation' : 'mutations'}
               </Badge>
             )}
             {imprintPct > 0 && (
-              <Badge variant="outline" className="gap-1 px-1.5 py-0 text-xs text-sky-600 border-sky-300 bg-sky-50 dark:bg-sky-950/30">
-                <IconStar size={10} />{imprintPct}%
+              <Badge variant="outline" className="gap-1 border-sky-400/50 text-sky-700 dark:text-sky-300">
+                <IconStar size={11} aria-hidden />{imprintPct}% imprint
               </Badge>
             )}
             {creature.isNeutered && (
-              <Badge variant="outline" className="px-1.5 py-0 text-xs text-muted-foreground">Neutered</Badge>
+              <Badge variant="outline" className="text-muted-foreground">Neutered</Badge>
             )}
           </div>
+        )}
 
-          <div className="space-y-1">
-            {TOP_STATS.map((stat) => {
-              const value = creature.stats[stat]
-              const max = STAT_MAXES[stat]
-              const pct = Math.min(100, Math.round((value / max) * 100))
-              const statPts = points[stat]
-              const cfg = STAT_CONFIG[stat]
-              const isBest = stat === bestStat
-              const topPct = isBest ? getStatTopPercent(stat, value) : null
+        {profile && shownStats.length > 0 && (
+          <div className="space-y-1.5">
+            {shownStats.map((stat) => {
+              const lv = profile.levels[stat]
+              const best = bests?.[stat]
+              const top = topFlags(lv, best)
+              const pct = lv && best?.total ? Math.min(100, (lv.total / best.total) * 100) : 0
               return (
-                <div key={stat} className="flex items-center gap-1.5">
-                  <span className={`w-12 shrink-0 text-xs ${isBest ? 'font-semibold text-foreground' : 'text-muted-foreground'}`}>
-                    {cfg.label}
+                <div key={stat} className="flex items-center gap-2 text-[13px]">
+                  <span className={`w-14 shrink-0 ${top.total ? 'text-foreground font-semibold' : 'text-muted-foreground'}`}>
+                    {STAT_META[stat].label}
                   </span>
-                  <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden">
-                    <div className={`h-full rounded-full ${cfg.ringColor.replace('text-', 'bg-')}`} style={{ width: `${pct}%` }} />
+                  <div className="bg-muted h-1.5 flex-1 overflow-hidden rounded-full" aria-hidden>
+                    <div className={`h-full rounded-full ${STAT_META[stat].dot}`} style={{ width: `${pct}%` }} />
                   </div>
-                  <span className="w-7 shrink-0 text-right font-mono text-xs text-muted-foreground">{statPts}pt</span>
-                  {topPct && <span className="text-xs text-emerald-600 dark:text-emerald-400 font-medium shrink-0 w-14 text-right">{topPct}</span>}
+                  <LevelCell levels={lv} top={top} className="w-14 shrink-0 text-right" />
                 </div>
               )
             })}
           </div>
+        )}
+        {records > 0 && (
+          <p className="text-primary inline-flex items-center gap-1 text-xs font-semibold">
+            <Crown aria-hidden className="size-3.5" /> Best in {records} {records === 1 ? 'stat' : 'stats'} you own
+          </p>
+        )}
 
-          <div className="text-muted-foreground flex items-center justify-between gap-2 text-xs">
-            <span>{meleePct}% melee</span>
-            <span>{new Date(creature.importedAt).toLocaleDateString()}</span>
-          </div>
-        </CardContent>
-      </Card>
+        <p className="text-muted-foreground border-border mt-auto border-t pt-2.5 text-xs" title={new Date(creature.importedAt).toLocaleString()}>
+          Imported {new Date(creature.importedAt).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}
+        </p>
+      </div>
     </Link>
   )
 }

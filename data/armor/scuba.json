@@ -1,0 +1,21 @@
+{
+    "set_name": "SCUBA Armor",
+    "unlock_level": 81,
+    "engram_points": 0,
+    "armor_rating": 5,
+    "cold_protection": 70,
+    "heat_protection": -15,
+    "weight": 23,
+    "durability": 45,
+    "found_in": ["Crafted"],
+    "set_ingredients": [
+        { "name": "Hide",            "quantity": 87, "resource_id": "hide" },
+        { "name": "Polymer",         "quantity": 43, "resource_id": "polymer" },
+        { "name": "Crystal",         "quantity": 22, "resource_id": "crystal" },
+        { "name": "Fiber",           "quantity": 22, "resource_id": "fiber" },
+        { "name": "Metal Ingot",     "quantity": 16, "resource_id": "metal_ingot" },
+        { "name": "Chitin",          "quantity": 12, "resource_id": "chitin" },
+        { "name": "Silica Pearls",   "quantity": 7,  "resource_id": "silica_pearls" },
+        { "name": "Cementing Paste", "quantity": 6,  "resource_id": "cementing_paste" }
+    ]
+}

@@ -105,5 +105,14 @@
     "drag_weight": 149,
     "cloneable": false,
     "entity_id": "Moth_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Lymantria"
+    "wiki_url": "https://ark.wiki.gg/wiki/Lymantria",
+    "maps": [
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island"
+    ]
 }

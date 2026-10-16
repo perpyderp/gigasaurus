@@ -95,5 +95,11 @@
     "cloneable": true,
     "entity_id": "Griffin_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Griffin"
+    "wiki_url": "https://ark.wiki.gg/wiki/Griffin",
+    "maps": [
+        "Ragnarok",
+        "Crystal Isles",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

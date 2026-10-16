@@ -85,5 +85,12 @@
     "drag_weight": 30,
     "cloneable": false,
     "entity_id": "LanternPug_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Bulbdog"
+    "wiki_url": "https://ark.wiki.gg/wiki/Bulbdog",
+    "maps": [
+        "Aberration",
+        "Valguero",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Fjordur"
+    ]
 }

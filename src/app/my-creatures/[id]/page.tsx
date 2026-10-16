@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useEffect, useState, useCallback } from 'react'
+import { use, useEffect, useMemo, useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,123 +16,106 @@ import {
   IconSeedling,
   IconHeart,
 } from '@tabler/icons-react'
-import { getCreature, upsertCreature, deleteCreature, getAllCreatures } from '@/lib/db'
+import { PawPrint, GitFork } from 'lucide-react'
+import { upsertCreature, deleteCreature, getAllCreatures } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
 import { ColorSwatches } from '@/components/ColorSwatch'
 import { CreatureColorRender } from '@/components/CreatureColorRender'
-import { StatBar, StatTableHeader, type StatDisplayStyle } from '@/components/StatBar'
+import { StatBreakdown } from '@/components/breeding/StatBreakdown'
+import { LevelSummary } from '@/components/breeding/LevelSummary'
 import { CreatureReimportButton } from '@/components/CreatureReimportButton'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import {
-  STAT_CONFIG,
-  RELEVANT_STATS,
-  STAT_MAXES,
-  formatStatValue,
-  estimateStatPoints,
-  getStatTopPercent,
-} from '@/lib/stat-calc'
-import {
-  buildSpeciesParams,
-  extractLevels,
-  solveAllStats,
-  summarizeLevels,
-  type AseSpeciesEntry,
-  type AseStatKey,
-  type LevelSummary,
-  type StatSolutionMap,
-} from '@/lib/ark-stat-solver'
 import { combineArkId } from '@/lib/ark-id'
+import { computeBests } from '@/lib/breeding'
+import { speciesGroupKey, useCreatureProfiles } from '@/hooks/use-creature-profiles'
+
+function AncestorNode({ name, id1, id2, female, prominent = false, imported = false }: {
+  name: string
+  id1: number
+  id2: number
+  female: boolean
+  prominent?: boolean
+  /** The ancestor is in this browser's collection — link to it. */
+  imported?: boolean
+}) {
+  // Exports store ancestor names as "Name - Lvl 210".
+  const match = name.match(/^(.*?) - Lvl (\d+)$/)
+  const label = (match ? match[1] : name) || `${id1}_${id2}`
+  const level = match?.[2]
+  const Wrapper = imported ? Link : 'div'
+  return (
+    <Wrapper
+      href={`/my-creatures/${combineArkId(id1, id2)}`}
+      className={`flex min-w-0 flex-col items-center gap-1 rounded-md p-1 ${imported ? 'hover:bg-accent/60' : ''} ${prominent ? 'max-w-[160px]' : 'max-w-[120px]'}`}
+    >
+      <span className={`rounded-full p-1 ${female ? 'bg-pink-500/20 text-pink-500' : 'bg-blue-500/20 text-blue-500'}`}>
+        {female ? <IconVenus size={prominent ? 14 : 12} aria-label="Female" /> : <IconMars size={prominent ? 14 : 12} aria-label="Male" />}
+      </span>
+      <span className={`w-full truncate text-center ${prominent ? 'text-foreground text-sm font-semibold' : 'text-muted-foreground text-xs'}`}>
+        {label}
+      </span>
+      {level && <span className="text-muted-foreground text-xs tabular-nums">Lv {level}</span>}
+    </Wrapper>
+  )
+}
 
 export default function CreatureDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
   const router = useRouter()
-  const [creature, setCreature] = useState<StoredCreature | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [collection, setCollection] = useState<StoredCreature[] | null>(null)
   const [editing, setEditing] = useState(false)
   const [nameInput, setNameInput] = useState('')
   const [confirmDelete, setConfirmDelete] = useState(false)
-  const [statSolutions, setStatSolutions] = useState<StatSolutionMap | null>(null)
-  const [levelSummary, setLevelSummary] = useState<LevelSummary | null>(null)
-  const [tamingEff, setTamingEff] = useState<number | null>(null)
   const [isBreedable, setIsBreedable] = useState(false)
-  const [sameSpecies, setSameSpecies] = useState<StoredCreature[]>([])
   const [editingParents, setEditingParents] = useState(false)
   const [pendingFatherId, setPendingFatherId] = useState('')
   const [pendingMotherId, setPendingMotherId] = useState('')
   const [speciesName, setSpeciesName] = useState<string | null>(null)
   const [imageTab, setImageTab] = useState<'dossier' | 'colors'>('dossier')
-  const [statStyle, setStatStyle] = useState<StatDisplayStyle>('circle')
 
-  const load = useCallback(async () => {
-    const c = await getCreature(id)
-    setCreature(c ?? null)
-    setLoading(false)
-  }, [id])
-
-  useEffect(() => { load() }, [load])
-
-  // Fetch species data: solve stats and check breedability.
-  // Preferred path: ARKStatsExtractor-derived params looked up by the export's
-  // blueprint path, run through the ASE-style extractor. The wiki-scraped
-  // params only serve as fallback for species missing from that data (mods).
+  // The whole collection is loaded so parents can be found to split wild from mutated points.
   useEffect(() => {
-    if (!creature) return
-    const isBred = creature.ancestors.length > 0 || creature.imprintQuality > 0
+    getAllCreatures().then(setCollection).catch(() => setCollection([]))
+  }, [])
+
+  const loading = collection === null
+  const creature = useMemo(() => collection?.find((c) => c.id === id) ?? null, [collection, id])
+  const { profiles } = useCreatureProfiles(collection)
+  const profile = profiles?.get(id) ?? null
+  const sameSpecies = useMemo(
+    () => (creature && collection ? collection.filter((c) => c.id !== creature.id && speciesGroupKey(c) === speciesGroupKey(creature)) : []),
+    [collection, creature],
+  )
+  const bests = useMemo(() => {
+    if (!profile || !profiles || !creature) return null
+    const group = [...profiles.values()].filter((p) => speciesGroupKey(p.creature) === speciesGroupKey(creature))
+    return computeBests(group, profile.eligible)
+  }, [profile, profiles, creature])
+
+  /** Replace one creature in the loaded collection after saving it. */
+  const setCreature = useCallback((updated: StoredCreature) => {
+    setCollection((all) => all?.map((c) => (c.id === updated.id ? updated : c)) ?? all)
+  }, [])
+
+  // Species name (for the color render) and whether it can breed at all.
+  const apiSlug = creature?.apiSlug ?? null
+  useEffect(() => {
+    if (!apiSlug) return
     let cancelled = false
-
-    ;(async () => {
-      let solvedFromAse = false
-      if (creature.dinoClass) {
-        try {
-          const r = await fetch(`/api/creatures/stat-params?bp=${encodeURIComponent(creature.dinoClass)}`)
-          if (r.ok) {
-            const species = (await r.json()) as AseSpeciesEntry
-            const result = extractLevels(species, {
-              statValues: creature.stats as Partial<Record<AseStatKey, number>>,
-              level: creature.level,
-              imprintingBonus: creature.imprintQuality,
-              isBred,
-            })
-            if (!cancelled) {
-              setStatSolutions(result.solutions)
-              setLevelSummary(result.summary)
-              setTamingEff(isBred ? null : result.te)
-            }
-            solvedFromAse = true
-          }
-        } catch {/* fall through to wiki params */}
-      }
-
-      if (!creature.apiSlug) return
-      try {
-        const r = await fetch(`/api/creatures/${creature.apiSlug}`)
-        const data = r.ok ? await r.json() : null
-        if (!data || cancelled) return
-        if (!solvedFromAse && data.base_stats_growth) {
-          const speciesParams = buildSpeciesParams(data.base_stats_growth)
-          const solutions = solveAllStats(creature.stats as unknown as Record<string, number>, speciesParams, creature.imprintQuality, isBred)
-          setStatSolutions(solutions)
-          setLevelSummary(summarizeLevels(solutions, creature.level))
-        }
+    fetch(`/api/creatures/${apiSlug}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (cancelled || !data) return
         setIsBreedable(!!data.breedable)
         if (typeof data.name === 'string') setSpeciesName(data.name)
-      } catch {/* silently ignore */}
-    })()
-
+      })
+      .catch(() => {/* name and breedability are optional */})
     return () => { cancelled = true }
-  }, [creature])
-
-  // Load same-species creatures when breedable and editing parents
-  useEffect(() => {
-    if (!isBreedable || !creature?.apiSlug || !editingParents) return
-    getAllCreatures()
-      .then((all) => setSameSpecies(all.filter((c) => c.apiSlug === creature.apiSlug && c.id !== creature.id)))
-      .catch(() => {})
-  }, [isBreedable, creature, editingParents])
+  }, [apiSlug])
 
   const handleSaveName = async () => {
     if (!creature) return
@@ -163,17 +146,24 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
 
   if (loading) {
     return (
-      <main className="bg-background flex min-h-screen items-center justify-center">
-        <p className="text-muted-foreground">Loading…</p>
+      <main className="mx-auto max-w-7xl px-4 py-10" aria-busy>
+        <div className="grid gap-8 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div className="bg-card ring-border aspect-[3/2] animate-pulse rounded-xl ring-1" />
+          <div className="space-y-3">
+            <div className="bg-card h-12 w-2/3 animate-pulse rounded-lg" />
+            <div className="bg-card h-6 w-1/3 animate-pulse rounded-lg" />
+          </div>
+        </div>
       </main>
     )
   }
 
   if (!creature) {
     return (
-      <main className="bg-background flex min-h-screen flex-col items-center justify-center gap-3">
-        <p className="text-muted-foreground">Creature not found.</p>
-        <Link href="/my-creatures" className="text-primary text-sm hover:underline">← Back</Link>
+      <main className="mx-auto flex max-w-xl flex-col items-center gap-3 px-4 py-24 text-center">
+        <p className="font-display text-3xl">Creature not found</p>
+        <p className="text-muted-foreground">It may have been deleted, or it was imported in a different browser.</p>
+        <Link href="/my-creatures" className="text-primary mt-2 font-medium underline-offset-4 hover:underline">Back to My Creatures</Link>
       </main>
     )
   }
@@ -183,45 +173,47 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
   const isFullyGrown = creature.babyAge >= 1
   const babyPct = Math.round(creature.babyAge * 100)
   const imprintPct = Math.round(creature.imprintQuality * 100)
-  const points = estimateStatPoints(creature.stats, creature.level)
   const arkId = combineArkId(creature.dinoId1, creature.dinoId2)
 
-  // Look up parent display names from same-species list
-  const fatherCreature = sameSpecies.find((c) => c.id === creature.manualParentMaleId)
-  const motherCreature = sameSpecies.find((c) => c.id === creature.manualParentFemaleId)
+  // Parents: manual assignment, else the export's ancestry (see lib/breeding parentIds).
+  const fatherId = profile?.fatherId ?? creature.manualParentMaleId
+  const motherId = profile?.motherId ?? creature.manualParentFemaleId
+  const fatherCreature = collection?.find((c) => c.id === fatherId)
+  const motherCreature = collection?.find((c) => c.id === motherId)
+  const importedIds = new Set(collection?.map((c) => c.id))
 
   return (
-    <main className="bg-background min-h-screen">
-      <div className="mx-auto max-w-5xl space-y-6 px-4 py-8">
+    <main className="mx-auto max-w-7xl space-y-6 px-4 py-8">
 
-        <Link href="/my-creatures" className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 text-sm transition-colors">
-          <IconArrowLeft size={14} />
+        <Link href="/my-creatures" className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm transition-colors">
+          <IconArrowLeft size={16} />
           My Creatures
         </Link>
 
         {/* Hero */}
         <Card>
-          <CardContent className="flex flex-col gap-6 p-6 sm:flex-row">
-            <div className="flex w-full max-w-sm flex-col gap-2 sm:max-w-xs md:max-w-sm">
-              <div className="bg-muted relative aspect-square w-full overflow-hidden rounded-lg">
-                {imageTab === 'colors' && speciesName ? (
+          <CardContent className="flex flex-col gap-6 p-5 md:flex-row md:p-6">
+            <div className="flex w-full flex-col gap-2 md:max-w-md">
+              <div className="bg-plate relative aspect-[3/2] w-full overflow-hidden rounded-lg">
+                {imageTab === 'colors' ? (
                   <CreatureColorRender
                     speciesName={speciesName}
                     slug={creature.apiSlug}
                     colors={creature.colors}
                     size={384}
                     className="h-full w-full"
+                    fallbackSrc={imageUrl}
                   />
                 ) : imageUrl ? (
-                  <Image src={imageUrl} alt={creature.name} fill className="object-contain p-3" sizes="(max-width: 640px) 90vw, 384px" />
+                  <Image src={imageUrl} alt={`${speciesName ?? creature.dinoNameTag} dossier`} fill className="object-cover" sizes="(max-width: 768px) 90vw, 448px" />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center text-6xl opacity-30">🦕</div>
+                  <PawPrint aria-hidden className="absolute inset-0 m-auto size-14 text-white/15" strokeWidth={1.5} />
                 )}
               </div>
               <Tabs value={imageTab} onValueChange={(v) => setImageTab(v as 'dossier' | 'colors')}>
                 <TabsList className="w-full">
                   <TabsTrigger value="dossier" className="flex-1">Dossier</TabsTrigger>
-                  <TabsTrigger value="colors" className="flex-1" disabled={!speciesName}>Colors</TabsTrigger>
+                  <TabsTrigger value="colors" className="flex-1" disabled={!creature.apiSlug && !speciesName}>Colors</TabsTrigger>
                 </TabsList>
               </Tabs>
             </div>
@@ -234,18 +226,20 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                     value={nameInput}
                     onChange={(e) => setNameInput(e.target.value)}
                     onKeyDown={(e) => { if (e.key === 'Enter') handleSaveName(); if (e.key === 'Escape') setEditing(false) }}
-                    className="h-8 text-sm"
+                    aria-label="Creature name"
+                    className="h-10 text-base"
                   />
                   <Button size="sm" onClick={handleSaveName}>Save</Button>
                   <Button size="sm" variant="ghost" onClick={() => setEditing(false)}><IconX size={14} /></Button>
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
-                  <h1 className="truncate text-2xl font-bold">{creature.name || creature.dinoNameTag}</h1>
+                  <h1 className="font-display truncate text-4xl leading-tight sm:text-5xl">{creature.name || creature.dinoNameTag}</h1>
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="text-muted-foreground h-7 w-7 shrink-0 p-0"
+                    aria-label="Rename"
+                    className="text-muted-foreground size-9 shrink-0 p-0"
                     onClick={() => { setNameInput(creature.name); setEditing(true) }}
                   >
                     <IconPencil size={14} />
@@ -283,175 +277,90 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
               <ColorSwatches colors={creature.colors} />
 
               {/* Tribe / Owner / Imprinter — always shown */}
-              <div className="text-muted-foreground flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                <span>Tribe: <span className="text-foreground">{creature.tribe || '—'}</span></span>
-                <span>Owner: <span className="text-foreground">{creature.tamer || '—'}</span></span>
-                <span>Imprinted by: <span className="text-foreground">{creature.imprinter || '—'}</span></span>
-              </div>
+              <dl className="grid grid-cols-3 gap-3 text-sm">
+                <div><dt className="text-muted-foreground">Tribe</dt><dd className="truncate font-medium">{creature.tribe || '—'}</dd></div>
+                <div><dt className="text-muted-foreground">Owner</dt><dd className="truncate font-medium">{creature.tamer || '—'}</dd></div>
+                <div><dt className="text-muted-foreground">Imprinted by</dt><dd className="truncate font-medium">{creature.imprinter || '—'}</dd></div>
+              </dl>
 
               {creature.apiSlug && (
                 <Link
                   href={`/creatures/${creature.apiSlug}`}
-                  className="text-primary hover:text-primary/80 inline-flex items-center gap-1 text-xs font-medium transition-colors"
+                  className="text-primary inline-flex items-center gap-1 text-sm font-medium underline-offset-4 hover:underline"
                 >
-                  View species page →
+                  {speciesName ?? creature.dinoNameTag.replace(/AA$/, '')} species page
                 </Link>
               )}
             </div>
           </CardContent>
         </Card>
 
-        {/* Stats */}
+        {/* Stats: points per stat, from the solver and lineage (lib/breeding) */}
         <Card>
-          <CardHeader className="pb-3">
-            <div className="flex items-center justify-between gap-3">
-              <CardTitle className="text-sm font-semibold">Stats</CardTitle>
-              <div className="bg-muted/40 flex rounded-md p-0.5 text-xs">
-                {(['circle', 'bar', 'value'] as const).map((s) => (
-                  <button
-                    key={s}
-                    type="button"
-                    onClick={() => setStatStyle(s)}
-                    className={`px-2.5 py-1 rounded-sm capitalize transition-colors ${statStyle === s ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
+          <CardHeader className="pb-2">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <CardTitle className="font-display text-xl">Stats and points</CardTitle>
+              {creature.apiSlug && (
+                <Link
+                  href={`/my-creatures/breeding?species=${encodeURIComponent(speciesGroupKey(creature))}`}
+                  className="text-primary inline-flex items-center gap-1.5 text-sm font-medium underline-offset-4 hover:underline"
+                >
+                  <GitFork aria-hidden className="size-4" /> Plan breeding
+                </Link>
+              )}
             </div>
-
-            {levelSummary && (
-              <div className="text-muted-foreground border-border mt-3 grid grid-cols-2 gap-2 border-t pt-3 text-xs sm:grid-cols-4">
-                <div>
-                  <span className="block uppercase tracking-wide text-[10px]">Wild Levels</span>
-                  <span className="text-blue-500 dark:text-blue-400 font-semibold tabular-nums">{levelSummary.totalWild}</span>
-                </div>
-                <div>
-                  <span className="block uppercase tracking-wide text-[10px]">Tamed Levels</span>
-                  <span className="text-violet-500 dark:text-violet-400 font-semibold tabular-nums">{levelSummary.totalDom}</span>
-                </div>
-                <div>
-                  <span className="block uppercase tracking-wide text-[10px]">Computed Level</span>
-                  <span className="text-foreground font-semibold tabular-nums">{levelSummary.computedLevel}</span>
-                </div>
-                <div>
-                  <span className="block uppercase tracking-wide text-[10px]">Export Level</span>
-                  <span className="text-foreground font-semibold tabular-nums">{creature.level}</span>
-                  {levelSummary.levelDelta !== 0 && (
-                    <span
-                      className="ml-1 text-amber-600 dark:text-amber-500 font-medium"
-                      title="Solver mismatch — usually means non-vanilla server multipliers or species data we don't have"
-                    >
-                      ⚠ {levelSummary.levelDelta > 0 ? '+' : ''}{levelSummary.levelDelta}
-                    </span>
-                  )}
-                </div>
-                {tamingEff !== null && (
-                  <div>
-                    <span className="block uppercase tracking-wide text-[10px]">Taming Eff</span>
-                    <span className="text-emerald-600 dark:text-emerald-400 font-semibold tabular-nums">
-                      {(tamingEff * 100).toFixed(1)}%
-                    </span>
-                  </div>
-                )}
-              </div>
-            )}
           </CardHeader>
-          <CardContent className={
-            statStyle === 'value'
-              ? 'space-y-0'
-              : statStyle === 'bar'
-                ? 'grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2'
-                : 'grid grid-cols-1 gap-4 sm:grid-cols-2'
-          }>
-            {statStyle === 'value' && <StatTableHeader />}
-            {RELEVANT_STATS.map((stat) => {
-              const cfg = STAT_CONFIG[stat]
-              const value = creature.stats[stat]
-              const display = formatStatValue(stat, value)
-              const topPct = getStatTopPercent(stat, value)
-              const solution = statSolutions?.[stat]
-              const breedingDisplay = solution?.solved
-                ? formatStatValue(stat, solution.breedingValue)
-                : undefined
-              const maxPotentialDisplay = solution?.solved
-                ? formatStatValue(stat, solution.maxPotential)
-                : undefined
-              return (
-                <StatBar
-                  key={stat}
-                  label={cfg.label}
-                  value={value}
-                  display={display}
-                  breedingDisplay={breedingDisplay}
-                  maxPotentialDisplay={maxPotentialDisplay}
-                  max={STAT_MAXES[stat]}
-                  color={cfg.ringColor}
-                  style={statStyle}
-                  points={solution ? undefined : points[stat]}
-                  wildLevels={solution?.wild}
-                  domLevels={solution?.dom}
-                  solved={solution?.solved}
-                  topPercent={topPct !== 'common' ? topPct : undefined}
-                />
-              )
-            })}
+          <CardContent className="space-y-6">
+            {!profiles ? (
+              <div aria-busy className="bg-muted h-48 animate-pulse rounded-lg" />
+            ) : profile?.species ? (
+              <>
+                <LevelSummary profile={profile} />
+                <StatBreakdown profile={profile} bests={bests} />
+                <p className="text-muted-foreground text-xs">
+                  Wild and mutated points are inherited; tamed points (from leveling up) are not. Highlighted numbers are the
+                  most you own for that stat across your {creature.dinoNameTag.replace(/AA$/, '')}s.
+                </p>
+              </>
+            ) : (
+              <p className="text-muted-foreground">
+                No stat data for this species, so points can&apos;t be worked out. Modded creatures usually aren&apos;t covered.
+              </p>
+            )}
           </CardContent>
         </Card>
 
         {/* Ancestry tree — from INI export */}
-        {creature.ancestors.length > 0 && (() => {
-          const p = creature.ancestors[0]
-          const mPat = creature.ancestorsMale[0]
-          const mMat = creature.ancestors[1]
-
-          type NodeProps = { name: string; id1: number; id2: number; female: boolean }
-          function AncestorNode({ name, id1, id2, female }: NodeProps) {
-            const label = name || `${id1}_${id2}`
-            return (
-              <div className="flex flex-col items-center gap-0.5 min-w-0 max-w-[120px]">
-                <div className={`rounded-full p-0.5 ${female ? 'bg-pink-500/20' : 'bg-blue-500/20'}`}>
-                  {female
-                    ? <IconVenus size={10} className="text-pink-500" />
-                    : <IconMars size={10} className="text-blue-500" />}
-                </div>
-                <span className="text-muted-foreground truncate text-center text-[10px] w-full">{label}</span>
-              </div>
-            )
-          }
+        {(creature.ancestors.length > 0 || creature.ancestorsMale.length > 0) && (() => {
+          // ARK appends each generation: the last entry is the parents, the one before
+          // it that parent's own parents.
+          const p = creature.ancestorsMale.at(-1) ?? creature.ancestors.at(-1)!
+          const mPat = creature.ancestorsMale.length > 1 ? creature.ancestorsMale.at(-2) : undefined
+          const mMat = creature.ancestors.length > 1 ? creature.ancestors.at(-2) : undefined
+          const isImported = (id1: number, id2: number) => importedIds.has(combineArkId(id1, id2))
 
           return (
             <Card>
               <CardHeader className="pb-3">
-                <CardTitle className="text-sm font-semibold">Ancestry</CardTitle>
+                <CardTitle className="font-display text-xl">Ancestry</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col items-center gap-3">
                   {(mPat || mMat) && (
                     <div className="flex w-full justify-around">
                       <div className="flex gap-2">
-                        {mPat && <AncestorNode name={mPat.maleName} id1={mPat.maleDinoId1} id2={mPat.maleDinoId2} female={false} />}
-                        {mPat && <AncestorNode name={mPat.femaleName} id1={mPat.femaleDinoId1} id2={mPat.femaleDinoId2} female={true} />}
+                        {mPat && <AncestorNode name={mPat.maleName} id1={mPat.maleDinoId1} id2={mPat.maleDinoId2} female={false} imported={isImported(mPat.maleDinoId1, mPat.maleDinoId2)} />}
+                        {mPat && <AncestorNode name={mPat.femaleName} id1={mPat.femaleDinoId1} id2={mPat.femaleDinoId2} female={true} imported={isImported(mPat.femaleDinoId1, mPat.femaleDinoId2)} />}
                       </div>
                       <div className="flex gap-2">
-                        {mMat && <AncestorNode name={mMat.maleName} id1={mMat.maleDinoId1} id2={mMat.maleDinoId2} female={false} />}
-                        {mMat && <AncestorNode name={mMat.femaleName} id1={mMat.femaleDinoId1} id2={mMat.femaleDinoId2} female={true} />}
+                        {mMat && <AncestorNode name={mMat.maleName} id1={mMat.maleDinoId1} id2={mMat.maleDinoId2} female={false} imported={isImported(mMat.maleDinoId1, mMat.maleDinoId2)} />}
+                        {mMat && <AncestorNode name={mMat.femaleName} id1={mMat.femaleDinoId1} id2={mMat.femaleDinoId2} female={true} imported={isImported(mMat.femaleDinoId1, mMat.femaleDinoId2)} />}
                       </div>
                     </div>
                   )}
                   <div className="flex w-full justify-around">
-                    <div className="flex flex-col items-center gap-0.5 min-w-0 max-w-[140px]">
-                      <div className="rounded-full p-0.5 bg-blue-500/20"><IconMars size={12} className="text-blue-500" /></div>
-                      <span className="text-foreground truncate text-center text-xs font-medium w-full">
-                        {p.maleName || `${p.maleDinoId1}_${p.maleDinoId2}`}
-                      </span>
-                    </div>
-                    <div className="flex flex-col items-center gap-0.5 min-w-0 max-w-[140px]">
-                      <div className="rounded-full p-0.5 bg-pink-500/20"><IconVenus size={12} className="text-pink-500" /></div>
-                      <span className="text-foreground truncate text-center text-xs font-medium w-full">
-                        {p.femaleName || `${p.femaleDinoId1}_${p.femaleDinoId2}`}
-                      </span>
-                    </div>
+                    <AncestorNode name={p.maleName} id1={p.maleDinoId1} id2={p.maleDinoId2} female={false} prominent imported={isImported(p.maleDinoId1, p.maleDinoId2)} />
+                    <AncestorNode name={p.femaleName} id1={p.femaleDinoId1} id2={p.femaleDinoId2} female prominent imported={isImported(p.femaleDinoId1, p.femaleDinoId2)} />
                   </div>
                 </div>
               </CardContent>
@@ -459,12 +368,12 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
           )
         })()}
 
-        {/* Manual Parents — shown for breedable species */}
-        {isBreedable && (
+        {/* Parents — bred creatures of breedable species (tames have none) */}
+        {isBreedable && (profile?.isBred ?? true) && (
           <Card>
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-semibold">Parents</CardTitle>
+                <CardTitle className="font-display text-xl">Parents</CardTitle>
                 <Button
                   variant="ghost"
                   size="sm"
@@ -488,7 +397,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                       <IconMars size={11} className="text-blue-500" /> Father ARK ID
                     </label>
                     <select
-                      className="border-input bg-background text-foreground w-full rounded-md border px-3 py-1.5 text-sm"
+                      className="border-input bg-background text-foreground h-10 w-full rounded-md border px-3 text-sm"
                       value={pendingFatherId}
                       onChange={(e) => setPendingFatherId(e.target.value)}
                     >
@@ -501,7 +410,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                       placeholder="Or enter ARK ID manually…"
                       value={pendingFatherId}
                       onChange={(e) => setPendingFatherId(e.target.value)}
-                      className="h-7 text-xs font-mono"
+                      className="h-9 text-sm font-mono"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -509,7 +418,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                       <IconVenus size={11} className="text-pink-500" /> Mother ARK ID
                     </label>
                     <select
-                      className="border-input bg-background text-foreground w-full rounded-md border px-3 py-1.5 text-sm"
+                      className="border-input bg-background text-foreground h-10 w-full rounded-md border px-3 text-sm"
                       value={pendingMotherId}
                       onChange={(e) => setPendingMotherId(e.target.value)}
                     >
@@ -522,7 +431,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                       placeholder="Or enter ARK ID manually…"
                       value={pendingMotherId}
                       onChange={(e) => setPendingMotherId(e.target.value)}
-                      className="h-7 text-xs font-mono"
+                      className="h-9 text-sm font-mono"
                     />
                   </div>
                   <Button size="sm" onClick={handleSaveParents} className="w-full gap-1">
@@ -530,27 +439,32 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                   </Button>
                 </div>
               ) : (
-                <div className="flex gap-6 text-sm">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <IconMars size={14} className="text-blue-500 shrink-0" />
-                    <span className="text-foreground truncate">
-                      {fatherCreature
-                        ? `${fatherCreature.name || fatherCreature.dinoNameTag} Lv ${fatherCreature.level}`
-                        : creature.manualParentMaleId
-                          ? <span className="font-mono text-xs text-muted-foreground">{creature.manualParentMaleId}</span>
-                          : <span className="text-muted-foreground">—</span>}
-                    </span>
+                <div className="space-y-3">
+                  <div className="grid gap-3 text-sm sm:grid-cols-2">
+                    {([
+                      { label: 'Mother', id: motherId, parent: motherCreature, icon: <IconVenus size={14} className="shrink-0 text-pink-500" /> },
+                      { label: 'Father', id: fatherId, parent: fatherCreature, icon: <IconMars size={14} className="shrink-0 text-blue-500" /> },
+                    ] as const).map(({ label, id: parentId, parent, icon }) => (
+                      <div key={label} className="border-border flex min-w-0 items-center gap-2 rounded-lg border p-3">
+                        {icon}
+                        <span className="text-muted-foreground shrink-0">{label}</span>
+                        {parent ? (
+                          <Link href={`/my-creatures/${parent.id}`} className="truncate font-medium underline-offset-4 hover:underline">
+                            {parent.name || parent.dinoNameTag} <span className="text-muted-foreground font-normal">Lv {parent.level}</span>
+                          </Link>
+                        ) : parentId ? (
+                          <span className="text-muted-foreground truncate" title={parentId}>Not imported</span>
+                        ) : (
+                          <span className="text-muted-foreground">Unknown</span>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                  <div className="flex items-center gap-2 min-w-0">
-                    <IconVenus size={14} className="text-pink-500 shrink-0" />
-                    <span className="text-foreground truncate">
-                      {motherCreature
-                        ? `${motherCreature.name || motherCreature.dinoNameTag} Lv ${motherCreature.level}`
-                        : creature.manualParentFemaleId
-                          ? <span className="font-mono text-xs text-muted-foreground">{creature.manualParentFemaleId}</span>
-                          : <span className="text-muted-foreground">—</span>}
-                    </span>
-                  </div>
+                  {(motherId || fatherId) && (!motherCreature || !fatherCreature) && (
+                    <p className="text-muted-foreground text-sm">
+                      Import both parents to see which stats this creature inherited and where its mutations came from.
+                    </p>
+                  )}
                 </div>
               )}
             </CardContent>
@@ -566,20 +480,18 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
             onClick={handleDelete}
           >
             <IconTrash size={14} />
-            {confirmDelete ? 'Confirm Delete' : 'Delete'}
+            {confirmDelete ? 'Yes, delete it' : 'Delete creature'}
           </Button>
         </div>
 
         {/* Debug / metadata footer */}
-        <div className="text-muted-foreground/60 space-y-0.5 font-mono text-xs">
-          <p>DinoID1: {creature.dinoId1}  ·  DinoID2: {creature.dinoId2}  ·  ARK ID: {arkId}</p>
-          {creature.importFilename && <p>Imported from: {creature.importFilename}</p>}
-          <p>
-            Imported {new Date(creature.importedAt).toLocaleString()} ·{' '}
-            Updated {new Date(creature.updatedAt).toLocaleString()}
-          </p>
-        </div>
-      </div>
+        <dl className="text-muted-foreground border-border grid gap-x-6 gap-y-1 border-t pt-4 text-xs sm:grid-cols-[auto_1fr]">
+          <dt>ARK ID</dt><dd className="text-foreground font-mono">{arkId}</dd>
+          <dt>Dino IDs</dt><dd className="font-mono">{creature.dinoId1} / {creature.dinoId2}</dd>
+          {creature.importFilename && <><dt>Imported from</dt><dd className="font-mono break-all">{creature.importFilename}</dd></>}
+          <dt>Imported</dt><dd>{new Date(creature.importedAt).toLocaleString()}</dd>
+          <dt>Updated</dt><dd>{new Date(creature.updatedAt).toLocaleString()}</dd>
+        </dl>
     </main>
   )
 }

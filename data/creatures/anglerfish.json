@@ -107,5 +107,16 @@
     "drag_weight": 250,
     "cloneable": false,
     "entity_id": "Angler_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Anglerfish"
+    "wiki_url": "https://ark.wiki.gg/wiki/Anglerfish",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

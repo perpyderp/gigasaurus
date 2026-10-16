@@ -91,5 +91,9 @@
     "cloneable": false,
     "entity_id": "SpaceWhale_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Astrocetus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Astrocetus",
+    "maps": [
+        "Genesis: Part 1",
+        "Genesis: Part 2"
+    ]
 }

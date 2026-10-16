@@ -1,0 +1,10 @@
+{
+    "name": "Absorbent Substrate",
+    "rarity": "rare",
+    "renewable": false,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.25,
+    "stack_size": 100,
+    "found_in": []
+}

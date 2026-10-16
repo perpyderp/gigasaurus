@@ -103,5 +103,15 @@
     "drag_weight": 899,
     "cloneable": false,
     "entity_id": "Mosa_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Mosasaurus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Mosasaurus",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

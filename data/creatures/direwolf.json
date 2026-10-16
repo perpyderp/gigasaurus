@@ -106,5 +106,17 @@
     "drag_weight": 120,
     "cloneable": false,
     "entity_id": "Direwolf_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Direwolf"
+    "wiki_url": "https://ark.wiki.gg/wiki/Direwolf",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

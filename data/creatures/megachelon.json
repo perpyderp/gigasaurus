@@ -99,5 +99,10 @@
     "cloneable": true,
     "entity_id": "GiantTurtle_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Managarmr"
+    "wiki_url": "https://ark.wiki.gg/wiki/Managarmr",
+    "maps": [
+        "Extinction",
+        "Genesis: Part 2",
+        "Lost Island"
+    ]
 }

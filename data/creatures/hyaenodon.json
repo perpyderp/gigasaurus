@@ -101,5 +101,17 @@
     "drag_weight": 40,
     "cloneable": false,
     "entity_id": "Hyaenodon_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Hyaenodon"
+    "wiki_url": "https://ark.wiki.gg/wiki/Hyaenodon",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

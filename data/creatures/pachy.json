@@ -108,5 +108,16 @@
     "drag_weight": 85,
     "cloneable": false,
     "entity_id": "Pachy_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Pachy"
+    "wiki_url": "https://ark.wiki.gg/wiki/Pachy",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

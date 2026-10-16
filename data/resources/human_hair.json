@@ -1,0 +1,10 @@
+{
+    "name": "Human Hair",
+    "rarity": "common",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.05,
+    "stack_size": 200,
+    "found_in": []
+}

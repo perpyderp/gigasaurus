@@ -1,0 +1,10 @@
+{
+    "name": "Giant Bee Honey",
+    "rarity": "uncommon",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.1,
+    "stack_size": 1,
+    "found_in": []
+}

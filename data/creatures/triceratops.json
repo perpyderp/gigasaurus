@@ -108,5 +108,16 @@
     "drag_weight": 300,
     "cloneable": false,
     "entity_id": "Trike_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Triceratops"
+    "wiki_url": "https://ark.wiki.gg/wiki/Triceratops",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

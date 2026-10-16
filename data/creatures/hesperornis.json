@@ -99,5 +99,17 @@
     "drag_weight": 120,
     "cloneable": false,
     "entity_id": "Hesperornis_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Hesperornis"
+    "wiki_url": "https://ark.wiki.gg/wiki/Hesperornis",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

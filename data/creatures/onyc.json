@@ -95,5 +95,17 @@
     "drag_weight": 35,
     "cloneable": false,
     "entity_id": "Bat_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Onyc"
+    "wiki_url": "https://ark.wiki.gg/wiki/Onyc",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

@@ -24,6 +24,10 @@ interface SavedPath {
   label: string
   handle: FileSystemDirectoryHandle
   addedAt: number
+  /** When true, the my-creatures page polls this folder for new exports while open. */
+  watch?: boolean
+  /** High-water mark (max file lastModified) of the last incremental scan. */
+  lastScan?: number
 }
 
 const PATHS_DB_NAME = 'gigasaurus-paths'
@@ -70,6 +74,32 @@ export async function renamePath(id: string, label: string): Promise<void> {
   await db.put(PATHS_STORE, { ...existing, label })
 }
 
+/** Toggle whether a saved folder is auto-watched for new exports. */
+export async function setPathWatch(id: string, watch: boolean): Promise<void> {
+  const db = await getPathsDB()
+  const existing = (await db.get(PATHS_STORE, id)) as SavedPath | undefined
+  if (!existing) return
+  await db.put(PATHS_STORE, { ...existing, watch })
+}
+
+/**
+ * Enable/disable watching with permission handling. Must be called from a user
+ * gesture when enabling, since granting read access may prompt. Returns false
+ * (and leaves watch off) if the user denies permission.
+ */
+export async function setWatchWithPermission(id: string, watch: boolean): Promise<boolean> {
+  if (!watch) {
+    await setPathWatch(id, false)
+    return true
+  }
+  const saved = await getPath(id)
+  if (!saved) return false
+  const granted = await ensureReadPermission(saved.handle)
+  if (!granted) return false
+  await setPathWatch(id, true)
+  return true
+}
+
 export async function addPath(): Promise<SavedPath | null> {
   if (!isFsaSupported()) throw new Error('Directory picker not supported in this browser')
   const handle = await (window as unknown as {
@@ -103,6 +133,16 @@ export async function ensureReadPermission(handle: FileSystemDirectoryHandle): P
   if (!h.requestPermission) return false
   const requested = await h.requestPermission(opts)
   return requested === 'granted'
+}
+
+/**
+ * Query read permission WITHOUT prompting. Safe to call outside a user gesture
+ * (the background watcher uses this — requestPermission would throw there).
+ */
+export async function queryReadPermission(handle: FileSystemDirectoryHandle): Promise<boolean> {
+  const h = handle as unknown as PermissibleHandle
+  if (!h.queryPermission) return true
+  return (await h.queryPermission({ mode: 'read' })) === 'granted'
 }
 
 // ─── Import flow ─────────────────────────────────────────────────────────────
@@ -190,6 +230,60 @@ export async function importAllFromPath(pathId: string): Promise<ImportOutcome> 
   }
 
   return { imported, results }
+}
+
+/**
+ * Incremental scan used by the auto-watcher: import only `.ini` files modified
+ * after `since` (epoch ms). Query-only permission — returns an empty result if
+ * the folder isn't currently granted (no prompting outside a user gesture).
+ * Pass `since = 0` for a full initial sync.
+ */
+export async function importChangedFromPath(
+  pathId: string,
+  since: number,
+): Promise<ImportOutcome & { latestModified: number }> {
+  const saved = await getPath(pathId)
+  if (!saved) throw new Error('Saved path not found')
+
+  const imported: StoredCreature[] = []
+  const results: ImportOutcome['results'] = []
+  let latestModified = since
+
+  if (!(await queryReadPermission(saved.handle))) {
+    return { imported, results, latestModified }
+  }
+
+  const dirIter = (saved.handle as unknown as { values: () => AsyncIterableIterator<FileSystemHandle> }).values()
+  for await (const entry of dirIter) {
+    if (entry.kind !== 'file' || !entry.name.endsWith('.ini')) continue
+    try {
+      const file = await (entry as FileSystemFileHandle).getFile()
+      if (file.lastModified <= since) continue
+      latestModified = Math.max(latestModified, file.lastModified)
+      const text = await file.text()
+      const { creature, existed } = await importIniText(text, file.name, pathId)
+      imported.push(creature)
+      results.push({
+        name: `${creature.name || creature.dinoNameTag} (Lv ${creature.level})`,
+        status: existed ? 'updated' : 'new',
+      })
+    } catch (err) {
+      results.push({
+        name: entry.name,
+        status: 'error',
+        message: err instanceof Error ? err.message : 'Unknown error',
+      })
+    }
+  }
+
+  // Persist the high-water mark so scans stay incremental across page reloads.
+  if (latestModified > (saved.lastScan ?? 0)) {
+    const db = await getPathsDB()
+    const fresh = (await db.get(PATHS_STORE, pathId)) as SavedPath | undefined
+    if (fresh) await db.put(PATHS_STORE, { ...fresh, lastScan: latestModified })
+  }
+
+  return { imported, results, latestModified }
 }
 
 /** Re-import a single creature by locating its filename in a saved folder. */

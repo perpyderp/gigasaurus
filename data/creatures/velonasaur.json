@@ -108,5 +108,9 @@
     "drag_weight": 200,
     "cloneable": false,
     "entity_id": "Spindles_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Velonasaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Velonasaur",
+    "maps": [
+        "Extinction",
+        "Fjordur"
+    ]
 }

@@ -1,0 +1,13 @@
+{
+    "name": "Silk",
+    "rarity": "common",
+    "renewable": false,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.01,
+    "stack_size": 200,
+    "found_in": [
+        "White",
+        "Green"
+    ]
+}

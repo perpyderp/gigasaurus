@@ -1,0 +1,10 @@
+{
+    "name": "Ammonite Bile",
+    "rarity": "rare",
+    "renewable": false,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.2,
+    "stack_size": 50,
+    "found_in": []
+}

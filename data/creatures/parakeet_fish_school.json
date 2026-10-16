@@ -61,5 +61,11 @@
     "cloneable": false,
     "entity_id": "MicrobeSwarmChar_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Parakeet_Fish_School"
+    "wiki_url": "https://ark.wiki.gg/wiki/Parakeet_Fish_School",
+    "maps": [
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

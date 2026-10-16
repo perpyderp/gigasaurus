@@ -95,5 +95,9 @@
     "cloneable": true,
     "entity_id": "LionfishLion_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Shadowmane"
+    "wiki_url": "https://ark.wiki.gg/wiki/Shadowmane",
+    "maps": [
+        "Genesis: Part 2",
+        "Fjordur"
+    ]
 }

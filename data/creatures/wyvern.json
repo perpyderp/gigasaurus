@@ -102,5 +102,12 @@
     "drag_weight": 416,
     "cloneable": false,
     "entity_id": "Wyvern_Character_BP_Base_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Wyvern"
+    "wiki_url": "https://ark.wiki.gg/wiki/Wyvern",
+    "maps": [
+        "Scorched Earth",
+        "Ragnarok",
+        "Valguero",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

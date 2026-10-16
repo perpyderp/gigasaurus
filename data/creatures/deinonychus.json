@@ -105,5 +105,9 @@
     "drag_weight": 85,
     "cloneable": false,
     "entity_id": "Deinonychus_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Deinonychus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Deinonychus",
+    "maps": [
+        "Valguero",
+        "Fjordur"
+    ]
 }

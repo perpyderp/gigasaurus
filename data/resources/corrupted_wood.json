@@ -1,0 +1,10 @@
+{
+    "name": "Corrupted Wood",
+    "rarity": "common",
+    "renewable": true,
+    "refinable": false,
+    "combustible": true,
+    "weight": 0.5,
+    "stack_size": 100,
+    "found_in": []
+}

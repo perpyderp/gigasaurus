@@ -103,5 +103,18 @@
     "drag_weight": 410,
     "cloneable": false,
     "entity_id": "Procoptodon_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Procoptodon"
+    "wiki_url": "https://ark.wiki.gg/wiki/Procoptodon",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

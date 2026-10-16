@@ -93,5 +93,6 @@
     "drag_weight": null,
     "cloneable": false,
     "entity_id": "DevilFox_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Malwyn"
+    "wiki_url": "https://ark.wiki.gg/wiki/Malwyn",
+    "maps": []
 }

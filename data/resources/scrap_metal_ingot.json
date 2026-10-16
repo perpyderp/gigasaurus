@@ -1,0 +1,10 @@
+{
+    "name": "Scrap Metal Ingot",
+    "rarity": "common",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 1,
+    "stack_size": 300,
+    "found_in": []
+}

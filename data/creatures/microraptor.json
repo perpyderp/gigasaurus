@@ -106,5 +106,18 @@
     "drag_weight": 35,
     "cloneable": false,
     "entity_id": "Microraptor_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Microraptor"
+    "wiki_url": "https://ark.wiki.gg/wiki/Microraptor",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

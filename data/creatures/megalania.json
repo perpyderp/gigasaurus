@@ -111,5 +111,16 @@
     "drag_weight": 35,
     "cloneable": false,
     "entity_id": "Megalania_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Megalania"
+    "wiki_url": "https://ark.wiki.gg/wiki/Megalania",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Lost Island",
+        "Fjordur"
+    ]
 }
