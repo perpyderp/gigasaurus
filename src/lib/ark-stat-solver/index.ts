@@ -11,3 +11,7 @@ export { buildStatParams, buildSpeciesParams } from './params'
 export { forwardValue, breedingValueAt, projectMaxPotential } from './formula'
 export { solveStat } from './solver'
 export { solveAllStats, summarizeLevels } from './levels'
+// ASE-accurate path (preferred when the species exists in data/ase-species.json)
+export type { AseSpeciesEntry, AseSpeciesFile, AseStatKey } from './ase-data'
+export { ASE_STAT_KEYS, normalizeBlueprintPath } from './ase-data'
+export { extractLevels, type ExtractionInput, type ExtractionResult } from './extractor'

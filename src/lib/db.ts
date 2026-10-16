@@ -2,16 +2,20 @@
  * IndexedDB store for imported ARK creatures.
  * Uses the `idb` library for a Promise-based API.
  *
- * Database: "gigasaurus" v2
+ * Database: "gigasaurus" v3
  * Object store: "creatures" — keyed by the creature's 64-bit ARK ID (decimal string)
  *
  * Migration v1→v2:
  *   - id format changed from `${dinoId1}_${dinoId2}` to combined BigInt decimal string
  *   - Added fields: tribe, importFilename, manualParentMaleId, manualParentFemaleId
+ * Migration v2→v3:
+ *   - stats re-parsed from rawIni: multiplier stats (melee/speed/fortitude/crafting)
+ *     were stored as the export's `multiplier − 1`; the parser now normalizes them
  */
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb'
 import type { StoredCreature } from '@/schemas/stored-creature'
 import { combineArkId } from '@/lib/ark-id'
+import { parseArkExport } from '@/lib/ark-parser'
 
 export type { StoredCreature }
 
@@ -27,10 +31,10 @@ let dbPromise: Promise<IDBPDatabase<GigasaurusDB>> | null = null
 
 function getDB() {
   if (!dbPromise) {
-    dbPromise = openDB<GigasaurusDB>('gigasaurus', 2, {
+    dbPromise = openDB<GigasaurusDB>('gigasaurus', 3, {
       async upgrade(db, oldVersion, _newVersion, tx) {
         if (oldVersion === 0) {
-          // Fresh install — create store directly at v2 schema
+          // Fresh install — create store directly at current schema
           const store = db.createObjectStore('creatures', { keyPath: 'id' })
           store.createIndex('by_slug', 'apiSlug')
           store.createIndex('by_level', 'level')
@@ -56,6 +60,22 @@ function getDB() {
               manualParentMaleId: c.manualParentMaleId ?? null,
               manualParentFemaleId: c.manualParentFemaleId ?? null,
             } as StoredCreature)
+          }
+        }
+
+        if (oldVersion < 3) {
+          // Migrate v2 → v3: re-parse stats from the kept rawIni so multiplier
+          // stats become full multipliers (old parser stored `value − 1`).
+          const store = tx.objectStore('creatures')
+          const all = await store.getAll()
+          for (const c of all) {
+            if (!c.rawIni) continue
+            try {
+              const parsed = parseArkExport(c.rawIni)
+              await store.put({ ...c, stats: parsed.stats })
+            } catch {
+              // unparseable rawIni — keep the record as-is
+            }
           }
         }
       },

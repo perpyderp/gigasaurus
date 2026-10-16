@@ -1,5 +1,6 @@
 import { Elysia, t } from 'elysia'
 import { CreatureService } from '@/services/creature'
+import { AseSpeciesService } from '@/services/ase-species'
 
 const CREATURE_CATEGORIES = ['dinosaur', 'fantasy', 'bird', 'fish', 'invertebrate', 'mammal', 'reptile', 'other'] as const
 
@@ -46,6 +47,28 @@ export const creaturesRoutes = new Elysia({ prefix: '/creatures', tags: ['Creatu
         summary: 'List all creatures',
         description:
           'Returns a paginated list of all creatures. Filter by category using the `category` query param.',
+      },
+    }
+  )
+  .get(
+    '/stat-params',
+    ({ query, set }) => {
+      const species = AseSpeciesService.byBlueprint(query.bp)
+      if (!species) {
+        set.status = 404
+        return { message: `No stat data for blueprint '${query.bp}'` }
+      }
+      return species
+    },
+    {
+      query: t.Object({ bp: t.String() }),
+      response: {
+        404: t.Object({ message: t.String() }),
+      },
+      detail: {
+        summary: 'Get solver stat params by blueprint path',
+        description:
+          'Returns ARKStatsExtractor-derived species stat data for an export\'s DinoClass blueprint path. Used by the creature stat solver.',
       },
     }
   )
