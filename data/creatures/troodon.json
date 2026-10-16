@@ -103,5 +103,17 @@
     "drag_weight": 35,
     "cloneable": false,
     "entity_id": "Troodon_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Troodon"
+    "wiki_url": "https://ark.wiki.gg/wiki/Troodon",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

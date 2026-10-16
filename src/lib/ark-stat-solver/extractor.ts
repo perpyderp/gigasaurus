@@ -18,16 +18,18 @@
  */
 
 import { MAX_DOM_LEVELS } from './constants'
-import type { LevelSummary, StatSolution, StatSolutionMap } from './types'
+import type { LevelSummary, StatSolutionMap } from './types'
 import {
   ASE_STAT_KEYS,
   DEFAULT_IMPRINT_MULT,
   HEALTH,
+  OFFICIAL_STAT_MULTIPLIERS,
   SPEED,
   STATS_COUNT,
   TORPIDITY,
   type AseSpeciesEntry,
   type AseStatKey,
+  type StatMultipliers,
 } from './ase-data'
 
 export interface ExtractionInput {
@@ -40,6 +42,12 @@ export interface ExtractionInput {
   isBred: boolean
 }
 
+/** One complete, constraint-satisfying set of (wild, dom) levels. */
+export interface ExtractionAlternative {
+  levels: Partial<Record<AseStatKey, { wild: number; dom: number }>>
+  te: number | null
+}
+
 export interface ExtractionResult {
   solutions: StatSolutionMap
   summary: LevelSummary
@@ -47,6 +55,12 @@ export interface ExtractionResult {
   te: number | null
   /** True when level sums and TE constraints were satisfied exactly. */
   valid: boolean
+  /**
+   * Every valid level assignment found (first = `solutions`), capped. More than one
+   * means the stat values alone are ambiguous — e.g. a Rex's Weight is identical for
+   * 31 wild + 0 dom and 25 wild + 2 dom. Lineage can pick the right one.
+   */
+  alternatives: ExtractionAlternative[]
 }
 
 // ─── Per-stat effective params ─────────────────────────────────────────────────
@@ -78,7 +92,11 @@ function bit(mask: number | undefined, s: number): boolean {
  * restrictions (official settings: no speed dom-leveling in ASA, no flyer
  * speed leveling in ASE).
  */
-export function buildStatParamsFromAse(entry: AseSpeciesEntry, ib: number): (StatParams | null)[] {
+export function buildStatParamsFromAse(
+  entry: AseSpeciesEntry,
+  ib: number,
+  statMultipliers: (StatMultipliers | null)[] = OFFICIAL_STAT_MULTIPLIERS,
+): (StatParams | null)[] {
   const imprintMult = entry.imprintMult ?? DEFAULT_IMPRINT_MULT
   const usedStats = entry.stats.map((s) => s !== null)
   const displayed = (s: number) =>
@@ -91,7 +109,13 @@ export function buildStatParamsFromAse(entry: AseSpeciesEntry, ib: number): (Sta
       params.push(null)
       continue
     }
-    const [base, iw, idRaw, ta, tm] = raw
+    const [taM, tmM, idM, iwM] = statMultipliers[s] ?? [1, 1, 1, 1]
+    // Negative bonuses (e.g. Giganotosaurus HP Ta) are used as-is, never scaled.
+    const ta = raw[3] > 0 ? raw[3] * taM : raw[3]
+    const tm = raw[4] > 0 ? raw[4] * tmM : raw[4]
+    const base = raw[0]
+    const iw = raw[1] * iwM
+    const idRaw = raw[2] * idM
 
     let id = idRaw
     let imprint = imprintMult[s] ?? 0
@@ -238,40 +262,81 @@ interface Pick {
  * invisibly (Iw = 0 but not skipped, e.g. ASE Movement Speed) — when present,
  * the wild sum becomes an upper bound instead of an exact target.
  */
-function findValidCombination(
+const MAX_ALTERNATIVES = 32
+
+function findValidCombinations(
   statCandidates: { statIndex: number; candidates: Candidate[] }[],
   wildSum: number,
   domSum: number,
   hasSink: boolean,
-): { picks: Pick[]; teMin: number; teMax: number } | null {
+): { picks: Pick[]; teMin: number; teMax: number }[] {
   // most-constrained first keeps the search tiny
   const order = [...statCandidates].sort((a, b) => a.candidates.length - b.candidates.length)
   const picks: Pick[] = []
+  const found: { picks: Pick[]; teMin: number; teMax: number }[] = []
 
-  function dfs(i: number, remWild: number, remDom: number, teMin: number, teMax: number): boolean {
-    if (remWild < 0 || remDom < 0) return false
+  function dfs(i: number, remWild: number, remDom: number, teMin: number, teMax: number) {
+    if (remWild < 0 || remDom < 0 || found.length >= MAX_ALTERNATIVES) return
     if (i === order.length) {
-      return remDom === 0 && (hasSink ? remWild >= 0 : remWild === 0)
+      if (remDom === 0 && (hasSink ? remWild >= 0 : remWild === 0)) found.push({ picks: [...picks], teMin, teMax })
+      return
     }
     for (const c of order[i].candidates) {
       const tMin = Math.max(teMin, c.teMin)
       const tMax = Math.min(teMax, c.teMax)
       if (tMin > tMax) continue
       picks[i] = { statIndex: order[i].statIndex, candidate: c }
-      if (dfs(i + 1, remWild - c.lw, remDom - c.ld, tMin, tMax)) return true
+      dfs(i + 1, remWild - c.lw, remDom - c.ld, tMin, tMax)
     }
-    return false
   }
 
-  if (!dfs(0, wildSum, domSum, -TE_EPSILON, 1 + TE_EPSILON)) return null
+  dfs(0, wildSum, domSum, -TE_EPSILON, 1 + TE_EPSILON)
+  return found
+}
 
-  let teMin = -TE_EPSILON
-  let teMax = 1 + TE_EPSILON
-  for (const pk of picks) {
-    teMin = Math.max(teMin, pk.candidate.teMin)
-    teMax = Math.min(teMax, pk.candidate.teMax)
+// ─── Taming-level plausibility ─────────────────────────────────────────────────
+
+const WILD_LEVEL_STEP = 5
+
+/**
+ * Score a TE range: 0 = fits a pre-tame level on the official 5-level step,
+ * 1 = fits some integer pre-tame level, 2 = fits none. `window` is the TE
+ * sub-range of the best fit.
+ */
+function tamingLevelScore(teMin: number, teMax: number, postTameLevel: number): { score: number; window: [number, number] | null } {
+  const lo = Math.max(0, teMin)
+  const hi = Math.min(1, teMax)
+  if (lo > hi) return { score: 2, window: null }
+  let best = 2
+  let window: [number, number] | null = null
+  // pre ranges over levels whose post-tame level could be postTameLevel within [lo, hi]
+  const preMin = Math.floor(postTameLevel / (1 + hi / 2)) - 1
+  const preMax = Math.ceil(postTameLevel / (1 + lo / 2)) + 1
+  for (let pre = Math.max(1, preMin); pre <= preMax; pre++) {
+    // TE values in [lo, hi] with floor(pre × (1 + TE/2)) === postTameLevel
+    const teLow = Math.max(lo, (postTameLevel / pre - 1) * 2)
+    const teHigh = Math.min(hi, ((postTameLevel + 1) / pre - 1) * 2)
+    if (teLow < teHigh || (teLow === teHigh && Math.floor(pre * (1 + teLow / 2)) === postTameLevel)) {
+      const score = pre % WILD_LEVEL_STEP === 0 ? 0 : 1
+      if (score < best) {
+        best = score
+        window = [teLow, teHigh]
+      }
+      if (best === 0) break
+    }
   }
-  return { picks, teMin, teMax }
+  return { score: best, window }
+}
+
+/** Order tamed alternatives by plausibility and narrow each TE range to its plausible window. */
+function rankByTamingLevel<T extends { teMin: number; teMax: number }>(combos: T[], postTameLevel: number): T[] {
+  return combos
+    .map((c, i) => {
+      const { score, window } = tamingLevelScore(c.teMin, c.teMax, postTameLevel)
+      return { c: window ? { ...c, teMin: window[0], teMax: window[1] } : c, i, score }
+    })
+    .sort((a, b) => a.score - b.score || a.i - b.i)
+    .map((x) => x.c)
 }
 
 // ─── Public API ────────────────────────────────────────────────────────────────
@@ -319,9 +384,14 @@ export function extractLevels(entry: AseSpeciesEntry, input: ExtractionInput): E
     })
   }
 
-  // 3. Globally consistent assignment
-  const combo = findValidCombination(statCandidates, wildSum, domSum, hasSink)
+  // 3. Globally consistent assignments, most plausible first. For tames, a TE is
+  // only plausible if some pre-tame level reproduces the post-tame level
+  // (postTame = floor(preTame × (1 + TE/2))); official spawns are multiples of 5.
+  const found = findValidCombinations(statCandidates, wildSum, domSum, hasSink)
+  const combos = input.isBred ? found : rankByTamingLevel(found, 1 + wildSum)
+  const combo = combos[0] ?? null
   const valid = combo !== null
+  const teOf = (c: { teMin: number; teMax: number }) => (input.isBred ? 1 : Math.min(1, Math.max(0, (c.teMin + c.teMax) / 2)))
 
   // Best effort when constraints can't be met (non-vanilla server, data gap):
   // take each stat's first candidate so the UI still shows plausible levels.
@@ -429,5 +499,13 @@ export function extractLevels(entry: AseSpeciesEntry, input: ExtractionInput): E
     allSolved: valid,
   }
 
-  return { solutions, summary, te, valid }
+  const anyTeDependent = statCandidates.some((sc) => (params[sc.statIndex]?.tm ?? 0) > 0)
+  const alternatives: ExtractionAlternative[] = combos.map((c) => ({
+    levels: Object.fromEntries(
+      c.picks.map((pk) => [ASE_STAT_KEYS[pk.statIndex], { wild: pk.candidate.lw, dom: pk.candidate.ld }]),
+    ),
+    te: anyTeDependent ? teOf(c) : input.isBred ? 1 : null,
+  }))
+
+  return { solutions, summary, te, valid, alternatives }
 }

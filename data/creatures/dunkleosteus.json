@@ -103,5 +103,15 @@
     "drag_weight": 250,
     "cloneable": false,
     "entity_id": "Dunkle_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Dunkleosteus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Dunkleosteus",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

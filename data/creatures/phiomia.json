@@ -106,5 +106,17 @@
     "drag_weight": 120,
     "cloneable": false,
     "entity_id": "Phiomia_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Phiomia"
+    "wiki_url": "https://ark.wiki.gg/wiki/Phiomia",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

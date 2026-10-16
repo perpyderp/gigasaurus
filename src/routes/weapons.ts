@@ -37,6 +37,8 @@ export const weaponRoutes = new Elysia({ prefix: '/weapons', tags: ['Weapons'] }
             name: t.String(),
             slug: t.String(),
             category: t.String(),
+            damage: t.Nullable(t.Number()),
+            unlock_level: t.Nullable(t.Number()),
             image: t.Nullable(t.String()),
             url: t.String(),
           })),

@@ -90,5 +90,13 @@
     "drag_weight": 25,
     "cloneable": false,
     "entity_id": "LanternBird_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Featherlight"
+    "wiki_url": "https://ark.wiki.gg/wiki/Featherlight",
+    "maps": [
+        "Aberration",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Fjordur"
+    ]
 }

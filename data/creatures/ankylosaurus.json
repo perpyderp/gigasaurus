@@ -111,5 +111,18 @@
     "drag_weight": 160,
     "cloneable": false,
     "entity_id": "Ankylo_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Ankylosaurus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Ankylosaurus",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

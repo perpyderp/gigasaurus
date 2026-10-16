@@ -85,5 +85,6 @@
     "cloneable": true,
     "entity_id": "Fenrir_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Fenrir"
+    "wiki_url": "https://ark.wiki.gg/wiki/Fenrir",
+    "maps": []
 }

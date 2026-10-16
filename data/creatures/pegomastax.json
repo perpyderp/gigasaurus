@@ -106,5 +106,17 @@
     "drag_weight": 20,
     "cloneable": false,
     "entity_id": "Pegomastax_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Pegomastax"
+    "wiki_url": "https://ark.wiki.gg/wiki/Pegomastax",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

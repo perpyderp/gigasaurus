@@ -106,5 +106,16 @@
     "drag_weight": 180,
     "cloneable": false,
     "entity_id": "Thylacoleo_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Thylacoleo"
+    "wiki_url": "https://ark.wiki.gg/wiki/Thylacoleo",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

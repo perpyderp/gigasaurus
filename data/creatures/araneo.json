@@ -93,5 +93,18 @@
     "entity_id": "SpiderS_Character_BP_C",
     "category": "dinosaur",
     "egg": null,
-    "wiki_url": "https://ark.wiki.gg/wiki/Araneo"
+    "wiki_url": "https://ark.wiki.gg/wiki/Araneo",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

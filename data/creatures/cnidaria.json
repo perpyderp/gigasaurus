@@ -63,5 +63,16 @@
     "drag_weight": 21,
     "cloneable": false,
     "entity_id": "Cnidaria_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Cnidaria"
+    "wiki_url": "https://ark.wiki.gg/wiki/Cnidaria",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

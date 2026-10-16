@@ -108,5 +108,15 @@
     "drag_weight": 200,
     "cloneable": false,
     "entity_id": "Mantis_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Mantis"
+    "wiki_url": "https://ark.wiki.gg/wiki/Mantis",
+    "maps": [
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

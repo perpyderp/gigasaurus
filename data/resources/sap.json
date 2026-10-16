@@ -1,0 +1,10 @@
+{
+    "name": "Sap",
+    "rarity": "uncommon",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.5,
+    "stack_size": 30,
+    "found_in": []
+}

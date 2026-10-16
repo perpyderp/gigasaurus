@@ -1,0 +1,10 @@
+{
+    "name": "Element Ore",
+    "rarity": "uncommon",
+    "renewable": false,
+    "refinable": true,
+    "combustible": false,
+    "weight": 0.5,
+    "stack_size": 100,
+    "found_in": []
+}

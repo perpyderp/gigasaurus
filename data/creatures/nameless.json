@@ -68,5 +68,8 @@
     "cloneable": true,
     "entity_id": "ChupaCabra_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Nameless"
+    "wiki_url": "https://ark.wiki.gg/wiki/Nameless",
+    "maps": [
+        "Aberration"
+    ]
 }

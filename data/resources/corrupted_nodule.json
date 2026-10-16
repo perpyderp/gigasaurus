@@ -1,0 +1,10 @@
+{
+    "name": "Corrupted Nodule",
+    "rarity": "common",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.25,
+    "stack_size": 20,
+    "found_in": []
+}

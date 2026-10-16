@@ -1,0 +1,10 @@
+{
+    "name": "Silicate",
+    "rarity": "rare",
+    "renewable": false,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.02,
+    "stack_size": 100,
+    "found_in": []
+}

@@ -92,5 +92,8 @@
     "cloneable": true,
     "entity_id": "BrainSlug_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Noglin"
+    "wiki_url": "https://ark.wiki.gg/wiki/Noglin",
+    "maps": [
+        "Genesis: Part 2"
+    ]
 }

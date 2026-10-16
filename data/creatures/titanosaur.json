@@ -90,5 +90,14 @@
     "drag_weight": 3000,
     "cloneable": false,
     "entity_id": "Titanosaur_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Titanosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Titanosaur",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Crystal Isles",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

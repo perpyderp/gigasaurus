@@ -103,5 +103,15 @@
     "drag_weight": 150,
     "cloneable": false,
     "entity_id": "Bigfoot_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Gigantopithecus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Gigantopithecus",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

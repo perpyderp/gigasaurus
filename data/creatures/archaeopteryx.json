@@ -100,5 +100,17 @@
     "drag_weight": 50,
     "cloneable": false,
     "entity_id": "Archa_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Archaeopteryx"
+    "wiki_url": "https://ark.wiki.gg/wiki/Archaeopteryx",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

@@ -107,5 +107,17 @@
     "drag_weight": 40,
     "cloneable": false,
     "entity_id": "Oviraptor_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Oviraptor"
+    "wiki_url": "https://ark.wiki.gg/wiki/Oviraptor",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

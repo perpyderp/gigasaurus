@@ -103,5 +103,17 @@
     "drag_weight": 120,
     "cloneable": false,
     "entity_id": "Stag_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Megaloceros"
+    "wiki_url": "https://ark.wiki.gg/wiki/Megaloceros",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

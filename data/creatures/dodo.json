@@ -106,5 +106,17 @@
     "drag_weight": 25,
     "cloneable": false,
     "entity_id": "Dodo_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Dodo"
+    "wiki_url": "https://ark.wiki.gg/wiki/Dodo",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

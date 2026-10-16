@@ -1,0 +1,10 @@
+{
+    "name": "Gasoline",
+    "rarity": "uncommon",
+    "renewable": true,
+    "refinable": false,
+    "combustible": true,
+    "weight": 0.1,
+    "stack_size": 100,
+    "found_in": []
+}

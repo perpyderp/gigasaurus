@@ -68,5 +68,8 @@
     "cloneable": false,
     "entity_id": "Summoner_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Summoner"
+    "wiki_url": "https://ark.wiki.gg/wiki/Summoner",
+    "maps": [
+        "Genesis: Part 2"
+    ]
 }

@@ -45,19 +45,21 @@ function imageToData(img: HTMLImageElement): ImageData {
 
 interface Props {
   /** Wiki display name, e.g. "Achatina" — used as upstream fallback when no local mask exists. */
-  speciesName: string
+  speciesName?: string | null
   /** Slug for the local bundled image (matches data/creatures/{slug}.json). */
   slug?: string | null
   colors: ArkColor[]
   className?: string
   /** Square render size in CSS pixels. */
   size?: number
+  /** Shown when no color render (base + mask) can be loaded. Falls back to this image instead of an empty state. */
+  fallbackSrc?: string | null
 }
 
-export function CreatureColorRender({ speciesName, slug, colors, className, size = 256 }: Props) {
+export function CreatureColorRender({ speciesName, slug, colors, className, size = 256, fallbackSrc = null }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const requestKey = useMemo(
-    () => `${slug ?? ''}|${speciesName}|${size}|${colors.map((c) => `${c.r},${c.g},${c.b},${c.empty ? 1 : 0}`).join(';')}`,
+    () => `${slug ?? ''}|${speciesName ?? ''}|${size}|${colors.map((c) => `${c.r},${c.g},${c.b},${c.empty ? 1 : 0}`).join(';')}`,
     [slug, speciesName, size, colors],
   )
   const [resolved, setResolved] = useState<{ key: string; status: 'ready' | 'missing' } | null>(null)
@@ -76,7 +78,8 @@ export function CreatureColorRender({ speciesName, slug, colors, className, size
           // local miss — fall through to upstream
         }
       }
-      return await loadPair(arkutilsUrls(speciesName))
+      if (speciesName) return await loadPair(arkutilsUrls(speciesName))
+      throw new Error('no slug or species name to resolve a color render')
     }
 
     tryLoad()
@@ -132,9 +135,14 @@ export function CreatureColorRender({ speciesName, slug, colors, className, size
         </div>
       )}
       {status === 'missing' && (
-        <div className="bg-muted text-muted-foreground flex h-full w-full items-center justify-center rounded-md p-4 text-center text-xs">
-          No color render available
-        </div>
+        fallbackSrc ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={fallbackSrc} alt={speciesName ?? 'creature'} className="h-full w-full rounded-md object-contain" />
+        ) : (
+          <div className="bg-muted text-muted-foreground flex h-full w-full items-center justify-center rounded-md p-4 text-center text-xs">
+            No color render available
+          </div>
+        )
       )}
       <canvas
         ref={canvasRef}

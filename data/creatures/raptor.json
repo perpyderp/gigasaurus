@@ -108,5 +108,17 @@
     "drag_weight": 85,
     "cloneable": true,
     "entity_id": "Raptor_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Raptor"
+    "wiki_url": "https://ark.wiki.gg/wiki/Raptor",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

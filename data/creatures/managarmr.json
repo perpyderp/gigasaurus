@@ -106,5 +106,10 @@
     "drag_weight": 250,
     "cloneable": false,
     "entity_id": "IceJumper_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Managarmr"
+    "wiki_url": "https://ark.wiki.gg/wiki/Managarmr",
+    "maps": [
+        "Extinction",
+        "Genesis: Part 2",
+        "Lost Island"
+    ]
 }

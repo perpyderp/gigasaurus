@@ -1,0 +1,10 @@
+{
+    "name": "Condensed Gas",
+    "rarity": "uncommon",
+    "renewable": false,
+    "refinable": true,
+    "combustible": false,
+    "weight": 1,
+    "stack_size": 100,
+    "found_in": []
+}

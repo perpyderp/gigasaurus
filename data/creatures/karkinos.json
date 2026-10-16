@@ -91,5 +91,13 @@
     "cloneable": true,
     "entity_id": "Crab_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Karkinos"
+    "wiki_url": "https://ark.wiki.gg/wiki/Karkinos",
+    "maps": [
+        "Aberration",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Fjordur"
+    ]
 }

@@ -128,12 +128,17 @@ describe('forward formula (ASE parity)', () => {
     const rex = species(REX_BP)
     const params = buildStatParamsFromAse(rex, 0)
     const hp = params[0]!
-    // wild level-35 HP Rex, tamed: 1100×(1+35×0.2)+0.5 = 8800.5
-    expect(forwardTamedValue(hp, 35, 0, 1)).toBeCloseTo(8800.5, 3)
+    // Official stat multipliers apply: Health Ta × 0.14, Melee Ta × 0.14 and Tm × 0.44.
+    // wild level-35 HP Rex, tamed: 1100×(1+35×0.2) + 0.5×0.14 = 8800.07
+    expect(forwardTamedValue(hp, 35, 0, 1)).toBeCloseTo(8800.07, 3)
+    // Health per dom level is Id × 0.2 = 5.4% for a Rex
+    expect(hp.id).toBeCloseTo(0.054, 6)
 
     const melee = params[8]!
-    // 30 wild melee at TE 80%: (1×(1+30×0.05)+0.5)×(1+0.8×0.4) = 3×1.32 = 3.96
-    expect(forwardTamedValue(melee, 30, 0, 0.8)).toBeCloseTo(3.96, 5)
+    // 30 wild melee at TE 80%: (1+30×0.05 + 0.5×0.14) × (1 + 0.8×0.4×0.44) = 2.57 × 1.1408
+    expect(forwardTamedValue(melee, 30, 0, 0.8)).toBeCloseTo(2.57 * 1.1408, 5)
+    // Melee per dom level is Id × 0.17 = 1.7%
+    expect(melee.id).toBeCloseTo(0.017, 6)
   })
 
   it('applies imprinting per ASE rules (no stamina/oxygen imprint, food imprints)', () => {
@@ -142,13 +147,31 @@ describe('forward formula (ASE parity)', () => {
     expect(forwardTamedValue(params[1]!, 0, 0, 1)).toBeCloseTo(420, 3) // stamina unchanged
     expect(forwardTamedValue(params[3]!, 0, 0, 1)).toBeCloseTo(150, 3) // oxygen unchanged
     expect(forwardTamedValue(params[4]!, 0, 0, 1)).toBeCloseTo(3000 * 1.2, 3) // food +20%
-    expect(forwardTamedValue(params[0]!, 0, 0, 1)).toBeCloseTo(1100 * 1.2 + 0.5, 3) // health +20%
+    expect(forwardTamedValue(params[0]!, 0, 0, 1)).toBeCloseTo(1100 * 1.2 + 0.07, 3) // health +20%
   })
 })
 
 // ─── Extraction ──────────────────────────────────────────────────────────────
 
 describe('extractLevels', () => {
+  it('solves a real in-game export (bred, 100% imprinted ASA Thylacoleo)', () => {
+    // Values copied from a DinoExport .ini written by the game.
+    const thyla = species('/Game/PrimalEarth/Dinos/Thylacoleo/Thylacoleo_Character_BP.Thylacoleo_Character_BP_C')
+    const result = extractLevels(thyla, {
+      statValues: {
+        health: 6888.07031, stamina: 1480, torpidity: 13138.1006, oxygen: 1080, food: 11799,
+        water: 120.000008, weight: 902.400024, meleeDamage: 4.63446403, movementSpeed: 1.300000012,
+      },
+      level: 245,
+      imprintingBonus: 1,
+      isBred: true,
+    })
+    expect(result.valid).toBe(true)
+    expect(result.solutions.health.wild).toBe(36)
+    expect(result.solutions.torpidity.wild).toBe(244)
+    expect(result.summary.levelDelta).toBe(0)
+  })
+
   it('recovers levels for a bred, imprinted ASA Rex', () => {
     const rex = species(REX_BP)
     const levels = {
@@ -241,7 +264,8 @@ describe('extractLevels', () => {
       meleeDamage: { w: 21 },
     } satisfies Partial<Record<AseStatKey, { w: number; d?: number }>>
     const visibleWild = 20 + 18 + 15 + 17 + 19 + 21
-    const hiddenSpeed = 14
+    // 110 visible + 9 hidden = post-tame level 120 = floor(80 × 1.5), a real 100% TE tame of a level-80 spawn.
+    const hiddenSpeed = 9
     const wildSum = visibleWild + hiddenSpeed
 
     const result = extractLevels(entry, {

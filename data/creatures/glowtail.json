@@ -90,5 +90,13 @@
     "drag_weight": 25,
     "cloneable": false,
     "entity_id": "LanternLizard_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Glowtail"
+    "wiki_url": "https://ark.wiki.gg/wiki/Glowtail",
+    "maps": [
+        "Aberration",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

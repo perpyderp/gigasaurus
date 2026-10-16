@@ -30,6 +30,8 @@ export const armorRoutes = new Elysia({ prefix: '/armor', tags: ['Armor'] })
           results: t.Array(t.Object({
             set_name: t.String(),
             slug: t.String(),
+            armor_rating: t.Number(),
+            unlock_level: t.Nullable(t.Number()),
             image: t.Nullable(t.String()),
             url: t.String(),
           })),

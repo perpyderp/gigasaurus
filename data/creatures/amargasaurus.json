@@ -105,5 +105,8 @@
     "drag_weight": 375,
     "cloneable": true,
     "entity_id": "Amargasaurus_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Amargasaurus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Amargasaurus",
+    "maps": [
+        "Lost Island"
+    ]
 }

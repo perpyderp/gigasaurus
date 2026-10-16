@@ -104,5 +104,12 @@
     "drag_weight": 245,
     "cloneable": false,
     "entity_id": "MoleRat_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Roll_Rat"
+    "wiki_url": "https://ark.wiki.gg/wiki/Roll_Rat",
+    "maps": [
+        "Aberration",
+        "Valguero",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Fjordur"
+    ]
 }

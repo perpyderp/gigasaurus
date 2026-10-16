@@ -30,6 +30,7 @@ export const resourceRoutes = new Elysia({ prefix: '/resources', tags: ['Resourc
           results: t.Array(t.Object({
             name: t.String(),
             slug: t.String(),
+            rarity: t.String(),
             image: t.Nullable(t.String()),
             url: t.String(),
           })),

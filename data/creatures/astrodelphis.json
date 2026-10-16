@@ -102,5 +102,8 @@
     "cloneable": false,
     "entity_id": "SpaceDolphin_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Astrodelphis"
+    "wiki_url": "https://ark.wiki.gg/wiki/Astrodelphis",
+    "maps": [
+        "Genesis: Part 2"
+    ]
 }

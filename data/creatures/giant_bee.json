@@ -88,5 +88,19 @@
     "drag_weight": 30,
     "cloneable": false,
     "entity_id": "Bee_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Giant_Bee"
+    "wiki_url": "https://ark.wiki.gg/wiki/Giant_Bee",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Aberration",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

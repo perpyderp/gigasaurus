@@ -1,0 +1,12 @@
+{
+    "name": "Raw Salt",
+    "rarity": "uncommon",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 0.1,
+    "stack_size": 100,
+    "found_in": [
+        "White"
+    ]
+}

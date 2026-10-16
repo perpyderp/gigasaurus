@@ -105,5 +105,17 @@
     "drag_weight": 250,
     "cloneable": false,
     "entity_id": "Therizino_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Therizinosaur"
+    "wiki_url": "https://ark.wiki.gg/wiki/Therizinosaur",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

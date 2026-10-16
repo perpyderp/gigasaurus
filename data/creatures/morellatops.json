@@ -108,5 +108,12 @@
     "drag_weight": 300,
     "cloneable": false,
     "entity_id": "camelsaurus_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Morellatops"
+    "wiki_url": "https://ark.wiki.gg/wiki/Morellatops",
+    "maps": [
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Crystal Isles",
+        "Lost Island"
+    ]
 }

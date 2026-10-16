@@ -1,9 +1,14 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import { PawPrint } from 'lucide-react'
 import { CreatureService } from '@/services/creature'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Input } from '@/components/ui/input'
+import { CreatureHoverCard } from '@/components/HoverPreview'
+import {
+  DossierTile,
+  EmptyResults,
+  FilterChips,
+  GlossaryHeader,
+  ResultCount,
+  SearchField,
+} from '@/components/Glossary'
 
 export const metadata = { title: 'Creatures — Gigasaurus' }
 
@@ -25,104 +30,69 @@ export default async function CreaturesPage({
 }) {
   const params = await searchParams
   const categoryFilter = params.category
-  const search = params.q?.toLowerCase()
+  const search = params.q?.trim().toLowerCase()
 
-  const { count, results } = CreatureService.getAll({
-    category: categoryFilter,
-    limit: 200,
-  })
+  const all = CreatureService.getAll({ limit: 500 }).results
+  const inCategory = categoryFilter ? all.filter((c) => c.category === categoryFilter) : all
+  const filtered = search ? inCategory.filter((c) => c.name.toLowerCase().includes(search)) : inCategory
 
-  const filtered = search
-    ? results.filter((c) => c.name.toLowerCase().includes(search))
-    : results
-
-  const categories = [...new Set(
-    CreatureService.getAll({ limit: 500 }).results.map((c) => c.category)
-  )].sort()
+  const countByCategory = new Map<string, number>()
+  for (const c of all) countByCategory.set(c.category, (countByCategory.get(c.category) ?? 0) + 1)
+  const categories = [...countByCategory.keys()].sort()
 
   return (
-    <main className="bg-background min-h-screen">
-      <div className="mx-auto max-w-6xl space-y-6 px-4 py-8">
-        <div>
-          <h1 className="text-3xl font-bold tracking-wide">Creatures</h1>
-          <p className="text-muted-foreground mt-1 text-sm">
-            {count} creatures across all ARK maps
-          </p>
-        </div>
+    <main className="mx-auto max-w-7xl space-y-8 px-4 py-10">
+      <GlossaryHeader
+        title="Creatures"
+        summary="Every tameable, rideable and hostile creature across the ARK maps. Hover a dossier for base stats; open it for taming and breeding."
+      >
+        <SearchField
+          action="/creatures"
+          defaultValue={params.q}
+          placeholder="Search creatures"
+          label="Search creatures"
+          hidden={{ category: categoryFilter }}
+        />
+      </GlossaryHeader>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-2">
-          <Link
-            href="/creatures"
-            className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
-              !categoryFilter
-                ? 'bg-primary text-primary-foreground border-primary'
-                : 'border-border text-muted-foreground hover:bg-accent'
-            }`}
-          >
-            All
-          </Link>
-          {categories.map((cat) => (
-            <Link
-              key={cat}
-              href={`/creatures?category=${cat}`}
-              className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
-                categoryFilter === cat
-                  ? 'bg-primary text-primary-foreground border-primary'
-                  : 'border-border text-muted-foreground hover:bg-accent'
-              }`}
-            >
-              {CATEGORY_LABELS[cat] ?? cat}
-            </Link>
-          ))}
-        </div>
-
-        {/* Search */}
-        <form method="GET" action="/creatures">
-          {categoryFilter && <input type="hidden" name="category" value={categoryFilter} />}
-          <Input
-            name="q"
-            defaultValue={params.q}
-            placeholder="Search creatures…"
-            className="max-w-sm"
-          />
-        </form>
-
-        {/* Grid */}
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-          {filtered.map((creature) => (
-            <Link key={creature.slug} href={`/creatures/${creature.slug}`}>
-              <Card className="hover:border-primary/50 group h-full cursor-pointer transition-colors">
-                <CardContent className="flex flex-col items-center gap-2 p-3">
-                  <div className="bg-muted relative h-20 w-full overflow-hidden rounded-md">
-                    {creature.image ? (
-                      <Image
-                        src={creature.image}
-                        alt={creature.name}
-                        fill
-                        className="object-contain p-1 transition-transform group-hover:scale-105"
-                        sizes="160px"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center text-3xl opacity-20">🦕</div>
-                    )}
-                  </div>
-                  <p className="text-center text-xs font-medium leading-tight">{creature.name}</p>
-                  <Badge variant="secondary" className="text-[10px]">
-                    {CATEGORY_LABELS[creature.category] ?? creature.category}
-                  </Badge>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        {filtered.length === 0 && (
-          <div className="py-16 text-center">
-            <p className="text-muted-foreground text-sm">No creatures match your search.</p>
-          </div>
-        )}
+      <div className="space-y-3">
+        <FilterChips
+          label="Creature category"
+          basePath="/creatures"
+          param="category"
+          active={categoryFilter}
+          keep={{ q: params.q }}
+          options={categories.map((cat) => ({
+            value: cat,
+            label: CATEGORY_LABELS[cat] ?? cat,
+            count: countByCategory.get(cat),
+          }))}
+        />
+        <ResultCount shown={filtered.length} total={all.length} noun="creatures" query={params.q} />
       </div>
+
+      {filtered.length === 0 ? (
+        <EmptyResults icon={PawPrint} message="No creatures match that search." resetHref="/creatures" />
+      ) : (
+        <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {filtered.map((creature) => {
+            const full = CreatureService.getBySlug(creature.slug)
+            const tile = (
+              <DossierTile
+                href={`/creatures/${creature.slug}`}
+                name={creature.name}
+                image={creature.image}
+                meta={CATEGORY_LABELS[creature.category] ?? creature.category}
+              />
+            )
+            return full ? (
+              <CreatureHoverCard key={creature.slug} creature={full}>{tile}</CreatureHoverCard>
+            ) : (
+              <div key={creature.slug}>{tile}</div>
+            )
+          })}
+        </div>
+      )}
     </main>
   )
 }

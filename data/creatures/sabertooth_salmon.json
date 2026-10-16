@@ -66,5 +66,17 @@
     "drag_weight": 32.5,
     "cloneable": false,
     "entity_id": "Salmon_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Sabertooth_Salmon"
+    "wiki_url": "https://ark.wiki.gg/wiki/Sabertooth_Salmon",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

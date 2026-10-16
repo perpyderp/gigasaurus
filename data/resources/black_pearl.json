@@ -1,0 +1,10 @@
+{
+    "name": "Black Pearl",
+    "rarity": "rare",
+    "renewable": true,
+    "refinable": false,
+    "combustible": false,
+    "weight": 2,
+    "stack_size": 200,
+    "found_in": []
+}

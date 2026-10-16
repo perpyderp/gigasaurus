@@ -66,5 +66,14 @@
     "drag_weight": 35,
     "cloneable": false,
     "entity_id": "Pteroteuthis_Char_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Seeker"
+    "wiki_url": "https://ark.wiki.gg/wiki/Seeker",
+    "maps": [
+        "Aberration",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

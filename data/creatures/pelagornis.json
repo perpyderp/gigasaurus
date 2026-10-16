@@ -111,5 +111,15 @@
     "drag_weight": 120,
     "cloneable": false,
     "entity_id": "Pela_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Pelagornis"
+    "wiki_url": "https://ark.wiki.gg/wiki/Pelagornis",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

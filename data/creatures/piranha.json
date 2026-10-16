@@ -66,5 +66,18 @@
     "drag_weight": 21,
     "cloneable": false,
     "entity_id": "Piranha_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Piranha"
+    "wiki_url": "https://ark.wiki.gg/wiki/Piranha",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Aberration",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

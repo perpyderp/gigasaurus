@@ -103,5 +103,18 @@
     "drag_weight": 85,
     "cloneable": false,
     "entity_id": "Sheep_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Ovis"
+    "wiki_url": "https://ark.wiki.gg/wiki/Ovis",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Scorched Earth",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

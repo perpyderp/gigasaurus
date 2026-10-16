@@ -63,5 +63,16 @@
     "drag_weight": 30,
     "cloneable": false,
     "entity_id": "Ammonite_Character_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Ammonite"
+    "wiki_url": "https://ark.wiki.gg/wiki/Ammonite",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

@@ -101,5 +101,13 @@
     "drag_weight": 25,
     "cloneable": false,
     "entity_id": "Jerboa_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Jerboa"
+    "wiki_url": "https://ark.wiki.gg/wiki/Jerboa",
+    "maps": [
+        "Scorched Earth",
+        "Ragnarok",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 2",
+        "Lost Island"
+    ]
 }

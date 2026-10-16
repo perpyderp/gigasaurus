@@ -57,5 +57,13 @@
     "drag_weight": 30,
     "cloneable": false,
     "entity_id": "Lightbug_Character_BaseBP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Glowbug"
+    "wiki_url": "https://ark.wiki.gg/wiki/Glowbug",
+    "maps": [
+        "Aberration",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Fjordur"
+    ]
 }

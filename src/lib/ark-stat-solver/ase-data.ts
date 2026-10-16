@@ -39,6 +39,21 @@ export const SPEED = 9
  */
 export const DEFAULT_IMPRINT_MULT = [0.2, 0, 0.2, 0, 0.2, 0.2, 0, 0.2, 0.2, 0.2, 0, 0] as const
 
+/**
+ * Per-stat server multipliers [TaM, TmM, IdM, IwM] applied to the raw species
+ * values: additive taming bonus, multiplicative taming bonus, per-dom-level and
+ * per-wild-level increase. These are the game's official defaults (ARKStatsExtractor
+ * `serverMultipliers.json` → "official"); only Health and Melee differ from 1.
+ * Without them Health and Melee can't be solved (e.g. Health Ta 0.5 is really +0.07).
+ */
+export type StatMultipliers = [taM: number, tmM: number, idM: number, iwM: number]
+export const OFFICIAL_STAT_MULTIPLIERS: (StatMultipliers | null)[] = [
+  [0.14, 0.44, 0.2, 1], // Health
+  null, null, null, null, null, null, null,
+  [0.14, 0.44, 0.17, 1], // Melee Damage
+  null, null, null,
+]
+
 export type AseSpeciesEntry = {
   name: string
   game: 'ASE' | 'ASA'

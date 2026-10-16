@@ -1169,7 +1169,47 @@ function printStats(label: string, s: ScrapeStats) {
 
 // ─── Main menu ─────────────────────────────────────────────────────────────────
 
+/**
+ * Non-interactive mode for CI/batch use:
+ *   bun scripts/scrape.ts --type=resources[,armor,...] [--overwrite]
+ * Skips all readline prompts. Multiple types may be comma-separated, or use
+ * --type=all. Without --type the interactive menu runs.
+ */
+async function runNonInteractive(): Promise<boolean> {
+  const typeArg = process.argv.find((a) => a.startsWith('--type='))?.split('=')[1]
+  if (!typeArg) return false
+
+  const overwrite = process.argv.includes('--overwrite')
+  const valid = ['creatures', 'resources', 'armor', 'weapons'] as const
+  type RunType = (typeof valid)[number]
+  const runs: RunType[] =
+    typeArg === 'all'
+      ? [...valid]
+      : (typeArg.split(',').map((t) => t.trim()).filter((t): t is RunType => (valid as readonly string[]).includes(t)))
+
+  if (!runs.length) { fail(`Invalid --type=${typeArg}`); rl.close(); return true }
+
+  log(`\n\x1b[1mGigasaurus — ARK Wiki Scraper (batch)\x1b[0m  overwrite=${overwrite}  types=${runs.join(',')}\n`)
+  const allStats: ScrapeStats[] = []
+  for (const run of runs) {
+    log(`── ${run} ──────────────────────────────────────────\n`)
+    const s =
+      run === 'creatures' ? await scrapeCreatures(overwrite) :
+      run === 'resources' ? await scrapeResources(overwrite) :
+      run === 'armor'     ? await scrapeArmor(overwrite)     :
+                            await scrapeWeapons(overwrite)
+    allStats.push(s)
+    printStats(run, s)
+    log('')
+  }
+  writeIncompleteSummary()
+  rl.close()
+  return true
+}
+
 async function main() {
+  if (await runNonInteractive()) return
+
   log('\n\x1b[1mGigasaurus — ARK Wiki Scraper\x1b[0m')
   log('────────────────────────────────────\n')
 

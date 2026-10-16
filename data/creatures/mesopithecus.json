@@ -101,5 +101,17 @@
     "drag_weight": 25,
     "cloneable": false,
     "entity_id": "Monkey_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Mesopithecus"
+    "wiki_url": "https://ark.wiki.gg/wiki/Mesopithecus",
+    "maps": [
+        "The Island",
+        "The Center",
+        "Ragnarok",
+        "Extinction",
+        "Valguero",
+        "Crystal Isles",
+        "Genesis: Part 1",
+        "Genesis: Part 2",
+        "Lost Island",
+        "Fjordur"
+    ]
 }

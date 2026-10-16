@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback } from 'react'
-import { IconFolderPlus, IconRefresh, IconTrash, IconPencil, IconX, IconCheck, IconAlertTriangle } from '@tabler/icons-react'
+import { IconFolderPlus, IconRefresh, IconTrash, IconPencil, IconX, IconCheck, IconAlertTriangle, IconEye, IconEyeOff } from '@tabler/icons-react'
 import {
   isFsaSupported,
   listPaths,
@@ -9,6 +9,7 @@ import {
   deletePath,
   renamePath,
   importAllFromPath,
+  setWatchWithPermission,
 } from '@/lib/import-paths'
 import type { StoredCreature } from '@/lib/db'
 import { Button } from '@/components/ui/button'
@@ -20,6 +21,7 @@ interface SavedPath {
   id: string
   label: string
   addedAt: number
+  watch?: boolean
 }
 
 interface Props {
@@ -37,7 +39,7 @@ export function SavedPaths({ onImported }: Props) {
 
   const reload = useCallback(async () => {
     const all = await listPaths()
-    setPaths(all.map(({ id, label, addedAt }) => ({ id, label, addedAt })))
+    setPaths(all.map(({ id, label, addedAt, watch }) => ({ id, label, addedAt, watch })))
     setLoading(false)
   }, [])
 
@@ -78,6 +80,13 @@ export function SavedPaths({ onImported }: Props) {
   const handleSaveLabel = async (id: string) => {
     if (editLabel.trim()) await renamePath(id, editLabel.trim())
     setEditingId(null)
+    await reload()
+  }
+
+  const handleToggleWatch = async (id: string, next: boolean) => {
+    setError(null)
+    const ok = await setWatchWithPermission(id, next)
+    if (!ok && next) setError('Folder access was denied — cannot watch this folder.')
     await reload()
   }
 
@@ -133,7 +142,14 @@ export function SavedPaths({ onImported }: Props) {
                         className="h-7 flex-1 text-sm"
                       />
                     ) : (
-                      <span className="text-foreground flex-1 truncate text-sm font-medium">{p.label}</span>
+                      <span className="text-foreground flex-1 truncate text-sm font-medium">
+                        {p.label}
+                        {p.watch && (
+                          <Badge variant="secondary" className="ml-2 gap-1 text-[10px] text-emerald-600 dark:text-emerald-400">
+                            <IconEye size={10} /> Watching
+                          </Badge>
+                        )}
+                      </span>
                     )}
 
                     {result && (
@@ -165,6 +181,14 @@ export function SavedPaths({ onImported }: Props) {
                         >
                           <IconRefresh size={12} />
                           {busyPathId === p.id ? 'Importing…' : 'Re-import'}
+                        </Button>
+                        <Button
+                          variant={p.watch ? 'default' : 'ghost'}
+                          size="icon-sm"
+                          onClick={() => handleToggleWatch(p.id, !p.watch)}
+                          title={p.watch ? 'Stop watching this folder' : 'Auto-import new exports while open'}
+                        >
+                          {p.watch ? <IconEye size={13} /> : <IconEyeOff size={13} />}
                         </Button>
                         <Button
                           variant="ghost"

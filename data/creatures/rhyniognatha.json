@@ -87,5 +87,9 @@
     "drag_weight": 500,
     "cloneable": false,
     "entity_id": "Rhynio_Character_BP_C",
-    "wiki_url": "https://ark.wiki.gg/wiki/Rhyniognatha"
+    "wiki_url": "https://ark.wiki.gg/wiki/Rhyniognatha",
+    "maps": [
+        "The Island",
+        "Lost Island"
+    ]
 }
