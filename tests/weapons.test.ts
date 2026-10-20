@@ -66,7 +66,7 @@ describe('GET /api/weapons', () => {
 
 // ─── Detail endpoint ──────────────────────────────────────────────────────────
 
-describe('GET /api/weapons/:slug', () => {
+describe('GET /api/weapons/:weaponName', () => {
   it('returns 200 for longneck_rifle', async () => {
     const res = await get('/api/weapons/longneck_rifle')
     expect(res.status).toBe(200)

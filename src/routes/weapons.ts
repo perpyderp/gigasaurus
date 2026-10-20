@@ -52,24 +52,29 @@ export const weaponRoutes = new Elysia({ prefix: '/weapons', tags: ['Weapons'] }
     }
   )
   .get(
-    '/:slug',
+    '/:weaponName',
     ({ params, set, request }) => {
       const origin = new URL(request.url).origin
-      const weapon = WeaponService.getBySlug(params.slug)
+      const weapon = WeaponService.getBySlug(params.weaponName)
       if (!weapon) {
         set.status = 404
-        return { message: `Weapon '${params.slug}' not found` }
+        return { message: `Weapon '${params.weaponName}' not found` }
       }
       return { ...weapon, image: weapon.image ? `${origin}${weapon.image}` : null }
     },
     {
-      params: t.Object({ slug: t.String() }),
+      params: t.Object({
+        weaponName: t.String({
+          description: 'Weapon name. Case-insensitive; spaces, hyphens and underscores are interchangeable.',
+          examples: ['longneck_rifle', 'Assault Rifle'],
+        }),
+      }),
       response: {
         404: t.Object({ message: t.String() }),
       },
       detail: {
-        summary: 'Get weapon by slug',
-        description: 'Returns full details for a single weapon by its slug.',
+        summary: 'Get weapon by name',
+        description: 'Returns full details for a single weapon by name, e.g. `Assault Rifle`.',
       },
     }
   )

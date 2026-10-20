@@ -48,7 +48,7 @@ describe('GET /api/resources', () => {
 
 // ─── Detail endpoint ──────────────────────────────────────────────────────────
 
-describe('GET /api/resources/:slug', () => {
+describe('GET /api/resources/:resourceName', () => {
   it('returns 200 for fiber', async () => {
     const res = await get('/api/resources/fiber')
     expect(res.status).toBe(200)

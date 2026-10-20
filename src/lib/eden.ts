@@ -4,7 +4,7 @@
  * Usage (client components):
  *   import { api } from '@/lib/eden'
  *   const { data, error } = await api.creatures.get()
- *   const { data } = await api.creatures({ slug: 'rex' }).get()
+ *   const { data } = await api.creatures({ creatureName: 'rex' }).get()
  *
  * The `App` type is exported for use with `edenFetch` or custom wrappers.
  */

@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { ArmorSchema, type ArmorDetail, type ArmorListItem } from '@/schemas/armor'
+import { toSlug } from '@/lib/slug'
 
 const DATA_DIR = join(process.cwd(), 'data', 'armor')
 const IMAGE_BASE = '/images/armor'
@@ -72,7 +73,7 @@ abstract class ArmorService {
   }
 
   static getBySlug(slug: string): ArmorDetail | null {
-    return ArmorService.getCache().get(slug) ?? null
+    return ArmorService.getCache().get(toSlug(slug)) ?? null
   }
 }
 

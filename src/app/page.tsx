@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Search, Upload, Github, BookOpen, Braces } from 'lucide-react'
+import { existsSync } from 'fs'
+import { join } from 'path'
+import { Upload, Github, BookOpen, Braces } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button-variants'
+import { GlobalSearch, type SearchEntry } from '@/components/GlobalSearch'
 import { CreatureService } from '@/services/creature'
 import { ArmorService } from '@/services/armor'
 import { WeaponService } from '@/services/weapon'
@@ -24,11 +27,28 @@ const IMPORT_STEPS = [
   },
 ]
 
+// Only point suggestions at images that ship, so the list never shows a broken thumbnail.
+function shippedImage(image: string | null): string | null {
+  return image && existsSync(join(process.cwd(), 'public', image)) ? image : null
+}
+
 export default function Home() {
-  const creatureCount = CreatureService.getAll({ limit: 1000 }).count
-  const armorCount = ArmorService.getAll({ limit: 1000 }).count
-  const weaponCount = WeaponService.getAll({ limit: 1000 }).count
-  const resourceCount = ResourceService.getAll({ limit: 1000 }).count
+  const creatures = CreatureService.getAll({ limit: 1000 }).results
+  const armor = ArmorService.getAll({ limit: 1000 }).results
+  const weapons = WeaponService.getAll({ limit: 1000 }).results
+  const resources = ResourceService.getAll({ limit: 1000 }).results
+  const creatureCount = creatures.length
+  const armorCount = armor.length
+  const weaponCount = weapons.length
+  const resourceCount = resources.length
+
+  // Creatures have their own pages; the other glossaries open filtered to the picked item.
+  const searchEntries: SearchEntry[] = [
+    ...creatures.map((c) => ({ name: c.name, kind: 'Creature' as const, href: `/creatures/${c.slug}`, image: shippedImage(c.image) })),
+    ...armor.map((a) => ({ name: a.set_name, kind: 'Armor' as const, href: `/armor?q=${encodeURIComponent(a.set_name)}`, image: shippedImage(a.image) })),
+    ...weapons.map((w) => ({ name: w.name, kind: 'Weapon' as const, href: `/weapons?q=${encodeURIComponent(w.name)}`, image: shippedImage(w.image) })),
+    ...resources.map((r) => ({ name: r.name, kind: 'Resource' as const, href: `/resources?q=${encodeURIComponent(r.name)}`, image: shippedImage(r.image) })),
+  ]
 
   const items = [
     { href: '/armor', label: 'Armor', count: armorCount, noun: 'sets', image: '/images/armor/riot.png', blurb: 'Armor rating, cold and heat protection, full-set cost.' },
@@ -38,7 +58,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* Hero: the ARKniversary mural is the subject itself; search goes straight to the creature list. */}
+      {/* Hero: the ARKniversary mural is the subject itself; search suggests from every glossary and falls back to the creature list. */}
       <section className="relative isolate flex min-h-[560px] items-end overflow-hidden bg-plate sm:min-h-[min(78vh,760px)]">
         <Image
           src="/images/ARKniversary.png"
@@ -59,21 +79,7 @@ export default function Home() {
             Look up any creature, armor set, weapon or resource in ARK: Survival Ascended, and keep tabs on your own tames.
           </p>
 
-          <form method="GET" action="/creatures" role="search" className="mt-8 flex max-w-xl gap-2">
-            <label className="relative flex-1">
-              <span className="sr-only">Search creatures</span>
-              <Search aria-hidden className="text-muted-foreground pointer-events-none absolute top-1/2 left-4 z-10 size-5 -translate-y-1/2" />
-              <input
-                type="search"
-                name="q"
-                placeholder="Rex, Argentavis, Shadowmane…"
-                className="border-input bg-card/95 placeholder:text-muted-foreground focus-visible:border-ring h-13 w-full rounded-lg border pr-4 pl-12 text-base shadow-lg outline-none backdrop-blur-sm"
-              />
-            </label>
-            <button type="submit" className={buttonVariants({ className: 'h-13 px-5 text-base shadow-lg' })}>
-              Search
-            </button>
-          </form>
+          <GlobalSearch entries={searchEntries} />
           <p className="text-muted-foreground mt-3 text-sm">
             Or{' '}
             <Link href="/my-creatures" className="text-foreground font-medium underline decoration-primary/60 underline-offset-4 hover:decoration-primary">

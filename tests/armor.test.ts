@@ -50,7 +50,7 @@ describe('GET /api/armor', () => {
 
 // ─── Detail endpoint ──────────────────────────────────────────────────────────
 
-describe('GET /api/armor/:slug', () => {
+describe('GET /api/armor/:armorName', () => {
   it('returns 200 for flak', async () => {
     const res = await get('/api/armor/flak')
     expect(res.status).toBe(200)

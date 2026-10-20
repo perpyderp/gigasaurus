@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { ResourceSchema, type ResourceDetail, type ResourceListItem } from '@/schemas/resource'
+import { toSlug } from '@/lib/slug'
 
 const DATA_DIR = join(process.cwd(), 'data', 'resources')
 const IMAGE_BASE = '/images/resources'
@@ -71,7 +72,7 @@ abstract class ResourceService {
   }
 
   static getBySlug(slug: string): ResourceDetail | null {
-    return ResourceService.getCache().get(slug) ?? null
+    return ResourceService.getCache().get(toSlug(slug)) ?? null
   }
 }
 
