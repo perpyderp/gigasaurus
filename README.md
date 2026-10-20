@@ -20,9 +20,14 @@ Query params: `?category=`, `?limit=`, `?offset=`
 Import your tamed dino export files (`.ini`) directly from ARK and manage them in your browser.
 
 - Drag-and-drop `.ini` export files from `ShooterGame/Saved/DinoExports/`
-- View stats, colors, ancestry, imprint quality, and mutations
-- Rename creatures, re-import updated exports, or delete entries
+- See wild, mutated and tamed points per stat, taming effectiveness and bonus levels, mutation counters, and which stats a baby inherited
+- Select creatures to delete them in bulk or refresh them from the folder they were imported from
 - All data stored locally in **IndexedDB** — no account needed
+
+### Breeding planner
+Pick a species and the stats you care about to see the best points you own (and whether a female and a male carry each), the pairs to breed next, and the odds of the best possible baby and of a new mutation.
+
+![Using the breeding planner step by step](docs/images/breeding-planner.gif)
 
 ### Google Drive Sync *(optional)*
 Back up and restore your creature collection using your own Google Drive AppData folder. No data is shared or stored server-side.

@@ -3,10 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { IconMars, IconVenus, IconDna, IconStar, IconSeedling } from '@tabler/icons-react'
 import { Badge } from '@/components/ui/badge'
-import { PawPrint, Crown } from 'lucide-react'
+import { PawPrint, Crown, Check } from 'lucide-react'
 import { ColorSwatches } from './ColorSwatch'
 import { CreatureColorRender } from './CreatureColorRender'
 import { LevelCell } from './breeding/LevelCell'
@@ -30,13 +29,17 @@ interface CreatureCardProps {
   profile?: CreatureProfile | null
   /** Best points per stat across this species in the collection. */
   bests?: CollectionBests | null
+  /**
+   * Select mode: when present the card toggles selection instead of opening the
+   * creature page.
+   */
+  selection?: { selected: boolean; onToggle: () => void }
 }
 
 /** Stats players usually compare first; others the species can inherit follow. */
 const PREFERRED_STATS: AseStatKey[] = ['health', 'stamina', 'weight', 'meleeDamage', 'food', 'oxygen', 'craftingSkill']
 
-export function CreatureCard({ creature, imageMode = 'dossier', speciesName = null, profile = null, bests = null }: CreatureCardProps) {
-  const router = useRouter()
+export function CreatureCard({ creature, imageMode = 'dossier', speciesName = null, profile = null, bests = null, selection }: CreatureCardProps) {
   // Some species map to a slug without dossier art; show the placeholder instead of a broken image.
   const [imageFailed, setImageFailed] = useState(false)
   const imageUrl = creature.apiSlug ? `/images/creatures/${creature.apiSlug}.png` : null
@@ -45,32 +48,22 @@ export function CreatureCard({ creature, imageMode = 'dossier', speciesName = nu
   const imprintPct = Math.round(creature.imprintQuality * 100)
   const speciesTag = creature.dinoNameTag.replace(/AA$/, '')
 
-  const goToSpecies = (e: React.MouseEvent) => {
-    if (!creature.apiSlug) return
-    e.preventDefault()
-    e.stopPropagation()
-    router.push(`/creatures/${creature.apiSlug}`)
-  }
-
   const shownStats = profile ? PREFERRED_STATS.filter((s) => profile.eligible.includes(s)).slice(0, 4) : []
   const records = profile ? profile.eligible.filter((s) => topFlags(profile.levels[s], bests?.[s]).total).length : 0
 
-  return (
-    <Link
-      href={`/my-creatures/${creature.id}`}
-      className="group bg-card ring-border hover:ring-primary/70 flex h-full flex-col overflow-hidden rounded-xl ring-1 transition-shadow"
-    >
+  const cardClass = `group bg-card relative flex h-full flex-col overflow-hidden rounded-xl text-left transition-shadow ${
+    selection?.selected ? 'ring-primary ring-2' : 'ring-border hover:ring-primary/70 ring-1'
+  }`
+  const body = (
+    <>
       <div className="bg-plate relative aspect-[3/2] overflow-hidden">
         {imageMode === 'colors' ? (
-          // Render at native source resolution — card thumb is small, so this
-          // is effectively a downscale and stays crisp. Falls back to the
-          // dossier image when no color render exists for this species.
+          // Fitted and centered in the plate; falls back to the dossier when no render exists.
           <CreatureColorRender
             speciesName={speciesName}
             slug={creature.apiSlug}
             colors={creature.colors}
-            size={160}
-            className="absolute inset-0 m-auto h-full w-auto"
+            className="absolute inset-0"
             fallbackSrc={imageUrl}
           />
         ) : imageUrl && !imageFailed ? (
@@ -91,8 +84,18 @@ export function CreatureCard({ creature, imageMode = 'dossier', speciesName = nu
         >
           {creature.isFemale ? <IconVenus size={13} className="text-white" aria-label="Female" /> : <IconMars size={13} className="text-white" aria-label="Male" />}
         </span>
+        {selection && (
+          <span
+            aria-hidden
+            className={`absolute top-2 left-2 flex size-6 items-center justify-center rounded-md border-2 ${
+              selection.selected ? 'border-primary bg-primary text-primary-foreground' : 'border-white/80 bg-black/40'
+            }`}
+          >
+            {selection.selected && <Check className="size-4" strokeWidth={3} />}
+          </span>
+        )}
         {!isFullyGrown && (
-          <span className="absolute top-2 left-2 flex items-center gap-1 rounded-full bg-amber-500 px-2 py-0.5 text-xs font-semibold text-black">
+          <span className={`absolute top-2 flex items-center gap-1 rounded-full bg-amber-500 px-2 py-0.5 text-xs font-semibold text-black ${selection ? 'left-10' : 'left-2'}`}>
             <IconSeedling size={12} aria-hidden /> Baby
           </span>
         )}
@@ -105,15 +108,14 @@ export function CreatureCard({ creature, imageMode = 'dossier', speciesName = nu
               {creature.name || creature.dinoNameTag}
             </p>
             <p className="text-muted-foreground truncate text-sm">
-              {creature.apiSlug ? (
-                <button
-                  type="button"
-                  onClick={goToSpecies}
-                  className="hover:text-foreground cursor-pointer underline-offset-2 hover:underline"
+              {creature.apiSlug && !selection ? (
+                <Link
+                  href={`/creatures/${creature.apiSlug}`}
+                  className="hover:text-foreground relative z-20 underline-offset-2 hover:underline"
                   title={`View ${speciesTag} species page`}
                 >
                   {speciesTag}
-                </button>
+                </Link>
               ) : speciesTag}
             </p>
           </div>
@@ -122,7 +124,10 @@ export function CreatureCard({ creature, imageMode = 'dossier', speciesName = nu
           </span>
         </div>
 
-        <ColorSwatches colors={creature.colors} />
+        {/* Above the card link (z-20) so tooltips work; under the select overlay in select mode. */}
+        <div className={selection ? 'w-fit' : 'relative z-20 w-fit'}>
+          <ColorSwatches colors={creature.colors} />
+        </div>
 
         {(mutations > 0 || imprintPct > 0 || creature.isNeutered) && (
           <div className="flex flex-wrap gap-1.5">
@@ -173,6 +178,35 @@ export function CreatureCard({ creature, imageMode = 'dossier', speciesName = nu
           Imported {new Date(creature.importedAt).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}
         </p>
       </div>
-    </Link>
+    </>
+  )
+
+  if (selection) {
+    // A full-card toggle laid over the content: the swatches' tooltip triggers are
+    // buttons, so the card itself can't be one.
+    return (
+      <div className={cardClass}>
+        {body}
+        <button
+          type="button"
+          aria-pressed={selection.selected}
+          aria-label={`Select ${creature.name || creature.dinoNameTag}`}
+          onClick={selection.onToggle}
+          className="focus-visible:ring-ring absolute inset-0 z-10 cursor-pointer rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+        />
+      </div>
+    )
+  }
+  // Stretched link: one overlay link opens the creature, while the species link and
+  // swatch tooltips sit above it (z-20), so nothing interactive is nested in an <a>.
+  return (
+    <div className={cardClass}>
+      {body}
+      <Link
+        href={`/my-creatures/${creature.id}`}
+        aria-label={`${creature.name || creature.dinoNameTag}, level ${creature.level}`}
+        className="focus-visible:ring-ring absolute inset-0 z-10 rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+      />
+    </div>
   )
 }

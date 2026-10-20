@@ -37,6 +37,8 @@ function CreatureLink({ p }: { p: CreatureProfile }) {
     <Link href={`/my-creatures/${p.id}`} className="inline-flex min-w-0 items-center gap-1.5 underline-offset-4 hover:underline">
       <SexIcon female={p.creature.isFemale} />
       <span className="truncate font-medium">{p.creature.name || p.creature.dinoNameTag}</span>
+      {/* Many tames keep the species as their name; the level tells them apart. */}
+      <span className="text-muted-foreground shrink-0 text-xs tabular-nums">Lv {p.creature.level}</span>
     </Link>
   )
 }
@@ -215,12 +217,14 @@ function BreedingPlanner() {
     const counts = new Map<string, { label: string; count: number }>()
     for (const c of collection ?? []) {
       const key = speciesGroupKey(c)
-      const entry = counts.get(key) ?? { label: c.dinoNameTag.replace(/AA$/, ''), count: 0 }
+      // Species name from the stat data ("Acrocanthosaurus"), not the export tag ("AcroAA").
+      const label = profiles?.get(c.id)?.species?.name ?? c.dinoNameTag.replace(/(AA|ASA)$/, '')
+      const entry = counts.get(key) ?? { label, count: 0 }
       entry.count++
       counts.set(key, entry)
     }
     return [...counts.entries()].sort((a, b) => b[1].count - a[1].count)
-  }, [collection])
+  }, [collection, profiles])
 
   const species = speciesParam || speciesOptions[0]?.[0] || ''
   const group = useMemo(

@@ -5,14 +5,14 @@ export const dynamic = 'force-dynamic'
 import { useEffect, useState, useCallback, useMemo, Suspense } from 'react'
 import { useQueryState, useQueryStates, parseAsInteger, parseAsString, parseAsStringLiteral } from 'nuqs'
 import { IconSearch, IconFilter, IconUpload, IconCloudUpload, IconCloudDown } from '@tabler/icons-react'
-import { PawPrint, GitFork } from 'lucide-react'
+import { PawPrint, GitFork, CheckSquare, RefreshCw, Trash2, X } from 'lucide-react'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button-variants'
 import { computeBests, type CollectionBests } from '@/lib/breeding'
 import { speciesGroupKey, useCreatureProfiles } from '@/hooks/use-creature-profiles'
-import { getAllCreatures } from '@/lib/db'
+import { getAllCreatures, deleteCreatures } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
-import { listPaths, importChangedFromPath } from '@/lib/import-paths'
+import { listPaths, importChangedFromPath, refreshCreaturesFromFiles } from '@/lib/import-paths'
 import { CreatureCard } from '@/components/CreatureCard'
 import { CreatureFilterFields } from '@/components/CreatureFilterFields'
 import { CreaturePagination } from '@/components/CreaturePagination'
@@ -37,6 +37,62 @@ import { Badge } from '@/components/ui/badge'
 
 const PAGE_SIZE_OPTIONS = [12, 24, 48]
 
+/** Sticky bar for acting on selected creatures. */
+function SelectionBar({
+  count,
+  shownCount,
+  busy,
+  onSelectAll,
+  onClear,
+  onRefresh,
+  onDelete,
+  onDone,
+}: {
+  count: number
+  shownCount: number
+  busy: boolean
+  onSelectAll: () => void
+  onClear: () => void
+  onRefresh: () => void
+  onDelete: () => void
+  onDone: () => void
+}) {
+  const [confirming, setConfirming] = useState(false)
+  const noun = `creature${count === 1 ? '' : 's'}`
+  return (
+    <div role="toolbar" aria-label="Selected creatures" className="bg-background/95 border-border sticky bottom-0 z-10 -mx-4 border-t px-4 py-3 backdrop-blur-md">
+      <div className="flex flex-wrap items-center gap-2">
+        <p className="mr-2 text-sm font-semibold tabular-nums" aria-live="polite">{count} selected</p>
+        <Button variant="ghost" size="sm" onClick={onSelectAll} disabled={busy}>Select all {shownCount} shown</Button>
+        {count > 0 && <Button variant="ghost" size="sm" onClick={onClear} disabled={busy}>Clear</Button>}
+        <div className="ml-auto flex flex-wrap items-center gap-2">
+          {confirming ? (
+            <>
+              <span className="text-sm">Delete {count} {noun} from this browser?</span>
+              <Button variant="destructive" size="sm" disabled={busy} onClick={() => { setConfirming(false); onDelete() }}>
+                <Trash2 aria-hidden /> Delete {count}
+              </Button>
+              <Button variant="ghost" size="sm" onClick={() => setConfirming(false)}>Cancel</Button>
+            </>
+          ) : (
+            <>
+              <Button variant="outline" size="sm" disabled={busy || count === 0} onClick={onRefresh}>
+                <RefreshCw aria-hidden className={busy ? 'animate-spin' : ''} /> Refresh from files
+              </Button>
+              <Button variant="outline" size="sm" disabled={busy || count === 0} onClick={() => setConfirming(true)} className="text-destructive">
+                <Trash2 aria-hidden /> Delete
+              </Button>
+              <Button variant="ghost" size="sm" onClick={onDone} aria-label="Leave select mode">
+                <X aria-hidden /> Done
+              </Button>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function MyCreaturesContent() {
   const [creatures, setCreatures] = useState<StoredCreature[]>([])
   const [loading, setLoading] = useState(true)
@@ -44,6 +100,10 @@ function MyCreaturesContent() {
   const [showFilters, setShowFilters] = useState(false)
   const [speciesNameBySlug, setSpeciesNameBySlug] = useState<Record<string, string>>({})
   const [watchNotice, setWatchNotice] = useState<string | null>(null)
+  // Select mode: null = off, otherwise the selected creature IDs.
+  const [selected, setSelected] = useState<Set<string> | null>(null)
+  const [selectionBusy, setSelectionBusy] = useState(false)
+  const [actionNotice, setActionNotice] = useState<{ tone: 'ok' | 'warn'; text: string } | null>(null)
 
   // nuqs-synced state
   const [imageMode, setImageMode] = useQueryState(
@@ -89,15 +149,18 @@ function MyCreaturesContent() {
   useEffect(() => {
     if (imageMode !== 'colors' || Object.keys(speciesNameBySlug).length > 0) return
     let cancelled = false
-    fetch('/api/creatures?limit=500')
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (cancelled || !data?.results) return
-        const map: Record<string, string> = {}
-        for (const r of data.results as Array<{ slug: string; name: string }>) map[r.slug] = r.name
-        setSpeciesNameBySlug(map)
-      })
-      .catch(() => {/* ignore — cards just stay on dossier */})
+    // The API serves at most 100 per page, so walk the pages.
+    ;(async () => {
+      const map: Record<string, string> = {}
+      for (let offset = 0; ; offset += 100) {
+        const r = await fetch(`/api/creatures?limit=100&offset=${offset}`)
+        if (!r.ok) break
+        const data = (await r.json()) as { count: number; results: Array<{ slug: string; name: string }> }
+        for (const c of data.results) map[c.slug] = c.name
+        if (offset + 100 >= data.count || data.results.length === 0) break
+      }
+      if (!cancelled) setSpeciesNameBySlug(map)
+    })().catch(() => {/* ignore — cards just stay on dossier */})
     return () => { cancelled = true }
   }, [imageMode, speciesNameBySlug])
 
@@ -149,6 +212,43 @@ function MyCreaturesContent() {
   const handleImported = useCallback(() => { load(); setShowImport(false) }, [load])
   const handleRestored = useCallback(() => { load() }, [load])
 
+  const toggleSelected = (id: string) =>
+    setSelected((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+
+  const deleteSelected = async () => {
+    if (!selected?.size) return
+    setSelectionBusy(true)
+    const count = selected.size
+    await deleteCreatures([...selected])
+    await load()
+    setSelectionBusy(false)
+    setSelected(new Set())
+    setActionNotice({ tone: 'ok', text: `Deleted ${count} creature${count === 1 ? '' : 's'}.` })
+  }
+
+  /** Re-read each selected creature's export from the folder it was imported from. */
+  const refreshSelected = async () => {
+    if (!selected?.size) return
+    setSelectionBusy(true)
+    const { updated, failed, unlinked } = await refreshCreaturesFromFiles(creatures.filter((c) => selected.has(c.id)))
+    await load()
+    setSelectionBusy(false)
+    const parts = [`Refreshed ${updated.length} from their export files.`]
+    if (failed.length) {
+      const reasons = [...new Set(failed.map((f) => f.reason))]
+      parts.push(`${failed.length} couldn't be read: ${reasons.slice(0, 2).join('; ')}${reasons.length > 2 ? '; …' : ''}.`)
+    }
+    if (unlinked.length) {
+      parts.push(`${unlinked.length} ${unlinked.length === 1 ? 'was' : 'were'} dropped in by hand, so there's no folder to refresh from — add the DinoExports folder under Import creatures, then import once from it.`)
+    }
+    setActionNotice({ tone: failed.length || unlinked.length ? 'warn' : 'ok', text: parts.join(' ') })
+  }
+
   // Distinct species for filter dropdown
   const speciesList = useMemo(() => [...new Set(creatures.map(speciesTag))].sort(), [creatures])
 
@@ -190,6 +290,22 @@ function MyCreaturesContent() {
             </Button>
           </div>
         </div>
+
+        {actionNotice && (
+          <div
+            role="status"
+            className={`flex items-start gap-2 rounded-lg border px-3 py-2.5 text-sm ${
+              actionNotice.tone === 'ok'
+                ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300'
+                : 'border-amber-500/40 bg-amber-500/10 text-amber-900 dark:text-amber-200'
+            }`}
+          >
+            <span className="flex-1">{actionNotice.text}</span>
+            <button type="button" onClick={() => setActionNotice(null)} aria-label="Dismiss" className="opacity-70 hover:opacity-100">
+              <X className="size-4" />
+            </button>
+          </div>
+        )}
 
         {/* Auto-watch notice */}
         {watchNotice && (
@@ -300,12 +416,19 @@ function MyCreaturesContent() {
                   ? `${filtered.length} creature${filtered.length !== 1 ? 's' : ''}`
                   : `${filtered.length} of ${creatures.length} creatures`}
               </p>
-              <Tabs value={imageMode} onValueChange={(v) => setImageMode(v as ImageMode)}>
-                <TabsList aria-label="Card image">
-                  <TabsTrigger value="dossier">Dossier</TabsTrigger>
-                  <TabsTrigger value="colors">In color</TabsTrigger>
-                </TabsList>
-              </Tabs>
+              <div className="flex items-center gap-2">
+                {!selected && (
+                  <Button variant="outline" size="sm" onClick={() => setSelected(new Set())}>
+                    <CheckSquare aria-hidden /> Select
+                  </Button>
+                )}
+                <Tabs value={imageMode} onValueChange={(v) => setImageMode(v as ImageMode)}>
+                  <TabsList aria-label="Card image">
+                    <TabsTrigger value="dossier">Dossier</TabsTrigger>
+                    <TabsTrigger value="colors">In color</TabsTrigger>
+                  </TabsList>
+                </Tabs>
+              </div>
             </div>
             <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               {paginated.map((creature) => (
@@ -316,9 +439,22 @@ function MyCreaturesContent() {
                   speciesName={creature.apiSlug ? speciesNameBySlug[creature.apiSlug] ?? null : null}
                   profile={profiles?.get(creature.id) ?? null}
                   bests={bestsByGroup.get(speciesGroupKey(creature)) ?? null}
+                  selection={selected ? { selected: selected.has(creature.id), onToggle: () => toggleSelected(creature.id) } : undefined}
                 />
               ))}
             </div>
+            {selected && (
+              <SelectionBar
+                count={selected.size}
+                shownCount={filtered.length}
+                busy={selectionBusy}
+                onSelectAll={() => setSelected(new Set(filtered.map((c) => c.id)))}
+                onClear={() => setSelected(new Set())}
+                onRefresh={refreshSelected}
+                onDelete={deleteSelected}
+                onDone={() => setSelected(null)}
+              />
+            )}
 
             {/* Pagination */}
             {totalPages > 1 && (

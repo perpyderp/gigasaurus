@@ -200,8 +200,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                     speciesName={speciesName}
                     slug={creature.apiSlug}
                     colors={creature.colors}
-                    size={384}
-                    className="h-full w-full"
+                    className="absolute inset-0"
                     fallbackSrc={imageUrl}
                   />
                 ) : imageUrl ? (
