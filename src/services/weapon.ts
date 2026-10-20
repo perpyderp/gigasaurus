@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { WeaponSchema, type WeaponDetail, type WeaponListItem, type WeaponCategory } from '@/schemas/weapon'
+import { toSlug } from '@/lib/slug'
 
 const DATA_DIR = join(process.cwd(), 'data', 'weapons')
 const IMAGE_BASE = '/images/weapons'
@@ -78,7 +79,7 @@ abstract class WeaponService {
   }
 
   static getBySlug(slug: string): WeaponDetail | null {
-    return WeaponService.getCache().get(slug) ?? null
+    return WeaponService.getCache().get(toSlug(slug)) ?? null
   }
 }
 

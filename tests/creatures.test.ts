@@ -77,7 +77,7 @@ describe('GET /api/creatures', () => {
 
 // ─── Detail endpoint ──────────────────────────────────────────────────────────
 
-describe('GET /api/creatures/:slug', () => {
+describe('GET /api/creatures/:creatureName', () => {
   it('returns 200 for rex', async () => {
     const res = await get('/api/creatures/rex')
     expect(res.status).toBe(200)
@@ -130,7 +130,16 @@ describe('GET /api/creatures/:slug', () => {
     expect(json.saddle.length).toBeGreaterThan(0)
   })
 
-  it('returns 404 for unknown slug', async () => {
+  it('matches names case-insensitively, with spaces or hyphens for underscores', async () => {
+    for (const name of ['Rex', 'REX', 'Dire%20Bear', 'dire-bear', 'DIRE_BEAR']) {
+      const res = await get(`/api/creatures/${name}`)
+      expect(res.status).toBe(200)
+    }
+    const json = await (await get('/api/creatures/Dire%20Bear')).json()
+    expect(json.slug).toBe('dire_bear')
+  })
+
+  it('returns 404 for unknown name', async () => {
     const res = await get('/api/creatures/notacreature')
     expect(res.status).toBe(404)
     const json = await res.json()

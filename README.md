@@ -73,13 +73,13 @@ Full interactive docs at `/api/openapi`.
 | Endpoint | Description |
 |---|---|
 | `GET /api/creatures` | List all creatures |
-| `GET /api/creatures/:slug` | Get a single creature |
+| `GET /api/creatures/:creatureName` | Get a single creature by name (case-insensitive, e.g. `Rex`, `dire bear`) |
 | `GET /api/armor` | List all armor sets |
-| `GET /api/armor/:slug` | Get a single armor set |
+| `GET /api/armor/:armorName` | Get a single armor set |
 | `GET /api/weapons` | List all weapons |
-| `GET /api/weapons/:slug` | Get a single weapon |
+| `GET /api/weapons/:weaponName` | Get a single weapon |
 | `GET /api/resources` | List all resources |
-| `GET /api/resources/:slug` | Get a single resource |
+| `GET /api/resources/:resourceName` | Get a single resource |
 
 ---
 

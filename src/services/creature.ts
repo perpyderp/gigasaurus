@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { CreatureSchema, type Creature, type CreatureDetail, type CreatureListItem } from '@/schemas/creature'
 import { z } from 'zod'
+import { toSlug } from '@/lib/slug'
 
 const DATA_DIR = join(process.cwd(), 'data', 'creatures')
 const IMAGE_BASE = '/images/creatures'
@@ -91,7 +92,7 @@ abstract class CreatureService {
   }
 
   static getBySlug(slug: string): CreatureDetail | null {
-    return CreatureService.getCache().get(slug) ?? null
+    return CreatureService.getCache().get(toSlug(slug)) ?? null
   }
 }
 

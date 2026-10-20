@@ -73,24 +73,29 @@ export const creaturesRoutes = new Elysia({ prefix: '/creatures', tags: ['Creatu
     }
   )
   .get(
-    '/:slug',
+    '/:creatureName',
     ({ params, set, request }) => {
       const origin = new URL(request.url).origin
-      const creature = CreatureService.getBySlug(params.slug)
+      const creature = CreatureService.getBySlug(params.creatureName)
       if (!creature) {
         set.status = 404
-        return { message: `Creature '${params.slug}' not found` }
+        return { message: `Creature '${params.creatureName}' not found` }
       }
       return { ...creature, image: creature.image ? `${origin}${creature.image}` : null }
     },
     {
-      params: t.Object({ slug: t.String() }),
+      params: t.Object({
+        creatureName: t.String({
+          description: 'Creature name. Case-insensitive; spaces, hyphens and underscores are interchangeable.',
+          examples: ['rex', 'dire bear'],
+        }),
+      }),
       response: {
         404: t.Object({ message: t.String() }),
       },
       detail: {
-        summary: 'Get creature by slug',
-        description: 'Returns full details for a single creature by its slug.',
+        summary: 'Get creature by name',
+        description: 'Returns full details for a single creature by name, e.g. `dire bear`.',
       },
     }
   )

@@ -44,24 +44,29 @@ export const armorRoutes = new Elysia({ prefix: '/armor', tags: ['Armor'] })
     }
   )
   .get(
-    '/:slug',
+    '/:armorName',
     ({ params, set, request }) => {
       const origin = new URL(request.url).origin
-      const armor = ArmorService.getBySlug(params.slug)
+      const armor = ArmorService.getBySlug(params.armorName)
       if (!armor) {
         set.status = 404
-        return { message: `Armor set '${params.slug}' not found` }
+        return { message: `Armor set '${params.armorName}' not found` }
       }
       return { ...armor, image: armor.image ? `${origin}${armor.image}` : null }
     },
     {
-      params: t.Object({ slug: t.String() }),
+      params: t.Object({
+        armorName: t.String({
+          description: 'Armor set name. Case-insensitive; spaces, hyphens and underscores are interchangeable.',
+          examples: ['flak', 'Ghillie'],
+        }),
+      }),
       response: {
         404: t.Object({ message: t.String() }),
       },
       detail: {
-        summary: 'Get armor set by slug',
-        description: 'Returns full details for a single armor set by its slug, including per-set ingredient costs.',
+        summary: 'Get armor set by name',
+        description: 'Returns full details for a single armor set by name, e.g. `Ghillie`, including per-set ingredient costs.',
       },
     }
   )

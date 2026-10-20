@@ -24,9 +24,9 @@ Tests live in [`tests/`](../tests/) at the repo root and resolve `@/` aliases vi
 
 | File | Scope |
 | --- | --- |
-| [`tests/creatures.test.ts`](../tests/creatures.test.ts) | `GET /api/creatures` list + `GET /api/creatures/:slug` detail. Validates response shape against `CreatureListSchema` / `CreatureDetailSchema`, plus pagination and `?category=` filtering. |
+| [`tests/creatures.test.ts`](../tests/creatures.test.ts) | `GET /api/creatures` list + `GET /api/creatures/:creatureName` detail. Validates response shape against `CreatureListSchema` / `CreatureDetailSchema`, plus pagination and `?category=` filtering. |
 | [`tests/creature-images.test.ts`](../tests/creature-images.test.ts) | Asserts every creature JSON has a matching `public/images/creatures/<slug>.png`. Catches missing artwork on new contributions. |
-| [`tests/armor.test.ts`](../tests/armor.test.ts) | `GET /api/armor` and `GET /api/armor/:slug`. Schema validation + minimum item count. |
+| [`tests/armor.test.ts`](../tests/armor.test.ts) | `GET /api/armor` and `GET /api/armor/:armorName`. Schema validation + minimum item count. |
 | [`tests/weapons.test.ts`](../tests/weapons.test.ts) | `GET /api/weapons` and detail route, including `?category=` filtering across the `WeaponCategoryEnum`. |
 | [`tests/resources.test.ts`](../tests/resources.test.ts) | `GET /api/resources` list + detail. Validates rarity enum and optional `hexagon_exchange`. |
 

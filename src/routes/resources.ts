@@ -43,24 +43,29 @@ export const resourceRoutes = new Elysia({ prefix: '/resources', tags: ['Resourc
     }
   )
   .get(
-    '/:slug',
+    '/:resourceName',
     ({ params, set, request }) => {
       const origin = new URL(request.url).origin
-      const resource = ResourceService.getBySlug(params.slug)
+      const resource = ResourceService.getBySlug(params.resourceName)
       if (!resource) {
         set.status = 404
-        return { message: `Resource '${params.slug}' not found` }
+        return { message: `Resource '${params.resourceName}' not found` }
       }
       return { ...resource, image: resource.image ? `${origin}${resource.image}` : null }
     },
     {
-      params: t.Object({ slug: t.String() }),
+      params: t.Object({
+        resourceName: t.String({
+          description: 'Resource name. Case-insensitive; spaces, hyphens and underscores are interchangeable.',
+          examples: ['element', 'Black Pearl'],
+        }),
+      }),
       response: {
         404: t.Object({ message: t.String() }),
       },
       detail: {
-        summary: 'Get resource by slug',
-        description: 'Returns full details for a single resource by its slug.',
+        summary: 'Get resource by name',
+        description: 'Returns full details for a single resource by name, e.g. `Black Pearl`.',
       },
     }
   )
