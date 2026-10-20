@@ -1,0 +1,48 @@
+{
+    "name": "Onchopristis Saddle",
+    "description": "Equip a Onchopristis with this to ride it.",
+    "creatures": [
+        "onchopristis"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 30,
+    "engram_points": 12,
+    "crafting_xp": 7,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 110
+        },
+        {
+            "name": "Fish Scale",
+            "quantity": 280
+        },
+        {
+            "name": "Flint",
+            "quantity": 8
+        },
+        {
+            "name": "Metal",
+            "quantity": 10
+        },
+        {
+            "name": "Wood",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Abyss/Dinos/Onchopristis/Saddle/PrimalItemArmor_OnchopritisSaddle.PrimalItemArmor_OnchopritisSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Onchopristis_Saddle",
+    "image_file": "onchopristis_saddle.png"
+}

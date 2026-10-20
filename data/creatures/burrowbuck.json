@@ -1,0 +1,93 @@
+{
+    "name": "Burrowbuck",
+    "alternate_names": [
+        "Jackalope"
+    ],
+    "category": "mammal",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 550,
+            "level_increase": {
+                "wild": 110,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 1932,
+            "level_increase": {
+                "wild": 0.951,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 650,
+            "level_increase": {
+                "wild": 39
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Burrowbuck Saddle (Level 33)",
+            "engram_level": 33
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 120,
+    "cloneable": false,
+    "entity_id": "Jackalope_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Burrowbuck"
+}

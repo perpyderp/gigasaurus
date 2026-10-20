@@ -1,0 +1,87 @@
+{
+    "name": "Lumina",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 800,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.026000000000000002
+            }
+        },
+        "stamina": {
+            "base": 650,
+            "level_increase": {
+                "wild": 32.5,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1650,
+            "level_increase": {
+                "wild": 165,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3550,
+            "level_increase": {
+                "wild": 1.752,
+                "tamed": 0.017
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 750,
+            "level_increase": {
+                "wild": 45
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Lumina Saddle (Level 65)",
+            "engram_level": 65
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Lumina Egg",
+        "baby_time": "Unknown",
+        "juvenile_time": "Unknown",
+        "adolescent_time": "Unknown",
+        "total_maturation": "Unknown",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": 300,
+    "cloneable": false,
+    "entity_id": "Lumina_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Lumina"
+}

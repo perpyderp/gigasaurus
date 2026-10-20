@@ -1,0 +1,93 @@
+{
+    "name": "Ossidon",
+    "alternate_names": [
+        "Snow Monster"
+    ],
+    "category": "mammal",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1430,
+            "level_increase": {
+                "wild": 286,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 420,
+            "level_increase": {
+                "wild": 42,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 95190,
+            "level_increase": {
+                "wild": 4.759,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1550,
+            "level_increase": {
+                "wild": 93
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Ossidon Saddle (Level 76)",
+            "engram_level": 76
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 550,
+    "cloneable": false,
+    "entity_id": "SnowMonster_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ossidon"
+}

@@ -1,5 +1,8 @@
 {
     "name": "Astrodelphis",
+    "alternate_names": [
+        "Space Dolphin"
+    ],
     "dossier": null,
     "base_stats_growth": {
         "health": {
@@ -105,5 +108,8 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Astrodelphis",
     "maps": [
         "Genesis: Part 2"
+    ],
+    "spawn_maps": [
+        "genesis-part-2"
     ]
 }

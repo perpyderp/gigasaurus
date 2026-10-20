@@ -1,0 +1,80 @@
+{
+    "name": "Oasisaur",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 20000,
+            "level_increase": {
+                "wild": 4000,
+                "tamed": 0.034
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 8800,
+            "level_increase": {
+                "wild": 880,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 2500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": null
+        },
+        "movement": {
+            "base": 0,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0
+            }
+        },
+        "torpidity": {
+            "base": 10000,
+            "level_increase": {
+                "wild": 1000
+            },
+            "taming_bonus": {
+                "additive": 0.1
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 3000,
+    "cloneable": false,
+    "entity_id": "Oasisaur_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Oasisaur"
+}

@@ -1,0 +1,97 @@
+{
+    "name": "Concavenator",
+    "category": "dinosaur",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 425,
+            "level_increase": {
+                "wild": 85,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2500,
+            "level_increase": {
+                "wild": 250,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 325,
+            "level_increase": {
+                "wild": 6.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 2715,
+            "level_increase": {
+                "wild": 1.35,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Conca Saddle (Level 67)",
+            "engram_level": 67
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Concavenator Egg",
+        "baby_time": "Unknown",
+        "juvenile_time": "Unknown",
+        "adolescent_time": "Unknown",
+        "total_maturation": "Unknown",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": 420,
+    "cloneable": false,
+    "entity_id": "Concavenator_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Concavenator"
+}

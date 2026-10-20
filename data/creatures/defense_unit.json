@@ -1,0 +1,80 @@
+{
+    "name": "Defense Unit",
+    "alternate_names": [
+        "End Tank"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 924.0001,
+            "level_increase": {
+                "wild": 184.80002,
+                "tamed": 0
+            }
+        },
+        "stamina": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0
+            }
+        },
+        "weight": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0
+            }
+        },
+        "melee": {
+            "base": 35,
+            "level_increase": {
+                "wild": 1.75,
+                "tamed": 0
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 420,
+            "level_increase": {
+                "wild": 25.2
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 300,
+    "cloneable": false,
+    "entity_id": "EndTank_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Defense_Unit",
+    "spawn_maps": [
+        "extinction",
+        "genesis-part-1",
+        "genesis-part-2"
+    ]
+}

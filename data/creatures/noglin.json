@@ -1,5 +1,8 @@
 {
     "name": "Noglin",
+    "alternate_names": [
+        "Brain Slug"
+    ],
     "dossier": {
         "species": "N/A",
         "time": "N/A",
@@ -95,5 +98,8 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Noglin",
     "maps": [
         "Genesis: Part 2"
+    ],
+    "spawn_maps": [
+        "genesis-part-2"
     ]
 }

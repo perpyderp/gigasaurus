@@ -1,0 +1,41 @@
+{
+    "name": "Helicoprion Saddle",
+    "description": "Equip a Helicoprion with this to ride it.",
+    "creatures": [
+        "helicoprion"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 91,
+    "engram_points": 50,
+    "crafting_xp": 86,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 250
+        },
+        {
+            "name": "Hide",
+            "quantity": 400
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 75
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Mods/AAHelicoprion/Dinos/Saddle/PrimalItemArmor_Helicoprion.PrimalItemArmor_Helicoprion'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Helicoprion_Saddle",
+    "image_file": "helicoprion_saddle.png"
+}

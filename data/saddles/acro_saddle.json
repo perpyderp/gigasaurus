@@ -1,0 +1,41 @@
+{
+    "name": "Acro Saddle",
+    "description": "Equip an Acrocanthosaurus with this to ride it.",
+    "creatures": [
+        "acrocanthosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 77,
+    "engram_points": 43,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 380
+        },
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 50
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Acrocanthosaurus/Saddle/PrimalItemArmor_AcroSaddle.PrimalItemArmor_AcroSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Acro_Saddle",
+    "image_file": "acro_saddle.png"
+}

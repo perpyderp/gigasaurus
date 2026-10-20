@@ -1,0 +1,44 @@
+{
+    "name": "Magmasaur Saddle",
+    "description": "Equip a Magmasaur with this to ride it. Its resistant design protects the rider from extreme heat.",
+    "creatures": [
+        "magmasaur"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 95,
+    "engram_points": 35,
+    "crafting_xp": 150,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 230
+        },
+        {
+            "name": "Fiber",
+            "quantity": 150
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 125
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 400
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Genesis/Dinos/Cherufe/PrimalItemArmor_CherufeSaddle.PrimalItemArmor_CherufeSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Magmasaur_Saddle",
+    "image_file": "magmasaur_saddle.png"
+}

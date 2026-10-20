@@ -1,0 +1,45 @@
+{
+    "name": "Tropeognathus Saddle",
+    "description": "Equip a Tropeognathus with this to ride it. Saddle is mounted with a cannon that fires grenades and a gasoline-powered jet engine.",
+    "creatures": [
+        "tropeognathus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 65,
+    "engram_points": 21,
+    "crafting_xp": 22.2,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Fabricator",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 120
+        },
+        {
+            "name": "Fiber",
+            "quantity": 450
+        },
+        {
+            "name": "Hide",
+            "quantity": 325
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 600
+        },
+        {
+            "name": "Polymer, Organic Polymer, or Corrupted Nodule",
+            "quantity": 250
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Tropeognathus/PrimalItemArmor_TropeSaddle.PrimalItemArmor_TropeSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Tropeognathus_Saddle",
+    "image_file": "tropeognathus_saddle.png"
+}

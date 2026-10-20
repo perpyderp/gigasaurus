@@ -1,0 +1,48 @@
+{
+    "name": "Mosasaur Saddle",
+    "description": "Equip a Mosasaur with this to ride it.",
+    "creatures": [
+        "mosasaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 78,
+    "engram_points": 60,
+    "crafting_xp": 116,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 800
+        },
+        {
+            "name": "Fiber",
+            "quantity": 600
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 140
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 100
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 400
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MosaSaddle.PrimalItemArmor_MosaSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Mosasaur_Saddle",
+    "image_file": "mosasaur_saddle.png"
+}

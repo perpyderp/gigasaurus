@@ -30,6 +30,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { combineArkId } from '@/lib/ark-id'
+import { withName } from '@/lib/creature-names'
+import { creatureImageUrl, speciesDisplayName } from '@/lib/dino-map'
+
+const pastNameDate = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', year: 'numeric' })
 import { computeBests } from '@/lib/breeding'
 import { speciesGroupKey, useCreatureProfiles } from '@/hooks/use-creature-profiles'
 
@@ -119,7 +123,8 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
 
   const handleSaveName = async () => {
     if (!creature) return
-    const updated: StoredCreature = { ...creature, name: nameInput.trim() || creature.name, updatedAt: Date.now() }
+    const updated = withName(creature, nameInput)
+    if (updated === creature) { setEditing(false); return }
     await upsertCreature(updated)
     setCreature(updated)
     setEditing(false)
@@ -168,7 +173,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
     )
   }
 
-  const imageUrl = creature.apiSlug ? `/images/creatures/${creature.apiSlug}.png` : null
+  const imageUrl = creatureImageUrl(creature.apiSlug)
   const mutations = creature.mutationsMale + creature.mutationsFemale
   const isFullyGrown = creature.babyAge >= 1
   const babyPct = Math.round(creature.babyAge * 100)
@@ -247,7 +252,7 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
               )}
 
               <div className="flex flex-wrap gap-1.5">
-                <Badge variant="secondary">{creature.dinoNameTag.replace(/AA$/, '')}</Badge>
+                <Badge variant="secondary">{speciesDisplayName(creature.apiSlug) ?? creature.dinoNameTag.replace(/AA$/, '')}</Badge>
                 <Badge variant="secondary">Lv {creature.level}</Badge>
 
                 <Badge className={`gap-1 ${creature.isFemale ? 'bg-pink-100 text-pink-700 border-pink-300 dark:bg-pink-950/40 dark:text-pink-300' : 'bg-blue-100 text-blue-700 border-blue-300 dark:bg-blue-950/40 dark:text-blue-300'}`} variant="outline">
@@ -281,6 +286,22 @@ export default function CreatureDetailPage({ params }: { params: Promise<{ id: s
                 <div><dt className="text-muted-foreground">Owner</dt><dd className="truncate font-medium">{creature.tamer || '—'}</dd></div>
                 <div><dt className="text-muted-foreground">Imprinted by</dt><dd className="truncate font-medium">{creature.imprinter || '—'}</dd></div>
               </dl>
+
+              {creature.pastNames && creature.pastNames.length > 0 && (
+                <div className="text-sm">
+                  <p className="text-muted-foreground">Past names</p>
+                  <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
+                    {[...creature.pastNames].reverse().map((p) => (
+                      <li key={`${p.name}-${p.changedAt}`}>
+                        <span className="font-medium">{p.name}</span>{' '}
+                        <span className="text-muted-foreground" title={new Date(p.changedAt).toLocaleString()}>
+                          until {pastNameDate.format(p.changedAt)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {creature.apiSlug && (
                 <Link

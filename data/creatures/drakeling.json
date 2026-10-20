@@ -1,0 +1,101 @@
+{
+    "name": "Drakeling",
+    "alternate_names": [
+        "Shoulder Dragon"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 150,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.014
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 65,
+            "level_increase": {
+                "wild": 1.3,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 1040,
+            "level_increase": {
+                "wild": 0.52,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.025
+            },
+            "taming_bonus": {
+                "additive": 0.3
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Autumn Drakeling Egg Spring Drakeling Egg Summer Drakeling Egg Winter Drakeling Egg",
+        "baby_time": "Unknown",
+        "juvenile_time": "Unknown",
+        "adolescent_time": "Unknown",
+        "total_maturation": "Unknown",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": 70,
+    "cloneable": false,
+    "entity_id": "ShoulderDragon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Drakeling"
+}

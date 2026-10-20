@@ -1,0 +1,44 @@
+{
+    "name": "Astrodelphis Starwing Saddle",
+    "description": "Equip an Astrodelphis with this to pilot it and fire plasma projectiles. Adapts to match creature's strength level. Using requires learning this Engram.",
+    "creatures": [
+        "astrodelphis"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 30,
+    "weight": 20,
+    "engram_level": 135,
+    "engram_points": 60,
+    "crafting_xp": 86,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Black Pearl",
+            "quantity": 140
+        },
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 370
+        },
+        {
+            "name": "Element or Red Element",
+            "quantity": 55
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 2500
+        },
+        {
+            "name": "Polymer, Organic Polymer, or Corrupted Nodule",
+            "quantity": 500
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Genesis2/Dinos/SpaceDolphin/PrimalItemArmor_SpaceDolphinSaddle_Tek.PrimalItemArmor_SpaceDolphinSaddle_Tek'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Astrodelphis_Starwing_Saddle",
+    "image_file": "astrodelphis_starwing_saddle.png"
+}

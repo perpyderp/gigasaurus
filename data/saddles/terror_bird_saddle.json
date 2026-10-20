@@ -1,0 +1,35 @@
+{
+    "name": "Terror Bird Saddle",
+    "description": null,
+    "creatures": [
+        "terror_bird"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 33,
+    "engram_points": 15,
+    "crafting_xp": 16.6,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 110
+        },
+        {
+            "name": "Fiber",
+            "quantity": 65
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TerrorBirdSaddle.PrimalItemArmor_TerrorBirdSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Terror_Bird_Saddle",
+    "image_file": "terror_bird_saddle.png"
+}

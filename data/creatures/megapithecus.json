@@ -1,0 +1,63 @@
+{
+    "name": "Megapithecus",
+    "alternate_names": [
+        "Gorilla"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 180000,
+            "level_increase": {
+                "wild": 0
+            }
+        },
+        "stamina": {
+            "base": 650,
+            "level_increase": {
+                "wild": 0
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 2600,
+            "level_increase": {
+                "wild": 0
+            }
+        },
+        "weight": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 80
+            }
+        },
+        "melee": {
+            "base": 400,
+            "level_increase": {
+                "wild": 0
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 1200,
+    "cloneable": false,
+    "entity_id": "Gorilla_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megapithecus"
+}

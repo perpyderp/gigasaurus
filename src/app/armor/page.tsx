@@ -3,7 +3,11 @@ import { ArmorService } from '@/services/armor'
 import { ArmorHoverCard } from '@/components/HoverPreview'
 import { EmptyResults, GlossaryHeader, ResultCount, SearchField, SlotTile } from '@/components/Glossary'
 
-export const metadata = { title: 'Armor — Gigasaurus' }
+export const metadata = {
+  title: 'ARK Armor: Armor Rating, Protection & Crafting',
+  description: 'Every ARK: Survival Ascended armor piece with armor rating, durability, cold and heat protection and crafting costs.',
+  alternates: { canonical: '/armor' },
+}
 
 export default async function ArmorPage({
   searchParams,

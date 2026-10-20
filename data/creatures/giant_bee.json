@@ -1,5 +1,8 @@
 {
     "name": "Giant Bee",
+    "alternate_names": [
+        "Bee"
+    ],
     "category": "invertebrate",
     "dossier": {
         "species": "Apis lithohermaea",
@@ -102,5 +105,19 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "scorched-earth",
+        "ragnarok",
+        "aberration",
+        "extinction",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard"
     ]
 }

@@ -1,0 +1,63 @@
+{
+    "name": "Fractalis",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 120000,
+            "level_increase": {
+                "wild": 24000
+            }
+        },
+        "stamina": {
+            "base": 650,
+            "level_increase": {
+                "wild": 65
+            }
+        },
+        "oxygen": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200
+            }
+        },
+        "food": {
+            "base": 2600,
+            "level_increase": {
+                "wild": 260
+            }
+        },
+        "weight": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 80
+            }
+        },
+        "melee": {
+            "base": 160,
+            "level_increase": {
+                "wild": 8
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 0
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": null,
+    "cloneable": false,
+    "entity_id": "Fractalis_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Fractalis"
+}

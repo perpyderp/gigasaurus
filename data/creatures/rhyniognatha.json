@@ -91,5 +91,9 @@
     "maps": [
         "The Island",
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "lost-island"
     ]
 }

@@ -1,0 +1,40 @@
+{
+    "name": "Bronto Saddle",
+    "description": "Equip a Bronto with this to ride it.",
+    "creatures": [
+        "brontosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 63,
+    "engram_points": 21,
+    "crafting_xp": 111,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 350
+        },
+        {
+            "name": "Fiber",
+            "quantity": 185
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 40
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_SauroSaddle.PrimalItemArmor_SauroSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Bronto_Saddle",
+    "image_file": "bronto_saddle.png"
+}

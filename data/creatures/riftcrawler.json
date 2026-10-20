@@ -1,0 +1,75 @@
+{
+    "name": "Riftcrawler",
+    "category": "invertebrate",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 240,
+                "tamed": 0.054000000000000006
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 5000,
+            "level_increase": {
+                "wild": 500,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 800,
+            "level_increase": {
+                "wild": 16,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 20,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.017
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 450,
+    "cloneable": false,
+    "entity_id": "RiftCrawler_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Riftcrawler"
+}

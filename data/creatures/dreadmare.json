@@ -1,0 +1,85 @@
+{
+    "name": "Dreadmare",
+    "alternate_names": [
+        "Dark Pegasus"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1750,
+            "level_increase": {
+                "wild": 175,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 450,
+            "level_increase": {
+                "wild": 9,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 23,
+            "level_increase": {
+                "wild": 1.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 600,
+            "level_increase": {
+                "wild": 36
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 250,
+    "cloneable": false,
+    "entity_id": "DarkPegasus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dreadmare"
+}

@@ -1,0 +1,76 @@
+{
+    "name": "King Titan",
+    "alternate_names": [
+        "Gamma King Titan",
+        "King Kaiju"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1500000,
+            "level_increase": {
+                "wild": 0,
+                "tamed": 0
+            }
+        },
+        "stamina": {
+            "base": 100000,
+            "level_increase": {
+                "wild": 10000,
+                "tamed": 0
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0
+            }
+        },
+        "food": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0
+            }
+        },
+        "weight": {
+            "base": 100,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0
+            }
+        },
+        "melee": {
+            "base": 0,
+            "level_increase": {
+                "wild": 0,
+                "tamed": 0
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "KingKaiju_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/King_Titan"
+}

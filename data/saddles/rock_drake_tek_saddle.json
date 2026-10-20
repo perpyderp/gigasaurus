@@ -1,0 +1,44 @@
+{
+    "name": "Rock Drake Tek Saddle",
+    "description": "Equip a Rock Drake with this to ride it, enabling the rider to fire plasma projectiles. Using requires learning this Tekgram.",
+    "creatures": [
+        "rock_drake"
+    ],
+    "tek": true,
+    "platform": false,
+    "armor": 45,
+    "weight": 20,
+    "engram_level": null,
+    "engram_points": null,
+    "crafting_xp": 86,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Polymer, Organic Polymer, or Corrupted Nodule",
+            "quantity": 455
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 2350
+        },
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 325
+        },
+        {
+            "name": "Element or Red Element",
+            "quantity": 75
+        },
+        {
+            "name": "Black Pearl",
+            "quantity": 185
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Aberration/Dinos/RockDrake/PrimalItemArmor_RockDrakeSaddle_Tek.PrimalItemArmor_RockDrakeSaddle_Tek'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Rock_Drake_Tek_Saddle",
+    "image_file": "rock_drake_tek_saddle.png"
+}

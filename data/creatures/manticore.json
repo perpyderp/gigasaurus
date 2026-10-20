@@ -1,0 +1,63 @@
+{
+    "name": "Manticore",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 100000,
+            "level_increase": {
+                "wild": 20000
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40
+            }
+        },
+        "oxygen": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200
+            }
+        },
+        "food": {
+            "base": 2600,
+            "level_increase": {
+                "wild": 260
+            }
+        },
+        "weight": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 60
+            }
+        },
+        "melee": {
+            "base": 858,
+            "level_increase": {
+                "wild": 4.25
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 1000,
+    "cloneable": false,
+    "entity_id": "Manticore_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Manticore"
+}

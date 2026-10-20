@@ -1,0 +1,40 @@
+{
+    "name": "Snow Owl Saddle",
+    "description": "Equip a Snow Owl with this to ride it.",
+    "creatures": [
+        "snow_owl"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 61,
+    "engram_points": 6,
+    "crafting_xp": 72.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 150
+        },
+        {
+            "name": "Fiber",
+            "quantity": 185
+        },
+        {
+            "name": "Hide",
+            "quantity": 350
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Extinction/CoreBlueprints/Items/Saddle/PrimalItemArmor_OwlSaddle.PrimalItemArmor_OwlSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Snow_Owl_Saddle",
+    "image_file": "snow_owl_saddle.png"
+}

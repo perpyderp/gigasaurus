@@ -1,0 +1,66 @@
+{
+    "name": "Broodmother Lysrix",
+    "alternate_names": [
+        "Spider L"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 324000,
+            "level_increase": {
+                "wild": 64800
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150
+            }
+        },
+        "weight": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 80
+            }
+        },
+        "melee": {
+            "base": 180260,
+            "level_increase": {
+                "wild": 913
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 100000,
+            "level_increase": {
+                "wild": 6000
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 1200,
+    "cloneable": false,
+    "entity_id": "SpiderL_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Broodmother_Lysrix",
+    "spawn_maps": [
+        "valguero"
+    ]
+}

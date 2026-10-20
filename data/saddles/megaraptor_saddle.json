@@ -1,0 +1,39 @@
+{
+    "name": "MegaRaptor Saddle",
+    "description": "Equip a Megaraptor with this to ride it.",
+    "creatures": [
+        "megaraptor"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 60,
+    "engram_points": null,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 50
+        },
+        {
+            "name": "Hide",
+            "quantity": 350
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Megaraptor/PrimalItemArmor_ValMegaraptorSaddle.PrimalItemArmor_ValMegaraptorSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megaraptor_Saddle",
+    "image_file": "megaraptor_saddle.png"
+}

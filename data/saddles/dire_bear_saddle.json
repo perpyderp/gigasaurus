@@ -1,0 +1,35 @@
+{
+    "name": "Dire Bear Saddle",
+    "description": "Equip a Dire Bear with this to ride it.",
+    "creatures": [
+        "dire_bear"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 45,
+    "engram_points": 24,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 300
+        },
+        {
+            "name": "Fiber",
+            "quantity": 130
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 100
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DireBearSaddle.PrimalItemArmor_DireBearSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dire_Bear_Saddle",
+    "image_file": "dire_bear_saddle.png"
+}

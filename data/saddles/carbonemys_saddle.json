@@ -1,0 +1,35 @@
+{
+    "name": "Carbonemys Saddle",
+    "description": "Equip a Carbonemys with this to ride it.",
+    "creatures": [
+        "carbonemys"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 10,
+    "engram_points": 12,
+    "crafting_xp": 24.8,
+    "crafting_time": 12,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 170
+        },
+        {
+            "name": "Fiber",
+            "quantity": 95
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 10
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TurtleSaddle.PrimalItemArmor_TurtleSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Carbonemys_Saddle",
+    "image_file": "carbonemys_saddle.png"
+}

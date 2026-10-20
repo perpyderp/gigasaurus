@@ -1,0 +1,35 @@
+{
+    "name": "Pelagornis Saddle",
+    "description": "Equip a Pelagornis with this to ride it.",
+    "creatures": [
+        "pelagornis"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 43,
+    "engram_points": 30,
+    "crafting_xp": 43,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 230
+        },
+        {
+            "name": "Fiber",
+            "quantity": 125
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 75
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_PelaSaddle.PrimalItemArmor_PelaSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Pelagornis_Saddle",
+    "image_file": "pelagornis_saddle.png"
+}

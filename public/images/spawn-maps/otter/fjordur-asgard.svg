@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" class="creatureMap" style="position:absolute;">
+<defs>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="3" />
+    </filter>
+    <style>
+        .spawningMap-very-common { fill: #0F0; }
+        .spawningMap-common { fill: #B2FF00; }
+        .spawningMap-uncommon { fill: #FF0; }
+        .spawningMap-very-uncommon { fill: #FC0; }
+        .spawningMap-rare { fill: #F60; }
+        .spawningMap-very-rare { fill: #F00; }
+        .spawning-map-point { stroke:black; stroke-width:1; }
+    </style>
+</defs>
+<g filter="url(#blur)" opacity="0.7">
+    <g class="spawningMap-uncommon">
+        <rect x="118" y="55" width="16" height="16" />
+        <rect x="64" y="159" width="16" height="16" />
+        <rect x="73" y="91" width="16" height="16" />
+        <rect x="22" y="96" width="16" height="16" />
+        <rect x="68" y="66" width="16" height="16" />
+    </g>
+    <g class="spawningMap-rare">
+        <rect x="92" y="160" width="36" height="40" />
+        <rect x="75" y="99" width="35" height="24" />
+        <rect x="140" y="92" width="24" height="35" />
+        <rect x="140" y="158" width="24" height="35" />
+    </g></g>
+</svg>

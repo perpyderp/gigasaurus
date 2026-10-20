@@ -1,0 +1,87 @@
+{
+    "name": "Onchopristis",
+    "category": "fish",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 600,
+            "level_increase": {
+                "wild": 30,
+                "tamed": 0.013500000000000002
+            }
+        },
+        "stamina": {
+            "base": 200,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.2
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 700,
+            "level_increase": {
+                "wild": 14,
+                "tamed": 0.05
+            }
+        },
+        "melee": {
+            "base": 20,
+            "level_increase": {
+                "wild": 1,
+                "tamed": 0.0085
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 600,
+            "level_increase": {
+                "wild": 36
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Onchopristis Saddle (Level 30)",
+            "engram_level": 30
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "6h 6m 18.022s",
+        "baby_time": "5h 47m 13.333s",
+        "juvenile_time": "23h 8m 53.333s",
+        "adolescent_time": "1d 4h 56m 6.667s",
+        "total_maturation": "2d 9h 52m 13.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 75,
+    "cloneable": false,
+    "entity_id": "Onchopristis_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Onchopristis"
+}

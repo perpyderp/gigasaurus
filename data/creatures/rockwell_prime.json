@@ -1,0 +1,45 @@
+{
+    "name": "Rockwell Prime",
+    "alternate_names": [
+        "Rockwell Node"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 25000
+        },
+        "stamina": {
+            "base": null
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": null
+        },
+        "weight": {
+            "base": null
+        },
+        "melee": {
+            "base": 0
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": null
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": null,
+    "cloneable": false,
+    "entity_id": "RockwellNode_Character_BP_FinalFight_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Rockwell_Prime"
+}

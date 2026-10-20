@@ -7,6 +7,7 @@ export const resourceRoutes = new Elysia({ prefix: '/resources', tags: ['Resourc
     ({ query, request }) => {
       const origin = new URL(request.url).origin
       const result = ResourceService.getAll({
+        map: query.map,
         limit: query.limit,
         offset: query.offset,
       })
@@ -21,6 +22,7 @@ export const resourceRoutes = new Elysia({ prefix: '/resources', tags: ['Resourc
     },
     {
       query: t.Object({
+        map: t.Optional(t.String({ description: 'Only resources found on this map, e.g. `the_island` or `Aberration`.' })),
         limit: t.Optional(t.Numeric({ minimum: 1, maximum: 100, default: 20 })),
         offset: t.Optional(t.Numeric({ minimum: 0, default: 0 })),
       }),

@@ -1,0 +1,48 @@
+{
+    "name": "Manta Saddle",
+    "description": "Equip a Manta with this to ride it.",
+    "creatures": [
+        "manta"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 28,
+    "engram_points": 16,
+    "crafting_xp": 13.1,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 100
+        },
+        {
+            "name": "Fiber",
+            "quantity": 70
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 25
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 35
+        },
+        {
+            "name": "Flint",
+            "quantity": 12
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MantaSaddle.PrimalItemArmor_MantaSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Manta_Saddle",
+    "image_file": "manta_saddle.png"
+}

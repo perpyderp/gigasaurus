@@ -1,0 +1,20 @@
+{
+    "name": "Maeguana Saddle",
+    "description": "Equip a Maeguana with this to ride it.",
+    "creatures": [
+        "maeguana"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 19,
+    "engram_points": null,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [],
+    "ingredients": [],
+    "blueprint": null,
+    "wiki_url": "https://ark.wiki.gg/wiki/Maeguana_Saddle",
+    "image_file": "maeguana_saddle.png"
+}

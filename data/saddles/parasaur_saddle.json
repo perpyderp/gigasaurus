@@ -1,0 +1,35 @@
+{
+    "name": "Parasaur Saddle",
+    "description": "Equip a Parasaur with this to ride it.",
+    "creatures": [
+        "parasaur"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 9,
+    "engram_points": 9,
+    "crafting_xp": 12,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 80
+        },
+        {
+            "name": "Fiber",
+            "quantity": 50
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 15
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ParaSaddle.PrimalItemArmor_ParaSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Parasaur_Saddle",
+    "image_file": "parasaur_saddle.png"
+}

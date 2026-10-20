@@ -113,5 +113,17 @@
         "Genesis: Part 1",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "ragnarok",
+        "extinction",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-jotunheim"
     ]
 }

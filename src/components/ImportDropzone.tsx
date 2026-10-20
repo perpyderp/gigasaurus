@@ -2,11 +2,8 @@
 
 import { useCallback, useState } from 'react'
 import { IconUpload, IconX, IconCheck, IconAlertCircle } from '@tabler/icons-react'
-import { parseArkExport } from '@/lib/ark-parser'
-import { resolveSlug, deriveDisplayName } from '@/lib/dino-map'
-import { upsertCreature } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
-import { combineArkId } from '@/lib/ark-id'
+import { importIniText } from '@/lib/import-paths'
 import {
   FileUpload,
   FileUploadDropzone,
@@ -47,56 +44,10 @@ export function ImportDropzone({ onImported }: ImportDropzoneProps) {
       for (const file of iniFiles) {
         try {
           const text = await file.text()
-          const parsed = parseArkExport(text)
-          const apiSlug = resolveSlug(parsed.dinoNameTag, parsed.dinoClass)
-          const name = deriveDisplayName(parsed.tamedName, parsed.dinoNameTag)
-          const now = Date.now()
-
-          const arkId = combineArkId(parsed.dinoId1, parsed.dinoId2)
-
-          const creature: StoredCreature = {
-            id: arkId,
-            dinoId1: parsed.dinoId1,
-            dinoId2: parsed.dinoId2,
-            dinoClass: parsed.dinoClass,
-            dinoNameTag: parsed.dinoNameTag,
-            name,
-            isFemale: parsed.isFemale,
-            isNeutered: parsed.isNeutered,
-            tribe: parsed.tribe,
-            tamer: parsed.tamer,
-            imprinter: parsed.imprinter,
-            babyAge: parsed.babyAge,
-            level: parsed.level,
-            imprintQuality: parsed.imprintQuality,
-            mutationsMale: parsed.mutationsMale,
-            mutationsFemale: parsed.mutationsFemale,
-            colors: parsed.colors,
-            stats: parsed.stats,
-            ancestors: parsed.ancestors,
-            ancestorsMale: parsed.ancestorsMale,
-            apiSlug,
-            rawIni: text,
-            importFilename: file.name,
-            manualParentMaleId: null,
-            manualParentFemaleId: null,
-            importedAt: now,
-            updatedAt: now,
-          }
-
-          const { getCreature } = await import('@/lib/db')
-          const existing = await getCreature(creature.id)
-          if (existing) {
-            creature.importedAt = existing.importedAt
-            // Preserve manually-set parents on re-import
-            creature.manualParentMaleId = existing.manualParentMaleId
-            creature.manualParentFemaleId = existing.manualParentFemaleId
-          }
-
-          await upsertCreature(creature)
+          const { creature, existed: existing } = await importIniText(text, file.name, null)
           imported.push(creature)
           newResults.push({
-            name: `${name || parsed.dinoNameTag} (Lv ${parsed.level})`,
+            name: `${creature.name || creature.dinoNameTag} (Lv ${creature.level})`,
             status: existing ? 'updated' : 'new',
           })
         } catch (err) {

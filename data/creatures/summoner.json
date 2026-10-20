@@ -71,5 +71,8 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Summoner",
     "maps": [
         "Genesis: Part 2"
+    ],
+    "spawn_maps": [
+        "genesis-part-2"
     ]
 }

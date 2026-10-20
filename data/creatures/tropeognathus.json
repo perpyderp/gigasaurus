@@ -115,5 +115,9 @@
     "maps": [
         "Crystal Isles",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "crystal-isles",
+        "fjordur-midgard"
     ]
 }

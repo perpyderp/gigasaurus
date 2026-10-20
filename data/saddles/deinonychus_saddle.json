@@ -1,0 +1,35 @@
+{
+    "name": "Deinonychus Saddle",
+    "description": "Equip a Deinonychus with this to ride it.",
+    "creatures": [
+        "deinonychus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 32,
+    "engram_points": 30,
+    "crafting_xp": 17.6,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 65
+        },
+        {
+            "name": "Hide",
+            "quantity": 110
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Valguero/Dinos/Deinonychus/PrimalItemArmor_DeinonychusSaddle.PrimalItemArmor_DeinonychusSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Deinonychus_Saddle",
+    "image_file": "deinonychus_saddle.png"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Gallimimus Saddle",
+    "description": "A saddle for your Gallimimus. It has three seats! Bring your friends!",
+    "creatures": [
+        "gallimimus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 29,
+    "engram_points": 20,
+    "crafting_xp": 22.2,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 240
+        },
+        {
+            "name": "Fiber",
+            "quantity": 160
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 120
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 25
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_Gallimimus.PrimalItemArmor_Gallimimus'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gallimimus_Saddle",
+    "image_file": "gallimimus_saddle.png"
+}

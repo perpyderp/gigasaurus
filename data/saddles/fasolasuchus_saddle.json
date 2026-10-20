@@ -1,0 +1,39 @@
+{
+    "name": "Fasolasuchus Saddle",
+    "description": "Equip a Fasolasuchus with this to ride it.",
+    "creatures": [
+        "fasolasuchus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 70,
+    "engram_points": 40,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 30
+        },
+        {
+            "name": "Hide",
+            "quantity": 150
+        },
+        {
+            "name": "Wood",
+            "quantity": 100
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Fasolasuchus/PrimalItemArmor_FasolaSaddle.PrimalItemArmor_FasolaSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Fasolasuchus_Saddle",
+    "image_file": "fasolasuchus_saddle.png"
+}

@@ -1,0 +1,48 @@
+{
+    "name": "Dreadnoughtus Platform Saddle",
+    "description": "Equip a Dreadnoughtus with this to ride it. You can build structures on the large platform to make a mobile base.",
+    "creatures": [
+        "dreadnoughtus"
+    ],
+    "tek": false,
+    "platform": true,
+    "armor": 25,
+    "weight": 25,
+    "engram_level": 100,
+    "engram_points": 100,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 300
+        },
+        {
+            "name": "Hide",
+            "quantity": 1200
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 250
+        },
+        {
+            "name": "Fiber",
+            "quantity": 800
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 650
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Extinction/CoreBlueprints/Items/Saddle/PrimalItemArmor_DreadSaddle_Platform.PrimalItemArmor_DreadSaddle_Platform'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dreadnoughtus_Platform_Saddle",
+    "image_file": "dreadnoughtus_platform_saddle.png"
+}

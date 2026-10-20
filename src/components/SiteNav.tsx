@@ -10,6 +10,7 @@ const LINKS = [
   { href: '/armor', label: 'Armor' },
   { href: '/weapons', label: 'Weapons' },
   { href: '/resources', label: 'Resources' },
+  { href: '/maps', label: 'Maps' },
   { href: '/my-creatures', label: 'My Creatures' },
 ]
 

@@ -1,0 +1,45 @@
+{
+    "name": "Seahorse Saddle",
+    "description": "Equip a Seahorse with this to ride it.",
+    "creatures": [
+        "seahorse"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 30,
+    "engram_points": 20,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory",
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fish Scale",
+            "quantity": 175
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 10
+        },
+        {
+            "name": "Seaweed",
+            "quantity": 215
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 35
+        }
+    ],
+    "blueprint": "/Game/Abyss/Dinos/Seahorse/Saddle/PrimalItemArmor_SeahorseSaddle.PrimalItemArmor_SeahorseSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Seahorse_Saddle",
+    "image_file": "seahorse_saddle.png"
+}

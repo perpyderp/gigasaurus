@@ -45,6 +45,8 @@ export const StoredCreatureSchema = z.object({
   dinoNameTag: z.string(),
   /** Display name: TamedName if set, otherwise derived from dinoNameTag */
   name: z.string(),
+  /** Earlier names, oldest first, each with when it was replaced (epoch ms). */
+  pastNames: z.array(z.object({ name: z.string(), changedAt: z.number() })).optional(),
   isFemale: z.boolean(),
   isNeutered: z.boolean(),
   tribe: z.string(),

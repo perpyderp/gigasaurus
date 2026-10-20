@@ -1,0 +1,41 @@
+{
+    "name": "Cerberax Saddle",
+    "description": "Equip a Cerberax with this to ride it.",
+    "creatures": [
+        "cerberax"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 74,
+    "engram_points": 40,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Castoroides Saddle",
+        "Argentavis Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 550
+        },
+        {
+            "name": "Fiber",
+            "quantity": 350
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 300
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Cerberus/PrimalItemArmor_CerberusSaddle.PrimalItemArmor_CerberusSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Cerberax_Saddle",
+    "image_file": "cerberax_saddle.png"
+}

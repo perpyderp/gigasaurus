@@ -10,5 +10,6 @@
     "hexagon_exchange": {
         "exchange_yields": 50,
         "hexagons": 80
-    }
+    },
+    "maps": ["The Island", "The Center", "Scorched Earth", "Ragnarok", "Aberration", "Extinction", "Valguero", "Crystal Isles", "Genesis: Part 1", "Genesis: Part 2", "Lost Island", "Fjordur", "Astraeos", "Lost Colony"]
 }

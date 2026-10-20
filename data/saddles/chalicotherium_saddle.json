@@ -1,0 +1,40 @@
+{
+    "name": "Chalicotherium Saddle",
+    "description": "Equip a Chalicotherium with this to ride it.",
+    "creatures": [
+        "chalicotherium"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 42,
+    "engram_points": 30,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 265
+        },
+        {
+            "name": "Fiber",
+            "quantity": 180
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 45
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ChalicoSaddle.PrimalItemArmor_ChalicoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Chalicotherium_Saddle",
+    "image_file": "chalicotherium_saddle.png"
+}

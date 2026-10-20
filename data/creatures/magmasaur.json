@@ -1,5 +1,8 @@
 {
     "name": "Magmasaur",
+    "alternate_names": [
+        "Cherufe"
+    ],
     "dossier": null,
     "base_stats_growth": {
         "health": {
@@ -96,5 +99,10 @@
         "Genesis: Part 1",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "genesis-part-1",
+        "lost-island",
+        "fjordur-midgard"
     ]
 }

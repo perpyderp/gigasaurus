@@ -1,5 +1,8 @@
 {
     "name": "Nameless",
+    "alternate_names": [
+        "Chupa Cabra"
+    ],
     "dossier": {
         "species": "N/A",
         "time": "N/A",
@@ -71,5 +74,8 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Nameless",
     "maps": [
         "Aberration"
+    ],
+    "spawn_maps": [
+        "aberration"
     ]
 }

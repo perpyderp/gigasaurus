@@ -1,0 +1,35 @@
+{
+    "name": "Pulmonoscorpius Saddle",
+    "description": "Equip an Pulmonoscorpius with this to ride it.",
+    "creatures": [
+        "pulmonoscorpius"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 22,
+    "engram_points": 12,
+    "crafting_xp": 26.8,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 170
+        },
+        {
+            "name": "Fiber",
+            "quantity": 95
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 30
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ScorpionSaddle.PrimalItemArmor_ScorpionSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Pulmonoscorpius_Saddle",
+    "image_file": "pulmonoscorpius_saddle.png"
+}

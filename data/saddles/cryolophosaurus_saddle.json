@@ -1,0 +1,45 @@
+{
+    "name": "Cryolophosaurus Saddle",
+    "description": "Equip a Cryolophosaurus with this to ride it.",
+    "creatures": [
+        "cryolophosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 60,
+    "engram_points": 22,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 350
+        },
+        {
+            "name": "Hide",
+            "quantity": 425
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 135
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 125
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Cryolophosaurus/Saddle/PrimalItemArmor_CryoSaddle.PrimalItemArmor_CryoSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Cryolophosaurus_Saddle",
+    "image_file": "cryolophosaurus_saddle.png"
+}

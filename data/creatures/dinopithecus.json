@@ -103,5 +103,8 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Dinopithecus",
     "maps": [
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "lost-island"
     ]
 }

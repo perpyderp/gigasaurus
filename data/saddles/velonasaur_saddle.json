@@ -1,0 +1,40 @@
+{
+    "name": "Velonasaur Saddle",
+    "description": "Equip a Velonasaur with this to ride it.",
+    "creatures": [
+        "velonasaur"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 27,
+    "engram_points": 8,
+    "crafting_xp": 72.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 150
+        },
+        {
+            "name": "Fiber",
+            "quantity": 185
+        },
+        {
+            "name": "Hide",
+            "quantity": 350
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Extinction/CoreBlueprints/Items/Saddle/PrimalItemArmor_SpindlesSaddle.PrimalItemArmor_SpindlesSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Velonasaur_Saddle",
+    "image_file": "velonasaur_saddle.png"
+}

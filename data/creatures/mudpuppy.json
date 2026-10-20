@@ -1,0 +1,78 @@
+{
+    "name": "Mudpuppy",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 85,
+            "level_increase": {
+                "wild": 17
+            }
+        },
+        "stamina": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "oxygen": {
+            "base": 700,
+            "level_increase": {
+                "wild": 70
+            }
+        },
+        "food": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 12.5
+            }
+        },
+        "melee": {
+            "base": 13.5,
+            "level_increase": {
+                "wild": 0.675
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 200,
+            "level_increase": {
+                "wild": 12
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": true,
+    "taming": {
+        "method": null,
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Mudpuppy Egg",
+        "incubation": {
+            "range": "-75 - 75 °C / -103 - 167 °F Egg Incubator: 0 °C / 32 °F",
+            "incubation_range": "-75 - 75 °C / -103 - 167 °F Egg Incubator: 0 °C / 32 °F",
+            "incubation_time": "7h 56m 11.429s"
+        },
+        "baby_time": "2h 6m 15.758s",
+        "juvenile_time": "8h 25m 3.03s",
+        "adolescent_time": "10h 31m 18.788s",
+        "total_maturation": "21h 2m 37.576s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "Mudpuppy_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Mudpuppy"
+}

@@ -1,5 +1,8 @@
 {
     "name": "Roll Rat",
+    "alternate_names": [
+        "Mole Rat"
+    ],
     "category": "mammal",
     "dossier": {
         "species": "Heterocephalus magnus",
@@ -111,5 +114,13 @@
         "Genesis: Part 1",
         "Genesis: Part 2",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "valguero",
+        "genesis-part-1",
+        "genesis-part-2",
+        "fjordur-midgard",
+        "fjordur-vanaheim"
     ]
 }

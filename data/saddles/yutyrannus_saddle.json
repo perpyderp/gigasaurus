@@ -1,0 +1,44 @@
+{
+    "name": "Yutyrannus Saddle",
+    "description": "Equip a Yutyrannus with this to ride it.",
+    "creatures": [
+        "yutyrannus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 80,
+    "engram_points": 50,
+    "crafting_xp": 86,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 425
+        },
+        {
+            "name": "Fiber",
+            "quantity": 350
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 135
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 125
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_YutySaddle.PrimalItemArmor_YutySaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Yutyrannus_Saddle",
+    "image_file": "yutyrannus_saddle.png"
+}

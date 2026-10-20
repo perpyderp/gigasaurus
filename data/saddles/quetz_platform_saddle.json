@@ -1,0 +1,48 @@
+{
+    "name": "Quetz Platform Saddle",
+    "description": "Equip a Quetz with this to ride it. You can build structures on the large platform to make a mobile base.",
+    "creatures": [
+        "quetzal"
+    ],
+    "tek": false,
+    "platform": true,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 97,
+    "engram_points": 80,
+    "crafting_xp": 462,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 620
+        },
+        {
+            "name": "Fiber",
+            "quantity": 400
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 180
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 220
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 120
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_QuetzSaddle_Platform.PrimalItemArmor_QuetzSaddle_Platform'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Quetz_Platform_Saddle",
+    "image_file": "quetz_platform_saddle.png"
+}

@@ -1,0 +1,87 @@
+{
+    "name": "Gigadesmodus",
+    "alternate_names": [
+        "Boss Bat"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1450,
+            "level_increase": {
+                "wild": 290,
+                "tamed": 0.054000000000000006
+            }
+        },
+        "stamina": {
+            "base": 750,
+            "level_increase": {
+                "wild": 75,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 150,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 600,
+            "level_increase": {
+                "wild": 12,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 100,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.017
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 120
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": true,
+    "taming": null,
+    "saddle": [
+        {
+            "name": "Gigadesmodus Saddle (Level ) Gigadesmodus Platform Saddle (Level )",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Gigadesmodus Egg Sac",
+        "baby_time": "Unknown",
+        "juvenile_time": "Unknown",
+        "adolescent_time": "Unknown",
+        "total_maturation": "Unknown",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": 500,
+    "cloneable": false,
+    "entity_id": "BossBat_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gigadesmodus"
+}

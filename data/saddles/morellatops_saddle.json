@@ -1,0 +1,35 @@
+{
+    "name": "Morellatops Saddle",
+    "description": "Equip a Morellatops with this to ride it.",
+    "creatures": [
+        "morellatops"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 11,
+    "engram_points": 11,
+    "crafting_xp": 20,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 140
+        },
+        {
+            "name": "Fiber",
+            "quantity": 80
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 30
+        }
+    ],
+    "blueprint": "Blueprint'/Game/ScorchedEarth/Dinos/Camelsaurus/PrimalItemArmor_CamelsaurusSaddle.PrimalItemArmor_CamelsaurusSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Morellatops_Saddle",
+    "image_file": "morellatops_saddle.png"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Equus Saddle",
+    "description": "A saddle for your horse. Useful for crafting chemical supplies on the go!",
+    "creatures": [
+        "equus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 20,
+    "engram_points": 22,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 240
+        },
+        {
+            "name": "Fiber",
+            "quantity": 160
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 85
+        },
+        {
+            "name": "Stone",
+            "quantity": 80
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_EquusSaddle.PrimalItemArmor_EquusSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Equus_Saddle",
+    "image_file": "equus_saddle.png"
+}

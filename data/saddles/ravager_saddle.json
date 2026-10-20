@@ -1,0 +1,40 @@
+{
+    "name": "Ravager Saddle",
+    "description": "Equip a Ravager with this to ride it.",
+    "creatures": [
+        "ravager"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 47,
+    "engram_points": 20,
+    "crafting_xp": 30,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 285
+        },
+        {
+            "name": "Fiber",
+            "quantity": 125
+        },
+        {
+            "name": "Fungal Wood",
+            "quantity": 110
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Aberration/Dinos/CaveWolf/PrimalItemArmor_CaveWolfSaddle.PrimalItemArmor_CaveWolfSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ravager_Saddle",
+    "image_file": "ravager_saddle.png"
+}

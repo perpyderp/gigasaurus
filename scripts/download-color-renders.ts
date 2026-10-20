@@ -9,6 +9,10 @@
  *   public/images/creature-renders/{slug}_m.png    — region mask
  *   data/creature-renders-coverage.json             — { covered: [...], missing: [...] }
  *
+ * Each creature tries its name, then its alternate_names (e.g. Wyvern → "Fire Wyvern"),
+ * preferring the ASA image and falling back to the ASE one. Upstream files are
+ * checked against the repo's file list first, so missing names cost no requests.
+ *
  * Usage:  bun scripts/download-color-renders.ts
  */
 
@@ -30,12 +34,26 @@ async function fetchBytes(url: string): Promise<Uint8Array | null> {
   return new Uint8Array(await res.arrayBuffer())
 }
 
-async function fetchPair(displayName: string): Promise<{ base: Uint8Array; mask: Uint8Array } | null> {
-  const enc = encodeURIComponent(displayName)
-  const [base, mask] = await Promise.all([
-    fetchBytes(`${ARKUTILS}/${enc}_ASA.png`),
-    fetchBytes(`${ARKUTILS}/${enc}_ASA_m.png`),
-  ])
+// Every image file in arkutils/species-images, so candidate names are checked without fetching.
+const tree = (await (await fetch('https://api.github.com/repos/arkutils/species-images/git/trees/main?recursive=1')).json()) as {
+  tree: { path: string }[]
+}
+const upstream = new Set(tree.tree.map((t) => t.path.replace(/^images\//, '')))
+
+/** First available base + mask pair: each name as ASA, then as ASE. */
+function pickUpstream(names: string[]): string | null {
+  for (const suffix of ['_ASA', '']) {
+    for (const name of names) {
+      const stem = `${name}${suffix}`
+      if (upstream.has(`${stem}.png`) && upstream.has(`${stem}_m.png`)) return stem
+    }
+  }
+  return null
+}
+
+async function fetchPair(stem: string): Promise<{ base: Uint8Array; mask: Uint8Array } | null> {
+  const enc = encodeURIComponent(stem)
+  const [base, mask] = await Promise.all([fetchBytes(`${ARKUTILS}/${enc}.png`), fetchBytes(`${ARKUTILS}/${enc}_m.png`)])
   if (!base || !mask) return null
   return { base, mask }
 }
@@ -50,7 +68,7 @@ const missing: { slug: string; name: string }[] = []
 for (let i = 0; i < slugs.length; i++) {
   const slug = slugs[i]
   const path = join(DATA_DIR, `${slug}.json`)
-  const json = JSON.parse(readFileSync(path, 'utf-8')) as { name?: string }
+  const json = JSON.parse(readFileSync(path, 'utf-8')) as { name?: string; alternate_names?: string[] }
   const displayName = json.name
   if (!displayName) {
     missing.push({ slug, name: '(no name)' })
@@ -66,7 +84,8 @@ for (let i = 0; i < slugs.length; i++) {
   }
 
   process.stdout.write(`  [${i + 1}/${slugs.length}] ${displayName} … `)
-  const result = await fetchPair(displayName)
+  const stem = pickUpstream([displayName, ...(json.alternate_names ?? [])])
+  const result = stem ? await fetchPair(stem) : null
   if (!result) {
     process.stdout.write(`\x1b[33m✗ missing upstream\x1b[0m\n`)
     missing.push({ slug, name: displayName })
@@ -75,7 +94,7 @@ for (let i = 0; i < slugs.length; i++) {
   writeFileSync(basePath, result.base)
   writeFileSync(maskPath, result.mask)
   covered.push(slug)
-  process.stdout.write(`\x1b[32m✓\x1b[0m\n`)
+  process.stdout.write(`\x1b[32m✓\x1b[0m ${stem}\n`)
   await new Promise((r) => setTimeout(r, DELAY_MS))
 }
 

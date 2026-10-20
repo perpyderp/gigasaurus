@@ -1,5 +1,8 @@
 {
     "name": "Araneo",
+    "alternate_names": [
+        "Spider S"
+    ],
     "dossier": {
         "species": "Araneomorphus amalgotantibus",
         "time": "Holocene",
@@ -106,5 +109,20 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "scorched-earth",
+        "ragnarok",
+        "extinction",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-asgard",
+        "fjordur-jotunheim"
     ]
 }

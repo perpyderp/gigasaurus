@@ -1,308 +1,462 @@
 {
   "covered": [
-    "megalania",
-    "rock_drake",
-    "gallimimus",
-    "basilosaurus",
-    "coelacanth",
-    "anglerfish",
-    "ovis",
-    "achatina",
-    "mantis",
-    "plesiosaur",
-    "therizinosaur",
-    "ceratosaurus",
-    "beelzebufo",
-    "shinehorn",
-    "insect_swarm",
-    "hyaenodon",
-    "allosaurus",
-    "carcharodontosaurus",
-    "woolly_rhino",
-    "velonasaur",
-    "sabertooth",
-    "arthropluera",
-    "archaeopteryx",
-    "rhyniognatha",
-    "onyc",
-    "baryonyx",
-    "kairuku",
-    "direwolf",
-    "thorny_dragon",
-    "maeguana",
-    "argentavis",
-    "morellatops",
-    "megatherium",
-    "rex",
-    "dire_bear",
-    "meganeura",
-    "dimorphodon",
-    "tusoteuthis",
-    "deinotherium",
-    "mammoth",
-    "castoroides",
-    "carbonemys",
-    "vulture",
-    "stegosaurus",
+    "solwyn",
     "compy",
-    "dimetrodon",
+    "ankylosaurus",
+    "neophyte",
+    "maeguana",
+    "gigadesmodus",
+    "diplodocus",
+    "doedicurus",
+    "spino",
+    "gloon",
+    "sabertooth_salmon",
+    "basilisk",
+    "bison",
+    "achatina",
+    "archelon",
+    "dilophosaur",
+    "pachy",
+    "anglerfish",
+    "dreadmare",
+    "deinonychus",
+    "carbonemys",
+    "helicoprion",
+    "rock_elemental",
+    "carnotaurus",
+    "griffin",
+    "raptor",
+    "gallimimus",
+    "kentrosaurus",
+    "eurypterid",
+    "morellatops",
+    "cosmo",
+    "kairuku",
+    "moschops",
+    "ovis",
+    "andrewsarchus",
+    "pachyrhinosaurus",
+    "beelzebufo",
+    "shadowmane",
+    "cnidaria",
+    "tusoteuthis",
+    "boaratos",
+    "dimorphodon",
+    "amargasaurus",
+    "piranha",
+    "dreadnoughtus",
+    "glowtail",
+    "dire_bear",
+    "rhyniognatha",
+    "seeker",
+    "procoptodon",
+    "jerboa",
+    "snow_owl",
+    "tropeognathus",
+    "yi_ling",
+    "giant_bee",
+    "aureliax",
+    "shastasaurus",
+    "mammoth",
+    "microraptor",
+    "liopleurodon",
+    "kaprosuchus",
+    "iguanodon",
+    "carcharodontosaurus",
+    "archaeopteryx",
+    "concavenator",
+    "ceratosaurus",
+    "enforcer",
+    "yutyrannus",
+    "lymantria",
+    "ossidon",
+    "fjordhawk",
+    "shinehorn",
+    "astrodelphis",
+    "onyc",
+    "maewing",
+    "glowbug",
+    "tapejara",
+    "manta",
+    "tek_stryder",
+    "ichthyornis",
+    "deinotherium",
+    "hesperornis",
+    "xiphactinus",
+    "hyaenodon",
+    "ammonite",
+    "insect_swarm",
+    "pegomastax",
+    "castoroides",
+    "brontosaurus",
+    "ravager",
+    "mosasaurus",
+    "diplocaulus",
+    "megatherium",
+    "thylacoleo",
+    "malwyn",
+    "stegosaurus",
+    "titanoboa",
+    "sabertooth",
+    "cryolophosaurus",
+    "mesopithecus",
+    "woolly_rhino",
+    "purlovia",
+    "allosaurus",
+    "pteranodon",
+    "elderclaw",
+    "mantis",
+    "thorny_dragon",
+    "sarco",
+    "magmasaur",
     "megalodon",
     "dunkleosteus",
-    "carnotaurus",
-    "raptor",
+    "cerberax",
     "featherlight",
-    "yutyrannus",
+    "dimetrodon",
+    "deathworm",
+    "gargantar",
     "araneo",
-    "dreadnoughtus",
-    "doedicurus",
-    "lystrosaurus",
-    "diplocaulus",
-    "parasaur",
-    "pegomastax",
-    "pelagornis",
-    "deinosuchus",
-    "roll_rat",
-    "pachyrhinosaurus",
-    "pulmonoscorpius",
-    "gigantopithecus",
-    "griffin",
-    "phoenix",
-    "procoptodon",
-    "quetzal",
-    "snow_owl",
-    "lymantria",
-    "karkinos",
-    "gacha",
-    "dodo",
-    "manta",
-    "terror_bird",
-    "thylacoleo",
-    "brontosaurus",
-    "ichthyornis",
-    "triceratops",
-    "megaloceros",
-    "gasbags",
-    "pteranodon",
-    "electrophorus",
-    "titanoboa",
-    "otter",
-    "deinonychus",
-    "chalicotherium",
-    "spino",
-    "gigantoraptor",
-    "iguanodon",
-    "mosasaurus",
-    "malwyn",
-    "hesperornis",
-    "megalosaurus",
-    "cryolophosaurus",
-    "daeodon",
-    "troodon",
-    "sabertooth_salmon",
-    "piranha",
-    "fasolasuchus",
-    "basilisk",
-    "ankylosaurus",
-    "kentrosaurus",
-    "ravager",
-    "glowtail",
-    "purlovia",
-    "ichthyosaurus",
-    "rock_elemental",
-    "oviraptor",
-    "liopleurodon",
-    "desmodus",
-    "kaprosuchus",
-    "equus",
-    "paraceratherium",
-    "megachelon",
-    "dung_beetle",
-    "managarmr",
-    "jerboa",
+    "umbra",
     "bulbdog",
-    "tapejara",
-    "sarco",
-    "diplodocus",
+    "voidwyrm",
+    "phoenix",
+    "veilwyn",
     "giganotosaurus",
-    "helicoprion",
-    "archelon"
+    "argentavis",
+    "dung_beetle",
+    "gasbags",
+    "parrot",
+    "plesiosaur",
+    "troodon",
+    "megalosaurus",
+    "megaraptor",
+    "leedsichthys",
+    "terror_bird",
+    "velonasaur",
+    "deinosuchus",
+    "karkinos",
+    "gigantopithecus",
+    "noglin",
+    "dodo",
+    "lumina",
+    "oviraptor",
+    "wyvern",
+    "paraceratherium",
+    "titanomyrma",
+    "megachelon",
+    "dinopithecus",
+    "therizinosaur",
+    "pulmonoscorpius",
+    "desmodus",
+    "chalicotherium",
+    "sinomacrops",
+    "managarmr",
+    "acrocanthosaurus",
+    "bloodstalker",
+    "vulture",
+    "daeodon",
+    "megaloceros",
+    "electrophorus",
+    "pyromane",
+    "gigantoraptor",
+    "fenrir",
+    "titanosaur",
+    "pelagornis",
+    "basilosaurus",
+    "burrowbuck",
+    "megalania",
+    "quetzal",
+    "roll_rat",
+    "oasisaur",
+    "astrocetus",
+    "crystal_wyvern",
+    "nameless",
+    "palaeoctopus",
+    "phiomia",
+    "direwolf",
+    "rex",
+    "grand_tortugar",
+    "equus",
+    "triceratops",
+    "ichthyosaurus",
+    "arthropluera",
+    "parasaur",
+    "meganeura",
+    "gacha",
+    "coelacanth",
+    "ferox",
+    "rock_drake",
+    "fasolasuchus",
+    "baryonyx",
+    "otter",
+    "armadoggo",
+    "lystrosaurus"
   ],
   "missing": [
     {
-      "slug": "astrocetus",
-      "name": "Astrocetus"
+      "slug": "homarus",
+      "name": "Homarus"
     },
     {
-      "slug": "giant_bee",
-      "name": "Giant Bee"
+      "slug": "dragon",
+      "name": "Dragon"
     },
     {
-      "slug": "reaper",
-      "name": "Reaper"
-    },
-    {
-      "slug": "phiomia",
-      "name": "Phiomia"
-    },
-    {
-      "slug": "chrysaora",
-      "name": "Chrysaora"
-    },
-    {
-      "slug": "leedsichthys",
-      "name": "Leedsichthys"
-    },
-    {
-      "slug": "titanosaur",
-      "name": "Titanosaur"
-    },
-    {
-      "slug": "maewing",
-      "name": "Maewing"
-    },
-    {
-      "slug": "fjordhawk",
-      "name": "Fjordhawk"
-    },
-    {
-      "slug": "ferox",
-      "name": "Ferox"
-    },
-    {
-      "slug": "noglin",
-      "name": "Noglin"
-    },
-    {
-      "slug": "crystal_wyvern",
-      "name": "Crystal Wyvern"
-    },
-    {
-      "slug": "summoner",
-      "name": "Summoner"
-    },
-    {
-      "slug": "lamprey",
-      "name": "Lamprey"
-    },
-    {
-      "slug": "astrodelphis",
-      "name": "Astrodelphis"
-    },
-    {
-      "slug": "tropeognathus",
-      "name": "Tropeognathus"
-    },
-    {
-      "slug": "sinomacrops",
-      "name": "Sinomacrops"
-    },
-    {
-      "slug": "dinopithecus",
-      "name": "Dinopithecus"
-    },
-    {
-      "slug": "bloodstalker",
-      "name": "Bloodstalker"
-    },
-    {
-      "slug": "leech",
-      "name": "Leech"
-    },
-    {
-      "slug": "nameless",
-      "name": "Nameless"
-    },
-    {
-      "slug": "wyvern",
-      "name": "Wyvern"
-    },
-    {
-      "slug": "magmasaur",
-      "name": "Magmasaur"
-    },
-    {
-      "slug": "sarcosuchus",
-      "name": "Sarcosuchus"
-    },
-    {
-      "slug": "mesopithecus",
-      "name": "Mesopithecus"
-    },
-    {
-      "slug": "pachy",
-      "name": "Pachy"
-    },
-    {
-      "slug": "trilobite",
-      "name": "Trilobite"
-    },
-    {
-      "slug": "glowbug",
-      "name": "Glowbug"
-    },
-    {
-      "slug": "eurypterid",
-      "name": "Eurypterid"
-    },
-    {
-      "slug": "macrophage",
-      "name": "Macrophage"
-    },
-    {
-      "slug": "cnidaria",
-      "name": "Cnidaria"
-    },
-    {
-      "slug": "unicorn",
-      "name": "Unicorn"
+      "slug": "dakosaurus",
+      "name": "Dakosaurus"
     },
     {
       "slug": "jug_bug",
       "name": "Jug Bug"
     },
     {
-      "slug": "titanomyrma",
-      "name": "Titanomyrma"
+      "slug": "lost_king",
+      "name": "Lost King"
     },
     {
-      "slug": "seeker",
-      "name": "Seeker"
+      "slug": "tidepup",
+      "name": "Tidepup"
     },
     {
-      "slug": "amargasaurus",
-      "name": "Amargasaurus"
+      "slug": "mantis_shrimp",
+      "name": "Mantis Shrimp"
     },
     {
-      "slug": "dilophosaur",
-      "name": "Dilophosaur"
+      "slug": "drakeling",
+      "name": "Drakeling"
     },
     {
-      "slug": "deathworm",
-      "name": "Deathworm"
+      "slug": "fractalis",
+      "name": "Fractalis"
     },
     {
-      "slug": "andrewsarchus",
-      "name": "Andrewsarchus"
+      "slug": "minotarchos",
+      "name": "Minotarchos"
     },
     {
-      "slug": "microraptor",
-      "name": "Microraptor"
+      "slug": "tridacna",
+      "name": "Tridacna"
     },
     {
-      "slug": "ammonite",
-      "name": "Ammonite"
+      "slug": "ocepechelon",
+      "name": "Ocepechelon"
+    },
+    {
+      "slug": "seahorse",
+      "name": "Seahorse"
+    },
+    {
+      "slug": "trilobite",
+      "name": "Trilobite"
+    },
+    {
+      "slug": "water_wyvern",
+      "name": "Water Wyvern"
+    },
+    {
+      "slug": "macrophage",
+      "name": "Macrophage"
+    },
+    {
+      "slug": "desert_titan",
+      "name": "Desert Titan"
+    },
+    {
+      "slug": "shallocis_tentacle",
+      "name": "Shallocis Tentacle"
+    },
+    {
+      "slug": "monodon",
+      "name": "Monodon"
+    },
+    {
+      "slug": "thrall",
+      "name": "Thrall"
+    },
+    {
+      "slug": "moeder_master_of_the_ocean",
+      "name": "Moeder, Master of the Ocean"
+    },
+    {
+      "slug": "reaper",
+      "name": "Reaper"
+    },
+    {
+      "slug": "leech",
+      "name": "Leech"
+    },
+    {
+      "slug": "ice_titan",
+      "name": "Ice Titan"
+    },
+    {
+      "slug": "attack_drone",
+      "name": "Attack Drone"
+    },
+    {
+      "slug": "manticore",
+      "name": "Manticore"
+    },
+    {
+      "slug": "summoner",
+      "name": "Summoner"
+    },
+    {
+      "slug": "istiophorus",
+      "name": "Istiophorus"
+    },
+    {
+      "slug": "natrix",
+      "name": "Natrix"
+    },
+    {
+      "slug": "kathreptis",
+      "name": "Kathreptis"
+    },
+    {
+      "slug": "rockwell",
+      "name": "Rockwell"
+    },
+    {
+      "slug": "onchopristis",
+      "name": "Onchopristis"
+    },
+    {
+      "slug": "forest_titan",
+      "name": "Forest Titan"
+    },
+    {
+      "slug": "defense_unit",
+      "name": "Defense Unit"
+    },
+    {
+      "slug": "thodes",
+      "name": "Thodes"
+    },
+    {
+      "slug": "colossus",
+      "name": "Colossus"
+    },
+    {
+      "slug": "mudpuppy",
+      "name": "Mudpuppy"
+    },
+    {
+      "slug": "minotaur",
+      "name": "Minotaur"
     },
     {
       "slug": "parakeet_fish_school",
       "name": "Parakeet Fish School"
     },
     {
-      "slug": "shadowmane",
-      "name": "Shadowmane"
+      "slug": "sir_5rm8",
+      "name": "Sir-5rM8"
     },
     {
-      "slug": "fenrir",
-      "name": "Fenrir"
+      "slug": "riftcrawler",
+      "name": "Riftcrawler"
+    },
+    {
+      "slug": "rockwell_prime",
+      "name": "Rockwell Prime"
+    },
+    {
+      "slug": "takifugu",
+      "name": "Takifugu"
+    },
+    {
+      "slug": "unicorn",
+      "name": "Unicorn"
+    },
+    {
+      "slug": "qarmoutus",
+      "name": "Qarmoutus"
+    },
+    {
+      "slug": "chrysaora",
+      "name": "Chrysaora"
+    },
+    {
+      "slug": "overseer",
+      "name": "Overseer"
+    },
+    {
+      "slug": "tiktaalik",
+      "name": "Tiktaalik"
+    },
+    {
+      "slug": "cymathoa",
+      "name": "Cymathoa"
+    },
+    {
+      "slug": "corrupted_master_controller",
+      "name": "Corrupted Master Controller"
+    },
+    {
+      "slug": "lost_queen",
+      "name": "Lost Queen"
+    },
+    {
+      "slug": "scout",
+      "name": "Scout"
+    },
+    {
+      "slug": "pirate",
+      "name": "Pirate"
+    },
+    {
+      "slug": "pygocentrus",
+      "name": "Pygocentrus"
+    },
+    {
+      "slug": "abyssalus_tentacle",
+      "name": "Abyssalus Tentacle"
+    },
+    {
+      "slug": "thunnus",
+      "name": "Thunnus"
+    },
+    {
+      "slug": "vulcanite",
+      "name": "Vulcanite"
+    },
+    {
+      "slug": "cat",
+      "name": "Cat"
+    },
+    {
+      "slug": "rockwelltentacle",
+      "name": "RockwellTentacle"
+    },
+    {
+      "slug": "broodmother_lysrix",
+      "name": "Broodmother Lysrix"
+    },
+    {
+      "slug": "hydraskos",
+      "name": "Hydraskos"
+    },
+    {
+      "slug": "malleocephalus",
+      "name": "Malleocephalus"
+    },
+    {
+      "slug": "king_titan",
+      "name": "King Titan"
+    },
+    {
+      "slug": "lamprey",
+      "name": "Lamprey"
+    },
+    {
+      "slug": "megapithecus",
+      "name": "Megapithecus"
+    },
+    {
+      "slug": "stereolepis",
+      "name": "Stereolepis"
     }
   ]
 }

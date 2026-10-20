@@ -1,0 +1,96 @@
+{
+    "name": "Xiphactinus",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 450,
+            "level_increase": {
+                "wild": 90,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.042
+            }
+        },
+        "stamina": {
+            "base": 420,
+            "level_increase": {
+                "wild": 42,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 23,
+            "level_increase": {
+                "wild": 1.15,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.14,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.2
+            }
+        },
+        "torpidity": {
+            "base": 1100,
+            "level_increase": {
+                "wild": 66
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Xiphactinus Saddle (Level 60)",
+            "engram_level": 60
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 250,
+    "cloneable": false,
+    "entity_id": "Xiphactinus_Character_BP_ASA_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Xiphactinus"
+}

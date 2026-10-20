@@ -1,0 +1,97 @@
+{
+    "name": "Gargantar",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 225,
+                "tamed": 0.0216
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 20,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 4500,
+            "level_increase": {
+                "wild": 450,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 950,
+            "level_increase": {
+                "wild": 19,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": -25,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 475,
+            "level_increase": {
+                "wild": 28.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Gargantar Saddle (Level 52)",
+            "engram_level": 52
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Gargantar Egg",
+        "baby_time": "Unknown",
+        "juvenile_time": "Unknown",
+        "adolescent_time": "Unknown",
+        "total_maturation": "Unknown",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": null,
+    "cloneable": false,
+    "entity_id": "Gargantar_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gargantar"
+}

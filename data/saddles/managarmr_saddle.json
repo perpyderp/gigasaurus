@@ -1,0 +1,40 @@
+{
+    "name": "Managarmr Saddle",
+    "description": "Equip a Managarmr with this to ride it.",
+    "creatures": [
+        "managarmr"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 66,
+    "engram_points": 8,
+    "crafting_xp": 72.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 150
+        },
+        {
+            "name": "Fiber",
+            "quantity": 185
+        },
+        {
+            "name": "Hide",
+            "quantity": 350
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Extinction/CoreBlueprints/Items/Saddle/PrimalItemArmor_IceJumperSaddle.PrimalItemArmor_IceJumperSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Managarmr_Saddle",
+    "image_file": "managarmr_saddle.png"
+}

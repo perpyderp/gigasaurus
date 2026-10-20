@@ -1,0 +1,80 @@
+{
+    "name": "Tek Stryder",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 800,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": null
+        },
+        "weight": {
+            "base": 1250,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 68,
+            "level_increase": {
+                "wild": 3.4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 120
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": false,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 1000,
+    "cloneable": false,
+    "entity_id": "TekStrider_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Tek_Stryder",
+    "spawn_maps": [
+        "genesis-part-2"
+    ]
+}

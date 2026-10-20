@@ -1,0 +1,39 @@
+{
+    "name": "Andrewsarchus Saddle",
+    "description": "Equip a Andrewsarchus with this to ride it., , The saddle is mounted with a minigun that fires Advanced Rifle Bullet.",
+    "creatures": [
+        "andrewsarchus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 74,
+    "engram_points": 45,
+    "crafting_xp": 62.8,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 290
+        },
+        {
+            "name": "Fiber",
+            "quantity": 155
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "/Game/Fjordur/Dinos/Andrewsarchus/PrimalItemArmor_AndrewsarchusSaddle.PrimalItemArmor_AndrewsarchusSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Andrewsarchus_Saddle",
+    "image_file": "andrewsarchus_saddle.png"
+}

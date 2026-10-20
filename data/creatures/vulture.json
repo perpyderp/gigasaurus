@@ -108,5 +108,14 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "scorched-earth",
+        "ragnarok",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-jotunheim"
     ]
 }

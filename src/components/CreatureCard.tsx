@@ -13,6 +13,7 @@ import type { StoredCreature } from '@/lib/db'
 import type { AseStatKey } from '@/lib/ark-stat-solver/ase-data'
 import { topFlags, type CollectionBests, type CreatureProfile } from '@/lib/breeding'
 import { STAT_META } from '@/lib/stat-meta'
+import { creatureImageUrl, speciesDisplayName } from '@/lib/dino-map'
 
 export type ImageMode = 'dossier' | 'colors'
 
@@ -42,11 +43,12 @@ const PREFERRED_STATS: AseStatKey[] = ['health', 'stamina', 'weight', 'meleeDama
 export function CreatureCard({ creature, imageMode = 'dossier', speciesName = null, profile = null, bests = null, selection }: CreatureCardProps) {
   // Some species map to a slug without dossier art; show the placeholder instead of a broken image.
   const [imageFailed, setImageFailed] = useState(false)
-  const imageUrl = creature.apiSlug ? `/images/creatures/${creature.apiSlug}.png` : null
+  const imageUrl = creatureImageUrl(creature.apiSlug)
   const mutations = creature.mutationsMale + creature.mutationsFemale
   const isFullyGrown = creature.babyAge >= 1
   const imprintPct = Math.round(creature.imprintQuality * 100)
-  const speciesTag = creature.dinoNameTag.replace(/AA$/, '')
+  // Proper species name ("Pyromane"), falling back to the export tag for unknown species.
+  const speciesTag = speciesDisplayName(creature.apiSlug) ?? creature.dinoNameTag.replace(/AA$/, '')
 
   const shownStats = profile ? PREFERRED_STATS.filter((s) => profile.eligible.includes(s)).slice(0, 4) : []
   const records = profile ? profile.eligible.filter((s) => topFlags(profile.levels[s], bests?.[s]).total).length : 0

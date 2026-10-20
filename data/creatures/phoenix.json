@@ -92,5 +92,8 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Phoenix",
     "maps": [
         "Scorched Earth"
+    ],
+    "spawn_maps": [
+        "scorched-earth"
     ]
 }

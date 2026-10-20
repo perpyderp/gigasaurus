@@ -1,0 +1,45 @@
+{
+    "name": "Solwyn Saddle",
+    "description": "Equip a Solwyn with this to ride it.",
+    "creatures": [
+        "solwyn"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 58,
+    "engram_points": 40,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 225
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 50
+        },
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 120
+        },
+        {
+            "name": "Obsidian",
+            "quantity": 80
+        }
+    ],
+    "blueprint": "/Game/LostColony/Dinos/AngelFox/PrimalItemArmor_AngelFoxSaddle.PrimalItemArmor_AngelFoxSaddle_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Solwyn_Saddle",
+    "image_file": "solwyn_saddle.png"
+}

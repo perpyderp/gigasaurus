@@ -1,0 +1,44 @@
+{
+    "name": "Therizinosaurus Saddle",
+    "description": "A saddle for your Therizinosaurus.",
+    "creatures": [
+        "therizinosaur"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 69,
+    "engram_points": 40,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 285
+        },
+        {
+            "name": "Fiber",
+            "quantity": 160
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 120
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 55
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Therizinosaurus_Saddle",
+    "image_file": "therizinosaurus_saddle.png"
+}

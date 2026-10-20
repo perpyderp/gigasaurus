@@ -1,5 +1,8 @@
 {
     "name": "Snow Owl",
+    "alternate_names": [
+        "Owl"
+    ],
     "category": "bird",
     "dossier": {
         "species": "Bubo chinookus",
@@ -110,5 +113,11 @@
         "Extinction",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "extinction",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-jotunheim"
     ]
 }

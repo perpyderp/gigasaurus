@@ -1,0 +1,35 @@
+{
+    "name": "Iguanodon Saddle",
+    "description": "Equip a Iguanodon with this to ride it.",
+    "creatures": [
+        "iguanodon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 30,
+    "engram_points": 12,
+    "crafting_xp": 13,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 80
+        },
+        {
+            "name": "Fiber",
+            "quantity": 50
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 15
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_IguanodonSaddle.PrimalItemArmor_IguanodonSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Iguanodon_Saddle",
+    "image_file": "iguanodon_saddle.png"
+}

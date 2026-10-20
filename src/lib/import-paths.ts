@@ -16,6 +16,7 @@ import { resolveSlug, deriveDisplayName } from '@/lib/dino-map'
 import { upsertCreature, getCreature } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
 import { combineArkId } from '@/lib/ark-id'
+import { withName } from '@/lib/creature-names'
 
 // ─── DB ──────────────────────────────────────────────────────────────────────
 
@@ -152,24 +153,31 @@ export interface ImportOutcome {
   results: Array<{ name: string; status: 'new' | 'updated' | 'error'; message?: string }>
 }
 
-async function importIniText(
+/**
+ * Store one export. Every import path (drop zone, saved folder, watcher, refresh)
+ * goes through here, so re-imports keep manual parents and the folder link, and a
+ * changed name moves the old one into `pastNames`.
+ */
+export async function importIniText(
   text: string,
   filename: string,
   importPathId: string | null,
 ): Promise<{ creature: StoredCreature; existed: boolean }> {
   const parsed = parseArkExport(text)
   const apiSlug = resolveSlug(parsed.dinoNameTag, parsed.dinoClass)
-  const name = deriveDisplayName(parsed.tamedName, parsed.dinoNameTag)
+  const name = deriveDisplayName(parsed.tamedName, parsed.dinoNameTag, apiSlug)
   const arkId = combineArkId(parsed.dinoId1, parsed.dinoId2)
   const now = Date.now()
   const existing = await getCreature(arkId)
-  const creature: StoredCreature = {
+  const fromExport: StoredCreature = {
     id: arkId,
     dinoId1: parsed.dinoId1,
     dinoId2: parsed.dinoId2,
     dinoClass: parsed.dinoClass,
     dinoNameTag: parsed.dinoNameTag,
-    name,
+    // Start from the stored name so a rename in game is recorded as a change.
+    name: existing?.name ?? name,
+    pastNames: existing?.pastNames,
     isFemale: parsed.isFemale,
     isNeutered: parsed.isNeutered,
     tribe: parsed.tribe,
@@ -193,6 +201,13 @@ async function importIniText(
     importedAt: existing?.importedAt ?? now,
     updatedAt: now,
   }
+  // An automatic default ("Fire Lion" from the tag, or the species name) isn't a
+  // name anyone chose, so replacing it isn't recorded as a past name.
+  const wasDefault =
+    !!existing &&
+    (existing.name === deriveDisplayName('', existing.dinoNameTag) ||
+      existing.name === deriveDisplayName('', existing.dinoNameTag, existing.apiSlug))
+  const creature = withName(fromExport, name, now, !wasDefault)
   await upsertCreature(creature)
   return { creature, existed: !!existing }
 }
@@ -241,7 +256,7 @@ export async function importAllFromPath(pathId: string): Promise<ImportOutcome> 
 export async function importChangedFromPath(
   pathId: string,
   since: number,
-): Promise<ImportOutcome & { latestModified: number }> {
+): Promise<ImportOutcome & { latestModified: number; needsPermission: boolean }> {
   const saved = await getPath(pathId)
   if (!saved) throw new Error('Saved path not found')
 
@@ -249,8 +264,9 @@ export async function importChangedFromPath(
   const results: ImportOutcome['results'] = []
   let latestModified = since
 
+  // After a browser restart Chrome resets folder access to "ask"; only a click can re-grant it.
   if (!(await queryReadPermission(saved.handle))) {
-    return { imported, results, latestModified }
+    return { imported, results, latestModified, needsPermission: true }
   }
 
   const dirIter = (saved.handle as unknown as { values: () => AsyncIterableIterator<FileSystemHandle> }).values()
@@ -259,9 +275,11 @@ export async function importChangedFromPath(
     try {
       const file = await (entry as FileSystemFileHandle).getFile()
       if (file.lastModified <= since) continue
-      latestModified = Math.max(latestModified, file.lastModified)
       const text = await file.text()
       const { creature, existed } = await importIniText(text, file.name, pathId)
+      // Advance the high-water mark only after a successful import, so a file read
+      // while ARK was still writing it is retried on the next scan.
+      latestModified = Math.max(latestModified, file.lastModified)
       imported.push(creature)
       results.push({
         name: `${creature.name || creature.dinoNameTag} (Lv ${creature.level})`,
@@ -283,7 +301,17 @@ export async function importChangedFromPath(
     if (fresh) await db.put(PATHS_STORE, { ...fresh, lastScan: latestModified })
   }
 
-  return { imported, results, latestModified }
+  return { imported, results, latestModified, needsPermission: false }
+}
+
+/** Re-grant read access to watched folders. Call from a click — the browser shows its prompt. */
+export async function regrantWatchedFolders(pathIds: string[]): Promise<boolean> {
+  let allGranted = true
+  for (const id of pathIds) {
+    const saved = await getPath(id)
+    if (!saved || !(await ensureReadPermission(saved.handle))) allGranted = false
+  }
+  return allGranted
 }
 
 /** Re-import a single creature by locating its filename in a saved folder. */

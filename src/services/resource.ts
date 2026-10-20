@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { ResourceSchema, type ResourceDetail, type ResourceListItem } from '@/schemas/resource'
 import { toSlug } from '@/lib/slug'
+import { mapSlug } from '@/lib/map-order'
 
 const DATA_DIR = join(process.cwd(), 'data', 'resources')
 const IMAGE_BASE = '/images/resources'
@@ -49,11 +50,15 @@ abstract class ResourceService {
     return cache
   }
 
-  static getAll(opts: { limit?: number; offset?: number } = {}): {
+  static getAll(opts: { map?: string; limit?: number; offset?: number } = {}): {
     count: number
     results: ResourceListItem[]
   } {
-    const entries = [...ResourceService.getCache().values()]
+    let entries = [...ResourceService.getCache().values()]
+    if (opts.map) {
+      const key = mapSlug(opts.map)
+      entries = entries.filter((r) => r.maps.some((m) => mapSlug(m) === key))
+    }
     const total = entries.length
     const start = opts.offset ?? 0
     const end = opts.limit ? start + opts.limit : entries.length

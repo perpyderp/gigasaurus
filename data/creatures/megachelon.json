@@ -1,5 +1,8 @@
 {
-    "name": "Managarmr",
+    "name": "Megachelon",
+    "alternate_names": [
+        "Giant Turtle"
+    ],
     "dossier": null,
     "base_stats_growth": {
         "health": {
@@ -99,10 +102,15 @@
     "cloneable": true,
     "entity_id": "GiantTurtle_Character_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Managarmr",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megachelon",
     "maps": [
         "Extinction",
         "Genesis: Part 2",
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "genesis-part-1",
+        "lost-island",
+        "fjordur-midgard"
     ]
 }

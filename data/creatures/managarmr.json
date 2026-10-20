@@ -1,5 +1,8 @@
 {
     "name": "Managarmr",
+    "alternate_names": [
+        "Ice Jumper"
+    ],
     "category": "other",
     "dossier": {
         "species": "Draconis auragelus",
@@ -111,5 +114,10 @@
         "Extinction",
         "Genesis: Part 2",
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "extinction",
+        "genesis-part-2",
+        "lost-island"
     ]
 }

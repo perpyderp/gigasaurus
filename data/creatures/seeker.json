@@ -1,5 +1,8 @@
 {
     "name": "Seeker",
+    "alternate_names": [
+        "Pteroteuthis"
+    ],
     "category": "other",
     "dossier": {
         "species": "Chimaeram odiosus",
@@ -75,5 +78,15 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-asgard"
     ]
 }

@@ -1,0 +1,49 @@
+{
+    "name": "Malleocephalus Saddle",
+    "description": "Equip a Malleocephalus with this to ride it.",
+    "creatures": [
+        "malleocephalus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 15,
+    "engram_points": 12,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory",
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 15
+        },
+        {
+            "name": "Fiber",
+            "quantity": 75
+        },
+        {
+            "name": "Fish Scale",
+            "quantity": 150
+        },
+        {
+            "name": "Metal",
+            "quantity": 5
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 10
+        }
+    ],
+    "blueprint": "/Game/Abyss/Dinos/Malleocephalus/Saddle/PrimalItemArmor_MalleocephalusSaddle.PrimalItemArmor_MalleocephalusSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Malleocephalus_Saddle",
+    "image_file": "malleocephalus_saddle.png"
+}

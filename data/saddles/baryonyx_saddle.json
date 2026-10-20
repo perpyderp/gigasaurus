@@ -1,0 +1,40 @@
+{
+    "name": "Baryonyx Saddle",
+    "description": "Equip a Baryonyx with this to ride it.",
+    "creatures": [
+        "baryonyx"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 49,
+    "engram_points": 24,
+    "crafting_xp": 17.6,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 225
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 25
+        },
+        {
+            "name": "Fiber",
+            "quantity": 350
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_BaryonyxSaddle.PrimalItemArmor_BaryonyxSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Baryonyx_Saddle",
+    "image_file": "baryonyx_saddle.png"
+}

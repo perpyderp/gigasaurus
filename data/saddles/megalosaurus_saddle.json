@@ -1,0 +1,40 @@
+{
+    "name": "Megalosaurus Saddle",
+    "description": "Equip a Megalosaurus with this to ride it.",
+    "creatures": [
+        "megalosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 57,
+    "engram_points": 50,
+    "crafting_xp": 72.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 320
+        },
+        {
+            "name": "Fiber",
+            "quantity": 170
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 30
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MegalosaurusSaddle.PrimalItemArmor_MegalosaurusSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megalosaurus_Saddle",
+    "image_file": "megalosaurus_saddle.png"
+}

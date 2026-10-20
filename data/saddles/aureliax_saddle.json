@@ -1,0 +1,45 @@
+{
+    "name": "Aureliax Saddle",
+    "description": "Equip an Aureliax with this to ride it.",
+    "creatures": [
+        "aureliax"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 85,
+    "engram_points": 40,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 350
+        },
+        {
+            "name": "Hide",
+            "quantity": 300
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 150
+        },
+        {
+            "name": "Polymer, Organic Polymer, or Corrupted Nodule",
+            "quantity": 50
+        }
+    ],
+    "blueprint": "/Game/LostColony/Dinos/SnowDragon/PrimalItemArmor_SnowDragonSaddle.PrimalItemArmor_SnowDragonSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Aureliax_Saddle",
+    "image_file": "aureliax_saddle.png"
+}

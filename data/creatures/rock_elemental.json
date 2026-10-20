@@ -1,5 +1,8 @@
 {
     "name": "Rock Elemental",
+    "alternate_names": [
+        "Rock Golem"
+    ],
     "category": "fantasy",
     "dossier": {
         "species": "Colossus petram",
@@ -100,5 +103,13 @@
         "Crystal Isles",
         "Genesis: Part 2",
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "scorched-earth",
+        "ragnarok",
+        "extinction",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island"
     ]
 }

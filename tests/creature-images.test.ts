@@ -4,13 +4,12 @@
  * These tests verify two things:
  *   1. Every creature data file in data/creatures/ has a matching image in
  *      public/images/creatures/{slug}.png
- *   2. Every slug that has both data and an image is reachable from dino-map.ts
- *      (i.e. resolveSlug can map to it), so CreatureCard actually shows the image
- *      via creature.apiSlug.
+ *   2. An export of each creature's blueprint (entity_id) resolves to it in
+ *      dino-map.ts, so CreatureCard actually shows the image via creature.apiSlug.
  */
 
 import { describe, it, expect } from 'bun:test'
-import { readdirSync, existsSync } from 'fs'
+import { readdirSync, existsSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { resolveSlug } from '@/lib/dino-map'
 
@@ -25,45 +24,28 @@ const dataSlugs = readdirSync(DATA_DIR)
 
 // ─── 1. Image file existence ──────────────────────────────────────────────────
 
+const hasImage = (slug: string) => ['png', 'jpg', 'webp'].some((ext) => existsSync(join(IMAGES_DIR, `${slug}.${ext}`)))
+
 describe('creature data → image file', () => {
   for (const slug of dataSlugs) {
-    it(`${slug} has public/images/creatures/${slug}.png`, () => {
-      expect(existsSync(join(IMAGES_DIR, `${slug}.png`))).toBe(true)
+    it(`${slug} has public/images/creatures/${slug}.png (or .jpg / .webp)`, () => {
+      expect(hasImage(slug)).toBe(true)
     })
   }
 })
 
 // ─── 2. dino-map.ts coverage ─────────────────────────────────────────────────
-// For every slug that has BOTH a data file and an image, resolveSlug must be
-// able to return that slug from at least one (dinoNameTag, dinoClass) pair.
-// We probe using the slug itself and common ARK tag patterns derived from it.
-
-/**
- * Derive candidate DinoNameTags from a slug.
- * e.g. "dire_bear" → ["Dire_Bear", "DireBear", "dire_bear"]
- */
-function candidateTags(slug: string): string[] {
-  const words = slug.split('_')
-  const pascal = words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('')
-  const titleUnderscore = words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('_')
-  return [pascal, titleUnderscore, slug, words[0].charAt(0).toUpperCase() + words[0].slice(1)]
-}
-
-const slugsWithImages = dataSlugs.filter(slug =>
-  existsSync(join(IMAGES_DIR, `${slug}.png`))
-)
+// A real export names the creature's blueprint class (entity_id). For every
+// creature with data, an image and a blueprint, an export of that blueprint
+// must resolve to it — even with a tag we don't know.
 
 describe('dino-map covers slugs that have data + image', () => {
-  for (const slug of slugsWithImages) {
-    it(`resolveSlug can map to "${slug}"`, () => {
-      // Try candidate tags first, then fall back to blueprint class probes
-      const tags = candidateTags(slug)
-      const blueprintClass = `${tags[0]}_Character_BP_C`
-
-      const found = tags.some(tag => resolveSlug(tag, blueprintClass) === slug)
-        || resolveSlug('', blueprintClass) === slug
-
-      expect(found).toBe(true)
+  for (const slug of dataSlugs.filter(hasImage)) {
+    const { entity_id } = JSON.parse(readFileSync(join(DATA_DIR, `${slug}.json`), 'utf-8')) as { entity_id?: string }
+    if (!entity_id) continue
+    it(`an export of ${entity_id} resolves to "${slug}"`, () => {
+      const blueprint = entity_id.replace(/_C$/, '')
+      expect(resolveSlug('UnknownTag', `/Game/Dinos/${blueprint}.${entity_id}`)).toBe(slug)
     })
   }
 })

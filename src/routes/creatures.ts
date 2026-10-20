@@ -36,6 +36,7 @@ export const creaturesRoutes = new Elysia({ prefix: '/creatures', tags: ['Creatu
           count: t.Number(),
           results: t.Array(t.Object({
             name: t.String(),
+            alternate_names: t.Optional(t.Array(t.String())),
             slug: t.String(),
             category: t.String(),
             image: t.Nullable(t.String()),

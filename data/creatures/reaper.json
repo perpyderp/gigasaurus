@@ -1,5 +1,8 @@
 {
     "name": "Reaper",
+    "alternate_names": [
+        "Xenomorph"
+    ],
     "category": "fantasy",
     "dossier": {
         "species": "Unknown",
@@ -79,5 +82,8 @@
     "cloneable": false,
     "entity_id": "Xenomorph_Character_BP_Male_C",
     "wiki_url": "https://ark.wiki.gg/wiki/Reaper",
-    "maps": []
+    "maps": [],
+    "spawn_maps": [
+        "aberration"
+    ]
 }

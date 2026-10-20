@@ -1,5 +1,8 @@
 {
     "name": "Pelagornis",
+    "alternate_names": [
+        "Pelo"
+    ],
     "category": "bird",
     "dossier": {
         "species": "Pelagornis miocaenus",
@@ -121,5 +124,15 @@
         "Genesis: Part 1",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "ragnarok",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "lost-island",
+        "fjordur-midgard"
     ]
 }

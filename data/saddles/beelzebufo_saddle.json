@@ -1,0 +1,39 @@
+{
+    "name": "Beelzebufo Saddle",
+    "description": "Equip a Beelzebufo with this to ride it.",
+    "creatures": [
+        "beelzebufo"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 8,
+    "engram_level": 40,
+    "engram_points": 16,
+    "crafting_xp": 28.8,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 170
+        },
+        {
+            "name": "Fiber",
+            "quantity": 95
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 30
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 5
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ToadSaddle.PrimalItemArmor_ToadSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Beelzebufo_Saddle",
+    "image_file": "beelzebufo_saddle.png"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Dunkleosteus Saddle",
+    "description": "Equip a Dunkleosteus with this to ride it.",
+    "creatures": [
+        "dunkleosteus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 44,
+    "engram_points": 20,
+    "crafting_xp": 51.2,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 300
+        },
+        {
+            "name": "Fiber",
+            "quantity": 180
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 120
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 80
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DunkleosteusSaddle.PrimalItemArmor_DunkleosteusSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dunkleosteus_Saddle",
+    "image_file": "dunkleosteus_saddle.png"
+}

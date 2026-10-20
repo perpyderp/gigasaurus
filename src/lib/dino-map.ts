@@ -1,16 +1,43 @@
 /**
  * Maps ARK creature identifiers to Gigasaurus API slugs.
  *
- * Two lookup strategies, tried in order:
+ * Lookup strategies, tried in order:
+ *   0. Exact blueprint class from the creature data (src/lib/creature-index.json)
  *   1. DinoNameTag (the short game tag, e.g. "Rex", "Yutyrannus")
- *   2. DinoClass blueprint path (last path segment before the dot)
+ *   2. DinoClass blueprint path fragments (last path segment before the dot)
  *
  * Returns null when the creature has no matching entry in our API.
  */
 
+import creatureIndex from './creature-index.json'
+
+/** Blueprint class (lowercase, no `_C`) → slug, generated from data/creatures. */
+const CREATURE_CLASS_INDEX: Record<string, string> = creatureIndex.classes
+/** Slug → species display name ("pyromane" → "Pyromane"). */
+const CREATURE_NAMES: Record<string, string> = creatureIndex.names
+
+const CREATURE_IMAGES: Record<string, string> = creatureIndex.images
+
+/** The species' dossier (or fallback image) URL — files are .png, .jpg or .webp. */
+export function creatureImageUrl(slug: string | null | undefined): string | null {
+  return slug ? (CREATURE_IMAGES[slug] ?? null) : null
+}
+
+/** The species' proper name for a slug, e.g. "Pyromane" for FireLion exports. */
+export function speciesDisplayName(slug: string | null | undefined): string | null {
+  return slug ? (CREATURE_NAMES[slug] ?? null) : null
+}
+
 // ─── DinoNameTag → slug ────────────────────────────────────────────────────────
 
-const NAME_TAG_MAP: Record<string, string> = {
+export const NAME_TAG_MAP: Record<string, string> = {
+  // Tags seen in ASA exports that differ from the creature's name
+  AcroAA: 'acrocanthosaurus',
+  Beaver: 'castoroides',
+  FireLion: 'pyromane',
+  Ptera: 'pteranodon',
+  spineyLizard: 'thorny_dragon',
+  Turtle: 'carbonemys',
   // Dinosaurs
   Allo: 'allosaurus',
   Allosaurus: 'allosaurus',
@@ -43,7 +70,7 @@ const NAME_TAG_MAP: Record<string, string> = {
   Iguanodon: 'iguanodon',
   Kent: 'kentrosaurus',
   Kentrosaurus: 'kentrosaurus',
-  Mega: 'megalosaurus',
+  Mega: 'megalodon', // Megalodon's export tag; Megalosaurus exports as "Megalosaurus"
   Megalosaurus: 'megalosaurus',
   Microraptor: 'microraptor',
   Oviraptor: 'oviraptor',
@@ -426,6 +453,11 @@ const CLASS_FRAGMENT_MAP: Array<[RegExp, string]> = [
  * Returns null when the creature isn't in the API.
  */
 export function resolveSlug(dinoNameTag: string, dinoClass: string): string | null {
+  // 0. Exact blueprint class from the creature data (scripts/build-creature-names.ts):
+  //    "/Game/.../Ptero_Character_BP.Ptero_Character_BP_C" → "ptero_character_bp" → pteranodon
+  const cls = dinoClass.split('.').pop()?.toLowerCase().replace(/_c['"]?$/, '')
+  if (cls && cls in CREATURE_CLASS_INDEX) return CREATURE_CLASS_INDEX[cls]
+
   // 1. Exact match on name tag
   if (NAME_TAG_MAP[dinoNameTag]) return NAME_TAG_MAP[dinoNameTag]
 
@@ -447,8 +479,11 @@ export function resolveSlug(dinoNameTag: string, dinoClass: string): string | nu
  * Derive a display name for the creature.
  * Uses TamedName if set, otherwise formats the DinoNameTag.
  */
-export function deriveDisplayName(tamedName: string, dinoNameTag: string): string {
+export function deriveDisplayName(tamedName: string, dinoNameTag: string, slug?: string | null): string {
   if (tamedName.trim()) return tamedName.trim()
+  // Unnamed tames go by their species: "Pyromane", not the tag's "Fire Lion".
+  const species = speciesDisplayName(slug)
+  if (species) return species
   // Convert tag like "CeratosaurusAA" or "DeinosuchusAA" to readable form
   return dinoNameTag.replace(/AA$/, '').replace(/([A-Z])/g, ' $1').trim()
 }

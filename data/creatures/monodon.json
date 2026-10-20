@@ -1,0 +1,87 @@
+{
+    "name": "Monodon",
+    "category": "mammal",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 2300,
+            "level_increase": {
+                "wild": 460,
+                "tamed": 0.054000000000000006
+            }
+        },
+        "stamina": {
+            "base": 275,
+            "level_increase": {
+                "wild": 27.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1700,
+            "level_increase": {
+                "wild": 170,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 300,
+            "level_increase": {
+                "wild": 6,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 60
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": null,
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed Monodon Saddle (Level 10)",
+            "engram_level": 10
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "5h 17m 27.619s",
+        "baby_time": "5h 47m 13.333s",
+        "juvenile_time": "23h 8m 53.333s",
+        "adolescent_time": "1d 4h 56m 6.667s",
+        "total_maturation": "2d 9h 52m 13.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 495,
+    "cloneable": false,
+    "entity_id": "Monodon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Monodon"
+}

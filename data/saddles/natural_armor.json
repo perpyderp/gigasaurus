@@ -1,0 +1,20 @@
+{
+    "name": "Natural Armor",
+    "description": "Shadowmane has natural armor.",
+    "creatures": [
+        "shadowmane"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": null,
+    "weight": 0,
+    "engram_level": null,
+    "engram_points": null,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [],
+    "ingredients": [],
+    "blueprint": "Blueprint'/Game/Genesis2/Dinos/LionfishLion/PrimalItemArmor_ForLFL.PrimalItemArmor_ForLFL'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Natural_Armor",
+    "image_file": "natural_armor.png"
+}

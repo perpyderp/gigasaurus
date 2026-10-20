@@ -1,0 +1,48 @@
+{
+    "name": "Dakosaurus Saddle",
+    "description": "Equip a Dakosaurus with this to ride it.",
+    "creatures": [
+        "dakosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 76,
+    "engram_points": 50,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste",
+            "quantity": 140
+        },
+        {
+            "name": "Fiber",
+            "quantity": 600
+        },
+        {
+            "name": "Fish Scale",
+            "quantity": 800
+        },
+        {
+            "name": "Hardened Steel Ingot",
+            "quantity": 400
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 100
+        }
+    ],
+    "blueprint": "/Game/Abyss/Dinos/Dakosaurus/Saddle/PrimalItemArmor_DakosaurusSaddle.PrimalItemArmor_DakosaurusSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dakosaurus_Saddle",
+    "image_file": "dakosaurus_saddle.png"
+}

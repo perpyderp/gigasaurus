@@ -1,0 +1,35 @@
+{
+    "name": "Hyaenodon Meatpack",
+    "description": "Equip a Hyaenodon with this to give it increased meat carrying & preservation capability.",
+    "creatures": [
+        "hyaenodon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 19,
+    "engram_points": 14,
+    "crafting_xp": 62.8,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 290
+        },
+        {
+            "name": "Fiber",
+            "quantity": 155
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_HyaenodonSaddle.PrimalItemArmor_HyaenodonSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Hyaenodon_Meatpack",
+    "image_file": "hyaenodon_meatpack.png"
+}

@@ -1,5 +1,8 @@
 {
     "name": "Triceratops",
+    "alternate_names": [
+        "Trike"
+    ],
     "category": "dinosaur",
     "dossier": {
         "species": "Triceratops styrax",
@@ -119,5 +122,17 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "ragnarok",
+        "extinction",
+        "valguero",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-asgard"
     ]
 }

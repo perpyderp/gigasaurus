@@ -1,0 +1,60 @@
+{
+    "name": "Dragon",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 432000,
+            "level_increase": {
+                "wild": 86400
+            }
+        },
+        "stamina": {
+            "base": 10000,
+            "level_increase": {
+                "wild": 1000
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 2600,
+            "level_increase": {
+                "wild": 260
+            }
+        },
+        "weight": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 80
+            }
+        },
+        "melee": {
+            "base": 500,
+            "level_increase": {
+                "wild": 25
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 350,
+            "level_increase": {
+                "wild": 21
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 1000,
+    "cloneable": false,
+    "entity_id": "Dragon_Character_BP_Boss_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dragon"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Frozen Fur",
+    "description": "Fenrir's thick coat of ice and snow makes it that much tougher to hurt., , Armor value increases while Frigid Armor is active.",
+    "creatures": [],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": null,
+    "engram_points": null,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [],
+    "ingredients": [],
+    "blueprint": "/Game/Fjordur/Dinos/Fenrir/PrimalItemArmor_Saddle_Fenrir.PrimalItemArmor_Saddle_Fenrir",
+    "wiki_url": "https://ark.wiki.gg/wiki/Frozen_Fur",
+    "image_file": "frozen_fur.png"
+}

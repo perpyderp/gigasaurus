@@ -1,0 +1,44 @@
+{
+    "name": "Xiphactinus Saddle",
+    "description": "Equip a Xiphactinus with this to ride it !",
+    "creatures": [
+        "xiphactinus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 55,
+    "engram_points": 15,
+    "crafting_xp": 64,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste",
+            "quantity": 50
+        },
+        {
+            "name": "Hide",
+            "quantity": 290
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 15
+        },
+        {
+            "name": "Fiber",
+            "quantity": 155
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Xiphactinus/Dinos/Saddle/PrimalItemArmor_XiphSaddle_ASA.PrimalItemArmor_XiphSaddle_ASA_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Xiphactinus_Saddle",
+    "image_file": "xiphactinus_saddle.png"
+}

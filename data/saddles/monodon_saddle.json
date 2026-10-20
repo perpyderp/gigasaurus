@@ -1,0 +1,37 @@
+{
+    "name": "Monodon Saddle",
+    "description": "Equip a Monodon with this to ride it. Provides male Monodon the ability to harness crystalline energy.",
+    "creatures": [
+        "monodon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 10,
+    "engram_points": 12,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 75
+        },
+        {
+            "name": "Fiber",
+            "quantity": 125
+        },
+        {
+            "name": "Hide",
+            "quantity": 100
+        }
+    ],
+    "blueprint": "/Game/Abyss/Dinos/Monodon/Saddle/PrimalItemArmor_MonodonSaddle.PrimalItemArmor_MonodonSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Monodon_Saddle",
+    "image_file": "monodon_saddle.png"
+}

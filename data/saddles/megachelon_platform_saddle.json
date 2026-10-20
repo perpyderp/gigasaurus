@@ -1,0 +1,52 @@
+{
+    "name": "Megachelon Platform Saddle",
+    "description": "Equip a Megachelon with this to ride it.",
+    "creatures": [
+        "megachelon"
+    ],
+    "tek": false,
+    "platform": true,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 45,
+    "engram_points": 35,
+    "crafting_xp": 133.8,
+    "crafting_time": 15,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 312
+        },
+        {
+            "name": "Fiber",
+            "quantity": 260
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 76
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 42
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 28
+        },
+        {
+            "name": "Shell Fragment",
+            "quantity": 22
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Genesis/Dinos/GiantTurtle/PrimalItemArmor_GiantTurtleSaddle.PrimalItemArmor_GiantTurtleSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megachelon_Platform_Saddle",
+    "image_file": "megachelon_platform_saddle.png"
+}

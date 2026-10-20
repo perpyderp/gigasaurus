@@ -1,5 +1,8 @@
 {
     "name": "Bulbdog",
+    "alternate_names": [
+        "Lantern Pug"
+    ],
     "category": "other",
     "dossier": {
         "species": "Microluminis globulus",
@@ -92,5 +95,14 @@
         "Genesis: Part 1",
         "Genesis: Part 2",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "valguero",
+        "genesis-part-1",
+        "genesis-part-2",
+        "fjordur-midgard",
+        "fjordur-asgard",
+        "fjordur-vanaheim"
     ]
 }

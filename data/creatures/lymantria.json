@@ -1,5 +1,8 @@
 {
     "name": "Lymantria",
+    "alternate_names": [
+        "Moth"
+    ],
     "category": "invertebrate",
     "dossier": {
         "species": "Lymantria sporarmis",
@@ -114,5 +117,14 @@
         "Crystal Isles",
         "Genesis: Part 2",
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "scorched-earth",
+        "ragnarok",
+        "extinction",
+        "valguero",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island"
     ]
 }

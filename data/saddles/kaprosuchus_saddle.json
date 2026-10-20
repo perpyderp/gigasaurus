@@ -1,0 +1,35 @@
+{
+    "name": "Kaprosuchus Saddle",
+    "description": "Equip a Kaprosuchus with this to ride it.",
+    "creatures": [
+        "kaprosuchus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 39,
+    "engram_points": 28,
+    "crafting_xp": 17.6,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 165
+        },
+        {
+            "name": "Fiber",
+            "quantity": 120
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 65
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_KaprosuchusSaddle.PrimalItemArmor_KaprosuchusSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Kaprosuchus_Saddle",
+    "image_file": "kaprosuchus_saddle.png"
+}

@@ -1,5 +1,8 @@
 {
     "name": "Glowbug",
+    "alternate_names": [
+        "Lightbug"
+    ],
     "category": "invertebrate",
     "dossier": {
         "species": "Lampyridae sublimis",
@@ -65,5 +68,14 @@
         "Genesis: Part 1",
         "Genesis: Part 2",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "fjordur-midgard",
+        "fjordur-vanaheim"
     ]
 }

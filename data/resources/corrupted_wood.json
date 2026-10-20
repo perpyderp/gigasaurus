@@ -6,5 +6,6 @@
     "combustible": true,
     "weight": 0.5,
     "stack_size": 100,
-    "found_in": []
+    "found_in": [],
+    "maps": ["Extinction"]
 }

@@ -1,5 +1,9 @@
 {
     "name": "Karkinos",
+    "alternate_names": [
+        "Cave Crab",
+        "Crab"
+    ],
     "dossier": {
         "species": "Karkinos versatus",
         "time": "Unknown",
@@ -99,5 +103,14 @@
         "Genesis: Part 1",
         "Genesis: Part 2",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "fjordur-midgard",
+        "fjordur-vanaheim"
     ]
 }

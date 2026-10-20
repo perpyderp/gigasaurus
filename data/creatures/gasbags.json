@@ -105,5 +105,10 @@
         "Extinction",
         "Genesis: Part 1",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "extinction",
+        "genesis-part-1",
+        "fjordur-asgard"
     ]
 }

@@ -1,3 +1,6 @@
+import type { Metadata } from 'next'
+import { JsonLd } from '@/components/JsonLd'
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Upload, Github, BookOpen, Braces } from 'lucide-react'
@@ -25,6 +28,10 @@ const IMPORT_STEPS = [
   },
 ]
 
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
+
 export default function Home() {
   const creatures = CreatureService.getAll({ limit: 1000 }).results
   const armor = ArmorService.getAll({ limit: 1000 }).results
@@ -37,7 +44,7 @@ export default function Home() {
 
   // Creatures have their own pages; the other glossaries open filtered to the picked item.
   const searchEntries: SearchEntry[] = [
-    ...creatures.map((c) => ({ name: c.name, kind: 'Creature' as const, href: `/creatures/${c.slug}`, image: c.image })),
+    ...creatures.map((c) => ({ name: c.name, aliases: c.alternate_names, kind: 'Creature' as const, href: `/creatures/${c.slug}`, image: c.image })),
     ...armor.map((a) => ({ name: a.set_name, kind: 'Armor' as const, href: `/armor?q=${encodeURIComponent(a.set_name)}`, image: a.image })),
     ...weapons.map((w) => ({ name: w.name, kind: 'Weapon' as const, href: `/weapons?q=${encodeURIComponent(w.name)}`, image: w.image })),
     ...resources.map((r) => ({ name: r.name, kind: 'Resource' as const, href: `/resources?q=${encodeURIComponent(r.name)}`, image: r.image })),
@@ -51,6 +58,16 @@ export default function Home() {
 
   return (
     <main>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: SITE_NAME,
+          url: SITE_URL,
+          description: SITE_DESCRIPTION,
+          about: { '@type': 'VideoGame', name: 'ARK: Survival Ascended' },
+        }}
+      />
       {/* Hero: the ARKniversary mural is the subject itself; search suggests from every glossary and falls back to the creature list. */}
       <section className="relative isolate flex min-h-[560px] items-end overflow-hidden bg-plate sm:min-h-[min(78vh,760px)]">
         <Image

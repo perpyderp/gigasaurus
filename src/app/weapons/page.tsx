@@ -11,7 +11,11 @@ import {
   SlotTile,
 } from '@/components/Glossary'
 
-export const metadata = { title: 'Weapons — Gigasaurus' }
+export const metadata = {
+  title: 'ARK Weapons: Damage, Crafting & Stats',
+  description: 'Every ARK: Survival Ascended weapon with damage, ammo, unlock level and crafting costs.',
+  alternates: { canonical: '/weapons' },
+}
 
 const CATEGORY_LABELS: Record<WeaponCategory, string> = {
   tool: 'Tool',

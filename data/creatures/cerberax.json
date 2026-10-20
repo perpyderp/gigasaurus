@@ -1,0 +1,93 @@
+{
+    "name": "Cerberax",
+    "alternate_names": [
+        "Cerberus"
+    ],
+    "category": "mammal",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1400,
+            "level_increase": {
+                "wild": 280,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 666,
+            "level_increase": {
+                "wild": 13.32,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 62,
+            "level_increase": {
+                "wild": 3.1,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1350,
+            "level_increase": {
+                "wild": 81
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Cerberax Saddle (Level 74)",
+            "engram_level": 74
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": null,
+    "cloneable": false,
+    "entity_id": "Cerberus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Cerberax"
+}
