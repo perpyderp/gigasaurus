@@ -320,3 +320,52 @@ export async function reimportCreatureFromFile(
   const { creature: updated } = await importIniText(text, file.name, creature.importPathId ?? null)
   return { creature: updated }
 }
+
+export interface RefreshOutcome {
+  updated: StoredCreature[]
+  /** Creatures whose file or folder couldn't be read, with the reason. */
+  failed: Array<{ creature: StoredCreature; reason: string }>
+  /** Creatures imported by drag and drop — there's no folder to refresh them from. */
+  unlinked: StoredCreature[]
+}
+
+/**
+ * Re-read each creature's export file from the saved folder it was imported
+ * from. Folders are processed one at a time so each permission prompt still
+ * has the click's user activation; creatures in a denied folder are reported,
+ * not thrown.
+ */
+export async function refreshCreaturesFromFiles(creatures: StoredCreature[]): Promise<RefreshOutcome> {
+  const outcome: RefreshOutcome = { updated: [], failed: [], unlinked: [] }
+  const byPath = new Map<string, StoredCreature[]>()
+  for (const c of creatures) {
+    if (!c.importPathId || !c.importFilename) {
+      outcome.unlinked.push(c)
+      continue
+    }
+    byPath.set(c.importPathId, [...(byPath.get(c.importPathId) ?? []), c])
+  }
+
+  for (const [pathId, group] of byPath) {
+    const saved = await getPath(pathId)
+    if (!saved) {
+      for (const creature of group) outcome.failed.push({ creature, reason: 'Its folder was removed from saved folders' })
+      continue
+    }
+    if (!(await ensureReadPermission(saved.handle))) {
+      for (const creature of group) outcome.failed.push({ creature, reason: `No permission to read "${saved.label}"` })
+      continue
+    }
+    for (const creature of group) {
+      try {
+        const handle = await saved.handle.getFileHandle(creature.importFilename!)
+        const text = await (await handle.getFile()).text()
+        const { creature: updated } = await importIniText(text, creature.importFilename!, pathId)
+        outcome.updated.push(updated)
+      } catch {
+        outcome.failed.push({ creature, reason: `${creature.importFilename} is no longer in "${saved.label}"` })
+      }
+    }
+  }
+  return outcome
+}

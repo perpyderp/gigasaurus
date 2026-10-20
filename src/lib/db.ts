@@ -107,6 +107,13 @@ export async function deleteCreature(id: string): Promise<void> {
   await db.delete('creatures', id)
 }
 
+/** Delete several creatures in one transaction. */
+export async function deleteCreatures(ids: string[]): Promise<void> {
+  const db = await getDB()
+  const tx = db.transaction('creatures', 'readwrite')
+  await Promise.all([...ids.map((id) => tx.store.delete(id)), tx.done])
+}
+
 export async function getCreaturesBySlug(apiSlug: string): Promise<StoredCreature[]> {
   const db = await getDB()
   return db.getAllFromIndex('creatures', 'by_slug', apiSlug)

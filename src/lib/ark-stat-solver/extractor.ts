@@ -297,17 +297,21 @@ function findValidCombinations(
 // ─── Taming-level plausibility ─────────────────────────────────────────────────
 
 const WILD_LEVEL_STEP = 5
+/** Highest official wild spawn level (difficulty 5); X- and R-variants reach 180. */
+const MAX_WILD_LEVEL = 150
+const MAX_WILD_LEVEL_VARIANTS = 180
 
 /**
- * Score a TE range: 0 = fits a pre-tame level on the official 5-level step,
- * 1 = fits some integer pre-tame level, 2 = fits none. `window` is the TE
- * sub-range of the best fit.
+ * Score a TE range by the most plausible pre-tame level it implies:
+ * 0 = official 5-level step and ≤ 150, 1 = step and ≤ 180 (X/R variants),
+ * 2 = any integer level (unofficial servers), 3 = none.
+ * `window` is the TE sub-range of the best fit.
  */
 function tamingLevelScore(teMin: number, teMax: number, postTameLevel: number): { score: number; window: [number, number] | null } {
   const lo = Math.max(0, teMin)
   const hi = Math.min(1, teMax)
-  if (lo > hi) return { score: 2, window: null }
-  let best = 2
+  if (lo > hi) return { score: 3, window: null }
+  let best = 3
   let window: [number, number] | null = null
   // pre ranges over levels whose post-tame level could be postTameLevel within [lo, hi]
   const preMin = Math.floor(postTameLevel / (1 + hi / 2)) - 1
@@ -317,7 +321,8 @@ function tamingLevelScore(teMin: number, teMax: number, postTameLevel: number): 
     const teLow = Math.max(lo, (postTameLevel / pre - 1) * 2)
     const teHigh = Math.min(hi, ((postTameLevel + 1) / pre - 1) * 2)
     if (teLow < teHigh || (teLow === teHigh && Math.floor(pre * (1 + teLow / 2)) === postTameLevel)) {
-      const score = pre % WILD_LEVEL_STEP === 0 ? 0 : 1
+      const onStep = pre % WILD_LEVEL_STEP === 0
+      const score = onStep && pre <= MAX_WILD_LEVEL ? 0 : onStep && pre <= MAX_WILD_LEVEL_VARIANTS ? 1 : 2
       if (score < best) {
         best = score
         window = [teLow, teHigh]
@@ -328,14 +333,17 @@ function tamingLevelScore(teMin: number, teMax: number, postTameLevel: number): 
   return { score: best, window }
 }
 
-/** Order tamed alternatives by plausibility and narrow each TE range to its plausible window. */
+/**
+ * Order tamed alternatives by plausibility, then by higher TE (most tames are
+ * kibble tames), and narrow each TE range to its plausible window.
+ */
 function rankByTamingLevel<T extends { teMin: number; teMax: number }>(combos: T[], postTameLevel: number): T[] {
   return combos
     .map((c, i) => {
       const { score, window } = tamingLevelScore(c.teMin, c.teMax, postTameLevel)
       return { c: window ? { ...c, teMin: window[0], teMax: window[1] } : c, i, score }
     })
-    .sort((a, b) => a.score - b.score || a.i - b.i)
+    .sort((a, b) => a.score - b.score || b.c.teMin + b.c.teMax - (a.c.teMin + a.c.teMax) || a.i - b.i)
     .map((x) => x.c)
 }
 

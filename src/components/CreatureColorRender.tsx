@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { colorizeCreature, arkColorToTint, type RGB } from '@/lib/creature-colorize'
 import type { ArkColor } from '@/lib/ark-parser'
+import { cn } from '@/lib/utils'
 
 const ARKUTILS_BASE = 'https://raw.githubusercontent.com/arkutils/species-images/main/images'
 const LOCAL_BASE = '/images/creature-renders'
@@ -43,29 +44,80 @@ function imageToData(img: HTMLImageElement): ImageData {
   return ctx.getImageData(0, 0, c.width, c.height)
 }
 
+/**
+ * Crop to the creature's visible pixels. The source renders sit off-center in a
+ * mostly transparent square, so without this the creature looks small and shifted.
+ */
+function cropToContent(data: ImageData): HTMLCanvasElement {
+  const { width, height } = data
+  let minX = width, minY = height, maxX = -1, maxY = -1
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      if (data.data[(y * width + x) * 4 + 3] > 8) {
+        if (x < minX) minX = x
+        if (x > maxX) maxX = x
+        if (y < minY) minY = y
+        if (y > maxY) maxY = y
+      }
+    }
+  }
+  if (maxX < 0) {
+    minX = 0; minY = 0; maxX = width - 1; maxY = height - 1
+  }
+  const full = document.createElement('canvas')
+  full.width = width
+  full.height = height
+  full.getContext('2d')!.putImageData(data, 0, 0)
+  const cropped = document.createElement('canvas')
+  cropped.width = maxX - minX + 1
+  cropped.height = maxY - minY + 1
+  cropped.getContext('2d')!.drawImage(full, minX, minY, cropped.width, cropped.height, 0, 0, cropped.width, cropped.height)
+  return cropped
+}
+
 interface Props {
   /** Wiki display name, e.g. "Achatina" — used as upstream fallback when no local mask exists. */
   speciesName?: string | null
   /** Slug for the local bundled image (matches data/creatures/{slug}.json). */
   slug?: string | null
   colors: ArkColor[]
+  /** Size the render through the container (e.g. `absolute inset-0`); the creature is fitted and centered inside. */
   className?: string
-  /** Square render size in CSS pixels. */
-  size?: number
   /** Shown when no color render (base + mask) can be loaded. Falls back to this image instead of an empty state. */
   fallbackSrc?: string | null
 }
 
-export function CreatureColorRender({ speciesName, slug, colors, className, size = 256, fallbackSrc = null }: Props) {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null)
-  const requestKey = useMemo(
-    () => `${slug ?? ''}|${speciesName ?? ''}|${size}|${colors.map((c) => `${c.r},${c.g},${c.b},${c.empty ? 1 : 0}`).join(';')}`,
-    [slug, speciesName, size, colors],
-  )
-  const [resolved, setResolved] = useState<{ key: string; status: 'ready' | 'missing' } | null>(null)
-  const status: 'loading' | 'ready' | 'missing' =
-    resolved?.key === requestKey ? resolved.status : 'loading'
+/** Never enlarge the 256-px source art beyond this, so it stays sharp; it's centered with space around instead. */
+const MAX_UPSCALE = 1.5
+/** Breathing room around the creature, as a fraction of the container. */
+const PADDING = 0.06
 
+export function CreatureColorRender({ speciesName, slug, colors, className, fallbackSrc = null }: Props) {
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const [box, setBox] = useState<{ w: number; h: number } | null>(null)
+  const requestKey = useMemo(
+    () => `${slug ?? ''}|${speciesName ?? ''}|${colors.map((c) => `${c.r},${c.g},${c.b},${c.empty ? 1 : 0}`).join(';')}`,
+    [slug, speciesName, colors],
+  )
+  const [rendered, setRendered] = useState<
+    { key: string; status: 'ready'; image: HTMLCanvasElement } | { key: string; status: 'missing' } | null
+  >(null)
+  const status: 'loading' | 'ready' | 'missing' = rendered?.key === requestKey ? rendered.status : 'loading'
+
+  // Track the container's displayed size so the canvas is drawn 1:1 with screen pixels.
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    const ro = new ResizeObserver(([entry]) => {
+      const { width, height } = entry.contentRect
+      setBox((prev) => (prev && prev.w === width && prev.h === height ? prev : { w: width, h: height }))
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
+  // Load base + mask, tint the regions, crop to the creature.
   useEffect(() => {
     let cancelled = false
 
@@ -85,41 +137,13 @@ export function CreatureColorRender({ speciesName, slug, colors, className, size
     tryLoad()
       .then(([baseImg, maskImg]) => {
         if (cancelled) return
-        const baseData = imageToData(baseImg)
-        const maskData = imageToData(maskImg)
         const tints: (RGB | null)[] = colors.slice(0, 6).map(arkColorToTint)
         while (tints.length < 6) tints.push(null)
-        const out = colorizeCreature(baseData, maskData, tints)
-
-        const canvas = canvasRef.current
-        if (!canvas) return
-
-        // Source masks are 256×256. We render the canvas at exactly the displayed
-        // CSS pixel size × DPR so the browser blits 1:1 — no further bilinear
-        // stretching. When `size` ≤ source we get a clean downscale (perfectly
-        // crisp). When `size` > source we accept the unavoidable bicubic upscale,
-        // but limit it: caller decides how big to ask for via `size`.
-        const stage = document.createElement('canvas')
-        stage.width = out.width
-        stage.height = out.height
-        const stageCtx = stage.getContext('2d')
-        if (!stageCtx) return
-        stageCtx.putImageData(out, 0, 0)
-
-        const dpr = typeof window === 'undefined' ? 1 : Math.min(window.devicePixelRatio || 1, 3)
-        const target = size * dpr
-        canvas.width = target
-        canvas.height = target
-        const ctx = canvas.getContext('2d')
-        if (!ctx) return
-        ctx.imageSmoothingEnabled = true
-        ctx.imageSmoothingQuality = 'high'
-        ctx.drawImage(stage, 0, 0, target, target)
-        setResolved({ key: requestKey, status: 'ready' })
+        const out = colorizeCreature(imageToData(baseImg), imageToData(maskImg), tints)
+        setRendered({ key: requestKey, status: 'ready', image: cropToContent(out) })
       })
       .catch(() => {
-        if (cancelled) return
-        setResolved({ key: requestKey, status: 'missing' })
+        if (!cancelled) setRendered({ key: requestKey, status: 'missing' })
       })
 
     return () => {
@@ -127,26 +151,49 @@ export function CreatureColorRender({ speciesName, slug, colors, className, size
     }
   }, [requestKey, slug, speciesName, colors])
 
+  // Fit the cropped creature into the container and draw at CSS size × device pixel ratio.
+  const image = rendered?.key === requestKey && rendered.status === 'ready' ? rendered.image : null
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas || !image || !box || box.w === 0 || box.h === 0) return
+    const scale = Math.min(
+      (box.w * (1 - 2 * PADDING)) / image.width,
+      (box.h * (1 - 2 * PADDING)) / image.height,
+      MAX_UPSCALE,
+    )
+    const cssW = Math.max(1, Math.round(image.width * scale))
+    const cssH = Math.max(1, Math.round(image.height * scale))
+    const dpr = Math.min(window.devicePixelRatio || 1, 3)
+    canvas.style.width = `${cssW}px`
+    canvas.style.height = `${cssH}px`
+    canvas.width = Math.round(cssW * dpr)
+    canvas.height = Math.round(cssH * dpr)
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+    ctx.imageSmoothingEnabled = true
+    ctx.imageSmoothingQuality = 'high'
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
+  }, [image, box])
+
   return (
-    <div className={className} style={{ width: size, height: size }}>
+    <div ref={containerRef} className={cn('flex items-center justify-center overflow-hidden', className)}>
       {status === 'loading' && (
-        <div className="bg-muted text-muted-foreground flex h-full w-full items-center justify-center rounded-md text-xs">
-          Rendering…
-        </div>
+        <div className="text-muted-foreground flex h-full w-full items-center justify-center text-xs">Rendering…</div>
       )}
-      {status === 'missing' && (
-        fallbackSrc ? (
+      {status === 'missing' &&
+        (fallbackSrc ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={fallbackSrc} alt={speciesName ?? 'creature'} className="h-full w-full rounded-md object-contain" />
+          <img src={fallbackSrc} alt={speciesName ?? 'creature'} className="h-full w-full object-cover" />
         ) : (
-          <div className="bg-muted text-muted-foreground flex h-full w-full items-center justify-center rounded-md p-4 text-center text-xs">
+          <div className="text-muted-foreground flex h-full w-full items-center justify-center p-4 text-center text-xs">
             No color render available
           </div>
-        )
-      )}
+        ))}
       <canvas
         ref={canvasRef}
-        className="h-full w-full rounded-md"
+        role="img"
+        aria-label={`${speciesName ?? 'Creature'} in its colors`}
         style={{ display: status === 'ready' ? 'block' : 'none' }}
       />
     </div>
