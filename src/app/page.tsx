@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { existsSync } from 'fs'
-import { join } from 'path'
 import { Upload, Github, BookOpen, Braces } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button-variants'
 import { GlobalSearch, type SearchEntry } from '@/components/GlobalSearch'
@@ -27,11 +25,6 @@ const IMPORT_STEPS = [
   },
 ]
 
-// Only point suggestions at images that ship, so the list never shows a broken thumbnail.
-function shippedImage(image: string | null): string | null {
-  return image && existsSync(join(process.cwd(), 'public', image)) ? image : null
-}
-
 export default function Home() {
   const creatures = CreatureService.getAll({ limit: 1000 }).results
   const armor = ArmorService.getAll({ limit: 1000 }).results
@@ -44,10 +37,10 @@ export default function Home() {
 
   // Creatures have their own pages; the other glossaries open filtered to the picked item.
   const searchEntries: SearchEntry[] = [
-    ...creatures.map((c) => ({ name: c.name, kind: 'Creature' as const, href: `/creatures/${c.slug}`, image: shippedImage(c.image) })),
-    ...armor.map((a) => ({ name: a.set_name, kind: 'Armor' as const, href: `/armor?q=${encodeURIComponent(a.set_name)}`, image: shippedImage(a.image) })),
-    ...weapons.map((w) => ({ name: w.name, kind: 'Weapon' as const, href: `/weapons?q=${encodeURIComponent(w.name)}`, image: shippedImage(w.image) })),
-    ...resources.map((r) => ({ name: r.name, kind: 'Resource' as const, href: `/resources?q=${encodeURIComponent(r.name)}`, image: shippedImage(r.image) })),
+    ...creatures.map((c) => ({ name: c.name, kind: 'Creature' as const, href: `/creatures/${c.slug}`, image: c.image })),
+    ...armor.map((a) => ({ name: a.set_name, kind: 'Armor' as const, href: `/armor?q=${encodeURIComponent(a.set_name)}`, image: a.image })),
+    ...weapons.map((w) => ({ name: w.name, kind: 'Weapon' as const, href: `/weapons?q=${encodeURIComponent(w.name)}`, image: w.image })),
+    ...resources.map((r) => ({ name: r.name, kind: 'Resource' as const, href: `/resources?q=${encodeURIComponent(r.name)}`, image: r.image })),
   ]
 
   const items = [

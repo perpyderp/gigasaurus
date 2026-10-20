@@ -83,6 +83,8 @@ function Suggestions() {
 }
 
 function Suggestion({ entry }: { entry: SearchEntry }) {
+  // Some creatures have no artwork yet; leave the slot empty rather than show a broken image.
+  const [imageFailed, setImageFailed] = useState(false)
   return (
     <Autocomplete.Item
       value={entry}
@@ -90,8 +92,8 @@ function Suggestion({ entry }: { entry: SearchEntry }) {
       className="data-highlighted:bg-accent data-highlighted:text-accent-foreground flex cursor-pointer items-center gap-3 rounded-md px-2 py-1.5 outline-none select-none"
     >
       <span className="slot relative size-9 shrink-0 rounded-md">
-        {entry.image && (
-          <Image src={entry.image} alt="" fill sizes="36px" className="object-contain p-1" />
+        {entry.image && !imageFailed && (
+          <Image src={entry.image} alt="" fill sizes="36px" className="object-contain p-1" onError={() => setImageFailed(true)} />
         )}
       </span>
       <span className="min-w-0 flex-1 truncate font-medium">{entry.name}</span>
