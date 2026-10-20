@@ -1,0 +1,44 @@
+{
+    "name": "Woolly Rhino Saddle",
+    "description": "Equip a Woolly Rhino with this to ride it.",
+    "creatures": [
+        "woolly_rhino"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 53,
+    "engram_points": 24,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 250
+        },
+        {
+            "name": "Fiber",
+            "quantity": 130
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 100
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 60
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RhinoSaddle.PrimalItemArmor_RhinoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Woolly_Rhino_Saddle",
+    "image_file": "woolly_rhino_saddle.png"
+}

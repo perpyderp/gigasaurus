@@ -1,0 +1,40 @@
+{
+    "name": "Paracer Saddle",
+    "description": "Equip a Paracer with this to ride it.",
+    "creatures": [
+        "paraceratherium"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 41,
+    "engram_points": 18,
+    "crafting_xp": 74.4,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 200
+        },
+        {
+            "name": "Fiber",
+            "quantity": 110
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 10
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_Paracer_Saddle.PrimalItemArmor_Paracer_Saddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Paracer_Saddle",
+    "image_file": "paracer_saddle.png"
+}

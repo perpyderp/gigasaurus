@@ -1,0 +1,35 @@
+{
+    "name": "Pachyrhinosaurus Saddle",
+    "description": "Equip a Pachyrhinosaurus with this to ride it.",
+    "creatures": [
+        "pachyrhinosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 27,
+    "engram_points": 18,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 140
+        },
+        {
+            "name": "Fiber",
+            "quantity": 80
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 25
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_PachyrhinoSaddle.PrimalItemArmor_PachyrhinoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Pachyrhinosaurus_Saddle",
+    "image_file": "pachyrhinosaurus_saddle.png"
+}

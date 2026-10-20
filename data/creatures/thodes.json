@@ -1,0 +1,46 @@
+{
+    "name": "Thodes",
+    "alternate_names": [
+        "Boss",
+        "Thodes the Widowmaker"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 400000
+        },
+        "stamina": {
+            "base": null
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": null
+        },
+        "weight": {
+            "base": null
+        },
+        "melee": {
+            "base": 100
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": null
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": null,
+    "cloneable": false,
+    "entity_id": "Boss_Cyclops_Character_BP_Base_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Thodes"
+}

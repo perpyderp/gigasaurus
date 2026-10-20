@@ -1,0 +1,48 @@
+{
+    "name": "Castoroides Saddle",
+    "description": "Equip a Giant Beaver with this to ride it. Can be used as a mobile Smithy! Sounds pretty good eh?",
+    "creatures": [
+        "castoroides"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 61,
+    "engram_points": 50,
+    "crafting_xp": 51.5,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 290
+        },
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 100
+        },
+        {
+            "name": "Thatch",
+            "quantity": 180
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 140
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_BeaverSaddle.PrimalItemArmor_BeaverSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Castoroides_Saddle",
+    "image_file": "castoroides_saddle.png"
+}

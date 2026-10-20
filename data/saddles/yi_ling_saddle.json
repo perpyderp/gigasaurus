@@ -1,0 +1,39 @@
+{
+    "name": "Yi Ling Saddle",
+    "description": "Equip a Yi Ling with this to ride it !",
+    "creatures": [
+        "yi_ling"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 50,
+    "engram_points": 35,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Tek Replicator",
+        "Thorny Dragon Saddle",
+        "Argentavis Saddle",
+        "Castoroides Saddle"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 65
+        },
+        {
+            "name": "Wood",
+            "quantity": 20
+        },
+        {
+            "name": "Hide",
+            "quantity": 110
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Extinction/CoreBlueprints/Items/Saddle/PrimalItemArmor_YiLingSaddle.PrimalItemArmor_YiLingSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Yi_Ling_Saddle",
+    "image_file": "yi_ling_saddle.png"
+}

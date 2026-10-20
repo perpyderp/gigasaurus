@@ -1,5 +1,8 @@
 {
     "name": "Thorny Dragon",
+    "alternate_names": [
+        "Spiney Lizard"
+    ],
     "category": "reptile",
     "dossier": {
         "species": "Moloch sagittarius",
@@ -121,5 +124,17 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "scorched-earth",
+        "ragnarok",
+        "extinction",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-asgard",
+        "fjordur-jotunheim"
     ]
 }

@@ -1,0 +1,97 @@
+{
+    "name": "Aureliax",
+    "alternate_names": [
+        "Snow Dragon"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1250,
+            "level_increase": {
+                "wild": 250,
+                "tamed": 0.027000000000000003
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 800,
+            "level_increase": {
+                "wild": 80,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 200,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 1100,
+            "level_increase": {
+                "wild": 22,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 100,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1500,
+            "level_increase": {
+                "wild": 90
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Aureliax Saddle (Level 85)",
+            "engram_level": 85
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Aureliax Egg",
+        "baby_time": "Unknown",
+        "juvenile_time": "Unknown",
+        "adolescent_time": "Unknown",
+        "total_maturation": "Unknown",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": 500,
+    "cloneable": false,
+    "entity_id": "SnowDragon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Aureliax"
+}

@@ -7,7 +7,13 @@ import { ArrowLeft, Check, ExternalLink, PawPrint } from 'lucide-react'
 import { CreatureService } from '@/services/creature'
 import type { CreatureDetail } from '@/schemas/creature'
 import { MySpeciesCreatures } from '@/components/MySpeciesCreatures'
+import { CreatureSpawnMaps } from '@/components/CreatureSpawnMaps'
+import { MapService } from '@/services/map'
+import { CreatureSaddles } from '@/components/CreatureSaddles'
+import { SaddleService } from '@/services/saddle'
+import { mapSlug } from '@/lib/map-order'
 import { STAT_CONFIG, type RelevantStat } from '@/lib/stat-calc'
+import { JsonLd, breadcrumbs } from '@/components/JsonLd'
 
 export async function generateStaticParams() {
   const { results } = CreatureService.getAll({ limit: 500 })
@@ -22,9 +28,28 @@ export async function generateMetadata({
   const { slug } = await params
   const creature = CreatureService.getBySlug(slug)
   if (!creature) return { title: 'Creature Not Found' }
+  const maps = MapService.forCreature(creature.slug).map((s) => s.name)
+  const path = `/creatures/${creature.slug}`
+  const title = creature.tameable
+    ? `${creature.name}: Taming, Stats & Spawn Locations (ARK Ascended)`
+    : `${creature.name}: Stats & Spawn Locations (ARK Ascended)`
+  const where = maps.length ? ` Spawns on ${maps.length > 3 ? `${maps.slice(0, 3).join(', ')} and ${maps.length - 3} more maps` : maps.join(', ')}.` : ''
+  const description = `${creature.name} in ARK: Survival Ascended: ${creature.tameable ? 'how to tame it, ' : ''}base stats and growth, ${creature.breedable ? 'breeding times, ' : ''}color regions and spawn maps.${where}${creature.dossier?.wild ? ` ${creature.dossier.wild}` : ''}`
+  const n = creature.name.toLowerCase()
   return {
-    title: `${creature.name} — Gigasaurus`,
-    description: creature.dossier?.wild ?? undefined,
+    title,
+    description,
+    keywords: [
+      n,
+      `ark ${n}`,
+      `${n} ark ascended`,
+      ...(creature.tameable ? [`${n} taming`, `how to tame ${n}`] : []),
+      `${n} spawn`,
+      ...maps.map((m) => `${n} ${m.toLowerCase()}`),
+      ...(creature.alternate_names ?? []).map((a) => a.toLowerCase()),
+    ],
+    alternates: { canonical: path },
+    openGraph: { title, description, url: path, images: creature.image ? [{ url: creature.image, alt: creature.name }] : undefined },
   }
 }
 
@@ -76,6 +101,9 @@ export default async function CreatureSpeciesPage({
   const creature: CreatureDetail | null = CreatureService.getBySlug(slug)
   if (!creature) notFound()
 
+  const hasSpawnMaps = MapService.forCreature(creature.slug).length > 0
+  // Scraped saddle data (with icons) when we have it; the creature's own saddle text otherwise.
+  const saddleData = SaddleService.forCreature(creature.slug)
   const saddles = Array.isArray(creature.saddle)
     ? creature.saddle
     : creature.saddle
@@ -107,6 +135,12 @@ export default async function CreatureSpeciesPage({
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8">
+      <JsonLd
+        data={breadcrumbs([
+          { name: 'Creatures', path: '/creatures' },
+          { name: creature.name, path: `/creatures/${creature.slug}` },
+        ])}
+      />
       <Link
         href="/creatures"
         className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm transition-colors"
@@ -136,6 +170,11 @@ export default async function CreatureSpeciesPage({
           <h1 className="font-display mt-1 text-5xl leading-none sm:text-6xl">{creature.name}</h1>
           {creature.dossier?.species && (
             <p className="text-muted-foreground mt-3 text-lg italic">{creature.dossier.species}</p>
+          )}
+          {creature.alternate_names && creature.alternate_names.length > 0 && (
+            <p className="text-muted-foreground mt-2 text-sm">
+              Also known as <span className="text-foreground">{creature.alternate_names.join(', ')}</span>
+            </p>
           )}
 
           {traits.length > 0 && (
@@ -173,6 +212,12 @@ export default async function CreatureSpeciesPage({
 
         <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[minmax(0,8fr)_minmax(0,4fr)]">
           <div className="space-y-6">
+            {hasSpawnMaps && (
+              <Panel title="Where it spawns">
+                <CreatureSpawnMaps slug={creature.slug} name={creature.name} />
+              </Panel>
+            )}
+
             <Panel title="Base stats and growth">
               <div className="-mx-1 overflow-x-auto">
                 <table className="w-full min-w-[420px] text-[15px]">
@@ -268,7 +313,11 @@ export default async function CreatureSpeciesPage({
               </Panel>
             )}
 
-            {saddles.length > 0 && (
+            {saddleData.length > 0 ? (
+              <Panel title={saddleData.length === 1 ? 'Saddle' : 'Saddles'}>
+                <CreatureSaddles saddles={saddleData} />
+              </Panel>
+            ) : saddles.length > 0 && (
               <Panel title="Saddle">
                 <dl className="divide-border divide-y text-[15px]">
                   {saddles.map((s, i) => (
@@ -280,11 +329,18 @@ export default async function CreatureSpeciesPage({
               </Panel>
             )}
 
-            {creature.maps && creature.maps.length > 0 && (
+            {!hasSpawnMaps && creature.maps && creature.maps.length > 0 && (
               <Panel title="Spawns on">
                 <ul className="flex flex-wrap gap-1.5">
                   {creature.maps.map((m) => (
-                    <li key={m} className="bg-secondary rounded-md px-2 py-1 text-sm">{m}</li>
+                    <li key={m}>
+                      <Link
+                        href={`/maps/${mapSlug(m)}?creature=${creature.slug}`}
+                        className="bg-secondary hover:text-primary inline-block rounded-md px-2 py-1 text-sm transition-colors"
+                      >
+                        {m}
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               </Panel>

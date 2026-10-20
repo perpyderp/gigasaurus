@@ -1,0 +1,49 @@
+{
+    "name": "Gargantar Saddle",
+    "description": "Equip a Gargantar with this to ride it.",
+    "creatures": [
+        "gargantar"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 52,
+    "engram_points": 16,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 220
+        },
+        {
+            "name": "Fiber",
+            "quantity": 450
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 125
+        },
+        {
+            "name": "Thatch",
+            "quantity": 85
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 85
+        }
+    ],
+    "blueprint": "/Game/Dragontopia/Dragons/GasBagRhino/Saddle/PrimalItemArmor_GargantarSaddle.PrimalItemArmor_GargantarSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gargantar_Saddle",
+    "image_file": "gargantar_saddle.png"
+}

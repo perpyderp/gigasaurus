@@ -1,0 +1,40 @@
+{
+    "name": "Mammoth Saddle",
+    "description": "Equip a Mammoth with this to ride it.",
+    "creatures": [
+        "mammoth"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 31,
+    "engram_points": 18,
+    "crafting_xp": 47.2,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 260
+        },
+        {
+            "name": "Fiber",
+            "quantity": 140
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 10
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MammothSaddle.PrimalItemArmor_MammothSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Mammoth_Saddle",
+    "image_file": "mammoth_saddle.png"
+}

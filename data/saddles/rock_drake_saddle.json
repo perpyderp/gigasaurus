@@ -1,0 +1,44 @@
+{
+    "name": "Rock Drake Saddle",
+    "description": "Equip a Rock Drake with this to ride it.",
+    "creatures": [
+        "rock_drake"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 75,
+    "engram_points": 26,
+    "crafting_xp": 70,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 350
+        },
+        {
+            "name": "Fiber",
+            "quantity": 225
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 125
+        },
+        {
+            "name": "Red Gem or Red Crystalized Sap",
+            "quantity": 85
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Aberration/Dinos/RockDrake/PrimalItemArmor_RockDrakeSaddle.PrimalItemArmor_RockDrakeSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Rock_Drake_Saddle",
+    "image_file": "rock_drake_saddle.png"
+}

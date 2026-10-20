@@ -1,0 +1,87 @@
+{
+    "name": "Seahorse",
+    "category": "fish",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 700,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.013500000000000002
+            }
+        },
+        "stamina": {
+            "base": 700,
+            "level_increase": {
+                "wild": 140,
+                "tamed": 0.2
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 350,
+            "level_increase": {
+                "wild": 7,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 25,
+            "level_increase": {
+                "wild": 1.25,
+                "tamed": 0.0085
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 300,
+            "level_increase": {
+                "wild": 18
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Seahorse Saddle (Level 30)",
+            "engram_level": 30
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "4h 57m 37.143s",
+        "baby_time": "4h 52m 23.86s",
+        "juvenile_time": "19h 29m 35.439s",
+        "adolescent_time": "1d 21m 59.298s",
+        "total_maturation": "2d 43m 58.596s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 320,
+    "cloneable": false,
+    "entity_id": "Seahorse_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Seahorse"
+}

@@ -1,0 +1,45 @@
+{
+    "name": "Abyssalus Tentacle",
+    "alternate_names": [
+        "Kraken (Tentacle)"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": null
+        },
+        "stamina": {
+            "base": null
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": null
+        },
+        "weight": {
+            "base": null
+        },
+        "melee": {
+            "base": null
+        },
+        "movement": {
+            "base": null
+        },
+        "torpidity": {
+            "base": null
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": null,
+    "cloneable": false,
+    "entity_id": "KrakenTentacle_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Abyssalus_Tentacle"
+}

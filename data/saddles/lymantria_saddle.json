@@ -1,0 +1,35 @@
+{
+    "name": "Lymantria Saddle",
+    "description": "Equip a Lymantria with this to ride it.",
+    "creatures": [
+        "lymantria"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 12,
+    "engram_level": 36,
+    "engram_points": 12,
+    "crafting_xp": 60,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 130
+        },
+        {
+            "name": "Fiber",
+            "quantity": 125
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 95
+        }
+    ],
+    "blueprint": "Blueprint'/Game/ScorchedEarth/Dinos/Moth/PrimalItemArmor_MothSaddle.PrimalItemArmor_MothSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Lymantria_Saddle",
+    "image_file": "lymantria_saddle.png"
+}

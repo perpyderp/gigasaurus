@@ -1,0 +1,41 @@
+{
+    "name": "Ossidon Saddle",
+    "description": "Equip an Ossidon with this to ride it.",
+    "creatures": [
+        "ossidon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 74,
+    "engram_points": 40,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Hide",
+            "quantity": 380
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 150
+        }
+    ],
+    "blueprint": "/Game/LostColony/Dinos/SnowMonster/PrimalItemArmor_SnowMonsterSaddle.PrimalItemArmor_SnowMonsterSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ossidon_Saddle",
+    "image_file": "ossidon_saddle.webp"
+}

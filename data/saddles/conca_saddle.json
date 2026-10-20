@@ -1,0 +1,45 @@
+{
+    "name": "Conca Saddle",
+    "description": "Equip a Concavenator with this to ride it.",
+    "creatures": [
+        "concavenator"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 67,
+    "engram_points": 35,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 120
+        },
+        {
+            "name": "Hide",
+            "quantity": 210
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 15
+        },
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 30
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Concavenator/Saddle/PrimalItemArmor_ConcavenatorSaddle.PrimalItemArmor_ConcavenatorSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Conca_Saddle",
+    "image_file": "conca_saddle.png"
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" class="creatureMap" style="position:absolute;">
+<defs>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="3" />
+    </filter>
+    <style>
+        .spawningMap-very-common { fill: #0F0; }
+        .spawningMap-common { fill: #B2FF00; }
+        .spawningMap-uncommon { fill: #FF0; }
+        .spawningMap-very-uncommon { fill: #FC0; }
+        .spawningMap-rare { fill: #F60; }
+        .spawningMap-very-rare { fill: #F00; }
+        .spawning-map-point { stroke:black; stroke-width:1; }
+    </style>
+</defs>
+<g filter="url(#blur)" opacity="0.7">
+    <g class="spawningMap-uncommon">
+        <rect x="109" y="117" width="12" height="12" />
+        <rect x="12" y="123" width="11" height="12" />
+        <rect x="18" y="123" width="11" height="12" />
+        <rect x="24" y="123" width="11" height="12" />
+        <rect x="109" y="123" width="12" height="12" />
+        <rect x="42" y="75" width="12" height="12" />
+        <rect x="91" y="75" width="12" height="12" />
+        <rect x="42" y="81" width="12" height="12" />
+        <rect x="91" y="81" width="12" height="12" />
+        <rect x="42" y="87" width="12" height="12" />
+        <rect x="85" y="87" width="12" height="12" />
+        <rect x="91" y="87" width="12" height="12" />
+        <rect x="42" y="93" width="12" height="12" />
+        <rect x="85" y="93" width="12" height="12" />
+        <rect x="91" y="93" width="12" height="12" />
+        <rect x="42" y="99" width="12" height="12" />
+        <rect x="85" y="99" width="12" height="12" />
+        <rect x="48" y="105" width="12" height="12" />
+        <rect x="12" y="117" width="11" height="12" />
+        <rect x="18" y="117" width="11" height="12" />
+        <rect x="24" y="117" width="11" height="12" />
+        <rect x="30" y="117" width="11" height="12" />
+        <rect x="36" y="117" width="12" height="12" />
+        <rect x="48" y="117" width="12" height="12" />
+    </g></g>
+</svg>

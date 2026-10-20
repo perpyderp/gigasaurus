@@ -1,0 +1,35 @@
+{
+    "name": "Pachy Saddle",
+    "description": "Equip a Pachy with this to ride it.",
+    "creatures": [
+        "pachy"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 14,
+    "engram_points": 9,
+    "crafting_xp": 17.6,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 110
+        },
+        {
+            "name": "Fiber",
+            "quantity": 65
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_PachySaddle.PrimalItemArmor_PachySaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Pachy_Saddle",
+    "image_file": "pachy_saddle.png"
+}

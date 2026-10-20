@@ -107,5 +107,13 @@
         "Crystal Isles",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "ragnarok",
+        "valguero",
+        "crystal-isles",
+        "lost-island",
+        "fjordur-midgard"
     ]
 }

@@ -1,0 +1,43 @@
+{
+    "name": "Desmodus Saddle",
+    "description": "Equip a Desmodus with this to ride it.",
+    "creatures": [
+        "desmodus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 74,
+    "engram_points": 45,
+    "crafting_xp": 22.2,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 260
+        },
+        {
+            "name": "Fiber",
+            "quantity": 180
+        },
+        {
+            "name": "Wood",
+            "quantity": 120
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 45
+        }
+    ],
+    "blueprint": "/Game/Fjordur/Dinos/Desmodus/PrimalItemArmor_DesmodusSaddle.PrimalItemArmor_DesmodusSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Desmodus_Saddle",
+    "image_file": "desmodus_saddle.png"
+}

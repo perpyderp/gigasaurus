@@ -1,0 +1,44 @@
+{
+    "name": "Karkinos Saddle",
+    "description": "Equip a Karkinos with this to ride it.",
+    "creatures": [
+        "karkinos"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 65,
+    "engram_points": 28,
+    "crafting_xp": 26.8,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 170
+        },
+        {
+            "name": "Fiber",
+            "quantity": 225
+        },
+        {
+            "name": "Fungal Wood",
+            "quantity": 200
+        },
+        {
+            "name": "Blue Gem or Blue Crystalized Sap",
+            "quantity": 80
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Aberration/Dinos/Crab/PrimalItemArmor_CrabSaddle.PrimalItemArmor_CrabSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Karkinos_Saddle",
+    "image_file": "karkinos_saddle.png"
+}

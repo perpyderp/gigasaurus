@@ -1,0 +1,40 @@
+{
+    "name": "Rex Saddle",
+    "description": "Equip a T-Rex with this to ride it.",
+    "creatures": [
+        "rex"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 74,
+    "engram_points": 40,
+    "crafting_xp": 86,
+    "crafting_time": 12,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 380
+        },
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 50
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Rex_Saddle",
+    "image_file": "rex_saddle.png"
+}

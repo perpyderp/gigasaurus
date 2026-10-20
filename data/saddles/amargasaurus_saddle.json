@@ -1,0 +1,43 @@
+{
+    "name": "Amargasaurus Saddle",
+    "description": "Equip an Amargasaurus with this to ride it.",
+    "creatures": [
+        "amargasaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 55,
+    "engram_points": 18,
+    "crafting_xp": 40,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 225
+        },
+        {
+            "name": "Fiber",
+            "quantity": 140
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 30
+        },
+        {
+            "name": "Amargasaurus Spike",
+            "quantity": 6
+        }
+    ],
+    "blueprint": "/Game/LostIsland/Dinos/Amargasaurus/PrimalItemArmor_AmargaSaddle.PrimalItemArmor_AmargaSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Amargasaurus_Saddle",
+    "image_file": "amargasaurus_saddle.png"
+}

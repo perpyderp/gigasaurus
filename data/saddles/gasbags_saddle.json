@@ -1,0 +1,35 @@
+{
+    "name": "Gasbags Saddle",
+    "description": "Equip a Gasbags with this to allow a passenger to hop on.",
+    "creatures": [
+        "gasbags"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 43,
+    "engram_points": 6,
+    "crafting_xp": 72.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 150
+        },
+        {
+            "name": "Fiber",
+            "quantity": 185
+        },
+        {
+            "name": "Hide",
+            "quantity": 350
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Extinction/CoreBlueprints/Items/Saddle/PrimalItemArmor_GasBagsSaddle.PrimalItemArmor_GasBagsSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gasbags_Saddle",
+    "image_file": "gasbags_saddle.png"
+}

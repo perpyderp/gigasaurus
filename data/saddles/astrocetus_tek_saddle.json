@@ -1,0 +1,44 @@
+{
+    "name": "Astrocetus Tek Saddle",
+    "description": "Equip an Astrocetus with this to ride it and fire plasma projectiles.",
+    "creatures": [
+        "astrocetus"
+    ],
+    "tek": true,
+    "platform": true,
+    "armor": 45,
+    "weight": 20,
+    "engram_level": null,
+    "engram_points": null,
+    "crafting_xp": 86,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Polymer, Organic Polymer, or Corrupted Nodule",
+            "quantity": 750
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 3250
+        },
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 606
+        },
+        {
+            "name": "Element or Red Element",
+            "quantity": 82
+        },
+        {
+            "name": "Black Pearl",
+            "quantity": 210
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Genesis/Dinos/SpaceWhale/PrimalItemArmor_SpaceWhaleSaddle_Tek.PrimalItemArmor_SpaceWhaleSaddle_Tek'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Astrocetus_Tek_Saddle",
+    "image_file": "astrocetus_tek_saddle.png"
+}

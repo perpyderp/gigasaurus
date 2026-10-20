@@ -1,0 +1,45 @@
+{
+    "name": "Burrowbuck Saddle",
+    "description": "Equip a Burrowbuck with this to ride it.",
+    "creatures": [
+        "burrowbuck"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 33,
+    "engram_points": 15,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 80
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 2
+        },
+        {
+            "name": "Hide",
+            "quantity": 150
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 10
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Jackalope/PrimalItemArmor_JackalopeSaddle.PrimalItemArmor_JackalopeSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Burrowbuck_Saddle",
+    "image_file": "burrowbuck_saddle.png"
+}

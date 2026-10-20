@@ -1,5 +1,8 @@
 {
     "name": "Carbonemys",
+    "alternate_names": [
+        "Turtle"
+    ],
     "category": "reptile",
     "dossier": {
         "species": "Carbonemys obibimus",
@@ -120,5 +123,18 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "ragnarok",
+        "extinction",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-vanaheim"
     ]
 }

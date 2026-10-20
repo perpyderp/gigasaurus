@@ -1,0 +1,35 @@
+{
+    "name": "Megalodon Saddle",
+    "description": "Equip a Megalodon with this to ride it.",
+    "creatures": [
+        "megalodon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 47,
+    "engram_points": 18,
+    "crafting_xp": 51.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 290
+        },
+        {
+            "name": "Fiber",
+            "quantity": 155
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 30
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MegalodonSaddle.PrimalItemArmor_MegalodonSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megalodon_Saddle",
+    "image_file": "megalodon_saddle.png"
+}

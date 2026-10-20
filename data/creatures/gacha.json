@@ -105,5 +105,11 @@
         "Extinction",
         "Genesis: Part 2",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "extinction",
+        "genesis-part-2",
+        "fjordur-asgard",
+        "fjordur-vanaheim"
     ]
 }

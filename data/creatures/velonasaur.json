@@ -1,5 +1,8 @@
 {
     "name": "Velonasaur",
+    "alternate_names": [
+        "Spindles"
+    ],
     "category": "other",
     "dossier": {
         "species": "Velonasaurus spinavultus",
@@ -112,5 +115,9 @@
     "maps": [
         "Extinction",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "extinction",
+        "fjordur-midgard"
     ]
 }

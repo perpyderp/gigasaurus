@@ -1,0 +1,40 @@
+{
+    "name": "Deinosuchus Saddle",
+    "description": "Equip a Deinosuchus with this to ride it !",
+    "creatures": [
+        "deinosuchus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 74,
+    "engram_points": null,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 380
+        },
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 50
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Deinosuchus/Saddle/PrimalItemArmor_Deinosuchus_Saddle_ASA.PrimalItemArmor_Deinosuchus_Saddle_ASA_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Deinosuchus_Saddle",
+    "image_file": "deinosuchus_saddle.png"
+}

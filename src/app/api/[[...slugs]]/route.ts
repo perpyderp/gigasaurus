@@ -5,6 +5,8 @@ import { creaturesRoutes } from '@/routes/creatures'
 import { resourceRoutes } from '@/routes/resources'
 import { armorRoutes } from '@/routes/armor'
 import { weaponRoutes } from '@/routes/weapons'
+import { mapRoutes } from '@/routes/maps'
+import { saddleRoutes } from '@/routes/saddles'
 
 export const app = new Elysia({ prefix: '/api' })
   .use(cors())
@@ -27,7 +29,7 @@ export const app = new Elysia({ prefix: '/api' })
           title: 'Gigasaurus API',
           version: '1.0.0',
           description:
-            'A RESTful API for ARK: Survival Ascended/Evolved game data — creatures, armor, weapons, and resources. Inspired by PokéAPI.',
+            'A RESTful API for ARK: Survival Ascended/Evolved game data — creatures, saddles, armor, weapons, resources and maps. Inspired by PokéAPI.',
           contact: {
             name: 'Gigasaurus',
             url: 'https://github.com/perpyderp/gigasaurus',
@@ -41,6 +43,8 @@ export const app = new Elysia({ prefix: '/api' })
           { name: 'Armor', description: 'Craftable armor sets with stats and ingredient costs' },
           { name: 'Weapons', description: 'Tools, melee, ranged, firearms, explosives, and Tek-tier weapons' },
           { name: 'Resources', description: 'Raw and refined materials used for crafting' },
+          { name: 'Saddles', description: 'Saddles, platform saddles and Tek saddles, and the creatures that wear them' },
+          { name: 'Maps', description: 'Official maps with creature spawn areas and resource node locations' },
         ],
       },
     })
@@ -56,6 +60,8 @@ export const app = new Elysia({ prefix: '/api' })
         armor: '/api/armor',
         weapons: '/api/weapons',
         resources: '/api/resources',
+        saddles: '/api/saddles',
+        maps: '/api/maps',
       },
     }),
     {
@@ -68,6 +74,8 @@ export const app = new Elysia({ prefix: '/api' })
           armor: t.String(),
           weapons: t.String(),
           resources: t.String(),
+          saddles: t.String(),
+          maps: t.String(),
         }),
       }),
       detail: { summary: 'API index', description: 'Returns all available endpoints.' },
@@ -77,6 +85,8 @@ export const app = new Elysia({ prefix: '/api' })
   .use(armorRoutes)
   .use(weaponRoutes)
   .use(resourceRoutes)
+  .use(saddleRoutes)
+  .use(mapRoutes)
 
 export const GET = app.fetch
 export const POST = app.fetch

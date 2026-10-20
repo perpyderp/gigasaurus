@@ -1,5 +1,8 @@
 {
     "name": "Gigantopithecus",
+    "alternate_names": [
+        "Bigfoot"
+    ],
     "category": "mammal",
     "dossier": {
         "species": "Gigantopithecus fibrarator",
@@ -113,5 +116,16 @@
         "Genesis: Part 1",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "ragnarok",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-jotunheim"
     ]
 }

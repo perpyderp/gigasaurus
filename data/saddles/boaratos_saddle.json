@@ -1,0 +1,45 @@
+{
+    "name": "Boaratos Saddle",
+    "description": "Equip a Boaratos with this to ride it.",
+    "creatures": [
+        "boaratos"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 66,
+    "engram_points": 35,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 250
+        },
+        {
+            "name": "Fiber",
+            "quantity": 300
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 50
+        },
+        {
+            "name": "Obsidian",
+            "quantity": 50
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Boaratos/PrimalItemArmor_BoaratosSaddle.PrimalItemArmor_BoaratosSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Boaratos_Saddle",
+    "image_file": "boaratos_saddle.png"
+}

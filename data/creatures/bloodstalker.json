@@ -1,5 +1,8 @@
 {
     "name": "Bloodstalker",
+    "alternate_names": [
+        "Bog Spider"
+    ],
     "dossier": null,
     "base_stats_growth": {
         "health": {
@@ -104,5 +107,9 @@
     "maps": [
         "Genesis: Part 1",
         "Genesis: Part 2"
+    ],
+    "spawn_maps": [
+        "genesis-part-1",
+        "genesis-part-2"
     ]
 }

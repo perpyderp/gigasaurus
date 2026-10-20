@@ -1,0 +1,44 @@
+{
+    "name": "Gigadesmodus Saddle",
+    "description": "Equip a Gigadesmodus with this to ride it.",
+    "creatures": [
+        "gigadesmodus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": null,
+    "engram_points": null,
+    "crafting_xp": 462,
+    "crafting_time": 15,
+    "crafted_in": [
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 600
+        },
+        {
+            "name": "Hide",
+            "quantity": 550
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 160
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 225
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 220
+        }
+    ],
+    "blueprint": "/Game/LostColony/Dinos/BossBat/Saddle/PrimalItemArmor_BossBatSaddle.PrimalItemArmor_BossBatSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gigadesmodus_Saddle",
+    "image_file": "gigadesmodus_saddle.png"
+}

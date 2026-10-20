@@ -1,0 +1,44 @@
+{
+    "name": "Doedicurus Saddle",
+    "description": "Equip a Doedicurus with this to ride it.",
+    "creatures": [
+        "doedicurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 34,
+    "engram_points": 20,
+    "crafting_xp": 31.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 200
+        },
+        {
+            "name": "Fiber",
+            "quantity": 110
+        },
+        {
+            "name": "Stone",
+            "quantity": 15
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 5
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DoedSaddle.PrimalItemArmor_DoedSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Doedicurus_Saddle",
+    "image_file": "doedicurus_saddle.png"
+}

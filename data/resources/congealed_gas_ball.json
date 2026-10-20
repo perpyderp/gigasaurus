@@ -6,5 +6,6 @@
     "combustible": false,
     "weight": 0.1,
     "stack_size": 100,
-    "found_in": []
+    "found_in": [],
+    "maps": ["Aberration", "Extinction", "Valguero", "Crystal Isles", "Genesis: Part 1", "Genesis: Part 2", "Fjordur"]
 }

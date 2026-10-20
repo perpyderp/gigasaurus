@@ -1,0 +1,49 @@
+{
+    "name": "Tidepup Saddle",
+    "description": "Equip a Tidepup with this to ride it.",
+    "creatures": [
+        "tidepup"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 36,
+    "engram_points": 16,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 50
+        },
+        {
+            "name": "Hide",
+            "quantity": 10
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 10
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 20
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 5
+        }
+    ],
+    "blueprint": "/Game/Packs/TidesOfFortune/Dinos/Axolotl/PrimalItemArmor_AxolotlSaddle.PrimalItemArmor_AxolotlSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Tidepup_Saddle",
+    "image_file": "tidepup_saddle.png"
+}

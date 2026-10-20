@@ -1,0 +1,40 @@
+{
+    "name": "Thylacoleo Saddle",
+    "description": "Equip a Thylacoleo with this to ride it.",
+    "creatures": [
+        "thylacoleo"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 51,
+    "engram_points": 18,
+    "crafting_xp": 62.8,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 290
+        },
+        {
+            "name": "Fiber",
+            "quantity": 155
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ThylacoSaddle.PrimalItemArmor_ThylacoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Thylacoleo_Saddle",
+    "image_file": "thylacoleo_saddle.png"
+}

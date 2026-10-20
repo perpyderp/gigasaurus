@@ -68,5 +68,10 @@
         "Scorched Earth",
         "Ragnarok",
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "scorched-earth",
+        "ragnarok",
+        "lost-island"
     ]
 }

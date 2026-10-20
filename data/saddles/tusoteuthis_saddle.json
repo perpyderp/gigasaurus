@@ -1,0 +1,44 @@
+{
+    "name": "Tusoteuthis Saddle",
+    "description": "Equip a Tusoteuthis with this to ride it.",
+    "creatures": [
+        "tusoteuthis"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 91,
+    "engram_points": 40,
+    "crafting_xp": 51.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 320
+        },
+        {
+            "name": "Fiber",
+            "quantity": 795
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 45
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 30
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TusoSaddle.PrimalItemArmor_TusoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Tusoteuthis_Saddle",
+    "image_file": "tusoteuthis_saddle.png"
+}

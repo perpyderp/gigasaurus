@@ -1,0 +1,35 @@
+{
+    "name": "Gacha Saddle",
+    "description": "Equip a Gacha with this to ride it.",
+    "creatures": [
+        "gacha"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 38,
+    "engram_points": 6,
+    "crafting_xp": 72.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 350
+        },
+        {
+            "name": "Fiber",
+            "quantity": 185
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 150
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Extinction/CoreBlueprints/Items/Saddle/PrimalItemArmor_GachaSaddle.PrimalItemArmor_GachaSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gacha_Saddle",
+    "image_file": "gacha_saddle.png"
+}

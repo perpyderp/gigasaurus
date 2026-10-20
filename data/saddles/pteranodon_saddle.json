@@ -1,0 +1,35 @@
+{
+    "name": "Pteranodon Saddle",
+    "description": "Equip a Pteranodon with this to ride it.",
+    "creatures": [
+        "pteranodon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 38,
+    "engram_points": 15,
+    "crafting_xp": 43,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 230
+        },
+        {
+            "name": "Fiber",
+            "quantity": 125
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 75
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_PteroSaddle.PrimalItemArmor_PteroSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Pteranodon_Saddle",
+    "image_file": "pteranodon_saddle.png"
+}

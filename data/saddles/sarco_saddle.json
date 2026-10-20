@@ -1,0 +1,35 @@
+{
+    "name": "Sarco Saddle",
+    "description": "Equip a Sarco with this to ride it.",
+    "creatures": [
+        "sarco"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 35,
+    "engram_points": 15,
+    "crafting_xp": 36,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 230
+        },
+        {
+            "name": "Fiber",
+            "quantity": 75
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_SarcoSaddle.PrimalItemArmor_SarcoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Sarco_Saddle",
+    "image_file": "sarco_saddle.png"
+}

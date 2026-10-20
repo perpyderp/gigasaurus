@@ -1,0 +1,43 @@
+{
+    "name": "Shastasaurus Submarine Saddle",
+    "description": null,
+    "creatures": [
+        "shastasaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": null,
+    "engram_level": 100,
+    "engram_points": 70,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Tek Replicator"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste",
+            "quantity": 200
+        },
+        {
+            "name": "Electronics",
+            "quantity": 150
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 250
+        },
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 350
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 1500
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Shastasaurus/PrimalItemArmor_ShastaSaddle_Submarine.PrimalItemArmor_ShastaSaddle_Submarine_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Shastasaurus_Submarine_Saddle",
+    "image_file": "shastasaurus_submarine_saddle.png"
+}

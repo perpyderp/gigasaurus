@@ -1,0 +1,18 @@
+{
+    "name": "Enigmasaur Saddle",
+    "description": "Equip an Enigmasaur with this to ride it.",
+    "creatures": [],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": null,
+    "engram_points": null,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [],
+    "ingredients": [],
+    "blueprint": null,
+    "wiki_url": "https://ark.wiki.gg/wiki/Enigmasaur_Saddle",
+    "image_file": null
+}

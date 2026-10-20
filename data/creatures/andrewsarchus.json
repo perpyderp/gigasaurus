@@ -106,5 +106,9 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Andrewsarchus",
     "maps": [
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "fjordur-midgard",
+        "fjordur-asgard"
     ]
 }

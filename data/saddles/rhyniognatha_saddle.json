@@ -1,0 +1,47 @@
+{
+    "name": "Rhyniognatha Saddle",
+    "description": "Equip a Rhyniognatha with this to ride it.",
+    "creatures": [
+        "rhyniognatha"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 90,
+    "engram_points": 65,
+    "crafting_xp": null,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator"
+    ],
+    "ingredients": [
+        {
+            "name": "Crystal or Primal Crystal",
+            "quantity": 30
+        },
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 150
+        },
+        {
+            "name": "Hide",
+            "quantity": 150
+        },
+        {
+            "name": "Polymer, Organic Polymer, or Corrupted Nodule",
+            "quantity": 60
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RhynioSaddle.PrimalItemArmor_RhynioSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Rhyniognatha_Saddle",
+    "image_file": "rhyniognatha_saddle.png"
+}

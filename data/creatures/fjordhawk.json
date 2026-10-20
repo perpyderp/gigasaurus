@@ -110,5 +110,9 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Fjordhawk",
     "maps": [
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "fjordur-midgard",
+        "fjordur-jotunheim"
     ]
 }

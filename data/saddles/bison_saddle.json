@@ -1,0 +1,39 @@
+{
+    "name": "Bison Saddle",
+    "description": "Equip a Bison with this to ride it.",
+    "creatures": [
+        "bison"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 50,
+    "engram_points": 22,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste",
+            "quantity": 75
+        },
+        {
+            "name": "Fiber",
+            "quantity": 150
+        },
+        {
+            "name": "Hide",
+            "quantity": 275
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 50
+        }
+    ],
+    "blueprint": "Blueprint'/Game/ASA/Dinos/Bison/PrimalItemArmor_BisonSaddle.PrimalItemArmor_BisonSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Bison_Saddle",
+    "image_file": "bison_saddle.png"
+}

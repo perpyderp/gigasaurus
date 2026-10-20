@@ -1,0 +1,40 @@
+{
+    "name": "Daeodon Saddle",
+    "description": "Equip a Daeodon with this to ride it.",
+    "creatures": [
+        "daeodon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 59,
+    "engram_points": 24,
+    "crafting_xp": 62.8,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 290
+        },
+        {
+            "name": "Fiber",
+            "quantity": 155
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DaeodonSaddle.PrimalItemArmor_DaeodonSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Daeodon_Saddle",
+    "image_file": "daeodon_saddle.png"
+}

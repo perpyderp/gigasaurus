@@ -1,0 +1,40 @@
+{
+    "name": "Basilosaurus Saddle",
+    "description": "Equip a Basilosaurus with this to ride it.",
+    "creatures": [
+        "basilosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 60,
+    "engram_points": 30,
+    "crafting_xp": 17.6,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 200
+        },
+        {
+            "name": "Fiber",
+            "quantity": 250
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 55
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_BasiloSaddle.PrimalItemArmor_BasiloSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Basilosaurus_Saddle",
+    "image_file": "basilosaurus_saddle.png"
+}

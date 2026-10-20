@@ -1,0 +1,49 @@
+{
+    "name": "Palaeoctopus Saddle",
+    "description": "Equip a Palaeoctopus with this to ride it.",
+    "creatures": [
+        "palaeoctopus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 65,
+    "engram_points": 20,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 150
+        },
+        {
+            "name": "Hide",
+            "quantity": 275
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 50
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 75
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "/Game/Packs/TidesOfFortune/Dinos/Paleoctopus/Saddle/PrimalItemArmor_PalaeoctopusSaddle.PrimalItemArmor_PalaeoctopusSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Palaeoctopus_Saddle",
+    "image_file": "palaeoctopus_saddle.png"
+}

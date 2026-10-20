@@ -1,0 +1,75 @@
+{
+    "name": "Sir-5rM8",
+    "alternate_names": [
+        "Helper Bot"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50000,
+                "tamed": 1.08
+            }
+        },
+        "stamina": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 100000,
+                "tamed": 10
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 2250,
+                "tamed": 10
+            }
+        },
+        "food": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 400000,
+                "tamed": 10
+            }
+        },
+        "weight": {
+            "base": 500,
+            "level_increase": {
+                "wild": 5000,
+                "tamed": 4
+            }
+        },
+        "melee": {
+            "base": 100,
+            "level_increase": {
+                "wild": 500,
+                "tamed": 0.85
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 60000
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 160,
+    "cloneable": false,
+    "entity_id": "HelperBot_Character_B_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Sir-5rM8"
+}

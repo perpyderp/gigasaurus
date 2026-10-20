@@ -1,0 +1,38 @@
+{
+    "name": "Ceratosaurus Saddle",
+    "description": "Equip a Ceratosaurus with it to ride it.",
+    "creatures": [
+        "ceratosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 60,
+    "engram_points": 40,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 270
+        },
+        {
+            "name": "Hide",
+            "quantity": 130
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Ceratosaurus/Dinos/Saddle/PrimalItemArmor_CeratosaurusSaddle_ASA.PrimalItemArmor_CeratosaurusSaddle_ASA_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ceratosaurus_Saddle",
+    "image_file": "ceratosaurus_saddle.png"
+}

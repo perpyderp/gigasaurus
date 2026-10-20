@@ -1,5 +1,8 @@
 {
     "name": "Parakeet Fish School",
+    "alternate_names": [
+        "Microbe Swarm"
+    ],
     "dossier": null,
     "base_stats_growth": {
         "health": {
@@ -67,5 +70,11 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "genesis-part-1",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard"
     ]
 }

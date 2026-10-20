@@ -9,7 +9,13 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "scrape": "bun scripts/scrape.ts"
+    "scrape": "bun scripts/scrape.ts",
+    "names": "bun scripts/build-creature-names.ts",
+    "renders": "bun scripts/download-color-renders.ts",
+    "maps": "bun scripts/scrape-maps.ts",
+    "saddles": "bun scripts/scrape-saddles.ts",
+    "dossiers": "bun scripts/download-dossiers.ts",
+    "spawn-maps": "bun scripts/download-spawn-maps.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.2.0",

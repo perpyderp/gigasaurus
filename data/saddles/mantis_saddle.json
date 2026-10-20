@@ -1,0 +1,40 @@
+{
+    "name": "Mantis Saddle",
+    "description": "Equip a Mantis with this to ride it.",
+    "creatures": [
+        "mantis"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 45,
+    "engram_points": 18,
+    "crafting_xp": 70,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 120
+        },
+        {
+            "name": "Fiber",
+            "quantity": 75
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 35
+        }
+    ],
+    "blueprint": "Blueprint'/Game/ScorchedEarth/Dinos/Mantis/PrimalItemArmor_MantisSaddle.PrimalItemArmor_MantisSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Mantis_Saddle",
+    "image_file": "mantis_saddle.png"
+}

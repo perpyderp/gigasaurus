@@ -1,0 +1,92 @@
+{
+    "name": "Ocepechelon",
+    "category": "reptile",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.054000000000000006
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 4000,
+            "level_increase": {
+                "wild": 400,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 950,
+            "level_increase": {
+                "wild": 19,
+                "tamed": 0.4
+            }
+        },
+        "melee": {
+            "base": 10,
+            "level_increase": {
+                "wild": 0.5,
+                "tamed": 0.017
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 1100,
+            "level_increase": {
+                "wild": 66
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Ocepechelon Saddle (Level 15)",
+            "engram_level": 15
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Ocepechelon Egg",
+        "incubation": {
+            "range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_range": "30 - 34 °C / 86 - 93 °F Egg Incubator: 32 °C / 90 °F",
+            "incubation_time": "7h 56m 11.429s"
+        },
+        "baby_time": "5h 8m 38.519s",
+        "juvenile_time": "20h 34m 34.074s",
+        "adolescent_time": "1d 1h 43m 12.593s",
+        "total_maturation": "2d 3h 26m 25.185s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 400,
+    "cloneable": false,
+    "entity_id": "Ocepechelon_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ocepechelon"
+}

@@ -1,0 +1,63 @@
+{
+    "name": "Corrupted Master Controller",
+    "alternate_names": [
+        "VR Main Boss"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 25000,
+            "level_increase": {
+                "wild": 5000
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10
+            }
+        },
+        "weight": {
+            "base": 100,
+            "level_increase": {
+                "wild": 2
+            }
+        },
+        "melee": {
+            "base": null
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 100,
+            "level_increase": {
+                "wild": 6
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 35,
+    "cloneable": false,
+    "entity_id": "VRMainBoss_Character_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Corrupted_Master_Controller"
+}

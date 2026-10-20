@@ -1,5 +1,8 @@
 {
     "name": "Shadowmane",
+    "alternate_names": [
+        "Lionfish Lion"
+    ],
     "dossier": {
         "species": "N/A",
         "time": "N/A",
@@ -99,5 +102,9 @@
     "maps": [
         "Genesis: Part 2",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "genesis-part-2",
+        "fjordur-asgard"
     ]
 }

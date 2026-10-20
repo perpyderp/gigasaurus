@@ -1,0 +1,48 @@
+{
+    "name": "Roll Rat Saddle",
+    "description": "Equip a Roll Rat with this to ride it. Provides protection to passengers while rolling.",
+    "creatures": [
+        "roll_rat"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 58,
+    "engram_points": 26,
+    "crafting_xp": 55,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 270
+        },
+        {
+            "name": "Fiber",
+            "quantity": 150
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 425
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 85
+        },
+        {
+            "name": "Green Gem or Fragmented Green Gem",
+            "quantity": 45
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Aberration/Dinos/MoleRat/PrimalItemArmor_MoleRatSaddle.PrimalItemArmor_MoleRatSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Roll_Rat_Saddle",
+    "image_file": "roll_rat_saddle.png"
+}

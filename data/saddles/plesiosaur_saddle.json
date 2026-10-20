@@ -1,0 +1,44 @@
+{
+    "name": "Plesiosaur Saddle",
+    "description": "Equip a Plesiosaur with this to ride it.",
+    "creatures": [
+        "plesiosaur"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 64,
+    "engram_points": 40,
+    "crafting_xp": 116,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 400
+        },
+        {
+            "name": "Fiber",
+            "quantity": 250
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 65
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 40
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_PlesiaSaddle.PrimalItemArmor_PlesiaSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Plesiosaur_Saddle",
+    "image_file": "plesiosaur_saddle.png"
+}

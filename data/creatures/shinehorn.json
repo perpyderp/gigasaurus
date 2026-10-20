@@ -1,5 +1,8 @@
 {
     "name": "Shinehorn",
+    "alternate_names": [
+        "Lantern Goat"
+    ],
     "category": "other",
     "dossier": {
         "species": "Microluminis cerynitis",
@@ -91,5 +94,12 @@
         "Genesis: Part 1",
         "Genesis: Part 2",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "genesis-part-1",
+        "genesis-part-2",
+        "fjordur-midgard",
+        "fjordur-vanaheim"
     ]
 }

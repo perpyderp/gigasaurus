@@ -1,5 +1,6 @@
 import { Package } from 'lucide-react'
 import { ResourceService } from '@/services/resource'
+import { MAP_ORDER, mapSlug } from '@/lib/map-order'
 import { ResourceHoverCard } from '@/components/HoverPreview'
 import {
   EmptyResults,
@@ -10,21 +11,27 @@ import {
   SlotTile,
 } from '@/components/Glossary'
 
-export const metadata = { title: 'Resources — Gigasaurus' }
+export const metadata = {
+  title: 'ARK Resources: Where to Find Every Resource',
+  description: "Every ARK: Survival Ascended resource, where to farm it on each map, its rarity and stack size.",
+  alternates: { canonical: '/resources' },
+}
 
 const RARITY_ORDER = ['common', 'uncommon', 'rare']
 
 export default async function ResourcesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ rarity?: string; q?: string }>
+  searchParams: Promise<{ rarity?: string; map?: string; q?: string }>
 }) {
   const params = await searchParams
   const rarityFilter = params.rarity
+  const mapFilter = params.map
   const search = params.q?.trim().toLowerCase()
 
   const { count, results } = ResourceService.getAll({ limit: 500 })
-  const inRarity = rarityFilter ? results.filter((r) => r.rarity === rarityFilter) : results
+  const onMap = mapFilter ? new Set(ResourceService.getAll({ map: mapFilter, limit: 500 }).results.map((r) => r.slug)) : null
+  const inRarity = results.filter((r) => (!rarityFilter || r.rarity === rarityFilter) && (!onMap || onMap.has(r.slug)))
   const filtered = search ? inRarity.filter((r) => r.name.toLowerCase().includes(search)) : inRarity
 
   const countByRarity = new Map<string, number>()
@@ -44,7 +51,7 @@ export default async function ResourcesPage({
           defaultValue={params.q}
           placeholder="Search resources"
           label="Search resources"
-          hidden={{ rarity: rarityFilter }}
+          hidden={{ rarity: rarityFilter, map: mapFilter }}
         />
       </GlossaryHeader>
 
@@ -54,12 +61,21 @@ export default async function ResourcesPage({
           basePath="/resources"
           param="rarity"
           active={rarityFilter}
-          keep={{ q: params.q }}
+          keep={{ q: params.q, map: mapFilter }}
           options={rarities.map((r) => ({
             value: r,
             label: r.charAt(0).toUpperCase() + r.slice(1),
             count: countByRarity.get(r),
           }))}
+        />
+        <FilterChips
+          label="Map"
+          basePath="/resources"
+          param="map"
+          active={mapFilter}
+          allLabel="All maps"
+          keep={{ q: params.q, rarity: rarityFilter }}
+          options={MAP_ORDER.map((m) => ({ value: mapSlug(m), label: m }))}
         />
         <ResultCount shown={filtered.length} total={count} noun="resources" query={params.q} />
       </div>

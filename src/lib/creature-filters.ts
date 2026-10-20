@@ -55,13 +55,23 @@ export function activeFilterCount(state: CreatureFilterState): number {
   return [state.gender !== '', state.species !== '', state.mutations !== '', state.sort !== DEFAULT_SORT].filter(Boolean).length
 }
 
-export function filterAndSortCreatures(creatures: StoredCreature[], state: CreatureFilterState): StoredCreature[] {
+/**
+ * `speciesNames` (optional) gives a species' names by API slug — its name and
+ * alternate names — so searching "Pyromane" finds creatures exported as FireLion.
+ */
+export function filterAndSortCreatures(
+  creatures: StoredCreature[],
+  state: CreatureFilterState,
+  speciesNames?: Record<string, string[]>,
+): StoredCreature[] {
   let result = [...creatures]
 
   const q = state.search.trim().toLowerCase()
   if (q) {
     result = result.filter((c) =>
       c.name.toLowerCase().includes(q) ||
+      (c.apiSlug ? speciesNames?.[c.apiSlug] ?? [] : []).some((n) => n.toLowerCase().includes(q)) ||
+      (c.pastNames ?? []).some((p) => p.name.toLowerCase().includes(q)) ||
       inGameName(c).toLowerCase().includes(q) ||
       c.dinoNameTag.toLowerCase().includes(q) ||
       c.tribe.toLowerCase().includes(q) ||

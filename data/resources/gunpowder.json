@@ -6,5 +6,6 @@
     "combustible": false,
     "weight": 0.1,
     "stack_size": 100,
-    "found_in": []
+    "found_in": [],
+    "maps": ["The Island", "The Center", "Scorched Earth", "Ragnarok", "Aberration", "Extinction", "Valguero", "Crystal Isles", "Genesis: Part 1", "Genesis: Part 2", "Lost Island", "Fjordur", "Astraeos", "Lost Colony"]
 }

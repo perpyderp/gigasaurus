@@ -1,5 +1,8 @@
 {
     "name": "Baryonyx",
+    "alternate_names": [
+        "Barry"
+    ],
     "category": "dinosaur",
     "dossier": {
         "species": "Baryonyx aquafulgur",
@@ -119,5 +122,18 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "ragnarok",
+        "extinction",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-vanaheim"
     ]
 }

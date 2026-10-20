@@ -1,0 +1,45 @@
+{
+    "name": "Ocepechelon Saddle",
+    "description": "Equip a Ocepechelon with this to ride it. The saddle is quipped with a mobile smithy and additional storage.",
+    "creatures": [
+        "ocepechelon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 15,
+    "engram_points": 12,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 25
+        },
+        {
+            "name": "Fiber",
+            "quantity": 90
+        },
+        {
+            "name": "Hide",
+            "quantity": 100
+        },
+        {
+            "name": "Metal",
+            "quantity": 10
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 12
+        }
+    ],
+    "blueprint": "/Game/Abyss/Dinos/Ocepechelon/Saddle/PrimalItemArmor_OcepechelonSaddle.PrimalItemArmor_OcepechelonSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ocepechelon_Saddle",
+    "image_file": "ocepechelon_saddle.png"
+}

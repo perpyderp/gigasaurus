@@ -15,6 +15,7 @@ import type { CreatureDetail } from '@/schemas/creature'
 import type { ArmorDetail } from '@/schemas/armor'
 import type { WeaponDetail } from '@/schemas/weapon'
 import type { ResourceDetail } from '@/schemas/resource'
+import { MAP_ORDER } from '@/lib/map-order'
 
 function Row({ label, value }: { label: string; value: ReactNode }) {
   return (
@@ -198,6 +199,13 @@ export function ResourceHoverCard({ resource, children }: { resource: ResourceDe
             <Row label="Weight" value={resource.weight} />
             <Row label="Stack size" value={resource.stack_size.toLocaleString()} />
           </dl>
+          {resource.maps.length > 0 && (
+            <Section title="Maps">
+              <p className="text-sm leading-snug">
+                {resource.maps.length === MAP_ORDER.length ? 'Every map' : resource.maps.join(', ')}
+              </p>
+            </Section>
+          )}
           {resource.found_in.length > 0 && (
             <Section title="Where to find it">
               <p className="text-sm leading-snug">{resource.found_in.join(', ')}</p>

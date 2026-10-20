@@ -1,5 +1,8 @@
 {
     "name": "Maewing",
+    "alternate_names": [
+        "Milk Glider"
+    ],
     "dossier": {
         "species": "Microluminis psykhe",
         "time": "Unknown",
@@ -115,5 +118,11 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-asgard"
     ]
 }

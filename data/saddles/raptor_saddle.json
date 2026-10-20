@@ -1,0 +1,35 @@
+{
+    "name": "Raptor Saddle",
+    "description": "Equip a Raptor with this to ride it.",
+    "creatures": [
+        "raptor"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 18,
+    "engram_points": 9,
+    "crafting_xp": 17.6,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 110
+        },
+        {
+            "name": "Fiber",
+            "quantity": 65
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RaptorSaddle.PrimalItemArmor_RaptorSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Raptor_Saddle",
+    "image_file": "raptor_saddle.png"
+}

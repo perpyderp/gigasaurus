@@ -1,0 +1,48 @@
+{
+    "name": "Dakosaurus Platform Saddle",
+    "description": "Equip a Dakosaurus Platform Saddle with this to ride it. You can build structures on the large platform to make a mobile base.",
+    "creatures": [
+        "dakosaurus"
+    ],
+    "tek": false,
+    "platform": true,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 86,
+    "engram_points": 80,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 180
+        },
+        {
+            "name": "Fiber",
+            "quantity": 720
+        },
+        {
+            "name": "Fish Scale",
+            "quantity": 960
+        },
+        {
+            "name": "Hardened Steel Ingot",
+            "quantity": 1200
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 320
+        }
+    ],
+    "blueprint": "/Game/Abyss/Dinos/Dakosaurus/Saddle/PrimalItemArmor_DakosaurusSaddle_Platform.PrimalItemArmor_DakosaurusSaddle_Platform",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dakosaurus_Platform_Saddle",
+    "image_file": "dakosaurus_platform_saddle.png"
+}

@@ -1,0 +1,93 @@
+{
+    "name": "Grand Tortugar",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1050,
+            "level_increase": {
+                "wild": 210,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 260,
+            "level_increase": {
+                "wild": 26,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 3500,
+            "level_increase": {
+                "wild": 350,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 2250,
+            "level_increase": {
+                "wild": 45,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 2025,
+            "level_increase": {
+                "wild": 11.25,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 60
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Grand Tortugar Saddle (Level 43) Grand Tortugar Platform Saddle (Level 52)",
+            "engram_level": 43
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Grand Tortugar Egg",
+        "baby_time": "Unknown",
+        "juvenile_time": "Unknown",
+        "adolescent_time": "Unknown",
+        "total_maturation": "Unknown",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": 750,
+    "cloneable": false,
+    "entity_id": "GrandTortugar_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Grand_Tortugar"
+}

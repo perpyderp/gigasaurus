@@ -1,0 +1,40 @@
+{
+    "name": "Giganotosaurus Saddle",
+    "description": "Equip a Giganotosaurus with this to ride it.",
+    "creatures": [
+        "giganotosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 96,
+    "engram_points": 75,
+    "crafting_xp": 303,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 680
+        },
+        {
+            "name": "Fiber",
+            "quantity": 350
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 120
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_GigantSaddle.PrimalItemArmor_GigantSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Giganotosaurus_Saddle",
+    "image_file": "giganotosaurus_saddle.png"
+}

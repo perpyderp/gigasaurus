@@ -1,0 +1,58 @@
+{
+    "name": "Scout",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 3,
+            "level_increase": {
+                "wild": 0.225
+            }
+        },
+        "stamina": {
+            "base": 90,
+            "level_increase": {
+                "wild": 180
+            }
+        },
+        "oxygen": {
+            "base": 0
+        },
+        "food": {
+            "base": 7,
+            "level_increase": {
+                "wild": 3.5
+            }
+        },
+        "weight": {
+            "base": 0
+        },
+        "melee": {
+            "base": 0
+        },
+        "movement": {
+            "base": 0.5
+        },
+        "torpidity": {
+            "base": 0,
+            "level_increase": {
+                "wild": 0
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 149,
+    "cloneable": false,
+    "entity_id": "Scout_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Scout",
+    "spawn_maps": [
+        "extinction",
+        "genesis-part-2"
+    ]
+}

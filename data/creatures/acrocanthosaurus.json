@@ -1,0 +1,105 @@
+{
+    "name": "Acrocanthosaurus",
+    "category": "dinosaur",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1300,
+            "level_increase": {
+                "wild": 260,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 300,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 600,
+            "level_increase": {
+                "wild": 12,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 58170,
+            "level_increase": {
+                "wild": 2.98,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Acro Saddle (Level 77)",
+            "engram_level": 77
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Acrocanthosaurus Egg",
+        "incubation": {
+            "range": "43 - 44 °C / 109 - 111 °F Egg Incubator: 44 °C / 111 °F",
+            "incubation_range": "43 - 44 °C / 109 - 111 °F Egg Incubator: 44 °C / 111 °F",
+            "incubation_time": "4h 59m 58.56s"
+        },
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": 550,
+    "cloneable": false,
+    "entity_id": "Acrocanthosaurus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Acrocanthosaurus"
+}

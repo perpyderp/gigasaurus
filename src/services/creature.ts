@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'fs'
+import { existsSync, readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { CreatureSchema, type Creature, type CreatureDetail, type CreatureListItem } from '@/schemas/creature'
 import { z } from 'zod'
@@ -7,9 +7,12 @@ import { toSlug } from '@/lib/slug'
 const DATA_DIR = join(process.cwd(), 'data', 'creatures')
 const IMAGE_BASE = '/images/creatures'
 
+const IMAGE_DIR = join(process.cwd(), 'public', 'images', 'creatures')
+
 function imageUrl(slug: string): string | null {
-  // Return the path if served from public/; contributors drop an image file here
-  return `${IMAGE_BASE}/${slug}.png`
+  // Served from public/; dossiers come as .png, .jpg or .webp (see scripts/download-dossiers.ts).
+  const ext = ['png', 'jpg', 'webp'].find((e) => existsSync(join(IMAGE_DIR, `${slug}.${e}`)))
+  return ext ? `${IMAGE_BASE}/${slug}.${ext}` : null
 }
 
 function normalizeSaddle(saddle: Creature['saddle']): CreatureDetail['saddle'] {
@@ -44,6 +47,8 @@ function load(slug: string): CreatureDetail | null {
 
 // Module-level cache — populated lazily on first access
 let cache: Map<string, CreatureDetail> | null = null
+/** Normalized name or alternate name → slug. */
+let aliasIndex: Map<string, string> | null = null
 
 abstract class CreatureService {
   private static getCache(): Map<string, CreatureDetail> {
@@ -83,6 +88,7 @@ abstract class CreatureService {
       count: total,
       results: page.map((c) => ({
         name: c.name,
+        alternate_names: c.alternate_names,
         slug: c.slug,
         category: c.category,
         image: c.image,
@@ -91,8 +97,23 @@ abstract class CreatureService {
     }
   }
 
+  /** Look up by slug, name or alternate name ("pyromane", "Pyromane", "Fire Lion"). */
   static getBySlug(slug: string): CreatureDetail | null {
-    return CreatureService.getCache().get(toSlug(slug)) ?? null
+    const cache = CreatureService.getCache()
+    const key = toSlug(slug)
+    return cache.get(key) ?? cache.get(CreatureService.getAliasIndex().get(key) ?? '') ?? null
+  }
+
+  private static getAliasIndex(): Map<string, string> {
+    if (aliasIndex) return aliasIndex
+    aliasIndex = new Map()
+    for (const c of CreatureService.getCache().values()) {
+      for (const name of [c.name, ...(c.alternate_names ?? [])]) {
+        const key = toSlug(name)
+        if (!aliasIndex.has(key)) aliasIndex.set(key, c.slug)
+      }
+    }
+    return aliasIndex
   }
 }
 

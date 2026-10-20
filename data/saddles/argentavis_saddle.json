@@ -1,0 +1,35 @@
+{
+    "name": "Argentavis Saddle",
+    "description": "Equip an Argentavis with this to ride it.",
+    "creatures": [
+        "argentavis"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 62,
+    "engram_points": 21,
+    "crafting_xp": 72.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 350
+        },
+        {
+            "name": "Fiber",
+            "quantity": 185
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 150
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ArgentavisSaddle.PrimalItemArmor_ArgentavisSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Argentavis_Saddle",
+    "image_file": "argentavis_saddle.png"
+}

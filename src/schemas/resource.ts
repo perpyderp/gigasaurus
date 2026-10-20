@@ -16,6 +16,11 @@ export const ResourceSchema = z.object({
     })
     .nullable()
     .optional(),
+  /**
+   * Maps the resource can be found on, in release order (see MAP_ORDER).
+   * Written by scripts/scrape-maps.ts.
+   */
+  maps: z.array(z.string()).optional().default([]),
 })
 
 export type Resource = z.infer<typeof ResourceSchema>

@@ -1,5 +1,5 @@
 {
-    "name": "Glowtail",
+    "name": "Insect Swarm",
     "dossier": null,
     "base_stats_growth": {
         "health": {
@@ -61,7 +61,7 @@
     "cloneable": false,
     "entity_id": "InsectSwarmChar_BP_C",
     "category": "fantasy",
-    "wiki_url": "https://ark.wiki.gg/wiki/Glowtail",
+    "wiki_url": "https://ark.wiki.gg/wiki/Insect_Swarm",
     "maps": [
         "Aberration",
         "Valguero",
@@ -69,5 +69,10 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "genesis-part-1",
+        "genesis-part-2",
+        "lost-island"
     ]
 }

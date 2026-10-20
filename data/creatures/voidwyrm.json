@@ -1,0 +1,108 @@
+{
+    "name": "Voidwyrm",
+    "alternate_names": [
+        "Tek Wyvern"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1295,
+            "level_increase": {
+                "wild": 194.25,
+                "tamed": 0.0405
+            },
+            "taming_bonus": {
+                "additive": -785
+            }
+        },
+        "stamina": {
+            "base": 315,
+            "level_increase": {
+                "wild": 15.75,
+                "tamed": 0.05
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1800,
+            "level_increase": {
+                "wild": 180,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 400,
+            "level_increase": {
+                "wild": 8,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 80,
+            "level_increase": {
+                "wild": 4,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": -25,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 725,
+            "level_increase": {
+                "wild": 43.5
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "No Saddle Needed",
+            "engram_level": null
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Voidwyrm Egg",
+        "incubation": {
+            "range": "80 - 90 °C / 176 - 194 °F Egg Incubator: 85 °C / 185 °F",
+            "incubation_range": "80 - 90 °C / 176 - 194 °F Egg Incubator: 85 °C / 185 °F",
+            "incubation_time": "4h 59m 58.56s"
+        },
+        "baby_time": "9h 15m 33.333s",
+        "juvenile_time": "1d 13h 2m 13.333s",
+        "adolescent_time": "1d 22h 17m 46.667s",
+        "total_maturation": "3d 20h 35m 33.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 555,
+    "cloneable": false,
+    "entity_id": "TekWyvern_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Voidwyrm",
+    "spawn_maps": [
+        "genesis-part-2"
+    ]
+}

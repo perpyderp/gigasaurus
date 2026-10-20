@@ -1,0 +1,83 @@
+{
+    "name": "Homarus",
+    "category": "invertebrate",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 240
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15
+            }
+        },
+        "food": {
+            "base": 5000,
+            "level_increase": {
+                "wild": 500
+            }
+        },
+        "weight": {
+            "base": 800,
+            "level_increase": {
+                "wild": 16
+            }
+        },
+        "melee": {
+            "base": 5015,
+            "level_increase": {
+                "wild": 2.5
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 40
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Homarus Saddle (Level 49)",
+            "engram_level": 49
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Homarus Egg",
+        "incubation": {
+            "range": "-75 - 75 °C / -103 - 167 °F Egg Incubator: 0 °C / 32 °F",
+            "incubation_range": "-75 - 75 °C / -103 - 167 °F Egg Incubator: 0 °C / 32 °F",
+            "incubation_time": "7h 56m 11.429s"
+        },
+        "baby_time": "8h 13m 49.63s",
+        "juvenile_time": "1d 8h 55m 18.519s",
+        "adolescent_time": "1d 17h 9m 8.148s",
+        "total_maturation": "3d 10h 18m 16.296s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 450,
+    "cloneable": false,
+    "entity_id": "Homarus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Homarus"
+}

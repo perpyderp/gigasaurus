@@ -1,0 +1,44 @@
+{
+    "name": "Procoptodon Saddle",
+    "description": "Equip a Procoptodon with this to ride it.",
+    "creatures": [
+        "procoptodon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 23,
+    "engram_points": 35,
+    "crafting_xp": 86,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 500
+        },
+        {
+            "name": "Pelt, Hair, or Wool",
+            "quantity": 150
+        },
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 70
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ProcoptodonSaddle.PrimalItemArmor_ProcoptodonSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Procoptodon_Saddle",
+    "image_file": "procoptodon_saddle.png"
+}

@@ -12,7 +12,7 @@ import { computeBests, type CollectionBests } from '@/lib/breeding'
 import { speciesGroupKey, useCreatureProfiles } from '@/hooks/use-creature-profiles'
 import { getAllCreatures, deleteCreatures } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
-import { listPaths, importChangedFromPath, refreshCreaturesFromFiles } from '@/lib/import-paths'
+import { listPaths, importChangedFromPath, refreshCreaturesFromFiles, regrantWatchedFolders } from '@/lib/import-paths'
 import { CreatureCard } from '@/components/CreatureCard'
 import { CreatureFilterFields } from '@/components/CreatureFilterFields'
 import { CreaturePagination } from '@/components/CreaturePagination'
@@ -98,8 +98,12 @@ function MyCreaturesContent() {
   const [loading, setLoading] = useState(true)
   const [showImport, setShowImport] = useState(false)
   const [showFilters, setShowFilters] = useState(false)
-  const [speciesNameBySlug, setSpeciesNameBySlug] = useState<Record<string, string>>({})
+  // Species names by API slug: [name, ...alternate names]. Used by search and the color view.
+  const [speciesNamesBySlug, setSpeciesNamesBySlug] = useState<Record<string, string[]>>({})
   const [watchNotice, setWatchNotice] = useState<string | null>(null)
+  // Watched folders the browser stopped letting us read (e.g. after a restart).
+  const [blockedFolders, setBlockedFolders] = useState<{ id: string; label: string }[]>([])
+  const [watchKick, setWatchKick] = useState(0)
   // Select mode: null = off, otherwise the selected creature IDs.
   const [selected, setSelected] = useState<Set<string> | null>(null)
   const [selectionBusy, setSelectionBusy] = useState(false)
@@ -145,62 +149,83 @@ function MyCreaturesContent() {
     return out
   }, [profiles])
 
-  // Lazily load slug → wiki-name map only when the user flips to Colorized mode.
+  // Load each species' names once (the API serves at most 100 per page).
   useEffect(() => {
-    if (imageMode !== 'colors' || Object.keys(speciesNameBySlug).length > 0) return
     let cancelled = false
-    // The API serves at most 100 per page, so walk the pages.
     ;(async () => {
-      const map: Record<string, string> = {}
+      const map: Record<string, string[]> = {}
       for (let offset = 0; ; offset += 100) {
         const r = await fetch(`/api/creatures?limit=100&offset=${offset}`)
         if (!r.ok) break
-        const data = (await r.json()) as { count: number; results: Array<{ slug: string; name: string }> }
-        for (const c of data.results) map[c.slug] = c.name
+        const data = (await r.json()) as { count: number; results: Array<{ slug: string; name: string; alternate_names?: string[] }> }
+        for (const c of data.results) map[c.slug] = [c.name, ...(c.alternate_names ?? [])]
         if (offset + 100 >= data.count || data.results.length === 0) break
       }
-      if (!cancelled) setSpeciesNameBySlug(map)
-    })().catch(() => {/* ignore — cards just stay on dossier */})
+      if (!cancelled) setSpeciesNamesBySlug(map)
+    })().catch(() => {/* search and color view fall back to the creature's own names */})
     return () => { cancelled = true }
-  }, [imageMode, speciesNameBySlug])
+  }, [])
 
   // Auto-watch: while this page is open, poll any folders the user marked as
   // "watched" and import exports modified since the last scan. Browsers can't
   // watch the filesystem in the background, so this only runs with the tab open
   // and requires read permission already granted (Chromium / FSA).
+  // It keeps running while the tab is hidden (you're in ARK, exporting); Chrome
+  // throttles hidden timers to about once a minute, and returning to the tab scans at once.
   useEffect(() => {
     let running = false
     let stopped = false
 
     async function poll() {
       if (running || stopped) return
-      if (typeof document !== 'undefined' && document.hidden) return
       running = true
       try {
         const watched = (await listPaths()).filter((p) => p.watch)
         let created = 0
         let updated = 0
+        const blocked: { id: string; label: string }[] = []
         for (const p of watched) {
-          const { results } = await importChangedFromPath(p.id, p.lastScan ?? 0)
-          created += results.filter((r) => r.status === 'new').length
-          updated += results.filter((r) => r.status === 'updated').length
+          try {
+            const { results, needsPermission } = await importChangedFromPath(p.id, p.lastScan ?? 0)
+            if (needsPermission) blocked.push({ id: p.id, label: p.label })
+            created += results.filter((r) => r.status === 'new').length
+            updated += results.filter((r) => r.status === 'updated').length
+          } catch {
+            // this folder failed (moved, removed) — keep scanning the others
+          }
+        }
+        if (!stopped) {
+          setBlockedFolders((prev) =>
+            prev.length === blocked.length && prev.every((b, i) => b.id === blocked[i].id) ? prev : blocked,
+          )
         }
         if (created + updated > 0) {
           await load()
           const parts = [created && `${created} new`, updated && `${updated} updated`].filter(Boolean)
           setWatchNotice(`Auto-imported ${parts.join(', ')} from watched folder${watched.length > 1 ? 's' : ''}`)
         }
-      } catch {
-        // transient scan/permission errors — try again next tick
       } finally {
         running = false
       }
     }
 
+    const onVisible = () => { if (!document.hidden) poll() }
     const kickoff = setTimeout(poll, 1500)
     const interval = setInterval(poll, 8000)
-    return () => { stopped = true; clearTimeout(kickoff); clearInterval(interval) }
-  }, [load])
+    document.addEventListener('visibilitychange', onVisible)
+    return () => {
+      stopped = true
+      clearTimeout(kickoff)
+      clearInterval(interval)
+      document.removeEventListener('visibilitychange', onVisible)
+    }
+  }, [load, watchKick])
+
+  /** Click handler: the browser shows its folder-access prompt, then watching resumes. */
+  const allowWatchedFolders = async () => {
+    await regrantWatchedFolders(blockedFolders.map((f) => f.id))
+    setWatchKick((k) => k + 1)
+  }
 
   // Auto-dismiss the watch notice.
   useEffect(() => {
@@ -252,7 +277,10 @@ function MyCreaturesContent() {
   // Distinct species for filter dropdown
   const speciesList = useMemo(() => [...new Set(creatures.map(speciesTag))].sort(), [creatures])
 
-  const filtered = useMemo(() => filterAndSortCreatures(creatures, filterState), [creatures, filterState])
+  const filtered = useMemo(
+    () => filterAndSortCreatures(creatures, filterState, speciesNamesBySlug),
+    [creatures, filterState, speciesNamesBySlug],
+  )
   const { totalPages, page: safePage, items: paginated } = paginate(filtered, page, pageSize)
   const activeFilterCount = countActiveFilters(filterState)
 
@@ -304,6 +332,16 @@ function MyCreaturesContent() {
             <button type="button" onClick={() => setActionNotice(null)} aria-label="Dismiss" className="opacity-70 hover:opacity-100">
               <X className="size-4" />
             </button>
+          </div>
+        )}
+
+        {blockedFolders.length > 0 && (
+          <div role="alert" className="flex flex-wrap items-center gap-3 rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-2.5 text-sm text-amber-900 dark:text-amber-200">
+            <span className="flex-1">
+              Watching is paused for {blockedFolders.map((f) => `“${f.label}”`).join(', ')}: the browser needs permission to read
+              {blockedFolders.length === 1 ? ' it' : ' them'} again. New exports won&apos;t import until you allow access.
+            </span>
+            <Button size="sm" onClick={allowWatchedFolders}>Allow access</Button>
           </div>
         )}
 
@@ -436,7 +474,7 @@ function MyCreaturesContent() {
                   key={creature.id}
                   creature={creature}
                   imageMode={imageMode}
-                  speciesName={creature.apiSlug ? speciesNameBySlug[creature.apiSlug] ?? null : null}
+                  speciesName={creature.apiSlug ? speciesNamesBySlug[creature.apiSlug]?.[0] ?? null : null}
                   profile={profiles?.get(creature.id) ?? null}
                   bests={bestsByGroup.get(speciesGroupKey(creature)) ?? null}
                   selection={selected ? { selected: selected.has(creature.id), onToggle: () => toggleSelected(creature.id) } : undefined}

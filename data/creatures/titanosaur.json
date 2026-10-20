@@ -99,5 +99,14 @@
         "Crystal Isles",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "scorched-earth",
+        "ragnarok",
+        "crystal-isles",
+        "lost-island",
+        "fjordur-asgard"
     ]
 }

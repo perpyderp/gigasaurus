@@ -1,0 +1,40 @@
+{
+    "name": "Megaloceros Saddle",
+    "description": "Equip a Megaloceros with this to ride it.",
+    "creatures": [
+        "megaloceros"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 12,
+    "engram_level": 30,
+    "engram_points": 20,
+    "crafting_xp": 28.4,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 200
+        },
+        {
+            "name": "Fiber",
+            "quantity": 110
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 5
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_StagSaddle.PrimalItemArmor_StagSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megaloceros_Saddle",
+    "image_file": "megaloceros_saddle.png"
+}

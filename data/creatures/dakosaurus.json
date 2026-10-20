@@ -1,0 +1,79 @@
+{
+    "name": "Dakosaurus",
+    "category": "reptile",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 3200,
+            "level_increase": {
+                "wild": 384
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 8000,
+            "level_increase": {
+                "wild": 800
+            }
+        },
+        "weight": {
+            "base": 1600,
+            "level_increase": {
+                "wild": 32
+            }
+        },
+        "melee": {
+            "base": 70,
+            "level_increase": {
+                "wild": 3.5
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 3000,
+            "level_increase": {
+                "wild": 180
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Dakosaurus Saddle (Level 76) Dakosaurus Platform Saddle (Level 86)",
+            "engram_level": 76
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "incubation": {
+            "range": "Unknown",
+            "incubation_range": "Unknown",
+            "incubation_time": "7h 56m 11.429s"
+        },
+        "baby_time": "18h 31m 6.667s",
+        "juvenile_time": "3d 2h 4m 26.667s",
+        "adolescent_time": "3d 20h 35m 33.333s",
+        "total_maturation": "7d 17h 11m 6.667s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 550,
+    "cloneable": false,
+    "entity_id": "Dakosaurus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Dakosaurus"
+}

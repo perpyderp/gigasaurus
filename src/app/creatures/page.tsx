@@ -10,7 +10,11 @@ import {
   SearchField,
 } from '@/components/Glossary'
 
-export const metadata = { title: 'Creatures — Gigasaurus' }
+export const metadata = {
+  title: 'ARK Creatures: Taming, Stats & Spawn Maps',
+  description: 'Every ARK: Survival Ascended creature with taming food and times, base stats, spawn maps for each map, saddles and breeding info.',
+  alternates: { canonical: '/creatures' },
+}
 
 const CATEGORY_LABELS: Record<string, string> = {
   dinosaur: 'Dinosaur',
@@ -34,7 +38,9 @@ export default async function CreaturesPage({
 
   const all = CreatureService.getAll({ limit: 500 }).results
   const inCategory = categoryFilter ? all.filter((c) => c.category === categoryFilter) : all
-  const filtered = search ? inCategory.filter((c) => c.name.toLowerCase().includes(search)) : inCategory
+  const filtered = search
+    ? inCategory.filter((c) => [c.name, ...(c.alternate_names ?? [])].some((n) => n.toLowerCase().includes(search)))
+    : inCategory
 
   const countByCategory = new Map<string, number>()
   for (const c of all) countByCategory.set(c.category, (countByCategory.get(c.category) ?? 0) + 1)

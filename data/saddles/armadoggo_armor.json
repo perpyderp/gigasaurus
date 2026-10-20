@@ -1,0 +1,22 @@
+{
+    "name": "Armadoggo Armor",
+    "description": "Equip an Armadoggo with this for extra protection.",
+    "creatures": [
+        "armadoggo"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 21,
+    "engram_points": null,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy"
+    ],
+    "ingredients": [],
+    "blueprint": "Blueprint'/Game/Packs/Wasteland/Dinos/Doggo/PrimalItemArmor_DinoCompanionSaddle_Doggo.PrimalItemArmor_DinoCompanionSaddle_Doggo'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Armadoggo_Armor",
+    "image_file": "armadoggo_armor.png"
+}

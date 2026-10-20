@@ -1,0 +1,92 @@
+{
+    "name": "Elderclaw",
+    "alternate_names": [
+        "Spirit Bear"
+    ],
+    "category": "mammal",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 800,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 350,
+            "level_increase": {
+                "wild": 35,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 250,
+            "level_increase": {
+                "wild": 25,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 2800,
+            "level_increase": {
+                "wild": 280,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 650,
+            "level_increase": {
+                "wild": 13,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3550,
+            "level_increase": {
+                "wild": 1.752,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 1000,
+            "level_increase": {
+                "wild": 60
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": true,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Elderclaw Seed",
+        "baby_time": "Unknown",
+        "juvenile_time": "Unknown",
+        "adolescent_time": "Unknown",
+        "total_maturation": "Unknown",
+        "breeding_interval": "Unknown"
+    },
+    "drag_weight": 550,
+    "cloneable": false,
+    "entity_id": "SpiritBear_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Elderclaw"
+}

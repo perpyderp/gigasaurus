@@ -1,0 +1,44 @@
+{
+    "name": "Spino Saddle",
+    "description": "Equip a Spino with this to ride it.",
+    "creatures": [
+        "spino"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 71,
+    "engram_points": 40,
+    "crafting_xp": 89,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 380
+        },
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 45
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 25
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_SpinoSaddle.PrimalItemArmor_SpinoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Spino_Saddle",
+    "image_file": "spino_saddle.png"
+}

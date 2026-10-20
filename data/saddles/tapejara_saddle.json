@@ -1,0 +1,44 @@
+{
+    "name": "Tapejara Saddle",
+    "description": "A saddle for your Tapejara. It has three seats! Bring your friends!",
+    "creatures": [
+        "tapejara"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 55,
+    "engram_points": 21,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 260
+        },
+        {
+            "name": "Fiber",
+            "quantity": 180
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 120
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 45
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TapejaraSaddle.PrimalItemArmor_TapejaraSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Tapejara_Saddle",
+    "image_file": "tapejara_saddle.png"
+}

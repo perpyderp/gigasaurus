@@ -1,0 +1,44 @@
+{
+    "name": "Titanosaur Platform Saddle",
+    "description": "Equip a Titanosaur with this to ride it. You can build structures on the large platform to make a mobile base.",
+    "creatures": [
+        "titanosaur"
+    ],
+    "tek": false,
+    "platform": true,
+    "armor": 1,
+    "weight": 200,
+    "engram_level": 100,
+    "engram_points": 120,
+    "crafting_xp": 462,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 4000
+        },
+        {
+            "name": "Hide",
+            "quantity": 4000
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 1600
+        },
+        {
+            "name": "Fiber",
+            "quantity": 2000
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TitanSaddle_Platform.PrimalItemArmor_TitanSaddle_Platform'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Titanosaur_Platform_Saddle",
+    "image_file": "titanosaur_platform_saddle.png"
+}

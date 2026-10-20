@@ -45,10 +45,13 @@
     "reproduction": null,
     "drag_weight": 70,
     "cloneable": false,
-    "entity_id": "LanternLizard_Character_BP_C",
+    "entity_id": "Macrophage_Swarm_Character_C",
     "category": "fantasy",
     "wiki_url": "https://ark.wiki.gg/wiki/Macrophage",
     "maps": [
         "Genesis: Part 2"
+    ],
+    "spawn_maps": [
+        "genesis-part-2"
     ]
 }

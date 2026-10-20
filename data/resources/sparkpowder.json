@@ -8,5 +8,6 @@
     "stack_size": 100,
     "found_in": [
         "Green"
-    ]
+    ],
+    "maps": ["The Island", "The Center", "Scorched Earth", "Ragnarok", "Aberration", "Extinction", "Valguero", "Crystal Isles", "Genesis: Part 1", "Genesis: Part 2", "Lost Island", "Fjordur", "Astraeos", "Lost Colony"]
 }

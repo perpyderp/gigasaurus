@@ -1,0 +1,48 @@
+{
+    "name": "Bronto Platform Saddle",
+    "description": "Equip a Bronto with this to ride it. You can build structures on the large platform to make a mobile base.",
+    "creatures": [
+        "brontosaurus"
+    ],
+    "tek": false,
+    "platform": true,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 82,
+    "engram_points": 35,
+    "crafting_xp": 462,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 550
+        },
+        {
+            "name": "Fiber",
+            "quantity": 325
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 90
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 125
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 45
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_SauroSaddle_Platform.PrimalItemArmor_SauroSaddle_Platform'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Bronto_Platform_Saddle",
+    "image_file": "bronto_platform_saddle.png"
+}

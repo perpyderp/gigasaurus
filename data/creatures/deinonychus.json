@@ -109,5 +109,9 @@
     "maps": [
         "Valguero",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "valguero",
+        "fjordur-midgard"
     ]
 }

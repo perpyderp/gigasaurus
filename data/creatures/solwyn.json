@@ -1,0 +1,96 @@
+{
+    "name": "Solwyn",
+    "alternate_names": [
+        "Angel Fox"
+    ],
+    "category": "mammal",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 650,
+            "level_increase": {
+                "wild": 130,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 400,
+            "level_increase": {
+                "wild": 40,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1200,
+            "level_increase": {
+                "wild": 120,
+                "tamed": 0.1
+            },
+            "taming_bonus": {
+                "multiplicative": 0.15
+            }
+        },
+        "weight": {
+            "base": 375,
+            "level_increase": {
+                "wild": 7.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3250,
+            "level_increase": {
+                "wild": 1.62,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.055999999999999994,
+                "multiplicative": 0.154
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            },
+            "taming_bonus": {
+                "additive": 0.3
+            }
+        },
+        "torpidity": {
+            "base": 450,
+            "level_increase": {
+                "wild": 27
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": true,
+    "breedable": true,
+    "taming": null,
+    "saddle": [
+        {
+            "name": "Angelic Snowflake (Level ?) Solwyn Saddle (Level 58)",
+            "engram_level": 58
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 180,
+    "cloneable": false,
+    "entity_id": "AngelFox_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Solwyn"
+}

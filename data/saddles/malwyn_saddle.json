@@ -1,0 +1,45 @@
+{
+    "name": "Malwyn Saddle",
+    "description": "Equip a Malwyn with this to ride it.",
+    "creatures": [
+        "malwyn"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 65,
+    "engram_points": 40,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 250
+        },
+        {
+            "name": "Hide",
+            "quantity": 75
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 180
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 60
+        }
+    ],
+    "blueprint": "/Game/LostColony/Dinos/DevilFox/PrimalItemArmor_DevilFoxSaddle.PrimalItemArmor_DevilFoxSaddle_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Malwyn_Saddle",
+    "image_file": "malwyn_saddle.png"
+}

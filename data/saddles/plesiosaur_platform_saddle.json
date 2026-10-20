@@ -1,0 +1,48 @@
+{
+    "name": "Plesiosaur Platform Saddle",
+    "description": "Equip a Plesiosaur with this to ride it. You can build structures on the large platform to make a mobile base.",
+    "creatures": [
+        "plesiosaur"
+    ],
+    "tek": false,
+    "platform": true,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 84,
+    "engram_points": 50,
+    "crafting_xp": 462,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 680
+        },
+        {
+            "name": "Fiber",
+            "quantity": 405
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 112
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 155
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 55
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_PlesiSaddle_Platform.PrimalItemArmor_PlesiSaddle_Platform'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Plesiosaur_Platform_Saddle",
+    "image_file": "plesiosaur_platform_saddle.png"
+}

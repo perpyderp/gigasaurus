@@ -6,5 +6,6 @@
     "combustible": false,
     "weight": 0.01,
     "stack_size": 100,
-    "found_in": []
+    "found_in": [],
+    "maps": ["Genesis: Part 1", "Lost Island", "Fjordur"]
 }

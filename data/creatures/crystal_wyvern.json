@@ -1,5 +1,8 @@
 {
     "name": "Crystal Wyvern",
+    "alternate_names": [
+        "Tropical Crystal Wyvern"
+    ],
     "dossier": null,
     "base_stats_growth": {
         "health": {

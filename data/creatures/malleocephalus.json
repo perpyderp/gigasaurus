@@ -1,0 +1,87 @@
+{
+    "name": "Malleocephalus",
+    "category": "fish",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 550,
+            "level_increase": {
+                "wild": 110,
+                "tamed": 0.054000000000000006
+            }
+        },
+        "stamina": {
+            "base": 325,
+            "level_increase": {
+                "wild": 32.5,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1800,
+            "level_increase": {
+                "wild": 180,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 325,
+            "level_increase": {
+                "wild": 6.5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 33,
+            "level_increase": {
+                "wild": 1.65,
+                "tamed": 0.017
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Malleocephalus Saddle (Level 15)",
+            "engram_level": 15
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": {
+        "gestation_time": "6h 6m 18.022s",
+        "baby_time": "7h 7m 21.026s",
+        "juvenile_time": "1d 4h 29m 24.103s",
+        "adolescent_time": "1d 11h 36m 45.128s",
+        "total_maturation": "2d 23h 13m 30.256s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": false,
+    "entity_id": "Malleocephalus_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Malleocephalus"
+}

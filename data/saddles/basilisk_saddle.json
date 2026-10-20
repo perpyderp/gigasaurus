@@ -1,0 +1,48 @@
+{
+    "name": "Basilisk Saddle",
+    "description": "Equip a Basilisk with this to ride it.",
+    "creatures": [
+        "basilisk"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 85,
+    "engram_points": 28,
+    "crafting_xp": 55,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 85
+        },
+        {
+            "name": "Fiber",
+            "quantity": 150
+        },
+        {
+            "name": "Green Gem or Fragmented Green Gem",
+            "quantity": 45
+        },
+        {
+            "name": "Hide",
+            "quantity": 270
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 425
+        }
+    ],
+    "blueprint": "Blueprint'/Game/Aberration/Dinos/Basilisk/PrimalItemArmor_BasiliskSaddle.PrimalItemArmor_BasiliskSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Basilisk_Saddle",
+    "image_file": "basilisk_saddle.png"
+}

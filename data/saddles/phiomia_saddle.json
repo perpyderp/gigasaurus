@@ -1,0 +1,35 @@
+{
+    "name": "Phiomia Saddle",
+    "description": "Equip a Phiomia with this to ride it.",
+    "creatures": [
+        "phiomia"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 5,
+    "engram_points": 6,
+    "crafting_xp": 3.6,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 20
+        },
+        {
+            "name": "Fiber",
+            "quantity": 15
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 5
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_PhiomiaSaddle.PrimalItemArmor_PhiomiaSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Phiomia_Saddle",
+    "image_file": "phiomia_saddle.png"
+}

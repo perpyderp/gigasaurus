@@ -1,0 +1,56 @@
+{
+    "name": "Arthropluera Saddle",
+    "description": "Equip an Arthropluera with this to ride it.",
+    "creatures": [
+        "arthropluera"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 54,
+    "engram_points": 30,
+    "crafting_xp": 13.1,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 80
+        },
+        {
+            "name": "Fiber",
+            "quantity": 50
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 20
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 30
+        },
+        {
+            "name": "Flint",
+            "quantity": 8
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 15
+        },
+        {
+            "name": "Obsidian",
+            "quantity": 35
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ArthroSaddle.PrimalItemArmor_ArthroSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Arthropluera_Saddle",
+    "image_file": "arthropluera_saddle.png"
+}

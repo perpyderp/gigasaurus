@@ -1,5 +1,8 @@
 {
     "name": "Malwyn",
+    "alternate_names": [
+        "Devil Fox"
+    ],
     "category": "other",
     "dossier": {
         "species": "Vulpes daemonicus",

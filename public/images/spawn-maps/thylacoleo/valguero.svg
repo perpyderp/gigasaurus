@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" class="creatureMap" style="position:absolute;">
+<defs>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="3" />
+    </filter>
+    <style>
+        .spawningMap-very-common { fill: #0F0; }
+        .spawningMap-common { fill: #B2FF00; }
+        .spawningMap-uncommon { fill: #FF0; }
+        .spawningMap-very-uncommon { fill: #FC0; }
+        .spawningMap-rare { fill: #F60; }
+        .spawningMap-very-rare { fill: #F00; }
+        .spawning-map-point { stroke:black; stroke-width:1; }
+    </style>
+</defs>
+<g class="spawning-map-point" opacity="0.8">
+    <g class="spawningMap-very-rare">
+        <circle cx="93" cy="184" r="4.0" />
+        <circle cx="111" cy="186" r="4.0" />
+        <circle cx="111" cy="196" r="4.0" />
+        <circle cx="121" cy="196" r="4.0" />
+        <circle cx="125" cy="202" r="4.0" />
+        <circle cx="96" cy="207" r="4.0" />
+        <circle cx="103" cy="207" r="4.0" />
+        <circle cx="113" cy="206" r="4.0" />
+        <circle cx="112" cy="209" r="4.0" />
+        <circle cx="124" cy="212" r="4.0" />
+        <circle cx="131" cy="211" r="4.0" />
+        <circle cx="127" cy="216" r="4.0" />
+        <circle cx="135" cy="214" r="4.0" />
+        <circle cx="129" cy="223" r="4.0" />
+        <circle cx="122" cy="226" r="4.0" />
+        <circle cx="116" cy="224" r="4.0" />
+        <circle cx="112" cy="221" r="4.0" />
+        <circle cx="107" cy="224" r="4.0" />
+        <circle cx="101" cy="220" r="4.0" />
+        <circle cx="98" cy="216" r="4.0" />
+        <circle cx="97" cy="222" r="4.0" />
+        <circle cx="84" cy="217" r="4.0" />
+        <circle cx="90" cy="222" r="4.0" />
+        <circle cx="92" cy="229" r="4.0" />
+        <circle cx="90" cy="231" r="4.0" />
+        <circle cx="83" cy="237" r="4.0" />
+        <circle cx="85" cy="230" r="4.0" />
+        <circle cx="79" cy="232" r="4.0" />
+        <circle cx="81" cy="220" r="4.0" />
+        <circle cx="88" cy="221" r="4.0" />
+        <circle cx="82" cy="218" r="4.0" />
+        <circle cx="77" cy="214" r="4.0" />
+        <circle cx="69" cy="213" r="4.0" />
+        <circle cx="78" cy="219" r="4.0" />
+        <circle cx="74" cy="227" r="4.0" />
+        <circle cx="65" cy="222" r="4.0" />
+        <circle cx="66" cy="224" r="4.0" />
+        <circle cx="60" cy="235" r="4.0" />
+        <circle cx="57" cy="247" r="4.0" />
+        <circle cx="55" cy="231" r="4.0" />
+        <circle cx="66" cy="234" r="4.0" />
+        <circle cx="74" cy="242" r="4.0" />
+        <circle cx="72" cy="249" r="4.0" />
+        <circle cx="61" cy="250" r="4.0" />
+        <circle cx="55" cy="242" r="4.0" />
+        <circle cx="52" cy="246" r="4.0" />
+        <circle cx="140" cy="201" r="4.0" />
+        <circle cx="148" cy="207" r="4.0" />
+        <circle cx="142" cy="212" r="4.0" />
+        <circle cx="153" cy="212" r="4.0" />
+        <circle cx="152" cy="229" r="4.0" />
+        <circle cx="164" cy="243" r="4.0" />
+        <circle cx="173" cy="251" r="4.0" />
+        <circle cx="171" cy="259" r="4.0" />
+        <circle cx="166" cy="274" r="4.0" />
+        <circle cx="146" cy="282" r="4.0" />
+        <circle cx="138" cy="275" r="4.0" />
+        <circle cx="121" cy="284" r="4.0" />
+        <circle cx="133" cy="258" r="4.0" />
+        <circle cx="126" cy="254" r="4.0" />
+        <circle cx="110" cy="252" r="4.0" />
+        <circle cx="101" cy="246" r="4.0" />
+        <circle cx="93" cy="248" r="4.0" />
+        <circle cx="73" cy="247" r="4.0" />
+        <circle cx="65" cy="251" r="4.0" />
+        <circle cx="90" cy="253" r="4.0" />
+        <circle cx="87" cy="271" r="4.0" />
+        <circle cx="95" cy="273" r="4.0" />
+        <circle cx="110" cy="279" r="4.0" />
+        <circle cx="94" cy="281" r="4.0" />
+        <circle cx="89" cy="277" r="4.0" />
+        <circle cx="60" cy="259" r="4.0" />
+        <circle cx="82" cy="281" r="4.0" />
+        <circle cx="60" cy="278" r="4.0" />
+        <circle cx="40" cy="276" r="4.0" />
+        <circle cx="29" cy="267" r="4.0" />
+        <circle cx="27" cy="253" r="4.0" />
+        <circle cx="20" cy="262" r="4.0" />
+        <circle cx="23" cy="273" r="4.0" />
+        <circle cx="26" cy="241" r="4.0" />
+        <circle cx="50" cy="224" r="4.0" />
+        <circle cx="65" cy="208" r="4.0" />
+        <circle cx="50" cy="207" r="4.0" />
+        <circle cx="48" cy="231" r="4.0" />
+        <circle cx="35" cy="221" r="4.0" />
+        <circle cx="23" cy="223" r="4.0" />
+        <circle cx="48" cy="203" r="4.0" />
+        <circle cx="52" cy="186" r="4.0" />
+        <circle cx="88" cy="183" r="4.0" />
+        <circle cx="83" cy="173" r="4.0" />
+        <circle cx="86" cy="164" r="4.0" />
+        <circle cx="82" cy="160" r="4.0" />
+        <circle cx="71" cy="161" r="4.0" />
+        <circle cx="78" cy="150" r="4.0" />
+        <circle cx="73" cy="146" r="4.0" />
+        <circle cx="43" cy="182" r="4.0" />
+    </g></g>
+</svg>

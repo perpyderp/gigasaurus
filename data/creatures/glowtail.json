@@ -1,5 +1,8 @@
 {
     "name": "Glowtail",
+    "alternate_names": [
+        "Lantern Lizard"
+    ],
     "category": "other",
     "dossier": {
         "species": "Microluminis psykhe",
@@ -98,5 +101,15 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "valguero",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-asgard",
+        "fjordur-vanaheim"
     ]
 }

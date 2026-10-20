@@ -1,0 +1,87 @@
+{
+    "name": "Kathreptis",
+    "category": "invertebrate",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 800,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.054000000000000006
+            }
+        },
+        "stamina": {
+            "base": 320,
+            "level_increase": {
+                "wild": 32,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 1700,
+            "level_increase": {
+                "wild": 170,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 250,
+            "level_increase": {
+                "wild": 5,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 40,
+            "level_increase": {
+                "wild": 2,
+                "tamed": 0.017
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0
+            }
+        },
+        "torpidity": {
+            "base": 800,
+            "level_increase": {
+                "wild": 48
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Passive",
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": {
+        "name": "Kathreptis Egg",
+        "incubation": {
+            "range": "-75 - 75 °C / -103 - 167 °F Egg Incubator: 0 °C / 32 °F",
+            "incubation_range": "-75 - 75 °C / -103 - 167 °F Egg Incubator: 0 °C / 32 °F",
+            "incubation_time": "7h 56m 11.429s"
+        },
+        "baby_time": "3h 42m 13.333s",
+        "juvenile_time": "14h 48m 53.333s",
+        "adolescent_time": "18h 31m 6.667s",
+        "total_maturation": "1d 13h 2m 13.333s",
+        "breeding_interval": "18h - 2d"
+    },
+    "drag_weight": 250,
+    "cloneable": false,
+    "entity_id": "Kathreptis_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Kathreptis"
+}

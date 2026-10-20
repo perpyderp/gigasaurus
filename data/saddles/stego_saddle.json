@@ -1,0 +1,35 @@
+{
+    "name": "Stego Saddle",
+    "description": "Equip a Stego with this to ride it.",
+    "creatures": [
+        "stegosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 26,
+    "engram_points": 15,
+    "crafting_xp": 31.4,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 200
+        },
+        {
+            "name": "Fiber",
+            "quantity": 110
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 35
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_StegoSaddle.PrimalItemArmor_StegoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Stego_Saddle",
+    "image_file": "stego_saddle.png"
+}

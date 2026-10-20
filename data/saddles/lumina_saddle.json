@@ -1,0 +1,45 @@
+{
+    "name": "Lumina Saddle",
+    "description": "Equip a Lumina with this to ride it.",
+    "creatures": [
+        "lumina"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 65,
+    "engram_points": 18,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Helicoprion Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Fiber",
+            "quantity": 150
+        },
+        {
+            "name": "Hide",
+            "quantity": 220
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 40
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 60
+        }
+    ],
+    "blueprint": "/Game/Dragontopia/Dragons/Eclipsar/Lumina/PrimalItemArmor_LuminaSaddle.PrimalItemArmor_LuminaSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Lumina_Saddle",
+    "image_file": "lumina_saddle.png"
+}

@@ -1,5 +1,8 @@
 {
     "name": "Ravager",
+    "alternate_names": [
+        "Cave Wolf"
+    ],
     "category": "other",
     "dossier": {
         "species": "Canis barghest",
@@ -115,5 +118,15 @@
         "Genesis: Part 2",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-vanaheim"
     ]
 }

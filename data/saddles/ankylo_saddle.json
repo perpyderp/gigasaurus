@@ -1,0 +1,40 @@
+{
+    "name": "Ankylo Saddle",
+    "description": "Equip an Ankylo with this to ride it.",
+    "creatures": [
+        "ankylosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 36,
+    "engram_points": 18,
+    "crafting_xp": 39.6,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 260
+        },
+        {
+            "name": "Fiber",
+            "quantity": 140
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 10
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_AnkyloSaddle.PrimalItemArmor_AnkyloSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ankylo_Saddle",
+    "image_file": "ankylo_saddle.png"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Quetz Saddle",
+    "description": "Equip a Quetzal with this to ride it.",
+    "creatures": [
+        "quetzal"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 76,
+    "engram_points": 44,
+    "crafting_xp": 116,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 750
+        },
+        {
+            "name": "Fiber",
+            "quantity": 500
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 100
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 85
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_QuetzSaddle.PrimalItemArmor_QuetzSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Quetz_Saddle",
+    "image_file": "quetz_saddle.png"
+}

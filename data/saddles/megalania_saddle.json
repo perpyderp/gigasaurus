@@ -1,0 +1,40 @@
+{
+    "name": "Megalania Saddle",
+    "description": "Equip a Megalania with this to ride it.",
+    "creatures": [
+        "megalania"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 73,
+    "engram_points": 65,
+    "crafting_xp": 62.8,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 315
+        },
+        {
+            "name": "Fiber",
+            "quantity": 215
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 45
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MegalaniaSaddle.PrimalItemArmor_MegalaniaSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megalania_Saddle",
+    "image_file": "megalania_saddle.png"
+}

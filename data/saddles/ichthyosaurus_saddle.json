@@ -1,0 +1,43 @@
+{
+    "name": "Ichthyosaurus Saddle",
+    "description": "Equip a Ichthyosaurus with this to ride it.",
+    "creatures": [
+        "ichthyosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 13,
+    "engram_points": 8,
+    "crafting_xp": 13.1,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 55
+        },
+        {
+            "name": "Fiber",
+            "quantity": 50
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 20
+        },
+        {
+            "name": "Metal",
+            "quantity": 10
+        },
+        {
+            "name": "Flint",
+            "quantity": 8
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DolphinSaddle.PrimalItemArmor_DolphinSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Ichthyosaurus_Saddle",
+    "image_file": "ichthyosaurus_saddle.png"
+}

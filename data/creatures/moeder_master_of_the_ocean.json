@@ -1,0 +1,63 @@
+{
+    "name": "Moeder, Master of the Ocean",
+    "alternate_names": [
+        "Eel Boss"
+    ],
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 490000,
+            "level_increase": {
+                "wild": 98000
+            }
+        },
+        "stamina": {
+            "base": 600,
+            "level_increase": {
+                "wild": 60
+            }
+        },
+        "oxygen": {
+            "base": null
+        },
+        "food": {
+            "base": 12000,
+            "level_increase": {
+                "wild": 1200
+            }
+        },
+        "weight": {
+            "base": 2000,
+            "level_increase": {
+                "wild": 40
+            }
+        },
+        "melee": {
+            "base": 180,
+            "level_increase": {
+                "wild": 9
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 5000,
+            "level_increase": {
+                "wild": 300
+            }
+        }
+    },
+    "tameable": false,
+    "rideable": false,
+    "breedable": false,
+    "taming": null,
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 7500,
+    "cloneable": false,
+    "entity_id": "EelBoss_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Moeder%2C_Master_of_the_Ocean"
+}

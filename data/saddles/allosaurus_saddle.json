@@ -1,0 +1,40 @@
+{
+    "name": "Allosaurus Saddle",
+    "description": "Equip an Allosaurus with this to ride it.",
+    "creatures": [
+        "allosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 67,
+    "engram_points": 35,
+    "crafting_xp": 72.4,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 320
+        },
+        {
+            "name": "Fiber",
+            "quantity": 170
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 30
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_AlloSaddle.PrimalItemArmor_AlloSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Allosaurus_Saddle",
+    "image_file": "allosaurus_saddle.png"
+}

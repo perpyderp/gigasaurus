@@ -1,0 +1,44 @@
+{
+    "name": "Archelon Saddle",
+    "description": "A saddle for your Archelon. Provides Oxygen to nearby survivors, and can seat 4 additional passengers!",
+    "creatures": [
+        "archelon"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 45,
+    "engram_points": 44,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 850
+        },
+        {
+            "name": "Fiber",
+            "quantity": 600
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 250
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 200
+        }
+    ],
+    "blueprint": "Blueprint'/Game/ASA/Dinos/Archelon/Dinos/Saddle/PrimalItem_Armor_Archelon_Saddle_ASA.PrimalItem_Armor_Archelon_Saddle_ASA_C'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Archelon_Saddle",
+    "image_file": "archelon_saddle.png"
+}

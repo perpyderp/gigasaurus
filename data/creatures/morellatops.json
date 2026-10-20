@@ -1,5 +1,8 @@
 {
     "name": "Morellatops",
+    "alternate_names": [
+        "Camelsaurus"
+    ],
     "category": "other",
     "dossier": {
         "species": "Morellatops dromedarius",
@@ -115,5 +118,12 @@
         "Extinction",
         "Crystal Isles",
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "scorched-earth",
+        "ragnarok",
+        "extinction",
+        "crystal-isles",
+        "lost-island"
     ]
 }

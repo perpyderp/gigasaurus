@@ -109,5 +109,13 @@
         "Crystal Isles",
         "Genesis: Part 2",
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "scorched-earth",
+        "ragnarok",
+        "valguero",
+        "crystal-isles",
+        "genesis-part-2",
+        "lost-island"
     ]
 }

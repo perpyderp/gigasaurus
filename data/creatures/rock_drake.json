@@ -106,5 +106,10 @@
     "maps": [
         "Aberration",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "aberration",
+        "fjordur-midgard",
+        "fjordur-asgard"
     ]
 }

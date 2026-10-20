@@ -106,5 +106,8 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Desmodus",
     "maps": [
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "fjordur-midgard"
     ]
 }

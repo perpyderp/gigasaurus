@@ -1,0 +1,35 @@
+{
+    "name": "Trike Saddle",
+    "description": "Equip a Triceratops with this to ride it.",
+    "creatures": [
+        "triceratops"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 16,
+    "engram_points": 12,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 140
+        },
+        {
+            "name": "Fiber",
+            "quantity": 80
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 25
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TrikeSaddle.PrimalItemArmor_TrikeSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Trike_Saddle",
+    "image_file": "trike_saddle.png"
+}

@@ -1,5 +1,17 @@
 {
     "name": "Wyvern",
+    "alternate_names": [
+        "Brute Fire Wyvern",
+        "Corrupted Wyvern",
+        "Fire Wyvern",
+        "Forest Wyvern",
+        "Ice Wyvern",
+        "Lightning Wyvern",
+        "Poison Wyvern",
+        "Zombie Fire Wyvern",
+        "Zombie Lightning Wyvern",
+        "Zombie Poison Wyvern"
+    ],
     "category": "other",
     "dossier": {
         "species": "Draconis vipera",
@@ -109,5 +121,12 @@
         "Valguero",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "scorched-earth",
+        "ragnarok",
+        "valguero",
+        "lost-island",
+        "fjordur-midgard"
     ]
 }

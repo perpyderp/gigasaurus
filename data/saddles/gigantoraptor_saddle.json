@@ -1,0 +1,39 @@
+{
+    "name": "Gigantoraptor Saddle",
+    "description": "Equip a Gigantoraptor with this to ride it.",
+    "creatures": [
+        "gigantoraptor"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 69,
+    "engram_points": 40,
+    "crafting_xp": null,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy"
+    ],
+    "ingredients": [
+        {
+            "name": "Wood",
+            "quantity": 120
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 55
+        },
+        {
+            "name": "Fiber",
+            "quantity": 160
+        },
+        {
+            "name": "Hide",
+            "quantity": 285
+        }
+    ],
+    "blueprint": "/Game/ASA/Dinos/Gigantoraptor/PrimalItemArmor_GigantoraptorSaddle.PrimalItemArmor_GigantoraptorSaddle",
+    "wiki_url": "https://ark.wiki.gg/wiki/Gigantoraptor_Saddle",
+    "image_file": "gigantoraptor_saddle.png"
+}

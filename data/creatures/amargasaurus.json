@@ -108,5 +108,8 @@
     "wiki_url": "https://ark.wiki.gg/wiki/Amargasaurus",
     "maps": [
         "Lost Island"
+    ],
+    "spawn_maps": [
+        "lost-island"
     ]
 }

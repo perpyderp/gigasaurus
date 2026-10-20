@@ -1,0 +1,44 @@
+{
+    "name": "Diplodocus Saddle",
+    "description": "A saddle for your Diplodocus. It has ten seats! Bring lots of friends!",
+    "creatures": [
+        "diplodocus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 32,
+    "engram_points": 30,
+    "crafting_xp": 22.2,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 850
+        },
+        {
+            "name": "Fiber",
+            "quantity": 600
+        },
+        {
+            "name": "Wood or Fungal Wood",
+            "quantity": 250
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 200
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DiplodocusSaddle.PrimalItemArmor_DiplodocusSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Diplodocus_Saddle",
+    "image_file": "diplodocus_saddle.png"
+}

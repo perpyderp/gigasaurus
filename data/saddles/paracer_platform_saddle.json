@@ -1,0 +1,48 @@
+{
+    "name": "Paracer Platform Saddle",
+    "description": "Equip a Paraceratherium with this to ride it. You can build structures on the large platform to make a mobile base.",
+    "creatures": [
+        "paraceratherium"
+    ],
+    "tek": false,
+    "platform": true,
+    "armor": 20,
+    "weight": 20,
+    "engram_level": 50,
+    "engram_points": 24,
+    "crafting_xp": 133.8,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 320
+        },
+        {
+            "name": "Fiber",
+            "quantity": 200
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 70
+        },
+        {
+            "name": "Silica Pearls or Silicate",
+            "quantity": 45
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 25
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ParacerSaddle_Platform.PrimalItemArmor_ParacerSaddle_Platform'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Paracer_Platform_Saddle",
+    "image_file": "paracer_platform_saddle.png"
+}

@@ -1,0 +1,72 @@
+{
+    "name": "Stereolepis",
+    "category": "other",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 45,
+            "level_increase": {
+                "wild": 9,
+                "tamed": 0.054000000000000006
+            }
+        },
+        "stamina": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 100,
+            "level_increase": {
+                "wild": 10,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 14,
+            "level_increase": {
+                "wild": 0.28,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 5,
+            "level_increase": {
+                "wild": 0.25,
+                "tamed": 0.017
+            }
+        },
+        "movement": {
+            "base": 100
+        },
+        "torpidity": {
+            "base": 15,
+            "level_increase": {
+                "wild": 0.9
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": false,
+    "breedable": false,
+    "taming": {
+        "method": null,
+        "kibble": null
+    },
+    "saddle": null,
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 32.5,
+    "cloneable": false,
+    "entity_id": "Stereolepis_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Stereolepis"
+}

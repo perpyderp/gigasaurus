@@ -1,0 +1,43 @@
+{
+    "name": "Carcharo Saddle",
+    "description": "Equip a Carcharodontosaurus with this to ride it.",
+    "creatures": [
+        "carcharodontosaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 96,
+    "engram_points": 75,
+    "crafting_xp": 300,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 500
+        },
+        {
+            "name": "Fiber",
+            "quantity": 350
+        },
+        {
+            "name": "Metal Ingot",
+            "quantity": 180
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 20
+        }
+    ],
+    "blueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_CarchaSaddle.PrimalItemArmor_CarchaSaddle_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Carcharo_Saddle",
+    "image_file": "carcharo_saddle.png"
+}

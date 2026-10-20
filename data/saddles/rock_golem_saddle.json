@@ -1,0 +1,40 @@
+{
+    "name": "Rock Golem Saddle",
+    "description": "Equip a Rock Golem with this to ride it.",
+    "creatures": [
+        "rock_elemental"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 70,
+    "engram_points": 40,
+    "crafting_xp": 70,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 270
+        },
+        {
+            "name": "Fiber",
+            "quantity": 150
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 35
+        }
+    ],
+    "blueprint": "Blueprint'/Game/ScorchedEarth/Dinos/RockGolem/PrimalItemArmor_RockGolemSaddle.PrimalItemArmor_RockGolemSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Rock_Golem_Saddle",
+    "image_file": "rock_golem_saddle.png"
+}

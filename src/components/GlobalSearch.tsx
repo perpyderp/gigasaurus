@@ -15,6 +15,8 @@ import { buttonVariants } from '@/components/ui/button-variants'
 
 export interface SearchEntry {
   name: string
+  /** Other names that should find this entry ("Fire Lion" → Pyromane). */
+  aliases?: string[]
   kind: 'Creature' | 'Armor' | 'Weapon' | 'Resource'
   href: string
   image: string | null
@@ -29,9 +31,9 @@ function rankEntries(entries: SearchEntry[], query: string): SearchEntry[] {
   const starts: SearchEntry[] = []
   const contains: SearchEntry[] = []
   for (const entry of entries) {
-    const name = entry.name.toLowerCase()
-    if (name.startsWith(q) || name.split(/[\s-]+/).some((word) => word.startsWith(q))) starts.push(entry)
-    else if (name.includes(q)) contains.push(entry)
+    const names = [entry.name, ...(entry.aliases ?? [])].map((n) => n.toLowerCase())
+    if (names.some((name) => name.startsWith(q) || name.split(/[\s-]+/).some((word) => word.startsWith(q)))) starts.push(entry)
+    else if (names.some((name) => name.includes(q))) contains.push(entry)
   }
   return [...starts, ...contains].slice(0, MAX_SUGGESTIONS)
 }

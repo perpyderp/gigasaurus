@@ -1,0 +1,40 @@
+{
+    "name": "Carno Saddle",
+    "description": "Equip a Carnotaurus with this to ride it.",
+    "creatures": [
+        "carnotaurus"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 46,
+    "engram_points": 21,
+    "crafting_xp": 72.4,
+    "crafting_time": null,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 320
+        },
+        {
+            "name": "Fiber",
+            "quantity": 170
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 30
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_CarnoSaddle.PrimalItemArmor_CarnoSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Carno_Saddle",
+    "image_file": "carno_saddle.png"
+}

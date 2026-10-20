@@ -1,0 +1,35 @@
+{
+    "name": "Araneo Saddle",
+    "description": "Equip an Araneo with this to ride it.",
+    "creatures": [
+        "araneo"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 12,
+    "engram_level": 40,
+    "engram_points": 18,
+    "crafting_xp": 51.6,
+    "crafting_time": null,
+    "crafted_in": [
+        "Inventory"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 260
+        },
+        {
+            "name": "Fiber",
+            "quantity": 140
+        },
+        {
+            "name": "Chitin, Keratin, or Shell Fragment",
+            "quantity": 100
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_SpiderSaddle.PrimalItemArmor_SpiderSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Araneo_Saddle",
+    "image_file": "araneo_saddle.png"
+}

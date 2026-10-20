@@ -1,0 +1,44 @@
+{
+    "name": "Megatherium Saddle",
+    "description": "Equip a Megatherium with this to ride it.",
+    "creatures": [
+        "megatherium"
+    ],
+    "tek": false,
+    "platform": false,
+    "armor": 25,
+    "weight": 20,
+    "engram_level": 52,
+    "engram_points": 24,
+    "crafting_xp": 22.2,
+    "crafting_time": 10,
+    "crafted_in": [
+        "Smithy",
+        "Argentavis Saddle",
+        "Castoroides Saddle",
+        "Thorny Dragon Saddle",
+        "Tek Replicator",
+        "Exo-Mek"
+    ],
+    "ingredients": [
+        {
+            "name": "Hide",
+            "quantity": 325
+        },
+        {
+            "name": "Fiber",
+            "quantity": 130
+        },
+        {
+            "name": "Cementing Paste or Achatina Paste",
+            "quantity": 100
+        },
+        {
+            "name": "Metal Ingot or Scrap Metal Ingot",
+            "quantity": 55
+        }
+    ],
+    "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MegatheriumSaddle.PrimalItemArmor_MegatheriumSaddle'",
+    "wiki_url": "https://ark.wiki.gg/wiki/Megatherium_Saddle",
+    "image_file": "megatherium_saddle.png"
+}

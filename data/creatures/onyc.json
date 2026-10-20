@@ -1,5 +1,8 @@
 {
     "name": "Onyc",
+    "alternate_names": [
+        "Bat"
+    ],
     "category": "mammal",
     "dossier": {
         "species": "Onychonycteris specuncola",
@@ -107,5 +110,18 @@
         "Genesis: Part 1",
         "Lost Island",
         "Fjordur"
+    ],
+    "spawn_maps": [
+        "the-island",
+        "the-center",
+        "scorched-earth",
+        "ragnarok",
+        "extinction",
+        "valguero",
+        "genesis-part-1",
+        "crystal-isles",
+        "lost-island",
+        "fjordur-midgard",
+        "fjordur-asgard"
     ]
 }

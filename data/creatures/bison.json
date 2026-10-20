@@ -1,0 +1,90 @@
+{
+    "name": "Bison",
+    "category": "mammal",
+    "dossier": null,
+    "base_stats_growth": {
+        "health": {
+            "base": 800,
+            "level_increase": {
+                "wild": 160,
+                "tamed": 0.054000000000000006
+            },
+            "taming_bonus": {
+                "additive": 0.07
+            }
+        },
+        "stamina": {
+            "base": 500,
+            "level_increase": {
+                "wild": 50,
+                "tamed": 0.1
+            }
+        },
+        "oxygen": {
+            "base": 150,
+            "level_increase": {
+                "wild": 15,
+                "tamed": 0.1
+            }
+        },
+        "food": {
+            "base": 3250,
+            "level_increase": {
+                "wild": 325,
+                "tamed": 0.1
+            }
+        },
+        "weight": {
+            "base": 650,
+            "level_increase": {
+                "wild": 13,
+                "tamed": 0.04
+            }
+        },
+        "melee": {
+            "base": 3040,
+            "level_increase": {
+                "wild": 1.52,
+                "tamed": 0.017
+            },
+            "taming_bonus": {
+                "additive": 0.07,
+                "multiplicative": 0.17600000000000002
+            }
+        },
+        "movement": {
+            "base": 100,
+            "level_increase": {
+                "tamed": 0.01
+            }
+        },
+        "torpidity": {
+            "base": 500,
+            "level_increase": {
+                "wild": 30
+            },
+            "taming_bonus": {
+                "additive": 0.5
+            }
+        }
+    },
+    "tameable": true,
+    "rideable": true,
+    "breedable": true,
+    "taming": {
+        "method": "Knockout",
+        "kibble": null
+    },
+    "saddle": [
+        {
+            "name": "Bison Saddle (Level 50)",
+            "engram_level": 50
+        }
+    ],
+    "rider_weaponry": false,
+    "egg": null,
+    "drag_weight": 255,
+    "cloneable": false,
+    "entity_id": "Bison_Character_BP_C",
+    "wiki_url": "https://ark.wiki.gg/wiki/Bison"
+}
