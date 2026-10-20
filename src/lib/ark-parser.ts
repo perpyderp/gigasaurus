@@ -242,3 +242,8 @@ export function colorToHex(color: ArkColor): string {
   const hex = (n: number) => n.toString(16).padStart(2, '0')
   return `#${hex(r)}${hex(g)}${hex(b)}`
 }
+
+/** The creature's in-game name (`TamedName`) from a raw export, or '' if it was never named in game. */
+export function readTamedName(iniText: string): string {
+  return iniText.match(/^\s*TamedName\s*=(.*)$/m)?.[1].trim() ?? ''
+}

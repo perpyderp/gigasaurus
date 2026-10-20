@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 
 import { useEffect, useState, useCallback, useMemo, Suspense } from 'react'
 import { useQueryState, useQueryStates, parseAsInteger, parseAsString, parseAsStringLiteral } from 'nuqs'
-import { IconSearch, IconFilter, IconUpload, IconCloudUpload, IconCloudDown, IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
+import { IconSearch, IconFilter, IconUpload, IconCloudUpload, IconCloudDown } from '@tabler/icons-react'
 import { PawPrint, GitFork } from 'lucide-react'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button-variants'
@@ -14,6 +14,16 @@ import { getAllCreatures } from '@/lib/db'
 import type { StoredCreature } from '@/lib/db'
 import { listPaths, importChangedFromPath } from '@/lib/import-paths'
 import { CreatureCard } from '@/components/CreatureCard'
+import { CreatureFilterFields } from '@/components/CreatureFilterFields'
+import { CreaturePagination } from '@/components/CreaturePagination'
+import {
+  DEFAULT_SORT,
+  EMPTY_FILTERS,
+  activeFilterCount as countActiveFilters,
+  filterAndSortCreatures,
+  paginate,
+  speciesTag,
+} from '@/lib/creature-filters'
 import { ImportDropzone } from '@/components/ImportDropzone'
 import { SavedPaths } from '@/components/SavedPaths'
 import { DriveSync } from '@/components/DriveSync'
@@ -24,28 +34,8 @@ import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from '@/components/ui/select'
 
 const PAGE_SIZE_OPTIONS = [12, 24, 48]
-
-// value → label maps so Base UI's Select.Value shows clean text (e.g. "Any gender")
-// instead of the raw stored value (e.g. "__all"). See @/components/ui/select.
-const GENDER_LABELS: Record<string, string> = { __all: 'Any gender', m: '♂ Male', f: '♀ Female' }
-const SORT_LABELS: Record<string, string> = {
-  updated: 'Recently updated',
-  imported: 'Recently imported',
-  level: 'Highest level',
-  melee: 'Highest melee',
-  health: 'Highest health',
-  name: 'Name A–Z',
-}
-const MUTATION_LABELS: Record<string, string> = { __all: 'Any', '1': 'Has mutations' }
 
 function MyCreaturesContent() {
   const [creatures, setCreatures] = useState<StoredCreature[]>([])
@@ -63,12 +53,13 @@ function MyCreaturesContent() {
   const [search, setSearch] = useQueryState('q', parseAsString.withDefault(''))
   const [page, setPage] = useQueryState('page', parseAsInteger.withDefault(1))
   const [pageSize, setPageSize] = useQueryState('size', parseAsInteger.withDefault(24))
-  const [{ gender, sort, species, mutationsOnly }, setFilters] = useQueryStates({
+  const [filters, setFilters] = useQueryStates({
     gender: parseAsString.withDefault(''),
-    sort: parseAsString.withDefault('updated'),
+    sort: parseAsString.withDefault(DEFAULT_SORT),
     species: parseAsString.withDefault(''),
-    mutationsOnly: parseAsString.withDefault(''),
+    mutations: parseAsString.withDefault(''),
   })
+  const filterState = useMemo(() => ({ ...filters, search }), [filters, search])
 
   const load = useCallback(async () => {
     const all = await getAllCreatures()
@@ -159,58 +150,14 @@ function MyCreaturesContent() {
   const handleRestored = useCallback(() => { load() }, [load])
 
   // Distinct species for filter dropdown
-  const speciesList = useMemo(() => {
-    const tags = [...new Set(creatures.map((c) => c.dinoNameTag.replace(/AA$/, '')))]
-    return tags.sort()
-  }, [creatures])
+  const speciesList = useMemo(() => [...new Set(creatures.map(speciesTag))].sort(), [creatures])
 
-  // Filter + sort
-  const filtered = useMemo(() => {
-    let result = [...creatures]
-
-    if (search) {
-      const q = search.toLowerCase()
-      result = result.filter((c) =>
-        c.name.toLowerCase().includes(q) ||
-        c.dinoNameTag.toLowerCase().includes(q) ||
-        c.tamer.toLowerCase().includes(q)
-      )
-    }
-    if (species) {
-      result = result.filter((c) => c.dinoNameTag.replace(/AA$/, '') === species)
-    }
-    if (gender === 'm') result = result.filter((c) => !c.isFemale)
-    if (gender === 'f') result = result.filter((c) => c.isFemale)
-    if (mutationsOnly === '1') result = result.filter((c) => c.mutationsMale + c.mutationsFemale > 0)
-
-    result.sort((a, b) => {
-      switch (sort) {
-        case 'level': return b.level - a.level
-        case 'melee': return b.stats.meleeDamage - a.stats.meleeDamage
-        case 'health': return b.stats.health - a.stats.health
-        case 'name': return a.name.localeCompare(b.name)
-        case 'imported': return b.importedAt - a.importedAt
-        default: return b.updatedAt - a.updatedAt
-      }
-    })
-
-    return result
-  }, [creatures, search, species, gender, mutationsOnly, sort])
-
-  // Pagination
-  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize))
-  const safePage = Math.min(page, totalPages)
-  const paginated = filtered.slice((safePage - 1) * pageSize, safePage * pageSize)
-
-  const activeFilterCount = [
-    gender !== '',
-    species !== '',
-    mutationsOnly === '1',
-    sort !== 'updated',
-  ].filter(Boolean).length
+  const filtered = useMemo(() => filterAndSortCreatures(creatures, filterState), [creatures, filterState])
+  const { totalPages, page: safePage, items: paginated } = paginate(filtered, page, pageSize)
+  const activeFilterCount = countActiveFilters(filterState)
 
   const clearFilters = () => {
-    setFilters({ gender: '', sort: 'updated', species: '', mutationsOnly: '' })
+    setFilters({ gender: EMPTY_FILTERS.gender, sort: EMPTY_FILTERS.sort, species: EMPTY_FILTERS.species, mutations: EMPTY_FILTERS.mutations })
     setPage(1)
   }
 
@@ -308,78 +255,12 @@ function MyCreaturesContent() {
         {showFilters && creatures.length > 0 && (
           <Card>
             <CardContent className="p-4">
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {/* Species */}
-                <div className="space-y-1">
-                  <label className="text-muted-foreground text-sm font-medium">Species</label>
-                  <Select
-                    items={{ __all: 'All species', ...Object.fromEntries(speciesList.map((s) => [s, s])) }}
-                    value={species || '__all'}
-                    onValueChange={(v) => { setFilters({ species: v === '__all' ? '' : v }); setPage(1) }}
-                  >
-                    <SelectTrigger className="h-10 w-full text-sm">
-                      <SelectValue placeholder="All species" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="__all">All species</SelectItem>
-                      {speciesList.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Gender */}
-                <div className="space-y-1">
-                  <label className="text-muted-foreground text-sm font-medium">Gender</label>
-                  <Select items={GENDER_LABELS} value={gender || '__all'} onValueChange={(v) => { setFilters({ gender: v === '__all' ? '' : v }); setPage(1) }}>
-                    <SelectTrigger className="h-10 w-full text-sm">
-                      <SelectValue placeholder="Any gender" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="__all">Any gender</SelectItem>
-                      <SelectItem value="m">♂ Male</SelectItem>
-                      <SelectItem value="f">♀ Female</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Sort */}
-                <div className="space-y-1">
-                  <label className="text-muted-foreground text-sm font-medium">Sort by</label>
-                  <Select items={SORT_LABELS} value={sort} onValueChange={(v) => { setFilters({ sort: v }); setPage(1) }}>
-                    <SelectTrigger className="h-10 w-full text-sm">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="updated">Recently updated</SelectItem>
-                      <SelectItem value="imported">Recently imported</SelectItem>
-                      <SelectItem value="level">Highest level</SelectItem>
-                      <SelectItem value="melee">Highest melee</SelectItem>
-                      <SelectItem value="health">Highest health</SelectItem>
-                      <SelectItem value="name">Name A–Z</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Mutations filter */}
-                <div className="space-y-1">
-                  <label className="text-muted-foreground text-sm font-medium">Mutations</label>
-                  <Select items={MUTATION_LABELS} value={mutationsOnly === '1' ? '1' : '__all'} onValueChange={(v) => { setFilters({ mutationsOnly: v === '1' ? '1' : '' }); setPage(1) }}>
-                    <SelectTrigger className="h-10 w-full text-sm">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="__all">Any</SelectItem>
-                      <SelectItem value="1">Has mutations</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              {activeFilterCount > 0 && (
-                <Button variant="ghost" size="sm" className="mt-3 text-xs" onClick={clearFilters}>
-                  Clear filters
-                </Button>
-              )}
+              <CreatureFilterFields
+                state={filterState}
+                speciesList={speciesList}
+                onChange={(patch) => { setFilters(patch); setPage(1) }}
+                onClear={clearFilters}
+              />
             </CardContent>
           </Card>
         )}
@@ -441,63 +322,15 @@ function MyCreaturesContent() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <nav aria-label="Pagination" className="flex flex-col items-center justify-between gap-4 pt-2 sm:flex-row">
-                <div className="text-muted-foreground text-sm">
-                  Showing {(safePage - 1) * pageSize + 1}–{Math.min(safePage * pageSize, filtered.length)} of {filtered.length}
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    disabled={safePage <= 1}
-                    onClick={() => setPage(safePage - 1)}
-                    className="size-9 p-0"
-                    aria-label="Previous page"
-                  >
-                    <IconChevronLeft size={16} />
-                  </Button>
-                  {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                    const p = Math.max(1, Math.min(totalPages - 4, safePage - 2)) + i
-                    return (
-                      <Button
-                        key={p}
-                        variant={p === safePage ? 'default' : 'outline'}
-                        size="sm"
-                        onClick={() => setPage(p)}
-                        aria-current={p === safePage ? 'page' : undefined}
-                        className="size-9 p-0 text-sm tabular-nums"
-                      >
-                        {p}
-                      </Button>
-                    )
-                  })}
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    disabled={safePage >= totalPages}
-                    onClick={() => setPage(safePage + 1)}
-                    className="size-9 p-0"
-                    aria-label="Next page"
-                  >
-                    <IconChevronRight size={16} />
-                  </Button>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <span className="text-muted-foreground text-sm">Per page</span>
-                  <Select value={String(pageSize)} onValueChange={(v) => { setPageSize(Number(v)); setPage(1) }}>
-                    <SelectTrigger className="h-9 w-18 text-sm" aria-label="Creatures per page">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {PAGE_SIZE_OPTIONS.map((n) => (
-                        <SelectItem key={n} value={String(n)}>{n}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              </nav>
+              <CreaturePagination
+                page={safePage}
+                totalPages={totalPages}
+                pageSize={pageSize}
+                pageSizeOptions={PAGE_SIZE_OPTIONS}
+                total={filtered.length}
+                onPageChange={setPage}
+                onPageSizeChange={(n) => { setPageSize(n); setPage(1) }}
+              />
             )}
           </>
         )}
