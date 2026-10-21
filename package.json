@@ -15,6 +15,7 @@
     "maps": "bun scripts/scrape-maps.ts",
     "saddles": "bun scripts/scrape-saddles.ts",
     "dossiers": "bun scripts/download-dossiers.ts",
+    "optimize-images": "bun scripts/optimize-images.ts",
     "spawn-maps": "bun scripts/download-spawn-maps.ts"
   },
   "dependencies": {

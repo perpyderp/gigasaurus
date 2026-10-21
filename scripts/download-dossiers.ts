@@ -18,6 +18,7 @@
 import { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'fs'
 import { join } from 'path'
 import { imageSize, looksLikeDossier } from './lib/image-size'
+import { toWebp } from './lib/optimize-image'
 
 const ROOT = join(import.meta.dir, '..')
 const DATA_DIR = join(ROOT, 'data', 'creatures')
@@ -95,7 +96,8 @@ for (const slug of slugs) {
       const p = join(IMG_DIR, `${slug}.${ext}`)
       if (existsSync(p)) unlinkSync(p)
     }
-    writeFileSync(join(IMG_DIR, `${slug}.${size.type}`), bytes)
+    // Stored as ≤1600px WebP: the 4000px wiki originals are ~3 MB each and never shown that large.
+    writeFileSync(join(IMG_DIR, `${slug}.webp`), await toWebp(bytes))
     replaced++
     process.stdout.write(`\x1b[32m✓\x1b[0m ${file} ${size.width}×${size.height}\n`)
     await sleep(DELAY_MS)
