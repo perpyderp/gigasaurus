@@ -71,7 +71,7 @@ export default function Home() {
       {/* Hero: the ARKniversary mural is the subject itself; search suggests from every glossary and falls back to the creature list. */}
       <section className="relative isolate flex min-h-[560px] items-end overflow-hidden bg-plate sm:min-h-[min(78vh,760px)]">
         <Image
-          src="/images/ARKniversary.png"
+          src="/images/ARKniversary.webp"
           alt="Hundreds of ARK creatures gathered around a river, from a Giganotosaurus to a Mosasaurus"
           fill
           priority
@@ -111,7 +111,7 @@ export default function Home() {
             >
               <div className="bg-plate relative aspect-[3/2] overflow-hidden">
                 <Image
-                  src="/images/creatures/giganotosaurus.png"
+                  src="/images/creatures/giganotosaurus.webp"
                   alt=""
                   fill
                   sizes="(max-width: 768px) 100vw, 520px"
