@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     })),
+    { url: absoluteUrl('/privacy'), changeFrequency: 'yearly', priority: 0.2 },
   ]
 
   for (const c of CreatureService.getAll({ limit: 1000 }).results) {
