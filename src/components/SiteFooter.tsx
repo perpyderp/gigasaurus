@@ -21,6 +21,7 @@ const COLUMNS: Array<{ title: string; links: Array<{ label: string; href: string
       { label: 'Project docs', href: `${REPO_URL}/tree/main/docs`, external: true },
       { label: 'Source code', href: REPO_URL, external: true },
       { label: 'Report an issue', href: `${REPO_URL}/issues`, external: true },
+      { label: 'Privacy policy', href: '/privacy' },
     ],
   },
   {
@@ -50,7 +51,7 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <p className="font-display text-2xl">Gigasaurus</p>
             <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
-              A free, open-source companion for ARK: Survival Ascended. Your imported creatures never leave your browser.
+              A free, open-source companion for ARK: Survival Ascended. Your imported creatures stay in your browser unless you back them up to your own Google Drive.
             </p>
           </div>
           {COLUMNS.map((col) => (

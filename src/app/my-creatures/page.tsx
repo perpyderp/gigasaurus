@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 import { useEffect, useState, useCallback, useMemo, Suspense } from 'react'
 import { useQueryState, useQueryStates, parseAsInteger, parseAsString, parseAsStringLiteral } from 'nuqs'
 import { IconSearch, IconFilter, IconUpload, IconCloudUpload, IconCloudDown } from '@tabler/icons-react'
-import { PawPrint, GitFork, CheckSquare, RefreshCw, Trash2, X } from 'lucide-react'
+import { PawPrint, GitFork, CheckSquare, RefreshCw, Trash2, X, Compass } from 'lucide-react'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button-variants'
 import { computeBests, type CollectionBests } from '@/lib/breeding'
@@ -34,6 +34,9 @@ import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
+import { Tour } from '@/components/tour/Tour'
+import { useTour } from '@/components/tour/use-tour'
+import { myCreaturesTourSteps } from './my-creatures-tour'
 
 const PAGE_SIZE_OPTIONS = [12, 24, 48]
 
@@ -124,6 +127,10 @@ function MyCreaturesContent() {
     mutations: parseAsString.withDefault(''),
   })
   const filterState = useMemo(() => ({ ...filters, search }), [filters, search])
+
+  // First visit: walk through importing, filtering and the planner.
+  const tour = useTour('my-creatures', { autoStart: true })
+  const tourSteps = myCreaturesTourSteps({ openImport: () => setShowImport(true), openFilters: () => setShowFilters(true) })
 
   const load = useCallback(async () => {
     const all = await getAllCreatures()
@@ -303,14 +310,18 @@ function MyCreaturesContent() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
+            <Button variant="ghost" onClick={tour.actions.start} data-tour="tour-button" className="h-11 gap-2 px-4 text-[15px]">
+              <Compass aria-hidden className="size-4" /> Take the tour
+            </Button>
             {creatures.length > 0 && (
-              <Link href="/my-creatures/breeding" className={buttonVariants({ variant: 'outline', className: 'h-11 gap-2 px-4 text-[15px]' })}>
+              <Link href="/my-creatures/breeding" data-tour="breeding-link" className={buttonVariants({ variant: 'outline', className: 'h-11 gap-2 px-4 text-[15px]' })}>
                 <GitFork aria-hidden className="size-4" /> Breeding planner
               </Link>
             )}
             <Button
               onClick={() => setShowImport((v) => !v)}
               aria-expanded={showImport}
+              data-tour="import-button"
               className="h-11 gap-2 px-4 text-[15px]"
             >
               <IconUpload size={16} />
@@ -362,11 +373,15 @@ function MyCreaturesContent() {
               <p className="text-muted-foreground max-w-prose text-sm leading-relaxed">
                 Drop <span className="font-mono">.ini</span> exports to add creatures or update ones you already have. To refresh everything, export again in ARK and drop the whole <span className="font-mono">ShooterGame/Saved/DinoExports</span> folder.
               </p>
-              <ImportDropzone onImported={handleImported} />
+              <div data-tour="import-dropzone">
+                <ImportDropzone onImported={handleImported} />
+              </div>
               <Separator />
-              <SavedPaths onImported={handleImported} />
+              <div data-tour="saved-folders">
+                <SavedPaths onImported={handleImported} />
+              </div>
               <Separator />
-              <div>
+              <div data-tour="drive-sync">
                 <p className="mb-2 flex items-center gap-2 text-sm font-semibold">
                   <IconCloudUpload size={16} aria-hidden /> Google Drive backup
                 </p>
@@ -379,7 +394,7 @@ function MyCreaturesContent() {
         {/* Search + Filter bar */}
         {creatures.length > 0 && (
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <div className="relative flex-1">
+            <div data-tour="search" className="relative flex-1">
               <IconSearch size={14} className="text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
               <Input
                 type="search"
@@ -407,7 +422,7 @@ function MyCreaturesContent() {
 
         {/* Filter panel */}
         {showFilters && creatures.length > 0 && (
-          <Card>
+          <Card data-tour="filter-panel">
             <CardContent className="p-4">
               <CreatureFilterFields
                 state={filterState}
@@ -456,11 +471,11 @@ function MyCreaturesContent() {
               </p>
               <div className="flex items-center gap-2">
                 {!selected && (
-                  <Button variant="outline" size="sm" onClick={() => setSelected(new Set())}>
+                  <Button variant="outline" size="sm" onClick={() => setSelected(new Set())} data-tour="select">
                     <CheckSquare aria-hidden /> Select
                   </Button>
                 )}
-                <Tabs value={imageMode} onValueChange={(v) => setImageMode(v as ImageMode)}>
+                <Tabs value={imageMode} onValueChange={(v) => setImageMode(v as ImageMode)} data-tour="card-view">
                   <TabsList aria-label="Card image">
                     <TabsTrigger value="dossier">Dossier</TabsTrigger>
                     <TabsTrigger value="colors">In color</TabsTrigger>
@@ -468,7 +483,7 @@ function MyCreaturesContent() {
                 </Tabs>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <div data-tour="creature-grid" className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               {paginated.map((creature) => (
                 <CreatureCard
                   key={creature.id}
@@ -508,6 +523,7 @@ function MyCreaturesContent() {
             )}
           </>
         )}
+        <Tour tour={tour} steps={tourSteps} label="My Creatures tour" />
     </main>
   )
 }
