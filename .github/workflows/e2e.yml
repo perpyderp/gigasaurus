@@ -1,0 +1,63 @@
+name: E2E
+
+# Vercel reports each deployment back to GitHub; test it once it's live.
+# Production = main. Preview deployments run only when they're for dev
+# (other branches, e.g. dependabot, get previews too but aren't tested).
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e2e-${{ github.event.deployment.environment }}
+  cancel-in-progress: true
+
+jobs:
+  e2e:
+    name: E2E (${{ github.event.deployment.environment }})
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      (github.event.deployment.environment == 'Production' || github.event.deployment.environment == 'Preview')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Vercel sets the deployment ref to the commit SHA, not the branch, so look the branch up.
+      - name: Check the deployed branch
+        id: target
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ENVIRONMENT: ${{ github.event.deployment.environment }}
+          SHA: ${{ github.event.deployment.sha }}
+        run: |
+          if [ "$ENVIRONMENT" = "Production" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          branches=$(gh api "repos/${GITHUB_REPOSITORY}/commits/${SHA}/branches-where-head" --jq '.[].name')
+          echo "Branches at ${SHA}: ${branches:-none}"
+          if echo "$branches" | grep -qx dev; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Preview isn't for dev; skipping."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.target.outputs.run == 'true'
+        with:
+          ref: ${{ github.event.deployment.sha }}
+
+      - uses: oven-sh/setup-bun@v2
+        if: steps.target.outputs.run == 'true'
+
+      # The tests only use bun:test and fetch; no install needed.
+      - name: Run E2E tests
+        if: steps.target.outputs.run == 'true'
+        env:
+          # The exact deployment that just finished, not whatever the domain points at.
+          E2E_BASE_URL: ${{ github.event.deployment_status.environment_url }}
+          # Canonical links and the sitemap use the production domain on every deployment.
+          E2E_SITE_URL: ${{ vars.PRODUCTION_URL || 'https://gigasaurus.perp-cuison.com' }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: bun run test:e2e
