@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { parseAsArrayOf, parseAsString, useQueryState } from 'nuqs'
-import { ArrowLeft, Check, Crown, Dna, Mars, Venus, X } from 'lucide-react'
+import { ArrowLeft, Check, Compass, Crown, Dna, Mars, Venus, X } from 'lucide-react'
 import { getAllCreatures, type StoredCreature } from '@/lib/db'
 import type { AseStatKey } from '@/lib/ark-stat-solver/ase-data'
 import {
@@ -21,6 +21,9 @@ import { STAT_META, formatPercent } from '@/lib/stat-meta'
 import { speciesGroupKey, useCreatureProfiles } from '@/hooks/use-creature-profiles'
 import { LevelCell } from '@/components/breeding/LevelCell'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Button } from '@/components/ui/button'
+import { Tour, type TourStep } from '@/components/tour/Tour'
+import { useTour } from '@/components/tour/use-tour'
 
 // ─── Small pieces ──────────────────────────────────────────────────────────────
 
@@ -47,9 +50,9 @@ function Outcome({ o }: { o: OutcomeLevels }) {
   return <LevelCell levels={{ wild: o.wild, mutated: o.mutated, dom: 0, total: o.total }} />
 }
 
-function Section({ title, description, children }: { title: string; description?: string; children: React.ReactNode }) {
+function Section({ title, description, children, ...props }: { title: string; description?: string; children: React.ReactNode } & React.ComponentProps<'section'>) {
   return (
-    <section className="space-y-4">
+    <section className="space-y-4" {...props}>
       <div>
         <h2 className="font-display text-2xl">{title}</h2>
         {description && <p className="text-muted-foreground mt-1 max-w-prose text-[15px]">{description}</p>}
@@ -201,6 +204,57 @@ function PairCard({ pair, rank, trackedCount }: { pair: RankedPair; rank: number
 
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
+const BREEDING_TOUR: TourStep[] = [
+  {
+    target: 'breeding-species',
+    side: 'left',
+    title: 'One species at a time',
+    body: <p>Pick the species to plan for. The number beside each is how many of them you&apos;ve imported.</p>,
+  },
+  {
+    target: 'tracked-stats',
+    title: 'Choose the stats you breed for',
+    body: (
+      <p>
+        Turn off the stats you don&apos;t care about, like oxygen on a land creature. The bests, pairs and odds below only count the ones left on.
+      </p>
+    ),
+  },
+  {
+    target: 'best-stats',
+    side: 'top',
+    title: 'Where your best points are',
+    body: (
+      <p>
+        The most wild and mutated points you own in each stat, and which creatures carry them. Keep each best on at least one female and one male so
+        you can pass it on.
+      </p>
+    ),
+  },
+  {
+    target: 'pairs',
+    side: 'top',
+    title: 'Pairs to breed next',
+    body: (
+      <p>
+        Each pair shows how many of your bests a baby gets on average, the chance of the best possible baby, the chance of a new mutation and the
+        baby&apos;s level range.
+      </p>
+    ),
+  },
+  {
+    target: 'collection',
+    side: 'top',
+    title: 'Compare the whole group',
+    body: <p>Every creature of this species with its points per stat. Amber marks your most wild points in a stat, violet your most mutated.</p>,
+  },
+  {
+    target: 'tour-button',
+    title: 'Come back any time',
+    body: <p>Replay this walkthrough from here whenever you need it.</p>,
+  },
+]
+
 function BreedingPlanner() {
   const [collection, setCollection] = useState<StoredCreature[] | null>(null)
   const [speciesParam, setSpecies] = useQueryState('species', parseAsString.withDefault(''))
@@ -243,6 +297,8 @@ function BreedingPlanner() {
     () => rankPairs(group.filter((p) => p.creature.babyAge >= 1), tracked, bests, 5),
     [group, tracked, bests],
   )
+  // Opens once, the first time there's a species to plan for.
+  const tour = useTour('breeding-planner', { autoStart: eligible.length > 0 })
   const rows = useMemo(() => {
     const recordCount = (p: CreatureProfile) => tracked.filter((s) => topFlags(p.levels[s], bests[s]).total).length
     return [...group].sort((a, b) => recordCount(b) - recordCount(a) || b.creature.level - a.creature.level).map((p) => ({ p, records: recordCount(p) }))
@@ -269,9 +325,14 @@ function BreedingPlanner() {
             <p className="text-muted-foreground mt-3 max-w-xl text-[15px]">
               Where your best points are, which pairs combine them, and the odds of getting the baby you want.
             </p>
+            {eligible.length > 0 && (
+              <Button variant="ghost" size="sm" onClick={tour.actions.start} data-tour="tour-button" className="mt-3 -ml-2.5 gap-1.5">
+                <Compass aria-hidden /> How the planner works
+              </Button>
+            )}
           </div>
           {speciesOptions.length > 0 && (
-            <label className="w-full md:w-72">
+            <label className="w-full md:w-72" data-tour="breeding-species">
               <span className="text-muted-foreground mb-1.5 block text-sm font-medium">Species</span>
               <Select items={speciesItems} value={species} onValueChange={(v) => { setSpecies(v as string); setTracked(null) }}>
                 <SelectTrigger className="bg-card h-11 w-full text-[15px]">
@@ -300,7 +361,7 @@ function BreedingPlanner() {
         <p className="text-muted-foreground">No stat data for this species, so its points can&apos;t be compared.</p>
       ) : (
         <>
-          <div className="space-y-2">
+          <div className="space-y-2" data-tour="tracked-stats">
             <p className="text-sm font-medium">Stats you&apos;re breeding for</p>
             <div role="group" aria-label="Stats you're breeding for" className="flex flex-wrap gap-2">
               {eligible.map((s) => {
@@ -329,6 +390,7 @@ function BreedingPlanner() {
           </div>
 
           <Section
+            data-tour="best-stats"
             title="Best stats you own"
             description="Wild and mutated points are inherited as a pair: a baby gets the higher wild and the higher mutated points of its parents together, or the lower of both. Keep each best on at least one female and one male."
           >
@@ -336,6 +398,7 @@ function BreedingPlanner() {
           </Section>
 
           <Section
+            data-tour="pairs"
             title="Pairs to breed next"
             description="Ranked by how many of your best stats a baby gets on average. Each stat independently takes the parents' higher points 55% of the time."
           >
@@ -350,7 +413,7 @@ function BreedingPlanner() {
             )}
           </Section>
 
-          <Section title={`Your ${speciesOptions.find(([k]) => k === species)?.[1].label ?? ''}s`}>
+          <Section data-tour="collection" title={`Your ${speciesOptions.find(([k]) => k === species)?.[1].label ?? ''}s`}>
             <div className="bg-card ring-border overflow-x-auto rounded-xl p-1 ring-1">
               <table className="w-full min-w-[640px] text-[15px]">
                 <thead>
@@ -406,6 +469,7 @@ function BreedingPlanner() {
           </Section>
         </>
       )}
+      <Tour tour={tour} steps={BREEDING_TOUR} label="Breeding planner tour" />
     </main>
   )
 }
