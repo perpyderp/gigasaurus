@@ -49,3 +49,20 @@ describe('dino-map covers slugs that have data + image', () => {
     })
   }
 })
+
+// ─── 3. Image index matches public/ ──────────────────────────────────────────
+// Pages rendered on request can't see public/ (it's excluded from the server
+// bundle), so CreatureService and CreatureCard read image paths from
+// creature-index.json. A stale index means missing images in production.
+
+describe('creature-index.json images match public/images/creatures', () => {
+  const { images } = JSON.parse(readFileSync(join(ROOT, 'src', 'lib', 'creature-index.json'), 'utf-8')) as {
+    images: Record<string, string>
+  }
+  for (const slug of dataSlugs.filter(hasImage)) {
+    it(`${slug} is indexed with a file that exists (run \`bun run names\` if not)`, () => {
+      expect(images[slug]).toBeDefined()
+      expect(existsSync(join(ROOT, 'public', images[slug]))).toBe(true)
+    })
+  }
+})

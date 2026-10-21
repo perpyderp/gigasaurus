@@ -1,18 +1,17 @@
-import { existsSync, readdirSync, readFileSync } from 'fs'
+import { readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { CreatureSchema, type Creature, type CreatureDetail, type CreatureListItem } from '@/schemas/creature'
 import { z } from 'zod'
 import { toSlug } from '@/lib/slug'
+import creatureIndex from '@/lib/creature-index.json'
 
 const DATA_DIR = join(process.cwd(), 'data', 'creatures')
-const IMAGE_BASE = '/images/creatures'
-
-const IMAGE_DIR = join(process.cwd(), 'public', 'images', 'creatures')
+// public/ isn't in the server bundle (next.config.ts), so pages rendered on request can't
+// check the disk for images. The index is built from public/ by `bun run names`.
+const IMAGES: Record<string, string> = creatureIndex.images
 
 function imageUrl(slug: string): string | null {
-  // Served from public/; dossiers come as .png, .jpg or .webp (see scripts/download-dossiers.ts).
-  const ext = ['png', 'jpg', 'webp'].find((e) => existsSync(join(IMAGE_DIR, `${slug}.${e}`)))
-  return ext ? `${IMAGE_BASE}/${slug}.${ext}` : null
+  return IMAGES[slug] ?? null
 }
 
 function normalizeSaddle(saddle: Creature['saddle']): CreatureDetail['saddle'] {
