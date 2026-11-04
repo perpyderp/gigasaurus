@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # Security updates only. Dependabot security updates always target the
+  # default branch (the production branch here); setting target-branch would
+  # make the options below apply to version updates only, so it's omitted.
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # 0 disables version-update PRs; security-update PRs are unaffected.
+    open-pull-requests-limit: 0
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
