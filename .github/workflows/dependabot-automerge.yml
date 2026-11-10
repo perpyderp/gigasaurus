@@ -21,7 +21,14 @@ jobs:
 
       - run: bun install --frozen-lockfile
       - run: bun run lint
-      - run: bun run --if-present test
+      # bun has no --if-present; skip explicitly when there's no test script.
+      - name: Test (if present)
+        run: |
+          if node -e "process.exit(require('./package.json').scripts?.test ? 0 : 1)"; then
+            bun run test
+          else
+            echo "No test script; skipping."
+          fi
       - run: bun run build
         env:
           # Optional at build time (inlined into the client bundle if set).
