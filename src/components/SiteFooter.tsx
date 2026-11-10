@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
-
-const REPO_URL = 'https://github.com/perpyderp/gigasaurus'
+import { KofiButton, FeedbackButton } from '@/components/SupportLinks'
+import { FEEDBACK_URL, REPO_URL } from '@/lib/links'
 
 const COLUMNS: Array<{ title: string; links: Array<{ label: string; href: string; external?: boolean }> }> = [
   {
@@ -20,7 +20,7 @@ const COLUMNS: Array<{ title: string; links: Array<{ label: string; href: string
       { label: 'API reference', href: '/api/openapi' },
       { label: 'Project docs', href: `${REPO_URL}/tree/main/docs`, external: true },
       { label: 'Source code', href: REPO_URL, external: true },
-      { label: 'Report an issue', href: `${REPO_URL}/issues`, external: true },
+      { label: 'Suggestions and bug reports', href: FEEDBACK_URL, external: true },
       { label: 'Privacy policy', href: '/privacy' },
     ],
   },
@@ -53,6 +53,10 @@ export function SiteFooter() {
             <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
               A free, open-source companion for ARK: Survival Ascended. Your imported creatures stay in your browser unless you back them up to your own Google Drive.
             </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <FeedbackButton />
+              <KofiButton />
+            </div>
           </div>
           {COLUMNS.map((col) => (
             <div key={col.title}>

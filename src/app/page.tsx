@@ -10,8 +10,7 @@ import { CreatureService } from '@/services/creature'
 import { ArmorService } from '@/services/armor'
 import { WeaponService } from '@/services/weapon'
 import { ResourceService } from '@/services/resource'
-
-const REPO_URL = 'https://github.com/perpyderp/gigasaurus'
+import { REPO_URL } from '@/lib/links'
 
 const IMPORT_STEPS = [
   {

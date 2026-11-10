@@ -1,0 +1,29 @@
+name: Data correction
+description: A creature, armor, weapon or resource has wrong or missing data.
+title: "[Data] "
+labels: ["data"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      placeholder: Rex
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      placeholder: /creatures/rex
+  - type: textarea
+    id: correction
+    attributes:
+      label: What's wrong, and what should it be?
+      placeholder: Base health is 1,100 but in game it's …
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Where the correct value comes from, e.g. the ARK Wiki or an in-game screenshot.
