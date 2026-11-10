@@ -1,0 +1,16 @@
+name: Suggestion
+description: An idea for a new feature or an improvement.
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like Gigasaurus to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+      description: What are you trying to do in ARK when you'd use this?

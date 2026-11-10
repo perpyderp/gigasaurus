@@ -3,7 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { ArrowLeft, Check, ExternalLink, PawPrint } from 'lucide-react'
+import { ArrowLeft, Check, ExternalLink, Flag, PawPrint } from 'lucide-react'
+import { dataCorrectionUrl } from '@/lib/links'
 import { CreatureService } from '@/services/creature'
 import type { CreatureDetail } from '@/schemas/creature'
 import { MySpeciesCreatures } from '@/components/MySpeciesCreatures'
@@ -194,16 +195,26 @@ export default async function CreatureSpeciesPage({
             {creature.drag_weight != null && <Fact label="Drag weight">{creature.drag_weight.toLocaleString()}</Fact>}
           </dl>
 
-          {creature.wiki_url && (
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {creature.wiki_url && (
+              <a
+                href={creature.wiki_url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 transition-colors"
+              >
+                <ExternalLink aria-hidden className="size-4" /> {creature.name} on the ARK Wiki
+              </a>
+            )}
             <a
-              href={creature.wiki_url}
+              href={dataCorrectionUrl({ name: creature.name, page: `/creatures/${slug}` })}
               target="_blank"
               rel="noreferrer"
-              className="text-muted-foreground hover:text-foreground mt-4 inline-flex items-center gap-1.5 text-sm transition-colors"
+              className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 transition-colors"
             >
-              <ExternalLink aria-hidden className="size-4" /> {creature.name} on the ARK Wiki
+              <Flag aria-hidden className="size-4" /> Report wrong data
             </a>
-          )}
+          </div>
         </div>
       </div>
 

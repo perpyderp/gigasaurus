@@ -1,0 +1,34 @@
+name: Bug report
+description: Something on the site or the API doesn't work as it should.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page or API URL
+      placeholder: /my-creatures
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to …
+        2. Click …
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options: [Chrome, Edge, Firefox, Safari, Other]
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or exported .ini files
+      description: Drag files in. Exports can include your tribe and tamer names, so remove anything you don't want public.

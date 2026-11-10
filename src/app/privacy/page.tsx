@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { REPO_URL } from '@/lib/links'
 
-const REPO_URL = 'https://github.com/perpyderp/gigasaurus'
 const EFFECTIVE = 'October 21, 2026'
 
 export const metadata: Metadata = {
